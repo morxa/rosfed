@@ -19,11 +19,28 @@ import time
 
 from rosinstall_generator import generator
 
-def get_dependencies(rosdistro, pkg_name):
+def get_ros_dependencies(rosdistro, pkg_name):
    dependency_dict = generator.generate_rosinstall(
        rosdistro, [pkg_name], deps=True, deps_depth=1, deps_only=True,
        wet_only=True, tar=True)
    return [ pkg['tar']['local-name'].split('/')[-1] for pkg in dependency_dict ]
+
+def get_system_dependencies(rosdistro, pkg_name, skip_keys):
+    cmd = subprocess.run(
+        ['rosdep', '--rosdistro={}'.format(rosdistro), 'keys', pkg_name],
+        stdout=subprocess.PIPE
+    )
+    deps_keys = cmd.stdout.decode().split('\n')
+    deps = []
+    for dep in deps_keys:
+        if dep == '' or dep in skip_keys:
+            continue
+        cmd = subprocess.run(
+            ['rosdep', '--rosdistro={}'.format(rosdistro), 'resolve', dep],
+            stdout=subprocess.PIPE)
+        deps += cmd.stdout.decode().split('\n')
+    deps = [ dep for dep in deps if not (dep == '' or dep == '#dnf') ]
+    return deps
 
 def get_sources(rosdistro, pkg_name):
     ros_pkg = generator.generate_rosinstall(
@@ -65,15 +82,18 @@ def main():
     jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader('templates'))
     spec_template = jinja_env.get_template('pkg.spec.j2')
     for ros_pkg in args.ros_pkg:
-        deps = get_dependencies(args.distro, ros_pkg)
+        ros_deps = get_ros_dependencies(args.distro, ros_pkg)
+        sys_deps = get_system_dependencies(args.distro, ros_pkg, ros_deps)
         sources = get_sources(args.distro, ros_pkg)
         version = get_version(args.distro, ros_pkg)
         spec = spec_template.render(
-            pkg_name='ros-{}-{}'.format(args.distro, ros_pkg),
+            pkg_name=ros_pkg,
+            distro=args.distro,
             pkg_version=version, license='BSD',
-            pkg_url='https://wiki.ros.org/'+ros_pkg, source_urls=sources,
-            dependencies=[ 'ros-{}-{}'.format(args.distro, pkg) 
-                           for pkg in sorted(deps) ],
+            pkg_url='https://wiki.ros.org/'+ros_pkg,
+            source_urls=sources,
+            ros_dependencies=sorted(ros_deps),
+            system_dependencies=sorted(sys_deps),
             pkg_description='ROS package {}.'.format(ros_pkg),
             pkg_release=args.release_version,
             user_string=args.user_string,

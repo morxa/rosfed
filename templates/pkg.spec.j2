@@ -1,19 +1,31 @@
-Name:           {{ pkg_name }}
+Name:           ros-{{ distro }}-{{ pkg_name }}
 Version:        {{ pkg_version }}
 Release:        {{ pkg_release }}%{?dist}
 Summary:        ROS package {{ pkg_name }}
 
 License:        {{ license }}
 URL:            {{ pkg_url }}
-{% for url in source_urls %}
-Source{{ loop.index0 }}:        {{ url }}
+{% for url in source_urls -%}
+Source{{ loop.index0 }}:        {{ url }}#/ros-{{ distro }}-{{ pkg_name }}-{{ pkg_version }}-source{{ loop.index0 }}.tar.gz
 {% endfor %}
 
-{% for dep in dependencies -%}
+{% for patch in patches -%}
+Patch{{ loop.index0 }}: {{ patch }}
+{% endfor %}
+
+BuildRequires:  python2-catkin_pkg
+BuildRequires:  cmake
+{% for dep in ros_dependencies -%}
+BuildRequires:  ros-{{ distro }}-{{ dep }}
+{% endfor %}
+{% for dep in system_dependencies -%}
 BuildRequires:  {{ dep }}
 {% endfor %}
 
-{% for dep in dependencies -%}
+{% for dep in ros_dependencies -%}
+Requires:       ros-{{ distro }}-{{ dep }}
+{% endfor %}
+{% for dep in system_dependencies -%}
 Requires:       {{ dep }}
 {% endfor %}
 
