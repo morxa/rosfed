@@ -1,0 +1,69 @@
+#! /usr/bin/env python
+# -*- coding: utf-8 -*-
+# vim:fenc=utf-8
+#
+# Copyright © 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de>
+#
+# Distributed under terms of the MIT license.
+
+"""
+Generate Spec files for ROS packages with the rosinstall_generator.
+"""
+
+import argparse
+import jinja2
+import re
+
+from rosinstall_generator import generator
+
+def get_dependencies(rosdistro, pkg_name):
+   dependency_dict = generator.generate_rosinstall(
+       rosdistro, [pkg_name], deps=True, deps_depth=1, deps_only=True,
+       wet_only=True, tar=True)
+   return [ pkg['tar']['local-name'].split('/')[-1] for pkg in dependency_dict ]
+
+def get_sources(rosdistro, pkg_name):
+    ros_pkg = generator.generate_rosinstall(
+        rosdistro, [pkg_name], deps=False, wet_only=True, tar=True)
+    return [ros_pkg[0]['tar']['uri']]
+
+def get_version(rosdistro, pkg_name):
+    ros_pkg = generator.generate_rosinstall(
+        rosdistro, [pkg_name], deps=False, wet_only=True, tar=True)
+    return re.match('[\w-]*-([0-9-_.]*)', ros_pkg[0]['tar']['version']).group(1)
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description='Generate Spec files for ROS packages with the '
+                    'rosinstall_generator.')
+    parser.add_argument('-r', '--recursive', action='store_true', default=False,
+                        help='Also generate Spec files for dependencies')
+    parser.add_argument('-u', '--update', action='store_true', default=False,
+                        help='Update existing Spec files')
+    parser.add_argument('--distro', default='kinetic',
+                        help='The ROS distro')
+    parser.add_argument('-t', '--template', default='templates/pkg.spec.j2',
+                        help='Path to the Jinja template for the Spec file')
+    parser.add_argument('ros_pkg', nargs='+',
+                        help='ROS package name')
+    args = parser.parse_args()
+    jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader('templates'))
+    spec_template = jinja_env.get_template('pkg.spec.j2')
+    for ros_pkg in args.ros_pkg:
+        deps = get_dependencies(args.distro, ros_pkg)
+        sources = get_sources(args.distro, ros_pkg)
+        version = get_version(args.distro, ros_pkg)
+        spec = spec_template.render(
+            pkg_name='ros-{}-{}'.format(args.distro, ros_pkg),
+            pkg_version=version, license='BSD',
+            pkg_url='https://wiki.ros.org/'+ros_pkg, source_urls=sources,
+            dependencies=[ 'ros-{}-{}'.format(args.distro, pkg) 
+                           for pkg in sorted(deps) ],
+            pkg_description='ROS package {}.'.format(ros_pkg))
+        with open('ros-{}-{}.spec'.format(args.distro, ros_pkg), 'w') as spec_file:
+            spec_file.write(spec)
+
+
+if __name__ == '__main__':
+    main()
