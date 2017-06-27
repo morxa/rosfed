@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 # -*- coding: utf-8 -*-
 # vim:fenc=utf-8
 #
@@ -13,6 +13,9 @@ Generate Spec files for ROS packages with the rosinstall_generator.
 import argparse
 import jinja2
 import re
+import subprocess
+import sys
+import time
 
 from rosinstall_generator import generator
 
@@ -30,7 +33,7 @@ def get_sources(rosdistro, pkg_name):
 def get_version(rosdistro, pkg_name):
     ros_pkg = generator.generate_rosinstall(
         rosdistro, [pkg_name], deps=False, wet_only=True, tar=True)
-    return re.match('[\w-]*-([0-9-_.]*)', ros_pkg[0]['tar']['version']).group(1)
+    return re.match('[\w-]*-([0-9-_.]*)(-[0-9-]*)', ros_pkg[0]['tar']['version']).group(1)
 
 
 def main():
@@ -45,9 +48,20 @@ def main():
                         help='The ROS distro')
     parser.add_argument('-t', '--template', default='templates/pkg.spec.j2',
                         help='Path to the Jinja template for the Spec file')
+    parser.add_argument('--user_string', default = '',
+                        help='The user string to use for the changelog')
+    parser.add_argument('--release-version', default='1',
+                        help='The Release: of the resulting Spec files')
     parser.add_argument('ros_pkg', nargs='+',
                         help='ROS package name')
     args = parser.parse_args()
+    if not args.user_string:
+        user_string = subprocess.run(["rpmdev-packager"],
+                                      stderr=subprocess.DEVNULL,
+                                      stdout=subprocess.PIPE).stdout
+        if sys.version_info[0] > 2:
+            user_string = user_string.decode(errors='replace')
+        args.user_string = user_string.strip()
     jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader('templates'))
     spec_template = jinja_env.get_template('pkg.spec.j2')
     for ros_pkg in args.ros_pkg:
@@ -60,7 +74,11 @@ def main():
             pkg_url='https://wiki.ros.org/'+ros_pkg, source_urls=sources,
             dependencies=[ 'ros-{}-{}'.format(args.distro, pkg) 
                            for pkg in sorted(deps) ],
-            pkg_description='ROS package {}.'.format(ros_pkg))
+            pkg_description='ROS package {}.'.format(ros_pkg),
+            pkg_release=args.release_version,
+            user_string=args.user_string,
+            date=time.strftime("%a %b %d %Y", time.gmtime()),
+        )
         with open('ros-{}-{}.spec'.format(args.distro, ros_pkg), 'w') as spec_file:
             spec_file.write(spec)
 

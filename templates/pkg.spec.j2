@@ -1,6 +1,6 @@
 Name:           {{ pkg_name }}
 Version:        {{ pkg_version }}
-Release:        1%{?dist}
+Release:        {{ pkg_release }}%{?dist}
 Summary:        ROS package {{ pkg_name }}
 
 License:        {{ license }}
@@ -42,5 +42,5 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
-* Mon Jun 26 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de>
-- 
+* {{ date }} {{ user_string }} - {{ pkg_version }}-{{ pkg_release }}
+- Update auto-generated Spec file
