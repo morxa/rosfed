@@ -68,7 +68,7 @@ def main():
                         help='Path to the Jinja template for the Spec file')
     parser.add_argument('--user_string', default = '',
                         help='The user string to use for the changelog')
-    parser.add_argument('--release-version', default='1',
+    parser.add_argument('--release-version', default='',
                         help='The Release: of the resulting Spec files')
     parser.add_argument('--no-arch', action='store_true', default=False,
                         help='Set BuildArch to noarch')
@@ -82,20 +82,25 @@ def main():
         if sys.version_info[0] > 2:
             user_string = user_string.decode(errors='replace')
         args.user_string = user_string.strip()
+    generate_spec_files(args.ros_pkg, args.distro, args.release_version,
+                        args.user_string, args.recursive, args.no_arch)
+
+def generate_spec_files(packages, distro, release_version, user_string,
+                        recursive, no_arch):
+    """ Generate Spec files for the given list of packages. """
     jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader('templates'))
-    packages = args.ros_pkg
     i = 0
     while i < len(packages):
         ros_pkg = packages[i]
         i += 1
-        ros_deps = get_ros_dependencies(args.distro, ros_pkg)
-        if args.recursive:
+        ros_deps = get_ros_dependencies(distro, ros_pkg)
+        if recursive:
             # Append all items that are not already in packages. We cannot use a
             # set, because we need to loop over it while we append items.
             packages += [ dep for dep in ros_deps if  not dep in packages ]
-        sys_deps = get_system_dependencies(args.distro, ros_pkg, ros_deps)
-        sources = get_sources(args.distro, ros_pkg)
-        version = get_version(args.distro, ros_pkg)
+        sys_deps = get_system_dependencies(distro, ros_pkg, ros_deps)
+        sources = get_sources(distro, ros_pkg)
+        version = get_version(distro, ros_pkg)
         try:
             pkg_config = yaml.load(open('cfg/{}.yaml'.format(ros_pkg), 'r'))
         except FileNotFoundError:
@@ -107,20 +112,20 @@ def main():
             spec_template = jinja_env.get_template('pkg.spec.j2')
         spec = spec_template.render(
             pkg_name=ros_pkg,
-            distro=args.distro,
+            distro=distro,
             pkg_version=version, license='BSD',
             pkg_url='https://wiki.ros.org/'+ros_pkg,
             source_urls=sources,
             ros_dependencies=sorted(ros_deps),
             system_dependencies=sorted(sys_deps),
             pkg_description='ROS package {}.'.format(ros_pkg),
-            pkg_release=args.release_version,
-            user_string=args.user_string,
+            pkg_release=release_version,
+            user_string=user_string,
             date=time.strftime("%a %b %d %Y", time.gmtime()),
-            noarch=args.no_arch or pkg_config.get('noarch', False),
+            noarch=no_arch or pkg_config.get('noarch', False),
             patches=pkg_config.get('patches', []),
         )
-        with open('ros-{}-{}.spec'.format(args.distro, ros_pkg), 'w') as spec_file:
+        with open('ros-{}-{}.spec'.format(distro, ros_pkg), 'w') as spec_file:
             spec_file.write(spec)
 
 
