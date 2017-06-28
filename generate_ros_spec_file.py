@@ -16,6 +16,7 @@ import re
 import subprocess
 import sys
 import time
+import yaml
 
 from rosinstall_generator import generator
 
@@ -95,6 +96,10 @@ def main():
         sys_deps = get_system_dependencies(args.distro, ros_pkg, ros_deps)
         sources = get_sources(args.distro, ros_pkg)
         version = get_version(args.distro, ros_pkg)
+        try:
+            pkg_config = yaml.load(open('cfg/{}.yaml'.format(ros_pkg), 'r'))
+        except FileNotFoundError:
+            pkg_config = {}
         print('Generating Spec file for {}.'.format(ros_pkg))
         try:
             spec_template = jinja_env.get_template('{}.spec.j2'.format(ros_pkg))
@@ -112,7 +117,8 @@ def main():
             pkg_release=args.release_version,
             user_string=args.user_string,
             date=time.strftime("%a %b %d %Y", time.gmtime()),
-            noarch=args.no_arch,
+            noarch=args.no_arch or pkg_config.get('noarch', False),
+            patches=pkg_config.get('patches', []),
         )
         with open('ros-{}-{}.spec'.format(args.distro, ros_pkg), 'w') as spec_file:
             spec_file.write(spec)
