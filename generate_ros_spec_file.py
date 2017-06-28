@@ -72,9 +72,15 @@ def main():
                         help='The Release: of the resulting Spec files')
     parser.add_argument('--no-arch', action='store_true', default=False,
                         help='Set BuildArch to noarch')
+    parser.add_argument('-B', '--build-order-file', type=argparse.FileType('w'),
+                        default=None,
+                        help='Print the order in which the packages should be '
+                             'built, requires -r')
     parser.add_argument('ros_pkg', nargs='+',
                         help='ROS package name')
     args = parser.parse_args()
+    if args.build_order_file:
+        assert args.recursive, 'Build order requires --recursive'
     if not args.user_string:
         user_string = subprocess.run(["rpmdev-packager"],
                                       stderr=subprocess.DEVNULL,
@@ -82,18 +88,41 @@ def main():
         if sys.version_info[0] > 2:
             user_string = user_string.decode(errors='replace')
         args.user_string = user_string.strip()
-    generate_spec_files(args.ros_pkg, args.distro, args.release_version,
-                        args.user_string, args.recursive, args.no_arch)
+    dependencies = generate_spec_files(args.ros_pkg, args.distro,
+                                       args.release_version, args.user_string,
+                                       args.recursive, args.no_arch)
+    if args.build_order_file:
+        order = get_build_order(dependencies)
+        for stage in order:
+            args.build_order_file.write(" ".join(stage) + '\n')
+
+def get_build_order(packages):
+    """ Get the order in which to build the given dictionary of packages. """
+    order = []
+    resolved_pkgs = set()
+    while resolved_pkgs != set(packages.keys()):
+        leaves = set()
+        for pkg, deps in packages.items():
+            if pkg in resolved_pkgs:
+                continue
+            if not set(deps) - resolved_pkgs:
+                leaves.add(pkg)
+        assert leaves, 'No dependency leaves found, cyclic dependencies?'
+        order.append(leaves)
+        resolved_pkgs |= leaves
+    return order
 
 def generate_spec_files(packages, distro, release_version, user_string,
                         recursive, no_arch):
     """ Generate Spec files for the given list of packages. """
     jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader('templates'))
     i = 0
+    dependencies = {}
     while i < len(packages):
         ros_pkg = packages[i]
         i += 1
         ros_deps = get_ros_dependencies(distro, ros_pkg)
+        dependencies[ros_pkg] = ros_deps
         if recursive:
             # Append all items that are not already in packages. We cannot use a
             # set, because we need to loop over it while we append items.
@@ -127,6 +156,7 @@ def generate_spec_files(packages, distro, release_version, user_string,
         )
         with open('ros-{}-{}.spec'.format(distro, ros_pkg), 'w') as spec_file:
             spec_file.write(spec)
+    return dependencies
 
 
 if __name__ == '__main__':
