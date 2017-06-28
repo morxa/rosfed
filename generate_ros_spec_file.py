@@ -69,6 +69,8 @@ def main():
                         help='The user string to use for the changelog')
     parser.add_argument('--release-version', default='1',
                         help='The Release: of the resulting Spec files')
+    parser.add_argument('--no-arch', action='store_true', default=False,
+                        help='Set BuildArch to noarch')
     parser.add_argument('ros_pkg', nargs='+',
                         help='ROS package name')
     args = parser.parse_args()
@@ -98,6 +100,7 @@ def main():
             pkg_release=args.release_version,
             user_string=args.user_string,
             date=time.strftime("%a %b %d %Y", time.gmtime()),
+            noarch=args.no_arch,
         )
         with open('ros-{}-{}.spec'.format(args.distro, ros_pkg), 'w') as spec_file:
             spec_file.write(spec)

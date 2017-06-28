@@ -13,8 +13,9 @@ Source{{ loop.index0 }}:        {{ url }}#/ros-{{ distro }}-{{ pkg_name }}-{{ pk
 Patch{{ loop.index0 }}: {{ patch }}
 {% endfor %}
 
-BuildRequires:  python2-catkin_pkg
-BuildRequires:  cmake
+{% if noarch == true %}
+BuildArch: noarch
+{% endif %}
 {% for dep in ros_dependencies -%}
 BuildRequires:  ros-{{ distro }}-{{ dep }}
 {% endfor %}
