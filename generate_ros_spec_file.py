@@ -83,11 +83,20 @@ def main():
         args.user_string = user_string.strip()
     jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader('templates'))
     spec_template = jinja_env.get_template('pkg.spec.j2')
-    for ros_pkg in args.ros_pkg:
+    packages = args.ros_pkg
+    i = 0
+    while i < len(packages):
+        ros_pkg = packages[i]
+        i += 1
         ros_deps = get_ros_dependencies(args.distro, ros_pkg)
+        if args.recursive:
+            # Append all items that are not already in packages. We cannot use a
+            # set, because we need to loop over it while we append items.
+            packages += [ dep for dep in ros_deps if  not dep in packages ]
         sys_deps = get_system_dependencies(args.distro, ros_pkg, ros_deps)
         sources = get_sources(args.distro, ros_pkg)
         version = get_version(args.distro, ros_pkg)
+        print('Generating Spec file for {}.'.format(ros_pkg))
         spec = spec_template.render(
             pkg_name=ros_pkg,
             distro=args.distro,
