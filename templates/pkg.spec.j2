@@ -1,3 +1,4 @@
+{% block info %}
 Name:           ros-{{ distro }}-{{ pkg_name }}
 Version:        {{ pkg_version }}
 Release:        {{ pkg_release }}%{?dist}
@@ -5,17 +6,25 @@ Summary:        ROS package {{ pkg_name }}
 
 License:        {{ license }}
 URL:            {{ pkg_url }}
+{% endblock %}
+
+{% block sources %}
 {% for url in source_urls -%}
 Source{{ loop.index0 }}:        {{ url }}#/ros-{{ distro }}-{{ pkg_name }}-{{ pkg_version }}-source{{ loop.index0 }}.tar.gz
 {% endfor %}
+{% endblock %}
 
+{% block patches %}
 {% for patch in patches -%}
 Patch{{ loop.index0 }}: {{ patch }}
 {% endfor %}
+{% endblock %}
 
 {% if noarch == true %}
 BuildArch: noarch
 {% endif %}
+
+{% block dependencies %}
 {% for dep in ros_dependencies -%}
 BuildRequires:  ros-{{ distro }}-{{ dep }}
 {% endfor %}
@@ -29,12 +38,16 @@ Requires:       ros-{{ distro }}-{{ dep }}
 {% for dep in system_dependencies -%}
 Requires:       {{ dep }}
 {% endfor %}
+{% endblock %}
 
 %description
+{% block description %}
 {{ pkg_description }}
+{% endblock %}
 
 
 %prep
+{% block prep %}
 
 %setup -c -T
 {% for url in source_urls %}
@@ -44,12 +57,16 @@ tar --strip-components=1 -xf %{SOURCE{{ loop.index0 }}}
 %patch{{ loop.index0 }} -p1
 {%- endfor %}
 
+{% endblock %}
 
 %build
+{% block build %}
 # nothing to do here
+{% endblock %}
 
 
 %install
+{% block install %}
 source %{_libdir}/ros/setup.bash
 
 catkin_make_isolated \
@@ -75,7 +92,7 @@ find %{buildroot}/%{_libdir}/ros/lib/ -mindepth 1 -maxdepth 1 -type d \
 
 find . -maxdepth 1 -type f -iname "*readme*" | sed "s:^:%%doc :" >> files.list
 find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.list
-
+{% endblock %}
 
 %files -f files.list
 

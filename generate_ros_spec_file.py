@@ -82,7 +82,6 @@ def main():
             user_string = user_string.decode(errors='replace')
         args.user_string = user_string.strip()
     jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader('templates'))
-    spec_template = jinja_env.get_template('pkg.spec.j2')
     packages = args.ros_pkg
     i = 0
     while i < len(packages):
@@ -97,6 +96,10 @@ def main():
         sources = get_sources(args.distro, ros_pkg)
         version = get_version(args.distro, ros_pkg)
         print('Generating Spec file for {}.'.format(ros_pkg))
+        try:
+            spec_template = jinja_env.get_template('{}.spec.j2'.format(ros_pkg))
+        except jinja2.exceptions.TemplateNotFound:
+            spec_template = jinja_env.get_template('pkg.spec.j2')
         spec = spec_template.render(
             pkg_name=ros_pkg,
             distro=args.distro,
