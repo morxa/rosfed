@@ -121,6 +121,7 @@ def generate_spec_files(packages, distro, release_version, user_string,
     while i < len(packages):
         ros_pkg = packages[i]
         i += 1
+        print('Generating Spec file for {}.'.format(ros_pkg))
         ros_deps = get_ros_dependencies(distro, ros_pkg)
         dependencies[ros_pkg] = ros_deps
         if recursive:
@@ -134,7 +135,6 @@ def generate_spec_files(packages, distro, release_version, user_string,
             pkg_config = yaml.load(open('cfg/{}.yaml'.format(ros_pkg), 'r'))
         except FileNotFoundError:
             pkg_config = {}
-        print('Generating Spec file for {}.'.format(ros_pkg))
         try:
             spec_template = jinja_env.get_template('{}.spec.j2'.format(ros_pkg))
         except jinja2.exceptions.TemplateNotFound:
