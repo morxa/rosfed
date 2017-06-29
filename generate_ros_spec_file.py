@@ -49,21 +49,23 @@ class RosPkg:
 
     def compute_dependencies(self):
         for child in self.xml:
-            for dep_key, dep_list in {'build_depend': self.build_deps,
-                                      'test_depend': self.build_deps,
-                                      'run_depend': self.run_deps,
-                                      'buildtool_depend': self.build_deps,
-                                      'build_export_depend': self.build_deps,
-                                      'depend': self.run_deps,
+            for dep_key, dep_lists in {'build_depend': [self.build_deps],
+                                      'test_depend': [self.build_deps],
+                                      'run_depend': [self.run_deps],
+                                      'buildtool_depend': [self.build_deps],
+                                      'build_export_depend': [self.build_deps],
+                                      'depend': [self.run_deps, self.build_deps]
                                      }.items():
                 if child.tag == dep_key:
                     pkg = child.text
                     try:
                         self.distro_info.get_release_package_xml(pkg)
-                        dep_list['ros'].add(pkg)
+                        for dep_list in dep_lists:
+                            dep_list['ros'].add(pkg)
                     except KeyError:
                         system_pkg = get_system_package_name(pkg, self.rosdistro)
-                        dep_list['system'].add(system_pkg)
+                        for dep_list in dep_lists:
+                            dep_list['system'].add(system_pkg)
 
     def get_build_dependencies(self):
         return self.build_deps
