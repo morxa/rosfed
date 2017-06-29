@@ -52,11 +52,10 @@ Requires:       ros-{{ distro }}-{{ dep }}
 %setup -c -T
 {% for url in source_urls %}
 tar --strip-components=1 -xf %{SOURCE{{ loop.index0 }}}
-{%- endfor %}
+{% endfor %}
 {% for patch in patches %}
 %patch{{ loop.index0 }} -p1
-{%- endfor %}
-
+{% endfor %}
 {% endblock %}
 
 %build
