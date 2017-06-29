@@ -48,7 +48,6 @@ class RosPkg:
         self.compute_dependencies()
 
     def compute_dependencies(self):
-        deps = []
         for child in self.xml:
             for dep_key, dep_list in {'build_depend': self.build_deps,
                                       'test_depend': self.build_deps,
@@ -65,13 +64,12 @@ class RosPkg:
                     except KeyError:
                         system_pkg = get_system_package_name(pkg, self.rosdistro)
                         dep_list['system'].add(system_pkg)
-        return deps
 
-    def get_ros_dependencies(self):
-        return self.build_deps['ros'] | self.run_deps['ros']
+    def get_build_dependencies(self):
+        return self.build_deps
 
-    def get_system_dependencies(self):
-        return self.build_deps['system'] | self.run_deps['system']
+    def get_run_dependencies(self):
+        return self.run_deps
 
     def get_sources(self):
         ros_pkg = generator.generate_rosinstall(
@@ -161,13 +159,14 @@ def generate_spec_files(packages, distro, release_version, user_string,
         ros_pkg = RosPkg(name=packages[i], distro=distro)
         i += 1
         print('Generating Spec file for {}.'.format(ros_pkg.name))
-        ros_deps = ros_pkg.get_ros_dependencies()
+        build_deps = ros_pkg.get_build_dependencies()
+        run_deps = ros_pkg.get_run_dependencies()
+        ros_deps = build_deps['ros'] | run_deps['ros']
         dependencies[ros_pkg.name] = ros_deps
         if recursive:
             # Append all items that are not already in packages. We cannot use a
             # set, because we need to loop over it while we append items.
             packages += [ dep for dep in ros_deps if  not dep in packages ]
-        sys_deps = ros_pkg.get_system_dependencies()
         sources = ros_pkg.get_sources()
         version = ros_pkg.get_version()
         try:
@@ -186,8 +185,8 @@ def generate_spec_files(packages, distro, release_version, user_string,
             pkg_version=version, license='BSD',
             pkg_url='https://wiki.ros.org/'+ros_pkg.name,
             source_urls=sources,
-            ros_dependencies=sorted(ros_deps),
-            system_dependencies=sorted(sys_deps),
+            build_dependencies=build_deps,
+            run_dependencies=run_deps,
             pkg_description='ROS package {}.'.format(ros_pkg.name),
             pkg_release=release_version or pkg_config.get('release', '1'),
             user_string=user_string,
