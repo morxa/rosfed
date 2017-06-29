@@ -20,36 +20,58 @@ import time
 import yaml
 
 from rosinstall_generator import generator
+from defusedxml import ElementTree
+
+def get_system_package_name(pkg_name, rosdistro):
+    cmd = subprocess.run(
+        ['rosdep', '--rosdistro={}'.format(rosdistro),
+         'resolve', pkg_name],
+        stdout=subprocess.PIPE
+    )
+    assert cmd.returncode == 0, 'Could not find system package {}: {}'.format(
+        pkg_name, cmd.stderr or cmd.stdout.decode())
+    lines = cmd.stdout.decode().split('\n')
+    deps = [ dep for dep in lines if not (dep == '' or dep == '#dnf') ]
+    assert len(deps) == 1, 'Expected exactly one name, got: {}'.format(deps)
+    return deps[0]
+
 
 class RosPkg:
     def __init__(self, name, distro):
         self.rosdistro = distro
         self.name = name
-    def get_ros_dependencies(self):
-       dependency_dict = generator.generate_rosinstall(
-           self.rosdistro, [self.name], deps=True, deps_depth=1, deps_only=True,
-           wet_only=True, tar=True)
-       return [ pkg['tar']['local-name'].split('/')[-1]
-                for pkg in dependency_dict ]
+        self.distro_info = generator.get_wet_distro(distro)
+        xml_string = self.distro_info.get_release_package_xml(name)
+        self.xml = ElementTree.fromstring(xml_string)
+        self.build_deps = { 'ros': set(), 'system': set() }
+        self.run_deps = { 'ros': set(), 'system': set() }
+        self.compute_dependencies()
 
-    def get_system_dependencies(self, skip_keys):
-        cmd = subprocess.run(
-            ['rosdep', '--rosdistro={}'.format(self.rosdistro),
-             'keys', self.name],
-            stdout=subprocess.PIPE
-        )
-        deps_keys = cmd.stdout.decode().split('\n')
+    def compute_dependencies(self):
         deps = []
-        for dep in deps_keys:
-            if dep == '' or dep in skip_keys:
-                continue
-            cmd = subprocess.run(
-                ['rosdep', '--rosdistro={}'.format(self.rosdistro),
-                 'resolve', dep],
-                stdout=subprocess.PIPE)
-            deps += cmd.stdout.decode().split('\n')
-        deps = [ dep for dep in deps if not (dep == '' or dep == '#dnf') ]
+        for child in self.xml:
+            for dep_key, dep_list in {'build_depend': self.build_deps,
+                                      'test_depend': self.build_deps,
+                                      'run_depend': self.run_deps,
+                                      'buildtool_depend': self.build_deps,
+                                      'build_export_depend': self.build_deps,
+                                      'depend': self.run_deps,
+                                     }.items():
+                if child.tag == dep_key:
+                    pkg = child.text
+                    try:
+                        self.distro_info.get_release_package_xml(pkg)
+                        dep_list['ros'].add(pkg)
+                    except KeyError:
+                        system_pkg = get_system_package_name(pkg, self.rosdistro)
+                        dep_list['system'].add(system_pkg)
         return deps
+
+    def get_ros_dependencies(self):
+        return self.build_deps['ros'] | self.run_deps['ros']
+
+    def get_system_dependencies(self):
+        return self.build_deps['system'] | self.run_deps['system']
 
     def get_sources(self):
         ros_pkg = generator.generate_rosinstall(
@@ -145,7 +167,7 @@ def generate_spec_files(packages, distro, release_version, user_string,
             # Append all items that are not already in packages. We cannot use a
             # set, because we need to loop over it while we append items.
             packages += [ dep for dep in ros_deps if  not dep in packages ]
-        sys_deps = ros_pkg.get_system_dependencies(ros_deps)
+        sys_deps = ros_pkg.get_system_dependencies()
         sources = ros_pkg.get_sources()
         version = ros_pkg.get_version()
         try:
