@@ -84,6 +84,8 @@ class RosPkg:
         return re.match('[\w-]*-([0-9-_.]*)(-[0-9-]*)',
                         ros_pkg[0]['tar']['version']).group(1)
 
+    def get_license(self):
+        return self.xml.find('license').text
 
 def main():
     parser = argparse.ArgumentParser(
@@ -184,7 +186,8 @@ def generate_spec_files(packages, distro, release_version, user_string,
         spec = spec_template.render(
             pkg_name=ros_pkg.name,
             distro=distro,
-            pkg_version=version, license='BSD',
+            pkg_version=version,
+            license=ros_pkg.get_license(),
             pkg_url='https://wiki.ros.org/'+ros_pkg.name,
             source_urls=sources,
             build_dependencies=build_deps,
