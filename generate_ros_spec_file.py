@@ -21,38 +21,46 @@ import yaml
 
 from rosinstall_generator import generator
 
-def get_ros_dependencies(rosdistro, pkg_name):
-   dependency_dict = generator.generate_rosinstall(
-       rosdistro, [pkg_name], deps=True, deps_depth=1, deps_only=True,
-       wet_only=True, tar=True)
-   return [ pkg['tar']['local-name'].split('/')[-1] for pkg in dependency_dict ]
+class RosPkg:
+    def __init__(self, name, distro):
+        self.rosdistro = distro
+        self.name = name
+    def get_ros_dependencies(self):
+       dependency_dict = generator.generate_rosinstall(
+           self.rosdistro, [self.name], deps=True, deps_depth=1, deps_only=True,
+           wet_only=True, tar=True)
+       return [ pkg['tar']['local-name'].split('/')[-1]
+                for pkg in dependency_dict ]
 
-def get_system_dependencies(rosdistro, pkg_name, skip_keys):
-    cmd = subprocess.run(
-        ['rosdep', '--rosdistro={}'.format(rosdistro), 'keys', pkg_name],
-        stdout=subprocess.PIPE
-    )
-    deps_keys = cmd.stdout.decode().split('\n')
-    deps = []
-    for dep in deps_keys:
-        if dep == '' or dep in skip_keys:
-            continue
+    def get_system_dependencies(self, skip_keys):
         cmd = subprocess.run(
-            ['rosdep', '--rosdistro={}'.format(rosdistro), 'resolve', dep],
-            stdout=subprocess.PIPE)
-        deps += cmd.stdout.decode().split('\n')
-    deps = [ dep for dep in deps if not (dep == '' or dep == '#dnf') ]
-    return deps
+            ['rosdep', '--rosdistro={}'.format(self.rosdistro),
+             'keys', self.name],
+            stdout=subprocess.PIPE
+        )
+        deps_keys = cmd.stdout.decode().split('\n')
+        deps = []
+        for dep in deps_keys:
+            if dep == '' or dep in skip_keys:
+                continue
+            cmd = subprocess.run(
+                ['rosdep', '--rosdistro={}'.format(self.rosdistro),
+                 'resolve', dep],
+                stdout=subprocess.PIPE)
+            deps += cmd.stdout.decode().split('\n')
+        deps = [ dep for dep in deps if not (dep == '' or dep == '#dnf') ]
+        return deps
 
-def get_sources(rosdistro, pkg_name):
-    ros_pkg = generator.generate_rosinstall(
-        rosdistro, [pkg_name], deps=False, wet_only=True, tar=True)
-    return [ros_pkg[0]['tar']['uri']]
+    def get_sources(self):
+        ros_pkg = generator.generate_rosinstall(
+            self.rosdistro, [self.name], deps=False, wet_only=True, tar=True)
+        return [ros_pkg[0]['tar']['uri']]
 
-def get_version(rosdistro, pkg_name):
-    ros_pkg = generator.generate_rosinstall(
-        rosdistro, [pkg_name], deps=False, wet_only=True, tar=True)
-    return re.match('[\w-]*-([0-9-_.]*)(-[0-9-]*)', ros_pkg[0]['tar']['version']).group(1)
+    def get_version(self):
+        ros_pkg = generator.generate_rosinstall(
+            self.rosdistro, [self.name], deps=False, wet_only=True, tar=True)
+        return re.match('[\w-]*-([0-9-_.]*)(-[0-9-]*)',
+                        ros_pkg[0]['tar']['version']).group(1)
 
 
 def main():
@@ -128,35 +136,37 @@ def generate_spec_files(packages, distro, release_version, user_string,
     i = 0
     dependencies = {}
     while i < len(packages):
-        ros_pkg = packages[i]
+        ros_pkg = RosPkg(name=packages[i], distro=distro)
         i += 1
-        print('Generating Spec file for {}.'.format(ros_pkg))
-        ros_deps = get_ros_dependencies(distro, ros_pkg)
-        dependencies[ros_pkg] = ros_deps
+        print('Generating Spec file for {}.'.format(ros_pkg.name))
+        ros_deps = ros_pkg.get_ros_dependencies()
+        dependencies[ros_pkg.name] = ros_deps
         if recursive:
             # Append all items that are not already in packages. We cannot use a
             # set, because we need to loop over it while we append items.
             packages += [ dep for dep in ros_deps if  not dep in packages ]
-        sys_deps = get_system_dependencies(distro, ros_pkg, ros_deps)
-        sources = get_sources(distro, ros_pkg)
-        version = get_version(distro, ros_pkg)
+        sys_deps = ros_pkg.get_system_dependencies(ros_deps)
+        sources = ros_pkg.get_sources()
+        version = ros_pkg.get_version()
         try:
-            pkg_config = yaml.load(open('cfg/{}.yaml'.format(ros_pkg), 'r'))
+            pkg_config = yaml.load(
+                open('cfg/{}.yaml'.format(ros_pkg.name), 'r'))
         except FileNotFoundError:
             pkg_config = {}
         try:
-            spec_template = jinja_env.get_template('{}.spec.j2'.format(ros_pkg))
+            spec_template = jinja_env.get_template(
+                '{}.spec.j2'.format(ros_pkg.name))
         except jinja2.exceptions.TemplateNotFound:
             spec_template = jinja_env.get_template('pkg.spec.j2')
         spec = spec_template.render(
-            pkg_name=ros_pkg,
+            pkg_name=ros_pkg.name,
             distro=distro,
             pkg_version=version, license='BSD',
-            pkg_url='https://wiki.ros.org/'+ros_pkg,
+            pkg_url='https://wiki.ros.org/'+ros_pkg.name,
             source_urls=sources,
             ros_dependencies=sorted(ros_deps),
             system_dependencies=sorted(sys_deps),
-            pkg_description='ROS package {}.'.format(ros_pkg),
+            pkg_description='ROS package {}.'.format(ros_pkg.name),
             pkg_release=release_version or pkg_config.get('release', '1'),
             user_string=user_string,
             date=time.strftime("%a %b %d %Y", time.gmtime()),
@@ -164,7 +174,7 @@ def generate_spec_files(packages, distro, release_version, user_string,
             patches=pkg_config.get('patches', []),
         )
         with open(os.path.join(destination,
-                               'ros-{}-{}.spec'.format(distro, ros_pkg)),
+                               'ros-{}-{}.spec'.format(distro, ros_pkg.name)),
                   'w') as spec_file:
             spec_file.write(spec)
     return dependencies
