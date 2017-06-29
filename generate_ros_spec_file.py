@@ -115,7 +115,11 @@ def get_build_order(packages):
 def generate_spec_files(packages, distro, release_version, user_string,
                         recursive, no_arch):
     """ Generate Spec files for the given list of packages. """
-    jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader('templates'))
+    jinja_env = jinja2.Environment(
+        loader=jinja2.FileSystemLoader('templates'),
+        trim_blocks=True,
+        lstrip_blocks=True,
+    )
     i = 0
     dependencies = {}
     while i < len(packages):
