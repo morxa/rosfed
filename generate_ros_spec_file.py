@@ -91,6 +91,12 @@ class RosPkg:
     def get_description(self):
         return textwrap.fill(self.xml.find('description').text)
 
+    def get_website(self):
+        for url in self.xml.findall('url'):
+            if url.get('type') == 'website':
+                return url.text
+        return 'http://www.ros.org/'
+
 def main():
     parser = argparse.ArgumentParser(
         description='Generate Spec files for ROS packages with the '
@@ -192,7 +198,7 @@ def generate_spec_files(packages, distro, release_version, user_string,
             distro=distro,
             pkg_version=version,
             license=ros_pkg.get_license(),
-            pkg_url='https://wiki.ros.org/'+ros_pkg.name,
+            pkg_url=ros_pkg.get_website(),
             source_urls=sources,
             build_dependencies=build_deps,
             run_dependencies=run_deps,
