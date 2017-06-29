@@ -16,6 +16,7 @@ import os
 import re
 import subprocess
 import sys
+import textwrap
 import time
 import yaml
 
@@ -86,6 +87,9 @@ class RosPkg:
 
     def get_license(self):
         return self.xml.find('license').text
+
+    def get_description(self):
+        return textwrap.fill(self.xml.find('description').text)
 
 def main():
     parser = argparse.ArgumentParser(
@@ -192,7 +196,7 @@ def generate_spec_files(packages, distro, release_version, user_string,
             source_urls=sources,
             build_dependencies=build_deps,
             run_dependencies=run_deps,
-            pkg_description='ROS package {}.'.format(ros_pkg.name),
+            pkg_description=ros_pkg.get_description(),
             pkg_release=release_version or pkg_config.get('release', '1'),
             user_string=user_string,
             date=time.strftime("%a %b %d %Y", time.gmtime()),
