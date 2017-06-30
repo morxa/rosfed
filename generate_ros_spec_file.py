@@ -54,7 +54,10 @@ class RosPkg:
                                       'test_depend': [self.build_deps],
                                       'run_depend': [self.run_deps],
                                       'buildtool_depend': [self.build_deps],
-                                      'build_export_depend': [self.build_deps],
+                                      'build_export_depend': [self.run_deps,
+                                                              self.build_deps],
+                                      'buildtool_export_depend':
+                                        [self.run_deps, self.build_deps],
                                       'depend': [self.run_deps, self.build_deps]
                                      }.items():
                 if child.tag == dep_key:
