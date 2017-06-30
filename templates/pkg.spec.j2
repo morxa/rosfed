@@ -75,13 +75,14 @@ FCFLAGS="${FCFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FCFLAGS ; \
 {% block install %}
 source %{_libdir}/ros/setup.bash
 
+DESTDIR=%{buildroot} ; export DESTDIR
+
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \
-  --pkg {{ pkg_name }} \
-  --cmake-args -DCMAKE_INSTALL_PREFIX=%{buildroot}/%{_libdir}/ros/
+  --pkg {{ pkg_name }}
 
 grep -rIl "%{buildroot}" %{buildroot} | xargs sed -i "s:%{buildroot}::g"
 
