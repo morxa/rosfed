@@ -103,9 +103,6 @@ find %{buildroot}/%{_libdir}/ros/{bin,etc,include,lib/pkgconfig,lib64/python*,li
 find %{buildroot}/%{_libdir}/ros/lib/ -mindepth 1 -maxdepth 1 \
   ! -name pkgconfig ! -name "python*" \
   | sed "s:%{buildroot}/::" >> files.list
-find %{buildroot}/%{_libdir}/ros/lib/ -mindepth 1 -maxdepth 1 -type d \
-  -name {{ pkg_name }} \
-  | sed "s:%{buildroot}/::" >> files.list
 
 
 find . -maxdepth 1 -type f -iname "*readme*" | sed "s:^:%%doc :" >> files.list
