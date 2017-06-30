@@ -82,8 +82,12 @@ catkin_make_isolated \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \
+{% if build_flags %}
+  --pkg {{ pkg_name }} \
+  {{ build_flags }}
+{% else %}
   --pkg {{ pkg_name }}
-
+{% endif %}
 grep -rIl "%{buildroot}" %{buildroot} | xargs sed -i "s:%{buildroot}::g"
 
 rm -rf %{buildroot}/%{_libdir}/ros/{.catkin,.rosinstall,_setup*,setup*,env.sh}
