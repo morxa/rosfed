@@ -134,6 +134,9 @@ class RosPkg:
     def get_build_flags(self):
         return self.pkg_config.get('build_flags', '')
 
+    def has_no_debug(self):
+        return self.pkg_config.get('no_debug', False)
+
 def main():
     parser = argparse.ArgumentParser(
         description='Generate Spec files for ROS packages with the '
@@ -241,6 +244,7 @@ def generate_spec_files(packages, distro, release_version, user_string,
             noarch=no_arch or ros_pkg.is_noarch(),
             patches=ros_pkg.get_patches(),
             build_flags=ros_pkg.get_build_flags(),
+            no_debug=ros_pkg.has_no_debug(),
         )
         with open(os.path.join(destination,
                                'ros-{}-{}.spec'.format(distro, ros_pkg.name)),

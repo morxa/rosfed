@@ -45,6 +45,9 @@ Requires:       ros-{{ distro }}-{{ dep }}
 {{ pkg_description }}
 {% endblock %}
 
+{% if no_debug %}
+%global debug_package %{nil}
+{% endif %}
 
 %prep
 {% block prep %}
