@@ -46,6 +46,11 @@ class RosPkg:
         self.xml = ElementTree.fromstring(xml_string)
         self.build_deps = { 'ros': set(), 'system': set() }
         self.run_deps = { 'ros': set(), 'system': set() }
+        try:
+            self.pkg_config = yaml.load(
+                open('cfg/{}.yaml'.format(self.name), 'r'))
+        except FileNotFoundError:
+            self.pkg_config = {}
         self.compute_dependencies()
 
     def compute_dependencies(self):
@@ -71,11 +76,20 @@ class RosPkg:
                         for dep_list in dep_lists:
                             dep_list['system'].add(system_pkg)
 
+    def get_dependencies_from_cfg(self, dependency_type):
+        try:
+            deps = self.pkg_config['dependencies'][dependency_type]
+        except KeyError:
+            deps = {}
+        for key, val in deps.items():
+            deps[key] = set(val)
+        return deps
+
     def get_build_dependencies(self):
-        return self.build_deps
+        return { **self.build_deps, **self.get_dependencies_from_cfg('build') }
 
     def get_run_dependencies(self):
-        return self.run_deps
+        return { **self.run_deps, **self.get_dependencies_from_cfg('run') }
 
     def get_sources(self):
         ros_pkg = generator.generate_rosinstall(
@@ -101,6 +115,15 @@ class RosPkg:
             if url.get('type') == 'website':
                 return url.text
         return 'http://www.ros.org/'
+
+    def get_release(self):
+        return self.pkg_config.get('release', 1)
+
+    def is_noarch(self):
+        return self.pkg_config.get('noarch', False)
+
+    def get_patches(self):
+        return self.pkg_config.get('patches', [])
 
 def main():
     parser = argparse.ArgumentParser(
@@ -189,11 +212,6 @@ def generate_spec_files(packages, distro, release_version, user_string,
         sources = ros_pkg.get_sources()
         version = ros_pkg.get_version()
         try:
-            pkg_config = yaml.load(
-                open('cfg/{}.yaml'.format(ros_pkg.name), 'r'))
-        except FileNotFoundError:
-            pkg_config = {}
-        try:
             spec_template = jinja_env.get_template(
                 '{}.spec.j2'.format(ros_pkg.name))
         except jinja2.exceptions.TemplateNotFound:
@@ -208,11 +226,11 @@ def generate_spec_files(packages, distro, release_version, user_string,
             build_dependencies=build_deps,
             run_dependencies=run_deps,
             pkg_description=ros_pkg.get_description(),
-            pkg_release=release_version or pkg_config.get('release', '1'),
+            pkg_release=release_version or ros_pkg.get_release(),
             user_string=user_string,
             date=time.strftime("%a %b %d %Y", time.gmtime()),
-            noarch=no_arch or pkg_config.get('noarch', False),
-            patches=pkg_config.get('patches', []),
+            noarch=no_arch or ros_pkg.is_noarch(),
+            patches=ros_pkg.get_patches(),
         )
         with open(os.path.join(destination,
                                'ros-{}-{}.spec'.format(distro, ros_pkg.name)),
