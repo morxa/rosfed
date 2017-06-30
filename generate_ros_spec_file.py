@@ -86,7 +86,13 @@ class RosPkg:
         return deps
 
     def get_build_dependencies(self):
-        return { **self.build_deps, **self.get_dependencies_from_cfg('build') }
+        build_deps = {
+            **self.build_deps,
+            **self.get_dependencies_from_cfg('build')
+        }
+        if self.name != 'catkin':
+            build_deps['ros'].add('catkin')
+        return build_deps
 
     def get_run_dependencies(self):
         return { **self.run_deps, **self.get_dependencies_from_cfg('run') }
