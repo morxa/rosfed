@@ -89,7 +89,9 @@ class RosPkg:
         return self.xml.find('license').text
 
     def get_description(self):
-        return textwrap.fill(self.xml.find('description').text)
+        return textwrap.fill(self.xml.find('description').text \
+                             or 'ROS {} package {}.'.format(self.rosdistro,
+                                                            self.name))
 
     def get_website(self):
         for url in self.xml.findall('url'):
