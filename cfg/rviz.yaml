@@ -1,0 +1,5 @@
+dependencies:
+  build:
+    system:
+      - sip-devel
+      - python-qt5-devel

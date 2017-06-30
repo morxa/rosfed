@@ -1,0 +1,5 @@
+dependencies:
+  build:
+    system:
+      - qtermwidget-qt5-devel
+      - python-qt5-devel

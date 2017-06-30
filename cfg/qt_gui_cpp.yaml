@@ -1,0 +1,7 @@
+dependencies:
+  build:
+    system:
+      - sip-devel
+      - shiboken-devel
+      - qtermwidget-qt5-devel
+      - python-qt5-devel

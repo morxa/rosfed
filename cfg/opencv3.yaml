@@ -1,0 +1,6 @@
+dependencies:
+  build:
+    system:
+      - qt5-qtbase-devel
+build_flags: "--cmake-args -DENABLE_PRECOMPILED_HEADERS=OFF"
+
