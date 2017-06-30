@@ -1,0 +1,25 @@
+{% extends "pkg.spec.j2" %}
+{% block install %}
+mkdir -p %{buildroot}/%{_libdir}/ros/
+
+DESTDIR=%{buildroot} ; export DESTDIR
+
+./bin/catkin_make_isolated \
+  -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+  --source . \
+  --install \
+  --install-space %{_libdir}/ros/ \
+  --pkg catkin
+
+find %{buildroot}/%{_libdir}/ros/{bin,etc,lib/pkgconfig,lib/python*/site-packages,share} \
+  -mindepth 1 -maxdepth 1 | sed "s:%{buildroot}/::" > files.list
+
+find %{buildroot}/%{_libdir}/ros -maxdepth 1 \
+  -name .catkin -o -name .rosinstall \
+  -o -name "_setup*" -o -name "setup.*" -o -name env.sh \
+  | sed -e "s:%{buildroot}/::" -e "s:.py$:.py{,o,c}:" >> files.list
+
+find . -maxdepth 1 -type f -iname "*readme*" | sed "s:^:%%doc :" >> files.list
+find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.list
+
+{% endblock %}
