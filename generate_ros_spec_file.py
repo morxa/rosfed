@@ -86,16 +86,20 @@ class RosPkg:
         return deps
 
     def get_build_dependencies(self):
-        build_deps = {
-            **self.build_deps,
-            **self.get_dependencies_from_cfg('build')
-        }
+        build_deps = {}
+        for key, val in self.build_deps.items():
+            build_deps[key] = val | \
+                    self.get_dependencies_from_cfg('build').get(key, set())
         if self.name != 'catkin':
             build_deps['ros'].add('catkin')
         return build_deps
 
     def get_run_dependencies(self):
-        return { **self.run_deps, **self.get_dependencies_from_cfg('run') }
+        run_deps = {}
+        for key, val in self.run_deps.items():
+            run_deps[key] = val | \
+                    self.get_dependencies_from_cfg('run').get(key, set())
+        return run_deps
 
     def get_sources(self):
         ros_pkg = generator.generate_rosinstall(
