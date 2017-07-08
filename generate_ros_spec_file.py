@@ -157,8 +157,6 @@ def main():
                     'rosinstall_generator.')
     parser.add_argument('-r', '--recursive', action='store_true', default=False,
                         help='Also generate Spec files for dependencies')
-    parser.add_argument('-u', '--update', action='store_true', default=False,
-                        help='Update existing Spec files')
     parser.add_argument('--distro', default='kinetic',
                         help='The ROS distro')
     parser.add_argument('-t', '--template', default='templates/pkg.spec.j2',
