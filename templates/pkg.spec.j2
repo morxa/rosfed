@@ -25,17 +25,17 @@ BuildArch: noarch
 {% endif %}
 
 {% block dependencies %}
-{% for dep in build_dependencies.system %}
+{% for dep in build_dependencies.system|sort %}
 BuildRequires:  {{ dep }}
 {% endfor %}
-{% for dep in build_dependencies.ros %}
+{% for dep in build_dependencies.ros|sort %}
 BuildRequires:  ros-{{ distro }}-{{ dep }}
 {% endfor %}
 
-{% for dep in run_dependencies.system %}
+{% for dep in run_dependencies.system|sort %}
 Requires:       {{ dep }}
 {% endfor %}
-{% for dep in run_dependencies.ros %}
+{% for dep in run_dependencies.ros|sort %}
 Requires:       ros-{{ distro }}-{{ dep }}
 {% endfor %}
 {% endblock %}
