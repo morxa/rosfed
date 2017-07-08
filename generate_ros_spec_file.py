@@ -190,6 +190,9 @@ def main():
                         help='Set BuildArch to noarch')
     parser.add_argument('-d', '--destination', default='./specs',
                         help='Write generated Spec files to this directory')
+    parser.add_argument('-c', '--changelog', type=str,
+                        default='Update auto-generated Spec file',
+                        help='The new changelog entry line')
     parser.add_argument('-B', '--build-order-file', type=argparse.FileType('w'),
                         default=None,
                         help='Print the order in which the packages should be '
@@ -209,8 +212,8 @@ def main():
         args.user_string = user_string.strip()
     dependencies = generate_spec_files(args.ros_pkg, args.distro,
                                        args.release_version, args.user_string,
-                                       args.recursive, args.no_arch,
-                                       args.destination)
+                                       args.changelog, args.recursive,
+                                       args.no_arch, args.destination)
     if args.build_order_file:
         order = get_build_order(dependencies)
         for stage in order:
@@ -233,7 +236,7 @@ def get_build_order(packages):
     return order
 
 def generate_spec_files(packages, distro, release_version, user_string,
-                        recursive, no_arch, destination):
+                        changelog_entry, recursive, no_arch, destination):
     """ Generate Spec files for the given list of packages. """
     jinja_env = jinja2.Environment(
         loader=jinja2.FileSystemLoader('templates'),
@@ -289,6 +292,7 @@ def generate_spec_files(packages, distro, release_version, user_string,
             user_string=user_string,
             date=time.strftime("%a %b %d %Y", time.gmtime()),
             changelog=changelog,
+            changelog_entry=changelog_entry,
             noarch=no_arch or ros_pkg.is_noarch(),
             patches=ros_pkg.get_patches(),
             build_flags=ros_pkg.get_build_flags(),

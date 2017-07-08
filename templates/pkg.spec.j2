@@ -115,5 +115,5 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 %changelog
 * {{ date }} {{ user_string }} - {{ pkg_version }}-{{ pkg_release }}
-- Update auto-generated Spec file
+- {{ changelog_entry }}
 {{ changelog }}
