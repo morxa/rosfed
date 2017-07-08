@@ -36,6 +36,16 @@ def get_system_package_name(pkg_name, rosdistro):
     assert len(deps) == 1, 'Expected exactly one name, got: {}'.format(deps)
     return deps[0]
 
+def get_changelog_from_spec(spec):
+    """ Get the changelog of an existing Spec file.
+
+    Args:
+        spec: The path to the Spec file.
+    Returns:
+        The changelog in the Spec file as string, excluding the %changelog tag.
+    """
+    spec_as_list = open(spec, 'r').readlines()
+    return ''.join(spec_as_list[spec_as_list.index('%changelog\n')+1:])
 
 class RosPkg:
     def __init__(self, name, distro):
@@ -227,6 +237,12 @@ def generate_spec_files(packages, distro, release_version, user_string,
             packages += [ dep for dep in ros_deps if  not dep in packages ]
         sources = ros_pkg.get_sources()
         version = ros_pkg.get_version()
+        outfile = os.path.join(destination,
+                               'ros-{}-{}.spec'.format(distro, ros_pkg.name))
+        if os.path.isfile(outfile):
+            changelog = get_changelog_from_spec(outfile)
+        else:
+            changelog = ''
         try:
             spec_template = jinja_env.get_template(
                 '{}.spec.j2'.format(ros_pkg.name))
@@ -245,14 +261,13 @@ def generate_spec_files(packages, distro, release_version, user_string,
             pkg_release=release_version or ros_pkg.get_release(),
             user_string=user_string,
             date=time.strftime("%a %b %d %Y", time.gmtime()),
+            changelog=changelog,
             noarch=no_arch or ros_pkg.is_noarch(),
             patches=ros_pkg.get_patches(),
             build_flags=ros_pkg.get_build_flags(),
             no_debug=ros_pkg.has_no_debug(),
         )
-        with open(os.path.join(destination,
-                               'ros-{}-{}.spec'.format(distro, ros_pkg.name)),
-                  'w') as spec_file:
+        with open(outfile, 'w') as spec_file:
             spec_file.write(spec)
     return dependencies
 
