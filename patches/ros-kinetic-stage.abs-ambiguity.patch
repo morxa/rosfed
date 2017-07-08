@@ -1,0 +1,24 @@
+Only in stage-release-release-kinetic-stage-4.1.1-1/libstage: .stage.hh.swp
+diff -ur stage-release-release-kinetic-stage-4.1.1-1.orig/libstage/world.cc stage-release-release-kinetic-stage-4.1.1-1/libstage/world.cc
+--- stage-release-release-kinetic-stage-4.1.1-1.orig/libstage/world.cc	2016-03-28 21:05:21.000000000 +0200
++++ stage-release-release-kinetic-stage-4.1.1-1/libstage/world.cc	2017-07-01 19:14:19.076729976 +0200
+@@ -83,6 +83,11 @@
+ 
+ //#define DEBUG 
+ 
++#include <cmath>
++using std::abs;
++
++#include <cstdlib>
++
+ #include <stdlib.h>
+ #include <assert.h>
+ #include <string.h> // for strdup(3)
+@@ -97,6 +102,7 @@
+ #include "option.hh"
+ using namespace Stg;
+ 
++
+ // // function objects for comparing model positions
+ bool World::ltx::operator()(const Model* a, const Model* b) const
+ {

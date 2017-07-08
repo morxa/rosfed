@@ -1,0 +1,12 @@
+diff -ur rqt_shell-release-release-kinetic-rqt_shell-0.4.8-0.orig/src/rqt_shell/spyder_shell_widget.py rqt_shell-release-release-kinetic-rqt_shell-0.4.8-0/src/rqt_shell/spyder_shell_widget.py
+--- rqt_shell-release-release-kinetic-rqt_shell-0.4.8-0.orig/src/rqt_shell/spyder_shell_widget.py	2017-04-28 20:23:47.000000000 +0200
++++ rqt_shell-release-release-kinetic-rqt_shell-0.4.8-0/src/rqt_shell/spyder_shell_widget.py	2017-06-30 20:07:14.763156208 +0200
+@@ -106,7 +106,7 @@
+ 
+         if script_path:
+             options = [
+-                "-c 'source %s; /bin/bash -i'" % os.path.abspath(script_path)])
++                "-c 'source %s; /bin/bash -i'" % os.path.abspath(script_path)]
+         else:
+             options = ['-i']
+         self.process.start('/bin/bash', options)
