@@ -214,9 +214,9 @@ def generate_spec_files(packages, distro, release_version, user_string,
     i = 0
     dependencies = {}
     while i < len(packages):
+        print('Generating Spec file for {}.'.format(packages[i]))
         ros_pkg = RosPkg(name=packages[i], distro=distro)
         i += 1
-        print('Generating Spec file for {}.'.format(ros_pkg.name))
         build_deps = ros_pkg.get_build_dependencies()
         run_deps = ros_pkg.get_run_dependencies()
         ros_deps = build_deps['ros'] | run_deps['ros']
