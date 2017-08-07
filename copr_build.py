@@ -17,68 +17,73 @@ import json
 import re
 import subprocess
 
-""" Base URL of the COPR, will be appended with the API URL suffix. """
-copr_url = 'https://copr.fedorainfracloud.org'
+class CoprBuilder:
+    def __init__(self, project_id):
+        """ Initialize the CoprBuilder using the given project ID.
 
-def build_spec(project_id, chroot, spec):
-    """ Build a package in COPR from a SPEC file.
+        Args:
+            project_id: The ID of the COPR project to use for builds.
+        """
+        self.project_id = project_id
+        self.copr_client = copr.create_client2_from_file_config()
 
-    Args:
-        project_id: The COPR project where the package should be built.
-        chroot: The chroot to use for the build, e.g., fedora-26-x86_64
-        spec: The path to the SPEC file of the package.
-    """
-    print('Building {} for chroot {}'.format(spec, chroot))
-    res = subprocess.run(['rpmbuild', '-bs', spec],
-                         universal_newlines=True,
-                         stdout=subprocess.PIPE)
-    assert res.returncode == 0, 'Failed to build SRPM for ' + spec
-    match = re.match('Wrote: (\S+)', res.stdout)
-    assert match, 'Unexpected output from rpmbuild: "%s"'.format(res.stdout)
-    srpm = match.group(1)
-    build_srpm(project_id, chroot, srpm)
+    def build_spec(self, chroot, spec):
+        """ Build a package in COPR from a SPEC file.
 
-def build_srpm(project_id, chroot, srpm):
-    """ Build a package in COPR from a SRPM.
+        Args:
+            project_id: The COPR project where the package should be built.
+            chroot: The chroot to use for the build, e.g., fedora-26-x86_64
+            spec: The path to the SPEC file of the package.
+        """
+        print('Building {} for chroot {}'.format(spec, chroot))
+        res = subprocess.run(['rpmbuild', '-bs', spec],
+                             universal_newlines=True,
+                             stdout=subprocess.PIPE)
+        assert res.returncode == 0, 'Failed to build SRPM for ' + spec
+        match = re.match('Wrote: (\S+)', res.stdout)
+        assert match, 'Unexpected output from rpmbuild: "%s"'.format(res.stdout)
+        srpm = match.group(1)
+        self.build_srpm(chroot, srpm)
 
-    Args:
-        project_id: The COPR project where the package should be built.
-        chroot: The chroot to use for the build, e.g., fedora-26-x86_64
-        srpm: The path to the SRPM file of the package.
-    """
-    print('Building {} for project {} with chroot {}'.format(
-        srpm, project_id, chroot))
-    copr_client = copr.create_client2_from_file_config()
-    build = copr_client.builds.create_from_file(
-        project_id=project_id, file_path=srpm, chroots=[chroot])
-    while not build.is_finished():
-        build = build.get_self()
-    assert build.state == 'succeeded', \
-            'Build failed, state is {}.'.format(build.state)
-    print('Building {} was successful.'.format(srpm))
+    def build_srpm(self, chroot, srpm):
+        """ Build a package in COPR from a SRPM.
 
-def pkg_is_built(copr_project_id, chroot, pkg_name):
-    """ Check if the given package is already built in the COPR.
+        Args:
+            project_id: The COPR project where the package should be built.
+            chroot: The chroot to use for the build, e.g., fedora-26-x86_64
+            srpm: The path to the SRPM file of the package.
+        """
+        print('Building {} for project {} with chroot {}'.format(
+            srpm, self.project_id, chroot))
+        build = self.copr_client.builds.create_from_file(
+            project_id=self.project_id, file_path=srpm, chroots=[chroot])
+        while not build.is_finished():
+            build = build.get_self()
+        assert build.state == 'succeeded', \
+                'Build failed, state is {}.'.format(build.state)
+        print('Building {} was successful.'.format(srpm))
 
-    Args:
-        copr_project_id: The ID of the COPR project to check for the package.
-        chroot: The chroot to check, e.g., fedora-26-x86_64.
-        pkg_name: The name of the package to look for.
+    def pkg_is_built(self, chroot, pkg_name):
+        """ Check if the given package is already built in the COPR.
 
-    Returns:
-        True iff the package was already built in the given project and chroot.
-    """
-    copr_client = copr.create_client2_from_file_config()
-    builds = copr_client.builds.get_list(copr_project_id)
-    for build in builds:
-        if build.package_name == pkg_name:
-            build_tasks = build.get_build_tasks()
-            for build_task in build_tasks:
-                # TODO: add version check
-                if build_task.state == 'succeeded' and \
-                   build_task.chroot_name == chroot:
-                    return True
-    return False
+        Args:
+            copr_project_id: The ID of the COPR project to check for the package.
+            chroot: The chroot to check, e.g., fedora-26-x86_64.
+            pkg_name: The name of the package to look for.
+
+        Returns:
+            True iff the package was already built in the project and chroot.
+        """
+        builds = self.copr_client.builds.get_list(self.project_id)
+        for build in builds:
+            if build.package_name == pkg_name:
+                build_tasks = build.get_build_tasks()
+                for build_task in build_tasks:
+                    # TODO: add version check
+                    if build_task.state == 'succeeded' and \
+                       build_task.chroot_name == chroot:
+                        return True
+        return False
 
 def main():
     """ Main function to directly build a SPEC file. """
@@ -93,11 +98,12 @@ def main():
                         help='The directory where to look for SPEC files')
     parser.add_argument('pkg_name', nargs='+')
     args = parser.parse_args()
+    copr_builder = CoprBuilder(args.project_id)
     for chroot in args.chroot:
         for pkg in args.pkg_name:
-            if args.force or not pkg_is_built(args.project_id, chroot, pkg):
+            if args.force or not copr_builder.pkg_is_built(chroot, pkg):
                 spec = args.spec_dir + pkg + '.spec'
-                build_spec(project_id=args.project_id, chroot=chroot, spec=spec)
+                copr_builder.build_spec(chroot=chroot, spec=spec)
 
 if __name__ == '__main__':
     main()
