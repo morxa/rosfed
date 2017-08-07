@@ -49,8 +49,8 @@ def build_srpm(project_id, chroot, srpm):
     print('Building {} for project {} with chroot {}'.format(
         srpm, project_id, chroot))
     copr_client = copr.create_client2_from_file_config()
-    build = copr_client.builds.create_from_file(project_id=project_id,
-                                                file_path=srpm)
+    build = copr_client.builds.create_from_file(
+        project_id=project_id, file_path=srpm, chroots=[chroot])
     while not build.is_finished():
         build = build.get_self()
     assert build.state == 'succeeded', \
