@@ -83,6 +83,8 @@ def pkg_is_built(copr_project_id, chroot, pkg_name):
 def main():
     """ Main function to directly build a SPEC file. """
     parser = argparse.ArgumentParser()
+    parser.add_argument('-f', '--force', action='store_true', default=False,
+                        help='Force a rebuild if package was already built')
     parser.add_argument('--chroot', action='append',
                         help='The chroot(s) to use for the packages')
     parser.add_argument('--project-id', type=int, default=14923,
@@ -93,7 +95,7 @@ def main():
     args = parser.parse_args()
     for chroot in args.chroot:
         for pkg in args.pkg_name:
-            if not pkg_is_built(args.project_id, chroot, pkg):
+            if args.force or not pkg_is_built(args.project_id, chroot, pkg):
                 spec = args.spec_dir + pkg + '.spec'
                 build_spec(project_id=args.project_id, chroot=chroot, spec=spec)
 
