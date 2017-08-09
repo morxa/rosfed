@@ -27,7 +27,7 @@ class CoprBuilder:
         self.project_id = project_id
         self.copr_client = copr.create_client2_from_file_config()
 
-    def build_spec(self, chroot, spec):
+    def build_spec(self, chroot, spec, wait_for_completion=False):
         """ Build a package in COPR from a SPEC file.
 
         Args:
@@ -43,25 +43,32 @@ class CoprBuilder:
         match = re.match('Wrote: (\S+)', res.stdout)
         assert match, 'Unexpected output from rpmbuild: "%s"'.format(res.stdout)
         srpm = match.group(1)
-        self.build_srpm(chroot, srpm)
+        return self.build_srpm(chroot, srpm, wait_for_completion)
 
-    def build_srpm(self, chroot, srpm):
+    def build_srpm(self, chroot, srpm, wait_for_completion):
         """ Build a package in COPR from a SRPM.
 
         Args:
             project_id: The COPR project where the package should be built.
             chroot: The chroot to use for the build, e.g., fedora-26-x86_64
             srpm: The path to the SRPM file of the package.
+            wait_for_completion: If set to True, wait until the build has
+                                 terminated.
+
+        Returns:
+            The build object created for this build.
         """
         print('Building {} for project {} with chroot {}'.format(
             srpm, self.project_id, chroot))
         build = self.copr_client.builds.create_from_file(
             project_id=self.project_id, file_path=srpm, chroots=[chroot])
-        while not build.is_finished():
-            build = build.get_self()
-        assert build.state == 'succeeded', \
-                'Build failed, state is {}.'.format(build.state)
-        print('Building {} was successful.'.format(srpm))
+        assert build, 'COPR client returned build object "{}"'.format(build)
+        if wait_for_completion:
+            self.wait_for_completion([build])
+            assert build.state == 'succeeded', \
+                    'Build failed, state is {}.'.format(build.state)
+            print('Building {} was successful.'.format(srpm))
+        return build
 
     def pkg_is_built(self, chroot, pkg_name):
         """ Check if the given package is already built in the COPR.
@@ -85,6 +92,23 @@ class CoprBuilder:
                         return True
         return False
 
+    def wait_for_completion(self, builds):
+        """ Wait until all given builds are finished.
+
+        Args:
+            builds: A list of builds to wait for.
+        """
+        print('Waiting for {} build(s) to complete...'.format(len(builds)))
+        completed = set()
+        builds = set(builds)
+        while completed != builds:
+            for build in builds - completed:
+                if build.get_self().is_finished():
+                    completed.add(build)
+                    print('{}/{}: {} finished building.'.format(
+                        len(completed), len(builds),
+                        build.get_self().package_name))
+
 def main():
     """ Main function to directly build a SPEC file. """
     parser = argparse.ArgumentParser()
@@ -103,7 +127,8 @@ def main():
         for pkg in args.pkg_name:
             if args.force or not copr_builder.pkg_is_built(chroot, pkg):
                 spec = args.spec_dir + pkg + '.spec'
-                copr_builder.build_spec(chroot=chroot, spec=spec)
+                copr_builder.build_spec(chroot=chroot, spec=spec,
+                                        wait_for_completion=True)
 
 if __name__ == '__main__':
     main()
