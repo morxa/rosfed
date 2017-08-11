@@ -17,6 +17,12 @@ import json
 import re
 import subprocess
 
+class CoprBuildError(Exception):
+    def __init__(self, error):
+        self.error = error
+    def __str__(self):
+        return repr(self.error)
+
 class CoprBuilder:
     def __init__(self, project_id):
         """ Initialize the CoprBuilder using the given project ID.
@@ -115,6 +121,10 @@ class CoprBuilder:
                     print('{}/{}: {} finished building.'.format(
                         len(completed), len(builds),
                         build.get_self().package_name))
+                elif build.get_self().state == 'canceled':
+                    raise CoprBuildError(
+                        'Build {} of package {} was canceled'.format(
+                            build.get_self().id, build.get_self().package_name))
 
 def main():
     """ Main function to directly build a SPEC file. """
