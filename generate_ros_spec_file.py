@@ -185,6 +185,8 @@ def main():
                         help='Path to the Jinja template for the Spec file')
     parser.add_argument('--user_string', default = '',
                         help='The user string to use for the changelog')
+    parser.add_argument('--bump-release', default=False, action='store_true',
+                        help='If set to true, bump the Release: tag by 1')
     parser.add_argument('--release-version', default='',
                         help='The Release: of the resulting Spec files')
     parser.add_argument('--no-arch', action='store_true', default=False,
@@ -223,6 +225,7 @@ def main():
     # TODO: Improve design, we should not resolve dependencies and generate SPEC
     # files in one step, these are not really related.
     dependencies = generate_spec_files(args.ros_pkg, args.distro,
+                                       args.bump_release,
                                        args.release_version, args.user_string,
                                        args.changelog, args.recursive,
                                        args.no_arch, args.destination)
@@ -269,8 +272,9 @@ def get_build_order(packages):
         resolved_pkgs |= leaves
     return order
 
-def generate_spec_files(packages, distro, release_version, user_string,
-                        changelog_entry, recursive, no_arch, destination):
+def generate_spec_files(packages, distro, bump_release, release_version,
+                        user_string, changelog_entry, recursive, no_arch,
+                        destination):
     """ Generate Spec files for the given list of packages. """
     jinja_env = jinja2.Environment(
         loader=jinja2.FileSystemLoader('templates'),
@@ -302,7 +306,9 @@ def generate_spec_files(packages, distro, release_version, user_string,
                 # or bump release if it is the same version.
                 version_info = get_version_from_spec(outfile)
                 if version_info['version'] == version:
-                    release_version = int(version_info['release']) + 1
+                    release_version = int(version_info['release'])
+                    if bump_release:
+                        release_version += 1
                 else:
                     release_version = 1
         else:
