@@ -11,6 +11,7 @@ Generate Spec files for ROS packages with the rosinstall_generator.
 """
 
 import argparse
+import copr_build
 import jinja2
 import os
 import re
@@ -193,6 +194,15 @@ def main():
     parser.add_argument('-c', '--changelog', type=str,
                         default='Update auto-generated Spec file',
                         help='The new changelog entry line')
+    build_args = parser.add_argument_group('build arguments')
+    build_args.add_argument('-b', '--build', action='store_true', default=False,
+                            help='Build the generated SPEC file')
+    build_args.add_argument('--copr-project-id', type=int,
+                            help='The ID of the COPR project to use for builds')
+    build_args.add_argument('--chroot', action='append', type=str,
+                            help='The chroot used for building the packages, '
+                                 'specify multiple chroots by using the flag '
+                                 'multiple times')
     parser.add_argument('-B', '--build-order-file', type=argparse.FileType('w'),
                         default=None,
                         help='Print the order in which the packages should be '
@@ -210,6 +220,8 @@ def main():
         if sys.version_info[0] > 2:
             user_string = user_string.decode(errors='replace')
         args.user_string = user_string.strip()
+    # TODO: Improve design, we should not resolve dependencies and generate SPEC
+    # files in one step, these are not really related.
     dependencies = generate_spec_files(args.ros_pkg, args.distro,
                                        args.release_version, args.user_string,
                                        args.changelog, args.recursive,
@@ -218,6 +230,28 @@ def main():
         order = get_build_order(dependencies)
         for stage in order:
             args.build_order_file.write(" ".join(stage) + '\n')
+    if args.build:
+        assert args.copr_project_id, 'You need to provide a COPR Project ID.'
+        assert args.chroot, 'You need to provide a chroot to use for builds.'
+        copr_builder = copr_build.CoprBuilder(project_id=args.copr_project_id)
+        for chroot in args.chroot:
+            for stage in get_build_order(dependencies):
+                stage_builds = []
+                for package in stage:
+                    pkg_name = 'ros-{}-{}'.format(args.distro, package)
+                    if copr_builder.pkg_is_built(chroot, pkg_name):
+                        print('Skipping {}, package is already built!'.format(
+                            pkg_name))
+                    else:
+                        spec = os.path.join(args.destination, pkg_name+'.spec')
+                        build = copr_builder.build_spec(chroot, spec)
+                        stage_builds.append(build)
+                copr_builder.wait_for_completion(stage_builds)
+                # update all builds
+                stage_builds = [ build.get_self() for build in stage_builds ]
+                for build in stage_builds:
+                    assert build.state == 'succeeded', \
+                            'Failed to build {}!'.format(build.package_name)
 
 def get_build_order(packages):
     """ Get the order in which to build the given dictionary of packages. """
