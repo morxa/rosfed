@@ -81,15 +81,22 @@ class CoprBuilder:
         Returns:
             True iff the package was already built in the project and chroot.
         """
+        offset = 0
         builds = self.copr_client.builds.get_list(self.project_id)
-        for build in builds:
-            if build.package_name == pkg_name:
-                build_tasks = build.get_build_tasks()
-                for build_task in build_tasks:
-                    # TODO: add version check
-                    if build_task.state == 'succeeded' and \
-                       build_task.chroot_name == chroot:
-                        return True
+        # workaround for https://pagure.io/copr/copr/issue/119
+        # get_list returns at most 100 builds
+        while builds:
+            offset += len(builds)
+            for build in builds:
+                if build.package_name == pkg_name:
+                    build_tasks = build.get_build_tasks()
+                    for build_task in build_tasks:
+                        # TODO: add version check
+                        if build_task.state == 'succeeded' and \
+                           build_task.chroot_name == chroot:
+                            return True
+            builds = self.copr_client.builds.get_list(self.project_id,
+                                                      offset=offset)
         return False
 
     def wait_for_completion(self, builds):
