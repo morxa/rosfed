@@ -122,6 +122,9 @@ class RosPkg:
         for key, val in self.build_deps.items():
             build_deps[key] = val | \
                     self.get_dependencies_from_cfg('build').get(key, set())
+            build_deps[key] -= \
+                    self.get_dependencies_from_cfg('exclude_build').get(
+                        key, set())
         if self.name != 'catkin':
             build_deps['ros'].add('catkin')
         return build_deps
@@ -131,6 +134,9 @@ class RosPkg:
         for key, val in self.run_deps.items():
             run_deps[key] = val | \
                     self.get_dependencies_from_cfg('run').get(key, set())
+            run_deps[key] -= \
+                    self.get_dependencies_from_cfg('exclude_run').get(
+                        key, set())
         return run_deps
 
     def get_sources(self):
