@@ -2,5 +2,13 @@ dependencies:
   build:
     system:
       - qt5-qtbase-devel
-build_flags: "--cmake-args -DENABLE_PRECOMPILED_HEADERS=OFF"
+  exclude_build:
+    system:
+      - ffmpeg
+      - ffmpeg-devel
+  exclude_run:
+    system:
+      - ffmpeg
+      - ffmpeg-devel
+build_flags: "--cmake-args -DENABLE_PRECOMPILED_HEADERS=OFF -DWITH_FFMPEG=OFF"
 
