@@ -200,7 +200,7 @@ def main():
     parser.add_argument('-d', '--destination', default='./specs',
                         help='Write generated Spec files to this directory')
     parser.add_argument('-c', '--changelog', type=str,
-                        default='Update auto-generated Spec file',
+                        default='',
                         help='The new changelog entry line')
     build_args = parser.add_argument_group('build arguments')
     build_args.add_argument('-b', '--build', action='store_true', default=False,
@@ -314,11 +314,16 @@ def generate_spec_files(packages, distro, bump_release, release_version,
                 if version_info['version'] == version:
                     release_version = int(version_info['release'])
                     if bump_release:
+                        assert changelog_entry, \
+                                'Please provide a changelog entry.'
                         release_version += 1
                 else:
+                    assert changelog_entry, \
+                            'Please provide a changelog entry.'
                     release_version = 1
         else:
             changelog = ''
+            assert changelog_entry, 'Please provide a changelog entry.'
         try:
             spec_template = jinja_env.get_template(
                 '{}.spec.j2'.format(ros_pkg.name))

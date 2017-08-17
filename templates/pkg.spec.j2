@@ -114,6 +114,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+{% if changelog_entry %}
 * {{ date }} {{ user_string }} - {{ pkg_version }}-{{ pkg_release }}
 - {{ changelog_entry }}
+{% endif %}
 {{ changelog }}
