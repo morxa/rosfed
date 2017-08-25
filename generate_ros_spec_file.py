@@ -132,11 +132,16 @@ class RosPkg:
     def get_run_dependencies(self):
         run_deps = {}
         for key, val in self.run_deps.items():
+            # merge with additional dependencies from the config
             run_deps[key] = val | \
                     self.get_dependencies_from_cfg('run').get(key, set())
+            # remove dependencies excluded in the config
             run_deps[key] -= \
                     self.get_dependencies_from_cfg('exclude_run').get(
                         key, set())
+            # remove all devel packages
+            run_deps[key] -= set(
+                [dep for dep in run_deps[key] if re.match('.*-devel', dep)])
         return run_deps
 
     def get_sources(self):
