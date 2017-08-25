@@ -1,6 +1,6 @@
 Name:           ros-kinetic-roslz4
 Version:        1.12.7
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package roslz4
 
 License:        BSD
@@ -14,7 +14,6 @@ BuildRequires:  lz4-devel
 BuildRequires:  ros-kinetic-catkin
 BuildRequires:  ros-kinetic-rosunit
 
-Requires:       lz4-devel
 
 %description
 A Python and C++ implementation of the LZ4 streaming format. Large
@@ -67,5 +66,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.12.7-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.12.7-1
 - Update auto-generated Spec file

@@ -1,6 +1,6 @@
 Name:           ros-kinetic-bondpy
 Version:        1.7.19
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package bondpy
 
 License:        BSD
@@ -16,7 +16,6 @@ BuildRequires:  ros-kinetic-catkin
 BuildRequires:  ros-kinetic-rospy
 BuildRequires:  ros-kinetic-smclib
 
-Requires:       libuuid-devel
 Requires:       ros-kinetic-rospy
 Requires:       ros-kinetic-smclib
 
@@ -70,5 +69,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.7.19-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.7.19-1
 - Update auto-generated Spec file

@@ -1,6 +1,6 @@
 Name:           ros-kinetic-diagnostic_common_diagnostics
 Version:        1.9.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package diagnostic_common_diagnostics
 
 License:        BSD
@@ -71,5 +71,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.9.2-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.9.2-1
 - Update auto-generated Spec file

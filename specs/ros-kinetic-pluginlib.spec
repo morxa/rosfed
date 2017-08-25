@@ -1,6 +1,6 @@
 Name:           ros-kinetic-pluginlib
 Version:        1.10.5
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package pluginlib
 
 License:        BSD
@@ -18,8 +18,6 @@ BuildRequires:  ros-kinetic-cmake_modules
 BuildRequires:  ros-kinetic-rosconsole
 BuildRequires:  ros-kinetic-roslib
 
-Requires:       boost-devel
-Requires:       tinyxml-devel
 Requires:       ros-kinetic-class_loader
 Requires:       ros-kinetic-rosconsole
 Requires:       ros-kinetic-roslib
@@ -76,5 +74,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.10.5-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.10.5-1
 - Update auto-generated Spec file

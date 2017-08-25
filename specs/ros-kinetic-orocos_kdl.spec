@@ -1,6 +1,6 @@
 Name:           ros-kinetic-orocos_kdl
 Version:        1.3.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package orocos_kdl
 
 License:        LGPL
@@ -15,7 +15,6 @@ BuildRequires:  cppunit-devel
 BuildRequires:  eigen3-devel
 BuildRequires:  ros-kinetic-catkin
 
-Requires:       eigen3-devel
 Requires:       pkgconfig
 Requires:       ros-kinetic-catkin
 
@@ -69,5 +68,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.3.1-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.3.1-1
 - Update auto-generated Spec file

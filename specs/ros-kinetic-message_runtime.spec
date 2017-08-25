@@ -1,6 +1,6 @@
 Name:           ros-kinetic-message_runtime
 Version:        0.4.12
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package message_runtime
 
 License:        BSD
@@ -69,5 +69,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.4.12-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.4.12-1
 - Update auto-generated Spec file

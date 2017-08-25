@@ -1,6 +1,6 @@
 Name:           ros-kinetic-dynamic_reconfigure
 Version:        1.5.48
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package dynamic_reconfigure
 
 License:        BSD
@@ -18,7 +18,6 @@ BuildRequires:  ros-kinetic-roscpp_serialization
 BuildRequires:  ros-kinetic-rostest
 BuildRequires:  ros-kinetic-std_msgs
 
-Requires:       boost-devel
 Requires:       ros-kinetic-message_runtime
 Requires:       ros-kinetic-roscpp
 Requires:       ros-kinetic-roslib
@@ -77,5 +76,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.5.48-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.5.48-1
 - Update auto-generated Spec file

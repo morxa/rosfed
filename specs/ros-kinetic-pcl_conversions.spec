@@ -1,6 +1,6 @@
 Name:           ros-kinetic-pcl_conversions
 Version:        0.2.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package pcl_conversions
 
 License:        BSD
@@ -20,7 +20,6 @@ BuildRequires:  ros-kinetic-sensor_msgs
 BuildRequires:  ros-kinetic-std_msgs
 
 Requires:       pcl pcl-tools
-Requires:       pcl-devel
 Requires:       ros-kinetic-pcl_msgs
 Requires:       ros-kinetic-roscpp
 Requires:       ros-kinetic-sensor_msgs
@@ -75,5 +74,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.2.1-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.2.1-1
 - Update auto-generated Spec file

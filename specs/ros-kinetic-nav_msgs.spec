@@ -1,6 +1,6 @@
 Name:           ros-kinetic-nav_msgs
 Version:        1.12.5
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package nav_msgs
 
 License:        BSD
@@ -71,5 +71,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.12.5-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.12.5-1
 - Update auto-generated Spec file

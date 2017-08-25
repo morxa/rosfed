@@ -1,6 +1,6 @@
 Name:           ros-kinetic-vision_opencv
 Version:        1.12.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package vision_opencv
 
 License:        BSD
@@ -66,5 +66,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.12.4-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.12.4-1
 - Update auto-generated Spec file

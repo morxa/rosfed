@@ -1,6 +1,6 @@
 Name:           ros-kinetic-genpy
 Version:        0.6.5
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package genpy
 
 License:        BSD
@@ -66,5 +66,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.6.5-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.6.5-1
 - Update auto-generated Spec file

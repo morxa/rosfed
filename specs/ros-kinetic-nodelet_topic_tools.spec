@@ -1,6 +1,6 @@
 Name:           ros-kinetic-nodelet_topic_tools
 Version:        1.9.10
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package nodelet_topic_tools
 
 License:        BSD
@@ -15,7 +15,6 @@ BuildRequires:  boost-devel
 BuildRequires:  ros-kinetic-catkin
 BuildRequires:  ros-kinetic-dynamic_reconfigure
 
-Requires:       boost-devel
 Requires:       ros-kinetic-dynamic_reconfigure
 Requires:       ros-kinetic-message_filters
 Requires:       ros-kinetic-nodelet
@@ -72,5 +71,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.9.10-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.9.10-1
 - Update auto-generated Spec file

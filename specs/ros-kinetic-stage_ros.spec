@@ -1,6 +1,6 @@
 Name:           ros-kinetic-stage_ros
 Version:        1.7.5
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package stage_ros
 
 License:        BSD
@@ -22,7 +22,6 @@ BuildRequires:  ros-kinetic-std_msgs
 BuildRequires:  ros-kinetic-std_srvs
 BuildRequires:  ros-kinetic-tf
 
-Requires:       boost-devel
 Requires:       ros-kinetic-geometry_msgs
 Requires:       ros-kinetic-nav_msgs
 Requires:       ros-kinetic-roscpp
@@ -81,5 +80,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.7.5-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.7.5-1
 - Update auto-generated Spec file

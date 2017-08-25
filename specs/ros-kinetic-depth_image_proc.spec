@@ -1,6 +1,6 @@
 Name:           ros-kinetic-depth_image_proc
 Version:        1.12.20
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package depth_image_proc
 
 License:        BSD
@@ -25,7 +25,6 @@ BuildRequires:  ros-kinetic-stereo_msgs
 BuildRequires:  ros-kinetic-tf2
 BuildRequires:  ros-kinetic-tf2_ros
 
-Requires:       boost-devel
 Requires:       ros-kinetic-cv_bridge
 Requires:       ros-kinetic-eigen_conversions
 Requires:       ros-kinetic-image_geometry
@@ -86,5 +85,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.12.20-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.12.20-1
 - Update auto-generated Spec file

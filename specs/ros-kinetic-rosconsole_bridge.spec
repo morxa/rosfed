@@ -1,6 +1,6 @@
 Name:           ros-kinetic-rosconsole_bridge
 Version:        0.4.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package rosconsole_bridge
 
 License:        BSD
@@ -14,7 +14,6 @@ BuildRequires:  console-bridge-devel
 BuildRequires:  ros-kinetic-catkin
 BuildRequires:  ros-kinetic-rosconsole
 
-Requires:       console-bridge-devel
 Requires:       ros-kinetic-rosconsole
 
 %description
@@ -68,5 +67,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.4.4-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.4.4-1
 - Update auto-generated Spec file

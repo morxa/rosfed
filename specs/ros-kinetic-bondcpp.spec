@@ -1,6 +1,6 @@
 Name:           ros-kinetic-bondcpp
 Version:        1.7.19
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package bondcpp
 
 License:        BSD
@@ -18,8 +18,6 @@ BuildRequires:  ros-kinetic-cmake_modules
 BuildRequires:  ros-kinetic-roscpp
 BuildRequires:  ros-kinetic-smclib
 
-Requires:       boost-devel
-Requires:       libuuid-devel
 Requires:       ros-kinetic-bond
 Requires:       ros-kinetic-roscpp
 Requires:       ros-kinetic-smclib
@@ -74,5 +72,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.7.19-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.7.19-1
 - Update auto-generated Spec file

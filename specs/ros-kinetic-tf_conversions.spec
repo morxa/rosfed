@@ -1,6 +1,6 @@
 Name:           ros-kinetic-tf_conversions
 Version:        1.11.9
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package tf_conversions
 
 License:        BSD
@@ -18,7 +18,6 @@ BuildRequires:  ros-kinetic-kdl_conversions
 BuildRequires:  ros-kinetic-orocos_kdl
 BuildRequires:  ros-kinetic-tf
 
-Requires:       eigen3-devel
 Requires:       ros-kinetic-geometry_msgs
 Requires:       ros-kinetic-kdl_conversions
 Requires:       ros-kinetic-orocos_kdl
@@ -81,5 +80,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.11.9-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.11.9-1
 - Update auto-generated Spec file

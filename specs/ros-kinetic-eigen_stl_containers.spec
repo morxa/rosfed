@@ -1,6 +1,6 @@
 Name:           ros-kinetic-eigen_stl_containers
 Version:        0.1.8
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package eigen_stl_containers
 
 License:        BSD
@@ -15,7 +15,6 @@ BuildRequires:  eigen3-devel
 BuildRequires:  ros-kinetic-catkin
 BuildRequires:  ros-kinetic-cmake_modules
 
-Requires:       eigen3-devel
 
 %description
 This package provides a set of typedef's that allow using Eigen
@@ -67,5 +66,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.1.8-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.1.8-1
 - Update auto-generated Spec file

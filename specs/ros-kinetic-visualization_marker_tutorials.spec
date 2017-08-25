@@ -1,6 +1,6 @@
 Name:           ros-kinetic-visualization_marker_tutorials
 Version:        0.10.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package visualization_marker_tutorials
 
 License:        BSD
@@ -66,5 +66,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.10.1-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.10.1-1
 - Update auto-generated Spec file

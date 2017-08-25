@@ -1,6 +1,6 @@
 Name:           ros-kinetic-theora_image_transport
 Version:        1.9.5
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package theora_image_transport
 
 License:        BSD
@@ -21,8 +21,6 @@ BuildRequires:  ros-kinetic-pluginlib
 BuildRequires:  ros-kinetic-rosbag
 BuildRequires:  ros-kinetic-std_msgs
 
-Requires:       libogg-devel
-Requires:       libtheora-devel
 Requires:       ros-kinetic-cv_bridge
 Requires:       ros-kinetic-dynamic_reconfigure
 Requires:       ros-kinetic-image_transport
@@ -81,5 +79,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.9.5-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.9.5-1
 - Update auto-generated Spec file

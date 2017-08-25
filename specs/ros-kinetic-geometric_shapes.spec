@@ -1,6 +1,6 @@
 Name:           ros-kinetic-geometric_shapes
 Version:        0.5.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package geometric_shapes
 
 License:        BSD
@@ -26,10 +26,6 @@ BuildRequires:  ros-kinetic-shape_msgs
 BuildRequires:  ros-kinetic-visualization_msgs
 
 Requires:       assimp
-Requires:       boost-devel
-Requires:       console-bridge-devel
-Requires:       eigen3-devel
-Requires:       qhull-devel
 Requires:       ros-kinetic-eigen_stl_containers
 Requires:       ros-kinetic-octomap
 Requires:       ros-kinetic-random_numbers
@@ -87,5 +83,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.5.2-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.5.2-1
 - Update auto-generated Spec file

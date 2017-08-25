@@ -1,6 +1,6 @@
 Name:           ros-kinetic-collada_parser
 Version:        1.12.10
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package collada_parser
 
 License:        BSD
@@ -18,8 +18,6 @@ BuildRequires:  ros-kinetic-roscpp
 BuildRequires:  ros-kinetic-urdf
 BuildRequires:  ros-kinetic-urdf_parser_plugin
 
-Requires:       collada-dom-devel
-Requires:       urdfdom-headers-devel
 Requires:       ros-kinetic-class_loader
 Requires:       ros-kinetic-roscpp
 Requires:       ros-kinetic-urdf_parser_plugin
@@ -77,5 +75,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.12.10-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.12.10-1
 - Update auto-generated Spec file

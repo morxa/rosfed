@@ -1,12 +1,12 @@
 Name:           ros-kinetic-rviz
-Version:        1.12.11
-Release:        1%{?dist}
+Version:        1.12.13
+Release:        2%{?dist}
 Summary:        ROS package rviz
 
 License:        BSD
 URL:            http://ros.org/wiki/rviz
 
-Source0:        https://github.com/ros-gbp/rviz-release/archive/release/kinetic/rviz/1.12.11-0.tar.gz#/ros-kinetic-rviz-1.12.11-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rviz-release/archive/release/kinetic/rviz/1.12.13-0.tar.gz#/ros-kinetic-rviz-1.12.13-source0.tar.gz
 
 
 
@@ -46,14 +46,8 @@ BuildRequires:  ros-kinetic-urdf
 BuildRequires:  ros-kinetic-visualization_msgs
 
 Requires:       assimp
-Requires:       eigen3-devel
-Requires:       mesa-libGL-devel mesa-libGLU-devel
-Requires:       ogre-devel
 Requires:       qt5-qtbase
 Requires:       qt5-qtbase-gui
-Requires:       tinyxml-devel
-Requires:       urdfdom-headers-devel
-Requires:       yaml-cpp-devel
 Requires:       ros-kinetic-geometry_msgs
 Requires:       ros-kinetic-image_transport
 Requires:       ros-kinetic-interactive_markers
@@ -127,5 +121,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.12.13-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.12.11-1
 - Update auto-generated Spec file

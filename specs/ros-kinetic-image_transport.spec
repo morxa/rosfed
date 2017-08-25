@@ -1,6 +1,6 @@
 Name:           ros-kinetic-image_transport
 Version:        1.11.12
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package image_transport
 
 License:        BSD
@@ -78,5 +78,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.11.12-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.11.12-1
 - Update auto-generated Spec file

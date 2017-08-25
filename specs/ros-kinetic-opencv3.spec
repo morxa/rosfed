@@ -1,6 +1,6 @@
 Name:           ros-kinetic-opencv3
 Version:        3.2.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package opencv3
 
 License:        BSD
@@ -24,14 +24,9 @@ BuildRequires:  vtk-qt
 BuildRequires:  zlib-devel
 BuildRequires:  ros-kinetic-catkin
 
-Requires:       jasper-devel
-Requires:       libjpeg-turbo-devel
-Requires:       libpng12-devel
 Requires:       numpy
 Requires:       protobuf
-Requires:       python-devel
 Requires:       vtk-qt
-Requires:       zlib-devel
 Requires:       ros-kinetic-catkin
 
 %description
@@ -84,5 +79,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 3.2.0-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 3.2.0-1
 - Update auto-generated Spec file

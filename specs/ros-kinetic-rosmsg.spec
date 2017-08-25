@@ -1,6 +1,6 @@
 Name:           ros-kinetic-rosmsg
 Version:        1.12.7
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package rosmsg
 
 License:        BSD
@@ -69,5 +69,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.12.7-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.12.7-1
 - Update auto-generated Spec file

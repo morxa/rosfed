@@ -1,6 +1,6 @@
 Name:           ros-kinetic-rosconsole
 Version:        1.12.7
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package rosconsole
 
 License:        BSD
@@ -18,8 +18,6 @@ BuildRequires:  ros-kinetic-cpp_common
 BuildRequires:  ros-kinetic-rostime
 BuildRequires:  ros-kinetic-rosunit
 
-Requires:       apr-devel apr-util
-Requires:       log4cxx-devel
 Requires:       ros-kinetic-cpp_common
 Requires:       ros-kinetic-rosbuild
 Requires:       ros-kinetic-rostime
@@ -73,5 +71,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.12.7-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.12.7-1
 - Update auto-generated Spec file

@@ -1,6 +1,6 @@
 Name:           ros-kinetic-robot_state_publisher
 Version:        1.13.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package robot_state_publisher
 
 License:        BSD
@@ -24,7 +24,6 @@ BuildRequires:  ros-kinetic-tf
 BuildRequires:  ros-kinetic-tf2_kdl
 BuildRequires:  ros-kinetic-tf2_ros
 
-Requires:       eigen3-devel
 Requires:       ros-kinetic-catkin
 Requires:       ros-kinetic-kdl_parser
 Requires:       ros-kinetic-orocos_kdl
@@ -85,5 +84,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.13.4-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.13.4-1
 - Update auto-generated Spec file

@@ -1,6 +1,6 @@
 Name:           ros-kinetic-clear_costmap_recovery
 Version:        1.14.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package clear_costmap_recovery
 
 License:        BSD
@@ -20,7 +20,6 @@ BuildRequires:  ros-kinetic-roscpp
 BuildRequires:  ros-kinetic-rostest
 BuildRequires:  ros-kinetic-tf
 
-Requires:       eigen3-devel
 Requires:       ros-kinetic-costmap_2d
 Requires:       ros-kinetic-nav_core
 Requires:       ros-kinetic-pluginlib
@@ -78,5 +77,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.14.2-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.14.2-1
 - Update auto-generated Spec file

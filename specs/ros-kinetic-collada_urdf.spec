@@ -1,6 +1,6 @@
 Name:           ros-kinetic-collada_urdf
 Version:        1.12.10
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package collada_urdf
 
 License:        BSD
@@ -25,9 +25,6 @@ BuildRequires:  ros-kinetic-tf
 BuildRequires:  ros-kinetic-urdf
 
 Requires:       assimp
-Requires:       collada-dom-devel
-Requires:       urdfdom-devel
-Requires:       urdfdom-headers-devel
 Requires:       ros-kinetic-angles
 Requires:       ros-kinetic-collada_parser
 Requires:       ros-kinetic-geometric_shapes
@@ -88,5 +85,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.12.10-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.12.10-1
 - Update auto-generated Spec file

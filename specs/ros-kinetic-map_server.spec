@@ -1,6 +1,6 @@
 Name:           ros-kinetic-map_server
 Version:        1.14.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package map_server
 
 License:        BSD
@@ -22,10 +22,6 @@ BuildRequires:  ros-kinetic-rostest
 BuildRequires:  ros-kinetic-rosunit
 BuildRequires:  ros-kinetic-tf2
 
-Requires:       bullet-devel
-Requires:       SDL-devel
-Requires:       SDL_image-devel
-Requires:       yaml-cpp-devel
 Requires:       ros-kinetic-nav_msgs
 Requires:       ros-kinetic-roscpp
 Requires:       ros-kinetic-tf2
@@ -79,5 +75,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.14.2-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.14.2-1
 - Update auto-generated Spec file

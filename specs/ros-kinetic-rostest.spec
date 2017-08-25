@@ -1,6 +1,6 @@
 Name:           ros-kinetic-rostest
 Version:        1.12.7
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package rostest
 
 License:        BSD
@@ -15,7 +15,6 @@ BuildRequires:  boost-devel
 BuildRequires:  ros-kinetic-catkin
 BuildRequires:  ros-kinetic-rosunit
 
-Requires:       boost-devel
 Requires:       ros-kinetic-rosgraph
 Requires:       ros-kinetic-roslaunch
 Requires:       ros-kinetic-rosmaster
@@ -72,5 +71,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.12.7-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.12.7-1
 - Update auto-generated Spec file

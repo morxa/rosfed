@@ -1,6 +1,6 @@
 Name:           ros-kinetic-urdf
 Version:        1.12.11
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package urdf
 
 License:        BSD
@@ -20,8 +20,6 @@ BuildRequires:  ros-kinetic-roscpp
 BuildRequires:  ros-kinetic-rostest
 BuildRequires:  ros-kinetic-urdf_parser_plugin
 
-Requires:       urdfdom-devel
-Requires:       urdfdom-headers-devel
 Requires:       ros-kinetic-pluginlib
 Requires:       ros-kinetic-rosconsole_bridge
 Requires:       ros-kinetic-roscpp
@@ -79,5 +77,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.12.11-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.12.11-1
 - Update auto-generated Spec file

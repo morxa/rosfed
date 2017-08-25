@@ -1,6 +1,6 @@
 Name:           ros-kinetic-pcl_ros
 Version:        1.4.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package pcl_ros
 
 License:        BSD
@@ -34,9 +34,6 @@ BuildRequires:  ros-kinetic-std_msgs
 BuildRequires:  ros-kinetic-tf
 BuildRequires:  ros-kinetic-tf2_eigen
 
-Requires:       eigen3-devel
-Requires:       pcl-devel
-Requires:       proj-devel
 Requires:       vtk-java
 Requires:       ros-kinetic-dynamic_reconfigure
 Requires:       ros-kinetic-message_filters
@@ -103,5 +100,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.4.1-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.4.1-1
 - Update auto-generated Spec file

@@ -1,6 +1,6 @@
 Name:           ros-kinetic-catkin
 Version:        0.7.6
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package catkin
 
 License:        BSD
@@ -20,7 +20,6 @@ BuildRequires:  python-mock
 BuildRequires:  python-nose
 
 Requires:       cmake
-Requires:       gtest-devel
 Requires:       python
 Requires:       python-catkin_pkg
 Requires:       python-empy
@@ -75,5 +74,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.7.6-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.7.6-1
 - Update auto-generated Spec file

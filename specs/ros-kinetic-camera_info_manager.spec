@@ -1,6 +1,6 @@
 Name:           ros-kinetic-camera_info_manager
 Version:        1.11.12
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package camera_info_manager
 
 License:        BSD
@@ -20,7 +20,6 @@ BuildRequires:  ros-kinetic-roslib
 BuildRequires:  ros-kinetic-rostest
 BuildRequires:  ros-kinetic-sensor_msgs
 
-Requires:       boost-devel
 Requires:       ros-kinetic-camera_calibration_parsers
 Requires:       ros-kinetic-image_transport
 Requires:       ros-kinetic-roscpp
@@ -78,5 +77,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.11.12-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.11.12-1
 - Update auto-generated Spec file

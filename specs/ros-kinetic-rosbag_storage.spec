@@ -1,6 +1,6 @@
 Name:           ros-kinetic-rosbag_storage
 Version:        1.12.7
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package rosbag_storage
 
 License:        BSD
@@ -20,9 +20,6 @@ BuildRequires:  ros-kinetic-roscpp_traits
 BuildRequires:  ros-kinetic-roslz4
 BuildRequires:  ros-kinetic-rostime
 
-Requires:       boost-devel
-Requires:       bzip2-devel
-Requires:       console-bridge-devel
 Requires:       ros-kinetic-cpp_common
 Requires:       ros-kinetic-roscpp_serialization
 Requires:       ros-kinetic-roscpp_traits
@@ -79,5 +76,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.12.7-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.12.7-1
 - Update auto-generated Spec file

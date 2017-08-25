@@ -1,6 +1,6 @@
 Name:           ros-kinetic-image_view
 Version:        1.12.20
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package image_view
 
 License:        BSD
@@ -26,7 +26,6 @@ BuildRequires:  ros-kinetic-sensor_msgs
 BuildRequires:  ros-kinetic-std_srvs
 BuildRequires:  ros-kinetic-stereo_msgs
 
-Requires:       gtk2-devel
 Requires:       ros-kinetic-camera_calibration_parsers
 Requires:       ros-kinetic-cv_bridge
 Requires:       ros-kinetic-dynamic_reconfigure
@@ -87,5 +86,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.12.20-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.12.20-1
 - Update auto-generated Spec file

@@ -1,6 +1,6 @@
 Name:           ros-kinetic-random_numbers
 Version:        0.3.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package random_numbers
 
 License:        BSD
@@ -13,7 +13,6 @@ Source0:        https://github.com/ros-gbp/random_numbers-release/archive/releas
 BuildRequires:  boost-devel
 BuildRequires:  ros-kinetic-catkin
 
-Requires:       boost-devel
 
 %description
 This library contains wrappers for generating floating point values,
@@ -68,5 +67,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.3.1-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.3.1-1
 - Update auto-generated Spec file

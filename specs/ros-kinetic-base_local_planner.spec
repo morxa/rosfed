@@ -1,6 +1,6 @@
 Name:           ros-kinetic-base_local_planner
 Version:        1.14.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package base_local_planner
 
 License:        BSD
@@ -30,7 +30,6 @@ BuildRequires:  ros-kinetic-std_msgs
 BuildRequires:  ros-kinetic-tf
 BuildRequires:  ros-kinetic-voxel_grid
 
-Requires:       eigen3-devel
 Requires:       ros-kinetic-angles
 Requires:       ros-kinetic-costmap_2d
 Requires:       ros-kinetic-dynamic_reconfigure
@@ -103,5 +102,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.14.2-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.14.2-1
 - Update auto-generated Spec file

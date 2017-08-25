@@ -1,6 +1,6 @@
 Name:           ros-kinetic-gazebo_ros_pkgs
 Version:        2.5.13
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package gazebo_ros_pkgs
 
 License:        BSD,LGPL,Apache 2.0
@@ -63,5 +63,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 2.5.13-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 2.5.13-1
 - Update auto-generated Spec file

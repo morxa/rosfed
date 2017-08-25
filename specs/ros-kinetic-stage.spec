@@ -1,6 +1,6 @@
 Name:           ros-kinetic-stage
 Version:        4.1.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package stage
 
 License:        GPL
@@ -22,10 +22,6 @@ BuildRequires:  pkgconfig
 BuildRequires:  player-devel
 BuildRequires:  ros-kinetic-catkin
 
-Requires:       fltk-devel
-Requires:       gtk2-devel
-Requires:       libjpeg-turbo-devel
-Requires:       mesa-libGL-devel mesa-libGLU-devel
 Requires:       ros-kinetic-catkin
 
 %description
@@ -79,5 +75,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 4.1.1-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 4.1.1-1
 - Update auto-generated Spec file

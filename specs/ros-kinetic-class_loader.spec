@@ -1,6 +1,6 @@
 Name:           ros-kinetic-class_loader
 Version:        0.3.6
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package class_loader
 
 License:        BSD
@@ -16,9 +16,6 @@ BuildRequires:  poco-devel
 BuildRequires:  ros-kinetic-catkin
 BuildRequires:  ros-kinetic-cmake_modules
 
-Requires:       boost-devel
-Requires:       console-bridge-devel
-Requires:       poco-devel
 
 %description
 The class_loader package is a ROS-independent package for loading
@@ -75,5 +72,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.3.6-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.3.6-1
 - Update auto-generated Spec file

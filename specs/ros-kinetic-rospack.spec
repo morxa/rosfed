@@ -1,6 +1,6 @@
 Name:           ros-kinetic-rospack
 Version:        2.3.3
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package rospack
 
 License:        BSD
@@ -19,12 +19,9 @@ BuildRequires:  tinyxml-devel
 BuildRequires:  ros-kinetic-catkin
 BuildRequires:  ros-kinetic-cmake_modules
 
-Requires:       boost-devel
 Requires:       pkgconfig
 Requires:       python-catkin_pkg
-Requires:       python-devel
 Requires:       python-rosdep
-Requires:       tinyxml-devel
 
 %description
 ROS Package Tool
@@ -75,5 +72,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 2.3.3-2
+- Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 2.3.3-1
 - Update auto-generated Spec file
