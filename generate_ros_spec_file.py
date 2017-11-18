@@ -144,6 +144,10 @@ class RosPkg:
                 [dep for dep in run_deps[key] if re.match('.*-devel', dep)])
         return run_deps
 
+    def get_ros_dependencies(self):
+        return self.get_build_dependencies()['ros'] | \
+            self.get_run_dependencies()['ros']
+
     def get_sources(self):
         ros_pkg = generator.generate_rosinstall(
             self.rosdistro, [self.name], deps=False, wet_only=True, tar=True)
@@ -235,13 +239,13 @@ def main():
         args.user_string = user_string.strip()
     # TODO: Improve design, we should not resolve dependencies and generate SPEC
     # files in one step, these are not really related.
-    dependencies = generate_spec_files(args.ros_pkg, args.distro,
+    packages = generate_spec_files(args.ros_pkg, args.distro,
                                        args.bump_release,
                                        args.release_version, args.user_string,
                                        args.changelog, args.recursive,
                                        args.no_arch, args.destination)
     if args.build_order_file:
-        order = get_build_order(dependencies)
+        order = get_build_order(packages)
         for stage in order:
             args.build_order_file.write(" ".join(stage) + '\n')
     if args.build:
@@ -249,7 +253,7 @@ def main():
         assert args.chroot, 'You need to provide a chroot to use for builds.'
         copr_builder = copr_build.CoprBuilder(project_id=args.copr_project_id)
         for chroot in args.chroot:
-            for stage in get_build_order(dependencies):
+            for stage in get_build_order(packages):
                 stage_builds = []
                 for package in stage:
                     pkg_name = 'ros-{}-{}'.format(args.distro, package)
@@ -268,16 +272,17 @@ def main():
                             'Failed to build {}!'.format(build.package_name)
 
 def get_build_order(packages):
-    """ Get the order in which to build the given dictionary of packages. """
+    """ Get the order in which to build the given dictionary of packages.
+        Each key is a ROS package name, each value is the set of RosPkgs."""
     order = []
     resolved_pkgs = set()
     while resolved_pkgs != set(packages.keys()):
         leaves = set()
-        for pkg, deps in packages.items():
-            if pkg in resolved_pkgs:
+        for pkg_name, pkg in packages.items():
+            if pkg_name in resolved_pkgs:
                 continue
-            if not set(deps) - resolved_pkgs:
-                leaves.add(pkg)
+            if not set(pkg.get_ros_dependencies()) - resolved_pkgs:
+                leaves.add(pkg_name)
         assert leaves, 'No dependency leaves found, cyclic dependencies?'
         order.append(leaves)
         resolved_pkgs |= leaves
@@ -293,15 +298,16 @@ def generate_spec_files(packages, distro, bump_release, release_version,
         lstrip_blocks=True,
     )
     i = 0
-    dependencies = {}
+    generated_packages = {}
     while i < len(packages):
         print('Generating Spec file for {}.'.format(packages[i]))
+        # TODO: skip if already in generated_packages
         ros_pkg = RosPkg(name=packages[i], distro=distro)
         i += 1
         build_deps = ros_pkg.get_build_dependencies()
         run_deps = ros_pkg.get_run_dependencies()
-        ros_deps = build_deps['ros'] | run_deps['ros']
-        dependencies[ros_pkg.name] = ros_deps
+        ros_deps = ros_pkg.get_ros_dependencies()
+        generated_packages[ros_pkg.name] = ros_pkg
         if recursive:
             # Append all items that are not already in packages. We cannot use a
             # set, because we need to loop over it while we append items.
@@ -356,7 +362,7 @@ def generate_spec_files(packages, distro, bump_release, release_version,
         )
         with open(outfile, 'w') as spec_file:
             spec_file.write(spec)
-    return dependencies
+    return generated_packages
 
 
 if __name__ == '__main__':
