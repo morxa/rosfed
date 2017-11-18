@@ -329,6 +329,8 @@ def generate_spec_files(packages, distro, bump_release, release_version,
                         assert changelog_entry, \
                                 'Please provide a changelog entry.'
                         release_version += 1
+                    else:
+                        changelog_entry = ''
                 else:
                     assert changelog_entry, \
                             'Please provide a changelog entry.'
