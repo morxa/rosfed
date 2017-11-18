@@ -228,8 +228,6 @@ def main():
                         help='ROS package name')
     args = parser.parse_args()
     os.makedirs(args.destination, exist_ok=True)
-    if args.build_order_file:
-        assert args.recursive, 'Build order requires --recursive'
     if not args.user_string:
         user_string = subprocess.run(["rpmdev-packager"],
                                       stderr=subprocess.DEVNULL,
@@ -281,7 +279,10 @@ def get_build_order(packages):
         for pkg_name, pkg in packages.items():
             if pkg_name in resolved_pkgs:
                 continue
-            if not set(pkg.get_ros_dependencies()) - resolved_pkgs:
+            remaining_deps = set(pkg.get_ros_dependencies()) - resolved_pkgs
+            if not remaining_deps.intersection(packages.keys()):
+                # No remaining dependencies that are pending to be built.
+                # We can build this package.
                 leaves.add(pkg_name)
         assert leaves, 'No dependency leaves found, cyclic dependencies?'
         order.append(leaves)
