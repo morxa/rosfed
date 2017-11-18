@@ -180,6 +180,9 @@ class RosPkg:
     def set_release(self, release):
         self.release = release
 
+    def get_version_release(self):
+        return '{}-{}'.format(self.get_version(), self.get_release())
+
     def is_noarch(self):
         return self.pkg_config.get('noarch', False)
 
@@ -259,7 +262,8 @@ def main():
                 stage_builds = []
                 for package in stage:
                     pkg_name = 'ros-{}-{}'.format(args.distro, package)
-                    if copr_builder.pkg_is_built(chroot, pkg_name):
+                    ver_rel = packages[package].get_version_release()
+                    if copr_builder.pkg_is_built(chroot, pkg_name, ver_rel):
                         print('Skipping {}, package is already built!'.format(
                             pkg_name))
                     else:

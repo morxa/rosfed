@@ -76,13 +76,13 @@ class CoprBuilder:
             print('Building {} was successful.'.format(srpm))
         return build
 
-    def pkg_is_built(self, chroot, pkg_name):
+    def pkg_is_built(self, chroot, pkg_name, pkg_version):
         """ Check if the given package is already built in the COPR.
 
         Args:
-            copr_project_id: The ID of the COPR project to check for the package.
             chroot: The chroot to check, e.g., fedora-26-x86_64.
             pkg_name: The name of the package to look for.
+            pkg_version: Check for the given version in format $version-$release
 
         Returns:
             True iff the package was already built in the project and chroot.
@@ -94,6 +94,12 @@ class CoprBuilder:
         while builds:
             offset += len(builds)
             for build in builds:
+                # We expect package versions of the format 1.0-2.fc23 or 1.0-2
+                build_version = \
+                        re.fullmatch('(.+?)(?:\.(?:fc|rhel|epel|el)\d+)?',
+                                     build.package_version).group(1)
+                if build_version != pkg_version:
+                    continue
                 if build.package_name == pkg_name:
                     build_tasks = build.get_build_tasks()
                     for build_task in build_tasks:
