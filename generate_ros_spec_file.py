@@ -83,6 +83,7 @@ class RosPkg:
                 open('cfg/{}.yaml'.format(self.name), 'r'))
         except FileNotFoundError:
             self.pkg_config = {}
+        self.release = self.pkg_config.get('release', 1)
         self.compute_dependencies()
 
     def compute_dependencies(self):
@@ -174,7 +175,10 @@ class RosPkg:
         return 'http://www.ros.org/'
 
     def get_release(self):
-        return self.pkg_config.get('release', 1)
+        return self.release
+
+    def set_release(self, release):
+        self.release = release
 
     def is_noarch(self):
         return self.pkg_config.get('noarch', False)
@@ -335,6 +339,7 @@ def generate_spec_files(packages, distro, bump_release, release_version,
                     assert changelog_entry, \
                             'Please provide a changelog entry.'
                     release_version = 1
+            ros_pkg.set_release(release_version)
         else:
             changelog = ''
             assert changelog_entry, 'Please provide a changelog entry.'
@@ -353,7 +358,7 @@ def generate_spec_files(packages, distro, bump_release, release_version,
             build_dependencies=build_deps,
             run_dependencies=run_deps,
             pkg_description=ros_pkg.get_description(),
-            pkg_release=release_version or ros_pkg.get_release(),
+            pkg_release=ros_pkg.get_release(),
             user_string=user_string,
             date=time.strftime("%a %b %d %Y", time.gmtime()),
             changelog=changelog,
