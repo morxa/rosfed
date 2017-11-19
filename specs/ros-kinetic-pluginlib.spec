@@ -1,17 +1,17 @@
 Name:           ros-kinetic-pluginlib
-Version:        1.10.5
-Release:        2%{?dist}
+Version:        1.11.2
+Release:        1%{?dist}
 Summary:        ROS package pluginlib
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/pluginlib-release/archive/release/kinetic/pluginlib/1.10.5-0.tar.gz#/ros-kinetic-pluginlib-1.10.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/pluginlib-release/archive/release/kinetic/pluginlib/1.11.2-0.tar.gz#/ros-kinetic-pluginlib-1.11.2-source0.tar.gz
 
 
 
 BuildRequires:  boost-devel
-BuildRequires:  tinyxml-devel
+BuildRequires:  tinyxml2-devel
 BuildRequires:  ros-kinetic-catkin
 BuildRequires:  ros-kinetic-class_loader
 BuildRequires:  ros-kinetic-cmake_modules
@@ -74,6 +74,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Sun Nov 19 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.11.2-1
+- Update to latest release
 * Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.10.5-2
 - Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.10.5-1

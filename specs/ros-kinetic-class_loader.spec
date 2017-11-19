@@ -1,12 +1,12 @@
 Name:           ros-kinetic-class_loader
-Version:        0.3.6
-Release:        2%{?dist}
+Version:        0.3.8
+Release:        1%{?dist}
 Summary:        ROS package class_loader
 
 License:        BSD
 URL:            http://ros.org/wiki/class_loader
 
-Source0:        https://github.com/ros-gbp/class_loader-release/archive/release/kinetic/class_loader/0.3.6-0.tar.gz#/ros-kinetic-class_loader-0.3.6-source0.tar.gz
+Source0:        https://github.com/ros-gbp/class_loader-release/archive/release/kinetic/class_loader/0.3.8-0.tar.gz#/ros-kinetic-class_loader-0.3.8-source0.tar.gz
 
 
 
@@ -72,6 +72,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Sun Nov 19 2017 Till Hofmann <thofmann@fedoraproject.org> - 0.3.8-1
+- Update to latest release
 * Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.3.6-2
 - Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.3.6-1

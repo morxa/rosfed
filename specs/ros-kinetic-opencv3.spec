@@ -1,12 +1,12 @@
 Name:           ros-kinetic-opencv3
-Version:        3.2.0
-Release:        2%{?dist}
+Version:        3.3.1
+Release:        1%{?dist}
 Summary:        ROS package opencv3
 
 License:        BSD
 URL:            http://opencv.org
 
-Source0:        https://github.com/ros-gbp/opencv3-release/archive/release/kinetic/opencv3/3.2.0-4.tar.gz#/ros-kinetic-opencv3-3.2.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/opencv3-release/archive/release/kinetic/opencv3/3.3.1-0.tar.gz#/ros-kinetic-opencv3-3.3.1-source0.tar.gz
 
 
 
@@ -79,6 +79,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Sun Nov 19 2017 Till Hofmann <thofmann@fedoraproject.org> - 3.3.1-1
+- Update to latest release
 * Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 3.2.0-2
 - Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 3.2.0-1

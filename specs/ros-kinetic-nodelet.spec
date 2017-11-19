@@ -1,12 +1,12 @@
 Name:           ros-kinetic-nodelet
-Version:        1.9.10
-Release:        2%{?dist}
+Version:        1.9.14
+Release:        1%{?dist}
 Summary:        ROS package nodelet
 
 License:        BSD
 URL:            http://ros.org/wiki/nodelet
 
-Source0:        https://github.com/ros-gbp/nodelet_core-release/archive/release/kinetic/nodelet/1.9.10-0.tar.gz#/ros-kinetic-nodelet-1.9.10-source0.tar.gz
+Source0:        https://github.com/ros-gbp/nodelet_core-release/archive/release/kinetic/nodelet/1.9.14-0.tar.gz#/ros-kinetic-nodelet-1.9.14-source0.tar.gz
 
 
 
@@ -19,11 +19,9 @@ BuildRequires:  ros-kinetic-message_generation
 BuildRequires:  ros-kinetic-pluginlib
 BuildRequires:  ros-kinetic-rosconsole
 BuildRequires:  ros-kinetic-roscpp
-BuildRequires:  ros-kinetic-rospy
 BuildRequires:  ros-kinetic-std_msgs
 
 Requires:       ros-kinetic-bondcpp
-Requires:       ros-kinetic-message_runtime
 Requires:       ros-kinetic-pluginlib
 Requires:       ros-kinetic-rosconsole
 Requires:       ros-kinetic-roscpp
@@ -82,6 +80,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Sun Nov 19 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.9.14-1
+- Update to latest release
 * Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.9.10-2
 - Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.9.10-1

@@ -1,12 +1,12 @@
 Name:           ros-kinetic-nodelet_topic_tools
-Version:        1.9.10
-Release:        2%{?dist}
+Version:        1.9.14
+Release:        1%{?dist}
 Summary:        ROS package nodelet_topic_tools
 
 License:        BSD
 URL:            http://ros.org/wiki/nodelet_topic_tools
 
-Source0:        https://github.com/ros-gbp/nodelet_core-release/archive/release/kinetic/nodelet_topic_tools/1.9.10-0.tar.gz#/ros-kinetic-nodelet_topic_tools-1.9.10-source0.tar.gz
+Source0:        https://github.com/ros-gbp/nodelet_core-release/archive/release/kinetic/nodelet_topic_tools/1.9.14-0.tar.gz#/ros-kinetic-nodelet_topic_tools-1.9.14-source0.tar.gz
 
 
 BuildArch: noarch
@@ -14,6 +14,10 @@ BuildArch: noarch
 BuildRequires:  boost-devel
 BuildRequires:  ros-kinetic-catkin
 BuildRequires:  ros-kinetic-dynamic_reconfigure
+BuildRequires:  ros-kinetic-message_filters
+BuildRequires:  ros-kinetic-nodelet
+BuildRequires:  ros-kinetic-pluginlib
+BuildRequires:  ros-kinetic-roscpp
 
 Requires:       ros-kinetic-dynamic_reconfigure
 Requires:       ros-kinetic-message_filters
@@ -71,6 +75,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Sun Nov 19 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.9.14-1
+- Update to latest release
 * Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.9.10-2
 - Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.9.10-1

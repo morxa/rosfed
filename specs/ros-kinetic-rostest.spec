@@ -1,12 +1,12 @@
 Name:           ros-kinetic-rostest
-Version:        1.12.7
-Release:        2%{?dist}
+Version:        1.12.12
+Release:        1%{?dist}
 Summary:        ROS package rostest
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/kinetic/rostest/1.12.7-0.tar.gz#/ros-kinetic-rostest-1.12.7-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/kinetic/rostest/1.12.12-0.tar.gz#/ros-kinetic-rostest-1.12.12-source0.tar.gz
 
 
 BuildArch: noarch
@@ -71,6 +71,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Sun Nov 19 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.12.12-1
+- Update to latest release
 * Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.12.7-2
 - Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.12.7-1

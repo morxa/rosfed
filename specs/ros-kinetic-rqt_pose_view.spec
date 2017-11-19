@@ -1,12 +1,12 @@
 Name:           ros-kinetic-rqt_pose_view
-Version:        0.5.7
-Release:        2%{?dist}
+Version:        0.5.8
+Release:        1%{?dist}
 Summary:        ROS package rqt_pose_view
 
 License:        BSD
 URL:            http://wiki.ros.org/rqt_pose_view
 
-Source0:        https://github.com/ros-gbp/rqt_pose_view-release/archive/release/kinetic/rqt_pose_view/0.5.7-0.tar.gz#/ros-kinetic-rqt_pose_view-0.5.7-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt_pose_view-release/archive/release/kinetic/rqt_pose_view/0.5.8-0.tar.gz#/ros-kinetic-rqt_pose_view-0.5.8-source0.tar.gz
 
 
 BuildArch: noarch
@@ -74,6 +74,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Sun Nov 19 2017 Till Hofmann <thofmann@fedoraproject.org> - 0.5.8-1
+- Update to latest release
 * Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.5.7-2
 - Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.5.7-1

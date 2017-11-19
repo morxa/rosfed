@@ -1,12 +1,12 @@
 Name:           ros-kinetic-rqt_image_view
-Version:        0.4.8
-Release:        2%{?dist}
+Version:        0.4.11
+Release:        1%{?dist}
 Summary:        ROS package rqt_image_view
 
 License:        BSD
 URL:            http://wiki.ros.org/rqt_image_view
 
-Source0:        https://github.com/ros-gbp/rqt_image_view-release/archive/release/kinetic/rqt_image_view/0.4.8-0.tar.gz#/ros-kinetic-rqt_image_view-0.4.8-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt_image_view-release/archive/release/kinetic/rqt_image_view/0.4.11-0.tar.gz#/ros-kinetic-rqt_image_view-0.4.11-source0.tar.gz
 
 
 
@@ -77,6 +77,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Sun Nov 19 2017 Till Hofmann <thofmann@fedoraproject.org> - 0.4.11-1
+- Update to latest release
 * Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.4.8-2
 - Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.4.8-1

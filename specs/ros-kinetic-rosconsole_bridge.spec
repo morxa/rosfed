@@ -1,12 +1,12 @@
 Name:           ros-kinetic-rosconsole_bridge
-Version:        0.4.4
-Release:        2%{?dist}
+Version:        0.5.1
+Release:        1%{?dist}
 Summary:        ROS package rosconsole_bridge
 
 License:        BSD
 URL:            http://www.ros.org/wiki/rosconsole_bridge
 
-Source0:        https://github.com/ros-gbp/rosconsole_bridge-release/archive/release/kinetic/rosconsole_bridge/0.4.4-0.tar.gz#/ros-kinetic-rosconsole_bridge-0.4.4-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rosconsole_bridge-release/archive/release/kinetic/rosconsole_bridge/0.5.1-0.tar.gz#/ros-kinetic-rosconsole_bridge-0.5.1-source0.tar.gz
 
 
 
@@ -67,6 +67,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Sun Nov 19 2017 Till Hofmann <thofmann@fedoraproject.org> - 0.5.1-1
+- Update to latest release
 * Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.4.4-2
 - Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.4.4-1

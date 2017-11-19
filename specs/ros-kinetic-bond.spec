@@ -1,12 +1,12 @@
 Name:           ros-kinetic-bond
-Version:        1.7.19
-Release:        2%{?dist}
+Version:        1.8.1
+Release:        1%{?dist}
 Summary:        ROS package bond
 
 License:        BSD
 URL:            http://www.ros.org/wiki/bond
 
-Source0:        https://github.com/ros-gbp/bond_core-release/archive/release/kinetic/bond/1.7.19-0.tar.gz#/ros-kinetic-bond-1.7.19-source0.tar.gz
+Source0:        https://github.com/ros-gbp/bond_core-release/archive/release/kinetic/bond/1.8.1-0.tar.gz#/ros-kinetic-bond-1.8.1-source0.tar.gz
 
 
 BuildArch: noarch
@@ -15,8 +15,6 @@ BuildRequires:  ros-kinetic-catkin
 BuildRequires:  ros-kinetic-message_generation
 BuildRequires:  ros-kinetic-std_msgs
 
-Requires:       ros-kinetic-message_runtime
-Requires:       ros-kinetic-std_msgs
 
 %description
 A bond allows two processes, A and B, to know when the other has
@@ -69,6 +67,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Sun Nov 19 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.8.1-1
+- Update to latest release
 * Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.7.19-2
 - Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.7.19-1

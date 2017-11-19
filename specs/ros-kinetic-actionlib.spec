@@ -1,12 +1,12 @@
 Name:           ros-kinetic-actionlib
-Version:        1.11.9
-Release:        2%{?dist}
+Version:        1.11.11
+Release:        1%{?dist}
 Summary:        ROS package actionlib
 
 License:        BSD
 URL:            http://www.ros.org/wiki/actionlib
 
-Source0:        https://github.com/ros-gbp/actionlib-release/archive/release/kinetic/actionlib/1.11.9-0.tar.gz#/ros-kinetic-actionlib-1.11.9-source0.tar.gz
+Source0:        https://github.com/ros-gbp/actionlib-release/archive/release/kinetic/actionlib/1.11.11-0.tar.gz#/ros-kinetic-actionlib-1.11.11-source0.tar.gz
 
 
 
@@ -21,7 +21,6 @@ BuildRequires:  ros-kinetic-rostest
 BuildRequires:  ros-kinetic-std_msgs
 
 Requires:       ros-kinetic-actionlib_msgs
-Requires:       ros-kinetic-message_runtime
 Requires:       ros-kinetic-roscpp
 Requires:       ros-kinetic-rospy
 Requires:       ros-kinetic-rostest
@@ -79,6 +78,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Sun Nov 19 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.11.11-1
+- Update to latest release
 * Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.11.9-2
 - Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.11.9-1

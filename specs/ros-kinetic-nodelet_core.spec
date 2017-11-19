@@ -1,20 +1,18 @@
 Name:           ros-kinetic-nodelet_core
-Version:        1.9.10
-Release:        2%{?dist}
+Version:        1.9.14
+Release:        1%{?dist}
 Summary:        ROS package nodelet_core
 
 License:        BSD
 URL:            http://www.ros.org/wiki/nodelet_core
 
-Source0:        https://github.com/ros-gbp/nodelet_core-release/archive/release/kinetic/nodelet_core/1.9.10-0.tar.gz#/ros-kinetic-nodelet_core-1.9.10-source0.tar.gz
+Source0:        https://github.com/ros-gbp/nodelet_core-release/archive/release/kinetic/nodelet_core/1.9.14-0.tar.gz#/ros-kinetic-nodelet_core-1.9.14-source0.tar.gz
 
 
 BuildArch: noarch
 
 BuildRequires:  ros-kinetic-catkin
 
-Requires:       ros-kinetic-nodelet
-Requires:       ros-kinetic-nodelet_topic_tools
 
 %description
 Nodelet Core Metapackage
@@ -65,6 +63,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Sun Nov 19 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.9.14-1
+- Update to latest release
 * Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.9.10-2
 - Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.9.10-1

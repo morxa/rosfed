@@ -1,12 +1,12 @@
 Name:           ros-kinetic-qt_gui
-Version:        0.3.4
-Release:        2%{?dist}
+Version:        0.3.8
+Release:        1%{?dist}
 Summary:        ROS package qt_gui
 
 License:        BSD
 URL:            http://ros.org/wiki/qt_gui
 
-Source0:        https://github.com/ros-gbp/qt_gui_core-release/archive/release/kinetic/qt_gui/0.3.4-0.tar.gz#/ros-kinetic-qt_gui-0.3.4-source0.tar.gz
+Source0:        https://github.com/ros-gbp/qt_gui_core-release/archive/release/kinetic/qt_gui/0.3.8-0.tar.gz#/ros-kinetic-qt_gui-0.3.8-source0.tar.gz
 
 
 BuildArch: noarch
@@ -71,6 +71,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Sun Nov 19 2017 Till Hofmann <thofmann@fedoraproject.org> - 0.3.8-1
+- Update to latest release
 * Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.3.4-2
 - Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.3.4-1

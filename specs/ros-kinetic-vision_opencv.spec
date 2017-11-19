@@ -1,12 +1,12 @@
 Name:           ros-kinetic-vision_opencv
-Version:        1.12.4
-Release:        2%{?dist}
+Version:        1.12.7
+Release:        1%{?dist}
 Summary:        ROS package vision_opencv
 
 License:        BSD
 URL:            http://www.ros.org/wiki/vision_opencv
 
-Source0:        https://github.com/ros-gbp/vision_opencv-release/archive/release/kinetic/vision_opencv/1.12.4-0.tar.gz#/ros-kinetic-vision_opencv-1.12.4-source0.tar.gz
+Source0:        https://github.com/ros-gbp/vision_opencv-release/archive/release/kinetic/vision_opencv/1.12.7-0.tar.gz#/ros-kinetic-vision_opencv-1.12.7-source0.tar.gz
 
 
 BuildArch: noarch
@@ -66,6 +66,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Sun Nov 19 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.12.7-1
+- Update to latest release
 * Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.12.4-2
 - Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.12.4-1

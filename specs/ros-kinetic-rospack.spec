@@ -1,12 +1,12 @@
 Name:           ros-kinetic-rospack
-Version:        2.3.3
-Release:        2%{?dist}
+Version:        2.4.4
+Release:        1%{?dist}
 Summary:        ROS package rospack
 
 License:        BSD
 URL:            http://wiki.ros.org/rospack
 
-Source0:        https://github.com/ros-gbp/rospack-release/archive/release/kinetic/rospack/2.3.3-0.tar.gz#/ros-kinetic-rospack-2.3.3-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rospack-release/archive/release/kinetic/rospack/2.4.4-0.tar.gz#/ros-kinetic-rospack-2.4.4-source0.tar.gz
 
 
 
@@ -72,6 +72,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Sun Nov 19 2017 Till Hofmann <thofmann@fedoraproject.org> - 2.4.4-1
+- Update to latest release
 * Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 2.3.3-2
 - Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 2.3.3-1

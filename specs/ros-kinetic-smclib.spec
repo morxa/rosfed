@@ -1,12 +1,12 @@
 Name:           ros-kinetic-smclib
-Version:        1.7.19
-Release:        2%{?dist}
+Version:        1.8.1
+Release:        1%{?dist}
 Summary:        ROS package smclib
 
 License:        Mozilla Public License Version 1.1
 URL:            http://smc.sourceforge.net/
 
-Source0:        https://github.com/ros-gbp/bond_core-release/archive/release/kinetic/smclib/1.7.19-0.tar.gz#/ros-kinetic-smclib-1.7.19-source0.tar.gz
+Source0:        https://github.com/ros-gbp/bond_core-release/archive/release/kinetic/smclib/1.8.1-0.tar.gz#/ros-kinetic-smclib-1.8.1-source0.tar.gz
 
 
 BuildArch: noarch
@@ -67,6 +67,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Sun Nov 19 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.8.1-1
+- Update to latest release
 * Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.7.19-2
 - Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.7.19-1

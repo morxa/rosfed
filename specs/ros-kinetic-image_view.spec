@@ -1,12 +1,12 @@
 Name:           ros-kinetic-image_view
-Version:        1.12.20
-Release:        2%{?dist}
+Version:        1.12.21
+Release:        1%{?dist}
 Summary:        ROS package image_view
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/image_pipeline-release/archive/release/kinetic/image_view/1.12.20-0.tar.gz#/ros-kinetic-image_view-1.12.20-source0.tar.gz
+Source0:        https://github.com/ros-gbp/image_pipeline-release/archive/release/kinetic/image_view/1.12.21-0.tar.gz#/ros-kinetic-image_view-1.12.21-source0.tar.gz
 
 
 
@@ -86,6 +86,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Sun Nov 19 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.12.21-1
+- Update to latest release
 * Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.12.20-2
 - Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.12.20-1
