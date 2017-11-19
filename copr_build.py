@@ -95,12 +95,6 @@ class CoprBuilder:
         while builds:
             offset += len(builds)
             for build in builds:
-                # We expect package versions of the format 1.0-2.fc23 or 1.0-2
-                build_version = \
-                        re.fullmatch('(.+?)(?:\.(?:fc|rhel|epel|el)\d+)?',
-                                     build.package_version).group(1)
-                if build_version != pkg_version:
-                    continue
                 if build.package_name == pkg_name:
                     try:
                         build_tasks = build.get_build_tasks()
@@ -109,10 +103,15 @@ class CoprBuilder:
                               build.id)
                         continue
                     for build_task in build_tasks:
-                        # TODO: add version check
                         if build_task.state == 'succeeded' and \
                            build_task.chroot_name == chroot:
-                            return True
+                            # We expect package versions of the format
+                            # 1.0-2.fc23 or 1.0-2
+                            build_version = re.fullmatch(
+                                '(.+?)(?:\.(?:fc|rhel|epel|el)\d+)?',
+                                build.package_version).group(1)
+                            if build_version == pkg_version:
+                                return True
             builds = self.copr_client.builds.get_list(self.project_id,
                                                       offset=offset)
         return False
