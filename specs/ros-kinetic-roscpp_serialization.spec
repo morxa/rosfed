@@ -1,15 +1,16 @@
 Name:           ros-kinetic-roscpp_serialization
-Version:        0.6.2
+Version:        0.6.7
 Release:        2%{?dist}
 Summary:        ROS package roscpp_serialization
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/roscpp_core-release/archive/release/kinetic/roscpp_serialization/0.6.2-0.tar.gz#/ros-kinetic-roscpp_serialization-0.6.2-source0.tar.gz
+Source0:        https://github.com/ros-gbp/roscpp_core-release/archive/release/kinetic/roscpp_serialization/0.6.7-0.tar.gz#/ros-kinetic-roscpp_serialization-0.6.7-source0.tar.gz
 
 
 
+BuildRequires:  boost-devel
 BuildRequires:  ros-kinetic-catkin
 BuildRequires:  ros-kinetic-cpp_common
 BuildRequires:  ros-kinetic-roscpp_traits
@@ -69,6 +70,10 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Sun Nov 19 2017 Till Hofmann <thofmann@fedoraproject.org> - 0.6.7-2
+- Add missing BR on boost-devel
+* Sun Nov 19 2017 Till Hofmann <thofmann@fedoraproject.org> - 0.6.7-1
+- Update to latest release
 * Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.6.2-2
 - Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.6.2-1
