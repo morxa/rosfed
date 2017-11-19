@@ -1,6 +1,6 @@
 Name:           ros-kinetic-rosconsole
 Version:        1.12.12
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package rosconsole
 
 License:        BSD
@@ -12,6 +12,7 @@ Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/kine
 
 BuildRequires:  apr-devel apr-util
 BuildRequires:  boost-devel
+BuildRequires:  console-bridge-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  ros-kinetic-catkin
 BuildRequires:  ros-kinetic-cpp_common
@@ -71,6 +72,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Sun Nov 19 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.12.12-2
+- Add missing BR on console-bridge-devel
 * Sun Nov 19 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.12.12-1
 - Update to latest release
 * Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.12.7-2
