@@ -15,6 +15,7 @@ import argparse
 import copr
 import json
 import re
+import spec_utils
 import subprocess
 
 class CoprBuildError(Exception):
@@ -101,7 +102,12 @@ class CoprBuilder:
                 if build_version != pkg_version:
                     continue
                 if build.package_name == pkg_name:
-                    build_tasks = build.get_build_tasks()
+                    try:
+                        build_tasks = build.get_build_tasks()
+                    except marshmallow.exceptions.ValidationError:
+                        print('Failed to get build tasks of build {}, skipping',
+                              build.id)
+                        continue
                     for build_task in build_tasks:
                         # TODO: add version check
                         if build_task.state == 'succeeded' and \
@@ -148,8 +154,14 @@ def main():
     copr_builder = CoprBuilder(args.project_id)
     for chroot in args.chroot:
         for pkg in args.pkg_name:
-            if args.force or not copr_builder.pkg_is_built(chroot, pkg):
-                spec = args.spec_dir + pkg + '.spec'
+            spec = args.spec_dir + pkg + '.spec'
+            need_build = args.force
+            if not need_build:
+                version_info = spec_utils.get_version_from_spec(spec)
+                ver_rel = '{}-{}'.format(
+                    version_info['version'], version_info['release'])
+                need_build = not copr_builder.pkg_is_built(chroot, pkg, ver_rel)
+            if need_build:
                 copr_builder.build_spec(chroot=chroot, spec=spec,
                                         wait_for_completion=True)
 

@@ -15,6 +15,7 @@ import copr_build
 import jinja2
 import os
 import re
+import spec_utils
 import subprocess
 import sys
 import textwrap
@@ -36,27 +37,6 @@ def get_system_package_name(pkg_name, rosdistro):
     deps = [ dep for dep in lines if not (dep == '' or dep == '#dnf') ]
     assert len(deps) == 1, 'Expected exactly one name, got: {}'.format(deps)
     return deps[0]
-
-def get_version_from_spec(spec):
-    """ Get the version and release from a Spec file.
-
-    Args:
-        spec: the path to the Spec file
-    Returns:
-        A dictionary with keys 'version' and 'release'
-    """
-    version_info = {}
-    for line in open(spec, 'r').readlines():
-        version_match = re.match('^Version:\s+([\w\.]+)', line)
-        if version_match:
-            version_info['version'] = version_match.group(1)
-            continue
-        release_match = re.match('Release:\s+([\w\.]+)(%\{\?dist\})?', line)
-        if release_match:
-            version_info['release'] = release_match.group(1)
-    assert 'version' in version_info, 'Could not find a Version: tag'
-    assert 'release' in version_info, 'Could not find a Release: tag'
-    return version_info
 
 def get_changelog_from_spec(spec):
     """ Get the changelog of an existing Spec file.
@@ -331,7 +311,7 @@ def generate_spec_files(packages, distro, bump_release, release_version,
             if not release_version:
                 # Release is not specified and Spec file exists, use new version
                 # or bump release if it is the same version.
-                version_info = get_version_from_spec(outfile)
+                version_info = spec_utils.get_version_from_spec(outfile)
                 if version_info['version'] == version:
                     pkg_release_version = int(version_info['release'])
                     if bump_release:
