@@ -325,6 +325,7 @@ def generate_spec_files(packages, distro, bump_release, release_version,
         version = ros_pkg.get_version()
         outfile = os.path.join(destination,
                                'ros-{}-{}.spec'.format(distro, ros_pkg.name))
+        pkg_changelog_entry = changelog_entry
         if os.path.isfile(outfile):
             changelog = get_changelog_from_spec(outfile)
             if not release_version:
@@ -332,21 +333,21 @@ def generate_spec_files(packages, distro, bump_release, release_version,
                 # or bump release if it is the same version.
                 version_info = get_version_from_spec(outfile)
                 if version_info['version'] == version:
-                    release_version = int(version_info['release'])
+                    pkg_release_version = int(version_info['release'])
                     if bump_release:
-                        assert changelog_entry, \
+                        assert pkg_changelog_entry, \
                                 'Please provide a changelog entry.'
-                        release_version += 1
+                        pkg_release_version += 1
                     else:
-                        changelog_entry = ''
+                        pkg_changelog_entry = ''
+                    ros_pkg.set_release(pkg_release_version)
                 else:
-                    assert changelog_entry, \
+                    assert pkg_changelog_entry, \
                             'Please provide a changelog entry.'
-                    release_version = 1
-            ros_pkg.set_release(release_version)
+                    ros_pkg.set_release(1)
         else:
             changelog = ''
-            assert changelog_entry, 'Please provide a changelog entry.'
+            assert pkg_changelog_entry, 'Please provide a changelog entry.'
         try:
             spec_template = jinja_env.get_template(
                 '{}.spec.j2'.format(ros_pkg.name))
@@ -366,7 +367,7 @@ def generate_spec_files(packages, distro, bump_release, release_version,
             user_string=user_string,
             date=time.strftime("%a %b %d %Y", time.gmtime()),
             changelog=changelog,
-            changelog_entry=changelog_entry,
+            changelog_entry=pkg_changelog_entry,
             noarch=no_arch or ros_pkg.is_noarch(),
             patches=ros_pkg.get_patches(),
             build_flags=ros_pkg.get_build_flags(),
