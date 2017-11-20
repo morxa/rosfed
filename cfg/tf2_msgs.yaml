@@ -1,1 +1,4 @@
-noarch: true
+dependencies:
+  build:
+    system:
+      - boost-devel

@@ -1,6 +1,6 @@
 Name:           ros-kinetic-tf2_msgs
 Version:        0.5.16
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package tf2_msgs
 
 License:        BSD
@@ -9,8 +9,8 @@ URL:            http://www.ros.org/wiki/tf2_msgs
 Source0:        https://github.com/ros-gbp/geometry2-release/archive/release/kinetic/tf2_msgs/0.5.16-0.tar.gz#/ros-kinetic-tf2_msgs-0.5.16-source0.tar.gz
 
 
-BuildArch: noarch
 
+BuildRequires:  boost-devel
 BuildRequires:  ros-kinetic-actionlib_msgs
 BuildRequires:  ros-kinetic-catkin
 BuildRequires:  ros-kinetic-geometry_msgs
@@ -69,6 +69,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Mon Nov 20 2017 Till Hofmann <thofmann@fedoraproject.org> - 0.5.16-3
+- Add missing BR on boost-devel
 * Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.5.16-2
 - Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.5.16-1
