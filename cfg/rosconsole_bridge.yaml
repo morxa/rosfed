@@ -2,3 +2,4 @@ dependencies:
   build:
     system:
       - log4cxx-devel
+      - boost-devel

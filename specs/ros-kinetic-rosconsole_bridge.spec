@@ -1,6 +1,6 @@
 Name:           ros-kinetic-rosconsole_bridge
 Version:        0.5.1
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package rosconsole_bridge
 
 License:        BSD
@@ -10,6 +10,7 @@ Source0:        https://github.com/ros-gbp/rosconsole_bridge-release/archive/rel
 
 
 
+BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  ros-kinetic-catkin
@@ -68,6 +69,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Mon Nov 20 2017 Till Hofmann <thofmann@fedoraproject.org> - 0.5.1-3
+- Add missing BR on boost-devel
 * Mon Nov 20 2017 Till Hofmann <thofmann@fedoraproject.org> - 0.5.1-2
 - Add missing BR on log4cxx-devel
 * Sun Nov 19 2017 Till Hofmann <thofmann@fedoraproject.org> - 0.5.1-1
