@@ -1,6 +1,6 @@
 Name:           ros-kinetic-eigen_conversions
 Version:        1.11.9
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        ROS package eigen_conversions
 
 License:        BSD
@@ -11,6 +11,7 @@ Source0:        https://github.com/ros-gbp/geometry-release/archive/release/kine
 
 
 BuildRequires:  boost-devel
+BuildRequires:  console-bridge-devel
 BuildRequires:  eigen3-devel
 BuildRequires:  ros-kinetic-catkin
 BuildRequires:  ros-kinetic-cmake_modules
@@ -72,6 +73,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Mon Nov 20 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.11.9-4
+- Add missing BR on console-bridge-devel
 * Mon Nov 20 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.11.9-3
 - Add missing BR on boost-devel
 * Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.11.9-2
