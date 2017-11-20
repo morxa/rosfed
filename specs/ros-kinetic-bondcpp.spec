@@ -12,6 +12,7 @@ Source0:        https://github.com/ros-gbp/bond_core-release/archive/release/kin
 
 BuildRequires:  boost-devel
 BuildRequires:  libuuid-devel
+BuildRequires:  log4cxx-devel
 BuildRequires:  ros-kinetic-bond
 BuildRequires:  ros-kinetic-catkin
 BuildRequires:  ros-kinetic-cmake_modules

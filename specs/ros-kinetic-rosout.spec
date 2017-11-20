@@ -10,6 +10,7 @@ Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/kine
 
 
 
+BuildRequires:  boost-devel
 BuildRequires:  ros-kinetic-catkin
 BuildRequires:  ros-kinetic-roscpp
 BuildRequires:  ros-kinetic-rosgraph_msgs

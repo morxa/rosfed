@@ -10,6 +10,7 @@ Source0:        https://github.com/ros-gbp/ros_tutorials-release/archive/release
 
 
 
+BuildRequires:  boost-devel
 BuildRequires:  ros-kinetic-catkin
 BuildRequires:  ros-kinetic-message_generation
 BuildRequires:  ros-kinetic-rosconsole

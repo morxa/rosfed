@@ -5,3 +5,4 @@ dependencies:
       - shiboken-devel
       - qtermwidget-qt5-devel
       - python-qt5-devel
+      - boost-devel

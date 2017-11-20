@@ -11,6 +11,7 @@ Source0:        https://github.com/ros-gbp/geometry2-release/archive/release/kin
 
 
 BuildRequires:  console-bridge-devel
+BuildRequires:  gtest-devel
 BuildRequires:  ros-kinetic-catkin
 BuildRequires:  ros-kinetic-geometry_msgs
 BuildRequires:  ros-kinetic-rostime

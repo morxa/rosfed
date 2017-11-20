@@ -14,6 +14,8 @@ BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  poco-devel
+BuildRequires:  python2-devel
+BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
 BuildRequires:  ros-kinetic-catkin
 BuildRequires:  ros-kinetic-class_loader

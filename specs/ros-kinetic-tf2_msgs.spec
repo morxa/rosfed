@@ -9,6 +9,7 @@ URL:            http://www.ros.org/wiki/tf2_msgs
 Source0:        https://github.com/ros-gbp/geometry2-release/archive/release/kinetic/tf2_msgs/0.5.16-0.tar.gz#/ros-kinetic-tf2_msgs-0.5.16-source0.tar.gz
 
 
+BuildArch: noarch
 
 BuildRequires:  boost-devel
 BuildRequires:  ros-kinetic-actionlib_msgs

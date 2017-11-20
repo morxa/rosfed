@@ -11,6 +11,7 @@ Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/kine
 
 
 BuildRequires:  boost-devel
+BuildRequires:  console-bridge-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  pkgconfig
 BuildRequires:  ros-kinetic-catkin

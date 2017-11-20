@@ -11,8 +11,12 @@ Source0:        https://github.com/ros-gbp/resource_retriever-release/archive/re
 
 
 BuildRequires:  boost-devel
+BuildRequires:  console-bridge-devel
 BuildRequires:  gtest-devel
 BuildRequires:  libcurl-devel curl
+BuildRequires:  log4cxx-devel
+BuildRequires:  python2-devel
+BuildRequires:  tinyxml-devel
 BuildRequires:  ros-kinetic-catkin
 BuildRequires:  ros-kinetic-rosconsole
 BuildRequires:  ros-kinetic-roslib

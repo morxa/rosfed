@@ -2,5 +2,3 @@ dependencies:
   build:
     system:
       - boost-devel
-      - log4cxx-devel
-      - console-bridge-devel

@@ -10,6 +10,7 @@ Source0:        https://github.com/ros-gbp/visualization_tutorials-release/archi
 
 
 
+BuildRequires:  boost-devel
 BuildRequires:  ros-kinetic-catkin
 BuildRequires:  ros-kinetic-roscpp
 BuildRequires:  ros-kinetic-visualization_msgs

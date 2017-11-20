@@ -14,6 +14,7 @@ BuildRequires:  assimp-devel
 BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  eigen3-devel
+BuildRequires:  gtest-devel
 BuildRequires:  pkgconfig
 BuildRequires:  qhull-devel
 BuildRequires:  ros-kinetic-catkin

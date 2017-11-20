@@ -10,6 +10,7 @@ Source0:        https://github.com/ros-gbp/vision_opencv-release/archive/release
 
 
 
+BuildRequires:  gtest-devel
 BuildRequires:  ros-kinetic-catkin
 BuildRequires:  ros-kinetic-opencv3
 BuildRequires:  ros-kinetic-sensor_msgs

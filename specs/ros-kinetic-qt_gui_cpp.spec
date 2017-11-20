@@ -10,6 +10,7 @@ Source0:        https://github.com/ros-gbp/qt_gui_core-release/archive/release/k
 
 
 
+BuildRequires:  boost-devel
 BuildRequires:  pkgconfig
 BuildRequires:  python-qt5-devel
 BuildRequires:  qt5-qtbase-devel

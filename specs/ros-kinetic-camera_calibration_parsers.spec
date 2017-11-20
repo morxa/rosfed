@@ -12,6 +12,7 @@ Source0:        https://github.com/ros-gbp/image_common-release/archive/release/
 
 BuildRequires:  boost-devel
 BuildRequires:  pkgconfig
+BuildRequires:  python2-devel
 BuildRequires:  yaml-cpp-devel
 BuildRequires:  ros-kinetic-catkin
 BuildRequires:  ros-kinetic-rosbash
