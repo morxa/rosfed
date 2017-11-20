@@ -3,3 +3,4 @@ dependencies:
     system:
       - console-bridge-devel
       - poco-devel
+      - log4cxx-devel
