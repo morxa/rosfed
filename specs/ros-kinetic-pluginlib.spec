@@ -1,6 +1,6 @@
 Name:           ros-kinetic-pluginlib
 Version:        1.11.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package pluginlib
 
 License:        BSD
@@ -11,6 +11,8 @@ Source0:        https://github.com/ros-gbp/pluginlib-release/archive/release/kin
 
 
 BuildRequires:  boost-devel
+BuildRequires:  console-bridge-devel
+BuildRequires:  poco-devel
 BuildRequires:  tinyxml2-devel
 BuildRequires:  ros-kinetic-catkin
 BuildRequires:  ros-kinetic-class_loader
@@ -74,6 +76,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Mon Nov 20 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.11.2-2
+- Add missing BR on console-bridge-devel and poco-devel
 * Sun Nov 19 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.11.2-1
 - Update to latest release
 * Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.10.5-2
