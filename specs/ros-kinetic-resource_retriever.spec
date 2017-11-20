@@ -1,6 +1,6 @@
 Name:           ros-kinetic-resource_retriever
 Version:        1.12.3
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package resource_retriever
 
 License:        BSD
@@ -10,6 +10,7 @@ Source0:        https://github.com/ros-gbp/resource_retriever-release/archive/re
 
 
 
+BuildRequires:  gtest-devel
 BuildRequires:  libcurl-devel curl
 BuildRequires:  ros-kinetic-catkin
 BuildRequires:  ros-kinetic-rosconsole
@@ -73,6 +74,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Mon Nov 20 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.12.3-3
+- Add missing BR on gtest-devel
 * Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.12.3-2
 - Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.12.3-1

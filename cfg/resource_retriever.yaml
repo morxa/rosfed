@@ -1,0 +1,6 @@
+dependencies:
+  build:
+    system:
+      # This is most probably a bug in the package, it does not build without
+      # gtest-devel even if we don't build tests explicitly
+      - gtest-devel
