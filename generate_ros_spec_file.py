@@ -103,6 +103,30 @@ class RosPkg:
             deps[key] = set(val)
         return deps
 
+    def translate_dependencies(self, dep_type, dependencies):
+        """Translate a dependency from ROS' package.xml into a user-defined dep.
+         This allows to use system replacements, e.g., by translating the ROS
+         package opencv3 to the system package opencv."""
+        try:
+            translations = \
+                self.pkg_config['common']['dependencies'][dep_type]['translate']
+        except KeyError:
+            return dependencies
+        new_dependencies = { 'ros': set(), 'system': set()}
+        for from_type, from_pkgs in dependencies.items():
+            for from_pkg in from_pkgs:
+               translated = False
+               for translation in translations:
+                   if translation['from']['type'] == from_type and \
+                      translation['from']['pkg'] == from_pkg:
+                       new_dependencies[translation['to']['type']].add(
+                           translation['to']['pkg'])
+                       translated = True
+                       break
+               if not translated:
+                   new_dependencies[from_type].add(from_pkg)
+        return new_dependencies
+
     def get_build_dependencies(self):
         build_deps = {}
         for key, val in self.build_deps.items():
@@ -111,6 +135,7 @@ class RosPkg:
             build_deps[key] -= \
                     self.get_dependencies_from_cfg('exclude_build').get(
                         key, set())
+        build_deps = self.translate_dependencies('build', build_deps)
         if self.name != 'catkin':
             build_deps['ros'].add('catkin')
         return build_deps
@@ -128,6 +153,7 @@ class RosPkg:
             # remove all devel packages
             run_deps[key] -= set(
                 [dep for dep in run_deps[key] if re.match('.*-devel', dep)])
+        run_deps = self.translate_dependencies('run', run_deps)
         return run_deps
 
     def get_ros_dependencies(self):
