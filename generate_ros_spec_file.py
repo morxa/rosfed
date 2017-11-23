@@ -59,10 +59,15 @@ class RosPkg:
         self.build_deps = { 'ros': set(), 'system': set() }
         self.run_deps = { 'ros': set(), 'system': set() }
         try:
-            self.pkg_config = yaml.load(
+            common_config = yaml.load(open('cfg/common.yaml'))
+        except FileNotFoundError:
+            common_config = {}
+        try:
+            pkg_specific_config = yaml.load(
                 open('cfg/{}.yaml'.format(self.name), 'r'))
         except FileNotFoundError:
-            self.pkg_config = {}
+            pkg_specific_config = {}
+        self.pkg_config = { **common_config, **pkg_specific_config }
         self.release = self.pkg_config.get('release', 1)
         self.compute_dependencies()
 
