@@ -14,6 +14,7 @@ the specified COPR and if not, will submit a new build to the COPR.
 import argparse
 import copr
 import json
+import functools
 import re
 import spec_utils
 import subprocess
@@ -77,6 +78,18 @@ class CoprBuilder:
             print('Building {} was successful.'.format(srpm))
         return build
 
+    @functools.lru_cache(16)
+    def get_builds(self):
+        # workaround for https://pagure.io/copr/copr/issue/119
+        # get_list returns at most 100 builds
+        builds = []
+        new_builds = self.copr_client.builds.get_list(self.project_id)
+        while new_builds:
+            builds += new_builds
+            new_builds = self.copr_client.builds.get_list(self.project_id,
+                                                          offset=len(builds))
+        return builds
+
     def pkg_is_built(self, chroot, pkg_name, pkg_version):
         """ Check if the given package is already built in the COPR.
 
@@ -88,32 +101,24 @@ class CoprBuilder:
         Returns:
             True iff the package was already built in the project and chroot.
         """
-        offset = 0
-        builds = self.copr_client.builds.get_list(self.project_id)
-        # workaround for https://pagure.io/copr/copr/issue/119
-        # get_list returns at most 100 builds
-        while builds:
-            offset += len(builds)
-            for build in builds:
-                if build.package_name == pkg_name:
-                    try:
-                        build_tasks = build.get_build_tasks()
-                    except marshmallow.exceptions.ValidationError:
-                        print('Failed to get build tasks of build {}, skipping',
-                              build.id)
-                        continue
-                    for build_task in build_tasks:
-                        if build_task.state == 'succeeded' and \
-                           build_task.chroot_name == chroot:
-                            # We expect package versions of the format
-                            # 1.0-2.fc23 or 1.0-2
-                            build_version = re.fullmatch(
-                                '(.+?)(?:\.(?:fc|rhel|epel|el)\d+)?',
-                                build.package_version).group(1)
-                            if build_version == pkg_version:
-                                return True
-            builds = self.copr_client.builds.get_list(self.project_id,
-                                                      offset=offset)
+        for build in self.get_builds():
+            if build.package_name == pkg_name:
+                try:
+                    build_tasks = build.get_build_tasks()
+                except marshmallow.exceptions.ValidationError:
+                    print('Failed to get build tasks of build {}, skipping',
+                          build.id)
+                    continue
+                for build_task in build_tasks:
+                    if build_task.state == 'succeeded' and \
+                       build_task.chroot_name == chroot:
+                        # We expect package versions of the format
+                        # 1.0-2.fc23 or 1.0-2
+                        build_version = re.fullmatch(
+                            '(.+?)(?:\.(?:fc|rhel|epel|el)\d+)?',
+                            build.package_version).group(1)
+                        if build_version == pkg_version:
+                            return True
         return False
 
     def wait_for_completion(self, builds):
