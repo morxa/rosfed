@@ -12,6 +12,13 @@ Patch0: ros-kinetic-stage.string-literal.patch
 Patch1: ros-kinetic-stage.abs-ambiguity.patch
 
 
+# common BRs
+BuildRequires:  boost-devel
+BuildRequires:  console-bridge-devel
+BuildRequires:  gtest-devel
+BuildRequires:  log4cxx-devel
+BuildRequires:  python2-devel
+
 BuildRequires:  cmake
 BuildRequires:  fltk-devel
 BuildRequires:  gtk2-devel
@@ -40,6 +47,9 @@ tar --strip-components=1 -xf %{SOURCE0}
 
 
 %install
+
+PYTHONUNBUFFERED=1 ; export PYTHONUNBUFFERED
+
 CFLAGS="${CFLAGS:-%optflags}" ; export CFLAGS ; \
 CXXFLAGS="${CXXFLAGS:-%optflags}" ; export CXXFLAGS ; \
 FFLAGS="${FFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FFLAGS ; \
@@ -53,6 +63,7 @@ DESTDIR=%{buildroot} ; export DESTDIR
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+  -DCATKIN_ENABLE_TESTING=OFF \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \

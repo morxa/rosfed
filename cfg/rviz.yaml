@@ -3,3 +3,7 @@ dependencies:
     system:
       - sip-devel
       - python-qt5-devel
+      - poco-devel
+      - tinyxml2-devel
+      - lz4-devel
+      - urdfdom-devel

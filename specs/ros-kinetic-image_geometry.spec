@@ -1,6 +1,6 @@
 Name:           ros-kinetic-image_geometry
 Version:        1.12.7
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package image_geometry
 
 License:        BSD
@@ -8,11 +8,20 @@ URL:            http://www.ros.org/
 
 Source0:        https://github.com/ros-gbp/vision_opencv-release/archive/release/kinetic/image_geometry/1.12.7-0.tar.gz#/ros-kinetic-image_geometry-1.12.7-source0.tar.gz
 
+Patch0: ros-kinetic-image_geometry.catkin-fix-order.patch
 
 
+# common BRs
+BuildRequires:  boost-devel
+BuildRequires:  console-bridge-devel
 BuildRequires:  gtest-devel
+BuildRequires:  log4cxx-devel
+BuildRequires:  python2-devel
+
+BuildRequires:  boost-devel
+BuildRequires:  gtest-devel
+BuildRequires:  opencv-devel
 BuildRequires:  ros-kinetic-catkin
-BuildRequires:  ros-kinetic-opencv3
 BuildRequires:  ros-kinetic-sensor_msgs
 
 Requires:       ros-kinetic-sensor_msgs
@@ -29,12 +38,16 @@ OpenCV data types.
 
 %setup -c -T
 tar --strip-components=1 -xf %{SOURCE0}
+%patch0 -p1
 
 %build
 # nothing to do here
 
 
 %install
+
+PYTHONUNBUFFERED=1 ; export PYTHONUNBUFFERED
+
 CFLAGS="${CFLAGS:-%optflags}" ; export CFLAGS ; \
 CXXFLAGS="${CXXFLAGS:-%optflags}" ; export CXXFLAGS ; \
 FFLAGS="${FFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FFLAGS ; \
@@ -48,6 +61,7 @@ DESTDIR=%{buildroot} ; export DESTDIR
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+  -DCATKIN_ENABLE_TESTING=OFF \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \
@@ -70,6 +84,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Thu Nov 23 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.12.7-2
+- Build against system opencv3 instead of ros-kinetic-opencv
 * Sun Nov 19 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.12.7-1
 - Update to latest release
 * Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.12.4-2

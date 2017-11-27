@@ -6,3 +6,4 @@ dependencies:
       - log4cxx-devel
       - python2-devel
       - tinyxml-devel
+      - tinyxml2-devel

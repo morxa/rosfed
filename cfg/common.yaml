@@ -1,0 +1,20 @@
+common:
+  dependencies:
+    build:
+      translate:
+        - opencv:
+          from:
+            type: ros
+            pkg: opencv3
+          to:
+            type: system
+            pkg: opencv-devel
+    run:
+      translate:
+        - opencv:
+          from:
+            type: ros
+            pkg: opencv3
+          to:
+            type: system
+            pkg: opencv

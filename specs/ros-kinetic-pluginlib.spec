@@ -1,6 +1,6 @@
 Name:           ros-kinetic-pluginlib
 Version:        1.11.2
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        ROS package pluginlib
 
 License:        BSD
@@ -9,6 +9,13 @@ URL:            http://www.ros.org/
 Source0:        https://github.com/ros-gbp/pluginlib-release/archive/release/kinetic/pluginlib/1.11.2-0.tar.gz#/ros-kinetic-pluginlib-1.11.2-source0.tar.gz
 
 
+
+# common BRs
+BuildRequires:  boost-devel
+BuildRequires:  console-bridge-devel
+BuildRequires:  gtest-devel
+BuildRequires:  log4cxx-devel
+BuildRequires:  python2-devel
 
 BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
@@ -44,6 +51,9 @@ tar --strip-components=1 -xf %{SOURCE0}
 
 
 %install
+
+PYTHONUNBUFFERED=1 ; export PYTHONUNBUFFERED
+
 CFLAGS="${CFLAGS:-%optflags}" ; export CFLAGS ; \
 CXXFLAGS="${CXXFLAGS:-%optflags}" ; export CXXFLAGS ; \
 FFLAGS="${FFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FFLAGS ; \
@@ -57,6 +67,7 @@ DESTDIR=%{buildroot} ; export DESTDIR
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+  -DCATKIN_ENABLE_TESTING=OFF \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \
@@ -79,6 +90,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Tue Nov 21 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.11.2-4
+- Switch to tinyxml2
 * Mon Nov 20 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.11.2-3
 - Add missing BR on log4cxx-devel
 * Mon Nov 20 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.11.2-2

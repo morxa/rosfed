@@ -10,7 +10,20 @@ Source0:        https://github.com/ros-gbp/visualization_tutorials-release/archi
 
 
 
+# common BRs
+BuildRequires:  boost-devel
+BuildRequires:  console-bridge-devel
+BuildRequires:  gtest-devel
+BuildRequires:  log4cxx-devel
+BuildRequires:  python2-devel
+
+BuildRequires:  eigen3-devel
+BuildRequires:  ogre-devel
+BuildRequires:  poco-devel
 BuildRequires:  qt5-qtbase-devel
+BuildRequires:  tinyxml-devel
+BuildRequires:  tinyxml2-devel
+BuildRequires:  urdfdom-devel
 BuildRequires:  ros-kinetic-catkin
 BuildRequires:  ros-kinetic-roscpp
 BuildRequires:  ros-kinetic-rviz
@@ -35,6 +48,9 @@ tar --strip-components=1 -xf %{SOURCE0}
 
 
 %install
+
+PYTHONUNBUFFERED=1 ; export PYTHONUNBUFFERED
+
 CFLAGS="${CFLAGS:-%optflags}" ; export CFLAGS ; \
 CXXFLAGS="${CXXFLAGS:-%optflags}" ; export CXXFLAGS ; \
 FFLAGS="${FFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FFLAGS ; \
@@ -48,6 +64,7 @@ DESTDIR=%{buildroot} ; export DESTDIR
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+  -DCATKIN_ENABLE_TESTING=OFF \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \

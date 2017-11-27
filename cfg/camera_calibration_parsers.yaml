@@ -1,0 +1,6 @@
+dependencies:
+  build:
+    system:
+      - python2-devel
+      - log4cxx-devel
+      - console-bridge-devel

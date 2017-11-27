@@ -1,0 +1,5 @@
+dependencies:
+  build:
+    system:
+      - gtest-devel
+      - boost-devel

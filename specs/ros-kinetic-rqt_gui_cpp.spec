@@ -1,6 +1,6 @@
 Name:           ros-kinetic-rqt_gui_cpp
 Version:        0.5.0
-Release:        2%{?dist}
+Release:        4%{?dist}
 Summary:        ROS package rqt_gui_cpp
 
 License:        BSD
@@ -10,7 +10,18 @@ Source0:        https://github.com/ros-gbp/rqt-release/archive/release/kinetic/r
 
 
 
+# common BRs
+BuildRequires:  boost-devel
+BuildRequires:  console-bridge-devel
+BuildRequires:  gtest-devel
+BuildRequires:  log4cxx-devel
+BuildRequires:  python2-devel
+
+BuildRequires:  libuuid-devel
+BuildRequires:  poco-devel
 BuildRequires:  qt5-qtbase-devel
+BuildRequires:  tinyxml-devel
+BuildRequires:  tinyxml2-devel
 BuildRequires:  ros-kinetic-catkin
 BuildRequires:  ros-kinetic-nodelet
 BuildRequires:  ros-kinetic-qt_gui
@@ -36,6 +47,9 @@ tar --strip-components=1 -xf %{SOURCE0}
 
 
 %install
+
+PYTHONUNBUFFERED=1 ; export PYTHONUNBUFFERED
+
 CFLAGS="${CFLAGS:-%optflags}" ; export CFLAGS ; \
 CXXFLAGS="${CXXFLAGS:-%optflags}" ; export CXXFLAGS ; \
 FFLAGS="${FFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FFLAGS ; \
@@ -49,6 +63,7 @@ DESTDIR=%{buildroot} ; export DESTDIR
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+  -DCATKIN_ENABLE_TESTING=OFF \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \
@@ -71,6 +86,10 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Nov 24 2017 Till Hofmann <thofmann@fedoraproject.org> - 0.5.0-4
+- Add missing BR tinyxml-devel
+* Fri Nov 24 2017 Till Hofmann <thofmann@fedoraproject.org> - 0.5.0-3
+- Add missing BR poco-devel
 * Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.5.0-2
 - Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.5.0-1

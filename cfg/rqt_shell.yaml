@@ -1,3 +1,1 @@
 noarch: true
-patches:
-  - ros-kinetic-rqt_shell.syntax-error.patch

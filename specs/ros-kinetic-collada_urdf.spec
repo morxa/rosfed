@@ -10,8 +10,17 @@ Source0:        https://github.com/ros-gbp/collada_urdf-release/archive/release/
 
 
 
+# common BRs
+BuildRequires:  boost-devel
+BuildRequires:  console-bridge-devel
+BuildRequires:  gtest-devel
+BuildRequires:  log4cxx-devel
+BuildRequires:  python2-devel
+
 BuildRequires:  assimp-devel
 BuildRequires:  collada-dom-devel
+BuildRequires:  eigen3-devel
+BuildRequires:  tinyxml-devel
 BuildRequires:  urdfdom-devel
 BuildRequires:  urdfdom-headers-devel
 BuildRequires:  ros-kinetic-angles
@@ -50,6 +59,9 @@ tar --strip-components=1 -xf %{SOURCE0}
 
 
 %install
+
+PYTHONUNBUFFERED=1 ; export PYTHONUNBUFFERED
+
 CFLAGS="${CFLAGS:-%optflags}" ; export CFLAGS ; \
 CXXFLAGS="${CXXFLAGS:-%optflags}" ; export CXXFLAGS ; \
 FFLAGS="${FFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FFLAGS ; \
@@ -63,6 +75,7 @@ DESTDIR=%{buildroot} ; export DESTDIR
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+  -DCATKIN_ENABLE_TESTING=OFF \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \

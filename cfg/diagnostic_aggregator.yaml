@@ -1,0 +1,7 @@
+dependencies:
+  build:
+    system:
+      - poco-devel
+      - tinyxml-devel
+      - tinyxml2-devel
+      - libuuid-devel

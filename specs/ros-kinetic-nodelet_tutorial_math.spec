@@ -10,6 +10,17 @@ Source0:        https://github.com/ros-gbp/common_tutorials-release/archive/rele
 
 
 
+# common BRs
+BuildRequires:  boost-devel
+BuildRequires:  console-bridge-devel
+BuildRequires:  gtest-devel
+BuildRequires:  log4cxx-devel
+BuildRequires:  python2-devel
+
+BuildRequires:  libuuid-devel
+BuildRequires:  poco-devel
+BuildRequires:  tinyxml-devel
+BuildRequires:  tinyxml2-devel
 BuildRequires:  ros-kinetic-catkin
 BuildRequires:  ros-kinetic-nodelet
 BuildRequires:  ros-kinetic-roscpp
@@ -33,6 +44,9 @@ tar --strip-components=1 -xf %{SOURCE0}
 
 
 %install
+
+PYTHONUNBUFFERED=1 ; export PYTHONUNBUFFERED
+
 CFLAGS="${CFLAGS:-%optflags}" ; export CFLAGS ; \
 CXXFLAGS="${CXXFLAGS:-%optflags}" ; export CXXFLAGS ; \
 FFLAGS="${FFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FFLAGS ; \
@@ -46,6 +60,7 @@ DESTDIR=%{buildroot} ; export DESTDIR
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+  -DCATKIN_ENABLE_TESTING=OFF \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \

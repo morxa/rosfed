@@ -1,6 +1,6 @@
 Name:           ros-kinetic-compressed_image_transport
 Version:        1.9.5
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package compressed_image_transport
 
 License:        BSD
@@ -10,6 +10,17 @@ Source0:        https://github.com/ros-gbp/image_transport_plugins-release/archi
 
 
 
+# common BRs
+BuildRequires:  boost-devel
+BuildRequires:  console-bridge-devel
+BuildRequires:  gtest-devel
+BuildRequires:  log4cxx-devel
+BuildRequires:  python2-devel
+
+BuildRequires:  opencv-devel
+BuildRequires:  poco-devel
+BuildRequires:  tinyxml-devel
+BuildRequires:  tinyxml2-devel
 BuildRequires:  ros-kinetic-catkin
 BuildRequires:  ros-kinetic-cv_bridge
 BuildRequires:  ros-kinetic-dynamic_reconfigure
@@ -34,6 +45,9 @@ tar --strip-components=1 -xf %{SOURCE0}
 
 
 %install
+
+PYTHONUNBUFFERED=1 ; export PYTHONUNBUFFERED
+
 CFLAGS="${CFLAGS:-%optflags}" ; export CFLAGS ; \
 CXXFLAGS="${CXXFLAGS:-%optflags}" ; export CXXFLAGS ; \
 FFLAGS="${FFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FFLAGS ; \
@@ -47,6 +61,7 @@ DESTDIR=%{buildroot} ; export DESTDIR
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+  -DCATKIN_ENABLE_TESTING=OFF \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \
@@ -69,6 +84,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Thu Nov 23 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.9.5-3
+- Build against system opencv3 instead of ros-kinetic-opencv
 * Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.9.5-2
 - Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.9.5-1

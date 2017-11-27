@@ -1,0 +1,5 @@
+dependencies:
+  build:
+    system:
+      - log4cxx-devel
+      - console-bridge-devel

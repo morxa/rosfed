@@ -24,6 +24,13 @@ Patch{{ loop.index0 }}: {{ patch }}
 BuildArch: noarch
 {% endif %}
 
+# common BRs
+BuildRequires:  boost-devel
+BuildRequires:  console-bridge-devel
+BuildRequires:  gtest-devel
+BuildRequires:  log4cxx-devel
+BuildRequires:  python2-devel
+
 {% block dependencies %}
 {% for dep in build_dependencies.system|sort %}
 BuildRequires:  {{ dep }}
@@ -68,6 +75,9 @@ tar --strip-components=1 -xf %{SOURCE{{ loop.index0 }}}
 
 
 %install
+
+PYTHONUNBUFFERED=1 ; export PYTHONUNBUFFERED
+
 {% block install_environment %}
 CFLAGS="${CFLAGS:-%optflags}" ; export CFLAGS ; \
 CXXFLAGS="${CXXFLAGS:-%optflags}" ; export CXXFLAGS ; \
@@ -86,6 +96,7 @@ DESTDIR=%{buildroot} ; export DESTDIR
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+  -DCATKIN_ENABLE_TESTING=OFF \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \

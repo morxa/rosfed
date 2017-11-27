@@ -10,6 +10,12 @@ Source0:        https://github.com/ros-gbp/opencv3-release/archive/release/kinet
 
 
 
+# common BRs
+BuildRequires: boost-devel
+BuildRequires: console-bridge-devel
+BuildRequires: log4cxx-devel
+BuildRequires: python2-devel
+
 BuildRequires:  cmake
 BuildRequires:  jasper-devel
 BuildRequires:  libjpeg-turbo-devel
@@ -43,6 +49,9 @@ tar --strip-components=1 -xf %{SOURCE0}
 
 
 %install
+
+PYTHONUNBUFFERED=1 ; export PYTHONUNBUFFERED
+
 CFLAGS="${CFLAGS:-%optflags}" ; export CFLAGS ; \
 CXXFLAGS="${CXXFLAGS:-%optflags}" ; export CXXFLAGS ; \
 FFLAGS="${FFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FFLAGS ; \

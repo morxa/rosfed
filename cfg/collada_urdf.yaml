@@ -1,0 +1,5 @@
+dependencies:
+  build:
+    system:
+      - eigen3-devel
+      - tinyxml-devel

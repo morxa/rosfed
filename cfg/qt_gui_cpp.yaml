@@ -6,3 +6,6 @@ dependencies:
       - qtermwidget-qt5-devel
       - python-qt5-devel
       - boost-devel
+      - console-bridge-devel
+      - poco-devel
+      - tinyxml2-devel

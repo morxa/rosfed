@@ -1,0 +1,5 @@
+dependencies:
+  build:
+    system:
+      - bzip2-devel
+      - lz4-devel

@@ -1,6 +1,6 @@
 Name:           ros-kinetic-depth_image_proc
 Version:        1.12.21
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package depth_image_proc
 
 License:        BSD
@@ -10,7 +10,20 @@ Source0:        https://github.com/ros-gbp/image_pipeline-release/archive/releas
 
 
 
+# common BRs
 BuildRequires:  boost-devel
+BuildRequires:  console-bridge-devel
+BuildRequires:  gtest-devel
+BuildRequires:  log4cxx-devel
+BuildRequires:  python2-devel
+
+BuildRequires:  boost-devel
+BuildRequires:  eigen3-devel
+BuildRequires:  libuuid-devel
+BuildRequires:  opencv-devel
+BuildRequires:  poco-devel
+BuildRequires:  tinyxml-devel
+BuildRequires:  tinyxml2-devel
 BuildRequires:  ros-kinetic-catkin
 BuildRequires:  ros-kinetic-cmake_modules
 BuildRequires:  ros-kinetic-cv_bridge
@@ -50,6 +63,9 @@ tar --strip-components=1 -xf %{SOURCE0}
 
 
 %install
+
+PYTHONUNBUFFERED=1 ; export PYTHONUNBUFFERED
+
 CFLAGS="${CFLAGS:-%optflags}" ; export CFLAGS ; \
 CXXFLAGS="${CXXFLAGS:-%optflags}" ; export CXXFLAGS ; \
 FFLAGS="${FFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FFLAGS ; \
@@ -63,6 +79,7 @@ DESTDIR=%{buildroot} ; export DESTDIR
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+  -DCATKIN_ENABLE_TESTING=OFF \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \
@@ -85,6 +102,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Thu Nov 23 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.12.21-2
+- Build against system opencv3 instead of ros-kinetic-opencv
 * Sun Nov 19 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.12.21-1
 - Update to latest release
 * Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.12.20-2

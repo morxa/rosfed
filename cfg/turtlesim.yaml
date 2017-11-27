@@ -1,0 +1,8 @@
+dependencies:
+  build:
+    system:
+      - boost-devel
+      - tinyxml-devel
+      - log4cxx-devel
+      - python2-devel
+      - console-bridge-devel

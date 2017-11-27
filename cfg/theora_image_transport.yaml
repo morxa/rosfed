@@ -1,0 +1,8 @@
+dependencies:
+  build:
+    system:
+      - opencv-devel
+      - poco-devel
+      - lz4-devel
+      - tinyxml-devel
+      - tinyxml2-devel

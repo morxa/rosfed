@@ -1,1 +1,6 @@
 noarch: true
+dependencies:
+  build:
+    system:
+      - eigen3-devel
+      - ogre-devel

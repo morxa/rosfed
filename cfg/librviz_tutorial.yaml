@@ -1,0 +1,9 @@
+dependencies:
+  build:
+    system:
+      - eigen3-devel
+      - ogre-devel
+      - tinyxml-devel
+      - tinyxml2-devel
+      - poco-devel
+      - urdfdom-devel

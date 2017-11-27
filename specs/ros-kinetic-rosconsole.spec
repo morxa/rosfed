@@ -8,7 +8,15 @@ URL:            http://www.ros.org/
 
 Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/kinetic/rosconsole/1.12.12-0.tar.gz#/ros-kinetic-rosconsole-1.12.12-source0.tar.gz
 
+Patch0: ros-kinetic-rosconsole.remove-log4cxx-include.patch
 
+
+# common BRs
+BuildRequires:  boost-devel
+BuildRequires:  console-bridge-devel
+BuildRequires:  gtest-devel
+BuildRequires:  log4cxx-devel
+BuildRequires:  python2-devel
 
 BuildRequires:  apr-devel apr-util
 BuildRequires:  boost-devel
@@ -31,12 +39,16 @@ ROS console output library.
 
 %setup -c -T
 tar --strip-components=1 -xf %{SOURCE0}
+%patch0 -p1
 
 %build
 # nothing to do here
 
 
 %install
+
+PYTHONUNBUFFERED=1 ; export PYTHONUNBUFFERED
+
 CFLAGS="${CFLAGS:-%optflags}" ; export CFLAGS ; \
 CXXFLAGS="${CXXFLAGS:-%optflags}" ; export CXXFLAGS ; \
 FFLAGS="${FFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FFLAGS ; \
@@ -50,6 +62,7 @@ DESTDIR=%{buildroot} ; export DESTDIR
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+  -DCATKIN_ENABLE_TESTING=OFF \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \
