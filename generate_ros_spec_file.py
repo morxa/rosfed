@@ -53,6 +53,7 @@ class RosPkg:
     def __init__(self, name, distro):
         self.rosdistro = distro
         self.name = name
+        self.spec = ''
         self.distro_info = generator.get_wet_distro(distro)
         xml_string = self.distro_info.get_release_package_xml(name)
         self.xml = ElementTree.fromstring(xml_string)
@@ -70,6 +71,10 @@ class RosPkg:
         self.pkg_config = { **common_config, **pkg_specific_config }
         self.release = self.pkg_config.get('release', 1)
         self.compute_dependencies()
+
+    def get_full_name(self):
+        """ Get the full name of the package, e.g., ros-kinetic-catkin. """
+        return 'ros-{}-{}'.format(self.rosdistro, self.name)
 
     def compute_dependencies(self):
         for child in self.xml:
@@ -336,6 +341,7 @@ def generate_spec_files(packages, distro, bump_release, release_version,
         version = ros_pkg.get_version()
         outfile = os.path.join(destination,
                                'ros-{}-{}.spec'.format(distro, ros_pkg.name))
+        ros_pkg.spec = outfile
         pkg_changelog_entry = changelog_entry
         if os.path.isfile(outfile):
             changelog = get_changelog_from_spec(outfile)

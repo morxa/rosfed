@@ -12,6 +12,7 @@ the specified COPR and if not, will submit a new build to the COPR.
 """
 
 import argparse
+import build_tree
 import copr
 import json
 import functools
@@ -78,6 +79,49 @@ class CoprBuilder:
             print('Building {} was successful.'.format(srpm))
         return build
 
+    def get_node_of_build(self, nodes, build):
+        for node in nodes:
+            if node.build == build:
+                return node
+        raise Exception(
+            'Could not find node in build tree of build {}'.format(build))
+
+    def build_pkgs(self, chroot, pkgs):
+        """ Build a set of packages in order of dependencies. """
+        tree = build_tree.Tree(pkgs)
+        builds = []
+        while not tree.is_built():
+            wait_for_build = True
+            leaves = tree.get_build_leaves()
+            print('Found {} leave node(s)'.format(len(leaves)))
+            if not builds and not leaves:
+                raise Exception(
+                    'No pending builds and no leave packages, abort.')
+            for node in leaves:
+                if self.pkg_is_built(chroot, node.pkg.get_full_name(),
+                                     node.pkg.get_version_release()):
+                    node.state = build_tree.BuildState.SUCCEEDED
+                    wait_for_build = False
+                else:
+                    assert node.state == build_tree.BuildState.PENDING, \
+                            'Unexpected build state {} of package node ' \
+                            '{}'.format(node.state, node.name)
+                    node.build = self.build_spec(chroot=chroot,
+                                                 spec=node.pkg.spec)
+                    node.state = build_tree.BuildState.BUILDING
+                    builds.append(node.build)
+            if not wait_for_build:
+                continue
+            finished_build = self.wait_for_one_build(builds)
+            node = self.get_node_of_build(leaves, finished_build)
+            builds.remove(finished_build)
+            if finished_build.get_self().state == 'succeeded':
+                print('Successful build: {}'.format(node.name))
+                node.state = build_tree.BuildState.SUCCEEDED
+            else:
+                print('Failed build: {}'.format(node.name))
+                node.state = build_tree.BuildState.FAILED
+
     @functools.lru_cache(16)
     def get_builds(self):
         # workaround for https://pagure.io/copr/copr/issue/119
@@ -141,6 +185,19 @@ class CoprBuilder:
                     raise CoprBuildError(
                         'Build {} of package {} was canceled'.format(
                             build.get_self().id, build.get_self().package_name))
+
+    def wait_for_one_build(self, builds):
+        """ Wait for one of the given builds to complete.
+
+        Args:
+            builds: A list of COPR builds.
+        Returns:
+            The build that completed.
+        """
+        while True:
+            for build in builds:
+                if build.get_self().is_finished():
+                    return build
 
 def main():
     """ Main function to directly build a SPEC file. """
