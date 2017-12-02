@@ -113,7 +113,7 @@ class CoprBuilder:
             if not wait_for_build:
                 continue
             finished_build = self.wait_for_one_build(builds)
-            node = self.get_node_of_build(leaves, finished_build)
+            node = self.get_node_of_build(tree.nodes.values(), finished_build)
             builds.remove(finished_build)
             if finished_build.get_self().state == 'succeeded':
                 print('Successful build: {}'.format(node.name))
