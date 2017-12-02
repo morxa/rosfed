@@ -84,7 +84,7 @@ class CoprBuilder:
             if node.build == build:
                 return node
         raise Exception(
-            'Could not find node in build tree of build {}'.format(build))
+            'Could not find node of build {} in build tree'.format(build))
 
     def build_tree(self, chroot, pkgs):
         """ Build a set of packages in order of dependencies. """
@@ -101,6 +101,7 @@ class CoprBuilder:
                 if self.pkg_is_built(chroot, node.pkg.get_full_name(),
                                      node.pkg.get_version_release()):
                     node.state = build_tree.BuildState.SUCCEEDED
+                    print('{} is already built, skipping!'.format(node.name))
                     wait_for_build = False
                 else:
                     assert node.state == build_tree.BuildState.PENDING, \
@@ -112,6 +113,7 @@ class CoprBuilder:
                     builds.append(node.build)
             if not wait_for_build:
                 continue
+            print('Waiting for a build to finish...')
             finished_build = self.wait_for_one_build(builds)
             node = self.get_node_of_build(tree.nodes.values(), finished_build)
             builds.remove(finished_build)

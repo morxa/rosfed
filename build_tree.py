@@ -25,7 +25,6 @@ class Tree:
         self.nodes = {}
         for pkg in pkgs:
             self.add_pkg(pkg)
-        print('Node keys:', self.nodes.keys())
         assert len(self.nodes) == len(pkgs), \
                 'Unexpected number of nodes: {}, ' \
                 'expected: {}'.format(len(self.nodes), len(pkgs))
@@ -47,7 +46,6 @@ class Tree:
             return node
 
     def add_pkg(self, pkg):
-        print('Adding pkg {} to tree'.format(pkg))
         if not pkg.name in self.nodes:
             node = Node(pkg.name)
             node.pkg = pkg
@@ -69,7 +67,6 @@ class Tree:
                 continue
             is_leave = True
             for dep in node.dependencies:
-                print('Checking dependency {} of {}'.format(dep.name, node.name))
                 if not dep.state == BuildState.SUCCEEDED:
                     is_leave = False
             if is_leave:
