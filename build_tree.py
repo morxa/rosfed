@@ -11,6 +11,7 @@ A dependency tree representation.
 """
 
 import enum
+import pygraphviz as pgv
 
 class BuildState(enum.Enum):
     PENDING = enum.auto()
@@ -87,6 +88,25 @@ class Tree:
             if node.state == BuildState.FAILED:
                 return True
         return False
+
+    def to_dot(self):
+        """ Generate a DOT representation of the tree.
+
+        Returns:
+            A pgv graph object.
+        """
+        graph = pgv.AGraph(directed=True)
+        graph.node_attr['shape'] = 'rectangle'
+        for node in self.nodes:
+            graph.add_node(node)
+        for node in self.nodes.values():
+            for dep in node.dependencies:
+                graph.add_edge(node.name, dep.name)
+        return graph
+
+    def draw_tree(self, output_file):
+        graph = self.to_dot()
+        graph.draw(output_file,prog='dot')
 
 class Node:
     def __init__(self, name, pkg = None):
