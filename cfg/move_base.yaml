@@ -1,0 +1,9 @@
+dependencies:
+  build:
+    system:
+      - pcl-devel
+      - poco-devel
+      - libuuid-devel
+      - tinyxml-devel
+      - tinyxml2-devel
+      - lz4-devel
