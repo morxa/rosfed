@@ -274,24 +274,18 @@ def main():
         assert args.chroot, 'You need to provide a chroot to use for builds.'
         copr_builder = copr_build.CoprBuilder(project_id=args.copr_project_id)
         for chroot in args.chroot:
-            for stage in get_build_order(packages):
-                stage_builds = []
-                for package in stage:
-                    pkg_name = 'ros-{}-{}'.format(args.distro, package)
-                    ver_rel = packages[package].get_version_release()
-                    if copr_builder.pkg_is_built(chroot, pkg_name, ver_rel):
-                        print('Skipping {}, package is already built!'.format(
-                            pkg_name))
-                    else:
-                        spec = os.path.join(args.destination, pkg_name+'.spec')
-                        build = copr_builder.build_spec(chroot, spec)
-                        stage_builds.append(build)
-                copr_builder.wait_for_completion(stage_builds)
-                # update all builds
-                stage_builds = [ build.get_self() for build in stage_builds ]
-                for build in stage_builds:
-                    assert build.state == 'succeeded', \
-                            'Failed to build {}!'.format(build.package_name)
+            if args.recursive:
+                copr_builder.build_tree(chroot, list(packages.values()))
+            else:
+                builds = []
+                for pkg in packages.values():
+                    builds.append(
+                        copr_builder.build_spec(chroot=chroot, spec=pkg.spec))
+                copr_builder.wait_for_completion(builds)
+                for build in builds:
+                    build = build.get_self()
+                    if build.state != 'succeeded':
+                        print('Failed to build {}!'.format(build.package_name))
 
 def get_build_order(packages):
     """ Get the order in which to build the given dictionary of packages.
