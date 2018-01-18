@@ -16,6 +16,7 @@ import build_tree
 import copr
 import json
 import functools
+import marshmallow
 import re
 import spec_utils
 import subprocess
@@ -156,8 +157,8 @@ class CoprBuilder:
                 try:
                     build_tasks = build.get_build_tasks()
                 except marshmallow.exceptions.ValidationError:
-                    print('Failed to get build tasks of build {}, skipping',
-                          build.id)
+                    print('Failed to get build tasks of build {}, '
+                          'skipping!'.format(build.id))
                     continue
                 for build_task in build_tasks:
                     if build_task.state == 'succeeded' and \
