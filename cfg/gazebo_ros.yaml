@@ -2,3 +2,7 @@ dependencies:
   build:
     ros:
       - trajectory_msgs
+    system: 
+      - gazebo-devel
+      - bullet-devel
+      - libuuid-devel

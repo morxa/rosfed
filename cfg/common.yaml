@@ -19,4 +19,6 @@ common:
             type: system
             pkg: opencv
     distro_names:
+      libgazebo7-dev: gazebo-devel
+      libgazebo7: gazebo-libs
       python-imaging: python-pillow
