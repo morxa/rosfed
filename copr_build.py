@@ -14,9 +14,10 @@ the specified COPR and if not, will submit a new build to the COPR.
 import argparse
 import build_tree
 import copr
-import json
 import functools
+import json
 import marshmallow
+import os
 import re
 import spec_utils
 import subprocess
@@ -46,6 +47,9 @@ class CoprBuilder:
             spec: The path to the SPEC file of the package.
         """
         print('Building {} for chroot {}'.format(spec, chroot))
+        res = subprocess.run(['spectool', '-g', spec, '-C',
+                              os.path.expanduser('~/rpmbuild/SOURCES')])
+        assert res.returncode == 0, 'Failed to fetch sources for ' + spec
         res = subprocess.run(['rpmbuild', '-bs', spec],
                              universal_newlines=True,
                              stdout=subprocess.PIPE)
