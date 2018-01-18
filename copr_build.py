@@ -86,7 +86,7 @@ class CoprBuilder:
         raise Exception(
             'Could not find node of build {} in build tree'.format(build))
 
-    def build_tree(self, chroot, pkgs):
+    def build_tree(self, chroot, pkgs, only_new=False):
         """ Build a set of packages in order of dependencies. """
         tree = build_tree.Tree(pkgs)
         builds = []
@@ -98,8 +98,12 @@ class CoprBuilder:
                 raise Exception(
                     'No pending builds and no leave packages, abort.')
             for node in leaves:
+                if only_new:
+                    pkg_version = None
+                else:
+                    pkg_version = node.pkg.get_version_release()
                 if self.pkg_is_built(chroot, node.pkg.get_full_name(),
-                                     node.pkg.get_version_release()):
+                                     pkg_version):
                     node.state = build_tree.BuildState.SUCCEEDED
                     print('{} is already built, skipping!'.format(node.name))
                     wait_for_build = False
@@ -158,6 +162,10 @@ class CoprBuilder:
                 for build_task in build_tasks:
                     if build_task.state == 'succeeded' and \
                        build_task.chroot_name == chroot:
+                        if not pkg_version:
+                            print('Found build of {} and no version specified, '
+                                  'skipping!'.format(pkg_name))
+                            return True
                         # We expect package versions of the format
                         # 1.0-2.fc23 or 1.0-2
                         build_version = re.fullmatch(

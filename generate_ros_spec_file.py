@@ -247,6 +247,8 @@ def main():
                         default=None,
                         help='Print the order in which the packages should be '
                              'built, requires -r')
+    parser.add_argument('--only-new', action='store_true',
+                        help='Only build packages that are not in the repo yet')
     parser.add_argument('ros_pkg', nargs='+',
                         help='ROS package name')
     args = parser.parse_args()
@@ -260,11 +262,10 @@ def main():
         args.user_string = user_string.strip()
     # TODO: Improve design, we should not resolve dependencies and generate SPEC
     # files in one step, these are not really related.
-    packages = generate_spec_files(args.ros_pkg, args.distro,
-                                       args.bump_release,
-                                       args.release_version, args.user_string,
-                                       args.changelog, args.recursive,
-                                       args.no_arch, args.destination)
+    packages = generate_spec_files(
+        args.ros_pkg, args.distro, args.bump_release, args.release_version,
+        args.user_string, args.changelog, args.recursive, args.only_new,
+        args.no_arch, args.destination)
     if args.build_order_file:
         order = get_build_order(packages)
         for stage in order:
@@ -275,7 +276,8 @@ def main():
         copr_builder = copr_build.CoprBuilder(project_id=args.copr_project_id)
         for chroot in args.chroot:
             if args.recursive:
-                copr_builder.build_tree(chroot, list(packages.values()))
+                copr_builder.build_tree(chroot, list(packages.values()),
+                                        args.only_new)
             else:
                 builds = []
                 for pkg in packages.values():
@@ -308,8 +310,8 @@ def get_build_order(packages):
     return order
 
 def generate_spec_files(packages, distro, bump_release, release_version,
-                        user_string, changelog_entry, recursive, no_arch,
-                        destination):
+                        user_string, changelog_entry, recursive, only_new,
+                        no_arch, destination):
     """ Generate Spec files for the given list of packages. """
     jinja_env = jinja2.Environment(
         loader=jinja2.FileSystemLoader('templates'),
@@ -338,6 +340,9 @@ def generate_spec_files(packages, distro, bump_release, release_version,
         ros_pkg.spec = outfile
         pkg_changelog_entry = changelog_entry
         if os.path.isfile(outfile):
+            if only_new:
+                print('Skipping {}, SPEC file exists.'.format(ros_pkg.name))
+                continue
             changelog = get_changelog_from_spec(outfile)
             if not release_version:
                 # Release is not specified and Spec file exists, use new version
