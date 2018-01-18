@@ -18,3 +18,5 @@ common:
           to:
             type: system
             pkg: opencv
+    distro_names:
+      python-imaging: python-pillow
