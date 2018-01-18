@@ -95,9 +95,15 @@ class RosPkg:
                         for dep_list in dep_lists:
                             dep_list['ros'].add(pkg)
                     except KeyError:
-                        system_pkg = get_system_package_name(pkg, self.rosdistro)
-                        for dep_list in dep_lists:
-                            dep_list['system'].add(system_pkg)
+                        try:
+                            dep = \
+                                self.pkg_config['common']['dependencies']\
+                                    ['distro_names'][pkg]
+                        except KeyError:
+                            system_pkg = \
+                                    get_system_package_name(pkg, self.rosdistro)
+                            for dep_list in dep_lists:
+                                dep_list['system'].add(system_pkg)
 
     def get_dependencies_from_cfg(self, dependency_type):
         try:
