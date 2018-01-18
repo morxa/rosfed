@@ -1,0 +1,23 @@
+diff -ur vision_opencv-release-release-kinetic-image_geometry-1.12.7-0/CMakeLists.txt vision_opencv-release-release-kinetic-image_geometry-1.12.7-0.catkin-fix-order/CMakeLists.txt
+--- vision_opencv-release-release-kinetic-image_geometry-1.12.7-0/CMakeLists.txt	2017-11-12 12:43:23.000000000 +0100
++++ vision_opencv-release-release-kinetic-image_geometry-1.12.7-0.catkin-fix-order/CMakeLists.txt	2017-11-21 16:58:20.433834215 +0100
+@@ -2,7 +2,9 @@
+ project(image_geometry)
+ 
+ find_package(catkin REQUIRED sensor_msgs)
+-find_package(OpenCV REQUIRED)
++find_package(OpenCV REQUIRED calib3d)
++
++catkin_python_setup()
+ 
+ catkin_package(CATKIN_DEPENDS sensor_msgs
+                DEPENDS OpenCV
+@@ -10,8 +12,6 @@
+                LIBRARIES ${PROJECT_NAME}
+ )
+ 
+-catkin_python_setup()
+-
+ include_directories(include)
+ include_directories(${catkin_INCLUDE_DIRS} ${OpenCV_INCLUDE_DIRS})
+ 

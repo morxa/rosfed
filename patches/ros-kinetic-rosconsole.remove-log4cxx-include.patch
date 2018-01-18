@@ -1,0 +1,28 @@
+diff -ur ros_comm-release-release-kinetic-rosconsole-1.12.12-0/include/ros/console.h ros_comm-release-release-kinetic-rosconsole-1.12.12-0.remove-log4cxx-include/include/ros/console.h
+--- ros_comm-release-release-kinetic-rosconsole-1.12.12-0/include/ros/console.h	2017-11-17 00:21:41.000000000 +0100
++++ ros_comm-release-release-kinetic-rosconsole-1.12.12-0.remove-log4cxx-include/include/ros/console.h	2017-11-20 17:47:03.696528751 +0100
+@@ -43,7 +43,9 @@
+ #include <vector>
+ 
+ #ifdef ROSCONSOLE_BACKEND_LOG4CXX
+-#include "log4cxx/level.h"
++namespace log4cxx {
++  class LevelPtr;
++}
+ #endif
+ 
+ // Import/export for windows dll's and visibility for gcc shared libraries.
+diff -ur ros_comm-release-release-kinetic-rosconsole-1.12.12-0/src/rosconsole/rosconsole.cpp ros_comm-release-release-kinetic-rosconsole-1.12.12-0.remove-log4cxx-include/src/rosconsole/rosconsole.cpp
+--- ros_comm-release-release-kinetic-rosconsole-1.12.12-0/src/rosconsole/rosconsole.cpp	2017-11-17 00:21:41.000000000 +0100
++++ ros_comm-release-release-kinetic-rosconsole-1.12.12-0.remove-log4cxx-include/src/rosconsole/rosconsole.cpp	2017-11-20 18:03:01.599558245 +0100
+@@ -37,6 +37,10 @@
+ #include "ros/assert.h"
+ #include <ros/time.h>
+ 
++#ifdef ROSCONSOLE_BACKEND_LOG4CXX
++#include <log4cxx/level.h>
++#endif
++
+ #include <boost/thread.hpp>
+ #include <boost/shared_array.hpp>
+ #include <boost/regex.hpp>
