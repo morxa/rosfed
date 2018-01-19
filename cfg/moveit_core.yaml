@@ -1,0 +1,5 @@
+dependencies:
+  build:
+    system:
+      - tinyxml-devel
+      - libccd-devel
