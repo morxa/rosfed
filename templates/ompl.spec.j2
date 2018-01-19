@@ -1,4 +1,5 @@
 {% extends "pkg.spec.j2" %}
 {% block cmake_flags %}
   -DCMAKE_INSTALL_LIBDIR=%{_libdir}/ros/lib \
+  -DOMPL_REGISTRATION=OFF \
 {% endblock %}

@@ -1,6 +1,6 @@
 Name:           ros-kinetic-ompl
 Version:        1.2.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package ompl
 
 License:        BSD
@@ -54,6 +54,8 @@ DESTDIR=%{buildroot} ; export DESTDIR
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
   -DCATKIN_ENABLE_TESTING=OFF \
+  -DCMAKE_INSTALL_LIBDIR=%{_libdir}/ros/lib \
+  -DOMPL_REGISTRATION=OFF \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \
@@ -76,5 +78,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 %changelog
+* Fri Jan 19 2018 Tim Niemueller <tim@niemuelle.de> - 1.2.1-2
+- Add flags to fix lib path and disable registration
+
 * Thu Jan 18 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.2.1-1
 - Initial package
