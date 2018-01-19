@@ -1,0 +1,7 @@
+dependencies:
+  build:
+    system:
+      - poco-devel
+      - urdfdom-devel
+      - tinyxml-devel
+      - tinyxml2-devel

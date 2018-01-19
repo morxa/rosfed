@@ -1,0 +1,6 @@
+dependencies:
+  build:
+    system:
+      - tinyxml-devel
+      - tinyxml2-devel
+      - poco-devel
