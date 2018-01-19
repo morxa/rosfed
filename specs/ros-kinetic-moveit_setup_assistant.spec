@@ -17,6 +17,14 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python2-devel
 
+BuildRequires:  eigen3-devel
+BuildRequires:  fcl-devel
+BuildRequires:  ogre-devel
+BuildRequires:  poco-devel
+BuildRequires:  qt5-qtbase-devel
+BuildRequires:  tinyxml-devel
+BuildRequires:  tinyxml2-devel
+BuildRequires:  urdfdom-devel
 BuildRequires:  yaml-cpp-devel
 BuildRequires:  ros-kinetic-catkin
 BuildRequires:  ros-kinetic-moveit_core
@@ -68,9 +76,9 @@ catkin_make_isolated \
 
 rm -rf %{buildroot}/%{_libdir}/ros/{.catkin,.rosinstall,_setup*,setup*,env.sh}
 
-find %{buildroot}/%{_libdir}/ros/{bin,etc,include,lib/pkgconfig,lib64/python*,lib/python*/site-packages,share} \
+find %{buildroot}/%{_libdir}/ros/{bin,etc,include,lib*/pkgconfig,lib64/python*,lib/python*/site-packages,share} \
   -mindepth 1 -maxdepth 1 | sed "s:%{buildroot}/::" > files.list
-find %{buildroot}/%{_libdir}/ros/lib/ -mindepth 1 -maxdepth 1 \
+find %{buildroot}/%{_libdir}/ros/lib*/ -mindepth 1 -maxdepth 1 \
   ! -name pkgconfig ! -name "python*" \
   | sed "s:%{buildroot}/::" >> files.list
 

@@ -1,0 +1,11 @@
+dependencies:
+  build:
+    system:
+      - ogre-devel
+      - eigen3-devel
+      - urdfdom-devel
+      - tinyxml-devel
+      - tinyxml2-devel
+      - fcl-devel
+      - poco-devel
+      - qt5-qtbase-devel
