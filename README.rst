@@ -53,6 +53,15 @@ You may need to do the following modifications to the config in
 
         build_flags: "--cmake-args -DENABLE_PRECOMPILED_HEADERS=OFF -DWITH_FFMPEG=OFF"
 
+* To build a package with all its missing dependencies (i.e., the package is not
+  updated if it already exists), run:
+
+        ./generate_ros_spec_file.py -b --copr-project-id 14923 --chroot fedora-27-x86_64 -c Initial package --only-new -r moveit
+
+* To build a single package, run:
+
+        ./generate_ros_spec_file.py -b --copr-project-id 14923 --chroot fedora-27-x86_64 moveit_ros_manipulation
+
 Additionally, you may need to modify the template by providing a
 package-specific template in ``./templates/$pkgname.spec.j2``. Have a look at the
 existing templates for examples.
