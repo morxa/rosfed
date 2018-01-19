@@ -97,6 +97,8 @@ DESTDIR=%{buildroot} ; export DESTDIR
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
   -DCATKIN_ENABLE_TESTING=OFF \
+{% block cmake_flags %}
+{% endblock %}
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \
