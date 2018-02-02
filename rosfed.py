@@ -240,8 +240,6 @@ def main():
                         help='If set to true, bump the Release: tag by 1')
     parser.add_argument('--release-version', default='',
                         help='The Release: of the resulting Spec files')
-    parser.add_argument('--no-arch', action='store_true', default=False,
-                        help='Set BuildArch to noarch')
     parser.add_argument('-d', '--destination', default='./specs',
                         help='Write generated Spec files to this directory')
     parser.add_argument('-c', '--changelog', type=str,
@@ -278,7 +276,7 @@ def main():
     packages = generate_spec_files(
         args.ros_pkg, args.distro, args.bump_release, args.release_version,
         args.user_string, args.changelog, args.recursive, args.only_new,
-        args.no_arch, args.destination)
+        args.destination)
     if args.build_order_file:
         order = get_build_order(packages)
         for stage in order:
@@ -324,7 +322,7 @@ def get_build_order(packages):
 
 def generate_spec_files(packages, distro, bump_release, release_version,
                         user_string, changelog_entry, recursive, only_new,
-                        no_arch, destination):
+                        destination):
     """ Generate Spec files for the given list of packages. """
     jinja_env = jinja2.Environment(
         loader=jinja2.FileSystemLoader('templates'),
@@ -397,7 +395,7 @@ def generate_spec_files(packages, distro, bump_release, release_version,
             date=time.strftime("%a %b %d %Y", time.gmtime()),
             changelog=changelog,
             changelog_entry=pkg_changelog_entry,
-            noarch=no_arch or ros_pkg.is_noarch(),
+            noarch=ros_pkg.is_noarch(),
             has_devel=ros_pkg.has_devel(),
             patches=ros_pkg.get_patches(),
             build_flags=ros_pkg.get_build_flags(),
