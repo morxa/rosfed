@@ -208,6 +208,13 @@ class RosPkg:
     def is_noarch(self):
         return self.pkg_config.get('noarch', False)
 
+    def has_devel(self):
+        """ Returns True iff the package is a devel package. """
+        if 'split_devel' in self.pkg_config.keys():
+            return self.pkg_config['split_devel']
+        else:
+            return not self.is_noarch()
+
     def get_patches(self):
         return self.pkg_config.get('patches', [])
 
@@ -391,6 +398,7 @@ def generate_spec_files(packages, distro, bump_release, release_version,
             changelog=changelog,
             changelog_entry=pkg_changelog_entry,
             noarch=no_arch or ros_pkg.is_noarch(),
+            has_devel=ros_pkg.has_devel(),
             patches=ros_pkg.get_patches(),
             build_flags=ros_pkg.get_build_flags(),
             no_debug=ros_pkg.has_no_debug(),

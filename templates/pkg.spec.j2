@@ -52,6 +52,26 @@ Requires:       ros-{{ distro }}-{{ dep }}
 {{ pkg_description }}
 {% endblock %}
 
+{% if has_devel %}
+%package        devel
+Summary:        Development files for %{name}
+Requires:       %{name}%{?_isa} = %{version}-%{release}
+{% block devel_dependencies %}
+{% for dep in run_dependencies_devel.system|sort %}
+Requires:       {{ dep }}
+{% endfor %}
+{% for dep in run_dependencies_devel.ros|sort %}
+Requires:       ros-{{ distro }}-{{ dep }}
+{% endfor %}
+{% endblock %}
+
+%description devel
+{% block description_devel %}
+The %{name}-devel package contains libraries and header files for developing
+applications that use %{name}.
+{% endblock %}
+{% endif %}
+
 {% if no_debug %}
 %global debug_package %{nil}
 {% endif %}
@@ -111,19 +131,25 @@ catkin_make_isolated \
 
 rm -rf %{buildroot}/%{_libdir}/ros/{.catkin,.rosinstall,_setup*,setup*,env.sh}
 
-find %{buildroot}/%{_libdir}/ros/{bin,etc,include,lib*/pkgconfig,lib64/python*,lib/python*/site-packages,share} \
+find %{buildroot}/%{_libdir}/ros/{bin,etc,lib64/python*,lib/python*/site-packages,share} \
   -mindepth 1 -maxdepth 1 | sed "s:%{buildroot}/::" > files.list
 find %{buildroot}/%{_libdir}/ros/lib*/ -mindepth 1 -maxdepth 1 \
   ! -name pkgconfig ! -name "python*" \
   | sed "s:%{buildroot}/::" >> files.list
 
+{% if has_devel %}
+find %{buildroot}/%{_libdir}/ros/{include,lib*/pkgconfig} \
+  -mindepth 1 -maxdepth 1 | sed "s:%{buildroot}/::" > files_devel.list
+{% endif %}
 
 find . -maxdepth 1 -type f -iname "*readme*" | sed "s:^:%%doc :" >> files.list
 find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.list
 {% endblock %}
 
 %files -f files.list
-
+{% if has_devel %}
+%files devel -f files_devel.list
+{% endif %}
 
 
 %changelog
