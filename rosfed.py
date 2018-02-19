@@ -231,7 +231,7 @@ class RosPkg:
         if 'split_devel' in self.pkg_config.keys():
             return self.pkg_config['split_devel']
         else:
-            return not self.is_noarch()
+            return True
 
     def get_patches(self):
         return self.pkg_config.get('patches', [])
