@@ -3,3 +3,5 @@ dependencies:
     system:
       - gtest-devel
       - boost-devel
+    ros:
+      - roscpp_traits
