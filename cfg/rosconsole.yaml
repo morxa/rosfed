@@ -2,5 +2,3 @@ dependencies:
   build:
     system:
       - console-bridge-devel
-patches:
-  - ros-kinetic-rosconsole.remove-log4cxx-include.patch
