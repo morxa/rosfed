@@ -1,12 +1,12 @@
 Name:           ros-kinetic-depth_image_proc
-Version:        1.12.21
+Version:        1.12.22
 Release:        2%{?dist}
 Summary:        ROS package depth_image_proc
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/image_pipeline-release/archive/release/kinetic/depth_image_proc/1.12.21-0.tar.gz#/ros-kinetic-depth_image_proc-1.12.21-source0.tar.gz
+Source0:        https://github.com/ros-gbp/image_pipeline-release/archive/release/kinetic/depth_image_proc/1.12.22-0.tar.gz#/ros-kinetic-depth_image_proc-1.12.22-source0.tar.gz
 
 
 
@@ -24,19 +24,19 @@ BuildRequires:  opencv-devel
 BuildRequires:  poco-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
-BuildRequires:  ros-kinetic-catkin
-BuildRequires:  ros-kinetic-cmake_modules
-BuildRequires:  ros-kinetic-cv_bridge
-BuildRequires:  ros-kinetic-eigen_conversions
-BuildRequires:  ros-kinetic-image_geometry
-BuildRequires:  ros-kinetic-image_transport
-BuildRequires:  ros-kinetic-message_filters
-BuildRequires:  ros-kinetic-nodelet
-BuildRequires:  ros-kinetic-rostest
-BuildRequires:  ros-kinetic-sensor_msgs
-BuildRequires:  ros-kinetic-stereo_msgs
-BuildRequires:  ros-kinetic-tf2
-BuildRequires:  ros-kinetic-tf2_ros
+BuildRequires:  ros-kinetic-catkin-devel
+BuildRequires:  ros-kinetic-cmake_modules-devel
+BuildRequires:  ros-kinetic-cv_bridge-devel
+BuildRequires:  ros-kinetic-eigen_conversions-devel
+BuildRequires:  ros-kinetic-image_geometry-devel
+BuildRequires:  ros-kinetic-image_transport-devel
+BuildRequires:  ros-kinetic-message_filters-devel
+BuildRequires:  ros-kinetic-nodelet-devel
+BuildRequires:  ros-kinetic-rostest-devel
+BuildRequires:  ros-kinetic-sensor_msgs-devel
+BuildRequires:  ros-kinetic-stereo_msgs-devel
+BuildRequires:  ros-kinetic-tf2-devel
+BuildRequires:  ros-kinetic-tf2_ros-devel
 
 Requires:       ros-kinetic-cv_bridge
 Requires:       ros-kinetic-eigen_conversions
@@ -46,11 +46,22 @@ Requires:       ros-kinetic-nodelet
 Requires:       ros-kinetic-tf2
 Requires:       ros-kinetic-tf2_ros
 
+
 %description
 Contains nodelets for processing depth images such as those produced
 by OpenNI camera. Functions include creating disparity images and
 point clouds, as well as registering (reprojecting) a depth image into
 another camera frame.
+
+%package        devel
+Summary:        Development files for %{name}
+Requires:       %{name}%{?_isa} = %{version}-%{release}
+Requires:       ros-kinetic-catkin
+
+%description devel
+The %{name}-devel package contains libraries and header files for developing
+applications that use %{name}.
+
 
 
 %prep
@@ -72,10 +83,10 @@ FFLAGS="${FFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FFLAGS ; \
 FCFLAGS="${FCFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FCFLAGS ; \
 %{?__global_ldflags:LDFLAGS="${LDFLAGS:-%__global_ldflags}" ; export LDFLAGS ;} \
 
-
 source %{_libdir}/ros/setup.bash
 
 DESTDIR=%{buildroot} ; export DESTDIR
+
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
@@ -85,23 +96,43 @@ catkin_make_isolated \
   --install-space %{_libdir}/ros/ \
   --pkg depth_image_proc
 
+
+
+
 rm -rf %{buildroot}/%{_libdir}/ros/{.catkin,.rosinstall,_setup*,setup*,env.sh}
 
-find %{buildroot}/%{_libdir}/ros/{bin,etc,include,lib/pkgconfig,lib64/python*,lib/python*/site-packages,share} \
+touch files.list
+find %{buildroot}/%{_libdir}/ros/{bin,etc,lib64/python*,lib/python*/site-packages,share} \
   -mindepth 1 -maxdepth 1 | sed "s:%{buildroot}/::" > files.list
-find %{buildroot}/%{_libdir}/ros/lib/ -mindepth 1 -maxdepth 1 \
+find %{buildroot}/%{_libdir}/ros/lib*/ -mindepth 1 -maxdepth 1 \
   ! -name pkgconfig ! -name "python*" \
   | sed "s:%{buildroot}/::" >> files.list
 
+touch files_devel.list
+find %{buildroot}/%{_libdir}/ros/{include,lib*/pkgconfig} \
+  -mindepth 1 -maxdepth 1 | sed "s:%{buildroot}/::" > files_devel.list
 
 find . -maxdepth 1 -type f -iname "*readme*" | sed "s:^:%%doc :" >> files.list
 find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.list
 
-%files -f files.list
 
+echo "This is a package automatically generated with rosfed." >> README_FEDORA
+echo "See https://pagure.io/ros for more information." >> README_FEDORA
+install -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
+echo %{_docdir}/%{name} >> files.list
+install -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
+echo %{_docdir}/%{name}-devel >> files_devel.list
+
+
+%files -f files.list
+%files devel -f files_devel.list
 
 
 %changelog
+* Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.22-2
+- Split devel package
+* Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.22-1
+- Split devel package
 * Thu Nov 23 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.12.21-2
 - Build against system opencv3 instead of ros-kinetic-opencv
 * Sun Nov 19 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.12.21-1

@@ -1,12 +1,12 @@
 Name:           ros-kinetic-tf2
-Version:        0.5.16
-Release:        2%{?dist}
+Version:        0.5.17
+Release:        1%{?dist}
 Summary:        ROS package tf2
 
 License:        BSD
 URL:            http://www.ros.org/wiki/tf2
 
-Source0:        https://github.com/ros-gbp/geometry2-release/archive/release/kinetic/tf2/0.5.16-0.tar.gz#/ros-kinetic-tf2-0.5.16-source0.tar.gz
+Source0:        https://github.com/ros-gbp/geometry2-release/archive/release/kinetic/tf2/0.5.17-0.tar.gz#/ros-kinetic-tf2-0.5.17-source0.tar.gz
 
 
 
@@ -20,14 +20,15 @@ BuildRequires:  python2-devel
 BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  gtest-devel
-BuildRequires:  ros-kinetic-catkin
-BuildRequires:  ros-kinetic-geometry_msgs
-BuildRequires:  ros-kinetic-rostime
-BuildRequires:  ros-kinetic-tf2_msgs
+BuildRequires:  ros-kinetic-catkin-devel
+BuildRequires:  ros-kinetic-geometry_msgs-devel
+BuildRequires:  ros-kinetic-rostime-devel
+BuildRequires:  ros-kinetic-tf2_msgs-devel
 
 Requires:       ros-kinetic-geometry_msgs
 Requires:       ros-kinetic-rostime
 Requires:       ros-kinetic-tf2_msgs
+
 
 %description
 tf2 is the second generation of the transform library, which lets the
@@ -35,6 +36,16 @@ user keep track of multiple coordinate frames over time. tf2 maintains
 the relationship between coordinate frames in a tree structure
 buffered in time, and lets the user transform points, vectors, etc
 between any two coordinate frames at any desired point in time.
+
+%package        devel
+Summary:        Development files for %{name}
+Requires:       %{name}%{?_isa} = %{version}-%{release}
+Requires:       ros-kinetic-catkin
+
+%description devel
+The %{name}-devel package contains libraries and header files for developing
+applications that use %{name}.
+
 
 
 %prep
@@ -56,10 +67,10 @@ FFLAGS="${FFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FFLAGS ; \
 FCFLAGS="${FCFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FCFLAGS ; \
 %{?__global_ldflags:LDFLAGS="${LDFLAGS:-%__global_ldflags}" ; export LDFLAGS ;} \
 
-
 source %{_libdir}/ros/setup.bash
 
 DESTDIR=%{buildroot} ; export DESTDIR
+
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
@@ -69,23 +80,41 @@ catkin_make_isolated \
   --install-space %{_libdir}/ros/ \
   --pkg tf2
 
+
+
+
 rm -rf %{buildroot}/%{_libdir}/ros/{.catkin,.rosinstall,_setup*,setup*,env.sh}
 
-find %{buildroot}/%{_libdir}/ros/{bin,etc,include,lib/pkgconfig,lib64/python*,lib/python*/site-packages,share} \
+touch files.list
+find %{buildroot}/%{_libdir}/ros/{bin,etc,lib64/python*,lib/python*/site-packages,share} \
   -mindepth 1 -maxdepth 1 | sed "s:%{buildroot}/::" > files.list
-find %{buildroot}/%{_libdir}/ros/lib/ -mindepth 1 -maxdepth 1 \
+find %{buildroot}/%{_libdir}/ros/lib*/ -mindepth 1 -maxdepth 1 \
   ! -name pkgconfig ! -name "python*" \
   | sed "s:%{buildroot}/::" >> files.list
 
+touch files_devel.list
+find %{buildroot}/%{_libdir}/ros/{include,lib*/pkgconfig} \
+  -mindepth 1 -maxdepth 1 | sed "s:%{buildroot}/::" > files_devel.list
 
 find . -maxdepth 1 -type f -iname "*readme*" | sed "s:^:%%doc :" >> files.list
 find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.list
 
-%files -f files.list
 
+echo "This is a package automatically generated with rosfed." >> README_FEDORA
+echo "See https://pagure.io/ros for more information." >> README_FEDORA
+install -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
+echo %{_docdir}/%{name} >> files.list
+install -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
+echo %{_docdir}/%{name}-devel >> files_devel.list
+
+
+%files -f files.list
+%files devel -f files_devel.list
 
 
 %changelog
+* Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.17-1
+- Split devel package
 * Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.5.16-2
 - Remove all Requires: on devel packages
 * Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.5.16-1

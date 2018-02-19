@@ -1,6 +1,6 @@
 Name:           ros-kinetic-pluginlib
 Version:        1.11.2
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        ROS package pluginlib
 
 License:        BSD
@@ -24,21 +24,32 @@ BuildRequires:  poco-devel
 BuildRequires:  python2-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
-BuildRequires:  ros-kinetic-catkin
-BuildRequires:  ros-kinetic-class_loader
-BuildRequires:  ros-kinetic-cmake_modules
-BuildRequires:  ros-kinetic-rosconsole
-BuildRequires:  ros-kinetic-roslib
+BuildRequires:  ros-kinetic-catkin-devel
+BuildRequires:  ros-kinetic-class_loader-devel
+BuildRequires:  ros-kinetic-cmake_modules-devel
+BuildRequires:  ros-kinetic-rosconsole-devel
+BuildRequires:  ros-kinetic-roslib-devel
 
 Requires:       ros-kinetic-class_loader
 Requires:       ros-kinetic-rosconsole
 Requires:       ros-kinetic-roslib
+
 
 %description
 The pluginlib package provides tools for writing and dynamically
 loading plugins using the ROS build infrastructure. To work, these
 tools require plugin providers to register their plugins in the
 package.xml of their package.
+
+%package        devel
+Summary:        Development files for %{name}
+Requires:       %{name}%{?_isa} = %{version}-%{release}
+Requires:       ros-kinetic-catkin
+
+%description devel
+The %{name}-devel package contains libraries and header files for developing
+applications that use %{name}.
+
 
 
 %prep
@@ -60,10 +71,10 @@ FFLAGS="${FFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FFLAGS ; \
 FCFLAGS="${FCFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FCFLAGS ; \
 %{?__global_ldflags:LDFLAGS="${LDFLAGS:-%__global_ldflags}" ; export LDFLAGS ;} \
 
-
 source %{_libdir}/ros/setup.bash
 
 DESTDIR=%{buildroot} ; export DESTDIR
+
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
@@ -73,23 +84,41 @@ catkin_make_isolated \
   --install-space %{_libdir}/ros/ \
   --pkg pluginlib
 
+
+
+
 rm -rf %{buildroot}/%{_libdir}/ros/{.catkin,.rosinstall,_setup*,setup*,env.sh}
 
-find %{buildroot}/%{_libdir}/ros/{bin,etc,include,lib/pkgconfig,lib64/python*,lib/python*/site-packages,share} \
+touch files.list
+find %{buildroot}/%{_libdir}/ros/{bin,etc,lib64/python*,lib/python*/site-packages,share} \
   -mindepth 1 -maxdepth 1 | sed "s:%{buildroot}/::" > files.list
-find %{buildroot}/%{_libdir}/ros/lib/ -mindepth 1 -maxdepth 1 \
+find %{buildroot}/%{_libdir}/ros/lib*/ -mindepth 1 -maxdepth 1 \
   ! -name pkgconfig ! -name "python*" \
   | sed "s:%{buildroot}/::" >> files.list
 
+touch files_devel.list
+find %{buildroot}/%{_libdir}/ros/{include,lib*/pkgconfig} \
+  -mindepth 1 -maxdepth 1 | sed "s:%{buildroot}/::" > files_devel.list
 
 find . -maxdepth 1 -type f -iname "*readme*" | sed "s:^:%%doc :" >> files.list
 find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.list
 
-%files -f files.list
 
+echo "This is a package automatically generated with rosfed." >> README_FEDORA
+echo "See https://pagure.io/ros for more information." >> README_FEDORA
+install -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
+echo %{_docdir}/%{name} >> files.list
+install -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
+echo %{_docdir}/%{name}-devel >> files_devel.list
+
+
+%files -f files.list
+%files devel -f files_devel.list
 
 
 %changelog
+* Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.2-5
+- Split devel package
 * Tue Nov 21 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.11.2-4
 - Switch to tinyxml2
 * Mon Nov 20 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.11.2-3
