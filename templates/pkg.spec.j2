@@ -36,7 +36,7 @@ BuildRequires:  python2-devel
 BuildRequires:  {{ dep }}
 {% endfor %}
 {% for dep in build_dependencies.ros|sort %}
-BuildRequires:  ros-{{ distro }}-{{ dep }}
+BuildRequires:  ros-{{ distro }}-{{ dep }}-devel
 {% endfor %}
 
 {% for dep in run_dependencies.system|sort %}
@@ -47,6 +47,10 @@ Requires:       ros-{{ distro }}-{{ dep }}
 {% endfor %}
 {% endblock %}
 
+{% if not has_devel %}
+Provides:       %{name}-devel{% if not noarch %}%{?_isa}{% endif %} = %{version}-%{release}
+{% endif %}
+
 %description
 {% block description %}
 {{ pkg_description }}
@@ -55,7 +59,7 @@ Requires:       ros-{{ distro }}-{{ dep }}
 {% if has_devel %}
 %package        devel
 Summary:        Development files for %{name}
-Requires:       %{name}%{?_isa} = %{version}-%{release}
+Requires:       %{name}{% if not noarch %}%{?_isa}{% endif %} = %{version}-%{release}
 {% block devel_dependencies %}
 {% for dep in run_dependencies_devel.system|sort %}
 Requires:       {{ dep }}
@@ -70,6 +74,7 @@ Requires:       ros-{{ distro }}-{{ dep }}
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
 {% endblock %}
+
 {% endif %}
 
 {% if no_debug %}
@@ -107,12 +112,12 @@ FCFLAGS="${FCFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FCFLAGS ; \
 {% endblock %}
 
 {% block pre_install %}
+source %{_libdir}/ros/setup.bash
 {% endblock %}
 
-{% block install %}
-source %{_libdir}/ros/setup.bash
-
 DESTDIR=%{buildroot} ; export DESTDIR
+
+{% block install_catkin %}
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
@@ -129,8 +134,14 @@ catkin_make_isolated \
   --pkg {{ pkg_name }}
 {% endif %}
 
+{% endblock %}
+
+
+{% block install_files %}
+
 rm -rf %{buildroot}/%{_libdir}/ros/{.catkin,.rosinstall,_setup*,setup*,env.sh}
 
+touch files.list
 find %{buildroot}/%{_libdir}/ros/{bin,etc,lib64/python*,lib/python*/site-packages,share} \
   -mindepth 1 -maxdepth 1 | sed "s:%{buildroot}/::" > files.list
 find %{buildroot}/%{_libdir}/ros/lib*/ -mindepth 1 -maxdepth 1 \
@@ -138,13 +149,25 @@ find %{buildroot}/%{_libdir}/ros/lib*/ -mindepth 1 -maxdepth 1 \
   | sed "s:%{buildroot}/::" >> files.list
 
 {% if has_devel %}
+touch files_devel.list
 find %{buildroot}/%{_libdir}/ros/{include,lib*/pkgconfig} \
   -mindepth 1 -maxdepth 1 | sed "s:%{buildroot}/::" > files_devel.list
 {% endif %}
 
 find . -maxdepth 1 -type f -iname "*readme*" | sed "s:^:%%doc :" >> files.list
 find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.list
+
 {% endblock %}
+
+echo "This is a package automatically generated with rosfed." >> README_FEDORA
+echo "See https://pagure.io/ros for more information." >> README_FEDORA
+install -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
+echo %{_docdir}/%{name} >> files.list
+{% if has_devel %}
+install -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
+echo %{_docdir}/%{name}-devel >> files_devel.list
+{% endif %}
+
 
 %files -f files.list
 {% if has_devel %}

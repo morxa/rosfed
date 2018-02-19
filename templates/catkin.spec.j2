@@ -1,18 +1,37 @@
 {% extends "pkg.spec.j2" %}
-{% block install %}
-mkdir -p %{buildroot}/%{_libdir}/ros/
+{% block pre_install %}
+{% endblock %}
 
-DESTDIR=%{buildroot} ; export DESTDIR
-
+{% block install_catkin %}
 ./bin/catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+  -DCATKIN_ENABLE_TESTING=OFF \
+{% block cmake_flags %}
+{% endblock %}
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \
-  --pkg catkin
+{% if build_flags %}
+  --pkg {{ pkg_name }} \
+  {{ build_flags }}
+{% else %}
+  --pkg {{ pkg_name }}
+{% endif %}
+{% endblock %}
 
-find %{buildroot}/%{_libdir}/ros/{bin,etc,lib/pkgconfig,lib/python*/site-packages,share} \
+{% block install_files %}
+touch files.list
+find %{buildroot}/%{_libdir}/ros/{bin,etc,lib64/python*,lib/python*/site-packages,share} \
   -mindepth 1 -maxdepth 1 | sed "s:%{buildroot}/::" > files.list
+find %{buildroot}/%{_libdir}/ros/lib*/ -mindepth 1 -maxdepth 1 \
+  ! -name pkgconfig ! -name "python*" \
+  | sed "s:%{buildroot}/::" >> files.list
+
+{% if has_devel %}
+touch files_devel.list
+find %{buildroot}/%{_libdir}/ros/{include,lib*/pkgconfig} \
+  -mindepth 1 -maxdepth 1 | sed "s:%{buildroot}/::" > files_devel.list
+{% endif %}
 
 find %{buildroot}/%{_libdir}/ros -maxdepth 1 \
   -name .catkin -o -name .rosinstall \

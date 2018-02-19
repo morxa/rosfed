@@ -59,6 +59,7 @@ class RosPkg:
         self.xml = ElementTree.fromstring(xml_string)
         self.build_deps = { 'ros': set(), 'system': set() }
         self.run_deps = { 'ros': set(), 'system': set() }
+        self.devel_deps = { 'ros': set(), 'system': set() }
         try:
             common_config = yaml.load(open('cfg/common.yaml'))
         except FileNotFoundError:
@@ -70,6 +71,15 @@ class RosPkg:
             pkg_specific_config = {}
         self.pkg_config = { **common_config, **pkg_specific_config }
         self.release = self.pkg_config.get('release', 1)
+        self.deps_mapping ={
+            'build_depend': [self.build_deps],
+            'test_depend': [self.build_deps],
+            'run_depend': [self.run_deps],
+            'buildtool_depend': [self.build_deps, self.devel_deps],
+            'build_export_depend': [self.build_deps, self.devel_deps],
+            'buildtool_export_depend': [self.build_deps, self.devel_deps],
+            'depend': [self.run_deps, self.build_deps],
+        }
         self.compute_dependencies()
 
     def get_full_name(self):
@@ -78,16 +88,7 @@ class RosPkg:
 
     def compute_dependencies(self):
         for child in self.xml:
-            for dep_key, dep_lists in {'build_depend': [self.build_deps],
-                                      'test_depend': [self.build_deps],
-                                      'run_depend': [self.run_deps],
-                                      'buildtool_depend': [self.build_deps],
-                                      'build_export_depend': [self.run_deps,
-                                                              self.build_deps],
-                                      'buildtool_export_depend':
-                                        [self.run_deps, self.build_deps],
-                                      'depend': [self.run_deps, self.build_deps]
-                                     }.items():
+            for dep_key, dep_lists in self.deps_mapping.items():
                 if child.tag == dep_key:
                     pkg = child.text
                     try:
@@ -99,6 +100,8 @@ class RosPkg:
                             dep = \
                                 self.pkg_config['common']['dependencies']\
                                     ['distro_names'][pkg]
+                            for dep_list in dep_lists:
+                                dep_list['system'].add(pkg)
                         except KeyError:
                             system_pkg = \
                                     get_system_package_name(pkg, self.rosdistro)
@@ -167,9 +170,24 @@ class RosPkg:
         run_deps = self.translate_dependencies('run', run_deps)
         return run_deps
 
+    def get_devel_dependencies(self):
+        # TODO: refactor
+        devel_deps = {}
+        for key, val in self.devel_deps.items():
+            # merge with additional dependencies from the config
+            devel_deps[key] = val | \
+                    self.get_dependencies_from_cfg('devel').get(key, set())
+            # remove dependencies excluded in the config
+            devel_deps[key] -= \
+                    self.get_dependencies_from_cfg('exclude_devel').get(
+                        key, set())
+        devel_deps = self.translate_dependencies('devel', devel_deps)
+        return devel_deps
+
     def get_ros_dependencies(self):
         return self.get_build_dependencies()['ros'] | \
-            self.get_run_dependencies()['ros']
+            self.get_run_dependencies()['ros'] | \
+            self.get_devel_dependencies()['ros']
 
     def get_sources(self):
         ros_pkg = generator.generate_rosinstall(
@@ -338,6 +356,7 @@ def generate_spec_files(packages, distro, bump_release, release_version,
         i += 1
         build_deps = ros_pkg.get_build_dependencies()
         run_deps = ros_pkg.get_run_dependencies()
+        devel_deps = ros_pkg.get_devel_dependencies()
         ros_deps = ros_pkg.get_ros_dependencies()
         generated_packages[ros_pkg.name] = ros_pkg
         if recursive:
@@ -389,6 +408,7 @@ def generate_spec_files(packages, distro, bump_release, release_version,
             source_urls=sources,
             build_dependencies=build_deps,
             run_dependencies=run_deps,
+            run_dependencies_devel=devel_deps,
             pkg_description=ros_pkg.get_description(),
             pkg_release=ros_pkg.get_release(),
             user_string=user_string,
