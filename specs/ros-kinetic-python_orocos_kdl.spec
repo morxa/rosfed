@@ -1,6 +1,6 @@
 Name:           ros-kinetic-python_orocos_kdl
 Version:        1.3.1
-Release:        4%{?dist}
+Release:        7%{?dist}
 Summary:        ROS package python_orocos_kdl
 
 License:        LGPL
@@ -35,6 +35,10 @@ Dynamics Library (KDL), distributed by the Orocos Project.
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       cmake
+Requires:       eigen3-devel
+Requires:       sip-devel
+Requires:       ros-kinetic-catkin-devel
+Requires:       ros-kinetic-orocos_kdl-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -107,6 +111,12 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.1-7
+- Replace Recommends: with Requires: in devel subpackage
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.1-6
+- Fix Requires: in devel subpackage
+* Mon Feb 19 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.1-5
+- Add Recommends: for all BRs to the devel subpackage
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.1-4
 - Split devel package
 * Sun Nov 19 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.3.1-3

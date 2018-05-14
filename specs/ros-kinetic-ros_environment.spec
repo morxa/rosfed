@@ -1,15 +1,14 @@
-Name:           ros-kinetic-smclib
-Version:        1.8.1
-Release:        6%{?dist}
-Summary:        ROS package smclib
+Name:           ros-kinetic-ros_environment
+Version:        1.0.0
+Release:        1%{?dist}
+Summary:        ROS package ros_environment
 
-License:        Mozilla Public License Version 1.1
-URL:            http://smc.sourceforge.net/
+License:        Apache License 2.0
+URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/bond_core-release/archive/release/kinetic/smclib/1.8.1-0.tar.gz#/ros-kinetic-smclib-1.8.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_environment-release/archive/release/kinetic/ros_environment/1.0.0-0.tar.gz#/ros-kinetic-ros_environment-1.0.0-source0.tar.gz
 
 
-BuildArch: noarch
 
 # common BRs
 BuildRequires:  boost-devel
@@ -23,15 +22,12 @@ BuildRequires:  ros-kinetic-catkin-devel
 
 
 %description
-The State Machine Compiler (SMC) from http://smc.sourceforge.net/
-converts a language-independent description of a state machine into
-the source code to support that state machine. This package contains
-the libraries that a compiled state machine depends on, but it does
-not contain the compiler itself.
+The package provides the environment variables `ROS_VERSION`,
+`ROS_DISTRO`, `ROS_PACKAGE_PATH`, and `ROS_ETC_DIR`.
 
 %package        devel
 Summary:        Development files for %{name}
-Requires:       %{name} = %{version}-%{release}
+Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       ros-kinetic-catkin
 
 %description devel
@@ -70,7 +66,7 @@ catkin_make_isolated \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \
-  --pkg smclib
+  --pkg ros_environment
 
 
 
@@ -105,19 +101,5 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
-* Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.8.1-6
+* Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.0.0-1
 - Update to latest release, rebuild for F28
-* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.8.1-5
-- Replace Recommends: with Requires: in devel subpackage
-* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.8.1-4
-- Fix Requires: in devel subpackage
-* Mon Feb 19 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.8.1-3
-- Add Recommends: for all BRs to the devel subpackage
-* Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.8.1-2
-- Split devel package
-* Sun Nov 19 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.8.1-1
-- Update to latest release
-* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.7.19-2
-- Remove all Requires: on devel packages
-* Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.7.19-1
-- Update auto-generated Spec file

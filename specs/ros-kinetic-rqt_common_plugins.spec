@@ -1,6 +1,6 @@
 Name:           ros-kinetic-rqt_common_plugins
 Version:        0.4.8
-Release:        4%{?dist}
+Release:        7%{?dist}
 Summary:        ROS package rqt_common_plugins
 
 License:        BSD
@@ -50,7 +50,7 @@ suite that can be used on/off of robot runtime.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-kinetic-catkin
+Requires:       ros-kinetic-catkin-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -123,6 +123,12 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.8-7
+- Replace Recommends: with Requires: in devel subpackage
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.8-6
+- Fix Requires: in devel subpackage
+* Mon Feb 19 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.8-5
+- Add Recommends: for all BRs to the devel subpackage
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.8-4
 - Split devel package
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.8-3

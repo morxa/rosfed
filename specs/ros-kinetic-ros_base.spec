@@ -1,6 +1,6 @@
 Name:           ros-kinetic-ros_base
 Version:        1.3.1
-Release:        4%{?dist}
+Release:        7%{?dist}
 Summary:        ROS package ros_base
 
 License:        BSD
@@ -37,7 +37,7 @@ pluginlib.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-kinetic-catkin
+Requires:       ros-kinetic-catkin-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -110,6 +110,12 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.1-7
+- Replace Recommends: with Requires: in devel subpackage
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.1-6
+- Fix Requires: in devel subpackage
+* Mon Feb 19 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.1-5
+- Add Recommends: for all BRs to the devel subpackage
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.1-4
 - Split devel package
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.1-3

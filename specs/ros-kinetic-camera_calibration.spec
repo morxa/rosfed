@@ -1,6 +1,6 @@
 Name:           ros-kinetic-camera_calibration
 Version:        1.12.22
-Release:        2%{?dist}
+Release:        5%{?dist}
 Summary:        ROS package camera_calibration
 
 License:        BSD
@@ -36,7 +36,8 @@ cameras using a checkerboard calibration target.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-kinetic-catkin
+Requires:       ros-kinetic-catkin-devel
+Requires:       ros-kinetic-rostest-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -109,6 +110,12 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.22-5
+- Replace Recommends: with Requires: in devel subpackage
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.22-4
+- Fix Requires: in devel subpackage
+* Mon Feb 19 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.22-3
+- Add Recommends: for all BRs to the devel subpackage
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.22-2
 - Split devel package
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.22-1

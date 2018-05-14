@@ -1,12 +1,12 @@
 Name:           ros-kinetic-pluginlib
-Version:        1.11.2
-Release:        5%{?dist}
+Version:        1.11.3
+Release:        1%{?dist}
 Summary:        ROS package pluginlib
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/pluginlib-release/archive/release/kinetic/pluginlib/1.11.2-0.tar.gz#/ros-kinetic-pluginlib-1.11.2-source0.tar.gz
+Source0:        https://github.com/ros-gbp/pluginlib-release/archive/release/kinetic/pluginlib/1.11.3-0.tar.gz#/ros-kinetic-pluginlib-1.11.3-source0.tar.gz
 
 
 
@@ -117,6 +117,14 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.3-1
+- Update to latest release, rebuild for F28
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.2-8
+- Replace Recommends: with Requires: in devel subpackage
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.2-7
+- Fix Requires: in devel subpackage
+* Mon Feb 19 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.2-6
+- Add Recommends: for all BRs to the devel subpackage
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.2-5
 - Split devel package
 * Tue Nov 21 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.11.2-4

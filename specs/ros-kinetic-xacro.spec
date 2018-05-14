@@ -1,6 +1,6 @@
 Name:           ros-kinetic-xacro
 Version:        1.11.2
-Release:        4%{?dist}
+Release:        7%{?dist}
 Summary:        ROS package xacro
 
 License:        BSD
@@ -33,7 +33,9 @@ expand to larger XML expressions.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-kinetic-catkin
+Requires:       ros-kinetic-catkin-devel
+Requires:       ros-kinetic-roslint-devel
+Requires:       ros-kinetic-rostest-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -106,6 +108,12 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.2-7
+- Replace Recommends: with Requires: in devel subpackage
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.2-6
+- Fix Requires: in devel subpackage
+* Mon Feb 19 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.2-5
+- Add Recommends: for all BRs to the devel subpackage
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.2-4
 - Split devel package
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.2-3

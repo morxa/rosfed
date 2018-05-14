@@ -1,6 +1,6 @@
 Name:           ros-kinetic-eigen_conversions
 Version:        1.11.9
-Release:        5%{?dist}
+Release:        8%{?dist}
 Summary:        ROS package eigen_conversions
 
 License:        BSD
@@ -38,7 +38,14 @@ geometry_msgs.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-kinetic-catkin
+Requires:       ros-kinetic-catkin-devel
+Requires:       boost-devel
+Requires:       console-bridge-devel
+Requires:       eigen3-devel
+Requires:       ros-kinetic-cmake_modules-devel
+Requires:       ros-kinetic-geometry_msgs-devel
+Requires:       ros-kinetic-orocos_kdl-devel
+Requires:       ros-kinetic-std_msgs-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -111,6 +118,12 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.9-8
+- Replace Recommends: with Requires: in devel subpackage
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.9-7
+- Fix Requires: in devel subpackage
+* Mon Feb 19 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.9-6
+- Add Recommends: for all BRs to the devel subpackage
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.9-5
 - Split devel package
 * Mon Nov 20 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.11.9-4

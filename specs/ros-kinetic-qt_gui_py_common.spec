@@ -1,6 +1,6 @@
 Name:           ros-kinetic-qt_gui_py_common
 Version:        0.3.8
-Release:        2%{?dist}
+Release:        5%{?dist}
 Summary:        ROS package qt_gui_py_common
 
 License:        BSD
@@ -31,7 +31,7 @@ in Python.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-kinetic-catkin
+Requires:       ros-kinetic-catkin-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -104,6 +104,12 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.3.8-5
+- Replace Recommends: with Requires: in devel subpackage
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.3.8-4
+- Fix Requires: in devel subpackage
+* Mon Feb 19 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.3.8-3
+- Add Recommends: for all BRs to the devel subpackage
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.3.8-2
 - Split devel package
 * Sun Nov 19 2017 Till Hofmann <thofmann@fedoraproject.org> - 0.3.8-1

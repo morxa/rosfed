@@ -1,6 +1,6 @@
 Name:           ros-kinetic-pluginlib_tutorials
 Version:        0.1.10
-Release:        4%{?dist}
+Release:        7%{?dist}
 Summary:        ROS package pluginlib_tutorials
 
 License:        BSD
@@ -36,7 +36,14 @@ The pluginlib_tutorials package
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-kinetic-catkin
+Requires:       ros-kinetic-catkin-devel
+Requires:       boost-devel
+Requires:       console-bridge-devel
+Requires:       poco-devel
+Requires:       tinyxml-devel
+Requires:       tinyxml2-devel
+Requires:       ros-kinetic-pluginlib-devel
+Requires:       ros-kinetic-roscpp-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -109,6 +116,12 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.1.10-7
+- Replace Recommends: with Requires: in devel subpackage
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.1.10-6
+- Fix Requires: in devel subpackage
+* Mon Feb 19 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.1.10-5
+- Add Recommends: for all BRs to the devel subpackage
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.1.10-4
 - Split devel package
 * Thu Nov 23 2017 Till Hofmann <thofmann@fedoraproject.org> - 0.1.10-3

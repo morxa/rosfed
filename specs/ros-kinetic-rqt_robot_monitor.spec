@@ -1,12 +1,12 @@
 Name:           ros-kinetic-rqt_robot_monitor
-Version:        0.5.7
+Version:        0.5.8
 Release:        3%{?dist}
 Summary:        ROS package rqt_robot_monitor
 
 License:        BSD
 URL:            http://wiki.ros.org/rqt_robot_monitor
 
-Source0:        https://github.com/ros-gbp/rqt_robot_monitor-release/archive/release/kinetic/rqt_robot_monitor/0.5.7-0.tar.gz#/ros-kinetic-rqt_robot_monitor-0.5.7-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt_robot_monitor-release/archive/release/kinetic/rqt_robot_monitor/0.5.8-1.tar.gz#/ros-kinetic-rqt_robot_monitor-0.5.8-source0.tar.gz
 
 
 BuildArch: noarch
@@ -39,7 +39,7 @@ published by
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-kinetic-catkin
+Requires:       ros-kinetic-catkin-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -112,6 +112,12 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.8-3
+- Replace Recommends: with Requires: in devel subpackage
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.8-2
+- Fix Requires: in devel subpackage
+* Mon Feb 19 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.8-1
+- Add Recommends: for all BRs to the devel subpackage
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.7-3
 - Split devel package
 * Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.5.7-2

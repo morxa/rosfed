@@ -1,6 +1,6 @@
 Name:           ros-kinetic-visualization_marker_tutorials
 Version:        0.10.2
-Release:        1%{?dist}
+Release:        4%{?dist}
 Summary:        ROS package visualization_marker_tutorials
 
 License:        BSD
@@ -34,7 +34,12 @@ The visulalization_marker_tutorials package
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-kinetic-catkin
+Requires:       ros-kinetic-catkin-devel
+Requires:       boost-devel
+Requires:       console-bridge-devel
+Requires:       log4cxx-devel
+Requires:       ros-kinetic-roscpp-devel
+Requires:       ros-kinetic-visualization_msgs-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -107,6 +112,12 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.10.2-4
+- Replace Recommends: with Requires: in devel subpackage
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.10.2-3
+- Fix Requires: in devel subpackage
+* Mon Feb 19 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.10.2-2
+- Add Recommends: for all BRs to the devel subpackage
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.10.2-1
 - Split devel package
 * Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.10.1-2

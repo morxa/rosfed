@@ -1,6 +1,6 @@
 Name:           ros-kinetic-geometric_shapes
 Version:        0.5.3
-Release:        1%{?dist}
+Release:        4%{?dist}
 Summary:        ROS package geometric_shapes
 
 License:        BSD
@@ -49,7 +49,21 @@ bodies.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-kinetic-catkin
+Requires:       ros-kinetic-catkin-devel
+Requires:       assimp-devel
+Requires:       boost-devel
+Requires:       console-bridge-devel
+Requires:       eigen3-devel
+Requires:       gtest-devel
+Requires:       pkgconfig
+Requires:       qhull-devel
+Requires:       ros-kinetic-eigen_stl_containers-devel
+Requires:       ros-kinetic-octomap-devel
+Requires:       ros-kinetic-random_numbers-devel
+Requires:       ros-kinetic-resource_retriever-devel
+Requires:       ros-kinetic-rosunit-devel
+Requires:       ros-kinetic-shape_msgs-devel
+Requires:       ros-kinetic-visualization_msgs-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -122,6 +136,12 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.3-4
+- Replace Recommends: with Requires: in devel subpackage
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.3-3
+- Fix Requires: in devel subpackage
+* Mon Feb 19 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.3-2
+- Add Recommends: for all BRs to the devel subpackage
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.3-1
 - Split devel package
 * Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.5.2-2

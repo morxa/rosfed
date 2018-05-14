@@ -1,6 +1,6 @@
 Name:           ros-kinetic-tf2_kdl
 Version:        0.5.17
-Release:        1%{?dist}
+Release:        4%{?dist}
 Summary:        ROS package tf2_kdl
 
 License:        BSD
@@ -38,7 +38,12 @@ KDL binding for tf2
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       eigen3-devel
-Requires:       ros-kinetic-catkin
+Requires:       ros-kinetic-catkin-devel
+Requires:       ros-kinetic-cmake_modules-devel
+Requires:       ros-kinetic-orocos_kdl-devel
+Requires:       ros-kinetic-rostest-devel
+Requires:       ros-kinetic-tf2-devel
+Requires:       ros-kinetic-tf2_ros-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -111,6 +116,12 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.17-4
+- Replace Recommends: with Requires: in devel subpackage
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.17-3
+- Fix Requires: in devel subpackage
+* Mon Feb 19 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.17-2
+- Add Recommends: for all BRs to the devel subpackage
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.17-1
 - Split devel package
 * Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.5.16-2

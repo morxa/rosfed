@@ -1,6 +1,6 @@
 Name:           ros-kinetic-actionlib_tutorials
 Version:        0.1.10
-Release:        3%{?dist}
+Release:        6%{?dist}
 Summary:        ROS package actionlib_tutorials
 
 License:        BSD
@@ -35,7 +35,12 @@ The actionlib_tutorials package
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-kinetic-catkin
+Requires:       ros-kinetic-catkin-devel
+Requires:       ros-kinetic-actionlib-devel
+Requires:       ros-kinetic-actionlib_msgs-devel
+Requires:       ros-kinetic-message_generation-devel
+Requires:       ros-kinetic-roscpp-devel
+Requires:       ros-kinetic-std_msgs-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -108,6 +113,12 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.1.10-6
+- Replace Recommends: with Requires: in devel subpackage
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.1.10-5
+- Fix Requires: in devel subpackage
+* Mon Feb 19 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.1.10-4
+- Add Recommends: for all BRs to the devel subpackage
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.1.10-3
 - Split devel package
 * Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.1.10-2

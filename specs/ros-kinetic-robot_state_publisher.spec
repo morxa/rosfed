@@ -1,6 +1,6 @@
 Name:           ros-kinetic-robot_state_publisher
 Version:        1.13.4
-Release:        4%{?dist}
+Release:        7%{?dist}
 Summary:        ROS package robot_state_publisher
 
 License:        BSD
@@ -51,7 +51,21 @@ This package allows you to publish the state of a robot to
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-kinetic-catkin
+Requires:       ros-kinetic-catkin-devel
+Requires:       eigen3-devel
+Requires:       tinyxml-devel
+Requires:       urdfdom-devel
+Requires:       urdfdom-headers-devel
+Requires:       ros-kinetic-kdl_parser-devel
+Requires:       ros-kinetic-orocos_kdl-devel
+Requires:       ros-kinetic-rosconsole-devel
+Requires:       ros-kinetic-roscpp-devel
+Requires:       ros-kinetic-rostest-devel
+Requires:       ros-kinetic-rostime-devel
+Requires:       ros-kinetic-sensor_msgs-devel
+Requires:       ros-kinetic-tf-devel
+Requires:       ros-kinetic-tf2_kdl-devel
+Requires:       ros-kinetic-tf2_ros-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -124,6 +138,12 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.13.4-7
+- Replace Recommends: with Requires: in devel subpackage
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.13.4-6
+- Fix Requires: in devel subpackage
+* Mon Feb 19 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.13.4-5
+- Add Recommends: for all BRs to the devel subpackage
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.13.4-4
 - Split devel package
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.13.4-3

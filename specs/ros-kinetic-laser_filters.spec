@@ -1,6 +1,6 @@
 Name:           ros-kinetic-laser_filters
 Version:        1.8.5
-Release:        2%{?dist}
+Release:        5%{?dist}
 Summary:        ROS package laser_filters
 
 License:        BSD
@@ -49,7 +49,20 @@ which use the sensor_msgs/LaserScan type.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-kinetic-catkin
+Requires:       ros-kinetic-catkin-devel
+Requires:       eigen3-devel
+Requires:       poco-devel
+Requires:       tinyxml-devel
+Requires:       tinyxml2-devel
+Requires:       ros-kinetic-angles-devel
+Requires:       ros-kinetic-filters-devel
+Requires:       ros-kinetic-laser_geometry-devel
+Requires:       ros-kinetic-message_filters-devel
+Requires:       ros-kinetic-pluginlib-devel
+Requires:       ros-kinetic-roscpp-devel
+Requires:       ros-kinetic-rostest-devel
+Requires:       ros-kinetic-sensor_msgs-devel
+Requires:       ros-kinetic-tf-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -122,6 +135,12 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.8.5-5
+- Replace Recommends: with Requires: in devel subpackage
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.8.5-4
+- Fix Requires: in devel subpackage
+* Mon Feb 19 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.8.5-3
+- Add Recommends: for all BRs to the devel subpackage
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.8.5-2
 - Split devel package
 * Sun Nov 19 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.8.5-1

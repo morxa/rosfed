@@ -1,6 +1,6 @@
 Name:           ros-kinetic-bond_core
 Version:        1.8.1
-Release:        2%{?dist}
+Release:        5%{?dist}
 Summary:        ROS package bond_core
 
 License:        BSD
@@ -30,7 +30,7 @@ until it is either broken explicitly or until a heartbeat times out.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-kinetic-catkin
+Requires:       ros-kinetic-catkin-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -103,6 +103,12 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.8.1-5
+- Replace Recommends: with Requires: in devel subpackage
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.8.1-4
+- Fix Requires: in devel subpackage
+* Mon Feb 19 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.8.1-3
+- Add Recommends: for all BRs to the devel subpackage
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.8.1-2
 - Split devel package
 * Sun Nov 19 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.8.1-1

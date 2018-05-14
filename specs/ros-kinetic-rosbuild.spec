@@ -1,12 +1,12 @@
 Name:           ros-kinetic-rosbuild
-Version:        1.13.6
-Release:        2%{?dist}
+Version:        1.14.3
+Release:        1%{?dist}
 Summary:        ROS package rosbuild
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/ros-release/archive/release/kinetic/rosbuild/1.13.6-0.tar.gz#/ros-kinetic-rosbuild-1.13.6-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros-release/archive/release/kinetic/rosbuild/1.14.3-0.tar.gz#/ros-kinetic-rosbuild-1.14.3-source0.tar.gz
 
 
 BuildArch: noarch
@@ -106,6 +106,14 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.14.3-1
+- Update to latest release, rebuild for F28
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.13.6-5
+- Replace Recommends: with Requires: in devel subpackage
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.13.6-4
+- Fix Requires: in devel subpackage
+* Mon Feb 19 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.13.6-3
+- Add Recommends: for all BRs to the devel subpackage
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.13.6-2
 - Split devel package
 * Sun Nov 19 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.13.6-1

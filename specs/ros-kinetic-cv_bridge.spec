@@ -1,6 +1,6 @@
 Name:           ros-kinetic-cv_bridge
 Version:        1.12.7
-Release:        3%{?dist}
+Release:        6%{?dist}
 Summary:        ROS package cv_bridge
 
 License:        BSD
@@ -35,8 +35,14 @@ OpenCV images.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-kinetic-catkin
-Requires:       ros-kinetic-sensor_msgs
+Requires:       ros-kinetic-catkin-devel
+Requires:       ros-kinetic-sensor_msgs-devel
+Requires:       boost-devel
+Requires:       numpy
+Requires:       opencv-devel
+Requires:       python-devel
+Requires:       ros-kinetic-rosconsole-devel
+Requires:       ros-kinetic-rostest-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -109,6 +115,12 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.7-6
+- Replace Recommends: with Requires: in devel subpackage
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.7-5
+- Fix Requires: in devel subpackage
+* Mon Feb 19 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.7-4
+- Add Recommends: for all BRs to the devel subpackage
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.7-3
 - Split devel package
 * Thu Nov 23 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.12.7-2

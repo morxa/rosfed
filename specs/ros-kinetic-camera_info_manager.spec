@@ -1,6 +1,6 @@
 Name:           ros-kinetic-camera_info_manager
 Version:        1.11.13
-Release:        3%{?dist}
+Release:        6%{?dist}
 Summary:        ROS package camera_info_manager
 
 License:        BSD
@@ -45,7 +45,18 @@ requests, saving and restoring the camera calibration data.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-kinetic-catkin
+Requires:       ros-kinetic-catkin-devel
+Requires:       boost-devel
+Requires:       gtest-devel
+Requires:       poco-devel
+Requires:       tinyxml-devel
+Requires:       tinyxml2-devel
+Requires:       ros-kinetic-camera_calibration_parsers-devel
+Requires:       ros-kinetic-image_transport-devel
+Requires:       ros-kinetic-roscpp-devel
+Requires:       ros-kinetic-roslib-devel
+Requires:       ros-kinetic-rostest-devel
+Requires:       ros-kinetic-sensor_msgs-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -118,6 +129,12 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.13-6
+- Replace Recommends: with Requires: in devel subpackage
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.13-5
+- Fix Requires: in devel subpackage
+* Mon Feb 19 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.13-4
+- Add Recommends: for all BRs to the devel subpackage
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.13-3
 - Split devel package
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.13-2

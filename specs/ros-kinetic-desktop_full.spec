@@ -1,12 +1,12 @@
 Name:           ros-kinetic-desktop_full
-Version:        1.3.1
-Release:        4%{?dist}
+Version:        1.3.2
+Release:        1%{?dist}
 Summary:        ROS package desktop_full
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/metapackages-release/archive/release/kinetic/desktop_full/1.3.1-0.tar.gz#/ros-kinetic-desktop_full-1.3.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/metapackages-release/archive/release/kinetic/desktop_full/1.3.2-0.tar.gz#/ros-kinetic-desktop_full-1.3.2-source0.tar.gz
 
 
 BuildArch: noarch
@@ -20,10 +20,6 @@ BuildRequires:  python2-devel
 
 BuildRequires:  ros-kinetic-catkin-devel
 
-Requires:       ros-kinetic-desktop
-Requires:       ros-kinetic-perception
-Requires:       ros-kinetic-simulators
-Requires:       ros-kinetic-urdf_tutorial
 
 
 %description
@@ -105,6 +101,14 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.2-1
+- Update to latest release, rebuild for F28
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.1-7
+- Replace Recommends: with Requires: in devel subpackage
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.1-6
+- Fix Requires: in devel subpackage
+* Mon Feb 19 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.1-5
+- Add Recommends: for all BRs to the devel subpackage
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.1-4
 - Split devel package
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.1-3

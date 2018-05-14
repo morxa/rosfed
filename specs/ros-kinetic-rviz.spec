@@ -1,6 +1,6 @@
 Name:           ros-kinetic-rviz
 Version:        1.12.15
-Release:        2%{?dist}
+Release:        5%{?dist}
 Summary:        ROS package rviz
 
 License:        BSD
@@ -89,7 +89,44 @@ Requires:       ros-kinetic-visualization_msgs
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-kinetic-catkin
+Requires:       ros-kinetic-catkin-devel
+Requires:       assimp-devel
+Requires:       eigen3-devel
+Requires:       lz4-devel
+Requires:       mesa-libGL-devel mesa-libGLU-devel
+Requires:       ogre-devel
+Requires:       poco-devel
+Requires:       python-qt5-devel
+Requires:       qt5-qtbase
+Requires:       qt5-qtbase-devel
+Requires:       sip-devel
+Requires:       tinyxml-devel
+Requires:       tinyxml2-devel
+Requires:       urdfdom-devel
+Requires:       urdfdom-headers-devel
+Requires:       yaml-cpp-devel
+Requires:       ros-kinetic-cmake_modules-devel
+Requires:       ros-kinetic-geometry_msgs-devel
+Requires:       ros-kinetic-image_transport-devel
+Requires:       ros-kinetic-interactive_markers-devel
+Requires:       ros-kinetic-laser_geometry-devel
+Requires:       ros-kinetic-map_msgs-devel
+Requires:       ros-kinetic-message_filters-devel
+Requires:       ros-kinetic-nav_msgs-devel
+Requires:       ros-kinetic-pluginlib-devel
+Requires:       ros-kinetic-python_qt_binding-devel
+Requires:       ros-kinetic-resource_retriever-devel
+Requires:       ros-kinetic-rosbag-devel
+Requires:       ros-kinetic-rosconsole-devel
+Requires:       ros-kinetic-roscpp-devel
+Requires:       ros-kinetic-roslib-devel
+Requires:       ros-kinetic-rospy-devel
+Requires:       ros-kinetic-sensor_msgs-devel
+Requires:       ros-kinetic-std_msgs-devel
+Requires:       ros-kinetic-std_srvs-devel
+Requires:       ros-kinetic-tf-devel
+Requires:       ros-kinetic-urdf-devel
+Requires:       ros-kinetic-visualization_msgs-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -163,6 +200,12 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.15-5
+- Replace Recommends: with Requires: in devel subpackage
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.15-4
+- Fix Requires: in devel subpackage
+* Mon Feb 19 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.15-3
+- Add Recommends: for all BRs to the devel subpackage
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.15-2
 - Split devel package
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.15-1

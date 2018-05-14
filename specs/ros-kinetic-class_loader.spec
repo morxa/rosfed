@@ -1,12 +1,12 @@
 Name:           ros-kinetic-class_loader
-Version:        0.3.8
-Release:        2%{?dist}
+Version:        0.3.9
+Release:        1%{?dist}
 Summary:        ROS package class_loader
 
 License:        BSD
 URL:            http://ros.org/wiki/class_loader
 
-Source0:        https://github.com/ros-gbp/class_loader-release/archive/release/kinetic/class_loader/0.3.8-0.tar.gz#/ros-kinetic-class_loader-0.3.8-source0.tar.gz
+Source0:        https://github.com/ros-gbp/class_loader-release/archive/release/kinetic/class_loader/0.3.9-0.tar.gz#/ros-kinetic-class_loader-0.3.9-source0.tar.gz
 
 
 
@@ -110,6 +110,14 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.3.9-1
+- Update to latest release, rebuild for F28
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.3.8-5
+- Replace Recommends: with Requires: in devel subpackage
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.3.8-4
+- Fix Requires: in devel subpackage
+* Mon Feb 19 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.3.8-3
+- Add Recommends: for all BRs to the devel subpackage
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.3.8-2
 - Split devel package
 * Sun Nov 19 2017 Till Hofmann <thofmann@fedoraproject.org> - 0.3.8-1

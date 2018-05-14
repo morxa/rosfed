@@ -1,12 +1,12 @@
 Name:           ros-kinetic-pcl_ros
-Version:        1.4.1
-Release:        3%{?dist}
+Version:        1.4.3
+Release:        1%{?dist}
 Summary:        ROS package pcl_ros
 
 License:        BSD
 URL:            http://ros.org/wiki/perception_pcl
 
-Source0:        https://github.com/ros-gbp/perception_pcl-release/archive/release/kinetic/pcl_ros/1.4.1-0.tar.gz#/ros-kinetic-pcl_ros-1.4.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/perception_pcl-release/archive/release/kinetic/pcl_ros/1.4.3-0.tar.gz#/ros-kinetic-pcl_ros-1.4.3-source0.tar.gz
 
 
 
@@ -22,10 +22,8 @@ BuildRequires:  libuuid-devel
 BuildRequires:  lz4-devel
 BuildRequires:  pcl-devel
 BuildRequires:  poco-devel
-BuildRequires:  proj-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
-BuildRequires:  vtk-java
 BuildRequires:  ros-kinetic-catkin-devel
 BuildRequires:  ros-kinetic-cmake_modules-devel
 BuildRequires:  ros-kinetic-dynamic_reconfigure-devel
@@ -46,7 +44,6 @@ BuildRequires:  ros-kinetic-std_msgs-devel
 BuildRequires:  ros-kinetic-tf-devel
 BuildRequires:  ros-kinetic-tf2_eigen-devel
 
-Requires:       vtk-java
 Requires:       ros-kinetic-dynamic_reconfigure
 Requires:       ros-kinetic-message_filters
 Requires:       ros-kinetic-nodelet
@@ -143,6 +140,14 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.4.3-1
+- Update to latest release, rebuild for F28
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.4.1-6
+- Replace Recommends: with Requires: in devel subpackage
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.4.1-5
+- Fix Requires: in devel subpackage
+* Mon Feb 19 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.4.1-4
+- Add Recommends: for all BRs to the devel subpackage
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.4.1-3
 - Split devel package
 * Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.4.1-2

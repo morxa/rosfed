@@ -1,12 +1,12 @@
 Name:           ros-kinetic-roscpp
-Version:        1.12.12
-Release:        4%{?dist}
+Version:        1.12.13
+Release:        1%{?dist}
 Summary:        ROS package roscpp
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/kinetic/roscpp/1.12.12-0.tar.gz#/ros-kinetic-roscpp-1.12.12-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/kinetic/roscpp/1.12.13-0.tar.gz#/ros-kinetic-roscpp-1.12.13-source0.tar.gz
 
 
 
@@ -123,6 +123,14 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.13-1
+- Update to latest release, rebuild for F28
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.12-7
+- Replace Recommends: with Requires: in devel subpackage
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.12-6
+- Fix Requires: in devel subpackage
+* Mon Feb 19 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.12-5
+- Add Recommends: for all BRs to the devel subpackage
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.12-4
 - Split devel package
 * Mon Nov 20 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.12.12-3

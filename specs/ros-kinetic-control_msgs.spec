@@ -1,6 +1,6 @@
 Name:           ros-kinetic-control_msgs
 Version:        1.4.0
-Release:        3%{?dist}
+Release:        6%{?dist}
 Summary:        ROS package control_msgs
 
 License:        BSD
@@ -40,7 +40,12 @@ and cartesian trajectories.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-kinetic-catkin
+Requires:       ros-kinetic-catkin-devel
+Requires:       ros-kinetic-actionlib_msgs-devel
+Requires:       ros-kinetic-geometry_msgs-devel
+Requires:       ros-kinetic-message_generation-devel
+Requires:       ros-kinetic-std_msgs-devel
+Requires:       ros-kinetic-trajectory_msgs-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -113,6 +118,12 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.4.0-6
+- Replace Recommends: with Requires: in devel subpackage
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.4.0-5
+- Fix Requires: in devel subpackage
+* Mon Feb 19 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.4.0-4
+- Add Recommends: for all BRs to the devel subpackage
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.4.0-3
 - Split devel package
 * Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 1.4.0-2

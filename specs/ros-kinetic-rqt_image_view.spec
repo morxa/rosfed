@@ -1,6 +1,6 @@
 Name:           ros-kinetic-rqt_image_view
 Version:        0.4.11
-Release:        3%{?dist}
+Release:        6%{?dist}
 Summary:        ROS package rqt_image_view
 
 License:        BSD
@@ -47,7 +47,20 @@ image_transport.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-kinetic-catkin
+Requires:       ros-kinetic-catkin-devel
+Requires:       libuuid-devel
+Requires:       opencv-devel
+Requires:       poco-devel
+Requires:       python-qt5-devel
+Requires:       qtermwidget-qt5-devel
+Requires:       tinyxml-devel
+Requires:       tinyxml2-devel
+Requires:       ros-kinetic-cv_bridge-devel
+Requires:       ros-kinetic-geometry_msgs-devel
+Requires:       ros-kinetic-image_transport-devel
+Requires:       ros-kinetic-rqt_gui-devel
+Requires:       ros-kinetic-rqt_gui_cpp-devel
+Requires:       ros-kinetic-sensor_msgs-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -120,6 +133,12 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.11-6
+- Replace Recommends: with Requires: in devel subpackage
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.11-5
+- Fix Requires: in devel subpackage
+* Mon Feb 19 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.11-4
+- Add Recommends: for all BRs to the devel subpackage
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.11-3
 - Split devel package
 * Thu Nov 23 2017 Till Hofmann <thofmann@fedoraproject.org> - 0.4.11-2

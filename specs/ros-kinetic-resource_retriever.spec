@@ -1,6 +1,6 @@
 Name:           ros-kinetic-resource_retriever
 Version:        1.12.3
-Release:        5%{?dist}
+Release:        8%{?dist}
 Summary:        ROS package resource_retriever
 
 License:        BSD
@@ -44,7 +44,16 @@ retriever is based on the the libcurl library.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-kinetic-catkin
+Requires:       ros-kinetic-catkin-devel
+Requires:       boost-devel
+Requires:       console-bridge-devel
+Requires:       gtest-devel
+Requires:       libcurl-devel curl
+Requires:       log4cxx-devel
+Requires:       python2-devel
+Requires:       tinyxml-devel
+Requires:       ros-kinetic-rosconsole-devel
+Requires:       ros-kinetic-roslib-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -117,6 +126,12 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.3-8
+- Replace Recommends: with Requires: in devel subpackage
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.3-7
+- Fix Requires: in devel subpackage
+* Mon Feb 19 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.3-6
+- Add Recommends: for all BRs to the devel subpackage
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.3-5
 - Split devel package
 * Mon Nov 20 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.12.3-4

@@ -1,6 +1,6 @@
 Name:           ros-kinetic-qt_gui_cpp
 Version:        0.3.8
-Release:        2%{?dist}
+Release:        5%{?dist}
 Summary:        ROS package qt_gui_cpp
 
 License:        BSD
@@ -45,7 +45,21 @@ binding must be available in order to use C++-plugins.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-kinetic-catkin
+Requires:       ros-kinetic-catkin-devel
+Requires:       boost-devel
+Requires:       console-bridge-devel
+Requires:       pkgconfig
+Requires:       poco-devel
+Requires:       python-qt5-devel
+Requires:       qt5-qtbase-devel
+Requires:       qtermwidget-qt5-devel
+Requires:       shiboken-devel
+Requires:       sip-devel
+Requires:       tinyxml-devel
+Requires:       tinyxml2-devel
+Requires:       ros-kinetic-cmake_modules-devel
+Requires:       ros-kinetic-pluginlib-devel
+Requires:       ros-kinetic-python_qt_binding-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -119,6 +133,12 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.3.8-5
+- Replace Recommends: with Requires: in devel subpackage
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.3.8-4
+- Fix Requires: in devel subpackage
+* Mon Feb 19 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.3.8-3
+- Add Recommends: for all BRs to the devel subpackage
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.3.8-2
 - Split devel package
 * Sun Nov 19 2017 Till Hofmann <thofmann@fedoraproject.org> - 0.3.8-1

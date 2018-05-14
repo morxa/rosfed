@@ -1,6 +1,6 @@
 Name:           ros-kinetic-depth_image_proc
 Version:        1.12.22
-Release:        2%{?dist}
+Release:        5%{?dist}
 Summary:        ROS package depth_image_proc
 
 License:        BSD
@@ -56,7 +56,26 @@ another camera frame.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-kinetic-catkin
+Requires:       ros-kinetic-catkin-devel
+Requires:       boost-devel
+Requires:       eigen3-devel
+Requires:       libuuid-devel
+Requires:       opencv-devel
+Requires:       poco-devel
+Requires:       tinyxml-devel
+Requires:       tinyxml2-devel
+Requires:       ros-kinetic-cmake_modules-devel
+Requires:       ros-kinetic-cv_bridge-devel
+Requires:       ros-kinetic-eigen_conversions-devel
+Requires:       ros-kinetic-image_geometry-devel
+Requires:       ros-kinetic-image_transport-devel
+Requires:       ros-kinetic-message_filters-devel
+Requires:       ros-kinetic-nodelet-devel
+Requires:       ros-kinetic-rostest-devel
+Requires:       ros-kinetic-sensor_msgs-devel
+Requires:       ros-kinetic-stereo_msgs-devel
+Requires:       ros-kinetic-tf2-devel
+Requires:       ros-kinetic-tf2_ros-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -129,6 +148,12 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.22-5
+- Replace Recommends: with Requires: in devel subpackage
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.22-4
+- Fix Requires: in devel subpackage
+* Mon Feb 19 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.22-3
+- Add Recommends: for all BRs to the devel subpackage
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.22-2
 - Split devel package
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.22-1

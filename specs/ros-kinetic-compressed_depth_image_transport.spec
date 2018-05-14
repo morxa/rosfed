@@ -1,6 +1,6 @@
 Name:           ros-kinetic-compressed_depth_image_transport
 Version:        1.9.5
-Release:        4%{?dist}
+Release:        7%{?dist}
 Summary:        ROS package compressed_depth_image_transport
 
 License:        BSD
@@ -39,7 +39,14 @@ compression.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-kinetic-catkin
+Requires:       ros-kinetic-catkin-devel
+Requires:       opencv-devel
+Requires:       poco-devel
+Requires:       tinyxml-devel
+Requires:       tinyxml2-devel
+Requires:       ros-kinetic-cv_bridge-devel
+Requires:       ros-kinetic-dynamic_reconfigure-devel
+Requires:       ros-kinetic-image_transport-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -112,6 +119,12 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.5-7
+- Replace Recommends: with Requires: in devel subpackage
+* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.5-6
+- Fix Requires: in devel subpackage
+* Mon Feb 19 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.5-5
+- Add Recommends: for all BRs to the devel subpackage
 * Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.5-4
 - Split devel package
 * Thu Nov 23 2017 Till Hofmann <thofmann@fedoraproject.org> - 1.9.5-3
