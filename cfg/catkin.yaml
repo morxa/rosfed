@@ -1,3 +1,8 @@
 noarch: true
-#patches:
-#  - ros-kinetic-catkin.separate_install_space.patch
+dependencies:
+  build:
+    system:
+      - python2-pyparsing
+patches:
+  - ros-kinetic-catkin.python-path-in-templates.patch
+  - ros-kinetic-catkin.python-version-in-shebangs.patch

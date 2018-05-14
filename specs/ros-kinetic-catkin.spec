@@ -1,6 +1,6 @@
 Name:           ros-kinetic-catkin
 Version:        0.7.11
-Release:        1%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package catkin
 
 License:        BSD
@@ -8,6 +8,8 @@ URL:            http://www.ros.org/wiki/catkin
 
 Source0:        https://github.com/ros-gbp/catkin-release/archive/release/kinetic/catkin/0.7.11-0.tar.gz#/ros-kinetic-catkin-0.7.11-source0.tar.gz
 
+Patch0: ros-kinetic-catkin.python-path-in-templates.patch
+Patch1: ros-kinetic-catkin.python-version-in-shebangs.patch
 
 BuildArch: noarch
 
@@ -26,6 +28,7 @@ BuildRequires:  python-catkin_pkg
 BuildRequires:  python-empy
 BuildRequires:  python-mock
 BuildRequires:  python-nose
+BuildRequires:  python2-pyparsing
 
 Requires:       python
 Requires:       python-catkin_pkg
@@ -53,6 +56,8 @@ applications that use %{name}.
 
 %setup -c -T
 tar --strip-components=1 -xf %{SOURCE0}
+%patch0 -p1
+%patch1 -p1
 
 %build
 # nothing to do here
@@ -113,6 +118,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.7.11-3
+- Replace unversioned python shebangs by versioned shebangs
+* Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.7.11-2
+- Add missing BR on pyparsing, fix python2 deprecation warning
 * Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.7.11-1
 - Update to latest release, rebuild for F28
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.7.8-6
