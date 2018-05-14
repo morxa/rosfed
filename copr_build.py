@@ -48,7 +48,11 @@ class CoprBuilder:
         """
         print('Building {} for chroot {}'.format(spec, chroot))
         res = subprocess.run(['spectool', '-g', spec, '-C',
-                              os.path.expanduser('~/rpmbuild/SOURCES')])
+                              os.path.expanduser('~/rpmbuild/SOURCES')],
+                             stdout=subprocess.PIPE,
+                             stderr=subprocess.STDOUT,
+                             check=True,
+                            )
         assert res.returncode == 0, 'Failed to fetch sources for ' + spec
         res = subprocess.run(['rpmbuild', '-bs', spec],
                              universal_newlines=True,
