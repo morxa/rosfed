@@ -1,5 +1,8 @@
 noarch: true
 dependencies:
+  run:
+    system:
+      - python2-pyparsing
   build:
     system:
       - python2-pyparsing

@@ -1,6 +1,6 @@
 Name:           ros-kinetic-catkin
 Version:        0.7.11
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        ROS package catkin
 
 License:        BSD
@@ -32,6 +32,7 @@ BuildRequires:  python2-pyparsing
 
 Requires:       python
 Requires:       python-catkin_pkg
+Requires:       python2-pyparsing
 
 
 %description
@@ -118,6 +119,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.7.11-4
+- Add missing Requires: on python2-pyparsing
 * Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.7.11-3
 - Replace unversioned python shebangs by versioned shebangs
 * Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.7.11-2
