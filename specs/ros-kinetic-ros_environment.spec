@@ -1,6 +1,6 @@
 Name:           ros-kinetic-ros_environment
 Version:        1.0.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package ros_environment
 
 License:        Apache License 2.0
@@ -9,6 +9,7 @@ URL:            http://www.ros.org/
 Source0:        https://github.com/ros-gbp/ros_environment-release/archive/release/kinetic/ros_environment/1.0.0-0.tar.gz#/ros-kinetic-ros_environment-1.0.0-source0.tar.gz
 
 
+BuildArch: noarch
 
 # common BRs
 BuildRequires:  boost-devel
@@ -27,7 +28,7 @@ The package provides the environment variables `ROS_VERSION`,
 
 %package        devel
 Summary:        Development files for %{name}
-Requires:       %{name}%{?_isa} = %{version}-%{release}
+Requires:       %{name} = %{version}-%{release}
 Requires:       ros-kinetic-catkin
 
 %description devel
@@ -101,5 +102,7 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.0.0-2
+- Make package noarch
 * Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.0.0-1
 - Update to latest release, rebuild for F28
