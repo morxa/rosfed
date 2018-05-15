@@ -1,0 +1,4 @@
+dependencies:
+  devel:
+    ros:
+      - cpp_common
