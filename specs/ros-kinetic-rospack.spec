@@ -1,6 +1,6 @@
 Name:           ros-kinetic-rospack
 Version:        2.4.4
-Release:        6%{?dist}
+Release:        7%{?dist}
 Summary:        ROS package rospack
 
 License:        BSD
@@ -8,6 +8,7 @@ URL:            http://wiki.ros.org/rospack
 
 Source0:        https://github.com/ros-gbp/rospack-release/archive/release/kinetic/rospack/2.4.4-0.tar.gz#/ros-kinetic-rospack-2.4.4-source0.tar.gz
 
+Patch0: ros-kinetic-rospack.remove-tr1.patch
 
 
 # common BRs
@@ -49,6 +50,7 @@ applications that use %{name}.
 
 %setup -c -T
 tar --strip-components=1 -xf %{SOURCE0}
+%patch0 -p1
 
 %build
 # nothing to do here
@@ -110,6 +112,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.4.4-7
+- Add patch to remove deprecated boost tr1 libraries
 * Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.4.4-6
 - Update to latest release, rebuild for F28
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.4.4-5

@@ -1,0 +1,2 @@
+patches:
+  - ros-kinetic-rospack.remove-tr1.patch
