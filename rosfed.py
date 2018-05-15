@@ -102,7 +102,7 @@ class RosPkg:
                                 self.pkg_config['common']['dependencies']\
                                     ['distro_names'][pkg]
                             for dep_list in dep_lists:
-                                dep_list['system'].add(pkg)
+                                dep_list['system'].add(dep)
                         except KeyError:
                             system_pkg = \
                                     get_system_package_name(pkg, self.rosdistro)
