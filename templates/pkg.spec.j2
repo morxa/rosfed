@@ -65,7 +65,17 @@ Requires:       %{name}{% if not noarch %}%{?_isa}{% endif %} = %{version}-%{rel
 Requires:       {{ dep }}
 {% endfor %}
 {% for dep in run_dependencies_devel.ros|sort %}
-Requires:       ros-{{ distro }}-{{ dep }}
+Requires:       ros-{{ distro }}-{{ dep }}-devel
+{% endfor %}
+{% for dep in build_dependencies.system|sort %}
+{% if dep not in run_dependencies_devel.system %}
+Requires:       {{ dep }}
+{% endif %}
+{% endfor %}
+{% for dep in build_dependencies.ros|sort %}
+{% if dep not in run_dependencies_devel.ros %}
+Requires:       ros-{{ distro }}-{{ dep }}-devel
+{% endif %}
 {% endfor %}
 {% endblock %}
 
