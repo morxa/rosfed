@@ -54,7 +54,8 @@ class Tree:
             node = self.nodes[pkg.name]
         if not node.is_initialized():
             deps = []
-            for dep in pkg.get_build_dependencies()['ros']:
+            for dep in pkg.get_build_dependencies()['ros'] | \
+                       pkg.get_run_dependencies()['ros']:
                 deps.append(self.add_pkg_stub(dep))
             node.init_deps(deps)
             node.pkg = pkg
