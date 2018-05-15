@@ -1,6 +1,6 @@
 Name:           ros-kinetic-message_filters
 Version:        1.12.13
-Release:        2%{?dist}
+Release:        4%{?dist}
 Summary:        ROS package message_filters
 
 License:        BSD
@@ -8,6 +8,7 @@ URL:            http://www.ros.org/
 
 Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/kinetic/message_filters/1.12.13-0.tar.gz#/ros-kinetic-message_filters-1.12.13-source0.tar.gz
 
+Patch0: ros-kinetic-message_filters.fix-template-function-calls.patch
 
 
 # common BRs
@@ -56,6 +57,7 @@ applications that use %{name}.
 
 %setup -c -T
 tar --strip-components=1 -xf %{SOURCE0}
+%patch0 -p1
 
 %build
 # nothing to do here
@@ -117,6 +119,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.13-4
+- Add patch to fix call of template functions
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.13-3
+- Also add upstream's exec_depend as Requires:
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.13-2
 - Add corresponding devel Requires: for the package's BRs and Rs
 * Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.13-1

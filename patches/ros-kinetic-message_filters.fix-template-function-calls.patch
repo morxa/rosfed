@@ -1,0 +1,13 @@
+diff -ur ros_comm-release-release-kinetic-message_filters-1.12.13-0/include/message_filters/synchronizer.h ros_comm-release-release-kinetic-message_filters-1.12.13-0.fix-template-function-calls/include/message_filters/synchronizer.h
+--- ros_comm-release-release-kinetic-message_filters-1.12.13-0/include/message_filters/synchronizer.h	2018-05-15 17:30:19.931198980 +0200
++++ ros_comm-release-release-kinetic-message_filters-1.12.13-0.fix-template-function-calls/include/message_filters/synchronizer.h	2018-02-21 19:29:25.000000000 +0100
+@@ -355,7 +355,7 @@
+   template<int i>
+   void cb(const typename mpl::at_c<Events, i>::type& evt)
+   {
+-    this->template add<i>(evt);
++    this->add<i>(evt);
+   }
+ 
+   uint32_t queue_size_;
+Only in ros_comm-release-release-kinetic-message_filters-1.12.13-0.fix-template-function-calls/include/message_filters: .synchronizer.h.swp
