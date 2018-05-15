@@ -1,6 +1,6 @@
 Name:           ros-kinetic-roscpp_serialization
 Version:        0.6.9
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package roscpp_serialization
 
 License:        BSD
@@ -35,7 +35,11 @@ in
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-kinetic-catkin
+Requires:       ros-kinetic-catkin-devel
+Requires:       boost-devel
+Requires:       ros-kinetic-cpp_common-devel
+Requires:       ros-kinetic-roscpp_traits-devel
+Requires:       ros-kinetic-rostime-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -108,6 +112,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.6.9-2
+- Add corresponding devel Requires: for the package's BRs and Rs
 * Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.6.9-1
 - Update to latest release, rebuild for F28
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.6.7-6

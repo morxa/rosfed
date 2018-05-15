@@ -1,6 +1,6 @@
 Name:           ros-kinetic-voxel_grid
 Version:        1.14.3
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package voxel_grid
 
 License:        BSD
@@ -18,6 +18,7 @@ BuildRequires:  log4cxx-devel
 BuildRequires:  python2-devel
 
 BuildRequires:  ros-kinetic-catkin-devel
+BuildRequires:  ros-kinetic-rosconsole-devel
 BuildRequires:  ros-kinetic-roscpp-devel
 BuildRequires:  ros-kinetic-rosunit-devel
 
@@ -37,7 +38,10 @@ quite fast compared to most 3D structures.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-kinetic-catkin
+Requires:       ros-kinetic-catkin-devel
+Requires:       ros-kinetic-rosconsole-devel
+Requires:       ros-kinetic-roscpp-devel
+Requires:       ros-kinetic-rosunit-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -110,6 +114,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.14.3-2
+- Add corresponding devel Requires: for the package's BRs and Rs
 * Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.14.3-1
 - Update to latest release, rebuild for F28
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.14.2-5

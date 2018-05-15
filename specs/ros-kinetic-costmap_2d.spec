@@ -1,6 +1,6 @@
 Name:           ros-kinetic-costmap_2d
 Version:        1.14.3
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package costmap_2d
 
 License:        BSD
@@ -79,7 +79,35 @@ sensor topics.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-kinetic-catkin
+Requires:       ros-kinetic-catkin-devel
+Requires:       eigen3-devel
+Requires:       libuuid-devel
+Requires:       lz4-devel
+Requires:       pcl-devel
+Requires:       poco-devel
+Requires:       tinyxml-devel
+Requires:       tinyxml2-devel
+Requires:       ros-kinetic-cmake_modules-devel
+Requires:       ros-kinetic-dynamic_reconfigure-devel
+Requires:       ros-kinetic-geometry_msgs-devel
+Requires:       ros-kinetic-laser_geometry-devel
+Requires:       ros-kinetic-map_msgs-devel
+Requires:       ros-kinetic-map_server-devel
+Requires:       ros-kinetic-message_filters-devel
+Requires:       ros-kinetic-message_generation-devel
+Requires:       ros-kinetic-nav_msgs-devel
+Requires:       ros-kinetic-pcl_conversions-devel
+Requires:       ros-kinetic-pcl_ros-devel
+Requires:       ros-kinetic-pluginlib-devel
+Requires:       ros-kinetic-rosbag-devel
+Requires:       ros-kinetic-roscpp-devel
+Requires:       ros-kinetic-rostest-devel
+Requires:       ros-kinetic-rosunit-devel
+Requires:       ros-kinetic-sensor_msgs-devel
+Requires:       ros-kinetic-std_msgs-devel
+Requires:       ros-kinetic-tf-devel
+Requires:       ros-kinetic-visualization_msgs-devel
+Requires:       ros-kinetic-voxel_grid-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -152,6 +180,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.14.3-2
+- Add corresponding devel Requires: for the package's BRs and Rs
 * Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.14.3-1
 - Update to latest release, rebuild for F28
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.14.2-5

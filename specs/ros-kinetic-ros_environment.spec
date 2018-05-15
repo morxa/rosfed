@@ -1,6 +1,6 @@
 Name:           ros-kinetic-ros_environment
 Version:        1.0.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package ros_environment
 
 License:        Apache License 2.0
@@ -29,7 +29,7 @@ The package provides the environment variables `ROS_VERSION`,
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-kinetic-catkin
+Requires:       ros-kinetic-catkin-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -102,6 +102,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.0.0-3
+- Add corresponding devel Requires: for the package's BRs and Rs
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.0.0-2
 - Make package noarch
 * Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.0.0-1

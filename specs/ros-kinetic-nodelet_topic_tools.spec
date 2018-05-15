@@ -1,6 +1,6 @@
 Name:           ros-kinetic-nodelet_topic_tools
 Version:        1.9.14
-Release:        6%{?dist}
+Release:        7%{?dist}
 Summary:        ROS package nodelet_topic_tools
 
 License:        BSD
@@ -36,11 +36,13 @@ throttle.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-kinetic-catkin
-Requires:       ros-kinetic-message_filters
-Requires:       ros-kinetic-nodelet
-Requires:       ros-kinetic-pluginlib
-Requires:       ros-kinetic-roscpp
+Requires:       ros-kinetic-catkin-devel
+Requires:       ros-kinetic-message_filters-devel
+Requires:       ros-kinetic-nodelet-devel
+Requires:       ros-kinetic-pluginlib-devel
+Requires:       ros-kinetic-roscpp-devel
+Requires:       boost-devel
+Requires:       ros-kinetic-dynamic_reconfigure-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -113,6 +115,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.14-7
+- Add corresponding devel Requires: for the package's BRs and Rs
 * Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.14-6
 - Update to latest release, rebuild for F28
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.14-5

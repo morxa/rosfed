@@ -1,6 +1,6 @@
 Name:           ros-kinetic-tf2
 Version:        0.5.17
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        ROS package tf2
 
 License:        BSD
@@ -21,6 +21,7 @@ BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  gtest-devel
 BuildRequires:  ros-kinetic-catkin-devel
+BuildRequires:  ros-kinetic-cpp_common-devel
 BuildRequires:  ros-kinetic-geometry_msgs-devel
 BuildRequires:  ros-kinetic-roscpp_traits-devel
 BuildRequires:  ros-kinetic-rostime-devel
@@ -41,7 +42,15 @@ between any two coordinate frames at any desired point in time.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-kinetic-catkin
+Requires:       ros-kinetic-catkin-devel
+Requires:       boost-devel
+Requires:       console-bridge-devel
+Requires:       gtest-devel
+Requires:       ros-kinetic-cpp_common-devel
+Requires:       ros-kinetic-geometry_msgs-devel
+Requires:       ros-kinetic-roscpp_traits-devel
+Requires:       ros-kinetic-rostime-devel
+Requires:       ros-kinetic-tf2_msgs-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -114,6 +123,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.17-6
+- Add corresponding devel Requires: for the package's BRs and Rs
 * Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.17-5
 - Update to latest release, rebuild for F28
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.17-4

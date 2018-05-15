@@ -1,6 +1,6 @@
 Name:           ros-kinetic-actionlib
 Version:        1.11.13
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package actionlib
 
 License:        BSD
@@ -43,7 +43,15 @@ point cloud, detecting the handle of a door, etc.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-kinetic-catkin
+Requires:       ros-kinetic-catkin-devel
+Requires:       boost-devel
+Requires:       ros-kinetic-actionlib_msgs-devel
+Requires:       ros-kinetic-message_generation-devel
+Requires:       ros-kinetic-roscpp-devel
+Requires:       ros-kinetic-rosnode-devel
+Requires:       ros-kinetic-rospy-devel
+Requires:       ros-kinetic-rostest-devel
+Requires:       ros-kinetic-std_msgs-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -116,6 +124,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.13-2
+- Add corresponding devel Requires: for the package's BRs and Rs
 * Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.13-1
 - Update to latest release, rebuild for F28
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.12-4

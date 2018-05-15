@@ -1,6 +1,6 @@
 Name:           ros-kinetic-rospack
 Version:        2.4.4
-Release:        7%{?dist}
+Release:        9%{?dist}
 Summary:        ROS package rospack
 
 License:        BSD
@@ -38,7 +38,14 @@ ROS Package Tool
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-kinetic-catkin
+Requires:       ros-kinetic-catkin-devel
+Requires:       boost-devel
+Requires:       gtest-devel
+Requires:       pkgconfig
+Requires:       python-coverage
+Requires:       python-devel
+Requires:       tinyxml-devel
+Requires:       ros-kinetic-cmake_modules-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -112,6 +119,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.4.4-9
+- Add corresponding devel Requires: for the package's BRs and Rs
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.4.4-8
+- Add missing devel dependency on cpp_common
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.4.4-7
 - Add patch to remove deprecated boost tr1 libraries
 * Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.4.4-6

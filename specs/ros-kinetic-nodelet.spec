@@ -1,6 +1,6 @@
 Name:           ros-kinetic-nodelet
 Version:        1.9.14
-Release:        6%{?dist}
+Release:        7%{?dist}
 Summary:        ROS package nodelet
 
 License:        BSD
@@ -48,7 +48,19 @@ for instantiating nodelets.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-kinetic-catkin
+Requires:       ros-kinetic-catkin-devel
+Requires:       boost-devel
+Requires:       libuuid-devel
+Requires:       poco-devel
+Requires:       tinyxml-devel
+Requires:       tinyxml2-devel
+Requires:       ros-kinetic-bondcpp-devel
+Requires:       ros-kinetic-cmake_modules-devel
+Requires:       ros-kinetic-message_generation-devel
+Requires:       ros-kinetic-pluginlib-devel
+Requires:       ros-kinetic-rosconsole-devel
+Requires:       ros-kinetic-roscpp-devel
+Requires:       ros-kinetic-std_msgs-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -121,6 +133,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.14-7
+- Add corresponding devel Requires: for the package's BRs and Rs
 * Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.14-6
 - Update to latest release, rebuild for F28
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.14-5

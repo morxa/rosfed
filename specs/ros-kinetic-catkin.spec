@@ -1,6 +1,6 @@
 Name:           ros-kinetic-catkin
 Version:        0.7.11
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        ROS package catkin
 
 License:        BSD
@@ -46,6 +46,10 @@ Requires:       gmock-devel
 Requires:       gtest-devel
 Requires:       python-empy
 Requires:       python-nose
+Requires:       python
+Requires:       python-catkin_pkg
+Requires:       python-mock
+Requires:       python2-pyparsing
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -119,6 +123,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.7.11-5
+- Add corresponding devel Requires: for the package's BRs and Rs
 * Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.7.11-4
 - Add missing Requires: on python2-pyparsing
 * Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.7.11-3

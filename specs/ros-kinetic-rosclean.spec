@@ -1,6 +1,6 @@
 Name:           ros-kinetic-rosclean
 Version:        1.14.3
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package rosclean
 
 License:        BSD
@@ -29,7 +29,7 @@ rosclean: cleanup filesystem resources (e.g. log files).
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-kinetic-catkin
+Requires:       ros-kinetic-catkin-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -102,6 +102,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.14.3-2
+- Add corresponding devel Requires: for the package's BRs and Rs
 * Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.14.3-1
 - Update to latest release, rebuild for F28
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.13.6-5
