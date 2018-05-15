@@ -5,3 +5,4 @@ dependencies:
       - boost-devel
     ros:
       - roscpp_traits
+      - cpp_common
