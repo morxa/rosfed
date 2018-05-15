@@ -79,6 +79,7 @@ class RosPkg:
             'build_export_depend': [self.build_deps, self.devel_deps],
             'buildtool_export_depend': [self.build_deps, self.devel_deps],
             'depend': [self.run_deps, self.build_deps],
+            'exec_depend': [self.run_deps],
         }
         self.compute_dependencies()
 
