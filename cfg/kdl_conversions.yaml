@@ -3,3 +3,6 @@ dependencies:
     system:
       - boost-devel
       - console-bridge-devel
+    ros:
+      - cpp_common
+      - roscpp_serialization
