@@ -2,3 +2,5 @@ dependencies:
   build:
     system:
       - gtest-devel
+    ros:
+      - roscpp_serialization
