@@ -3,12 +3,7 @@ dependencies:
     system:
       - gtest-devel
       - boost-devel
-#     - opencv-devel
-#  exclude_build:
-#      ros:
-#        - opencv3
-#  exclude_run:
-#      ros:
-#        - opencv3
+    ros:
+      - cpp_common
 patches:
   - ros-kinetic-image_geometry.catkin-fix-order.patch
