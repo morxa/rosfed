@@ -1,6 +1,6 @@
 Name:           ros-kinetic-catkin
 Version:        0.7.11
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        ROS package catkin
 
 License:        BSD
@@ -12,6 +12,7 @@ Patch0: ros-kinetic-catkin.python-path-in-templates.patch
 Patch1: ros-kinetic-catkin.python-version-in-shebangs.patch
 
 BuildArch: noarch
+
 
 # common BRs
 BuildRequires:  boost-devel
@@ -123,6 +124,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.7.11-6
+- Also add upstream's exec_depend as Requires:
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.7.11-5
 - Add corresponding devel Requires: for the package's BRs and Rs
 * Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.7.11-4

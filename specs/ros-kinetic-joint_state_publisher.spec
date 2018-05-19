@@ -1,12 +1,12 @@
 Name:           ros-kinetic-joint_state_publisher
-Version:        1.12.12
-Release:        6%{?dist}
+Version:        1.12.13
+Release:        1%{?dist}
 Summary:        ROS package joint_state_publisher
 
 License:        BSD
 URL:            http://www.ros.org/wiki/joint_state_publisher
 
-Source0:        https://github.com/ros-gbp/joint_state_publisher-release/archive/release/kinetic/joint_state_publisher/1.12.12-0.tar.gz#/ros-kinetic-joint_state_publisher-1.12.12-source0.tar.gz
+Source0:        https://github.com/ros-gbp/joint_state_publisher-release/archive/release/kinetic/joint_state_publisher/1.12.13-0.tar.gz#/ros-kinetic-joint_state_publisher-1.12.13-source0.tar.gz
 
 
 BuildArch: noarch
@@ -21,6 +21,9 @@ BuildRequires:  python2-devel
 BuildRequires:  ros-kinetic-catkin-devel
 BuildRequires:  ros-kinetic-rostest-devel
 
+Requires:       ros-kinetic-python_qt_binding
+Requires:       ros-kinetic-rospy
+Requires:       ros-kinetic-sensor_msgs
 
 
 %description
@@ -104,6 +107,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.13-1
+- Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.12-6
 - Replace Recommends: with Requires: in devel subpackage
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.12-5

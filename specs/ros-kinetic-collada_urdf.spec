@@ -1,12 +1,12 @@
 Name:           ros-kinetic-collada_urdf
-Version:        1.12.10
-Release:        6%{?dist}
+Version:        1.12.12
+Release:        1%{?dist}
 Summary:        ROS package collada_urdf
 
 License:        BSD
 URL:            http://ros.org/wiki/collada_urdf
 
-Source0:        https://github.com/ros-gbp/collada_urdf-release/archive/release/kinetic/collada_urdf/1.12.10-0.tar.gz#/ros-kinetic-collada_urdf-1.12.10-source0.tar.gz
+Source0:        https://github.com/ros-gbp/collada_urdf-release/archive/release/kinetic/collada_urdf/1.12.12-0.tar.gz#/ros-kinetic-collada_urdf-1.12.12-source0.tar.gz
 
 
 
@@ -29,17 +29,14 @@ BuildRequires:  ros-kinetic-cmake_modules-devel
 BuildRequires:  ros-kinetic-collada_parser-devel
 BuildRequires:  ros-kinetic-geometric_shapes-devel
 BuildRequires:  ros-kinetic-resource_retriever-devel
-BuildRequires:  ros-kinetic-roscpp-devel
-BuildRequires:  ros-kinetic-tf-devel
+BuildRequires:  ros-kinetic-rosconsole-devel
 BuildRequires:  ros-kinetic-urdf-devel
 
 Requires:       assimp
-Requires:       ros-kinetic-angles
 Requires:       ros-kinetic-collada_parser
 Requires:       ros-kinetic-geometric_shapes
 Requires:       ros-kinetic-resource_retriever
-Requires:       ros-kinetic-roscpp
-Requires:       ros-kinetic-tf
+Requires:       ros-kinetic-rosconsole
 Requires:       ros-kinetic-urdf
 
 
@@ -52,20 +49,19 @@ http://openrave.programmingvision.com/index.php/Started:COLLADA
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
+Requires:       urdfdom-headers-devel
 Requires:       ros-kinetic-catkin-devel
 Requires:       assimp-devel
 Requires:       collada-dom-devel
 Requires:       eigen3-devel
 Requires:       tinyxml-devel
 Requires:       urdfdom-devel
-Requires:       urdfdom-headers-devel
 Requires:       ros-kinetic-angles-devel
 Requires:       ros-kinetic-cmake_modules-devel
 Requires:       ros-kinetic-collada_parser-devel
 Requires:       ros-kinetic-geometric_shapes-devel
 Requires:       ros-kinetic-resource_retriever-devel
-Requires:       ros-kinetic-roscpp-devel
-Requires:       ros-kinetic-tf-devel
+Requires:       ros-kinetic-rosconsole-devel
 Requires:       ros-kinetic-urdf-devel
 
 %description devel
@@ -139,6 +135,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.12-1
+- Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.10-6
 - Replace Recommends: with Requires: in devel subpackage
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.10-5

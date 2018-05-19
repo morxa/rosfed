@@ -1,6 +1,6 @@
 Name:           ros-kinetic-rqt_web
 Version:        0.4.8
-Release:        6%{?dist}
+Release:        7%{?dist}
 Summary:        ROS package rqt_web
 
 License:        BSD
@@ -109,6 +109,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.8-7
+- Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.8-6
 - Replace Recommends: with Requires: in devel subpackage
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.8-5

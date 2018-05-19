@@ -1,6 +1,6 @@
 Name:           ros-kinetic-actionlib
 Version:        1.11.13
-Release:        2%{?dist}
+Release:        4%{?dist}
 Summary:        ROS package actionlib
 
 License:        BSD
@@ -27,10 +27,14 @@ BuildRequires:  ros-kinetic-rospy-devel
 BuildRequires:  ros-kinetic-rostest-devel
 BuildRequires:  ros-kinetic-std_msgs-devel
 
+Requires:       python2-wxpython
 Requires:       ros-kinetic-actionlib_msgs
+Requires:       ros-kinetic-message_runtime
 Requires:       ros-kinetic-roscpp
+Requires:       ros-kinetic-roslib
 Requires:       ros-kinetic-rospy
 Requires:       ros-kinetic-rostest
+Requires:       ros-kinetic-rostopic
 Requires:       ros-kinetic-std_msgs
 
 
@@ -124,6 +128,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed May 16 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.13-4
+- Fix dependency on wxpython
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.13-3
+- Also add upstream's exec_depend as Requires:
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.13-2
 - Add corresponding devel Requires: for the package's BRs and Rs
 * Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.13-1

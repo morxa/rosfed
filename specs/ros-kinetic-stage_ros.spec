@@ -1,6 +1,6 @@
 Name:           ros-kinetic-stage_ros
 Version:        1.7.5
-Release:        7%{?dist}
+Release:        8%{?dist}
 Summary:        ROS package stage_ros
 
 License:        BSD
@@ -130,6 +130,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.7.5-8
+- Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.7.5-7
 - Replace Recommends: with Requires: in devel subpackage
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.7.5-6

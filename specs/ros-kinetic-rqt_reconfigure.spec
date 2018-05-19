@@ -1,12 +1,12 @@
 Name:           ros-kinetic-rqt_reconfigure
-Version:        0.4.9
-Release:        4%{?dist}
+Version:        0.4.10
+Release:        1%{?dist}
 Summary:        ROS package rqt_reconfigure
 
 License:        BSD
 URL:            http://wiki.ros.org/rqt_reconfigure
 
-Source0:        https://github.com/ros-gbp/rqt_reconfigure-release/archive/release/kinetic/rqt_reconfigure/0.4.9-0.tar.gz#/ros-kinetic-rqt_reconfigure-0.4.9-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt_reconfigure-release/archive/release/kinetic/rqt_reconfigure/0.4.10-0.tar.gz#/ros-kinetic-rqt_reconfigure-0.4.10-source0.tar.gz
 
 
 BuildArch: noarch
@@ -110,6 +110,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.10-1
+- Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.9-4
 - Replace Recommends: with Requires: in devel subpackage
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.9-3

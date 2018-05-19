@@ -1,6 +1,6 @@
 Name:           ros-kinetic-gazebo_plugins
 Version:        2.5.14
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package gazebo_plugins
 
 License:        BSD, Apache 2.0
@@ -25,41 +25,43 @@ BuildRequires:  poco-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
 BuildRequires:  urdfdom-devel
-BuildRequires:  ros-kinetic-angles
-BuildRequires:  ros-kinetic-camera_info_manager
-BuildRequires:  ros-kinetic-catkin
-BuildRequires:  ros-kinetic-cv_bridge
-BuildRequires:  ros-kinetic-diagnostic_updater
-BuildRequires:  ros-kinetic-dynamic_reconfigure
-BuildRequires:  ros-kinetic-gazebo_dev
-BuildRequires:  ros-kinetic-gazebo_msgs
-BuildRequires:  ros-kinetic-geometry_msgs
-BuildRequires:  ros-kinetic-image_transport
-BuildRequires:  ros-kinetic-message_generation
-BuildRequires:  ros-kinetic-nav_msgs
-BuildRequires:  ros-kinetic-nodelet
-BuildRequires:  ros-kinetic-polled_camera
-BuildRequires:  ros-kinetic-rosconsole
-BuildRequires:  ros-kinetic-roscpp
-BuildRequires:  ros-kinetic-rosgraph_msgs
-BuildRequires:  ros-kinetic-rospy
-BuildRequires:  ros-kinetic-rostest
-BuildRequires:  ros-kinetic-sensor_msgs
-BuildRequires:  ros-kinetic-std_msgs
-BuildRequires:  ros-kinetic-std_srvs
-BuildRequires:  ros-kinetic-tf
-BuildRequires:  ros-kinetic-tf2_ros
-BuildRequires:  ros-kinetic-trajectory_msgs
-BuildRequires:  ros-kinetic-urdf
+BuildRequires:  ros-kinetic-angles-devel
+BuildRequires:  ros-kinetic-camera_info_manager-devel
+BuildRequires:  ros-kinetic-catkin-devel
+BuildRequires:  ros-kinetic-cv_bridge-devel
+BuildRequires:  ros-kinetic-diagnostic_updater-devel
+BuildRequires:  ros-kinetic-dynamic_reconfigure-devel
+BuildRequires:  ros-kinetic-gazebo_dev-devel
+BuildRequires:  ros-kinetic-gazebo_msgs-devel
+BuildRequires:  ros-kinetic-geometry_msgs-devel
+BuildRequires:  ros-kinetic-image_transport-devel
+BuildRequires:  ros-kinetic-message_generation-devel
+BuildRequires:  ros-kinetic-nav_msgs-devel
+BuildRequires:  ros-kinetic-nodelet-devel
+BuildRequires:  ros-kinetic-polled_camera-devel
+BuildRequires:  ros-kinetic-rosconsole-devel
+BuildRequires:  ros-kinetic-roscpp-devel
+BuildRequires:  ros-kinetic-rosgraph_msgs-devel
+BuildRequires:  ros-kinetic-rospy-devel
+BuildRequires:  ros-kinetic-rostest-devel
+BuildRequires:  ros-kinetic-sensor_msgs-devel
+BuildRequires:  ros-kinetic-std_msgs-devel
+BuildRequires:  ros-kinetic-std_srvs-devel
+BuildRequires:  ros-kinetic-tf-devel
+BuildRequires:  ros-kinetic-tf2_ros-devel
+BuildRequires:  ros-kinetic-trajectory_msgs-devel
+BuildRequires:  ros-kinetic-urdf-devel
 
 Requires:       ros-kinetic-angles
 Requires:       ros-kinetic-camera_info_manager
 Requires:       ros-kinetic-cv_bridge
 Requires:       ros-kinetic-diagnostic_updater
 Requires:       ros-kinetic-dynamic_reconfigure
+Requires:       ros-kinetic-gazebo_dev
 Requires:       ros-kinetic-gazebo_msgs
 Requires:       ros-kinetic-geometry_msgs
 Requires:       ros-kinetic-image_transport
+Requires:       ros-kinetic-message_runtime
 Requires:       ros-kinetic-nav_msgs
 Requires:       ros-kinetic-nodelet
 Requires:       ros-kinetic-polled_camera
@@ -75,9 +77,53 @@ Requires:       ros-kinetic-tf2_ros
 Requires:       ros-kinetic-trajectory_msgs
 Requires:       ros-kinetic-urdf
 
+
 %description
 Robot-independent Gazebo plugins for sensors, motors and dynamic
 reconfigurable components.
+
+%package        devel
+Summary:        Development files for %{name}
+Requires:       %{name}%{?_isa} = %{version}-%{release}
+Requires:       ros-kinetic-catkin-devel
+Requires:       bullet-devel
+Requires:       gazebo-devel
+Requires:       libuuid-devel
+Requires:       opencv-devel
+Requires:       poco-devel
+Requires:       tinyxml-devel
+Requires:       tinyxml2-devel
+Requires:       urdfdom-devel
+Requires:       ros-kinetic-angles-devel
+Requires:       ros-kinetic-camera_info_manager-devel
+Requires:       ros-kinetic-cv_bridge-devel
+Requires:       ros-kinetic-diagnostic_updater-devel
+Requires:       ros-kinetic-dynamic_reconfigure-devel
+Requires:       ros-kinetic-gazebo_dev-devel
+Requires:       ros-kinetic-gazebo_msgs-devel
+Requires:       ros-kinetic-geometry_msgs-devel
+Requires:       ros-kinetic-image_transport-devel
+Requires:       ros-kinetic-message_generation-devel
+Requires:       ros-kinetic-nav_msgs-devel
+Requires:       ros-kinetic-nodelet-devel
+Requires:       ros-kinetic-polled_camera-devel
+Requires:       ros-kinetic-rosconsole-devel
+Requires:       ros-kinetic-roscpp-devel
+Requires:       ros-kinetic-rosgraph_msgs-devel
+Requires:       ros-kinetic-rospy-devel
+Requires:       ros-kinetic-rostest-devel
+Requires:       ros-kinetic-sensor_msgs-devel
+Requires:       ros-kinetic-std_msgs-devel
+Requires:       ros-kinetic-std_srvs-devel
+Requires:       ros-kinetic-tf-devel
+Requires:       ros-kinetic-tf2_ros-devel
+Requires:       ros-kinetic-trajectory_msgs-devel
+Requires:       ros-kinetic-urdf-devel
+
+%description devel
+The %{name}-devel package contains libraries and header files for developing
+applications that use %{name}.
+
 
 
 %prep
@@ -99,10 +145,10 @@ FFLAGS="${FFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FFLAGS ; \
 FCFLAGS="${FCFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FCFLAGS ; \
 %{?__global_ldflags:LDFLAGS="${LDFLAGS:-%__global_ldflags}" ; export LDFLAGS ;} \
 
-
 source %{_libdir}/ros/setup.bash
 
 DESTDIR=%{buildroot} ; export DESTDIR
+
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
@@ -112,22 +158,40 @@ catkin_make_isolated \
   --install-space %{_libdir}/ros/ \
   --pkg gazebo_plugins
 
+
+
+
 rm -rf %{buildroot}/%{_libdir}/ros/{.catkin,.rosinstall,_setup*,setup*,env.sh}
 
-find %{buildroot}/%{_libdir}/ros/{bin,etc,include,lib/pkgconfig,lib64/python*,lib/python*/site-packages,share} \
+touch files.list
+find %{buildroot}/%{_libdir}/ros/{bin,etc,lib64/python*,lib/python*/site-packages,share} \
   -mindepth 1 -maxdepth 1 | sed "s:%{buildroot}/::" > files.list
-find %{buildroot}/%{_libdir}/ros/lib/ -mindepth 1 -maxdepth 1 \
+find %{buildroot}/%{_libdir}/ros/lib*/ -mindepth 1 -maxdepth 1 \
   ! -name pkgconfig ! -name "python*" \
   | sed "s:%{buildroot}/::" >> files.list
 
+touch files_devel.list
+find %{buildroot}/%{_libdir}/ros/{include,lib*/pkgconfig} \
+  -mindepth 1 -maxdepth 1 | sed "s:%{buildroot}/::" > files_devel.list
 
 find . -maxdepth 1 -type f -iname "*readme*" | sed "s:^:%%doc :" >> files.list
 find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.list
 
-%files -f files.list
 
+echo "This is a package automatically generated with rosfed." >> README_FEDORA
+echo "See https://pagure.io/ros for more information." >> README_FEDORA
+install -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
+echo %{_docdir}/%{name} >> files.list
+install -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
+echo %{_docdir}/%{name}-devel >> files_devel.list
+
+
+%files -f files.list
+%files devel -f files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.5.14-2
+- Also add upstream's exec_depend as Requires:
 * Thu Jan 18 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.5.14-1
 - Initial package

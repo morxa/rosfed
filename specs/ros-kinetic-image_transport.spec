@@ -1,12 +1,13 @@
 Name:           ros-kinetic-image_transport
 Version:        1.11.13
-Release:        6%{?dist}
+Release:        7%{?dist}
 Summary:        ROS package image_transport
 
 License:        BSD
 URL:            http://ros.org/wiki/image_transport
 
 Source0:        https://github.com/ros-gbp/image_common-release/archive/release/kinetic/image_transport/1.11.13-0.tar.gz#/ros-kinetic-image_transport-1.11.13-source0.tar.gz
+
 
 
 
@@ -128,6 +129,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.13-7
+- Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.13-6
 - Replace Recommends: with Requires: in devel subpackage
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.13-5

@@ -1,12 +1,12 @@
 Name:           ros-kinetic-image_rotate
-Version:        1.12.22
-Release:        5%{?dist}
+Version:        1.12.23
+Release:        1%{?dist}
 Summary:        ROS package image_rotate
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/image_pipeline-release/archive/release/kinetic/image_rotate/1.12.22-0.tar.gz#/ros-kinetic-image_rotate-1.12.22-source0.tar.gz
+Source0:        https://github.com/ros-gbp/image_pipeline-release/archive/release/kinetic/image_rotate/1.12.23-0.tar.gz#/ros-kinetic-image_rotate-1.12.23-source0.tar.gz
 
 
 
@@ -142,6 +142,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.23-1
+- Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.22-5
 - Replace Recommends: with Requires: in devel subpackage
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.22-4

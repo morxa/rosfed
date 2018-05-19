@@ -1,12 +1,12 @@
 Name:           ros-kinetic-cv_bridge
-Version:        1.12.7
-Release:        6%{?dist}
+Version:        1.12.8
+Release:        1%{?dist}
 Summary:        ROS package cv_bridge
 
 License:        BSD
 URL:            http://www.ros.org/wiki/cv_bridge
 
-Source0:        https://github.com/ros-gbp/vision_opencv-release/archive/release/kinetic/cv_bridge/1.12.7-0.tar.gz#/ros-kinetic-cv_bridge-1.12.7-source0.tar.gz
+Source0:        https://github.com/ros-gbp/vision_opencv-release/archive/release/kinetic/cv_bridge/1.12.8-0.tar.gz#/ros-kinetic-cv_bridge-1.12.8-source0.tar.gz
 
 
 
@@ -23,9 +23,12 @@ BuildRequires:  opencv-devel
 BuildRequires:  python-devel
 BuildRequires:  ros-kinetic-catkin-devel
 BuildRequires:  ros-kinetic-rosconsole-devel
+BuildRequires:  ros-kinetic-roscpp_serialization-devel
 BuildRequires:  ros-kinetic-rostest-devel
 BuildRequires:  ros-kinetic-sensor_msgs-devel
 
+Requires:       opencv
+Requires:       ros-kinetic-rosconsole
 
 
 %description
@@ -42,6 +45,7 @@ Requires:       numpy
 Requires:       opencv-devel
 Requires:       python-devel
 Requires:       ros-kinetic-rosconsole-devel
+Requires:       ros-kinetic-roscpp_serialization-devel
 Requires:       ros-kinetic-rostest-devel
 
 %description devel
@@ -115,6 +119,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.8-1
+- Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.7-6
 - Replace Recommends: with Requires: in devel subpackage
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.7-5

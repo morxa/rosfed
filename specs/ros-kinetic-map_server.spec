@@ -1,6 +1,6 @@
 Name:           ros-kinetic-map_server
 Version:        1.14.3
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package map_server
 
 License:        BSD
@@ -123,6 +123,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.14.3-3
+- Also add upstream's exec_depend as Requires:
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.14.3-2
 - Add corresponding devel Requires: for the package's BRs and Rs
 * Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.14.3-1

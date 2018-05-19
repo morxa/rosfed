@@ -1,12 +1,12 @@
 Name:           ros-kinetic-roscreate
-Version:        1.13.6
-Release:        5%{?dist}
+Version:        1.14.3
+Release:        1%{?dist}
 Summary:        ROS package roscreate
 
 License:        BSD
 URL:            http://ros.org/wiki/roscreate
 
-Source0:        https://github.com/ros-gbp/ros-release/archive/release/kinetic/roscreate/1.13.6-0.tar.gz#/ros-kinetic-roscreate-1.13.6-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros-release/archive/release/kinetic/roscreate/1.14.3-0.tar.gz#/ros-kinetic-roscreate-1.14.3-source0.tar.gz
 
 
 BuildArch: noarch
@@ -103,6 +103,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.14.3-1
+- Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.13.6-5
 - Replace Recommends: with Requires: in devel subpackage
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.13.6-4

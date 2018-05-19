@@ -1,12 +1,12 @@
 Name:           ros-kinetic-image_geometry
-Version:        1.12.7
-Release:        6%{?dist}
+Version:        1.12.8
+Release:        1%{?dist}
 Summary:        ROS package image_geometry
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/vision_opencv-release/archive/release/kinetic/image_geometry/1.12.7-0.tar.gz#/ros-kinetic-image_geometry-1.12.7-source0.tar.gz
+Source0:        https://github.com/ros-gbp/vision_opencv-release/archive/release/kinetic/image_geometry/1.12.8-0.tar.gz#/ros-kinetic-image_geometry-1.12.8-source0.tar.gz
 
 Patch0: ros-kinetic-image_geometry.catkin-fix-order.patch
 
@@ -22,8 +22,10 @@ BuildRequires:  boost-devel
 BuildRequires:  gtest-devel
 BuildRequires:  opencv-devel
 BuildRequires:  ros-kinetic-catkin-devel
+BuildRequires:  ros-kinetic-cpp_common-devel
 BuildRequires:  ros-kinetic-sensor_msgs-devel
 
+Requires:       opencv
 
 
 %description
@@ -41,6 +43,7 @@ Requires:       ros-kinetic-sensor_msgs-devel
 Requires:       boost-devel
 Requires:       gtest-devel
 Requires:       opencv-devel
+Requires:       ros-kinetic-cpp_common-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -114,6 +117,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.8-1
+- Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.7-6
 - Replace Recommends: with Requires: in devel subpackage
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.7-5

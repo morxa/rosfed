@@ -1,6 +1,6 @@
 Name:           ros-kinetic-tf
 Version:        1.11.9
-Release:        8%{?dist}
+Release:        9%{?dist}
 Summary:        ROS package tf
 
 License:        BSD
@@ -138,6 +138,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.9-9
+- Also add upstream's exec_depend as Requires:
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.9-8
 - Add corresponding devel Requires: for the package's BRs and Rs
 * Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.9-7

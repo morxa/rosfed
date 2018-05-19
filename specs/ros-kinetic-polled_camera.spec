@@ -1,6 +1,6 @@
 Name:           ros-kinetic-polled_camera
 Version:        1.11.13
-Release:        6%{?dist}
+Release:        7%{?dist}
 Summary:        ROS package polled_camera
 
 License:        BSD
@@ -124,6 +124,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.13-7
+- Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.13-6
 - Replace Recommends: with Requires: in devel subpackage
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.13-5

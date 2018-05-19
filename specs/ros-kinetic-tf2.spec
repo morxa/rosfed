@@ -1,6 +1,6 @@
 Name:           ros-kinetic-tf2
 Version:        0.5.17
-Release:        6%{?dist}
+Release:        7%{?dist}
 Summary:        ROS package tf2
 
 License:        BSD
@@ -23,6 +23,7 @@ BuildRequires:  gtest-devel
 BuildRequires:  ros-kinetic-catkin-devel
 BuildRequires:  ros-kinetic-cpp_common-devel
 BuildRequires:  ros-kinetic-geometry_msgs-devel
+BuildRequires:  ros-kinetic-roscpp_serialization-devel
 BuildRequires:  ros-kinetic-roscpp_traits-devel
 BuildRequires:  ros-kinetic-rostime-devel
 BuildRequires:  ros-kinetic-tf2_msgs-devel
@@ -48,6 +49,7 @@ Requires:       console-bridge-devel
 Requires:       gtest-devel
 Requires:       ros-kinetic-cpp_common-devel
 Requires:       ros-kinetic-geometry_msgs-devel
+Requires:       ros-kinetic-roscpp_serialization-devel
 Requires:       ros-kinetic-roscpp_traits-devel
 Requires:       ros-kinetic-rostime-devel
 Requires:       ros-kinetic-tf2_msgs-devel
@@ -123,6 +125,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.17-7
+- Also add upstream's exec_depend as Requires:
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.17-6
 - Add corresponding devel Requires: for the package's BRs and Rs
 * Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.17-5

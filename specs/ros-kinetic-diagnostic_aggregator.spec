@@ -1,12 +1,12 @@
 Name:           ros-kinetic-diagnostic_aggregator
-Version:        1.9.2
-Release:        6%{?dist}
+Version:        1.9.3
+Release:        1%{?dist}
 Summary:        ROS package diagnostic_aggregator
 
 License:        BSD
 URL:            http://www.ros.org/wiki/diagnostic_aggregator
 
-Source0:        https://github.com/ros-gbp/diagnostics-release/archive/release/kinetic/diagnostic_aggregator/1.9.2-0.tar.gz#/ros-kinetic-diagnostic_aggregator-1.9.2-source0.tar.gz
+Source0:        https://github.com/ros-gbp/diagnostics-release/archive/release/kinetic/diagnostic_aggregator/1.9.3-0.tar.gz#/ros-kinetic-diagnostic_aggregator-1.9.3-source0.tar.gz
 
 
 
@@ -131,6 +131,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.3-1
+- Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.2-6
 - Replace Recommends: with Requires: in devel subpackage
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.2-5

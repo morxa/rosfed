@@ -1,6 +1,6 @@
 Name:           ros-kinetic-sensor_msgs
 Version:        1.12.5
-Release:        8%{?dist}
+Release:        11%{?dist}
 Summary:        ROS package sensor_msgs
 
 License:        BSD
@@ -36,6 +36,7 @@ cameras and scanning laser rangefinders.
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-kinetic-catkin-devel
+Requires:       ros-kinetic-roscpp_serialization-devel
 Requires:       ros-kinetic-geometry_msgs-devel
 Requires:       ros-kinetic-message_generation-devel
 Requires:       ros-kinetic-std_msgs-devel
@@ -111,6 +112,12 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed May 16 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.5-11
+- Add missing devel dependency on roscpp_serialization
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.5-10
+- Add Requires: on roscpp_serialization
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.5-9
+- Also add upstream's exec_depend as Requires:
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.5-8
 - Add corresponding devel Requires: for the package's BRs and Rs
 * Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.5-7

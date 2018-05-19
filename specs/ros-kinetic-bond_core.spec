@@ -1,6 +1,6 @@
 Name:           ros-kinetic-bond_core
 Version:        1.8.1
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        ROS package bond_core
 
 License:        BSD
@@ -20,6 +20,10 @@ BuildRequires:  python2-devel
 
 BuildRequires:  ros-kinetic-catkin-devel
 
+Requires:       ros-kinetic-bond
+Requires:       ros-kinetic-bondcpp
+Requires:       ros-kinetic-bondpy
+Requires:       ros-kinetic-smclib
 
 
 %description
@@ -103,6 +107,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.8.1-6
+- Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.8.1-5
 - Replace Recommends: with Requires: in devel subpackage
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.8.1-4

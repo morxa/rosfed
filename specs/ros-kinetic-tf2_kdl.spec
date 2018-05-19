@@ -1,6 +1,6 @@
 Name:           ros-kinetic-tf2_kdl
 Version:        0.5.17
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        ROS package tf2_kdl
 
 License:        BSD
@@ -116,6 +116,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.17-5
+- Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.17-4
 - Replace Recommends: with Requires: in devel subpackage
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.17-3

@@ -1,6 +1,6 @@
 Name:           ros-kinetic-rqt_robot_monitor
 Version:        0.5.8
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        ROS package rqt_robot_monitor
 
 License:        BSD
@@ -112,6 +112,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.8-4
+- Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.8-3
 - Replace Recommends: with Requires: in devel subpackage
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.8-2

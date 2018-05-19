@@ -1,12 +1,12 @@
 Name:           ros-kinetic-rqt_robot_steering
-Version:        0.5.8
-Release:        5%{?dist}
+Version:        0.5.9
+Release:        1%{?dist}
 Summary:        ROS package rqt_robot_steering
 
 License:        BSD
 URL:            http://wiki.ros.org/rqt_robot_steering
 
-Source0:        https://github.com/ros-gbp/rqt_robot_steering-release/archive/release/kinetic/rqt_robot_steering/0.5.8-0.tar.gz#/ros-kinetic-rqt_robot_steering-0.5.8-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt_robot_steering-release/archive/release/kinetic/rqt_robot_steering/0.5.9-0.tar.gz#/ros-kinetic-rqt_robot_steering-0.5.9-source0.tar.gz
 
 
 BuildArch: noarch
@@ -108,6 +108,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.9-1
+- Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.8-5
 - Replace Recommends: with Requires: in devel subpackage
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.8-4

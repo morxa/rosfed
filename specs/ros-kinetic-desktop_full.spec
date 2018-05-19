@@ -1,6 +1,6 @@
 Name:           ros-kinetic-desktop_full
 Version:        1.3.2
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package desktop_full
 
 License:        BSD
@@ -11,6 +11,7 @@ Source0:        https://github.com/ros-gbp/metapackages-release/archive/release/
 
 BuildArch: noarch
 
+
 # common BRs
 BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
@@ -20,6 +21,10 @@ BuildRequires:  python2-devel
 
 BuildRequires:  ros-kinetic-catkin-devel
 
+Requires:       ros-kinetic-desktop
+Requires:       ros-kinetic-perception
+Requires:       ros-kinetic-simulators
+Requires:       ros-kinetic-urdf_tutorial
 
 
 %description
@@ -101,6 +106,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.2-3
+- Also add upstream's exec_depend as Requires:
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.2-2
 - Add corresponding devel Requires: for the package's BRs and Rs
 * Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.2-1

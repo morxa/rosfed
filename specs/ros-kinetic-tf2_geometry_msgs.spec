@@ -1,6 +1,6 @@
 Name:           ros-kinetic-tf2_geometry_msgs
 Version:        0.5.17
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        ROS package tf2_geometry_msgs
 
 License:        BSD
@@ -28,6 +28,7 @@ BuildRequires:  ros-kinetic-tf2_ros-devel
 
 Requires:       ros-kinetic-geometry_msgs
 Requires:       ros-kinetic-orocos_kdl
+Requires:       ros-kinetic-python_orocos_kdl
 Requires:       ros-kinetic-tf2
 Requires:       ros-kinetic-tf2_ros
 
@@ -117,6 +118,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.17-5
+- Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.17-4
 - Replace Recommends: with Requires: in devel subpackage
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.17-3

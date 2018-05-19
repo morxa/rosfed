@@ -1,6 +1,6 @@
 Name:           ros-kinetic-rqt_shell
 Version:        0.4.9
-Release:        6%{?dist}
+Release:        7%{?dist}
 Summary:        ROS package rqt_shell
 
 License:        BSD
@@ -107,6 +107,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.9-7
+- Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.9-6
 - Replace Recommends: with Requires: in devel subpackage
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.9-5

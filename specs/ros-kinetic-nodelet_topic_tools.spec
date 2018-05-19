@@ -1,6 +1,6 @@
 Name:           ros-kinetic-nodelet_topic_tools
 Version:        1.9.14
-Release:        7%{?dist}
+Release:        8%{?dist}
 Summary:        ROS package nodelet_topic_tools
 
 License:        BSD
@@ -115,6 +115,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.14-8
+- Also add upstream's exec_depend as Requires:
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.14-7
 - Add corresponding devel Requires: for the package's BRs and Rs
 * Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.14-6

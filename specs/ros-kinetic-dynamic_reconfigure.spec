@@ -1,12 +1,13 @@
 Name:           ros-kinetic-dynamic_reconfigure
 Version:        1.5.49
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package dynamic_reconfigure
 
 License:        BSD
 URL:            http://ros.org/wiki/dynamic_reconfigure
 
 Source0:        https://github.com/ros-gbp/dynamic_reconfigure-release/archive/release/kinetic/dynamic_reconfigure/1.5.49-0.tar.gz#/ros-kinetic-dynamic_reconfigure-1.5.49-source0.tar.gz
+
 
 
 
@@ -25,7 +26,11 @@ BuildRequires:  ros-kinetic-roscpp_serialization-devel
 BuildRequires:  ros-kinetic-rostest-devel
 BuildRequires:  ros-kinetic-std_msgs-devel
 
+Requires:       ros-kinetic-message_runtime
 Requires:       ros-kinetic-roscpp
+Requires:       ros-kinetic-roslib
+Requires:       ros-kinetic-rospy
+Requires:       ros-kinetic-rosservice
 Requires:       ros-kinetic-std_msgs
 
 
@@ -116,6 +121,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.5.49-3
+- Also add upstream's exec_depend as Requires:
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.5.49-2
 - Add corresponding devel Requires: for the package's BRs and Rs
 * Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.5.49-1

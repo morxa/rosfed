@@ -1,12 +1,12 @@
 Name:           ros-kinetic-robot
-Version:        1.3.1
-Release:        7%{?dist}
+Version:        1.3.2
+Release:        1%{?dist}
 Summary:        ROS package robot
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/metapackages-release/archive/release/kinetic/robot/1.3.1-0.tar.gz#/ros-kinetic-robot-1.3.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/metapackages-release/archive/release/kinetic/robot/1.3.2-0.tar.gz#/ros-kinetic-robot-1.3.2-source0.tar.gz
 
 
 BuildArch: noarch
@@ -111,6 +111,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.2-1
+- Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.1-7
 - Replace Recommends: with Requires: in devel subpackage
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.1-6

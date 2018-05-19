@@ -1,6 +1,6 @@
 Name:           ros-kinetic-bondpy
 Version:        1.8.1
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        ROS package bondpy
 
 License:        BSD
@@ -23,6 +23,8 @@ BuildRequires:  ros-kinetic-catkin-devel
 BuildRequires:  ros-kinetic-rospy-devel
 BuildRequires:  ros-kinetic-smclib-devel
 
+Requires:       ros-kinetic-rospy
+Requires:       ros-kinetic-smclib
 
 
 %description
@@ -108,6 +110,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.8.1-6
+- Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.8.1-5
 - Replace Recommends: with Requires: in devel subpackage
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.8.1-4

@@ -1,12 +1,12 @@
 Name:           ros-kinetic-vision_opencv
-Version:        1.12.7
-Release:        6%{?dist}
+Version:        1.12.8
+Release:        1%{?dist}
 Summary:        ROS package vision_opencv
 
 License:        BSD
 URL:            http://www.ros.org/wiki/vision_opencv
 
-Source0:        https://github.com/ros-gbp/vision_opencv-release/archive/release/kinetic/vision_opencv/1.12.7-0.tar.gz#/ros-kinetic-vision_opencv-1.12.7-source0.tar.gz
+Source0:        https://github.com/ros-gbp/vision_opencv-release/archive/release/kinetic/vision_opencv/1.12.8-0.tar.gz#/ros-kinetic-vision_opencv-1.12.8-source0.tar.gz
 
 
 BuildArch: noarch
@@ -104,6 +104,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.8-1
+- Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.7-6
 - Replace Recommends: with Requires: in devel subpackage
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.7-5

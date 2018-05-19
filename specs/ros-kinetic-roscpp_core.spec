@@ -1,12 +1,12 @@
 Name:           ros-kinetic-roscpp_core
-Version:        0.6.7
-Release:        6%{?dist}
+Version:        0.6.9
+Release:        1%{?dist}
 Summary:        ROS package roscpp_core
 
 License:        BSD
 URL:            http://www.ros.org/wiki/roscpp_core
 
-Source0:        https://github.com/ros-gbp/roscpp_core-release/archive/release/kinetic/roscpp_core/0.6.7-0.tar.gz#/ros-kinetic-roscpp_core-0.6.7-source0.tar.gz
+Source0:        https://github.com/ros-gbp/roscpp_core-release/archive/release/kinetic/roscpp_core/0.6.9-0.tar.gz#/ros-kinetic-roscpp_core-0.6.9-source0.tar.gz
 
 
 BuildArch: noarch
@@ -106,6 +106,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.6.9-1
+- Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.6.7-6
 - Replace Recommends: with Requires: in devel subpackage
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.6.7-5

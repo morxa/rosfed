@@ -1,12 +1,12 @@
 Name:           ros-kinetic-ros_comm
-Version:        1.12.12
-Release:        5%{?dist}
+Version:        1.12.13
+Release:        1%{?dist}
 Summary:        ROS package ros_comm
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/kinetic/ros_comm/1.12.12-0.tar.gz#/ros-kinetic-ros_comm-1.12.12-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/kinetic/ros_comm/1.12.13-0.tar.gz#/ros-kinetic-ros_comm-1.12.13-source0.tar.gz
 
 
 BuildArch: noarch
@@ -125,6 +125,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.13-1
+- Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.12-5
 - Replace Recommends: with Requires: in devel subpackage
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.12-4

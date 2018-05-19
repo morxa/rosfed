@@ -1,6 +1,6 @@
 Name:           ros-kinetic-gazebo_ros_pkgs
 Version:        2.5.14
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        ROS package gazebo_ros_pkgs
 
 License:        BSD,LGPL,Apache 2.0
@@ -20,6 +20,10 @@ BuildRequires:  python2-devel
 
 BuildRequires:  ros-kinetic-catkin-devel
 
+Requires:       ros-kinetic-gazebo_dev
+Requires:       ros-kinetic-gazebo_msgs
+Requires:       ros-kinetic-gazebo_plugins
+Requires:       ros-kinetic-gazebo_ros
 
 
 %description
@@ -101,6 +105,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.5.14-6
+- Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.5.14-5
 - Replace Recommends: with Requires: in devel subpackage
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.5.14-4

@@ -1,6 +1,6 @@
 Name:           ros-kinetic-eigen_conversions
 Version:        1.11.9
-Release:        8%{?dist}
+Release:        9%{?dist}
 Summary:        ROS package eigen_conversions
 
 License:        BSD
@@ -22,8 +22,10 @@ BuildRequires:  console-bridge-devel
 BuildRequires:  eigen3-devel
 BuildRequires:  ros-kinetic-catkin-devel
 BuildRequires:  ros-kinetic-cmake_modules-devel
+BuildRequires:  ros-kinetic-cpp_common-devel
 BuildRequires:  ros-kinetic-geometry_msgs-devel
 BuildRequires:  ros-kinetic-orocos_kdl-devel
+BuildRequires:  ros-kinetic-roscpp_serialization-devel
 BuildRequires:  ros-kinetic-std_msgs-devel
 
 Requires:       ros-kinetic-geometry_msgs
@@ -43,8 +45,10 @@ Requires:       boost-devel
 Requires:       console-bridge-devel
 Requires:       eigen3-devel
 Requires:       ros-kinetic-cmake_modules-devel
+Requires:       ros-kinetic-cpp_common-devel
 Requires:       ros-kinetic-geometry_msgs-devel
 Requires:       ros-kinetic-orocos_kdl-devel
+Requires:       ros-kinetic-roscpp_serialization-devel
 Requires:       ros-kinetic-std_msgs-devel
 
 %description devel
@@ -118,6 +122,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.9-9
+- Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.9-8
 - Replace Recommends: with Requires: in devel subpackage
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.9-7

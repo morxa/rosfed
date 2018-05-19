@@ -1,6 +1,6 @@
 Name:           ros-kinetic-urdf_tutorial
 Version:        0.3.0
-Release:        7%{?dist}
+Release:        8%{?dist}
 Summary:        ROS package urdf_tutorial
 
 License:        BSD
@@ -10,6 +10,7 @@ Source0:        https://github.com/ros-gbp/urdf_tutorial-release/archive/release
 
 
 BuildArch: noarch
+
 
 # common BRs
 BuildRequires:  boost-devel
@@ -107,6 +108,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.3.0-8
+- Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.3.0-7
 - Replace Recommends: with Requires: in devel subpackage
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.3.0-6

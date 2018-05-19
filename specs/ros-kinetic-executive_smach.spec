@@ -1,6 +1,6 @@
 Name:           ros-kinetic-executive_smach
 Version:        2.0.1
-Release:        6%{?dist}
+Release:        7%{?dist}
 Summary:        ROS package executive_smach
 
 License:        BSD
@@ -20,6 +20,9 @@ BuildRequires:  python2-devel
 
 BuildRequires:  ros-kinetic-catkin-devel
 
+Requires:       ros-kinetic-smach
+Requires:       ros-kinetic-smach_msgs
+Requires:       ros-kinetic-smach_ros
 
 
 %description
@@ -102,6 +105,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.0.1-7
+- Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.0.1-6
 - Replace Recommends: with Requires: in devel subpackage
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.0.1-5

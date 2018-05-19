@@ -1,6 +1,6 @@
 Name:           ros-kinetic-rosbag
 Version:        1.12.13
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package rosbag
 
 License:        BSD
@@ -20,7 +20,7 @@ BuildRequires:  python2-devel
 BuildRequires:  boost-devel
 BuildRequires:  bzip2-devel
 BuildRequires:  lz4-devel
-BuildRequires:  python-imaging
+BuildRequires:  python-pillow
 BuildRequires:  ros-kinetic-catkin-devel
 BuildRequires:  ros-kinetic-cpp_common-devel
 BuildRequires:  ros-kinetic-rosbag_storage-devel
@@ -56,7 +56,7 @@ Requires:       ros-kinetic-catkin-devel
 Requires:       boost-devel
 Requires:       bzip2-devel
 Requires:       lz4-devel
-Requires:       python-imaging
+Requires:       python-pillow
 Requires:       ros-kinetic-cpp_common-devel
 Requires:       ros-kinetic-rosbag_storage-devel
 Requires:       ros-kinetic-rosconsole-devel
@@ -137,6 +137,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.13-3
+- Also add upstream's exec_depend as Requires:
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.13-2
 - Add corresponding devel Requires: for the package's BRs and Rs
 * Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.13-1

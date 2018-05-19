@@ -1,6 +1,6 @@
 Name:           ros-kinetic-nodelet_core
 Version:        1.9.14
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        ROS package nodelet_core
 
 License:        BSD
@@ -20,6 +20,8 @@ BuildRequires:  python2-devel
 
 BuildRequires:  ros-kinetic-catkin-devel
 
+Requires:       ros-kinetic-nodelet
+Requires:       ros-kinetic-nodelet_topic_tools
 
 
 %description
@@ -101,6 +103,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.14-6
+- Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.14-5
 - Replace Recommends: with Requires: in devel subpackage
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.14-4

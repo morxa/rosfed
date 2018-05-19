@@ -1,12 +1,12 @@
 Name:           ros-kinetic-perception_pcl
-Version:        1.4.1
-Release:        7%{?dist}
+Version:        1.4.3
+Release:        1%{?dist}
 Summary:        ROS package perception_pcl
 
 License:        BSD
 URL:            http://ros.org/wiki/perception_pcl
 
-Source0:        https://github.com/ros-gbp/perception_pcl-release/archive/release/kinetic/perception_pcl/1.4.1-0.tar.gz#/ros-kinetic-perception_pcl-1.4.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/perception_pcl-release/archive/release/kinetic/perception_pcl/1.4.3-0.tar.gz#/ros-kinetic-perception_pcl-1.4.3-source0.tar.gz
 
 
 BuildArch: noarch
@@ -106,6 +106,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.4.3-1
+- Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.4.1-7
 - Replace Recommends: with Requires: in devel subpackage
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.4.1-6

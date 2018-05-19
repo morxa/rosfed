@@ -1,12 +1,12 @@
 Name:           ros-kinetic-geometric_shapes
-Version:        0.5.3
-Release:        4%{?dist}
+Version:        0.5.4
+Release:        1%{?dist}
 Summary:        ROS package geometric_shapes
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/geometric_shapes-release/archive/release/kinetic/geometric_shapes/0.5.3-1.tar.gz#/ros-kinetic-geometric_shapes-0.5.3-source0.tar.gz
+Source0:        https://github.com/ros-gbp/geometric_shapes-release/archive/release/kinetic/geometric_shapes/0.5.4-1.tar.gz#/ros-kinetic-geometric_shapes-0.5.4-source0.tar.gz
 
 
 
@@ -29,6 +29,7 @@ BuildRequires:  ros-kinetic-eigen_stl_containers-devel
 BuildRequires:  ros-kinetic-octomap-devel
 BuildRequires:  ros-kinetic-random_numbers-devel
 BuildRequires:  ros-kinetic-resource_retriever-devel
+BuildRequires:  ros-kinetic-roscpp_serialization-devel
 BuildRequires:  ros-kinetic-rosunit-devel
 BuildRequires:  ros-kinetic-shape_msgs-devel
 BuildRequires:  ros-kinetic-visualization_msgs-devel
@@ -61,6 +62,7 @@ Requires:       ros-kinetic-eigen_stl_containers-devel
 Requires:       ros-kinetic-octomap-devel
 Requires:       ros-kinetic-random_numbers-devel
 Requires:       ros-kinetic-resource_retriever-devel
+Requires:       ros-kinetic-roscpp_serialization-devel
 Requires:       ros-kinetic-rosunit-devel
 Requires:       ros-kinetic-shape_msgs-devel
 Requires:       ros-kinetic-visualization_msgs-devel
@@ -136,6 +138,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.4-1
+- Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.3-4
 - Replace Recommends: with Requires: in devel subpackage
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.3-3

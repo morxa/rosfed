@@ -1,12 +1,12 @@
 Name:           ros-kinetic-librviz_tutorial
-Version:        0.10.2
-Release:        4%{?dist}
+Version:        0.10.3
+Release:        1%{?dist}
 Summary:        ROS package librviz_tutorial
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/visualization_tutorials-release/archive/release/kinetic/librviz_tutorial/0.10.2-0.tar.gz#/ros-kinetic-librviz_tutorial-0.10.2-source0.tar.gz
+Source0:        https://github.com/ros-gbp/visualization_tutorials-release/archive/release/kinetic/librviz_tutorial/0.10.3-0.tar.gz#/ros-kinetic-librviz_tutorial-0.10.3-source0.tar.gz
 
 
 
@@ -123,6 +123,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.10.3-1
+- Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.10.2-4
 - Replace Recommends: with Requires: in devel subpackage
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.10.2-3

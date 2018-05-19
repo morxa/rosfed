@@ -1,6 +1,6 @@
 Name:           ros-kinetic-tf2_eigen
 Version:        0.5.17
-Release:        6%{?dist}
+Release:        7%{?dist}
 Summary:        ROS package tf2_eigen
 
 License:        BSD
@@ -111,6 +111,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.17-7
+- Also add upstream's exec_depend as Requires:
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.17-6
 - Add corresponding devel Requires: for the package's BRs and Rs
 * Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.17-5

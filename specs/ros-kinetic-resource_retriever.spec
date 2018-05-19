@@ -1,12 +1,12 @@
 Name:           ros-kinetic-resource_retriever
-Version:        1.12.3
-Release:        8%{?dist}
+Version:        1.12.4
+Release:        1%{?dist}
 Summary:        ROS package resource_retriever
 
 License:        BSD
 URL:            http://ros.org/wiki/resource_retriever
 
-Source0:        https://github.com/ros-gbp/resource_retriever-release/archive/release/kinetic/resource_retriever/1.12.3-0.tar.gz#/ros-kinetic-resource_retriever-1.12.3-source0.tar.gz
+Source0:        https://github.com/ros-gbp/resource_retriever-release/archive/release/kinetic/resource_retriever/1.12.4-0.tar.gz#/ros-kinetic-resource_retriever-1.12.4-source0.tar.gz
 
 
 
@@ -126,6 +126,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.4-1
+- Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.3-8
 - Replace Recommends: with Requires: in devel subpackage
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.3-7
