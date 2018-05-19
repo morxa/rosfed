@@ -6,3 +6,4 @@ dependencies:
     ros:
       - roscpp_traits
       - cpp_common
+      - roscpp_serialization
