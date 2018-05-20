@@ -5,8 +5,8 @@ diff -ur ros_comm-release-release-kinetic-message_filters-1.12.13-0/include/mess
    template<int i>
    void cb(const typename mpl::at_c<Events, i>::type& evt)
    {
--    this->template add<i>(evt);
-+    this->add<i>(evt);
+-    this->add<i>(evt);
++    this->template add<i>(evt);
    }
  
    uint32_t queue_size_;
