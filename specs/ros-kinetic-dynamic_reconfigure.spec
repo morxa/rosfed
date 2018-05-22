@@ -10,7 +10,6 @@ Source0:        https://github.com/ros-gbp/dynamic_reconfigure-release/archive/r
 
 
 
-
 # common BRs
 BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel

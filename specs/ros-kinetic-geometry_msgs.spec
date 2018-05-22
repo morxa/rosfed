@@ -1,12 +1,12 @@
 Name:           ros-kinetic-geometry_msgs
-Version:        1.12.5
-Release:        10%{?dist}
+Version:        1.12.6
+Release:        1%{?dist}
 Summary:        ROS package geometry_msgs
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/common_msgs-release/archive/release/kinetic/geometry_msgs/1.12.5-0.tar.gz#/ros-kinetic-geometry_msgs-1.12.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/common_msgs-release/archive/release/kinetic/geometry_msgs/1.12.6-0.tar.gz#/ros-kinetic-geometry_msgs-1.12.6-source0.tar.gz
 
 
 BuildArch: noarch
@@ -23,7 +23,6 @@ BuildRequires:  ros-kinetic-message_generation-devel
 BuildRequires:  ros-kinetic-std_msgs-devel
 
 Requires:       ros-kinetic-message_runtime
-Requires:       ros-kinetic-roscpp_serialization
 Requires:       ros-kinetic-std_msgs
 
 
@@ -37,6 +36,7 @@ the system.
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-kinetic-catkin-devel
+Requires:       ros-kinetic-roscpp_serialization-devel
 Requires:       ros-kinetic-message_generation-devel
 Requires:       ros-kinetic-std_msgs-devel
 
@@ -111,6 +111,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.6-1
+- Update to latest release
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.5-10
 - Add Requires: on roscpp_serialization
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.5-9

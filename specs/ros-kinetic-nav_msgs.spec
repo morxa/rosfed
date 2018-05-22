@@ -1,12 +1,12 @@
 Name:           ros-kinetic-nav_msgs
-Version:        1.12.5
-Release:        9%{?dist}
+Version:        1.12.6
+Release:        1%{?dist}
 Summary:        ROS package nav_msgs
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/common_msgs-release/archive/release/kinetic/nav_msgs/1.12.5-0.tar.gz#/ros-kinetic-nav_msgs-1.12.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/common_msgs-release/archive/release/kinetic/nav_msgs/1.12.6-0.tar.gz#/ros-kinetic-nav_msgs-1.12.6-source0.tar.gz
 
 
 BuildArch: noarch
@@ -113,6 +113,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.6-1
+- Update to latest release
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.5-9
 - Also add upstream's exec_depend as Requires:
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.5-8

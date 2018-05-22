@@ -11,7 +11,6 @@ Source0:        https://github.com/ros-gbp/navigation_msgs-release/archive/relea
 
 BuildArch: noarch
 
-
 # common BRs
 BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel

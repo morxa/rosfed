@@ -11,7 +11,6 @@ Source0:        https://github.com/ros-gbp/urdf_tutorial-release/archive/release
 
 BuildArch: noarch
 
-
 # common BRs
 BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel

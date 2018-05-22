@@ -11,7 +11,6 @@ Source0:        https://github.com/ros-gbp/ros_comm_msgs-release/archive/release
 
 BuildArch: noarch
 
-
 # common BRs
 BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel

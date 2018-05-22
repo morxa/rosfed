@@ -1,12 +1,12 @@
 Name:           ros-kinetic-pcl_ros
-Version:        1.4.3
-Release:        3%{?dist}
+Version:        1.4.4
+Release:        1%{?dist}
 Summary:        ROS package pcl_ros
 
 License:        BSD
 URL:            http://ros.org/wiki/perception_pcl
 
-Source0:        https://github.com/ros-gbp/perception_pcl-release/archive/release/kinetic/pcl_ros/1.4.3-0.tar.gz#/ros-kinetic-pcl_ros-1.4.3-source0.tar.gz
+Source0:        https://github.com/ros-gbp/perception_pcl-release/archive/release/kinetic/pcl_ros/1.4.4-0.tar.gz#/ros-kinetic-pcl_ros-1.4.4-source0.tar.gz
 
 
 
@@ -165,6 +165,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.4.4-1
+- Update to latest release
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.4.3-3
 - Also add upstream's exec_depend as Requires:
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.4.3-2

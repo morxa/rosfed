@@ -10,7 +10,6 @@ Source0:        https://github.com/ros-gbp/navigation-release/archive/release/ki
 
 
 
-
 # common BRs
 BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel

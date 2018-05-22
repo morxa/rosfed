@@ -1,12 +1,12 @@
 Name:           ros-kinetic-sensor_msgs
-Version:        1.12.5
-Release:        11%{?dist}
+Version:        1.12.6
+Release:        1%{?dist}
 Summary:        ROS package sensor_msgs
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/common_msgs-release/archive/release/kinetic/sensor_msgs/1.12.5-0.tar.gz#/ros-kinetic-sensor_msgs-1.12.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/common_msgs-release/archive/release/kinetic/sensor_msgs/1.12.6-0.tar.gz#/ros-kinetic-sensor_msgs-1.12.6-source0.tar.gz
 
 
 BuildArch: noarch
@@ -21,6 +21,8 @@ BuildRequires:  python2-devel
 BuildRequires:  ros-kinetic-catkin-devel
 BuildRequires:  ros-kinetic-geometry_msgs-devel
 BuildRequires:  ros-kinetic-message_generation-devel
+BuildRequires:  ros-kinetic-rosbag-devel
+BuildRequires:  ros-kinetic-rosunit-devel
 BuildRequires:  ros-kinetic-std_msgs-devel
 
 Requires:       ros-kinetic-geometry_msgs
@@ -39,6 +41,8 @@ Requires:       ros-kinetic-catkin-devel
 Requires:       ros-kinetic-roscpp_serialization-devel
 Requires:       ros-kinetic-geometry_msgs-devel
 Requires:       ros-kinetic-message_generation-devel
+Requires:       ros-kinetic-rosbag-devel
+Requires:       ros-kinetic-rosunit-devel
 Requires:       ros-kinetic-std_msgs-devel
 
 %description devel
@@ -112,6 +116,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.6-1
+- Update to latest release
 * Wed May 16 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.5-11
 - Add missing devel dependency on roscpp_serialization
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.5-10

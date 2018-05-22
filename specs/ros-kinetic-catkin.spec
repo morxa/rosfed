@@ -13,7 +13,6 @@ Patch1: ros-kinetic-catkin.python-version-in-shebangs.patch
 
 BuildArch: noarch
 
-
 # common BRs
 BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
