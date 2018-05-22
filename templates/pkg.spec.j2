@@ -74,8 +74,13 @@ Requires:       ros-{{ distro }}-{{ dep }}-devel
 Requires:       {{ dep }}
 {% endif %}
 {% endfor %}
-{% for dep in build_dependencies.ros|sort %}
+{% for dep in build_dependencies.ros | sort %}
 {% if dep not in run_dependencies_devel.ros %}
+Requires:       ros-{{ distro }}-{{ dep }}-devel
+{% endif %}
+{% endfor %}
+{% for dep in run_dependencies.ros | sort %}
+{% if dep not in run_dependencies_devel.ros and dep not in build_dependencies.ros %}
 Requires:       ros-{{ distro }}-{{ dep }}-devel
 {% endif %}
 {% endfor %}
