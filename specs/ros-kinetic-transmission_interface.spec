@@ -1,12 +1,12 @@
 Name:           ros-kinetic-transmission_interface
-Version:        0.13.0
+Version:        0.13.3
 Release:        1%{?dist}
 Summary:        ROS package transmission_interface
 
-License:        Modified BSD
+License:        BSD
 URL:            https://github.com/ros-controls/ros_control/wiki
 
-Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/kinetic/transmission_interface/0.13.0-0.tar.gz#/ros-kinetic-transmission_interface-0.13.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/kinetic/transmission_interface/0.13.3-0.tar.gz#/ros-kinetic-transmission_interface-0.13.3-source0.tar.gz
 
 
 
@@ -20,18 +20,39 @@ BuildRequires:  python2-devel
 BuildRequires:  poco-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
-BuildRequires:  ros-kinetic-catkin
-BuildRequires:  ros-kinetic-cmake_modules
-BuildRequires:  ros-kinetic-hardware_interface
-BuildRequires:  ros-kinetic-pluginlib
-BuildRequires:  ros-kinetic-resource_retriever
-BuildRequires:  ros-kinetic-roscpp
+BuildRequires:  ros-kinetic-catkin-devel
+BuildRequires:  ros-kinetic-cmake_modules-devel
+BuildRequires:  ros-kinetic-hardware_interface-devel
+BuildRequires:  ros-kinetic-pluginlib-devel
+BuildRequires:  ros-kinetic-resource_retriever-devel
+BuildRequires:  ros-kinetic-roscpp-devel
+BuildRequires:  ros-kinetic-rosunit-devel
 
 Requires:       ros-kinetic-pluginlib
 Requires:       ros-kinetic-roscpp
 
+
 %description
 Transmission Interface.
+
+%package        devel
+Summary:        Development files for %{name}
+Requires:       %{name}%{?_isa} = %{version}-%{release}
+Requires:       ros-kinetic-catkin-devel
+Requires:       poco-devel
+Requires:       tinyxml-devel
+Requires:       tinyxml2-devel
+Requires:       ros-kinetic-cmake_modules-devel
+Requires:       ros-kinetic-hardware_interface-devel
+Requires:       ros-kinetic-pluginlib-devel
+Requires:       ros-kinetic-resource_retriever-devel
+Requires:       ros-kinetic-roscpp-devel
+Requires:       ros-kinetic-rosunit-devel
+
+%description devel
+The %{name}-devel package contains libraries and header files for developing
+applications that use %{name}.
+
 
 
 %prep
@@ -53,10 +74,10 @@ FFLAGS="${FFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FFLAGS ; \
 FCFLAGS="${FCFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FCFLAGS ; \
 %{?__global_ldflags:LDFLAGS="${LDFLAGS:-%__global_ldflags}" ; export LDFLAGS ;} \
 
-
 source %{_libdir}/ros/setup.bash
 
 DESTDIR=%{buildroot} ; export DESTDIR
+
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
@@ -66,22 +87,40 @@ catkin_make_isolated \
   --install-space %{_libdir}/ros/ \
   --pkg transmission_interface
 
+
+
+
 rm -rf %{buildroot}/%{_libdir}/ros/{.catkin,.rosinstall,_setup*,setup*,env.sh}
 
-find %{buildroot}/%{_libdir}/ros/{bin,etc,include,lib*/pkgconfig,lib64/python*,lib/python*/site-packages,share} \
+touch files.list
+find %{buildroot}/%{_libdir}/ros/{bin,etc,lib64/python*,lib/python*/site-packages,share} \
   -mindepth 1 -maxdepth 1 | sed "s:%{buildroot}/::" > files.list
 find %{buildroot}/%{_libdir}/ros/lib*/ -mindepth 1 -maxdepth 1 \
   ! -name pkgconfig ! -name "python*" \
   | sed "s:%{buildroot}/::" >> files.list
 
+touch files_devel.list
+find %{buildroot}/%{_libdir}/ros/{include,lib*/pkgconfig} \
+  -mindepth 1 -maxdepth 1 | sed "s:%{buildroot}/::" > files_devel.list
 
 find . -maxdepth 1 -type f -iname "*readme*" | sed "s:^:%%doc :" >> files.list
 find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.list
 
-%files -f files.list
 
+echo "This is a package automatically generated with rosfed." >> README_FEDORA
+echo "See https://pagure.io/ros for more information." >> README_FEDORA
+install -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
+echo %{_docdir}/%{name} >> files.list
+install -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
+echo %{_docdir}/%{name}-devel >> files_devel.list
+
+
+%files -f files.list
+%files devel -f files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.13.3-1
+- Update to latest release
 * Fri Jan 19 2018 Tim Niemueller <tim@niemueller.de> - 0.13.0-1
 - Initial package

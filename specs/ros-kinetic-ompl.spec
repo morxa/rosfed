@@ -1,12 +1,12 @@
 Name:           ros-kinetic-ompl
-Version:        1.2.1
-Release:        2%{?dist}
+Version:        1.2.3
+Release:        1%{?dist}
 Summary:        ROS package ompl
 
 License:        BSD
 URL:            http://ompl.kavrakilab.org
 
-Source0:        https://github.com/ros-gbp/ompl-release/archive/release/kinetic/ompl/1.2.1-1.tar.gz#/ros-kinetic-ompl-1.2.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ompl-release/archive/release/kinetic/ompl/1.2.3-0.tar.gz#/ros-kinetic-ompl-1.2.3-source0.tar.gz
 
 
 
@@ -20,11 +20,25 @@ BuildRequires:  python2-devel
 BuildRequires:  boost-devel
 BuildRequires:  cmake
 BuildRequires:  eigen3-devel
-BuildRequires:  ros-kinetic-catkin
+BuildRequires:  ros-kinetic-catkin-devel
+
 
 
 %description
 OMPL is a free sampling-based motion planning library.
+
+%package        devel
+Summary:        Development files for %{name}
+Requires:       %{name}%{?_isa} = %{version}-%{release}
+Requires:       cmake
+Requires:       boost-devel
+Requires:       eigen3-devel
+Requires:       ros-kinetic-catkin-devel
+
+%description devel
+The %{name}-devel package contains libraries and header files for developing
+applications that use %{name}.
+
 
 
 %prep
@@ -46,10 +60,10 @@ FFLAGS="${FFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FFLAGS ; \
 FCFLAGS="${FCFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FCFLAGS ; \
 %{?__global_ldflags:LDFLAGS="${LDFLAGS:-%__global_ldflags}" ; export LDFLAGS ;} \
 
-
 source %{_libdir}/ros/setup.bash
 
 DESTDIR=%{buildroot} ; export DESTDIR
+
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
@@ -61,23 +75,41 @@ catkin_make_isolated \
   --install-space %{_libdir}/ros/ \
   --pkg ompl
 
+
+
+
 rm -rf %{buildroot}/%{_libdir}/ros/{.catkin,.rosinstall,_setup*,setup*,env.sh}
 
-find %{buildroot}/%{_libdir}/ros/{bin,etc,include,lib*/pkgconfig,lib64/python*,lib/python*/site-packages,share} \
+touch files.list
+find %{buildroot}/%{_libdir}/ros/{bin,etc,lib64/python*,lib/python*/site-packages,share} \
   -mindepth 1 -maxdepth 1 | sed "s:%{buildroot}/::" > files.list
 find %{buildroot}/%{_libdir}/ros/lib*/ -mindepth 1 -maxdepth 1 \
   ! -name pkgconfig ! -name "python*" \
   | sed "s:%{buildroot}/::" >> files.list
 
+touch files_devel.list
+find %{buildroot}/%{_libdir}/ros/{include,lib*/pkgconfig} \
+  -mindepth 1 -maxdepth 1 | sed "s:%{buildroot}/::" > files_devel.list
 
 find . -maxdepth 1 -type f -iname "*readme*" | sed "s:^:%%doc :" >> files.list
 find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.list
 
-%files -f files.list
 
+echo "This is a package automatically generated with rosfed." >> README_FEDORA
+echo "See https://pagure.io/ros for more information." >> README_FEDORA
+install -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
+echo %{_docdir}/%{name} >> files.list
+install -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
+echo %{_docdir}/%{name}-devel >> files_devel.list
+
+
+%files -f files.list
+%files devel -f files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.2.3-1
+- Update to latest release
 * Fri Jan 19 2018 Tim Niemueller <tim@niemuelle.de> - 1.2.1-2
 - Add flags to fix lib path and disable registration
 

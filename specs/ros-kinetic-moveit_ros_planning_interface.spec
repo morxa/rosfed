@@ -25,20 +25,20 @@ BuildRequires:  python-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
 BuildRequires:  urdfdom-devel
-BuildRequires:  ros-kinetic-actionlib
-BuildRequires:  ros-kinetic-catkin
-BuildRequires:  ros-kinetic-eigen_conversions
-BuildRequires:  ros-kinetic-moveit_resources
-BuildRequires:  ros-kinetic-moveit_ros_manipulation
-BuildRequires:  ros-kinetic-moveit_ros_move_group
-BuildRequires:  ros-kinetic-moveit_ros_planning
-BuildRequires:  ros-kinetic-moveit_ros_warehouse
-BuildRequires:  ros-kinetic-rosconsole
-BuildRequires:  ros-kinetic-roscpp
-BuildRequires:  ros-kinetic-rospy
-BuildRequires:  ros-kinetic-rostest
-BuildRequires:  ros-kinetic-tf
-BuildRequires:  ros-kinetic-tf_conversions
+BuildRequires:  ros-kinetic-actionlib-devel
+BuildRequires:  ros-kinetic-catkin-devel
+BuildRequires:  ros-kinetic-eigen_conversions-devel
+BuildRequires:  ros-kinetic-moveit_resources-devel
+BuildRequires:  ros-kinetic-moveit_ros_manipulation-devel
+BuildRequires:  ros-kinetic-moveit_ros_move_group-devel
+BuildRequires:  ros-kinetic-moveit_ros_planning-devel
+BuildRequires:  ros-kinetic-moveit_ros_warehouse-devel
+BuildRequires:  ros-kinetic-rosconsole-devel
+BuildRequires:  ros-kinetic-roscpp-devel
+BuildRequires:  ros-kinetic-rospy-devel
+BuildRequires:  ros-kinetic-rostest-devel
+BuildRequires:  ros-kinetic-tf-devel
+BuildRequires:  ros-kinetic-tf_conversions-devel
 
 Requires:       ros-kinetic-actionlib
 Requires:       ros-kinetic-eigen_conversions
@@ -52,9 +52,41 @@ Requires:       ros-kinetic-rospy
 Requires:       ros-kinetic-tf
 Requires:       ros-kinetic-tf_conversions
 
+
 %description
 Components of MoveIt that offer simpler interfaces to planning and
 execution
+
+%package        devel
+Summary:        Development files for %{name}
+Requires:       %{name}%{?_isa} = %{version}-%{release}
+Requires:       python-catkin_pkg
+Requires:       ros-kinetic-catkin-devel
+Requires:       eigen3-devel
+Requires:       fcl-devel
+Requires:       poco-devel
+Requires:       python-devel
+Requires:       tinyxml-devel
+Requires:       tinyxml2-devel
+Requires:       urdfdom-devel
+Requires:       ros-kinetic-actionlib-devel
+Requires:       ros-kinetic-eigen_conversions-devel
+Requires:       ros-kinetic-moveit_resources-devel
+Requires:       ros-kinetic-moveit_ros_manipulation-devel
+Requires:       ros-kinetic-moveit_ros_move_group-devel
+Requires:       ros-kinetic-moveit_ros_planning-devel
+Requires:       ros-kinetic-moveit_ros_warehouse-devel
+Requires:       ros-kinetic-rosconsole-devel
+Requires:       ros-kinetic-roscpp-devel
+Requires:       ros-kinetic-rospy-devel
+Requires:       ros-kinetic-rostest-devel
+Requires:       ros-kinetic-tf-devel
+Requires:       ros-kinetic-tf_conversions-devel
+
+%description devel
+The %{name}-devel package contains libraries and header files for developing
+applications that use %{name}.
+
 
 
 %prep
@@ -76,10 +108,10 @@ FFLAGS="${FFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FFLAGS ; \
 FCFLAGS="${FCFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FCFLAGS ; \
 %{?__global_ldflags:LDFLAGS="${LDFLAGS:-%__global_ldflags}" ; export LDFLAGS ;} \
 
-
 source %{_libdir}/ros/setup.bash
 
 DESTDIR=%{buildroot} ; export DESTDIR
+
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
@@ -89,20 +121,36 @@ catkin_make_isolated \
   --install-space %{_libdir}/ros/ \
   --pkg moveit_ros_planning_interface
 
+
+
+
 rm -rf %{buildroot}/%{_libdir}/ros/{.catkin,.rosinstall,_setup*,setup*,env.sh}
 
-find %{buildroot}/%{_libdir}/ros/{bin,etc,include,lib*/pkgconfig,lib64/python*,lib/python*/site-packages,share} \
+touch files.list
+find %{buildroot}/%{_libdir}/ros/{bin,etc,lib64/python*,lib/python*/site-packages,share} \
   -mindepth 1 -maxdepth 1 | sed "s:%{buildroot}/::" > files.list
 find %{buildroot}/%{_libdir}/ros/lib*/ -mindepth 1 -maxdepth 1 \
   ! -name pkgconfig ! -name "python*" \
   | sed "s:%{buildroot}/::" >> files.list
 
+touch files_devel.list
+find %{buildroot}/%{_libdir}/ros/{include,lib*/pkgconfig} \
+  -mindepth 1 -maxdepth 1 | sed "s:%{buildroot}/::" > files_devel.list
 
 find . -maxdepth 1 -type f -iname "*readme*" | sed "s:^:%%doc :" >> files.list
 find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.list
 
-%files -f files.list
 
+echo "This is a package automatically generated with rosfed." >> README_FEDORA
+echo "See https://pagure.io/ros for more information." >> README_FEDORA
+install -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
+echo %{_docdir}/%{name} >> files.list
+install -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
+echo %{_docdir}/%{name}-devel >> files_devel.list
+
+
+%files -f files.list
+%files devel -f files_devel.list
 
 
 %changelog

@@ -27,30 +27,30 @@ BuildRequires:  pkgconfig
 BuildRequires:  tinyxml-devel
 BuildRequires:  urdfdom-devel
 BuildRequires:  urdfdom-headers-devel
-BuildRequires:  ros-kinetic-angles
-BuildRequires:  ros-kinetic-catkin
-BuildRequires:  ros-kinetic-eigen_conversions
-BuildRequires:  ros-kinetic-eigen_stl_containers
-BuildRequires:  ros-kinetic-geometric_shapes
-BuildRequires:  ros-kinetic-geometry_msgs
-BuildRequires:  ros-kinetic-kdl_parser
-BuildRequires:  ros-kinetic-moveit_msgs
-BuildRequires:  ros-kinetic-moveit_resources
-BuildRequires:  ros-kinetic-octomap
-BuildRequires:  ros-kinetic-octomap_msgs
-BuildRequires:  ros-kinetic-orocos_kdl
-BuildRequires:  ros-kinetic-random_numbers
-BuildRequires:  ros-kinetic-roslib
-BuildRequires:  ros-kinetic-rostime
-BuildRequires:  ros-kinetic-rosunit
-BuildRequires:  ros-kinetic-sensor_msgs
-BuildRequires:  ros-kinetic-shape_msgs
-BuildRequires:  ros-kinetic-srdfdom
-BuildRequires:  ros-kinetic-std_msgs
-BuildRequires:  ros-kinetic-tf_conversions
-BuildRequires:  ros-kinetic-trajectory_msgs
-BuildRequires:  ros-kinetic-urdf
-BuildRequires:  ros-kinetic-visualization_msgs
+BuildRequires:  ros-kinetic-angles-devel
+BuildRequires:  ros-kinetic-catkin-devel
+BuildRequires:  ros-kinetic-eigen_conversions-devel
+BuildRequires:  ros-kinetic-eigen_stl_containers-devel
+BuildRequires:  ros-kinetic-geometric_shapes-devel
+BuildRequires:  ros-kinetic-geometry_msgs-devel
+BuildRequires:  ros-kinetic-kdl_parser-devel
+BuildRequires:  ros-kinetic-moveit_msgs-devel
+BuildRequires:  ros-kinetic-moveit_resources-devel
+BuildRequires:  ros-kinetic-octomap-devel
+BuildRequires:  ros-kinetic-octomap_msgs-devel
+BuildRequires:  ros-kinetic-orocos_kdl-devel
+BuildRequires:  ros-kinetic-random_numbers-devel
+BuildRequires:  ros-kinetic-roslib-devel
+BuildRequires:  ros-kinetic-rostime-devel
+BuildRequires:  ros-kinetic-rosunit-devel
+BuildRequires:  ros-kinetic-sensor_msgs-devel
+BuildRequires:  ros-kinetic-shape_msgs-devel
+BuildRequires:  ros-kinetic-srdfdom-devel
+BuildRequires:  ros-kinetic-std_msgs-devel
+BuildRequires:  ros-kinetic-tf_conversions-devel
+BuildRequires:  ros-kinetic-trajectory_msgs-devel
+BuildRequires:  ros-kinetic-urdf-devel
+BuildRequires:  ros-kinetic-visualization_msgs-devel
 
 Requires:       assimp
 Requires:       ros-kinetic-eigen_conversions
@@ -70,8 +70,52 @@ Requires:       ros-kinetic-trajectory_msgs
 Requires:       ros-kinetic-urdf
 Requires:       ros-kinetic-visualization_msgs
 
+
 %description
 Core libraries used by MoveIt!
+
+%package        devel
+Summary:        Development files for %{name}
+Requires:       %{name}%{?_isa} = %{version}-%{release}
+Requires:       pkgconfig
+Requires:       ros-kinetic-catkin-devel
+Requires:       assimp
+Requires:       boost-devel
+Requires:       console-bridge-devel
+Requires:       eigen3-devel
+Requires:       fcl-devel
+Requires:       libccd-devel
+Requires:       tinyxml-devel
+Requires:       urdfdom-devel
+Requires:       urdfdom-headers-devel
+Requires:       ros-kinetic-angles-devel
+Requires:       ros-kinetic-eigen_conversions-devel
+Requires:       ros-kinetic-eigen_stl_containers-devel
+Requires:       ros-kinetic-geometric_shapes-devel
+Requires:       ros-kinetic-geometry_msgs-devel
+Requires:       ros-kinetic-kdl_parser-devel
+Requires:       ros-kinetic-moveit_msgs-devel
+Requires:       ros-kinetic-moveit_resources-devel
+Requires:       ros-kinetic-octomap-devel
+Requires:       ros-kinetic-octomap_msgs-devel
+Requires:       ros-kinetic-orocos_kdl-devel
+Requires:       ros-kinetic-random_numbers-devel
+Requires:       ros-kinetic-roslib-devel
+Requires:       ros-kinetic-rostime-devel
+Requires:       ros-kinetic-rosunit-devel
+Requires:       ros-kinetic-sensor_msgs-devel
+Requires:       ros-kinetic-shape_msgs-devel
+Requires:       ros-kinetic-srdfdom-devel
+Requires:       ros-kinetic-std_msgs-devel
+Requires:       ros-kinetic-tf_conversions-devel
+Requires:       ros-kinetic-trajectory_msgs-devel
+Requires:       ros-kinetic-urdf-devel
+Requires:       ros-kinetic-visualization_msgs-devel
+
+%description devel
+The %{name}-devel package contains libraries and header files for developing
+applications that use %{name}.
+
 
 
 %prep
@@ -93,10 +137,10 @@ FFLAGS="${FFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FFLAGS ; \
 FCFLAGS="${FCFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FCFLAGS ; \
 %{?__global_ldflags:LDFLAGS="${LDFLAGS:-%__global_ldflags}" ; export LDFLAGS ;} \
 
-
 source %{_libdir}/ros/setup.bash
 
 DESTDIR=%{buildroot} ; export DESTDIR
+
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
@@ -106,20 +150,36 @@ catkin_make_isolated \
   --install-space %{_libdir}/ros/ \
   --pkg moveit_core
 
+
+
+
 rm -rf %{buildroot}/%{_libdir}/ros/{.catkin,.rosinstall,_setup*,setup*,env.sh}
 
-find %{buildroot}/%{_libdir}/ros/{bin,etc,include,lib*/pkgconfig,lib64/python*,lib/python*/site-packages,share} \
+touch files.list
+find %{buildroot}/%{_libdir}/ros/{bin,etc,lib64/python*,lib/python*/site-packages,share} \
   -mindepth 1 -maxdepth 1 | sed "s:%{buildroot}/::" > files.list
 find %{buildroot}/%{_libdir}/ros/lib*/ -mindepth 1 -maxdepth 1 \
   ! -name pkgconfig ! -name "python*" \
   | sed "s:%{buildroot}/::" >> files.list
 
+touch files_devel.list
+find %{buildroot}/%{_libdir}/ros/{include,lib*/pkgconfig} \
+  -mindepth 1 -maxdepth 1 | sed "s:%{buildroot}/::" > files_devel.list
 
 find . -maxdepth 1 -type f -iname "*readme*" | sed "s:^:%%doc :" >> files.list
 find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.list
 
-%files -f files.list
 
+echo "This is a package automatically generated with rosfed." >> README_FEDORA
+echo "See https://pagure.io/ros for more information." >> README_FEDORA
+install -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
+echo %{_docdir}/%{name} >> files.list
+install -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
+echo %{_docdir}/%{name}-devel >> files_devel.list
+
+
+%files -f files.list
+%files devel -f files_devel.list
 
 
 %changelog
