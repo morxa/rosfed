@@ -1,6 +1,6 @@
 Name:           ros-kinetic-geometry
 Version:        1.11.9
-Release:        7%{?dist}
+Release:        9%{?dist}
 Summary:        ROS package geometry
 
 License:        BSD
@@ -34,6 +34,11 @@ ROS kinetic package geometry.
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-kinetic-catkin-devel
+Requires:       ros-kinetic-angles-devel
+Requires:       ros-kinetic-eigen_conversions-devel
+Requires:       ros-kinetic-kdl_conversions-devel
+Requires:       ros-kinetic-tf-devel
+Requires:       ros-kinetic-tf_conversions-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -106,6 +111,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.9-9
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.9-8
+- devel also requires: the devel package of each run dependency
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.9-7
 - Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.9-6

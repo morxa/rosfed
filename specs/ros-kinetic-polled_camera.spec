@@ -1,6 +1,6 @@
 Name:           ros-kinetic-polled_camera
 Version:        1.11.13
-Release:        7%{?dist}
+Release:        9%{?dist}
 Summary:        ROS package polled_camera
 
 License:        BSD
@@ -52,6 +52,7 @@ Requires:       ros-kinetic-message_generation-devel
 Requires:       ros-kinetic-roscpp-devel
 Requires:       ros-kinetic-sensor_msgs-devel
 Requires:       ros-kinetic-std_msgs-devel
+Requires:       ros-kinetic-message_runtime-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -124,6 +125,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.13-9
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.13-8
+- devel also requires: the devel package of each run dependency
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.13-7
 - Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.13-6

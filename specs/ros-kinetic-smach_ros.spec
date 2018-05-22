@@ -1,6 +1,6 @@
 Name:           ros-kinetic-smach_ros
 Version:        2.0.1
-Release:        2%{?dist}
+Release:        4%{?dist}
 Summary:        ROS package smach_ros
 
 License:        BSD
@@ -41,6 +41,14 @@ Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-kinetic-catkin-devel
 Requires:       ros-kinetic-rostest-devel
+Requires:       ros-kinetic-actionlib-devel
+Requires:       ros-kinetic-actionlib_msgs-devel
+Requires:       ros-kinetic-rospy-devel
+Requires:       ros-kinetic-rostopic-devel
+Requires:       ros-kinetic-smach-devel
+Requires:       ros-kinetic-smach_msgs-devel
+Requires:       ros-kinetic-std_msgs-devel
+Requires:       ros-kinetic-std_srvs-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -113,6 +121,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.0.1-4
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.0.1-3
+- devel also requires: the devel package of each run dependency
 * Wed May 16 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.0.1-2
 - Make package noarch
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.0.1-1

@@ -1,6 +1,6 @@
 Name:           ros-kinetic-control_msgs
 Version:        1.4.0
-Release:        7%{?dist}
+Release:        9%{?dist}
 Summary:        ROS package control_msgs
 
 License:        BSD
@@ -46,6 +46,7 @@ Requires:       ros-kinetic-geometry_msgs-devel
 Requires:       ros-kinetic-message_generation-devel
 Requires:       ros-kinetic-std_msgs-devel
 Requires:       ros-kinetic-trajectory_msgs-devel
+Requires:       ros-kinetic-message_runtime-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -118,6 +119,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.4.0-9
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.4.0-8
+- devel also requires: the devel package of each run dependency
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.4.0-7
 - Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.4.0-6

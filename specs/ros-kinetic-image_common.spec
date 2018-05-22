@@ -1,6 +1,6 @@
 Name:           ros-kinetic-image_common
 Version:        1.11.13
-Release:        7%{?dist}
+Release:        9%{?dist}
 Summary:        ROS package image_common
 
 License:        BSD
@@ -33,6 +33,10 @@ Common code for working with images in ROS.
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-kinetic-catkin-devel
+Requires:       ros-kinetic-camera_calibration_parsers-devel
+Requires:       ros-kinetic-camera_info_manager-devel
+Requires:       ros-kinetic-image_transport-devel
+Requires:       ros-kinetic-polled_camera-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -105,6 +109,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.13-9
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.13-8
+- devel also requires: the devel package of each run dependency
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.13-7
 - Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.13-6

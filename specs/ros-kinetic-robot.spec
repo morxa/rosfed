@@ -1,6 +1,6 @@
 Name:           ros-kinetic-robot
 Version:        1.3.2
-Release:        1%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package robot
 
 License:        BSD
@@ -39,6 +39,15 @@ robot hardware. It may not contain any GUI dependencies.
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-kinetic-catkin-devel
+Requires:       ros-kinetic-control_msgs-devel
+Requires:       ros-kinetic-diagnostics-devel
+Requires:       ros-kinetic-executive_smach-devel
+Requires:       ros-kinetic-filters-devel
+Requires:       ros-kinetic-geometry-devel
+Requires:       ros-kinetic-robot_model-devel
+Requires:       ros-kinetic-robot_state_publisher-devel
+Requires:       ros-kinetic-ros_base-devel
+Requires:       ros-kinetic-xacro-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -111,6 +120,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.2-3
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.2-2
+- devel also requires: the devel package of each run dependency
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.2-1
 - Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.1-7

@@ -1,6 +1,6 @@
 Name:           ros-kinetic-roslaunch
 Version:        1.12.13
-Release:        3%{?dist}
+Release:        5%{?dist}
 Summary:        ROS package roslaunch
 
 License:        BSD
@@ -41,6 +41,13 @@ Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-kinetic-catkin-devel
 Requires:       ros-kinetic-rosbuild-devel
+Requires:       ros-kinetic-rosclean-devel
+Requires:       ros-kinetic-rosgraph_msgs-devel
+Requires:       ros-kinetic-roslib-devel
+Requires:       ros-kinetic-rosmaster-devel
+Requires:       ros-kinetic-rosout-devel
+Requires:       ros-kinetic-rosparam-devel
+Requires:       ros-kinetic-rosunit-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -113,6 +120,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.13-5
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.13-4
+- devel also requires: the devel package of each run dependency
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.13-3
 - Also add upstream's exec_depend as Requires:
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.13-2

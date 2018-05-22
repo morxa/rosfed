@@ -1,6 +1,6 @@
 Name:           ros-kinetic-rqt_robot_plugins
 Version:        0.5.7
-Release:        8%{?dist}
+Release:        10%{?dist}
 Summary:        ROS package rqt_robot_plugins
 
 License:        BSD
@@ -39,6 +39,15 @@ during its operation.
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-kinetic-catkin-devel
+Requires:       ros-kinetic-rqt_moveit-devel
+Requires:       ros-kinetic-rqt_nav_view-devel
+Requires:       ros-kinetic-rqt_pose_view-devel
+Requires:       ros-kinetic-rqt_robot_dashboard-devel
+Requires:       ros-kinetic-rqt_robot_monitor-devel
+Requires:       ros-kinetic-rqt_robot_steering-devel
+Requires:       ros-kinetic-rqt_runtime_monitor-devel
+Requires:       ros-kinetic-rqt_rviz-devel
+Requires:       ros-kinetic-rqt_tf_tree-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -111,6 +120,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.7-10
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.7-9
+- devel also requires: the devel package of each run dependency
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.7-8
 - Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.7-7

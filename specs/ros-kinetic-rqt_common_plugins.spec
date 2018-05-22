@@ -1,6 +1,6 @@
 Name:           ros-kinetic-rqt_common_plugins
 Version:        0.4.8
-Release:        8%{?dist}
+Release:        10%{?dist}
 Summary:        ROS package rqt_common_plugins
 
 License:        BSD
@@ -51,6 +51,27 @@ suite that can be used on/off of robot runtime.
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-kinetic-catkin-devel
+Requires:       ros-kinetic-rqt_action-devel
+Requires:       ros-kinetic-rqt_bag-devel
+Requires:       ros-kinetic-rqt_bag_plugins-devel
+Requires:       ros-kinetic-rqt_console-devel
+Requires:       ros-kinetic-rqt_dep-devel
+Requires:       ros-kinetic-rqt_graph-devel
+Requires:       ros-kinetic-rqt_image_view-devel
+Requires:       ros-kinetic-rqt_launch-devel
+Requires:       ros-kinetic-rqt_logger_level-devel
+Requires:       ros-kinetic-rqt_msg-devel
+Requires:       ros-kinetic-rqt_plot-devel
+Requires:       ros-kinetic-rqt_publisher-devel
+Requires:       ros-kinetic-rqt_py_common-devel
+Requires:       ros-kinetic-rqt_py_console-devel
+Requires:       ros-kinetic-rqt_reconfigure-devel
+Requires:       ros-kinetic-rqt_service_caller-devel
+Requires:       ros-kinetic-rqt_shell-devel
+Requires:       ros-kinetic-rqt_srv-devel
+Requires:       ros-kinetic-rqt_top-devel
+Requires:       ros-kinetic-rqt_topic-devel
+Requires:       ros-kinetic-rqt_web-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -123,6 +144,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.8-10
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.8-9
+- devel also requires: the devel package of each run dependency
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.8-8
 - Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.8-7

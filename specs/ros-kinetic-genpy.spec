@@ -1,6 +1,6 @@
 Name:           ros-kinetic-genpy
 Version:        0.6.7
-Release:        8%{?dist}
+Release:        10%{?dist}
 Summary:        ROS package genpy
 
 License:        BSD
@@ -105,6 +105,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.6.7-10
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.6.7-9
+- devel also requires: the devel package of each run dependency
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.6.7-8
 - Also add upstream's exec_depend as Requires:
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.6.7-7

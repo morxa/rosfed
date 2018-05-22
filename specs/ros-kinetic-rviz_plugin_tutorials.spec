@@ -1,6 +1,6 @@
 Name:           ros-kinetic-rviz_plugin_tutorials
 Version:        0.10.3
-Release:        1%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package rviz_plugin_tutorials
 
 License:        BSD
@@ -119,6 +119,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.10.3-3
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.10.3-2
+- devel also requires: the devel package of each run dependency
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.10.3-1
 - Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.10.2-4

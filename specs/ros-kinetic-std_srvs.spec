@@ -1,6 +1,6 @@
 Name:           ros-kinetic-std_srvs
 Version:        1.11.2
-Release:        9%{?dist}
+Release:        11%{?dist}
 Summary:        ROS package std_srvs
 
 License:        BSD
@@ -32,6 +32,7 @@ Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-kinetic-catkin-devel
 Requires:       ros-kinetic-message_generation-devel
+Requires:       ros-kinetic-message_runtime-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -104,6 +105,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.2-11
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.2-10
+- devel also requires: the devel package of each run dependency
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.2-9
 - Also add upstream's exec_depend as Requires:
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.2-8

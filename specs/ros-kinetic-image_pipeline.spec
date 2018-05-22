@@ -1,6 +1,6 @@
 Name:           ros-kinetic-image_pipeline
 Version:        1.12.23
-Release:        1%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package image_pipeline
 
 License:        BSD
@@ -37,6 +37,13 @@ driver and higher-level vision processing.
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-kinetic-catkin-devel
+Requires:       ros-kinetic-camera_calibration-devel
+Requires:       ros-kinetic-depth_image_proc-devel
+Requires:       ros-kinetic-image_proc-devel
+Requires:       ros-kinetic-image_publisher-devel
+Requires:       ros-kinetic-image_rotate-devel
+Requires:       ros-kinetic-image_view-devel
+Requires:       ros-kinetic-stereo_image_proc-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -109,6 +116,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.23-3
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.23-2
+- devel also requires: the devel package of each run dependency
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.23-1
 - Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.22-5

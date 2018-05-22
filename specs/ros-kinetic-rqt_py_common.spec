@@ -1,6 +1,6 @@
 Name:           ros-kinetic-rqt_py_common
 Version:        0.5.0
-Release:        7%{?dist}
+Release:        9%{?dist}
 Summary:        ROS package rqt_py_common
 
 License:        BSD
@@ -47,6 +47,14 @@ Requires:       %{name} = %{version}-%{release}
 Requires:       ros-kinetic-catkin-devel
 Requires:       ros-kinetic-genmsg-devel
 Requires:       ros-kinetic-std_msgs-devel
+Requires:       ros-kinetic-actionlib-devel
+Requires:       ros-kinetic-genpy-devel
+Requires:       ros-kinetic-python_qt_binding-devel
+Requires:       ros-kinetic-qt_gui-devel
+Requires:       ros-kinetic-rosbag-devel
+Requires:       ros-kinetic-roslib-devel
+Requires:       ros-kinetic-rospy-devel
+Requires:       ros-kinetic-rostopic-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -119,6 +127,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.0-9
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.0-8
+- devel also requires: the devel package of each run dependency
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.0-7
 - Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.0-6

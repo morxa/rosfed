@@ -1,6 +1,6 @@
 Name:           ros-kinetic-smach
 Version:        2.0.1
-Release:        1%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package smach
 
 License:        BSD
@@ -105,5 +105,9 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.0.1-3
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.0.1-2
+- devel also requires: the devel package of each run dependency
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.0.1-1
 - Also add upstream's exec_depend as Requires:

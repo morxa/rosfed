@@ -1,6 +1,6 @@
 Name:           ros-kinetic-nodelet
 Version:        1.9.14
-Release:        8%{?dist}
+Release:        10%{?dist}
 Summary:        ROS package nodelet
 
 License:        BSD
@@ -63,6 +63,8 @@ Requires:       ros-kinetic-pluginlib-devel
 Requires:       ros-kinetic-rosconsole-devel
 Requires:       ros-kinetic-roscpp-devel
 Requires:       ros-kinetic-std_msgs-devel
+Requires:       ros-kinetic-message_runtime-devel
+Requires:       ros-kinetic-rospy-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -135,6 +137,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.14-10
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.14-9
+- devel also requires: the devel package of each run dependency
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.14-8
 - Also add upstream's exec_depend as Requires:
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.14-7

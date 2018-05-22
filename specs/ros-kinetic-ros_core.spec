@@ -1,6 +1,6 @@
 Name:           ros-kinetic-ros_core
 Version:        1.3.2
-Release:        1%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package ros_core
 
 License:        BSD
@@ -51,6 +51,26 @@ subscribe, services, launch files, and other core ROS concepts.
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-kinetic-catkin-devel
+Requires:       ros-kinetic-cmake_modules-devel
+Requires:       ros-kinetic-common_msgs-devel
+Requires:       ros-kinetic-gencpp-devel
+Requires:       ros-kinetic-geneus-devel
+Requires:       ros-kinetic-genlisp-devel
+Requires:       ros-kinetic-genmsg-devel
+Requires:       ros-kinetic-gennodejs-devel
+Requires:       ros-kinetic-genpy-devel
+Requires:       ros-kinetic-message_generation-devel
+Requires:       ros-kinetic-message_runtime-devel
+Requires:       ros-kinetic-ros-devel
+Requires:       ros-kinetic-ros_comm-devel
+Requires:       ros-kinetic-rosbag_migration_rule-devel
+Requires:       ros-kinetic-rosconsole_bridge-devel
+Requires:       ros-kinetic-roscpp_core-devel
+Requires:       ros-kinetic-rosgraph_msgs-devel
+Requires:       ros-kinetic-roslisp-devel
+Requires:       ros-kinetic-rospack-devel
+Requires:       ros-kinetic-std_msgs-devel
+Requires:       ros-kinetic-std_srvs-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -123,6 +143,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.2-3
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.2-2
+- devel also requires: the devel package of each run dependency
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.2-1
 - Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.1-6

@@ -1,6 +1,6 @@
 Name:           ros-kinetic-python_orocos_kdl
 Version:        1.3.1
-Release:        8%{?dist}
+Release:        10%{?dist}
 Summary:        ROS package python_orocos_kdl
 
 License:        LGPL
@@ -111,6 +111,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.1-10
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.1-9
+- devel also requires: the devel package of each run dependency
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.1-8
 - Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.1-7

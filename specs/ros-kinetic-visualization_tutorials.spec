@@ -1,6 +1,6 @@
 Name:           ros-kinetic-visualization_tutorials
 Version:        0.10.3
-Release:        1%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package visualization_tutorials
 
 License:        BSD
@@ -34,6 +34,11 @@ Metapackage referencing tutorials related to rviz and visualization.
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-kinetic-catkin-devel
+Requires:       ros-kinetic-interactive_marker_tutorials-devel
+Requires:       ros-kinetic-librviz_tutorial-devel
+Requires:       ros-kinetic-rviz_plugin_tutorials-devel
+Requires:       ros-kinetic-rviz_python_tutorial-devel
+Requires:       ros-kinetic-visualization_marker_tutorials-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -106,6 +111,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.10.3-3
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.10.3-2
+- devel also requires: the devel package of each run dependency
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.10.3-1
 - Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.10.2-5

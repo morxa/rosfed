@@ -1,6 +1,6 @@
 Name:           ros-kinetic-image_transport_plugins
 Version:        1.9.5
-Release:        8%{?dist}
+Release:        10%{?dist}
 Summary:        ROS package image_transport_plugins
 
 License:        BSD
@@ -37,6 +37,9 @@ compressed form.
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-kinetic-catkin-devel
+Requires:       ros-kinetic-compressed_depth_image_transport-devel
+Requires:       ros-kinetic-compressed_image_transport-devel
+Requires:       ros-kinetic-theora_image_transport-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -109,6 +112,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.5-10
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.5-9
+- devel also requires: the devel package of each run dependency
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.5-8
 - Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.5-7

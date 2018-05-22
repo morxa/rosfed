@@ -1,6 +1,6 @@
 Name:           ros-kinetic-rqt_tf_tree
 Version:        0.5.8
-Release:        7%{?dist}
+Release:        9%{?dist}
 Summary:        ROS package rqt_tf_tree
 
 License:        BSD
@@ -43,6 +43,16 @@ Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-kinetic-catkin-devel
 Requires:       python-mock
+Requires:       ros-kinetic-geometry_msgs-devel
+Requires:       ros-kinetic-python_qt_binding-devel
+Requires:       ros-kinetic-qt_dotgraph-devel
+Requires:       ros-kinetic-rospy-devel
+Requires:       ros-kinetic-rqt_graph-devel
+Requires:       ros-kinetic-rqt_gui-devel
+Requires:       ros-kinetic-rqt_gui_py-devel
+Requires:       ros-kinetic-tf2-devel
+Requires:       ros-kinetic-tf2_msgs-devel
+Requires:       ros-kinetic-tf2_ros-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -115,6 +125,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.8-9
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.8-8
+- devel also requires: the devel package of each run dependency
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.8-7
 - Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.8-6

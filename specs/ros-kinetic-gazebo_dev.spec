@@ -1,6 +1,6 @@
 Name:           ros-kinetic-gazebo_dev
 Version:        2.5.14
-Release:        2%{?dist}
+Release:        4%{?dist}
 Summary:        ROS package gazebo_dev
 
 License:        Apache 2.0
@@ -105,6 +105,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.5.14-4
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.5.14-3
+- devel also requires: the devel package of each run dependency
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.5.14-2
 - Also add upstream's exec_depend as Requires:
 * Thu Jan 18 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.5.14-1

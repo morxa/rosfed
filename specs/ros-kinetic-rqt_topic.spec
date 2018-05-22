@@ -1,6 +1,6 @@
 Name:           ros-kinetic-rqt_topic
 Version:        0.4.10
-Release:        6%{?dist}
+Release:        8%{?dist}
 Summary:        ROS package rqt_topic
 
 License:        BSD
@@ -37,6 +37,11 @@ Messages.
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-kinetic-catkin-devel
+Requires:       ros-kinetic-python_qt_binding-devel
+Requires:       ros-kinetic-rostopic-devel
+Requires:       ros-kinetic-rqt_gui-devel
+Requires:       ros-kinetic-rqt_gui_py-devel
+Requires:       ros-kinetic-std_msgs-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -109,6 +114,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.10-8
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.10-7
+- devel also requires: the devel package of each run dependency
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.10-6
 - Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.10-5

@@ -1,6 +1,6 @@
 Name:           ros-kinetic-camera_calibration
 Version:        1.12.23
-Release:        1%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package camera_calibration
 
 License:        BSD
@@ -38,6 +38,12 @@ Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-kinetic-catkin-devel
 Requires:       ros-kinetic-rostest-devel
+Requires:       ros-kinetic-cv_bridge-devel
+Requires:       ros-kinetic-image_geometry-devel
+Requires:       ros-kinetic-message_filters-devel
+Requires:       ros-kinetic-rospy-devel
+Requires:       ros-kinetic-sensor_msgs-devel
+Requires:       ros-kinetic-std_srvs-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -110,6 +116,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.23-3
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.23-2
+- devel also requires: the devel package of each run dependency
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.23-1
 - Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.22-5

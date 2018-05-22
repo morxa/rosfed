@@ -1,6 +1,6 @@
 Name:           ros-kinetic-diagnostic_common_diagnostics
 Version:        1.9.3
-Release:        1%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package diagnostic_common_diagnostics
 
 License:        BSD
@@ -40,6 +40,7 @@ Requires:       ros-kinetic-catkin-devel
 Requires:       ros-kinetic-diagnostic_updater-devel
 Requires:       ros-kinetic-rospy-devel
 Requires:       ros-kinetic-rostest-devel
+Requires:       ros-kinetic-tf-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -112,6 +113,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.3-3
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.3-2
+- devel also requires: the devel package of each run dependency
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.3-1
 - Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.2-6

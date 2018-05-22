@@ -1,6 +1,6 @@
 Name:           ros-kinetic-rosunit
 Version:        1.14.3
-Release:        3%{?dist}
+Release:        5%{?dist}
 Summary:        ROS package rosunit
 
 License:        BSD
@@ -33,6 +33,7 @@ tests.
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-kinetic-catkin-devel
+Requires:       ros-kinetic-roslib-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -105,6 +106,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.14.3-5
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.14.3-4
+- devel also requires: the devel package of each run dependency
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.14.3-3
 - Also add upstream's exec_depend as Requires:
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.14.3-2

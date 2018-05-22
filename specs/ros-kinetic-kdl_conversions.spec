@@ -1,6 +1,6 @@
 Name:           ros-kinetic-kdl_conversions
 Version:        1.11.9
-Release:        10%{?dist}
+Release:        12%{?dist}
 Summary:        ROS package kdl_conversions
 
 License:        BSD
@@ -114,6 +114,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.9-12
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.9-11
+- devel also requires: the devel package of each run dependency
 * Wed May 16 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.9-10
 - Add missing build dependency on roscpp_serialization
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.9-9

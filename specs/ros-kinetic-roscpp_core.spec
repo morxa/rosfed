@@ -1,6 +1,6 @@
 Name:           ros-kinetic-roscpp_core
 Version:        0.6.9
-Release:        1%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package roscpp_core
 
 License:        BSD
@@ -34,6 +34,9 @@ Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-kinetic-catkin-devel
 Requires:       ros-kinetic-rostime-devel
+Requires:       ros-kinetic-cpp_common-devel
+Requires:       ros-kinetic-roscpp_serialization-devel
+Requires:       ros-kinetic-roscpp_traits-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -106,6 +109,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.6.9-3
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.6.9-2
+- devel also requires: the devel package of each run dependency
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.6.9-1
 - Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.6.7-6

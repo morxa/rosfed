@@ -1,6 +1,6 @@
 Name:           ros-kinetic-rqt_reconfigure
 Version:        0.4.10
-Release:        1%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package rqt_reconfigure
 
 License:        BSD
@@ -38,6 +38,13 @@ parameters that are accessible via dynamic_reconfigure.
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-kinetic-catkin-devel
+Requires:       ros-kinetic-dynamic_reconfigure-devel
+Requires:       ros-kinetic-python_qt_binding-devel
+Requires:       ros-kinetic-rospy-devel
+Requires:       ros-kinetic-rqt_console-devel
+Requires:       ros-kinetic-rqt_gui-devel
+Requires:       ros-kinetic-rqt_gui_py-devel
+Requires:       ros-kinetic-rqt_py_common-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -110,6 +117,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.10-3
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.10-2
+- devel also requires: the devel package of each run dependency
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.10-1
 - Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.9-4

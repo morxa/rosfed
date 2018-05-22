@@ -1,6 +1,6 @@
 Name:           ros-kinetic-pcl_ros
 Version:        1.4.4
-Release:        1%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package pcl_ros
 
 License:        BSD
@@ -165,6 +165,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.4.4-3
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.4.4-2
+- devel also requires: the devel package of each run dependency
 * Sun May 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.4.4-1
 - Update to latest release
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.4.3-3

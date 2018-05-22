@@ -1,6 +1,6 @@
 Name:           ros-kinetic-common_msgs
 Version:        1.12.6
-Release:        1%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package common_msgs
 
 License:        BSD
@@ -39,6 +39,15 @@ packages. These includes messages for actions (
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-kinetic-catkin-devel
+Requires:       ros-kinetic-actionlib_msgs-devel
+Requires:       ros-kinetic-diagnostic_msgs-devel
+Requires:       ros-kinetic-geometry_msgs-devel
+Requires:       ros-kinetic-nav_msgs-devel
+Requires:       ros-kinetic-sensor_msgs-devel
+Requires:       ros-kinetic-shape_msgs-devel
+Requires:       ros-kinetic-stereo_msgs-devel
+Requires:       ros-kinetic-trajectory_msgs-devel
+Requires:       ros-kinetic-visualization_msgs-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -111,6 +120,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.6-3
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.6-2
+- devel also requires: the devel package of each run dependency
 * Sun May 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.6-1
 - Update to latest release
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.5-7

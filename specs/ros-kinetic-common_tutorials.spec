@@ -1,6 +1,6 @@
 Name:           ros-kinetic-common_tutorials
 Version:        0.1.10
-Release:        8%{?dist}
+Release:        10%{?dist}
 Summary:        ROS package common_tutorials
 
 License:        BSD
@@ -33,6 +33,10 @@ Metapackage that contains common tutorials
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-kinetic-catkin-devel
+Requires:       ros-kinetic-actionlib_tutorials-devel
+Requires:       ros-kinetic-nodelet_tutorial_math-devel
+Requires:       ros-kinetic-pluginlib_tutorials-devel
+Requires:       ros-kinetic-turtle_actionlib-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -105,6 +109,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.1.10-10
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.1.10-9
+- devel also requires: the devel package of each run dependency
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.1.10-8
 - Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.1.10-7

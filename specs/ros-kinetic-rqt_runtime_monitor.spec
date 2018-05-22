@@ -1,6 +1,6 @@
 Name:           ros-kinetic-rqt_runtime_monitor
 Version:        0.5.7
-Release:        7%{?dist}
+Release:        9%{?dist}
 Summary:        ROS package rqt_runtime_monitor
 
 License:        BSD
@@ -37,6 +37,12 @@ messages.
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-kinetic-catkin-devel
+Requires:       ros-kinetic-diagnostic_msgs-devel
+Requires:       ros-kinetic-python_qt_binding-devel
+Requires:       ros-kinetic-qt_gui-devel
+Requires:       ros-kinetic-rospy-devel
+Requires:       ros-kinetic-rqt_gui-devel
+Requires:       ros-kinetic-rqt_gui_py-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -109,6 +115,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.7-9
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.7-8
+- devel also requires: the devel package of each run dependency
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.7-7
 - Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.7-6

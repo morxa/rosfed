@@ -1,6 +1,6 @@
 Name:           ros-kinetic-desktop
 Version:        1.3.2
-Release:        1%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package desktop
 
 License:        BSD
@@ -37,6 +37,14 @@ A metapackage to aggregate several packages.
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-kinetic-catkin-devel
+Requires:       ros-kinetic-angles-devel
+Requires:       ros-kinetic-common_tutorials-devel
+Requires:       ros-kinetic-geometry_tutorials-devel
+Requires:       ros-kinetic-robot-devel
+Requires:       ros-kinetic-ros_tutorials-devel
+Requires:       ros-kinetic-roslint-devel
+Requires:       ros-kinetic-visualization_tutorials-devel
+Requires:       ros-kinetic-viz-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -109,6 +117,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.2-3
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.2-2
+- devel also requires: the devel package of each run dependency
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.2-1
 - Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.1-7

@@ -1,6 +1,6 @@
 Name:           ros-kinetic-roslisp
 Version:        1.9.21
-Release:        7%{?dist}
+Release:        9%{?dist}
 Summary:        ROS package roslisp
 
 License:        BSD
@@ -34,6 +34,10 @@ Lisp client library for ROS, the Robot Operating System.
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-kinetic-catkin-devel
+Requires:       ros-kinetic-rosgraph_msgs-devel
+Requires:       ros-kinetic-roslang-devel
+Requires:       ros-kinetic-rospack-devel
+Requires:       ros-kinetic-std_srvs-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -106,6 +110,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.21-9
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.21-8
+- devel also requires: the devel package of each run dependency
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.21-7
 - Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.21-6

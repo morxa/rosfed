@@ -1,6 +1,6 @@
 Name:           ros-kinetic-message_runtime
 Version:        0.4.12
-Release:        9%{?dist}
+Release:        11%{?dist}
 Summary:        ROS package message_runtime
 
 License:        BSD
@@ -35,6 +35,11 @@ messages.
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-kinetic-catkin-devel
+Requires:       ros-kinetic-cpp_common-devel
+Requires:       ros-kinetic-genpy-devel
+Requires:       ros-kinetic-roscpp_serialization-devel
+Requires:       ros-kinetic-roscpp_traits-devel
+Requires:       ros-kinetic-rostime-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -107,6 +112,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.12-11
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.12-10
+- devel also requires: the devel package of each run dependency
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.12-9
 - Also add upstream's exec_depend as Requires:
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.12-8

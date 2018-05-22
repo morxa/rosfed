@@ -1,6 +1,6 @@
 Name:           ros-kinetic-theora_image_transport
 Version:        1.9.5
-Release:        8%{?dist}
+Release:        10%{?dist}
 Summary:        ROS package theora_image_transport
 
 License:        BSD
@@ -64,6 +64,7 @@ Requires:       ros-kinetic-message_generation-devel
 Requires:       ros-kinetic-pluginlib-devel
 Requires:       ros-kinetic-rosbag-devel
 Requires:       ros-kinetic-std_msgs-devel
+Requires:       ros-kinetic-message_runtime-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -136,6 +137,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.5-10
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.5-9
+- devel also requires: the devel package of each run dependency
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.5-8
 - Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.5-7

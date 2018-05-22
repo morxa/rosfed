@@ -1,6 +1,6 @@
 Name:           ros-kinetic-geometric_shapes
 Version:        0.5.4
-Release:        1%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package geometric_shapes
 
 License:        BSD
@@ -138,6 +138,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.4-3
+- devel also requires: the devel package of each run dependency
+* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.4-2
+- devel also requires: the devel package of each run dependency
 * Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.4-1
 - Also add upstream's exec_depend as Requires:
 * Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.3-4
