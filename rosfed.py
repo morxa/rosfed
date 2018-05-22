@@ -24,6 +24,7 @@ import yaml
 
 from rosinstall_generator import generator
 from defusedxml import ElementTree
+from termcolor import cprint
 
 def get_system_package_name(pkg_name, rosdistro):
     cmd = subprocess.run(
@@ -317,7 +318,8 @@ def main():
                 for build in builds:
                     build = build.get_self()
                     if build.state != 'succeeded':
-                        print('Failed to build {}!'.format(build.package_name))
+                        cprint('Failed to build {}!'.format(build.package_name),
+                               'red')
 
 def get_build_order(packages):
     """ Get the order in which to build the given dictionary of packages.

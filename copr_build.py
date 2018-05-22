@@ -22,6 +22,8 @@ import re
 import spec_utils
 import subprocess
 
+from termcolor import cprint
+
 class CoprBuildError(Exception):
     def __init__(self, error):
         self.error = error
@@ -85,7 +87,7 @@ class CoprBuilder:
             self.wait_for_completion([build])
             assert build.state == 'succeeded', \
                     'Build failed, state is {}.'.format(build.state)
-            print('Building {} was successful.'.format(srpm))
+            cprint('Building {} was successful.'.format(srpm), 'green')
         return build
 
     def get_node_of_build(self, nodes, build):
@@ -114,7 +116,8 @@ class CoprBuilder:
                 if self.pkg_is_built(chroot, node.pkg.get_full_name(),
                                      pkg_version):
                     node.state = build_tree.BuildState.SUCCEEDED
-                    print('{} is already built, skipping!'.format(node.name))
+                    cprint('{} is already built, skipping!'.format(node.name),
+                           'green')
                     wait_for_build = False
                 else:
                     assert node.state == build_tree.BuildState.PENDING, \
@@ -131,10 +134,10 @@ class CoprBuilder:
             node = self.get_node_of_build(tree.nodes.values(), finished_build)
             builds.remove(finished_build)
             if finished_build.get_self().state == 'succeeded':
-                print('Successful build: {}'.format(node.name))
+                cprint('Successful build: {}'.format(node.name), 'green')
                 node.state = build_tree.BuildState.SUCCEEDED
             else:
-                print('Failed build: {}'.format(node.name))
+                cprint('Failed build: {}'.format(node.name), 'red')
                 node.state = build_tree.BuildState.FAILED
 
     @functools.lru_cache(16)
@@ -165,8 +168,8 @@ class CoprBuilder:
                 try:
                     build_tasks = build.get_build_tasks()
                 except marshmallow.exceptions.ValidationError:
-                    print('Failed to get build tasks of build {}, '
-                          'skipping!'.format(build.id))
+                    cprint('Failed to get build tasks of build {}, '
+                          'skipping!'.format(build.id), 'yellow')
                     continue
                 for build_task in build_tasks:
                     if build_task.state == 'succeeded' and \

@@ -36,7 +36,7 @@ class Tree:
 
         Returns:
             The newly created node if not yet in the tree or the tree node if
-            already existent.
+            already exists.
         """
         if pkg_name in self.nodes:
             return self.nodes[pkg_name]
