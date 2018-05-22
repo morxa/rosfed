@@ -23,6 +23,8 @@ Patch{{ loop.index0 }}: {{ patch }}
 {% if noarch == true %}
 BuildArch: noarch
 {% endif %}
+{% block globals %}
+{% endblock %}
 
 # common BRs
 BuildRequires:  boost-devel
