@@ -6,7 +6,7 @@ Summary:        ROS package ompl
 License:        BSD
 URL:            http://ompl.kavrakilab.org
 
-Source0:        https://github.com/ros-gbp/ompl-release/archive/release/kinetic/ompl/1.2.3-0.tar.gz#/ros-kinetic-ompl-1.2.3-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ompl-release/archive/release/kinetic/ompl/1.2.3-1.tar.gz#/ros-kinetic-ompl-1.2.3-source0.tar.gz
 
 
 

@@ -1,12 +1,12 @@
 Name:           ros-kinetic-rqt_dep
-Version:        0.4.8
-Release:        9%{?dist}
+Version:        0.4.9
+Release:        1%{?dist}
 Summary:        ROS package rqt_dep
 
 License:        BSD
 URL:            http://wiki.ros.org/rqt_dep
 
-Source0:        https://github.com/ros-gbp/rqt_dep-release/archive/release/kinetic/rqt_dep/0.4.8-0.tar.gz#/ros-kinetic-rqt_dep-0.4.8-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt_dep-release/archive/release/kinetic/rqt_dep/0.4.9-0.tar.gz#/ros-kinetic-rqt_dep-0.4.9-source0.tar.gz
 
 
 BuildArch: noarch
@@ -117,6 +117,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed May 30 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.9-1
+- Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.8-9
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.8-8

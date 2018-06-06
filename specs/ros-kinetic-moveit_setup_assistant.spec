@@ -1,12 +1,12 @@
 Name:           ros-kinetic-moveit_setup_assistant
-Version:        0.9.11
+Version:        0.9.12
 Release:        1%{?dist}
 Summary:        ROS package moveit_setup_assistant
 
 License:        BSD
 URL:            http://moveit.ros.org
 
-Source0:        https://github.com/ros-gbp/moveit-release/archive/release/kinetic/moveit_setup_assistant/0.9.11-0.tar.gz#/ros-kinetic-moveit_setup_assistant-0.9.11-source0.tar.gz
+Source0:        https://github.com/ros-gbp/moveit-release/archive/release/kinetic/moveit_setup_assistant/0.9.12-1.tar.gz#/ros-kinetic-moveit_setup_assistant-0.9.12-source0.tar.gz
 
 
 
@@ -132,5 +132,7 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed May 30 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.9.12-1
+- Update to latest release
 * Thu Jan 18 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.9.11-1
 - Initial package

@@ -1,12 +1,12 @@
 Name:           ros-kinetic-moveit_core
-Version:        0.9.11
+Version:        0.9.12
 Release:        1%{?dist}
 Summary:        ROS package moveit_core
 
 License:        BSD
 URL:            http://moveit.ros.org
 
-Source0:        https://github.com/ros-gbp/moveit-release/archive/release/kinetic/moveit_core/0.9.11-0.tar.gz#/ros-kinetic-moveit_core-0.9.11-source0.tar.gz
+Source0:        https://github.com/ros-gbp/moveit-release/archive/release/kinetic/moveit_core/0.9.12-1.tar.gz#/ros-kinetic-moveit_core-0.9.12-source0.tar.gz
 
 
 
@@ -40,6 +40,7 @@ BuildRequires:  ros-kinetic-octomap-devel
 BuildRequires:  ros-kinetic-octomap_msgs-devel
 BuildRequires:  ros-kinetic-orocos_kdl-devel
 BuildRequires:  ros-kinetic-random_numbers-devel
+BuildRequires:  ros-kinetic-rosconsole-devel
 BuildRequires:  ros-kinetic-roslib-devel
 BuildRequires:  ros-kinetic-rostime-devel
 BuildRequires:  ros-kinetic-rosunit-devel
@@ -62,6 +63,7 @@ Requires:       ros-kinetic-moveit_msgs
 Requires:       ros-kinetic-octomap
 Requires:       ros-kinetic-octomap_msgs
 Requires:       ros-kinetic-random_numbers
+Requires:       ros-kinetic-rosconsole
 Requires:       ros-kinetic-rostime
 Requires:       ros-kinetic-sensor_msgs
 Requires:       ros-kinetic-srdfdom
@@ -100,6 +102,7 @@ Requires:       ros-kinetic-octomap-devel
 Requires:       ros-kinetic-octomap_msgs-devel
 Requires:       ros-kinetic-orocos_kdl-devel
 Requires:       ros-kinetic-random_numbers-devel
+Requires:       ros-kinetic-rosconsole-devel
 Requires:       ros-kinetic-roslib-devel
 Requires:       ros-kinetic-rostime-devel
 Requires:       ros-kinetic-rosunit-devel
@@ -183,5 +186,7 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed May 30 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.9.12-1
+- Update to latest release
 * Thu Jan 18 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.9.11-1
 - Initial package

@@ -1,12 +1,12 @@
 Name:           ros-kinetic-moveit_ros_planning
-Version:        0.9.11
+Version:        0.9.12
 Release:        1%{?dist}
 Summary:        ROS package moveit_ros_planning
 
 License:        BSD
 URL:            http://moveit.ros.org
 
-Source0:        https://github.com/ros-gbp/moveit-release/archive/release/kinetic/moveit_ros_planning/0.9.11-0.tar.gz#/ros-kinetic-moveit_ros_planning-0.9.11-source0.tar.gz
+Source0:        https://github.com/ros-gbp/moveit-release/archive/release/kinetic/moveit_ros_planning/0.9.12-1.tar.gz#/ros-kinetic-moveit_ros_planning-0.9.12-source0.tar.gz
 
 
 
@@ -27,6 +27,7 @@ BuildRequires:  ros-kinetic-actionlib-devel
 BuildRequires:  ros-kinetic-angles-devel
 BuildRequires:  ros-kinetic-catkin-devel
 BuildRequires:  ros-kinetic-dynamic_reconfigure-devel
+BuildRequires:  ros-kinetic-eigen_conversions-devel
 BuildRequires:  ros-kinetic-moveit_core-devel
 BuildRequires:  ros-kinetic-moveit_ros_perception-devel
 BuildRequires:  ros-kinetic-pluginlib-devel
@@ -34,6 +35,7 @@ BuildRequires:  ros-kinetic-pluginlib-devel
 Requires:       ros-kinetic-actionlib
 Requires:       ros-kinetic-angles
 Requires:       ros-kinetic-dynamic_reconfigure
+Requires:       ros-kinetic-eigen_conversions
 Requires:       ros-kinetic-moveit_core
 Requires:       ros-kinetic-moveit_ros_perception
 Requires:       ros-kinetic-pluginlib
@@ -55,6 +57,7 @@ Requires:       urdfdom-devel
 Requires:       ros-kinetic-actionlib-devel
 Requires:       ros-kinetic-angles-devel
 Requires:       ros-kinetic-dynamic_reconfigure-devel
+Requires:       ros-kinetic-eigen_conversions-devel
 Requires:       ros-kinetic-moveit_core-devel
 Requires:       ros-kinetic-moveit_ros_perception-devel
 Requires:       ros-kinetic-pluginlib-devel
@@ -130,5 +133,7 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed May 30 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.9.12-1
+- Update to latest release
 * Thu Jan 18 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.9.11-1
 - Initial package
