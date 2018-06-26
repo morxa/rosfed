@@ -4,7 +4,7 @@ for Fedora.
 The Generator
 =============
 
-The ``generate_ros_spec_file.py`` script works as follows:
+The ``rosfed.py`` script works as follows:
 
 1. It fetches package information about the upstream ROS package with the
    ``rosinstall_generator``. This includes dependencies, license, sources, and
@@ -25,8 +25,8 @@ The ``generate_ros_spec_file.py`` script works as follows:
 How to add a new package
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-In the simplest case, run ``./generate_ros_spec_file.py $pkgname``, or
-``./generate_ros_spec_file.py -r $pkgname`` if you want to generate SPEC files
+In the simplest case, run ``./rosfed.py $pkgname``, or
+``./rosfed.py -r $pkgname`` if you want to generate SPEC files
 for all dependencies of the given package.
 
 You may need to do the following modifications to the config in
@@ -56,11 +56,11 @@ You may need to do the following modifications to the config in
 * To build a package with all its missing dependencies (i.e., the package is not
   updated if it already exists), run:
 
-        ./generate_ros_spec_file.py -b --copr-project-id 14923 --chroot fedora-27-x86_64 -c Initial package --only-new -r moveit
+        ./rosfed.py -b --copr-project-id 14923 --chroot fedora-27-x86_64 -c Initial package --only-new -r moveit
 
 * To build a single package, run:
 
-        ./generate_ros_spec_file.py -b --copr-project-id 14923 --chroot fedora-27-x86_64 moveit_ros_manipulation
+        ./rosfed.py -b --copr-project-id 14923 --chroot fedora-27-x86_64 moveit_ros_manipulation
 
 Additionally, you may need to modify the template by providing a
 package-specific template in ``./templates/$pkgname.spec.j2``. Have a look at the
