@@ -1,12 +1,12 @@
 Name:           ros-kinetic-move_base
-Version:        1.14.3
-Release:        5%{?dist}
+Version:        1.14.4
+Release:        1%{?dist}
 Summary:        ROS package move_base
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/navigation-release/archive/release/kinetic/move_base/1.14.3-0.tar.gz#/ros-kinetic-move_base-1.14.3-source0.tar.gz
+Source0:        https://github.com/ros-gbp/navigation-release/archive/release/kinetic/move_base/1.14.4-0.tar.gz#/ros-kinetic-move_base-1.14.4-source0.tar.gz
 
 
 
@@ -166,6 +166,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Jun 26 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.14.4-1
+- Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.14.3-5
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.14.3-4
