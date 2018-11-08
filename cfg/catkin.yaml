@@ -8,4 +8,3 @@ dependencies:
       - python2-pyparsing
 patches:
   - ros-kinetic-catkin.python-path-in-templates.patch
-  - ros-kinetic-catkin.python-version-in-shebangs.patch
