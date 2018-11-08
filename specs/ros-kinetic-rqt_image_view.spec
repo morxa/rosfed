@@ -1,12 +1,12 @@
 Name:           ros-kinetic-rqt_image_view
-Version:        0.4.11
-Release:        9%{?dist}
+Version:        0.4.13
+Release:        1%{?dist}
 Summary:        ROS package rqt_image_view
 
 License:        BSD
 URL:            http://wiki.ros.org/rqt_image_view
 
-Source0:        https://github.com/ros-gbp/rqt_image_view-release/archive/release/kinetic/rqt_image_view/0.4.11-0.tar.gz#/ros-kinetic-rqt_image_view-0.4.11-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt_image_view-release/archive/release/kinetic/rqt_image_view/0.4.13-0.tar.gz#/ros-kinetic-rqt_image_view-0.4.13-source0.tar.gz
 
 
 
@@ -21,6 +21,7 @@ BuildRequires:  libuuid-devel
 BuildRequires:  opencv-devel
 BuildRequires:  poco-devel
 BuildRequires:  python-qt5-devel
+BuildRequires:  qt5-qtbase-devel
 BuildRequires:  qtermwidget-qt5-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
@@ -52,6 +53,7 @@ Requires:       libuuid-devel
 Requires:       opencv-devel
 Requires:       poco-devel
 Requires:       python-qt5-devel
+Requires:       qt5-qtbase-devel
 Requires:       qtermwidget-qt5-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
@@ -133,6 +135,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.13-1
+- Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.11-9
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.11-8

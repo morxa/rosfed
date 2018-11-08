@@ -1,12 +1,12 @@
 Name:           ros-kinetic-moveit_ros_visualization
-Version:        0.9.12
+Version:        0.9.15
 Release:        1%{?dist}
 Summary:        ROS package moveit_ros_visualization
 
 License:        BSD
 URL:            http://moveit.ros.org
 
-Source0:        https://github.com/ros-gbp/moveit-release/archive/release/kinetic/moveit_ros_visualization/0.9.12-1.tar.gz#/ros-kinetic-moveit_ros_visualization-0.9.12-source0.tar.gz
+Source0:        https://github.com/ros-gbp/moveit-release/archive/release/kinetic/moveit_ros_visualization/0.9.15-0.tar.gz#/ros-kinetic-moveit_ros_visualization-0.9.15-source0.tar.gz
 
 
 
@@ -27,6 +27,8 @@ BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
 BuildRequires:  urdfdom-devel
 BuildRequires:  ros-kinetic-catkin-devel
+BuildRequires:  ros-kinetic-class_loader-devel
+BuildRequires:  ros-kinetic-eigen_conversions-devel
 BuildRequires:  ros-kinetic-geometric_shapes-devel
 BuildRequires:  ros-kinetic-interactive_markers-devel
 BuildRequires:  ros-kinetic-moveit_ros_perception-devel
@@ -35,10 +37,12 @@ BuildRequires:  ros-kinetic-moveit_ros_robot_interaction-devel
 BuildRequires:  ros-kinetic-moveit_ros_warehouse-devel
 BuildRequires:  ros-kinetic-object_recognition_msgs-devel
 BuildRequires:  ros-kinetic-pluginlib-devel
+BuildRequires:  ros-kinetic-rosconsole-devel
 BuildRequires:  ros-kinetic-roscpp-devel
 BuildRequires:  ros-kinetic-rospy-devel
 BuildRequires:  ros-kinetic-rostest-devel
 BuildRequires:  ros-kinetic-rviz-devel
+BuildRequires:  ros-kinetic-tf-devel
 
 Requires:       ros-kinetic-geometric_shapes
 Requires:       ros-kinetic-interactive_markers
@@ -54,7 +58,7 @@ Requires:       ros-kinetic-rviz
 
 
 %description
-Components of MoveIt that offer visualization
+Components of MoveIt! that offer visualization
 
 %package        devel
 Summary:        Development files for %{name}
@@ -69,6 +73,8 @@ Requires:       qt5-qtbase-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
 Requires:       urdfdom-devel
+Requires:       ros-kinetic-class_loader-devel
+Requires:       ros-kinetic-eigen_conversions-devel
 Requires:       ros-kinetic-geometric_shapes-devel
 Requires:       ros-kinetic-interactive_markers-devel
 Requires:       ros-kinetic-moveit_ros_perception-devel
@@ -77,10 +83,12 @@ Requires:       ros-kinetic-moveit_ros_robot_interaction-devel
 Requires:       ros-kinetic-moveit_ros_warehouse-devel
 Requires:       ros-kinetic-object_recognition_msgs-devel
 Requires:       ros-kinetic-pluginlib-devel
+Requires:       ros-kinetic-rosconsole-devel
 Requires:       ros-kinetic-roscpp-devel
 Requires:       ros-kinetic-rospy-devel
 Requires:       ros-kinetic-rostest-devel
 Requires:       ros-kinetic-rviz-devel
+Requires:       ros-kinetic-tf-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -153,6 +161,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.9.15-1
+- Update to latest release
 * Wed May 30 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.9.12-1
 - Update to latest release
 * Thu Jan 18 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.9.11-1

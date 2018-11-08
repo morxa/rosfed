@@ -1,12 +1,12 @@
 Name:           ros-kinetic-bond_core
-Version:        1.8.1
-Release:        8%{?dist}
+Version:        1.8.3
+Release:        1%{?dist}
 Summary:        ROS package bond_core
 
 License:        BSD
 URL:            http://www.ros.org/wiki/bond_core
 
-Source0:        https://github.com/ros-gbp/bond_core-release/archive/release/kinetic/bond_core/1.8.1-0.tar.gz#/ros-kinetic-bond_core-1.8.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/bond_core-release/archive/release/kinetic/bond_core/1.8.3-0.tar.gz#/ros-kinetic-bond_core-1.8.3-source0.tar.gz
 
 
 BuildArch: noarch
@@ -111,6 +111,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.8.3-1
+- Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.8.1-8
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.8.1-7

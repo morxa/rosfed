@@ -1,12 +1,12 @@
 Name:           ros-kinetic-message_filters
-Version:        1.12.13
-Release:        6%{?dist}
+Version:        1.12.14
+Release:        1%{?dist}
 Summary:        ROS package message_filters
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/kinetic/message_filters/1.12.13-0.tar.gz#/ros-kinetic-message_filters-1.12.13-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/kinetic/message_filters/1.12.14-0.tar.gz#/ros-kinetic-message_filters-1.12.14-source0.tar.gz
 
 Patch0: ros-kinetic-message_filters.fix-template-function-calls.patch
 
@@ -119,6 +119,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.14-1
+- Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.13-6
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.13-5

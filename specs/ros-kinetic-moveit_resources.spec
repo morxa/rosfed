@@ -1,12 +1,12 @@
 Name:           ros-kinetic-moveit_resources
-Version:        0.6.3
+Version:        0.6.4
 Release:        1%{?dist}
 Summary:        ROS package moveit_resources
 
 License:        BSD
 URL:            http://moveit.ros.org
 
-Source0:        https://github.com/ros-gbp/moveit_resources-release/archive/release/kinetic/moveit_resources/0.6.3-0.tar.gz#/ros-kinetic-moveit_resources-0.6.3-source0.tar.gz
+Source0:        https://github.com/ros-gbp/moveit_resources-release/archive/release/kinetic/moveit_resources/0.6.4-0.tar.gz#/ros-kinetic-moveit_resources-0.6.4-source0.tar.gz
 
 
 BuildArch: noarch
@@ -105,6 +105,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.6.4-1
+- Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.6.3-1
 - Update to latest release
 * Thu Jan 18 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.6.2-1

@@ -1,12 +1,12 @@
 Name:           ros-kinetic-tf2
-Version:        0.5.17
-Release:        9%{?dist}
+Version:        0.5.19
+Release:        1%{?dist}
 Summary:        ROS package tf2
 
 License:        BSD
 URL:            http://www.ros.org/wiki/tf2
 
-Source0:        https://github.com/ros-gbp/geometry2-release/archive/release/kinetic/tf2/0.5.17-0.tar.gz#/ros-kinetic-tf2-0.5.17-source0.tar.gz
+Source0:        https://github.com/ros-gbp/geometry2-release/archive/release/kinetic/tf2/0.5.19-0.tar.gz#/ros-kinetic-tf2-0.5.19-source0.tar.gz
 
 
 
@@ -125,6 +125,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.19-1
+- Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.17-9
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.17-8

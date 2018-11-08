@@ -1,12 +1,12 @@
 Name:           ros-kinetic-rqt_rviz
-Version:        0.5.7
-Release:        9%{?dist}
+Version:        0.5.10
+Release:        1%{?dist}
 Summary:        ROS package rqt_rviz
 
 License:        BSD
 URL:            http://wiki.ros.org/rqt_rviz
 
-Source0:        https://github.com/ros-gbp/rqt_rviz-release/archive/release/kinetic/rqt_rviz/0.5.7-0.tar.gz#/ros-kinetic-rqt_rviz-0.5.7-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt_rviz-release/archive/release/kinetic/rqt_rviz/0.5.10-0.tar.gz#/ros-kinetic-rqt_rviz-0.5.10-source0.tar.gz
 
 
 
@@ -130,6 +130,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.10-1
+- Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.7-9
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.7-8

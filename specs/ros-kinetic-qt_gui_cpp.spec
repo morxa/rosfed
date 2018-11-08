@@ -1,12 +1,12 @@
 Name:           ros-kinetic-qt_gui_cpp
-Version:        0.3.8
-Release:        8%{?dist}
+Version:        0.3.11
+Release:        1%{?dist}
 Summary:        ROS package qt_gui_cpp
 
 License:        BSD
 URL:            http://ros.org/wiki/qt_gui_cpp
 
-Source0:        https://github.com/ros-gbp/qt_gui_core-release/archive/release/kinetic/qt_gui_cpp/0.3.8-0.tar.gz#/ros-kinetic-qt_gui_cpp-0.3.8-source0.tar.gz
+Source0:        https://github.com/ros-gbp/qt_gui_core-release/archive/release/kinetic/qt_gui_cpp/0.3.11-0.tar.gz#/ros-kinetic-qt_gui_cpp-0.3.11-source0.tar.gz
 
 
 
@@ -134,6 +134,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.3.11-1
+- Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.3.8-8
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.3.8-7

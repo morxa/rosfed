@@ -1,12 +1,12 @@
 Name:           ros-kinetic-tf2_bullet
-Version:        0.5.17
+Version:        0.5.19
 Release:        1%{?dist}
 Summary:        ROS package tf2_bullet
 
 License:        BSD
 URL:            http://www.ros.org/wiki/tf2_bullet
 
-Source0:        https://github.com/ros-gbp/geometry2-release/archive/release/kinetic/tf2_bullet/0.5.17-0.tar.gz#/ros-kinetic-tf2_bullet-0.5.17-source0.tar.gz
+Source0:        https://github.com/ros-gbp/geometry2-release/archive/release/kinetic/tf2_bullet/0.5.19-0.tar.gz#/ros-kinetic-tf2_bullet-0.5.19-source0.tar.gz
 
 
 BuildArch: noarch
@@ -111,6 +111,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.19-1
+- Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.17-1
 - Update dependencies
 * Wed Dec 20 2017 Till Hofmann <thofmann@fedoraproject.org> - 0.5.16-1

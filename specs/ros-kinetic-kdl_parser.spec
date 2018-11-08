@@ -1,12 +1,12 @@
 Name:           ros-kinetic-kdl_parser
-Version:        1.12.10
-Release:        9%{?dist}
+Version:        1.12.11
+Release:        1%{?dist}
 Summary:        ROS package kdl_parser
 
 License:        BSD
 URL:            http://ros.org/wiki/kdl_parser
 
-Source0:        https://github.com/ros-gbp/kdl_parser-release/archive/release/kinetic/kdl_parser/1.12.10-0.tar.gz#/ros-kinetic-kdl_parser-1.12.10-source0.tar.gz
+Source0:        https://github.com/ros-gbp/kdl_parser-release/archive/release/kinetic/kdl_parser/1.12.11-0.tar.gz#/ros-kinetic-kdl_parser-1.12.11-source0.tar.gz
 
 
 
@@ -31,7 +31,6 @@ BuildRequires:  ros-kinetic-urdf-devel
 
 Requires:       ros-kinetic-orocos_kdl
 Requires:       ros-kinetic-rosconsole
-Requires:       ros-kinetic-roscpp
 Requires:       ros-kinetic-urdf
 
 
@@ -42,11 +41,11 @@ represent the kinematic and dynamic parameters of a robot mechanism.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
+Requires:       tinyxml-devel
+Requires:       urdfdom-headers-devel
 Requires:       ros-kinetic-catkin-devel
 Requires:       eigen3-devel
-Requires:       tinyxml-devel
 Requires:       urdfdom-devel
-Requires:       urdfdom-headers-devel
 Requires:       ros-kinetic-cmake_modules-devel
 Requires:       ros-kinetic-orocos_kdl-devel
 Requires:       ros-kinetic-rosconsole-devel
@@ -125,6 +124,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.11-1
+- Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.10-9
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.10-8

@@ -1,12 +1,12 @@
 Name:           ros-kinetic-python_qt_binding
-Version:        0.3.3
-Release:        8%{?dist}
+Version:        0.3.4
+Release:        1%{?dist}
 Summary:        ROS package python_qt_binding
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/python_qt_binding-release/archive/release/kinetic/python_qt_binding/0.3.3-0.tar.gz#/ros-kinetic-python_qt_binding-0.3.3-source0.tar.gz
+Source0:        https://github.com/ros-gbp/python_qt_binding-release/archive/release/kinetic/python_qt_binding/0.3.4-0.tar.gz#/ros-kinetic-python_qt_binding-0.3.4-source0.tar.gz
 
 
 BuildArch: noarch
@@ -115,6 +115,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.3.4-1
+- Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.3.3-8
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.3.3-7

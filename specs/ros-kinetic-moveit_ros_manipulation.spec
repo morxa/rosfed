@@ -1,12 +1,12 @@
 Name:           ros-kinetic-moveit_ros_manipulation
-Version:        0.9.12
+Version:        0.9.15
 Release:        1%{?dist}
 Summary:        ROS package moveit_ros_manipulation
 
 License:        BSD
 URL:            http://moveit.ros.org
 
-Source0:        https://github.com/ros-gbp/moveit-release/archive/release/kinetic/moveit_ros_manipulation/0.9.12-1.tar.gz#/ros-kinetic-moveit_ros_manipulation-0.9.12-source0.tar.gz
+Source0:        https://github.com/ros-gbp/moveit-release/archive/release/kinetic/moveit_ros_manipulation/0.9.15-0.tar.gz#/ros-kinetic-moveit_ros_manipulation-0.9.15-source0.tar.gz
 
 
 
@@ -48,7 +48,7 @@ Requires:       ros-kinetic-tf
 
 
 %description
-Components of MoveIt used for manipulation
+Components of MoveIt! used for manipulation
 
 %package        devel
 Summary:        Development files for %{name}
@@ -142,6 +142,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.9.15-1
+- Update to latest release
 * Wed May 30 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.9.12-1
 - Update to latest release
 * Thu Jan 18 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.9.11-1

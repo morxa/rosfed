@@ -1,12 +1,12 @@
 Name:           ros-kinetic-rosconsole
-Version:        1.12.13
-Release:        5%{?dist}
+Version:        1.12.14
+Release:        1%{?dist}
 Summary:        ROS package rosconsole
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/kinetic/rosconsole/1.12.13-0.tar.gz#/ros-kinetic-rosconsole-1.12.13-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/kinetic/rosconsole/1.12.14-0.tar.gz#/ros-kinetic-rosconsole-1.12.14-source0.tar.gz
 
 
 
@@ -118,6 +118,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.14-1
+- Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.13-5
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.13-4
