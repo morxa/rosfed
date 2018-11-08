@@ -148,6 +148,24 @@ find . -maxdepth 1 -type f -iname "*readme*" | sed "s:^:%%doc :" >> files.list
 find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.list
 
 
+
+# replace unversioned python shebang
+for file in $(grep -rIl '^#!.*python\s*$') ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python2/ }' $file
+  touch -r $file.orig $file
+  rm $file.orig
+done
+
+# replace "/usr/bin/env $interpreter" with "/usr/bin/$interpreter"
+for interpreter in bash sh python2 python3 ; do
+  for file in $(grep -rIl "^#\!.*${interpreter}" %{buildroot}) ; do
+    sed -i.orig "s:^#\!\s*/usr/bin/env\s\+${interpreter}.*:#!/usr/bin/${interpreter}:" $file
+    touch -r $file.orig $file
+    rm $file.orig
+  done
+done
+
+
 echo "This is a package automatically generated with rosfed." >> README_FEDORA
 echo "See https://pagure.io/ros for more information." >> README_FEDORA
 install -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA

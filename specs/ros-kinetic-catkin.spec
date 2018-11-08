@@ -9,7 +9,6 @@ URL:            http://www.ros.org/wiki/catkin
 Source0:        https://github.com/ros-gbp/catkin-release/archive/release/kinetic/catkin/0.7.14-0.tar.gz#/ros-kinetic-catkin-0.7.14-source0.tar.gz
 
 Patch0: ros-kinetic-catkin.python-path-in-templates.patch
-Patch1: ros-kinetic-catkin.python-version-in-shebangs.patch
 
 BuildArch: noarch
 
@@ -62,7 +61,6 @@ applications that use %{name}.
 %setup -c -T
 tar --strip-components=1 -xf %{SOURCE0}
 %patch0 -p1
-%patch1 -p1
 
 %build
 # nothing to do here
@@ -108,6 +106,24 @@ find %{buildroot}/%{_libdir}/ros -maxdepth 1 \
 
 find . -maxdepth 1 -type f -iname "*readme*" | sed "s:^:%%doc :" >> files.list
 find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.list
+
+
+
+# replace unversioned python shebang
+for file in $(grep -rIl '^#!.*python\s*$') ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python2/ }' $file
+  touch -r $file.orig $file
+  rm $file.orig
+done
+
+# replace "/usr/bin/env $interpreter" with "/usr/bin/$interpreter"
+for interpreter in bash sh python2 python3 ; do
+  for file in $(grep -rIl "^#\!.*${interpreter}" %{buildroot}) ; do
+    sed -i.orig "s:^#\!\s*/usr/bin/env\s\+${interpreter}.*:#!/usr/bin/${interpreter}:" $file
+    touch -r $file.orig $file
+    rm $file.orig
+  done
+done
 
 
 echo "This is a package automatically generated with rosfed." >> README_FEDORA
