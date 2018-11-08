@@ -6,5 +6,6 @@ dependencies:
   build:
     system:
       - python2-pyparsing
+      - gcc-c++
 patches:
   - ros-kinetic-catkin.python-path-in-templates.patch
