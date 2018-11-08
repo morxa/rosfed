@@ -20,6 +20,7 @@ BuildRequires:  log4cxx-devel
 BuildRequires:  python2-devel
 
 BuildRequires:  cmake
+BuildRequires:  gcc-c++
 BuildRequires:  gmock-devel
 BuildRequires:  gtest-devel
 BuildRequires:  python
@@ -45,6 +46,7 @@ Requires:       gmock-devel
 Requires:       gtest-devel
 Requires:       python-empy
 Requires:       python-nose
+Requires:       gcc-c++
 Requires:       python
 Requires:       python-catkin_pkg
 Requires:       python-mock
@@ -76,6 +78,10 @@ FFLAGS="${FFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FFLAGS ; \
 FCFLAGS="${FCFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FCFLAGS ; \
 %{?__global_ldflags:LDFLAGS="${LDFLAGS:-%__global_ldflags}" ; export LDFLAGS ;} \
 
+# substitute shebang before install block because we run the local catkin script
+sed -i.orig '/^#!.*python\s*$/ { s/python/python2/ }' ./bin/catkin_make_isolated
+touch -r ./bin/catkin_make_isolated.orig ./bin/catkin_make_isolated
+rm ./bin/catkin_make_isolated.orig
 
 DESTDIR=%{buildroot} ; export DESTDIR
 
