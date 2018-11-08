@@ -1,5 +1,9 @@
 {% extends "pkg.spec.j2" %}
 {% block pre_install %}
+# substitute shebang before install block because we run the local catkin script
+sed -i.orig '/^#!.*python\s*$/ { s/python/python2/ }' ./bin/catkin_make_isolated
+touch -r ./bin/catkin_make_isolated.orig ./bin/catkin_make_isolated
+rm ./bin/catkin_make_isolated.orig
 {% endblock %}
 
 {% block install_catkin %}
