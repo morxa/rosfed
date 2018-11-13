@@ -1,6 +1,6 @@
 Name:           ros-kinetic-camera_calibration_parsers
 Version:        1.11.13
-Release:        9%{?dist}
+Release:        10%{?dist}
 Summary:        ROS package camera_calibration_parsers
 
 License:        BSD
@@ -18,6 +18,7 @@ BuildRequires:  log4cxx-devel
 BuildRequires:  python2-devel
 
 BuildRequires:  boost-devel
+BuildRequires:  boost-python2-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  pkgconfig
@@ -45,6 +46,7 @@ Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       ros-kinetic-catkin-devel
 Requires:       boost-devel
+Requires:       boost-python2-devel
 Requires:       console-bridge-devel
 Requires:       log4cxx-devel
 Requires:       pkgconfig
@@ -146,6 +148,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Thu Nov 08 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.13-10
+- Add missing BR boost-python2-devel
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.13-9
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.13-8

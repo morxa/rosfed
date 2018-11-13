@@ -4,3 +4,4 @@ dependencies:
       - python2-devel
       - log4cxx-devel
       - console-bridge-devel
+      - boost-python2-devel
