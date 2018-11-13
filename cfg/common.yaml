@@ -9,6 +9,14 @@ common:
           to:
             type: system
             pkg: opencv-devel
+        - pyopengl:
+          from:
+            type: system
+            pkg: PyOpenGL
+          to:
+            type: system
+            pkg: python2dist(pyopengl)
+
     run:
       translate:
         - opencv:
@@ -18,6 +26,13 @@ common:
           to:
             type: system
             pkg: opencv
+        - pyopengl:
+          from:
+            type: system
+            pkg: PyOpenGL
+          to:
+            type: system
+            pkg: python2dist(pyopengl)
     distro_names:
       gazebo: gazebo
       libgazebo7-dev: gazebo-devel

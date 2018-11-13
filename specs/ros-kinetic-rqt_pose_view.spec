@@ -1,6 +1,6 @@
 Name:           ros-kinetic-rqt_pose_view
 Version:        0.5.8
-Release:        8%{?dist}
+Release:        9%{?dist}
 Summary:        ROS package rqt_pose_view
 
 License:        BSD
@@ -20,8 +20,8 @@ BuildRequires:  python2-devel
 
 BuildRequires:  ros-kinetic-catkin-devel
 
-Requires:       PyOpenGL
 Requires:       python-rospkg
+Requires:       python2dist(pyopengl)
 Requires:       ros-kinetic-geometry_msgs
 Requires:       ros-kinetic-gl_dependency
 Requires:       ros-kinetic-python_qt_binding
@@ -139,6 +139,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Nov 13 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.8-9
+- Fix Requires on python2-pyopengl
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.8-8
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.8-7
