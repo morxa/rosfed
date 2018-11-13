@@ -1,6 +1,6 @@
 Name:           ros-kinetic-cv_bridge
 Version:        1.12.8
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        ROS package cv_bridge
 
 License:        BSD
@@ -18,6 +18,7 @@ BuildRequires:  log4cxx-devel
 BuildRequires:  python2-devel
 
 BuildRequires:  boost-devel
+BuildRequires:  boost-python2-devel
 BuildRequires:  numpy
 BuildRequires:  opencv-devel
 BuildRequires:  python-devel
@@ -41,6 +42,7 @@ Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       ros-kinetic-catkin-devel
 Requires:       ros-kinetic-sensor_msgs-devel
 Requires:       boost-devel
+Requires:       boost-python2-devel
 Requires:       numpy
 Requires:       opencv-devel
 Requires:       python-devel
@@ -137,6 +139,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Thu Nov 08 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.8-4
+- Add missing BR boost-python2-devel
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.8-3
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.8-2

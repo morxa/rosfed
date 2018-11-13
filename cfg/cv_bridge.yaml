@@ -1,4 +1,6 @@
 dependencies:
   build:
+    system:
+      - boost-python2-devel
     ros:
       - roscpp_serialization
