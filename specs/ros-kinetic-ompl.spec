@@ -1,6 +1,6 @@
 Name:           ros-kinetic-ompl
 Version:        1.2.3
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package ompl
 
 License:        BSD
@@ -20,6 +20,7 @@ BuildRequires:  python2-devel
 BuildRequires:  boost-devel
 BuildRequires:  cmake
 BuildRequires:  eigen3-devel
+BuildRequires:  flann-devel
 BuildRequires:  ros-kinetic-catkin-devel
 
 
@@ -33,6 +34,7 @@ Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       cmake
 Requires:       boost-devel
 Requires:       eigen3-devel
+Requires:       flann-devel
 Requires:       ros-kinetic-catkin-devel
 
 %description devel
@@ -126,6 +128,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Thu Nov 08 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.2.3-2
+- Add missing BR flann-devel
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.2.3-1
 - Update to latest release
 * Fri Jan 19 2018 Tim Niemueller <tim@niemuelle.de> - 1.2.1-2
