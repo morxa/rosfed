@@ -1,12 +1,12 @@
-Name:           ros-kinetic-tf2
-Version:        0.5.20
+Name:           ros-kinetic-moveit_experimental
+Version:        0.9.15
 Release:        1%{?dist}
-Summary:        ROS package tf2
+Summary:        ROS package moveit_experimental
 
 License:        BSD
-URL:            http://www.ros.org/wiki/tf2
+URL:            http://moveit.ros.org
 
-Source0:        https://github.com/ros-gbp/geometry2-release/archive/release/kinetic/tf2/0.5.20-0.tar.gz#/ros-kinetic-tf2-0.5.20-source0.tar.gz
+Source0:        https://github.com/ros-gbp/moveit-release/archive/release/kinetic/moveit_experimental/0.9.15-0.tar.gz#/ros-kinetic-moveit_experimental-0.9.15-source0.tar.gz
 
 
 
@@ -17,42 +17,94 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python2-devel
 
+BuildRequires:  assimp
 BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
-BuildRequires:  gtest-devel
+BuildRequires:  eigen3-devel
+BuildRequires:  urdfdom-devel
+BuildRequires:  urdfdom-headers-devel
+BuildRequires:  ros-kinetic-actionlib_msgs-devel
+BuildRequires:  ros-kinetic-angles-devel
 BuildRequires:  ros-kinetic-catkin-devel
-BuildRequires:  ros-kinetic-cpp_common-devel
+BuildRequires:  ros-kinetic-eigen_conversions-devel
+BuildRequires:  ros-kinetic-eigen_stl_containers-devel
+BuildRequires:  ros-kinetic-geometric_shapes-devel
 BuildRequires:  ros-kinetic-geometry_msgs-devel
-BuildRequires:  ros-kinetic-roscpp_serialization-devel
-BuildRequires:  ros-kinetic-roscpp_traits-devel
+BuildRequires:  ros-kinetic-kdl_parser-devel
+BuildRequires:  ros-kinetic-moveit_core-devel
+BuildRequires:  ros-kinetic-moveit_msgs-devel
+BuildRequires:  ros-kinetic-moveit_resources-devel
+BuildRequires:  ros-kinetic-octomap-devel
+BuildRequires:  ros-kinetic-octomap_msgs-devel
+BuildRequires:  ros-kinetic-orocos_kdl-devel
+BuildRequires:  ros-kinetic-pluginlib-devel
+BuildRequires:  ros-kinetic-rosconsole-devel
+BuildRequires:  ros-kinetic-roslib-devel
 BuildRequires:  ros-kinetic-rostime-devel
-BuildRequires:  ros-kinetic-tf2_msgs-devel
+BuildRequires:  ros-kinetic-sensor_msgs-devel
+BuildRequires:  ros-kinetic-shape_msgs-devel
+BuildRequires:  ros-kinetic-std_msgs-devel
+BuildRequires:  ros-kinetic-tf_conversions-devel
+BuildRequires:  ros-kinetic-trajectory_msgs-devel
+BuildRequires:  ros-kinetic-visualization_msgs-devel
 
+Requires:       assimp
+Requires:       ros-kinetic-actionlib_msgs
+Requires:       ros-kinetic-eigen_conversions
+Requires:       ros-kinetic-eigen_stl_containers
+Requires:       ros-kinetic-geometric_shapes
 Requires:       ros-kinetic-geometry_msgs
+Requires:       ros-kinetic-kdl_parser
+Requires:       ros-kinetic-moveit_core
+Requires:       ros-kinetic-moveit_msgs
+Requires:       ros-kinetic-octomap
+Requires:       ros-kinetic-octomap_msgs
+Requires:       ros-kinetic-pluginlib
+Requires:       ros-kinetic-rosconsole
 Requires:       ros-kinetic-rostime
-Requires:       ros-kinetic-tf2_msgs
+Requires:       ros-kinetic-sensor_msgs
+Requires:       ros-kinetic-shape_msgs
+Requires:       ros-kinetic-std_msgs
+Requires:       ros-kinetic-trajectory_msgs
+Requires:       ros-kinetic-visualization_msgs
 
 
 %description
-tf2 is the second generation of the transform library, which lets the
-user keep track of multiple coordinate frames over time. tf2 maintains
-the relationship between coordinate frames in a tree structure
-buffered in time, and lets the user transform points, vectors, etc
-between any two coordinate frames at any desired point in time.
+Experimental packages for moveit.
 
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       ros-kinetic-catkin-devel
+Requires:       assimp
 Requires:       boost-devel
 Requires:       console-bridge-devel
-Requires:       gtest-devel
-Requires:       ros-kinetic-cpp_common-devel
+Requires:       eigen3-devel
+Requires:       urdfdom-devel
+Requires:       urdfdom-headers-devel
+Requires:       ros-kinetic-actionlib_msgs-devel
+Requires:       ros-kinetic-angles-devel
+Requires:       ros-kinetic-eigen_conversions-devel
+Requires:       ros-kinetic-eigen_stl_containers-devel
+Requires:       ros-kinetic-geometric_shapes-devel
 Requires:       ros-kinetic-geometry_msgs-devel
-Requires:       ros-kinetic-roscpp_serialization-devel
-Requires:       ros-kinetic-roscpp_traits-devel
+Requires:       ros-kinetic-kdl_parser-devel
+Requires:       ros-kinetic-moveit_core-devel
+Requires:       ros-kinetic-moveit_msgs-devel
+Requires:       ros-kinetic-moveit_resources-devel
+Requires:       ros-kinetic-octomap-devel
+Requires:       ros-kinetic-octomap_msgs-devel
+Requires:       ros-kinetic-orocos_kdl-devel
+Requires:       ros-kinetic-pluginlib-devel
+Requires:       ros-kinetic-rosconsole-devel
+Requires:       ros-kinetic-roslib-devel
 Requires:       ros-kinetic-rostime-devel
-Requires:       ros-kinetic-tf2_msgs-devel
+Requires:       ros-kinetic-sensor_msgs-devel
+Requires:       ros-kinetic-shape_msgs-devel
+Requires:       ros-kinetic-std_msgs-devel
+Requires:       ros-kinetic-tf_conversions-devel
+Requires:       ros-kinetic-trajectory_msgs-devel
+Requires:       ros-kinetic-visualization_msgs-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -90,7 +142,7 @@ catkin_make_isolated \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \
-  --pkg tf2
+  --pkg moveit_experimental
 
 
 
@@ -143,29 +195,5 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
-* Thu Mar 14 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.5.20-1
+* Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.9.15-1
 - Update to latest release
-* Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.19-1
-- Update to latest release
-* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.17-9
-- devel also requires: the devel package of each run dependency
-* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.17-8
-- devel also requires: the devel package of each run dependency
-* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.17-7
-- Also add upstream's exec_depend as Requires:
-* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.17-6
-- Add corresponding devel Requires: for the package's BRs and Rs
-* Mon May 14 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.17-5
-- Update to latest release, rebuild for F28
-* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.17-4
-- Replace Recommends: with Requires: in devel subpackage
-* Tue Feb 20 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.17-3
-- Fix Requires: in devel subpackage
-* Mon Feb 19 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.17-2
-- Add Recommends: for all BRs to the devel subpackage
-* Tue Feb 06 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.17-1
-- Split devel package
-* Fri Aug 25 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.5.16-2
-- Remove all Requires: on devel packages
-* Wed Aug 16 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de> - 0.5.16-1
-- Update auto-generated Spec file

@@ -8,6 +8,7 @@ URL:            http://ompl.kavrakilab.org
 
 Source0:        https://github.com/ros-gbp/ompl-release/archive/release/kinetic/ompl/1.2.3-1.tar.gz#/ros-kinetic-ompl-1.2.3-source0.tar.gz
 
+Patch0: ros-kinetic-ompl.find-python-modules.patch
 
 
 # common BRs
@@ -47,6 +48,7 @@ applications that use %{name}.
 
 %setup -c -T
 tar --strip-components=1 -xf %{SOURCE0}
+%patch0 -p1
 
 %build
 # nothing to do here

@@ -1,12 +1,12 @@
 Name:           ros-kinetic-control_msgs
-Version:        1.4.0
-Release:        9%{?dist}
+Version:        1.5.0
+Release:        1%{?dist}
 Summary:        ROS package control_msgs
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/control_msgs-release/archive/release/kinetic/control_msgs/1.4.0-0.tar.gz#/ros-kinetic-control_msgs-1.4.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/control_msgs-release/archive/release/kinetic/control_msgs/1.5.0-0.tar.gz#/ros-kinetic-control_msgs-1.5.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -137,6 +137,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Thu Mar 14 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.5.0-1
+- Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.4.0-9
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.4.0-8

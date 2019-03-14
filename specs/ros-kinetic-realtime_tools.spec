@@ -1,12 +1,12 @@
 Name:           ros-kinetic-realtime_tools
-Version:        1.11.0
+Version:        1.11.1
 Release:        1%{?dist}
 Summary:        ROS package realtime_tools
 
 License:        BSD
 URL:            http://ros.org/wiki/realtime_tools
 
-Source0:        https://github.com/ros-gbp/realtime_tools-release/archive/release/kinetic/realtime_tools/1.11.0-0.tar.gz#/ros-kinetic-realtime_tools-1.11.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/realtime_tools-release/archive/release/kinetic/realtime_tools/1.11.1-0.tar.gz#/ros-kinetic-realtime_tools-1.11.1-source0.tar.gz
 
 
 
@@ -132,5 +132,7 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Thu Mar 14 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.11.1-1
+- Update to latest release
 * Thu Jan 18 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.0-1
 - Initial package

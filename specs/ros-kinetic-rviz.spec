@@ -1,12 +1,12 @@
 Name:           ros-kinetic-rviz
-Version:        1.12.16
-Release:        3%{?dist}
+Version:        1.12.17
+Release:        1%{?dist}
 Summary:        ROS package rviz
 
 License:        BSD
 URL:            http://ros.org/wiki/rviz
 
-Source0:        https://github.com/ros-gbp/rviz-release/archive/release/kinetic/rviz/1.12.16-0.tar.gz#/ros-kinetic-rviz-1.12.16-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rviz-release/archive/release/kinetic/rviz/1.12.17-0.tar.gz#/ros-kinetic-rviz-1.12.17-source0.tar.gz
 
 
 
@@ -219,6 +219,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Thu Mar 14 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.12.17-1
+- Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.16-3
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.16-2

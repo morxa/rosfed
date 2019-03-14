@@ -1,12 +1,12 @@
 Name:           ros-kinetic-gazebo_ros
-Version:        2.5.17
+Version:        2.5.18
 Release:        1%{?dist}
 Summary:        ROS package gazebo_ros
 
 License:        Apache 2.0
 URL:            http://gazebosim.org/tutorials?cat=connect_ros
 
-Source0:        https://github.com/ros-gbp/gazebo_ros_pkgs-release/archive/release/kinetic/gazebo_ros/2.5.17-0.tar.gz#/ros-kinetic-gazebo_ros-2.5.17-source0.tar.gz
+Source0:        https://github.com/ros-gbp/gazebo_ros_pkgs-release/archive/release/kinetic/gazebo_ros/2.5.18-1.tar.gz#/ros-kinetic-gazebo_ros-2.5.18-source0.tar.gz
 
 
 
@@ -161,6 +161,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Thu Mar 14 2019 Till Hofmann <thofmann@fedoraproject.org> - 2.5.18-1
+- Update to latest release
 * Tue Jun 26 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.5.17-1
 - Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.5.14-4

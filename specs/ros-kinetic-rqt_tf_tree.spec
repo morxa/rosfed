@@ -1,12 +1,12 @@
 Name:           ros-kinetic-rqt_tf_tree
-Version:        0.5.8
-Release:        9%{?dist}
+Version:        0.6.0
+Release:        1%{?dist}
 Summary:        ROS package rqt_tf_tree
 
 License:        BSD
 URL:            http://wiki.ros.org/rqt_tf_tree
 
-Source0:        https://github.com/ros-gbp/rqt_tf_tree-release/archive/release/kinetic/rqt_tf_tree/0.5.8-0.tar.gz#/ros-kinetic-rqt_tf_tree-0.5.8-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt_tf_tree-release/archive/release/kinetic/rqt_tf_tree/0.6.0-0.tar.gz#/ros-kinetic-rqt_tf_tree-0.6.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -143,6 +143,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Thu Mar 14 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.6.0-1
+- Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.8-9
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.8-8

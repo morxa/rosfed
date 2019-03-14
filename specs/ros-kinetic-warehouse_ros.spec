@@ -1,12 +1,12 @@
 Name:           ros-kinetic-warehouse_ros
-Version:        0.9.1
+Version:        0.9.2
 Release:        1%{?dist}
 Summary:        ROS package warehouse_ros
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/warehouse_ros-release/archive/release/kinetic/warehouse_ros/0.9.1-0.tar.gz#/ros-kinetic-warehouse_ros-0.9.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/warehouse_ros-release/archive/release/kinetic/warehouse_ros/0.9.2-0.tar.gz#/ros-kinetic-warehouse_ros-0.9.2-source0.tar.gz
 
 
 
@@ -140,6 +140,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Thu Mar 14 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.9.2-1
+- Update to latest release
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.9.1-1
 - Update to latest release
 * Thu Jan 18 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.9.0-1

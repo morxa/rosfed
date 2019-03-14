@@ -1,12 +1,12 @@
 Name:           ros-kinetic-tf2_eigen
-Version:        0.5.19
+Version:        0.5.20
 Release:        1%{?dist}
 Summary:        ROS package tf2_eigen
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/geometry2-release/archive/release/kinetic/tf2_eigen/0.5.19-0.tar.gz#/ros-kinetic-tf2_eigen-0.5.19-source0.tar.gz
+Source0:        https://github.com/ros-gbp/geometry2-release/archive/release/kinetic/tf2_eigen/0.5.20-0.tar.gz#/ros-kinetic-tf2_eigen-0.5.20-source0.tar.gz
 
 
 BuildArch: noarch
@@ -129,6 +129,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Thu Mar 14 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.5.20-1
+- Update to latest release
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.19-1
 - Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.17-9
