@@ -2,3 +2,5 @@ dependencies:
   build:
     system:
       - flann-devel
+patches:
+  - ros-kinetic-ompl.find-python-modules.patch
