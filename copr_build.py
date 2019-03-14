@@ -13,7 +13,7 @@ the specified COPR and if not, will submit a new build to the COPR.
 
 import argparse
 import build_tree
-import copr
+import copr.v3
 import functools
 import json
 import marshmallow
@@ -31,22 +31,24 @@ class CoprBuildError(Exception):
         return repr(self.error)
 
 class CoprBuilder:
-    def __init__(self, project_id):
+    def __init__(self, copr_owner, copr_project):
         """ Initialize the CoprBuilder using the given project ID.
 
         Args:
-            project_id: The ID of the COPR project to use for builds.
+            copr_owner: the owner of the COPR project
+            copr_project: the name of the COPR project
         """
-        self.project_id = project_id
-        self.copr_client = copr.create_client2_from_file_config()
+        self.owner = copr_owner
+        self.project = copr_project
+        self.copr_client = copr.v3.Client.create_from_config_file()
 
     def build_spec(self, chroot, spec, wait_for_completion=False):
         """ Build a package in COPR from a SPEC file.
 
         Args:
-            project_id: The COPR project where the package should be built.
             chroot: The chroot to use for the build, e.g., fedora-26-x86_64
             spec: The path to the SPEC file of the package.
+            wait_for_completion: If set to true, wait for the build to finish
         """
         print('Building {} for chroot {}'.format(spec, chroot))
         res = subprocess.run(['spectool', '-g', spec, '-C',
@@ -69,19 +71,18 @@ class CoprBuilder:
         """ Build a package in COPR from a SRPM.
 
         Args:
-            project_id: The COPR project where the package should be built.
             chroot: The chroot to use for the build, e.g., fedora-26-x86_64
             srpm: The path to the SRPM file of the package.
-            wait_for_completion: If set to True, wait until the build has
-                                 terminated.
+            wait_for_completion: If set to true, wait for the build to finish
 
         Returns:
             The build object created for this build.
         """
-        print('Building {} for project {} with chroot {}'.format(
-            srpm, self.project_id, chroot))
-        build = self.copr_client.builds.create_from_file(
-            project_id=self.project_id, file_path=srpm, chroots=[chroot])
+        print('Building {} for project {}/{} with chroot {}'.format(
+            srpm, self.owner, self.project, chroot))
+        build = self.copr_client.build_proxy.create_from_file(
+            ownername=self.owner, projectname=self.project,
+            path=srpm, buildopts={ 'chroots': [chroot] })
         assert build, 'COPR client returned build object "{}"'.format(build)
         if wait_for_completion:
             self.wait_for_completion([build])
@@ -90,9 +91,9 @@ class CoprBuilder:
             cprint('Building {} was successful.'.format(srpm), 'green')
         return build
 
-    def get_node_of_build(self, nodes, build):
+    def get_node_of_build(self, nodes, build_id):
         for node in nodes:
-            if node.build == build:
+            if node.build_id == build_id:
                 return node
         raise Exception(
             'Could not find node of build {} in build tree'.format(build))
@@ -100,12 +101,12 @@ class CoprBuilder:
     def build_tree(self, chroot, pkgs, only_new=False):
         """ Build a set of packages in order of dependencies. """
         tree = build_tree.Tree(pkgs)
-        builds = []
+        build_ids = []
         while not tree.is_built():
             wait_for_build = True
             leaves = tree.get_build_leaves()
             print('Found {} leave node(s)'.format(len(leaves)))
-            if not builds and not leaves:
+            if not build_ids and not leaves:
                 raise Exception(
                     'No pending builds and no leave packages, abort.')
             for node in leaves:
@@ -123,17 +124,17 @@ class CoprBuilder:
                     assert node.state == build_tree.BuildState.PENDING, \
                             'Unexpected build state {} of package node ' \
                             '{}'.format(node.state, node.name)
-                    node.build = self.build_spec(chroot=chroot,
-                                                 spec=node.pkg.spec)
+                    build = self.build_spec(chroot=chroot, spec=node.pkg.spec)
+                    node.build_id = build.id
                     node.state = build_tree.BuildState.BUILDING
-                    builds.append(node.build)
+                    build_ids.append(node.build_id)
             if not wait_for_build:
                 continue
             print('Waiting for a build to finish...')
-            finished_build = self.wait_for_one_build(builds)
-            node = self.get_node_of_build(tree.nodes.values(), finished_build)
-            builds.remove(finished_build)
-            if finished_build.get_self().state == 'succeeded':
+            finished_build = self.wait_for_one_build(build_ids)
+            node = self.get_node_of_build(tree.nodes.values(), finished_build.id)
+            build_ids.remove(finished_build.id)
+            if finished_build.state == 'succeeded':
                 cprint('Successful build: {}'.format(node.name), 'green')
                 node.state = build_tree.BuildState.SUCCEEDED
             else:
@@ -142,15 +143,7 @@ class CoprBuilder:
 
     @functools.lru_cache(16)
     def get_builds(self):
-        # workaround for https://pagure.io/copr/copr/issue/119
-        # get_list returns at most 100 builds
-        builds = []
-        new_builds = self.copr_client.builds.get_list(self.project_id)
-        while new_builds:
-            builds += new_builds
-            new_builds = self.copr_client.builds.get_list(self.project_id,
-                                                          offset=len(builds))
-        return builds
+        return self.copr_client.build_proxy.get_list(self.owner, self.project)
 
     def pkg_is_built(self, chroot, pkg_name, pkg_version):
         """ Check if the given package is already built in the COPR.
@@ -163,28 +156,16 @@ class CoprBuilder:
         Returns:
             True iff the package was already built in the project and chroot.
         """
-        for build in self.get_builds():
-            if build.package_name == pkg_name:
-                try:
-                    build_tasks = build.get_build_tasks()
-                except marshmallow.exceptions.ValidationError:
-                    cprint('Failed to get build tasks of build {}, '
-                          'skipping!'.format(build.id), 'yellow')
-                    continue
-                for build_task in build_tasks:
-                    if build_task.state == 'succeeded' and \
-                       build_task.chroot_name == chroot:
-                        if not pkg_version:
-                            print('Found build of {} and no version specified, '
-                                  'skipping!'.format(pkg_name))
-                            return True
-                        # We expect package versions of the format
-                        # 1.0-2.fc23 or 1.0-2
-                        build_version = re.fullmatch(
-                            '(.+?)(?:\.(?:fc|rhel|epel|el)\d+)?',
-                            build.package_version).group(1)
-                        if build_version == pkg_version:
-                            return True
+        for build in self.copr_client.build_proxy.get_list(self.owner, self.project, pkg_name):
+            if build.state != 'succeeded':
+                continue
+            if chroot not in build.chroots:
+                continue
+            build_version = re.fullmatch(
+                '(.+?)(?:\.(?:fc|rhel|epel|el)\d+)?',
+                build['source_package']['version']).group(1)
+            if build_version == pkg_version:
+                return True
         return False
 
     def wait_for_completion(self, builds):
@@ -194,31 +175,20 @@ class CoprBuilder:
             builds: A list of builds to wait for.
         """
         print('Waiting for {} build(s) to complete...'.format(len(builds)))
-        completed = set()
-        builds = set(builds)
-        while completed != builds:
-            for build in builds - completed:
-                if build.get_self().is_finished():
-                    completed.add(build)
-                    print('{}/{}: {} finished building.'.format(
-                        len(completed), len(builds),
-                        build.get_self().package_name))
-                elif build.get_self().state == 'canceled':
-                    raise CoprBuildError(
-                        'Build {} of package {} was canceled'.format(
-                            build.get_self().id, build.get_self().package_name))
+        finished = wait(builds)
 
-    def wait_for_one_build(self, builds):
+    def wait_for_one_build(self, build_ids):
         """ Wait for one of the given builds to complete.
 
         Args:
-            builds: A list of COPR builds.
+            build_ids: A list of COPR build IDs.
         Returns:
             The build that completed.
         """
         while True:
-            for build in builds:
-                if build.get_self().is_finished():
+            for build_id in build_ids:
+                build = self.copr_client.build_proxy.get(build_id)
+                if build.state in ['succeeded', 'failed', 'canceled', 'cancelled']:
                     return build
 
 def main():
@@ -226,15 +196,17 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('-f', '--force', action='store_true', default=False,
                         help='Force a rebuild if package was already built')
+    parser.add_argument('--copr-owner', type=str,
+                        help='The owner of the COPR project to use for builds')
+    parser.add_argument('--copr-project', type=str,
+                        help='The COPR project to use for builds')
     parser.add_argument('--chroot', action='append',
                         help='The chroot(s) to use for the packages')
-    parser.add_argument('--project-id', type=int, default=14923,
-                        help='The COPR project ID to build the packages in')
     parser.add_argument('--spec-dir', default='./specs/',
                         help='The directory where to look for SPEC files')
     parser.add_argument('pkg_name', nargs='+')
     args = parser.parse_args()
-    copr_builder = CoprBuilder(args.project_id)
+    copr_builder = CoprBuilder(args.copr_owner, args.copr_project)
     for chroot in args.chroot:
         for pkg in args.pkg_name:
             spec = args.spec_dir + pkg + '.spec'

@@ -116,7 +116,7 @@ class Node:
         """
         self.name = name
         self.state = BuildState.PENDING
-        self.build = None
+        self.build_id = None
         self.initialized = False
         self.pkg = pkg
         self.dependencies = None

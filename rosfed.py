@@ -268,8 +268,10 @@ def main():
     build_args = parser.add_argument_group('build arguments')
     build_args.add_argument('-b', '--build', action='store_true', default=False,
                             help='Build the generated SPEC file')
-    build_args.add_argument('--copr-project-id', type=int,
-                            help='The ID of the COPR project to use for builds')
+    build_args.add_argument('--copr-owner', type=str,
+                            help='The owner of the COPR project to use for builds')
+    build_args.add_argument('--copr-project', type=str,
+                            help='The COPR project to use for builds')
     build_args.add_argument('--chroot', action='append', type=str,
                             help='The chroot used for building the packages, '
                                  'specify multiple chroots by using the flag '
@@ -302,9 +304,11 @@ def main():
         for stage in order:
             args.build_order_file.write(" ".join(stage) + '\n')
     if args.build:
-        assert args.copr_project_id, 'You need to provide a COPR Project ID.'
+        assert args.copr_owner, 'You need to provide a COPR owner'
+        assert args.copr_project, 'You need to provide a COPR user'
         assert args.chroot, 'You need to provide a chroot to use for builds.'
-        copr_builder = copr_build.CoprBuilder(project_id=args.copr_project_id)
+        copr_builder = copr_build.CoprBuilder(copr_owner=args.copr_owner,
+                                              copr_project=args.copr_project)
         for chroot in args.chroot:
             if args.recursive:
                 copr_builder.build_tree(chroot, list(packages.values()),
