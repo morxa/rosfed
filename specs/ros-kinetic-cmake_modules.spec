@@ -1,12 +1,12 @@
 Name:           ros-kinetic-cmake_modules
-Version:        0.4.1
-Release:        11%{?dist}
+Version:        0.4.2
+Release:        1%{?dist}
 Summary:        ROS package cmake_modules
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/cmake_modules-release/archive/release/kinetic/cmake_modules/0.4.1-0.tar.gz#/ros-kinetic-cmake_modules-0.4.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/cmake_modules-release/archive/release/kinetic/cmake_modules/0.4.2-0.tar.gz#/ros-kinetic-cmake_modules-0.4.2-source0.tar.gz
 
 
 BuildArch: noarch
@@ -120,6 +120,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Apr 15 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.4.2-1
+- Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.1-11
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.1-10
