@@ -1,12 +1,12 @@
 Name:           ros-kinetic-rospack
-Version:        2.4.4
-Release:        12%{?dist}
+Version:        2.4.5
+Release:        1%{?dist}
 Summary:        ROS package rospack
 
 License:        BSD
 URL:            http://wiki.ros.org/rospack
 
-Source0:        https://github.com/ros-gbp/rospack-release/archive/release/kinetic/rospack/2.4.4-0.tar.gz#/ros-kinetic-rospack-2.4.4-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rospack-release/archive/release/kinetic/rospack/2.4.5-1.tar.gz#/ros-kinetic-rospack-2.4.5-source0.tar.gz
 
 Patch0: ros-kinetic-rospack.remove-tr1.patch
 
@@ -30,6 +30,7 @@ BuildRequires:  ros-kinetic-cmake_modules-devel
 Requires:       pkgconfig
 Requires:       python-catkin_pkg
 Requires:       python-rosdep
+Requires:       ros-kinetic-ros_environment
 
 
 %description
@@ -46,6 +47,7 @@ Requires:       python-coverage
 Requires:       python-devel
 Requires:       tinyxml-devel
 Requires:       ros-kinetic-cmake_modules-devel
+Requires:       ros-kinetic-ros_environment-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -137,6 +139,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 2.4.5-1
+- Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.4.4-12
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.4.4-11

@@ -1,12 +1,12 @@
 Name:           ros-kinetic-mk
-Version:        1.14.4
+Version:        1.14.6
 Release:        1%{?dist}
 Summary:        ROS package mk
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/ros-release/archive/release/kinetic/mk/1.14.4-0.tar.gz#/ros-kinetic-mk-1.14.4-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros-release/archive/release/kinetic/mk/1.14.6-1.tar.gz#/ros-kinetic-mk-1.14.6-source0.tar.gz
 
 
 BuildArch: noarch
@@ -21,6 +21,7 @@ BuildRequires:  python2-devel
 BuildRequires:  ros-kinetic-catkin-devel
 
 Requires:       ros-kinetic-rosbuild
+Requires:       ros-kinetic-rospack
 
 
 %description
@@ -35,6 +36,7 @@ Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-kinetic-catkin-devel
 Requires:       ros-kinetic-rosbuild-devel
+Requires:       ros-kinetic-rospack-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -125,6 +127,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.14.6-1
+- Update to latest release
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.14.4-1
 - Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.14.3-3

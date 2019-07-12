@@ -1,12 +1,12 @@
 Name:           ros-kinetic-ros
-Version:        1.14.4
+Version:        1.14.6
 Release:        1%{?dist}
 Summary:        ROS package ros
 
 License:        BSD
 URL:            http://www.ros.org/wiki/ROS
 
-Source0:        https://github.com/ros-gbp/ros-release/archive/release/kinetic/ros/1.14.4-0.tar.gz#/ros-kinetic-ros-1.14.4-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros-release/archive/release/kinetic/ros/1.14.6-1.tar.gz#/ros-kinetic-ros-1.14.6-source0.tar.gz
 
 
 BuildArch: noarch
@@ -140,6 +140,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.14.6-1
+- Update to latest release
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.14.4-1
 - Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.14.3-3

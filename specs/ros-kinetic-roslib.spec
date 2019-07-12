@@ -1,12 +1,12 @@
 Name:           ros-kinetic-roslib
-Version:        1.14.4
+Version:        1.14.6
 Release:        1%{?dist}
 Summary:        ROS package roslib
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/ros-release/archive/release/kinetic/roslib/1.14.4-0.tar.gz#/ros-kinetic-roslib-1.14.4-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros-release/archive/release/kinetic/roslib/1.14.6-1.tar.gz#/ros-kinetic-roslib-1.14.6-source0.tar.gz
 
 
 
@@ -21,6 +21,7 @@ BuildRequires:  boost-devel
 BuildRequires:  python2-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  ros-kinetic-catkin-devel
+BuildRequires:  ros-kinetic-rosmake-devel
 BuildRequires:  ros-kinetic-rospack-devel
 
 Requires:       python-rospkg
@@ -41,6 +42,7 @@ Requires:       ros-kinetic-catkin-devel
 Requires:       boost-devel
 Requires:       python2-devel
 Requires:       tinyxml-devel
+Requires:       ros-kinetic-rosmake-devel
 Requires:       ros-kinetic-rospack-devel
 Requires:       ros-kinetic-ros_environment-devel
 
@@ -133,6 +135,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.14.6-1
+- Update to latest release
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.14.4-1
 - Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.14.3-5

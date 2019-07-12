@@ -1,12 +1,12 @@
 Name:           ros-kinetic-catkin
-Version:        0.7.14
+Version:        0.7.18
 Release:        1%{?dist}
 Summary:        ROS package catkin
 
 License:        BSD
 URL:            http://www.ros.org/wiki/catkin
 
-Source0:        https://github.com/ros-gbp/catkin-release/archive/release/kinetic/catkin/0.7.14-0.tar.gz#/ros-kinetic-catkin-0.7.14-source0.tar.gz
+Source0:        https://github.com/ros-gbp/catkin-release/archive/release/kinetic/catkin/0.7.18-1.tar.gz#/ros-kinetic-catkin-0.7.18-source0.tar.gz
 
 Patch0: ros-kinetic-catkin.python-path-in-templates.patch
 
@@ -107,7 +107,7 @@ find %{buildroot}/%{_libdir}/ros/{include,lib*/pkgconfig} \
 
 find %{buildroot}/%{_libdir}/ros -maxdepth 1 \
   -name .catkin -o -name .rosinstall \
-  -o -name "_setup*" -o -name "setup.*" -o -name env.sh \
+  -o -name "_setup*" -o -name "setup.*" -o -name "local_setup.*" -o -name env.sh \
   | sed -e "s:%{buildroot}/::" -e "s:.py$:.py{,o,c}:" >> files.list
 
 find . -maxdepth 1 -type f -iname "*readme*" | sed "s:^:%%doc :" >> files.list
@@ -145,6 +145,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.7.18-1
+- Update to latest release
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.7.14-1
 - Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.7.11-8
