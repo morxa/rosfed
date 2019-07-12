@@ -1,6 +1,6 @@
-Name:           ros-kinetic-rqt_action
-Version:        0.4.9
-Release:        9%{?dist}
+Name:           ros-rqt_action
+Version:        kinetic.0.4.9
+Release:        10%{?dist}
 Summary:        ROS package rqt_action
 
 License:        BSD
@@ -32,6 +32,9 @@ unified with it and rqt_srv. Note that the actions shown on this
 plugin is the ones that are stored on your machine, not on the ROS
 core your rqt instance connects to.
 
+Provides:  ros-kinetic-rqt_action = %{version}-%{release}
+Obsoletes: ros-kinetic-rqt_action < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -43,6 +46,9 @@ Requires:       ros-kinetic-rqt_py_common-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-rqt_action-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-rqt_action-devel < %{version}-%{release}
 
 
 
@@ -129,6 +135,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.4.9-10
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.9-9
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.9-8

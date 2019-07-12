@@ -1,6 +1,6 @@
-Name:           ros-kinetic-turtle_tf2
-Version:        0.2.2
-Release:        9%{?dist}
+Name:           ros-turtle_tf2
+Version:        kinetic.0.2.2
+Release:        10%{?dist}
 Summary:        ROS package turtle_tf2
 
 License:        BSD
@@ -40,6 +40,9 @@ turtle_tf2 demonstrates how to write a tf2 broadcaster and listener
 with the turtlesim. The tutle_tf2_listener commands turtle2 to follow
 turtle1 around as you drive turtle1 using the keyboard.
 
+Provides:  ros-kinetic-turtle_tf2 = %{version}-%{release}
+Obsoletes: ros-kinetic-turtle_tf2 < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
@@ -55,6 +58,9 @@ Requires:       ros-kinetic-turtlesim-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-turtle_tf2-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-turtle_tf2-devel < %{version}-%{release}
 
 
 
@@ -141,6 +147,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.2.2-10
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.2.2-9
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.2.2-8

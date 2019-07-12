@@ -1,6 +1,6 @@
-Name:           ros-kinetic-pluginlib
-Version:        1.11.3
-Release:        5%{?dist}
+Name:           ros-pluginlib
+Version:        kinetic.1.11.3
+Release:        6%{?dist}
 Summary:        ROS package pluginlib
 
 License:        BSD
@@ -42,6 +42,9 @@ loading plugins using the ROS build infrastructure. To work, these
 tools require plugin providers to register their plugins in the
 package.xml of their package.
 
+Provides:  ros-kinetic-pluginlib = %{version}-%{release}
+Obsoletes: ros-kinetic-pluginlib < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
@@ -62,6 +65,9 @@ Requires:       ros-kinetic-rostime-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-pluginlib-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-pluginlib-devel < %{version}-%{release}
 
 
 
@@ -148,6 +154,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.11.3-6
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.3-5
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.3-4

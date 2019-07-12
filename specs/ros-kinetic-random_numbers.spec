@@ -1,6 +1,6 @@
-Name:           ros-kinetic-random_numbers
-Version:        0.3.1
-Release:        9%{?dist}
+Name:           ros-random_numbers
+Version:        kinetic.0.3.1
+Release:        10%{?dist}
 Summary:        ROS package random_numbers
 
 License:        BSD
@@ -29,6 +29,9 @@ wrapper is guaranteed to be thread safe and initialize its random
 number generator to a random seed. Seeds are obtained using a separate
 and different random number generator.
 
+Provides:  ros-kinetic-random_numbers = %{version}-%{release}
+Obsoletes: ros-kinetic-random_numbers < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
@@ -38,6 +41,9 @@ Requires:       boost-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-random_numbers-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-random_numbers-devel < %{version}-%{release}
 
 
 
@@ -124,6 +130,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.3.1-10
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.3.1-9
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.3.1-8

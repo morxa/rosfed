@@ -1,6 +1,6 @@
-Name:           ros-kinetic-smach_msgs
-Version:        2.0.1
-Release:        3%{?dist}
+Name:           ros-smach_msgs
+Version:        kinetic.2.0.1
+Release:        4%{?dist}
 Summary:        ROS package smach_msgs
 
 License:        BSD
@@ -31,6 +31,9 @@ Requires:       ros-kinetic-std_msgs
 this package contains a set of messages that are used by the
 introspection interfaces for smach.
 
+Provides:  ros-kinetic-smach_msgs = %{version}-%{release}
+Obsoletes: ros-kinetic-smach_msgs < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -42,6 +45,9 @@ Requires:       ros-kinetic-std_msgs-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-smach_msgs-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-smach_msgs-devel < %{version}-%{release}
 
 
 
@@ -128,6 +134,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 2.0.1-4
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.0.1-3
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.0.1-2

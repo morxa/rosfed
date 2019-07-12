@@ -1,6 +1,6 @@
-Name:           ros-kinetic-std_srvs
-Version:        1.11.2
-Release:        11%{?dist}
+Name:           ros-std_srvs
+Version:        kinetic.1.11.2
+Release:        12%{?dist}
 Summary:        ROS package std_srvs
 
 License:        BSD
@@ -27,6 +27,9 @@ Requires:       ros-kinetic-message_runtime
 %description
 Common service definitions.
 
+Provides:  ros-kinetic-std_srvs = %{version}-%{release}
+Obsoletes: ros-kinetic-std_srvs < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -37,6 +40,9 @@ Requires:       ros-kinetic-message_runtime-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-std_srvs-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-std_srvs-devel < %{version}-%{release}
 
 
 
@@ -123,6 +129,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.11.2-12
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.2-11
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.2-10

@@ -1,6 +1,6 @@
-Name:           ros-kinetic-genmsg
-Version:        0.5.11
-Release:        1%{?dist}
+Name:           ros-genmsg
+Version:        kinetic.0.5.11
+Release:        2%{?dist}
 Summary:        ROS package genmsg
 
 License:        BSD
@@ -27,6 +27,9 @@ Requires:       ros-kinetic-catkin
 Standalone Python library for generating ROS message and service data
 structures for various languages.
 
+Provides:  ros-kinetic-genmsg = %{version}-%{release}
+Obsoletes: ros-kinetic-genmsg < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -35,6 +38,9 @@ Requires:       ros-kinetic-catkin-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-genmsg-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-genmsg-devel < %{version}-%{release}
 
 
 
@@ -121,6 +127,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.5.11-2
+- Remove ROS distro from package name
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.11-1
 - Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.10-5

@@ -1,6 +1,6 @@
-Name:           ros-kinetic-xacro
-Version:        1.11.3
-Release:        3%{?dist}
+Name:           ros-xacro
+Version:        kinetic.1.11.3
+Release:        4%{?dist}
 Summary:        ROS package xacro
 
 License:        BSD
@@ -30,6 +30,9 @@ Xacro (XML Macros) Xacro is an XML macro language. With xacro, you can
 construct shorter and more readable XML files by using macros that
 expand to larger XML expressions.
 
+Provides:  ros-kinetic-xacro = %{version}-%{release}
+Obsoletes: ros-kinetic-xacro < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -41,6 +44,9 @@ Requires:       ros-kinetic-roslaunch-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-xacro-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-xacro-devel < %{version}-%{release}
 
 
 
@@ -127,6 +133,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.11.3-4
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.3-3
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.3-2

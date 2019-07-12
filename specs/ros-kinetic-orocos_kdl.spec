@@ -1,6 +1,6 @@
-Name:           ros-kinetic-orocos_kdl
-Version:        1.3.1
-Release:        9%{?dist}
+Name:           ros-orocos_kdl
+Version:        kinetic.1.3.1
+Release:        10%{?dist}
 Summary:        ROS package orocos_kdl
 
 License:        LGPL
@@ -30,6 +30,9 @@ Requires:       ros-kinetic-catkin
 This package contains a recent version of the Kinematics and Dynamics
 Library (KDL), distributed by the Orocos Project.
 
+Provides:  ros-kinetic-orocos_kdl = %{version}-%{release}
+Obsoletes: ros-kinetic-orocos_kdl < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
@@ -41,6 +44,9 @@ Requires:       ros-kinetic-catkin-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-orocos_kdl-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-orocos_kdl-devel < %{version}-%{release}
 
 
 
@@ -127,6 +133,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.3.1-10
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.1-9
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.1-8

@@ -1,6 +1,6 @@
-Name:           ros-kinetic-rospack
-Version:        2.4.5
-Release:        1%{?dist}
+Name:           ros-rospack
+Version:        kinetic.2.4.5
+Release:        2%{?dist}
 Summary:        ROS package rospack
 
 License:        BSD
@@ -36,6 +36,9 @@ Requires:       ros-kinetic-ros_environment
 %description
 ROS Package Tool
 
+Provides:  ros-kinetic-rospack = %{version}-%{release}
+Obsoletes: ros-kinetic-rospack < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
@@ -52,6 +55,9 @@ Requires:       ros-kinetic-ros_environment-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-rospack-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-rospack-devel < %{version}-%{release}
 
 
 
@@ -139,6 +145,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 2.4.5-2
+- Remove ROS distro from package name
 * Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 2.4.5-1
 - Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.4.4-12

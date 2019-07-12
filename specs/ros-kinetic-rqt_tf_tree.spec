@@ -1,6 +1,6 @@
-Name:           ros-kinetic-rqt_tf_tree
-Version:        0.6.0
-Release:        1%{?dist}
+Name:           ros-rqt_tf_tree
+Version:        kinetic.0.6.0
+Release:        2%{?dist}
 Summary:        ROS package rqt_tf_tree
 
 License:        BSD
@@ -38,6 +38,9 @@ Requires:       ros-kinetic-tf2_ros
 rqt_tf_tree provides a GUI plugin for visualizing the ROS TF frame
 tree.
 
+Provides:  ros-kinetic-rqt_tf_tree = %{version}-%{release}
+Obsoletes: ros-kinetic-rqt_tf_tree < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -57,6 +60,9 @@ Requires:       ros-kinetic-tf2_ros-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-rqt_tf_tree-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-rqt_tf_tree-devel < %{version}-%{release}
 
 
 
@@ -143,6 +149,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.6.0-2
+- Remove ROS distro from package name
 * Thu Mar 14 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.6.0-1
 - Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.8-9

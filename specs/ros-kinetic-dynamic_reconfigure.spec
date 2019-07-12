@@ -1,6 +1,6 @@
-Name:           ros-kinetic-dynamic_reconfigure
-Version:        1.5.50
-Release:        1%{?dist}
+Name:           ros-dynamic_reconfigure
+Version:        kinetic.1.5.50
+Release:        2%{?dist}
 Summary:        ROS package dynamic_reconfigure
 
 License:        BSD
@@ -38,6 +38,9 @@ This unary stack contains the dynamic_reconfigure package which
 provides a means to change node parameters at any time without having
 to restart the node.
 
+Provides:  ros-kinetic-dynamic_reconfigure = %{version}-%{release}
+Obsoletes: ros-kinetic-dynamic_reconfigure < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
@@ -56,6 +59,9 @@ Requires:       ros-kinetic-rosservice-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-dynamic_reconfigure-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-dynamic_reconfigure-devel < %{version}-%{release}
 
 
 
@@ -142,6 +148,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.5.50-2
+- Remove ROS distro from package name
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.5.50-1
 - Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.5.49-5

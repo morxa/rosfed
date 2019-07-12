@@ -1,6 +1,6 @@
-Name:           ros-kinetic-diagnostic_msgs
-Version:        1.12.7
-Release:        1%{?dist}
+Name:           ros-diagnostic_msgs
+Version:        kinetic.1.12.7
+Release:        2%{?dist}
 Summary:        ROS package diagnostic_msgs
 
 License:        BSD
@@ -31,6 +31,9 @@ This package holds the diagnostic messages which provide the
 standardized interface for the diagnostic and runtime monitoring
 systems in ROS. These messages are currently used by the
 
+Provides:  ros-kinetic-diagnostic_msgs = %{version}-%{release}
+Obsoletes: ros-kinetic-diagnostic_msgs < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -42,6 +45,9 @@ Requires:       ros-kinetic-message_runtime-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-diagnostic_msgs-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-diagnostic_msgs-devel < %{version}-%{release}
 
 
 
@@ -128,6 +134,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.12.7-2
+- Remove ROS distro from package name
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.7-1
 - Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.6-3

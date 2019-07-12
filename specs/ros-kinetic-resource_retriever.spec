@@ -1,6 +1,6 @@
-Name:           ros-kinetic-resource_retriever
-Version:        1.12.4
-Release:        3%{?dist}
+Name:           ros-resource_retriever
+Version:        kinetic.1.12.4
+Release:        4%{?dist}
 Summary:        ROS package resource_retriever
 
 License:        BSD
@@ -41,6 +41,9 @@ url. The resourse retriever was initially designed to load mesh files
 into memory, but it can be used for any type of data. The resource
 retriever is based on the the libcurl library.
 
+Provides:  ros-kinetic-resource_retriever = %{version}-%{release}
+Obsoletes: ros-kinetic-resource_retriever < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
@@ -58,6 +61,9 @@ Requires:       ros-kinetic-roslib-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-resource_retriever-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-resource_retriever-devel < %{version}-%{release}
 
 
 
@@ -144,6 +150,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.12.4-4
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.4-3
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.4-2

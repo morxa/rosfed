@@ -1,6 +1,6 @@
-Name:           ros-kinetic-urdf
-Version:        1.12.12
-Release:        8%{?dist}
+Name:           ros-urdf
+Version:        kinetic.1.12.12
+Release:        9%{?dist}
 Summary:        ROS package urdf
 
 License:        BSD
@@ -41,6 +41,9 @@ Format (URDF), which is an XML format for representing a robot model.
 The code API of the parser has been through our review process and
 will remain backwards compatible in future releases.
 
+Provides:  ros-kinetic-urdf = %{version}-%{release}
+Obsoletes: ros-kinetic-urdf < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
@@ -60,6 +63,9 @@ Requires:       ros-kinetic-urdf_parser_plugin-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-urdf-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-urdf-devel < %{version}-%{release}
 
 
 
@@ -146,6 +152,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.12.12-9
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.12-8
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.12-7

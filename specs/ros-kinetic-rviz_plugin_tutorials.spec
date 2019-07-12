@@ -1,6 +1,6 @@
-Name:           ros-kinetic-rviz_plugin_tutorials
-Version:        0.10.3
-Release:        3%{?dist}
+Name:           ros-rviz_plugin_tutorials
+Version:        kinetic.0.10.3
+Release:        4%{?dist}
 Summary:        ROS package rviz_plugin_tutorials
 
 License:        BSD
@@ -35,6 +35,9 @@ Requires:       ros-kinetic-rviz
 %description
 Tutorials showing how to write plugins for RViz.
 
+Provides:  ros-kinetic-rviz_plugin_tutorials = %{version}-%{release}
+Obsoletes: ros-kinetic-rviz_plugin_tutorials < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
@@ -51,6 +54,9 @@ Requires:       ros-kinetic-rviz-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-rviz_plugin_tutorials-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-rviz_plugin_tutorials-devel < %{version}-%{release}
 
 
 
@@ -137,6 +143,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.10.3-4
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.10.3-3
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.10.3-2

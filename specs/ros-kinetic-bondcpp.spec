@@ -1,6 +1,6 @@
-Name:           ros-kinetic-bondcpp
-Version:        1.8.3
-Release:        1%{?dist}
+Name:           ros-bondcpp
+Version:        kinetic.1.8.3
+Release:        2%{?dist}
 Summary:        ROS package bondcpp
 
 License:        BSD
@@ -37,6 +37,9 @@ Requires:       ros-kinetic-smclib
 C++ implementation of bond, a mechanism for checking when another
 process has terminated.
 
+Provides:  ros-kinetic-bondcpp = %{version}-%{release}
+Obsoletes: ros-kinetic-bondcpp < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
@@ -54,6 +57,9 @@ Requires:       ros-kinetic-smclib-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-bondcpp-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-bondcpp-devel < %{version}-%{release}
 
 
 
@@ -140,6 +146,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.8.3-2
+- Remove ROS distro from package name
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.8.3-1
 - Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.8.1-10

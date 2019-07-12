@@ -1,6 +1,6 @@
-Name:           ros-kinetic-gl_dependency
-Version:        1.1.0
-Release:        9%{?dist}
+Name:           ros-gl_dependency
+Version:        kinetic.1.1.0
+Release:        10%{?dist}
 Summary:        ROS package gl_dependency
 
 License:        BSD
@@ -27,6 +27,9 @@ Requires:       python-qt5
 This encapsulates the GL dependency for a specific ROS distribution
 and its Qt version
 
+Provides:  ros-kinetic-gl_dependency = %{version}-%{release}
+Obsoletes: ros-kinetic-gl_dependency < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -35,6 +38,9 @@ Requires:       ros-kinetic-catkin-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-gl_dependency-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-gl_dependency-devel < %{version}-%{release}
 
 
 
@@ -121,6 +127,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.1.0-10
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.1.0-9
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.1.0-8

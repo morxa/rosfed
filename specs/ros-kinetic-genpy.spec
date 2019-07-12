@@ -1,6 +1,6 @@
-Name:           ros-kinetic-genpy
-Version:        0.6.7
-Release:        10%{?dist}
+Name:           ros-genpy
+Version:        kinetic.0.6.7
+Release:        11%{?dist}
 Summary:        ROS package genpy
 
 License:        BSD
@@ -28,6 +28,9 @@ Requires:       ros-kinetic-genmsg
 %description
 Python ROS message and service generators.
 
+Provides:  ros-kinetic-genpy = %{version}-%{release}
+Obsoletes: ros-kinetic-genpy < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -37,6 +40,9 @@ Requires:       ros-kinetic-genmsg-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-genpy-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-genpy-devel < %{version}-%{release}
 
 
 
@@ -123,6 +129,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.6.7-11
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.6.7-10
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.6.7-9

@@ -1,6 +1,6 @@
-Name:           ros-kinetic-smclib
-Version:        1.8.3
-Release:        1%{?dist}
+Name:           ros-smclib
+Version:        kinetic.1.8.3
+Release:        2%{?dist}
 Summary:        ROS package smclib
 
 License:        Mozilla Public License Version 1.1
@@ -29,6 +29,9 @@ the source code to support that state machine. This package contains
 the libraries that a compiled state machine depends on, but it does
 not contain the compiler itself.
 
+Provides:  ros-kinetic-smclib = %{version}-%{release}
+Obsoletes: ros-kinetic-smclib < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -37,6 +40,9 @@ Requires:       ros-kinetic-catkin-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-smclib-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-smclib-devel < %{version}-%{release}
 
 
 
@@ -123,6 +129,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.8.3-2
+- Remove ROS distro from package name
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.8.3-1
 - Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.8.1-10

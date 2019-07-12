@@ -1,6 +1,6 @@
-Name:           ros-kinetic-mk
-Version:        1.14.6
-Release:        1%{?dist}
+Name:           ros-mk
+Version:        kinetic.1.14.6
+Release:        2%{?dist}
 Summary:        ROS package mk
 
 License:        BSD
@@ -31,6 +31,9 @@ for the build of the package. The other files in this package are
 intended for use in exotic situations that mostly arise when importing
 3rdparty code.
 
+Provides:  ros-kinetic-mk = %{version}-%{release}
+Obsoletes: ros-kinetic-mk < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -41,6 +44,9 @@ Requires:       ros-kinetic-rospack-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-mk-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-mk-devel < %{version}-%{release}
 
 
 
@@ -127,6 +133,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.14.6-2
+- Remove ROS distro from package name
 * Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.14.6-1
 - Update to latest release
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.14.4-1

@@ -1,6 +1,6 @@
-Name:           ros-kinetic-cmake_modules
-Version:        0.4.2
-Release:        1%{?dist}
+Name:           ros-cmake_modules
+Version:        kinetic.0.4.2
+Release:        2%{?dist}
 Summary:        ROS package cmake_modules
 
 License:        BSD
@@ -26,6 +26,9 @@ BuildRequires:  ros-kinetic-catkin-devel
 A common repository for CMake Modules which are not distributed with
 CMake but are commonly used by ROS packages.
 
+Provides:  ros-kinetic-cmake_modules = %{version}-%{release}
+Obsoletes: ros-kinetic-cmake_modules < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -34,6 +37,9 @@ Requires:       ros-kinetic-catkin-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-cmake_modules-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-cmake_modules-devel < %{version}-%{release}
 
 
 
@@ -120,6 +126,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.4.2-2
+- Remove ROS distro from package name
 * Mon Apr 15 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.4.2-1
 - Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.1-11

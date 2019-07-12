@@ -1,6 +1,6 @@
-Name:           ros-kinetic-tf2
-Version:        0.5.20
-Release:        1%{?dist}
+Name:           ros-tf2
+Version:        kinetic.0.5.20
+Release:        2%{?dist}
 Summary:        ROS package tf2
 
 License:        BSD
@@ -40,6 +40,9 @@ the relationship between coordinate frames in a tree structure
 buffered in time, and lets the user transform points, vectors, etc
 between any two coordinate frames at any desired point in time.
 
+Provides:  ros-kinetic-tf2 = %{version}-%{release}
+Obsoletes: ros-kinetic-tf2 < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
@@ -57,6 +60,9 @@ Requires:       ros-kinetic-tf2_msgs-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-tf2-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-tf2-devel < %{version}-%{release}
 
 
 
@@ -143,6 +149,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.5.20-2
+- Remove ROS distro from package name
 * Thu Mar 14 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.5.20-1
 - Update to latest release
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.19-1

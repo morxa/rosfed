@@ -1,6 +1,6 @@
-Name:           ros-kinetic-stereo_msgs
-Version:        1.12.7
-Release:        1%{?dist}
+Name:           ros-stereo_msgs
+Version:        kinetic.1.12.7
+Release:        2%{?dist}
 Summary:        ROS package stereo_msgs
 
 License:        BSD
@@ -32,6 +32,9 @@ Requires:       ros-kinetic-std_msgs
 stereo_msgs contains messages specific to stereo processing, such as
 disparity images.
 
+Provides:  ros-kinetic-stereo_msgs = %{version}-%{release}
+Obsoletes: ros-kinetic-stereo_msgs < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -44,6 +47,9 @@ Requires:       ros-kinetic-message_runtime-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-stereo_msgs-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-stereo_msgs-devel < %{version}-%{release}
 
 
 
@@ -130,6 +136,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.12.7-2
+- Remove ROS distro from package name
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.7-1
 - Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.6-3

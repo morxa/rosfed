@@ -1,6 +1,6 @@
-Name:           ros-kinetic-rqt_web
-Version:        0.4.8
-Release:        9%{?dist}
+Name:           ros-rqt_web
+Version:        kinetic.0.4.8
+Release:        10%{?dist}
 Summary:        ROS package rqt_web
 
 License:        BSD
@@ -33,6 +33,9 @@ Requires:       ros-kinetic-webkit_dependency
 rqt_web is a simple web content viewer for rqt. Users can show web
 content in Qt-based window by specifying its URL.
 
+Provides:  ros-kinetic-rqt_web = %{version}-%{release}
+Obsoletes: ros-kinetic-rqt_web < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -47,6 +50,9 @@ Requires:       ros-kinetic-webkit_dependency-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-rqt_web-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-rqt_web-devel < %{version}-%{release}
 
 
 
@@ -133,6 +139,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.4.8-10
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.8-9
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.8-8

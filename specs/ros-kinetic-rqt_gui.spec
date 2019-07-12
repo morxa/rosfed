@@ -1,6 +1,6 @@
-Name:           ros-kinetic-rqt_gui
-Version:        0.5.0
-Release:        9%{?dist}
+Name:           ros-rqt_gui
+Version:        kinetic.0.5.0
+Release:        10%{?dist}
 Summary:        ROS package rqt_gui
 
 License:        BSD
@@ -29,6 +29,9 @@ Requires:       ros-kinetic-qt_gui
 rqt_gui provides the main to start an instance of the ROS integrated
 graphical user interface provided by qt_gui.
 
+Provides:  ros-kinetic-rqt_gui = %{version}-%{release}
+Obsoletes: ros-kinetic-rqt_gui < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -38,6 +41,9 @@ Requires:       ros-kinetic-qt_gui-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-rqt_gui-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-rqt_gui-devel < %{version}-%{release}
 
 
 
@@ -124,6 +130,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.5.0-10
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.0-9
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.0-8

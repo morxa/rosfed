@@ -1,6 +1,6 @@
-Name:           ros-kinetic-collada_urdf
-Version:        1.12.12
-Release:        3%{?dist}
+Name:           ros-collada_urdf
+Version:        kinetic.1.12.12
+Release:        4%{?dist}
 Summary:        ROS package collada_urdf
 
 License:        BSD
@@ -46,6 +46,9 @@ Format (URDF) documents into COLLAborative Design Activity (COLLADA)
 documents. Implements robot-specific COLLADA extensions as defined by
 http://openrave.programmingvision.com/index.php/Started:COLLADA
 
+Provides:  ros-kinetic-collada_urdf = %{version}-%{release}
+Obsoletes: ros-kinetic-collada_urdf < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
@@ -67,6 +70,9 @@ Requires:       ros-kinetic-urdf-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-collada_urdf-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-collada_urdf-devel < %{version}-%{release}
 
 
 
@@ -153,6 +159,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.12.12-4
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.12-3
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.12-2

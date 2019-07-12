@@ -1,6 +1,6 @@
-Name:           ros-kinetic-rqt_graph
-Version:        0.4.9
-Release:        8%{?dist}
+Name:           ros-rqt_graph
+Version:        kinetic.0.4.9
+Release:        9%{?dist}
 Summary:        ROS package rqt_graph
 
 License:        BSD
@@ -38,6 +38,9 @@ Requires:       ros-kinetic-rqt_gui_py
 rqt_graph provides a GUI plugin for visualizing the ROS computation
 graph.
 
+Provides:  ros-kinetic-rqt_graph = %{version}-%{release}
+Obsoletes: ros-kinetic-rqt_graph < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -57,6 +60,9 @@ Requires:       ros-kinetic-rqt_gui_py-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-rqt_graph-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-rqt_graph-devel < %{version}-%{release}
 
 
 
@@ -143,6 +149,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.4.9-9
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.9-8
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.9-7

@@ -1,6 +1,6 @@
-Name:           ros-kinetic-ros_environment
-Version:        1.0.0
-Release:        6%{?dist}
+Name:           ros-ros_environment
+Version:        kinetic.1.0.0
+Release:        7%{?dist}
 Summary:        ROS package ros_environment
 
 License:        Apache License 2.0
@@ -26,6 +26,9 @@ BuildRequires:  ros-kinetic-catkin-devel
 The package provides the environment variables `ROS_VERSION`,
 `ROS_DISTRO`, `ROS_PACKAGE_PATH`, and `ROS_ETC_DIR`.
 
+Provides:  ros-kinetic-ros_environment = %{version}-%{release}
+Obsoletes: ros-kinetic-ros_environment < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -34,6 +37,9 @@ Requires:       ros-kinetic-catkin-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-ros_environment-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-ros_environment-devel < %{version}-%{release}
 
 
 
@@ -120,6 +126,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.0.0-7
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.0.0-6
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.0.0-5

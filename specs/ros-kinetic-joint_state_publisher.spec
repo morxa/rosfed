@@ -1,6 +1,6 @@
-Name:           ros-kinetic-joint_state_publisher
-Version:        1.12.13
-Release:        3%{?dist}
+Name:           ros-joint_state_publisher
+Version:        kinetic.1.12.13
+Release:        4%{?dist}
 Summary:        ROS package joint_state_publisher
 
 License:        BSD
@@ -30,6 +30,9 @@ Requires:       ros-kinetic-sensor_msgs
 This package contains a tool for setting and publishing joint state
 values for a given URDF.
 
+Provides:  ros-kinetic-joint_state_publisher = %{version}-%{release}
+Obsoletes: ros-kinetic-joint_state_publisher < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -42,6 +45,9 @@ Requires:       ros-kinetic-sensor_msgs-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-joint_state_publisher-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-joint_state_publisher-devel < %{version}-%{release}
 
 
 
@@ -128,6 +134,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.12.13-4
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.13-3
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.13-2

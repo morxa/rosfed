@@ -1,6 +1,6 @@
-Name:           ros-kinetic-turtle_actionlib
-Version:        0.1.10
-Release:        9%{?dist}
+Name:           ros-turtle_actionlib
+Version:        kinetic.0.1.10
+Release:        10%{?dist}
 Summary:        ROS package turtle_actionlib
 
 License:        BSD
@@ -44,6 +44,9 @@ turtle_actionlib demonstrates how to write an action server and client
 with the turtlesim. The shape_server provides and action interface for
 drawing regular polygons with the turtlesim.
 
+Provides:  ros-kinetic-turtle_actionlib = %{version}-%{release}
+Obsoletes: ros-kinetic-turtle_actionlib < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
@@ -62,6 +65,9 @@ Requires:       ros-kinetic-message_runtime-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-turtle_actionlib-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-turtle_actionlib-devel < %{version}-%{release}
 
 
 
@@ -148,6 +154,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.1.10-10
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.1.10-9
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.1.10-8

@@ -1,6 +1,6 @@
-Name:           ros-kinetic-roscpp_serialization
-Version:        0.6.11
-Release:        1%{?dist}
+Name:           ros-roscpp_serialization
+Version:        kinetic.0.6.11
+Release:        2%{?dist}
 Summary:        ROS package roscpp_serialization
 
 License:        BSD
@@ -32,6 +32,9 @@ Requires:       ros-kinetic-rostime
 roscpp_serialization contains the code for serialization as described
 in
 
+Provides:  ros-kinetic-roscpp_serialization = %{version}-%{release}
+Obsoletes: ros-kinetic-roscpp_serialization < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
@@ -44,6 +47,9 @@ Requires:       ros-kinetic-rostime-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-roscpp_serialization-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-roscpp_serialization-devel < %{version}-%{release}
 
 
 
@@ -130,6 +136,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.6.11-2
+- Remove ROS distro from package name
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.6.11-1
 - Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.6.9-5

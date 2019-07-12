@@ -1,6 +1,6 @@
-Name:           ros-kinetic-qt_gui_py_common
-Version:        0.3.11
-Release:        1%{?dist}
+Name:           ros-qt_gui_py_common
+Version:        kinetic.0.3.11
+Release:        2%{?dist}
 Summary:        ROS package qt_gui_py_common
 
 License:        BSD
@@ -28,6 +28,9 @@ Requires:       ros-kinetic-python_qt_binding
 qt_gui_py_common provides common functionality for GUI plugins written
 in Python.
 
+Provides:  ros-kinetic-qt_gui_py_common = %{version}-%{release}
+Obsoletes: ros-kinetic-qt_gui_py_common < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -37,6 +40,9 @@ Requires:       ros-kinetic-python_qt_binding-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-qt_gui_py_common-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-qt_gui_py_common-devel < %{version}-%{release}
 
 
 
@@ -123,6 +129,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.3.11-2
+- Remove ROS distro from package name
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.3.11-1
 - Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.3.8-8

@@ -1,6 +1,6 @@
-Name:           ros-kinetic-message_generation
-Version:        0.4.0
-Release:        11%{?dist}
+Name:           ros-message_generation
+Version:        kinetic.0.4.0
+Release:        12%{?dist}
 Summary:        ROS package message_generation
 
 License:        BSD
@@ -32,6 +32,9 @@ Requires:       ros-kinetic-genpy
 Package modeling the build-time dependencies for generating language
 bindings of messages.
 
+Provides:  ros-kinetic-message_generation = %{version}-%{release}
+Obsoletes: ros-kinetic-message_generation < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -46,6 +49,9 @@ Requires:       ros-kinetic-genpy-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-message_generation-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-message_generation-devel < %{version}-%{release}
 
 
 
@@ -132,6 +138,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.4.0-12
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.0-11
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.0-10

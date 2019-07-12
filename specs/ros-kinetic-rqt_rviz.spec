@@ -1,6 +1,6 @@
-Name:           ros-kinetic-rqt_rviz
-Version:        0.5.10
-Release:        1%{?dist}
+Name:           ros-rqt_rviz
+Version:        kinetic.0.5.10
+Release:        2%{?dist}
 Summary:        ROS package rqt_rviz
 
 License:        BSD
@@ -41,6 +41,9 @@ Requires:       ros-kinetic-rviz
 %description
 rqt_rviz provides a GUI plugin embedding
 
+Provides:  ros-kinetic-rqt_rviz = %{version}-%{release}
+Obsoletes: ros-kinetic-rqt_rviz < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
@@ -62,6 +65,9 @@ Requires:       ros-kinetic-rviz-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-rqt_rviz-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-rqt_rviz-devel < %{version}-%{release}
 
 
 
@@ -148,6 +154,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.5.10-2
+- Remove ROS distro from package name
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.10-1
 - Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.7-9

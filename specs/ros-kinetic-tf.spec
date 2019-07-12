@@ -1,6 +1,6 @@
-Name:           ros-kinetic-tf
-Version:        1.11.9
-Release:        11%{?dist}
+Name:           ros-tf
+Version:        kinetic.1.11.9
+Release:        12%{?dist}
 Summary:        ROS package tf
 
 License:        BSD
@@ -50,6 +50,9 @@ frames in a tree structure buffered in time, and lets the user
 transform points, vectors, etc between any two coordinate frames at
 any desired point in time.
 
+Provides:  ros-kinetic-tf = %{version}-%{release}
+Obsoletes: ros-kinetic-tf < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
@@ -72,6 +75,9 @@ Requires:       ros-kinetic-roswtf-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-tf-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-tf-devel < %{version}-%{release}
 
 
 
@@ -158,6 +164,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.11.9-12
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.9-11
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.9-10

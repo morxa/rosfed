@@ -1,6 +1,6 @@
-Name:           ros-kinetic-rqt_top
-Version:        0.4.8
-Release:        9%{?dist}
+Name:           ros-rqt_top
+Version:        kinetic.0.4.8
+Release:        10%{?dist}
 Summary:        ROS package rqt_top
 
 License:        BSD
@@ -30,6 +30,9 @@ Requires:       ros-kinetic-rqt_gui_py
 %description
 RQT plugin for monitoring ROS processes.
 
+Provides:  ros-kinetic-rqt_top = %{version}-%{release}
+Obsoletes: ros-kinetic-rqt_top < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -42,6 +45,9 @@ Requires:       ros-kinetic-rqt_gui_py-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-rqt_top-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-rqt_top-devel < %{version}-%{release}
 
 
 
@@ -128,6 +134,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.4.8-10
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.8-9
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.8-8

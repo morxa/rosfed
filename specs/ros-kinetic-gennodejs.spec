@@ -1,6 +1,6 @@
-Name:           ros-kinetic-gennodejs
-Version:        2.0.1
-Release:        11%{?dist}
+Name:           ros-gennodejs
+Version:        kinetic.2.0.1
+Release:        12%{?dist}
 Summary:        ROS package gennodejs
 
 License:        Apache 2.0
@@ -27,6 +27,9 @@ Requires:       ros-kinetic-genmsg
 %description
 Javascript ROS message and service generators.
 
+Provides:  ros-kinetic-gennodejs = %{version}-%{release}
+Obsoletes: ros-kinetic-gennodejs < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -36,6 +39,9 @@ Requires:       ros-kinetic-genmsg-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-gennodejs-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-gennodejs-devel < %{version}-%{release}
 
 
 
@@ -122,6 +128,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 2.0.1-12
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.0.1-11
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.0.1-10

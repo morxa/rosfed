@@ -1,6 +1,6 @@
-Name:           ros-kinetic-diagnostic_analysis
-Version:        1.9.3
-Release:        3%{?dist}
+Name:           ros-diagnostic_analysis
+Version:        kinetic.1.9.3
+Release:        4%{?dist}
 Summary:        ROS package diagnostic_analysis
 
 License:        BSD
@@ -34,6 +34,9 @@ The diagnostic_analysis package can convert a log of diagnostics data
 into a series of CSV files. Robot logs are recorded with rosbag, and
 can be processed offline using the scripts in this package.
 
+Provides:  ros-kinetic-diagnostic_analysis = %{version}-%{release}
+Obsoletes: ros-kinetic-diagnostic_analysis < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -46,6 +49,9 @@ Requires:       ros-kinetic-rostest-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-diagnostic_analysis-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-diagnostic_analysis-devel < %{version}-%{release}
 
 
 
@@ -132,6 +138,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.9.3-4
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.3-3
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.3-2

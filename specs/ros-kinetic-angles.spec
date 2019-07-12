@@ -1,6 +1,6 @@
-Name:           ros-kinetic-angles
-Version:        1.9.11
-Release:        11%{?dist}
+Name:           ros-angles
+Version:        kinetic.1.9.11
+Release:        12%{?dist}
 Summary:        ROS package angles
 
 License:        BSD
@@ -33,6 +33,9 @@ constrained by joint limits, this package is what you need. The code
 in this packge is stable and well tested. There are no plans for major
 changes in the near future.
 
+Provides:  ros-kinetic-angles = %{version}-%{release}
+Obsoletes: ros-kinetic-angles < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -42,6 +45,9 @@ Requires:       ros-kinetic-rosunit-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-angles-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-angles-devel < %{version}-%{release}
 
 
 
@@ -128,6 +134,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.9.11-12
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.11-11
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.11-10

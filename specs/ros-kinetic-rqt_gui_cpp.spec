@@ -1,6 +1,6 @@
-Name:           ros-kinetic-rqt_gui_cpp
-Version:        0.5.0
-Release:        11%{?dist}
+Name:           ros-rqt_gui_cpp
+Version:        kinetic.0.5.0
+Release:        12%{?dist}
 Summary:        ROS package rqt_gui_cpp
 
 License:        BSD
@@ -37,6 +37,9 @@ Requires:       ros-kinetic-roscpp
 %description
 rqt_gui_cpp enables GUI plugins to use the C++ client library for ROS.
 
+Provides:  ros-kinetic-rqt_gui_cpp = %{version}-%{release}
+Obsoletes: ros-kinetic-rqt_gui_cpp < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
@@ -54,6 +57,9 @@ Requires:       ros-kinetic-roscpp-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-rqt_gui_cpp-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-rqt_gui_cpp-devel < %{version}-%{release}
 
 
 
@@ -140,6 +146,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.5.0-12
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.0-11
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.0-10

@@ -1,6 +1,6 @@
-Name:           ros-kinetic-rosbag_migration_rule
-Version:        1.0.0
-Release:        9%{?dist}
+Name:           ros-rosbag_migration_rule
+Version:        kinetic.1.0.0
+Release:        10%{?dist}
 Summary:        ROS package rosbag_migration_rule
 
 License:        BSD
@@ -26,6 +26,9 @@ BuildRequires:  ros-kinetic-catkin-devel
 This empty package allows to export rosbag migration rule files
 without depending on rosbag.
 
+Provides:  ros-kinetic-rosbag_migration_rule = %{version}-%{release}
+Obsoletes: ros-kinetic-rosbag_migration_rule < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -34,6 +37,9 @@ Requires:       ros-kinetic-catkin-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-rosbag_migration_rule-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-rosbag_migration_rule-devel < %{version}-%{release}
 
 
 
@@ -120,6 +126,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.0.0-10
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.0.0-9
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.0.0-8

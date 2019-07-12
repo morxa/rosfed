@@ -1,6 +1,6 @@
-Name:           ros-kinetic-python_qt_binding
-Version:        0.3.4
-Release:        1%{?dist}
+Name:           ros-python_qt_binding
+Version:        kinetic.0.3.4
+Release:        2%{?dist}
 Summary:        ROS package python_qt_binding
 
 License:        BSD
@@ -36,6 +36,9 @@ code to make the user's Python code independent of which binding
 provider was actually used which makes it very easy to switch between
 these.
 
+Provides:  ros-kinetic-python_qt_binding = %{version}-%{release}
+Obsoletes: ros-kinetic-python_qt_binding < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -47,6 +50,9 @@ Requires:       ros-kinetic-rosbuild-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-python_qt_binding-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-python_qt_binding-devel < %{version}-%{release}
 
 
 
@@ -133,6 +139,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.3.4-2
+- Remove ROS distro from package name
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.3.4-1
 - Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.3.3-8

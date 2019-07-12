@@ -1,6 +1,6 @@
-Name:           ros-kinetic-ros_base
-Version:        1.3.2
-Release:        3%{?dist}
+Name:           ros-ros_base
+Version:        kinetic.1.3.2
+Release:        4%{?dist}
 Summary:        ROS package ros_base
 
 License:        BSD
@@ -34,6 +34,9 @@ A metapackage which extends ros_core and includes other basic non-
 robot tools like actionlib, dynamic reconfigure, nodelets, and
 pluginlib.
 
+Provides:  ros-kinetic-ros_base = %{version}-%{release}
+Obsoletes: ros-kinetic-ros_base < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -49,6 +52,9 @@ Requires:       ros-kinetic-ros_core-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-ros_base-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-ros_base-devel < %{version}-%{release}
 
 
 
@@ -135,6 +141,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.3.2-4
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.2-3
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.2-2

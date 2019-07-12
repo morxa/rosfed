@@ -1,6 +1,6 @@
-Name:           ros-kinetic-rqt_py_common
-Version:        0.5.0
-Release:        9%{?dist}
+Name:           ros-rqt_py_common
+Version:        kinetic.0.5.0
+Release:        10%{?dist}
 Summary:        ROS package rqt_py_common
 
 License:        BSD
@@ -41,6 +41,9 @@ possible. Functionality included in this package should cover generic
 ROS concepts and should not introduce any special dependencies beside
 "ros_base".
 
+Provides:  ros-kinetic-rqt_py_common = %{version}-%{release}
+Obsoletes: ros-kinetic-rqt_py_common < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -59,6 +62,9 @@ Requires:       ros-kinetic-rostopic-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-rqt_py_common-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-rqt_py_common-devel < %{version}-%{release}
 
 
 
@@ -145,6 +151,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.5.0-10
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.0-9
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.0-8

@@ -1,6 +1,6 @@
-Name:           ros-kinetic-tf2_kdl
-Version:        0.5.20
-Release:        1%{?dist}
+Name:           ros-tf2_kdl
+Version:        kinetic.0.5.20
+Release:        2%{?dist}
 Summary:        ROS package tf2_kdl
 
 License:        BSD
@@ -34,6 +34,9 @@ Requires:       ros-kinetic-tf2_ros
 %description
 KDL binding for tf2
 
+Provides:  ros-kinetic-tf2_kdl = %{version}-%{release}
+Obsoletes: ros-kinetic-tf2_kdl < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -48,6 +51,9 @@ Requires:       ros-kinetic-tf2_ros-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-tf2_kdl-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-tf2_kdl-devel < %{version}-%{release}
 
 
 
@@ -134,6 +140,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.5.20-2
+- Remove ROS distro from package name
 * Thu Mar 14 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.5.20-1
 - Update to latest release
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.19-1

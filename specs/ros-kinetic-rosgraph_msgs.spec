@@ -1,6 +1,6 @@
-Name:           ros-kinetic-rosgraph_msgs
-Version:        1.11.2
-Release:        11%{?dist}
+Name:           ros-rosgraph_msgs
+Version:        kinetic.1.11.2
+Release:        12%{?dist}
 Summary:        ROS package rosgraph_msgs
 
 License:        BSD
@@ -31,6 +31,9 @@ Messages relating to the ROS Computation Graph. These are generally
 considered to be low-level messages that end users do not interact
 with.
 
+Provides:  ros-kinetic-rosgraph_msgs = %{version}-%{release}
+Obsoletes: ros-kinetic-rosgraph_msgs < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -42,6 +45,9 @@ Requires:       ros-kinetic-message_runtime-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-rosgraph_msgs-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-rosgraph_msgs-devel < %{version}-%{release}
 
 
 
@@ -128,6 +134,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.11.2-12
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.2-11
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.2-10

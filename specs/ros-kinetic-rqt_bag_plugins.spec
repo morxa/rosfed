@@ -1,6 +1,6 @@
-Name:           ros-kinetic-rqt_bag_plugins
-Version:        0.4.12
-Release:        3%{?dist}
+Name:           ros-rqt_bag_plugins
+Version:        kinetic.0.4.12
+Release:        4%{?dist}
 Summary:        ROS package rqt_bag_plugins
 
 License:        BSD
@@ -38,6 +38,9 @@ Requires:       ros-kinetic-std_msgs
 rqt_bag provides a GUI plugin for displaying and replaying ROS bag
 files.
 
+Provides:  ros-kinetic-rqt_bag_plugins = %{version}-%{release}
+Obsoletes: ros-kinetic-rqt_bag_plugins < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -56,6 +59,9 @@ Requires:       ros-kinetic-std_msgs-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-rqt_bag_plugins-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-rqt_bag_plugins-devel < %{version}-%{release}
 
 
 
@@ -142,6 +148,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.4.12-4
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.12-3
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.12-2

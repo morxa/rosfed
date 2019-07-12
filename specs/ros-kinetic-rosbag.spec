@@ -1,6 +1,6 @@
-Name:           ros-kinetic-rosbag
-Version:        1.12.14
-Release:        1%{?dist}
+Name:           ros-rosbag
+Version:        kinetic.1.12.14
+Release:        2%{?dist}
 Summary:        ROS package rosbag
 
 License:        BSD
@@ -49,6 +49,9 @@ This is a set of tools for recording from and playing back to ROS
 topics. It is intended to be high performance and avoids
 deserialization and reserialization of the messages.
 
+Provides:  ros-kinetic-rosbag = %{version}-%{release}
+Obsoletes: ros-kinetic-rosbag < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
@@ -73,6 +76,9 @@ Requires:       ros-kinetic-rospy-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-rosbag-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-rosbag-devel < %{version}-%{release}
 
 
 
@@ -159,6 +165,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.12.14-2
+- Remove ROS distro from package name
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.14-1
 - Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.13-5

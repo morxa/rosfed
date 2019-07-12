@@ -1,6 +1,6 @@
-Name:           ros-kinetic-rqt_service_caller
-Version:        0.4.8
-Release:        9%{?dist}
+Name:           ros-rqt_service_caller
+Version:        kinetic.0.4.8
+Release:        10%{?dist}
 Summary:        ROS package rqt_service_caller
 
 License:        BSD
@@ -31,6 +31,9 @@ Requires:       ros-kinetic-rqt_py_common
 rqt_service_caller provides a GUI plugin for calling arbitrary
 services.
 
+Provides:  ros-kinetic-rqt_service_caller = %{version}-%{release}
+Obsoletes: ros-kinetic-rqt_service_caller < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -43,6 +46,9 @@ Requires:       ros-kinetic-rqt_py_common-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-rqt_service_caller-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-rqt_service_caller-devel < %{version}-%{release}
 
 
 
@@ -129,6 +135,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.4.8-10
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.8-9
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.8-8

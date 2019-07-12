@@ -1,6 +1,6 @@
-Name:           ros-kinetic-kdl_conversions
-Version:        1.11.9
-Release:        12%{?dist}
+Name:           ros-kdl_conversions
+Version:        kinetic.1.11.9
+Release:        13%{?dist}
 Summary:        ROS package kdl_conversions
 
 License:        BSD
@@ -32,6 +32,9 @@ Requires:       ros-kinetic-orocos_kdl
 %description
 Conversion functions between KDL and geometry_msgs types.
 
+Provides:  ros-kinetic-kdl_conversions = %{version}-%{release}
+Obsoletes: ros-kinetic-kdl_conversions < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
@@ -46,6 +49,9 @@ Requires:       ros-kinetic-roscpp_serialization-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-kdl_conversions-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-kdl_conversions-devel < %{version}-%{release}
 
 
 
@@ -132,6 +138,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.11.9-13
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.9-12
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.9-11

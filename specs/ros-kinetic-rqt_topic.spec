@@ -1,6 +1,6 @@
-Name:           ros-kinetic-rqt_topic
-Version:        0.4.10
-Release:        8%{?dist}
+Name:           ros-rqt_topic
+Version:        kinetic.0.4.10
+Release:        9%{?dist}
 Summary:        ROS package rqt_topic
 
 License:        BSD
@@ -33,6 +33,9 @@ rqt_topic provides a GUI plugin for displaying debug information about
 ROS topics including publishers, subscribers, publishing rate, and ROS
 Messages.
 
+Provides:  ros-kinetic-rqt_topic = %{version}-%{release}
+Obsoletes: ros-kinetic-rqt_topic < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -46,6 +49,9 @@ Requires:       ros-kinetic-std_msgs-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-rqt_topic-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-rqt_topic-devel < %{version}-%{release}
 
 
 
@@ -132,6 +138,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.4.10-9
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.10-8
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.10-7

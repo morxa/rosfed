@@ -1,6 +1,6 @@
-Name:           ros-kinetic-smach
-Version:        2.0.1
-Release:        3%{?dist}
+Name:           ros-smach
+Version:        kinetic.2.0.1
+Release:        4%{?dist}
 Summary:        ROS package smach
 
 License:        BSD
@@ -29,6 +29,9 @@ build hierarchical state machines. SMACH is a new library that takes
 advantage of very old concepts in order to quickly create robust robot
 behavior with maintainable and modular code.
 
+Provides:  ros-kinetic-smach = %{version}-%{release}
+Obsoletes: ros-kinetic-smach < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -37,6 +40,9 @@ Requires:       ros-kinetic-catkin-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-smach-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-smach-devel < %{version}-%{release}
 
 
 
@@ -123,6 +129,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 2.0.1-4
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.0.1-3
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.0.1-2

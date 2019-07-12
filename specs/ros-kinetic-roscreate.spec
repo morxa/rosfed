@@ -1,6 +1,6 @@
-Name:           ros-kinetic-roscreate
-Version:        1.14.6
-Release:        1%{?dist}
+Name:           ros-roscreate
+Version:        kinetic.1.14.6
+Release:        2%{?dist}
 Summary:        ROS package roscreate
 
 License:        BSD
@@ -28,6 +28,9 @@ Requires:       ros-kinetic-roslib
 roscreate contains a tool that assists in the creation of ROS
 filesystem resources. It provides:
 
+Provides:  ros-kinetic-roscreate = %{version}-%{release}
+Obsoletes: ros-kinetic-roscreate < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -37,6 +40,9 @@ Requires:       ros-kinetic-roslib-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-roscreate-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-roscreate-devel < %{version}-%{release}
 
 
 
@@ -123,6 +129,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.14.6-2
+- Remove ROS distro from package name
 * Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.14.6-1
 - Update to latest release
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.14.4-1

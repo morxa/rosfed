@@ -1,6 +1,6 @@
-Name:           ros-kinetic-rospy
-Version:        1.12.14
-Release:        1%{?dist}
+Name:           ros-rospy
+Version:        kinetic.1.12.14
+Release:        2%{?dist}
 Summary:        ROS package rospy
 
 License:        BSD
@@ -35,6 +35,9 @@ Requires:       ros-kinetic-std_msgs
 rospy is a pure Python client library for ROS. The rospy client API
 enables Python programmers to quickly interface with ROS
 
+Provides:  ros-kinetic-rospy = %{version}-%{release}
+Obsoletes: ros-kinetic-rospy < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -49,6 +52,9 @@ Requires:       ros-kinetic-std_msgs-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-rospy-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-rospy-devel < %{version}-%{release}
 
 
 
@@ -135,6 +141,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.12.14-2
+- Remove ROS distro from package name
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.14-1
 - Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.13-5

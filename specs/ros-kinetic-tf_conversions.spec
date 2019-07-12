@@ -1,6 +1,6 @@
-Name:           ros-kinetic-tf_conversions
-Version:        1.11.9
-Release:        9%{?dist}
+Name:           ros-tf_conversions
+Version:        kinetic.1.11.9
+Release:        10%{?dist}
 Summary:        ROS package tf_conversions
 
 License:        BSD
@@ -42,6 +42,9 @@ Kinematics and Dynamics Library (KDL) and the Eigen matrix library.
 This package is stable, and will get integrated into tf in the next
 major release cycle (see roadmap).
 
+Provides:  ros-kinetic-tf_conversions = %{version}-%{release}
+Obsoletes: ros-kinetic-tf_conversions < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
@@ -57,6 +60,9 @@ Requires:       ros-kinetic-python_orocos_kdl-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-tf_conversions-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-tf_conversions-devel < %{version}-%{release}
 
 
 
@@ -143,6 +149,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.11.9-10
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.9-9
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.9-8

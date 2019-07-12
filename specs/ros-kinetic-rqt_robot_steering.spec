@@ -1,6 +1,6 @@
-Name:           ros-kinetic-rqt_robot_steering
-Version:        0.5.9
-Release:        3%{?dist}
+Name:           ros-rqt_robot_steering
+Version:        kinetic.0.5.9
+Release:        4%{?dist}
 Summary:        ROS package rqt_robot_steering
 
 License:        BSD
@@ -32,6 +32,9 @@ Requires:       ros-kinetic-rqt_gui_py
 rqt_robot_steering provides a GUI plugin for steering a robot using
 Twist messages.
 
+Provides:  ros-kinetic-rqt_robot_steering = %{version}-%{release}
+Obsoletes: ros-kinetic-rqt_robot_steering < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -45,6 +48,9 @@ Requires:       ros-kinetic-rqt_gui_py-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-rqt_robot_steering-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-rqt_robot_steering-devel < %{version}-%{release}
 
 
 
@@ -131,6 +137,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.5.9-4
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.9-3
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.9-2

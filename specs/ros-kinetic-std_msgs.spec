@@ -1,6 +1,6 @@
-Name:           ros-kinetic-std_msgs
-Version:        0.5.11
-Release:        11%{?dist}
+Name:           ros-std_msgs
+Version:        kinetic.0.5.11
+Release:        12%{?dist}
 Summary:        ROS package std_msgs
 
 License:        BSD
@@ -30,6 +30,9 @@ primitive data types and other basic message constructs, such as
 multiarrays. For common, generic robot-specific message types, please
 see
 
+Provides:  ros-kinetic-std_msgs = %{version}-%{release}
+Obsoletes: ros-kinetic-std_msgs < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -40,6 +43,9 @@ Requires:       ros-kinetic-message_runtime-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-std_msgs-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-std_msgs-devel < %{version}-%{release}
 
 
 
@@ -126,6 +132,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.5.11-12
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.11-11
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.11-10

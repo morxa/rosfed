@@ -1,6 +1,6 @@
-Name:           ros-kinetic-qt_gui_cpp
-Version:        0.3.11
-Release:        1%{?dist}
+Name:           ros-qt_gui_cpp
+Version:        kinetic.0.3.11
+Release:        2%{?dist}
 Summary:        ROS package qt_gui_cpp
 
 License:        BSD
@@ -42,6 +42,9 @@ qt_gui_cpp provides the foundation for C++-bindings for qt_gui and
 creates bindings for every generator available. At least one specific
 binding must be available in order to use C++-plugins.
 
+Provides:  ros-kinetic-qt_gui_cpp = %{version}-%{release}
+Obsoletes: ros-kinetic-qt_gui_cpp < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
@@ -65,6 +68,9 @@ Requires:       ros-kinetic-qt_gui-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-qt_gui_cpp-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-qt_gui_cpp-devel < %{version}-%{release}
 
 
 
@@ -152,6 +158,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.3.11-2
+- Remove ROS distro from package name
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.3.11-1
 - Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.3.8-8

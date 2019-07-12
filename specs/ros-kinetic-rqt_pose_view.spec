@@ -1,6 +1,6 @@
-Name:           ros-kinetic-rqt_pose_view
-Version:        0.5.8
-Release:        9%{?dist}
+Name:           ros-rqt_pose_view
+Version:        kinetic.0.5.8
+Release:        10%{?dist}
 Summary:        ROS package rqt_pose_view
 
 License:        BSD
@@ -36,6 +36,9 @@ Requires:       ros-kinetic-tf
 %description
 rqt_pose_view provides a GUI plugin for visualizing 3D poses.
 
+Provides:  ros-kinetic-rqt_pose_view = %{version}-%{release}
+Obsoletes: ros-kinetic-rqt_pose_view < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -53,6 +56,9 @@ Requires:       ros-kinetic-tf-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-rqt_pose_view-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-rqt_pose_view-devel < %{version}-%{release}
 
 
 
@@ -139,6 +145,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.5.8-10
+- Remove ROS distro from package name
 * Tue Nov 13 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.8-9
 - Fix Requires on python2-pyopengl
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.8-8

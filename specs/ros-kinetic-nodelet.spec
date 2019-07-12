@@ -1,6 +1,6 @@
-Name:           ros-kinetic-nodelet
-Version:        1.9.14
-Release:        10%{?dist}
+Name:           ros-nodelet
+Version:        kinetic.1.9.14
+Release:        11%{?dist}
 Summary:        ROS package nodelet
 
 License:        BSD
@@ -47,6 +47,9 @@ algorithms. This package provides both the nodelet base class needed
 for implementing a nodelet, as well as the NodeletLoader class used
 for instantiating nodelets.
 
+Provides:  ros-kinetic-nodelet = %{version}-%{release}
+Obsoletes: ros-kinetic-nodelet < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
@@ -69,6 +72,9 @@ Requires:       ros-kinetic-rospy-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-nodelet-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-nodelet-devel < %{version}-%{release}
 
 
 
@@ -155,6 +161,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.9.14-11
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.14-10
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.14-9

@@ -1,6 +1,6 @@
-Name:           ros-kinetic-roslint
-Version:        0.11.0
-Release:        10%{?dist}
+Name:           ros-roslint
+Version:        kinetic.0.11.0
+Release:        11%{?dist}
 Summary:        ROS package roslint
 
 License:        BSD
@@ -27,6 +27,9 @@ CMake lint commands for ROS packages. The lint commands perform static
 checking of Python or C++ source code for errors and standards
 compliance.
 
+Provides:  ros-kinetic-roslint = %{version}-%{release}
+Obsoletes: ros-kinetic-roslint < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -35,6 +38,9 @@ Requires:       ros-kinetic-catkin-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-roslint-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-roslint-devel < %{version}-%{release}
 
 
 
@@ -121,6 +127,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.11.0-11
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.11.0-10
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.11.0-9

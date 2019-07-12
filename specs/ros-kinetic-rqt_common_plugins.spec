@@ -1,6 +1,6 @@
-Name:           ros-kinetic-rqt_common_plugins
-Version:        0.4.8
-Release:        10%{?dist}
+Name:           ros-rqt_common_plugins
+Version:        kinetic.0.4.8
+Release:        11%{?dist}
 Summary:        ROS package rqt_common_plugins
 
 License:        BSD
@@ -47,6 +47,9 @@ Requires:       ros-kinetic-rqt_web
 rqt_common_plugins metapackage provides ROS backend graphical tools
 suite that can be used on/off of robot runtime.
 
+Provides:  ros-kinetic-rqt_common_plugins = %{version}-%{release}
+Obsoletes: ros-kinetic-rqt_common_plugins < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -76,6 +79,9 @@ Requires:       ros-kinetic-rqt_web-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-rqt_common_plugins-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-rqt_common_plugins-devel < %{version}-%{release}
 
 
 
@@ -162,6 +168,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.4.8-11
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.8-10
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.8-9

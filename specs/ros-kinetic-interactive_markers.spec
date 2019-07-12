@@ -1,6 +1,6 @@
-Name:           ros-kinetic-interactive_markers
-Version:        1.11.4
-Release:        1%{?dist}
+Name:           ros-interactive_markers
+Version:        kinetic.1.11.4
+Release:        2%{?dist}
 Summary:        ROS package interactive_markers
 
 License:        BSD
@@ -39,6 +39,9 @@ Requires:       ros-kinetic-visualization_msgs
 3D interactive marker communication library for RViz and similar
 tools.
 
+Provides:  ros-kinetic-interactive_markers = %{version}-%{release}
+Obsoletes: ros-kinetic-interactive_markers < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
@@ -54,6 +57,9 @@ Requires:       ros-kinetic-visualization_msgs-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-interactive_markers-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-interactive_markers-devel < %{version}-%{release}
 
 
 
@@ -140,6 +146,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.11.4-2
+- Remove ROS distro from package name
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.4-1
 - Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.3-9

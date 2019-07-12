@@ -1,6 +1,6 @@
-Name:           ros-kinetic-geneus
-Version:        2.2.6
-Release:        11%{?dist}
+Name:           ros-geneus
+Version:        kinetic.2.2.6
+Release:        12%{?dist}
 Summary:        ROS package geneus
 
 License:        BSD
@@ -27,6 +27,9 @@ Requires:       ros-kinetic-genmsg
 %description
 EusLisp ROS message and service generators.
 
+Provides:  ros-kinetic-geneus = %{version}-%{release}
+Obsoletes: ros-kinetic-geneus < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -36,6 +39,9 @@ Requires:       ros-kinetic-genmsg-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-geneus-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-geneus-devel < %{version}-%{release}
 
 
 
@@ -122,6 +128,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 2.2.6-12
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.2.6-11
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.2.6-10

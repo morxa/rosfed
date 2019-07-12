@@ -1,6 +1,6 @@
-Name:           ros-kinetic-tf2_ros
-Version:        0.5.20
-Release:        1%{?dist}
+Name:           ros-tf2_ros
+Version:        kinetic.0.5.20
+Release:        2%{?dist}
 Summary:        ROS package tf2_ros
 
 License:        BSD
@@ -50,6 +50,9 @@ Requires:       ros-kinetic-xmlrpcpp
 This package contains the ROS bindings for the tf2 library, for both
 Python and C++.
 
+Provides:  ros-kinetic-tf2_ros = %{version}-%{release}
+Obsoletes: ros-kinetic-tf2_ros < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
@@ -71,6 +74,9 @@ Requires:       ros-kinetic-xmlrpcpp-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-tf2_ros-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-tf2_ros-devel < %{version}-%{release}
 
 
 
@@ -157,6 +163,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.5.20-2
+- Remove ROS distro from package name
 * Thu Mar 14 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.5.20-1
 - Update to latest release
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.19-1

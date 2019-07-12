@@ -1,6 +1,6 @@
-Name:           ros-kinetic-rosgraph
-Version:        1.12.14
-Release:        1%{?dist}
+Name:           ros-rosgraph
+Version:        kinetic.1.12.14
+Release:        2%{?dist}
 Summary:        ROS package rosgraph
 
 License:        BSD
@@ -30,6 +30,9 @@ rosgraph contains the rosgraph command-line tool, which prints
 information about the ROS Computation Graph. It also provides an
 internal library that can be used by graphical tools.
 
+Provides:  ros-kinetic-rosgraph = %{version}-%{release}
+Obsoletes: ros-kinetic-rosgraph < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -39,6 +42,9 @@ Requires:       python-mock
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-rosgraph-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-rosgraph-devel < %{version}-%{release}
 
 
 
@@ -125,6 +131,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.12.14-2
+- Remove ROS distro from package name
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.14-1
 - Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.13-5

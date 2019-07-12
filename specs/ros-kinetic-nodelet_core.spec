@@ -1,6 +1,6 @@
-Name:           ros-kinetic-nodelet_core
-Version:        1.9.14
-Release:        8%{?dist}
+Name:           ros-nodelet_core
+Version:        kinetic.1.9.14
+Release:        9%{?dist}
 Summary:        ROS package nodelet_core
 
 License:        BSD
@@ -27,6 +27,9 @@ Requires:       ros-kinetic-nodelet_topic_tools
 %description
 Nodelet Core Metapackage
 
+Provides:  ros-kinetic-nodelet_core = %{version}-%{release}
+Obsoletes: ros-kinetic-nodelet_core < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -37,6 +40,9 @@ Requires:       ros-kinetic-nodelet_topic_tools-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-nodelet_core-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-nodelet_core-devel < %{version}-%{release}
 
 
 
@@ -123,6 +129,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.9.14-9
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.14-8
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.14-7

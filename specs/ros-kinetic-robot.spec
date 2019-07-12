@@ -1,6 +1,6 @@
-Name:           ros-kinetic-robot
-Version:        1.3.2
-Release:        3%{?dist}
+Name:           ros-robot
+Version:        kinetic.1.3.2
+Release:        4%{?dist}
 Summary:        ROS package robot
 
 License:        BSD
@@ -35,6 +35,9 @@ Requires:       ros-kinetic-xacro
 A metapackage which extends ros_base and includes ROS libaries for any
 robot hardware. It may not contain any GUI dependencies.
 
+Provides:  ros-kinetic-robot = %{version}-%{release}
+Obsoletes: ros-kinetic-robot < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -52,6 +55,9 @@ Requires:       ros-kinetic-xacro-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-robot-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-robot-devel < %{version}-%{release}
 
 
 
@@ -138,6 +144,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.3.2-4
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.2-3
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.2-2

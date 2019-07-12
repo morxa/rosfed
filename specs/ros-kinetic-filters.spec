@@ -1,6 +1,6 @@
-Name:           ros-kinetic-filters
-Version:        1.7.5
-Release:        9%{?dist}
+Name:           ros-filters
+Version:        kinetic.1.7.5
+Release:        10%{?dist}
 Summary:        ROS package filters
 
 License:        BSD
@@ -39,6 +39,9 @@ a sequence of filters. This package contains a base class upon which
 to build specific implementations as well as an interface which
 dynamically loads filters based on runtime parameters.
 
+Provides:  ros-kinetic-filters = %{version}-%{release}
+Obsoletes: ros-kinetic-filters < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
@@ -55,6 +58,9 @@ Requires:       ros-kinetic-rostest-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-filters-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-filters-devel < %{version}-%{release}
 
 
 
@@ -141,6 +147,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.7.5-10
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.7.5-9
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.7.5-8

@@ -1,6 +1,6 @@
-Name:           ros-kinetic-common_tutorials
-Version:        0.1.10
-Release:        10%{?dist}
+Name:           ros-common_tutorials
+Version:        kinetic.0.1.10
+Release:        11%{?dist}
 Summary:        ROS package common_tutorials
 
 License:        BSD
@@ -29,6 +29,9 @@ Requires:       ros-kinetic-turtle_actionlib
 %description
 Metapackage that contains common tutorials
 
+Provides:  ros-kinetic-common_tutorials = %{version}-%{release}
+Obsoletes: ros-kinetic-common_tutorials < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -41,6 +44,9 @@ Requires:       ros-kinetic-turtle_actionlib-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-common_tutorials-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-common_tutorials-devel < %{version}-%{release}
 
 
 
@@ -127,6 +133,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.1.10-11
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.1.10-10
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.1.10-9

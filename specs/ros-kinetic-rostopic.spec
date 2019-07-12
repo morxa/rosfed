@@ -1,6 +1,6 @@
-Name:           ros-kinetic-rostopic
-Version:        1.12.14
-Release:        1%{?dist}
+Name:           ros-rostopic
+Version:        kinetic.1.12.14
+Release:        2%{?dist}
 Summary:        ROS package rostopic
 
 License:        BSD
@@ -30,6 +30,9 @@ Requires:       ros-kinetic-rospy
 rostopic contains the rostopic command-line tool for displaying debug
 information about ROS
 
+Provides:  ros-kinetic-rostopic = %{version}-%{release}
+Obsoletes: ros-kinetic-rostopic < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -42,6 +45,9 @@ Requires:       ros-kinetic-rospy-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-rostopic-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-rostopic-devel < %{version}-%{release}
 
 
 
@@ -128,6 +134,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.12.14-2
+- Remove ROS distro from package name
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.14-1
 - Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.13-5

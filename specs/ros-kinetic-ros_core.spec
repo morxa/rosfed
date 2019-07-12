@@ -1,6 +1,6 @@
-Name:           ros-kinetic-ros_core
-Version:        1.3.2
-Release:        3%{?dist}
+Name:           ros-ros_core
+Version:        kinetic.1.3.2
+Release:        4%{?dist}
 Summary:        ROS package ros_core
 
 License:        BSD
@@ -47,6 +47,9 @@ Requires:       ros-kinetic-std_srvs
 A metapackage to aggregate the packages required to use publish /
 subscribe, services, launch files, and other core ROS concepts.
 
+Provides:  ros-kinetic-ros_core = %{version}-%{release}
+Obsoletes: ros-kinetic-ros_core < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -75,6 +78,9 @@ Requires:       ros-kinetic-std_srvs-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-ros_core-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-ros_core-devel < %{version}-%{release}
 
 
 
@@ -161,6 +167,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.3.2-4
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.2-3
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.3.2-2

@@ -1,6 +1,6 @@
-Name:           ros-kinetic-laser_geometry
-Version:        1.6.4
-Release:        11%{?dist}
+Name:           ros-laser_geometry
+Version:        kinetic.1.6.4
+Release:        12%{?dist}
 Summary:        ROS package laser_geometry
 
 License:        BSD
@@ -41,6 +41,9 @@ sensor_msgs/PointCloud or sensor_msgs/PointCloud2. In particular, it
 contains functionality to account for the skew resulting from moving
 robots or tilting laser scanners.
 
+Provides:  ros-kinetic-laser_geometry = %{version}-%{release}
+Obsoletes: ros-kinetic-laser_geometry < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
@@ -57,6 +60,9 @@ Requires:       ros-kinetic-tf-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-laser_geometry-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-laser_geometry-devel < %{version}-%{release}
 
 
 
@@ -143,6 +149,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.6.4-12
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.6.4-11
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.6.4-10

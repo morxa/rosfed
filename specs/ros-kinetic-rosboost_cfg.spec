@@ -1,6 +1,6 @@
-Name:           ros-kinetic-rosboost_cfg
-Version:        1.14.6
-Release:        1%{?dist}
+Name:           ros-rosboost_cfg
+Version:        kinetic.1.14.6
+Release:        2%{?dist}
 Summary:        ROS package rosboost_cfg
 
 License:        BSD
@@ -26,6 +26,9 @@ BuildRequires:  ros-kinetic-catkin-devel
 Contains scripts used by the rosboost-cfg tool for determining
 cflags/lflags/etc. of boost on your system
 
+Provides:  ros-kinetic-rosboost_cfg = %{version}-%{release}
+Obsoletes: ros-kinetic-rosboost_cfg < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -34,6 +37,9 @@ Requires:       ros-kinetic-catkin-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-rosboost_cfg-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-rosboost_cfg-devel < %{version}-%{release}
 
 
 
@@ -120,6 +126,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.14.6-2
+- Remove ROS distro from package name
 * Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.14.6-1
 - Update to latest release
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.14.4-1

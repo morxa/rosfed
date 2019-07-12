@@ -1,6 +1,6 @@
-Name:           ros-kinetic-interactive_marker_tutorials
-Version:        0.10.3
-Release:        3%{?dist}
+Name:           ros-interactive_marker_tutorials
+Version:        kinetic.0.10.3
+Release:        4%{?dist}
 Summary:        ROS package interactive_marker_tutorials
 
 License:        BSD
@@ -32,6 +32,9 @@ Requires:       ros-kinetic-visualization_msgs
 %description
 The interactive_marker_tutorials package
 
+Provides:  ros-kinetic-interactive_marker_tutorials = %{version}-%{release}
+Obsoletes: ros-kinetic-interactive_marker_tutorials < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
@@ -44,6 +47,9 @@ Requires:       ros-kinetic-visualization_msgs-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-interactive_marker_tutorials-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-interactive_marker_tutorials-devel < %{version}-%{release}
 
 
 
@@ -130,6 +136,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.10.3-4
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.10.3-3
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.10.3-2

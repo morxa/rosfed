@@ -1,6 +1,6 @@
-Name:           ros-kinetic-smach_ros
-Version:        2.0.1
-Release:        4%{?dist}
+Name:           ros-smach_ros
+Version:        kinetic.2.0.1
+Release:        5%{?dist}
 Summary:        ROS package smach_ros
 
 License:        BSD
@@ -36,6 +36,9 @@ The smach_ros package contains extensions for the SMACH library to
 integrate it tightly with ROS. For example, SMACH-ROS can call ROS
 services, listen to ROS topics, and integrate with
 
+Provides:  ros-kinetic-smach_ros = %{version}-%{release}
+Obsoletes: ros-kinetic-smach_ros < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -53,6 +56,9 @@ Requires:       ros-kinetic-std_srvs-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-smach_ros-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-smach_ros-devel < %{version}-%{release}
 
 
 
@@ -139,6 +145,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 2.0.1-5
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.0.1-4
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.0.1-3

@@ -1,6 +1,6 @@
-Name:           ros-kinetic-rospy_tutorials
-Version:        0.7.1
-Release:        9%{?dist}
+Name:           ros-rospy_tutorials
+Version:        kinetic.0.7.1
+Release:        10%{?dist}
 Summary:        ROS package rospy_tutorials
 
 License:        BSD
@@ -33,6 +33,9 @@ This package attempts to show the features of ROS python API step-by-
 step, including using messages, servers, parameters, etc. These
 tutorials are compatible with the nodes in roscpp_tutorial.
 
+Provides:  ros-kinetic-rospy_tutorials = %{version}-%{release}
+Obsoletes: ros-kinetic-rospy_tutorials < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -46,6 +49,9 @@ Requires:       ros-kinetic-rospy-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-rospy_tutorials-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-rospy_tutorials-devel < %{version}-%{release}
 
 
 
@@ -132,6 +138,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.7.1-10
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.7.1-9
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.7.1-8

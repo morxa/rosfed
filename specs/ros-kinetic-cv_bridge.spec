@@ -1,6 +1,6 @@
-Name:           ros-kinetic-cv_bridge
-Version:        1.12.8
-Release:        4%{?dist}
+Name:           ros-cv_bridge
+Version:        kinetic.1.12.8
+Release:        5%{?dist}
 Summary:        ROS package cv_bridge
 
 License:        BSD
@@ -36,6 +36,9 @@ Requires:       ros-kinetic-rosconsole
 This contains CvBridge, which converts between ROS Image messages and
 OpenCV images.
 
+Provides:  ros-kinetic-cv_bridge = %{version}-%{release}
+Obsoletes: ros-kinetic-cv_bridge < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
@@ -53,6 +56,9 @@ Requires:       ros-kinetic-rostest-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-cv_bridge-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-cv_bridge-devel < %{version}-%{release}
 
 
 
@@ -139,6 +145,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.12.8-5
+- Remove ROS distro from package name
 * Thu Nov 08 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.8-4
 - Add missing BR boost-python2-devel
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.8-3

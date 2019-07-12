@@ -1,6 +1,6 @@
-Name:           ros-kinetic-diagnostics
-Version:        1.9.3
-Release:        3%{?dist}
+Name:           ros-diagnostics
+Version:        kinetic.1.9.3
+Release:        4%{?dist}
 Summary:        ROS package diagnostics
 
 License:        BSD
@@ -30,6 +30,9 @@ Requires:       ros-kinetic-self_test
 %description
 diagnostics
 
+Provides:  ros-kinetic-diagnostics = %{version}-%{release}
+Obsoletes: ros-kinetic-diagnostics < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -43,6 +46,9 @@ Requires:       ros-kinetic-self_test-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-diagnostics-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-diagnostics-devel < %{version}-%{release}
 
 
 
@@ -129,6 +135,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.9.3-4
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.3-3
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.9.3-2

@@ -1,6 +1,6 @@
-Name:           ros-kinetic-gencpp
-Version:        0.6.0
-Release:        5%{?dist}
+Name:           ros-gencpp
+Version:        kinetic.0.6.0
+Release:        6%{?dist}
 Summary:        ROS package gencpp
 
 License:        BSD
@@ -27,6 +27,9 @@ Requires:       ros-kinetic-genmsg
 %description
 C++ ROS message and service generators.
 
+Provides:  ros-kinetic-gencpp = %{version}-%{release}
+Obsoletes: ros-kinetic-gencpp < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -36,6 +39,9 @@ Requires:       ros-kinetic-genmsg-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-gencpp-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-gencpp-devel < %{version}-%{release}
 
 
 
@@ -122,6 +128,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.6.0-6
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.6.0-5
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.6.0-4

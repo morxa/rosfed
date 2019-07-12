@@ -1,6 +1,6 @@
-Name:           ros-kinetic-roswtf
-Version:        1.12.14
-Release:        1%{?dist}
+Name:           ros-roswtf
+Version:        kinetic.1.12.14
+Release:        2%{?dist}
 Summary:        ROS package roswtf
 
 License:        BSD
@@ -36,6 +36,9 @@ Requires:       ros-kinetic-rosservice
 roswtf is a tool for diagnosing issues with a running ROS system.
 Think of it as a FAQ implemented in code.
 
+Provides:  ros-kinetic-roswtf = %{version}-%{release}
+Obsoletes: ros-kinetic-roswtf < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -52,6 +55,9 @@ Requires:       ros-kinetic-rosservice-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-roswtf-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-roswtf-devel < %{version}-%{release}
 
 
 
@@ -138,6 +144,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.12.14-2
+- Remove ROS distro from package name
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.14-1
 - Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.13-5

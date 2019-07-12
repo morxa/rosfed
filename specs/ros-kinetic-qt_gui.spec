@@ -1,6 +1,6 @@
-Name:           ros-kinetic-qt_gui
-Version:        0.3.11
-Release:        1%{?dist}
+Name:           ros-qt_gui
+Version:        kinetic.0.3.11
+Release:        2%{?dist}
 Summary:        ROS package qt_gui
 
 License:        BSD
@@ -33,6 +33,9 @@ interface based on Qt. It is extensible with Python- and C++-based
 plugins (implemented in separate packages) which can contribute
 arbitrary widgets. It requires either PyQt or PySide bindings.
 
+Provides:  ros-kinetic-qt_gui = %{version}-%{release}
+Obsoletes: ros-kinetic-qt_gui < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -44,6 +47,9 @@ Requires:       ros-kinetic-python_qt_binding-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-qt_gui-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-qt_gui-devel < %{version}-%{release}
 
 
 
@@ -130,6 +136,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.3.11-2
+- Remove ROS distro from package name
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.3.11-1
 - Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.3.8-8

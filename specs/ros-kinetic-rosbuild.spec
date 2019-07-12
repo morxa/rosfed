@@ -1,6 +1,6 @@
-Name:           ros-kinetic-rosbuild
-Version:        1.14.6
-Release:        1%{?dist}
+Name:           ros-rosbuild
+Version:        kinetic.1.14.6
+Release:        2%{?dist}
 Summary:        ROS package rosbuild
 
 License:        BSD
@@ -30,6 +30,9 @@ Requires:       ros-kinetic-message_runtime
 rosbuild contains scripts for managing the CMake-based build system
 for ROS.
 
+Provides:  ros-kinetic-rosbuild = %{version}-%{release}
+Obsoletes: ros-kinetic-rosbuild < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -41,6 +44,9 @@ Requires:       ros-kinetic-message_runtime-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-rosbuild-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-rosbuild-devel < %{version}-%{release}
 
 
 
@@ -127,6 +133,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.14.6-2
+- Remove ROS distro from package name
 * Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.14.6-1
 - Update to latest release
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.14.4-1

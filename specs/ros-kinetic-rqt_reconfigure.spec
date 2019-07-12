@@ -1,6 +1,6 @@
-Name:           ros-kinetic-rqt_reconfigure
-Version:        0.4.10
-Release:        3%{?dist}
+Name:           ros-rqt_reconfigure
+Version:        kinetic.0.4.10
+Release:        4%{?dist}
 Summary:        ROS package rqt_reconfigure
 
 License:        BSD
@@ -34,6 +34,9 @@ This rqt plugin succeeds former dynamic_reconfigure's GUI
 (reconfigure_gui), and provides the way to view and edit the
 parameters that are accessible via dynamic_reconfigure.
 
+Provides:  ros-kinetic-rqt_reconfigure = %{version}-%{release}
+Obsoletes: ros-kinetic-rqt_reconfigure < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -49,6 +52,9 @@ Requires:       ros-kinetic-rqt_py_common-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-rqt_reconfigure-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-rqt_reconfigure-devel < %{version}-%{release}
 
 
 
@@ -135,6 +141,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.4.10-4
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.10-3
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.10-2

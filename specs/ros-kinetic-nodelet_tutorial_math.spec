@@ -1,6 +1,6 @@
-Name:           ros-kinetic-nodelet_tutorial_math
-Version:        0.1.10
-Release:        9%{?dist}
+Name:           ros-nodelet_tutorial_math
+Version:        kinetic.0.1.10
+Release:        10%{?dist}
 Summary:        ROS package nodelet_tutorial_math
 
 License:        BSD
@@ -34,6 +34,9 @@ Requires:       ros-kinetic-std_msgs
 %description
 Package for Nodelet tutorial.
 
+Provides:  ros-kinetic-nodelet_tutorial_math = %{version}-%{release}
+Obsoletes: ros-kinetic-nodelet_tutorial_math < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
@@ -49,6 +52,9 @@ Requires:       ros-kinetic-std_msgs-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-nodelet_tutorial_math-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-nodelet_tutorial_math-devel < %{version}-%{release}
 
 
 
@@ -135,6 +141,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.1.10-10
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.1.10-9
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.1.10-8

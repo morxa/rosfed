@@ -1,6 +1,6 @@
-Name:           ros-kinetic-kdl_parser
-Version:        1.12.11
-Release:        1%{?dist}
+Name:           ros-kdl_parser
+Version:        kinetic.1.12.11
+Release:        2%{?dist}
 Summary:        ROS package kdl_parser
 
 License:        BSD
@@ -38,6 +38,9 @@ Requires:       ros-kinetic-urdf
 The Kinematics and Dynamics Library (KDL) defines a tree structure to
 represent the kinematic and dynamic parameters of a robot mechanism.
 
+Provides:  ros-kinetic-kdl_parser = %{version}-%{release}
+Obsoletes: ros-kinetic-kdl_parser < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
@@ -56,6 +59,9 @@ Requires:       ros-kinetic-urdf-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-kdl_parser-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-kdl_parser-devel < %{version}-%{release}
 
 
 
@@ -142,6 +148,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.12.11-2
+- Remove ROS distro from package name
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.11-1
 - Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.10-9

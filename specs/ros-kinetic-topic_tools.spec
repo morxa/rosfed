@@ -1,6 +1,6 @@
-Name:           ros-kinetic-topic_tools
-Version:        1.12.14
-Release:        1%{?dist}
+Name:           ros-topic_tools
+Version:        kinetic.1.12.14
+Release:        2%{?dist}
 Summary:        ROS package topic_tools
 
 License:        BSD
@@ -43,6 +43,9 @@ actually know about the topics whose streams they are altering;
 instead, these tools deal with messages as generic binary blobs. This
 means they can be applied to any ROS topic.
 
+Provides:  ros-kinetic-topic_tools = %{version}-%{release}
+Obsoletes: ros-kinetic-topic_tools < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
@@ -61,6 +64,9 @@ Requires:       ros-kinetic-message_runtime-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-topic_tools-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-topic_tools-devel < %{version}-%{release}
 
 
 
@@ -147,6 +153,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.12.14-2
+- Remove ROS distro from package name
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.14-1
 - Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.13-5

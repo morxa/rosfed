@@ -1,6 +1,6 @@
-Name:           ros-kinetic-urdf_parser_plugin
-Version:        1.12.12
-Release:        8%{?dist}
+Name:           ros-urdf_parser_plugin
+Version:        kinetic.1.12.12
+Release:        9%{?dist}
 Summary:        ROS package urdf_parser_plugin
 
 License:        BSD
@@ -26,6 +26,9 @@ BuildRequires:  ros-kinetic-catkin-devel
 %description
 This package contains a C++ base class for URDF parsers.
 
+Provides:  ros-kinetic-urdf_parser_plugin = %{version}-%{release}
+Obsoletes: ros-kinetic-urdf_parser_plugin < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -35,6 +38,9 @@ Requires:       urdfdom-headers-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-urdf_parser_plugin-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-urdf_parser_plugin-devel < %{version}-%{release}
 
 
 
@@ -121,6 +127,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.12.12-9
+- Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.12-8
 - devel also requires: the devel package of each run dependency
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.12-7

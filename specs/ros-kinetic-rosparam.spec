@@ -1,6 +1,6 @@
-Name:           ros-kinetic-rosparam
-Version:        1.12.14
-Release:        1%{?dist}
+Name:           ros-rosparam
+Version:        kinetic.1.12.14
+Release:        2%{?dist}
 Summary:        ROS package rosparam
 
 License:        BSD
@@ -28,6 +28,9 @@ Requires:       ros-kinetic-rosgraph
 rosparam contains the rosparam command-line tool for getting and
 setting ROS Parameters on the
 
+Provides:  ros-kinetic-rosparam = %{version}-%{release}
+Obsoletes: ros-kinetic-rosparam < %{version}-%{release}
+
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
@@ -37,6 +40,9 @@ Requires:       ros-kinetic-rosgraph-devel
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
+
+Provides: ros-kinetic-rosparam-devel = %{version}-%{release}
+Obsoletes: ros-kinetic-rosparam-devel < %{version}-%{release}
 
 
 
@@ -123,6 +129,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.12.14-2
+- Remove ROS distro from package name
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.14-1
 - Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.12.13-5
