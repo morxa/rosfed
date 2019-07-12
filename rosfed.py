@@ -87,8 +87,8 @@ class RosPkg:
         self.compute_dependencies()
 
     def get_full_name(self):
-        """ Get the full name of the package, e.g., ros-kinetic-catkin. """
-        return 'ros-{}-{}'.format(self.rosdistro, self.name)
+        """ Get the full name of the package, e.g., ros-catkin. """
+        return 'ros-{}'.format(self.name)
 
     def compute_dependencies(self):
         for child in self.xml:
@@ -225,7 +225,7 @@ class RosPkg:
         self.release = release
 
     def get_version_release(self):
-        return '{}-{}'.format(self.get_version(), self.get_release())
+        return '{}.{}-{}'.format(self.rosdistro, self.get_version(), self.get_release())
 
     def is_noarch(self):
         return self.pkg_config.get('noarch', False)
@@ -284,6 +284,8 @@ def main():
                              'built, requires -r')
     parser.add_argument('--only-new', action='store_true',
                         help='Only build packages that are not in the repo yet')
+    parser.add_argument('--obsolete-distro-pkg', action='store_true',
+                        help='Obsolete distro-specific package, e.g., ros-kinetic-catkin')
     parser.add_argument('ros_pkg', nargs='+',
                         help='ROS package name')
     args = parser.parse_args()
@@ -300,6 +302,7 @@ def main():
     packages = generate_spec_files(
         args.ros_pkg, args.distro, args.bump_release, args.release_version,
         args.user_string, args.changelog, args.recursive, args.only_new,
+        args.obsolete_distro_pkg,
         args.destination)
     if args.build_order_file:
         order = get_build_order(packages)
@@ -349,7 +352,7 @@ def get_build_order(packages):
 
 def generate_spec_files(packages, distro, bump_release, release_version,
                         user_string, changelog_entry, recursive, only_new,
-                        destination):
+                        obsolete_distro_pkg, destination):
     """ Generate Spec files for the given list of packages. """
     jinja_env = jinja2.Environment(
         loader=jinja2.FileSystemLoader('templates'),
@@ -375,7 +378,7 @@ def generate_spec_files(packages, distro, bump_release, release_version,
         sources = ros_pkg.get_sources()
         version = ros_pkg.get_version()
         outfile = os.path.join(destination,
-                               'ros-{}-{}.spec'.format(distro, ros_pkg.name))
+                               'ros-{}.spec'.format(ros_pkg.name))
         ros_pkg.spec = outfile
         pkg_changelog_entry = changelog_entry
         if os.path.isfile(outfile):
@@ -387,7 +390,7 @@ def generate_spec_files(packages, distro, bump_release, release_version,
                 # Release is not specified and Spec file exists, use new version
                 # or bump release if it is the same version.
                 version_info = spec_utils.get_version_from_spec(outfile)
-                if version_info['version'] == version:
+                if version_info['version'] == '{}.{}'.format(distro, version):
                     pkg_release_version = int(version_info['release'])
                     if bump_release:
                         assert pkg_changelog_entry, \
@@ -425,6 +428,7 @@ def generate_spec_files(packages, distro, bump_release, release_version,
             changelog=changelog,
             changelog_entry=pkg_changelog_entry,
             noarch=ros_pkg.is_noarch(),
+            obsolete_distro_pkg=obsolete_distro_pkg,
             has_devel=ros_pkg.has_devel(),
             patches=ros_pkg.get_patches(),
             build_flags=ros_pkg.get_build_flags(),

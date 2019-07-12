@@ -1,6 +1,6 @@
 {% block info %}
-Name:           ros-{{ distro }}-{{ pkg_name }}
-Version:        {{ pkg_version }}
+Name:           ros-{{ pkg_name }}
+Version:        {{ distro }}.{{ pkg_version }}
 Release:        {{ pkg_release }}%{?dist}
 Summary:        ROS package {{ pkg_name }}
 
@@ -49,8 +49,14 @@ Requires:       ros-{{ distro }}-{{ dep }}
 {% endfor %}
 {% endblock %}
 
+Provides:  ros-{{ distro }}-{{ pkg_name }} = {{ pkg_version }}-{{ pkg_release }}
+{% if obsolete_distro_pkg %}
+Obsoletes: ros-{{ distro }}-{{ pkg_name }} < {{ pkg_version }}-{{ pkg_release }}
+{% endif %}
+
 {% if not has_devel %}
 Provides:       %{name}-devel{% if not noarch %}%{?_isa}{% endif %} = %{version}-%{release}
+Provides:       ros-{{ distro }}-{{ pkg_name }}-devel = {{ pkg_version }}-{{ pkg_release }}
 {% endif %}
 
 %description
@@ -85,6 +91,11 @@ Requires:       ros-{{ distro }}-{{ dep }}-devel
 {% endif %}
 {% endfor %}
 {% endblock %}
+
+Provides: ros-{{ distro }}-{{ pkg_name }}-devel = {{ pkg_version }}-{{ pkg_release }}
+{% if obsolete_distro_pkg %}
+Obsoletes: ros-{{ distro }}-{{ pkg_name }}-devel < {{ pkg_version }}-{{ pkg_release }}
+{% endif %}
 
 %description devel
 {% block description_devel %}
@@ -214,7 +225,7 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 %changelog
 {% if changelog_entry %}
-* {{ date }} {{ user_string }} - {{ pkg_version }}-{{ pkg_release }}
+* {{ date }} {{ user_string }} - {{ distro }}.{{ pkg_version }}-{{ pkg_release }}
 - {{ changelog_entry }}
 {% endif %}
 {{ changelog }}
