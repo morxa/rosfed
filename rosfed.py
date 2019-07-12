@@ -62,12 +62,14 @@ class RosPkg:
         self.run_deps = { 'ros': set(), 'system': set() }
         self.devel_deps = { 'ros': set(), 'system': set() }
         try:
-            common_config = yaml.load(open('cfg/common.yaml'))
+            common_config = yaml.load(open('cfg/common.yaml'),
+                                      Loader=yaml.FullLoader)
         except FileNotFoundError:
             common_config = {}
         try:
             pkg_specific_config = yaml.load(
-                open('cfg/{}.yaml'.format(self.name), 'r'))
+                open('cfg/{}.yaml'.format(self.name), 'r'),
+                Loader=yaml.FullLoader)
         except FileNotFoundError:
             pkg_specific_config = {}
         self.pkg_config = { **common_config, **pkg_specific_config }
