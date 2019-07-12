@@ -1,14 +1,15 @@
-Name:           ros-kinetic-gazebo_ros
-Version:        2.5.18
+Name:           ros-kinetic-ar_track_alvar_msgs
+Version:        0.7.1
 Release:        1%{?dist}
-Summary:        ROS package gazebo_ros
+Summary:        ROS package ar_track_alvar_msgs
 
-License:        Apache 2.0
-URL:            http://gazebosim.org/tutorials?cat=connect_ros
+License:        BSD
+URL:            http://ros.org/wiki/ar_track_alvar
 
-Source0:        https://github.com/ros-gbp/gazebo_ros_pkgs-release/archive/release/kinetic/gazebo_ros/2.5.18-1.tar.gz#/ros-kinetic-gazebo_ros-2.5.18-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ar_track_alvar-release/archive/release/kinetic/ar_track_alvar_msgs/0.7.1-0.tar.gz#/ros-kinetic-ar_track_alvar_msgs-0.7.1-source0.tar.gz
 
 
+BuildArch: noarch
 
 # common BRs
 BuildRequires:  boost-devel
@@ -17,60 +18,28 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python2-devel
 
-BuildRequires:  bullet-devel
-BuildRequires:  gazebo-devel
-BuildRequires:  libuuid-devel
-BuildRequires:  tinyxml-devel
 BuildRequires:  ros-kinetic-catkin-devel
-BuildRequires:  ros-kinetic-cmake_modules-devel
-BuildRequires:  ros-kinetic-dynamic_reconfigure-devel
-BuildRequires:  ros-kinetic-gazebo_dev-devel
-BuildRequires:  ros-kinetic-gazebo_msgs-devel
 BuildRequires:  ros-kinetic-geometry_msgs-devel
-BuildRequires:  ros-kinetic-roscpp-devel
-BuildRequires:  ros-kinetic-rosgraph_msgs-devel
-BuildRequires:  ros-kinetic-roslib-devel
+BuildRequires:  ros-kinetic-message_generation-devel
 BuildRequires:  ros-kinetic-std_msgs-devel
-BuildRequires:  ros-kinetic-std_srvs-devel
-BuildRequires:  ros-kinetic-tf-devel
-BuildRequires:  ros-kinetic-trajectory_msgs-devel
 
-Requires:       ros-kinetic-dynamic_reconfigure
-Requires:       ros-kinetic-gazebo_dev
-Requires:       ros-kinetic-gazebo_msgs
 Requires:       ros-kinetic-geometry_msgs
-Requires:       ros-kinetic-roscpp
-Requires:       ros-kinetic-rosgraph_msgs
-Requires:       ros-kinetic-roslib
+Requires:       ros-kinetic-message_runtime
 Requires:       ros-kinetic-std_msgs
-Requires:       ros-kinetic-std_srvs
-Requires:       ros-kinetic-tf
 
 
 %description
-Provides ROS plugins that offer message and service publishers for
-interfacing with
+This package is a ROS wrapper for Alvar, an open source AR tag
+tracking library.
 
 %package        devel
 Summary:        Development files for %{name}
-Requires:       %{name}%{?_isa} = %{version}-%{release}
+Requires:       %{name} = %{version}-%{release}
 Requires:       ros-kinetic-catkin-devel
-Requires:       bullet-devel
-Requires:       gazebo-devel
-Requires:       libuuid-devel
-Requires:       tinyxml-devel
-Requires:       ros-kinetic-cmake_modules-devel
-Requires:       ros-kinetic-dynamic_reconfigure-devel
-Requires:       ros-kinetic-gazebo_dev-devel
-Requires:       ros-kinetic-gazebo_msgs-devel
 Requires:       ros-kinetic-geometry_msgs-devel
-Requires:       ros-kinetic-roscpp-devel
-Requires:       ros-kinetic-rosgraph_msgs-devel
-Requires:       ros-kinetic-roslib-devel
+Requires:       ros-kinetic-message_generation-devel
 Requires:       ros-kinetic-std_msgs-devel
-Requires:       ros-kinetic-std_srvs-devel
-Requires:       ros-kinetic-tf-devel
-Requires:       ros-kinetic-trajectory_msgs-devel
+Requires:       ros-kinetic-message_runtime-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -108,7 +77,7 @@ catkin_make_isolated \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \
-  --pkg gazebo_ros
+  --pkg ar_track_alvar_msgs
 
 
 
@@ -161,15 +130,5 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
-* Thu Mar 14 2019 Till Hofmann <thofmann@fedoraproject.org> - 2.5.18-1
-- Update to latest release
-* Tue Jun 26 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.5.17-1
-- Update to latest release
-* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.5.14-4
-- devel also requires: the devel package of each run dependency
-* Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.5.14-3
-- devel also requires: the devel package of each run dependency
-* Tue May 15 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.5.14-2
-- Also add upstream's exec_depend as Requires:
-* Thu Jan 18 2018 Till Hofmann <thofmann@fedoraproject.org> - 2.5.14-1
+* Tue Apr 30 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.7.1-1
 - Initial package
