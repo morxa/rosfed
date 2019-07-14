@@ -190,7 +190,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 {% block post_install %}
 
 # replace unversioned python shebang
-for file in $(grep -rIl '^#!.*python\s*$') ; do
+for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
   sed -i.orig '/^#!.*python\s*$/ { s/python/python2/ }' $file
   touch -r $file.orig $file
   rm $file.orig
