@@ -315,20 +315,8 @@ def main():
         copr_builder = copr_build.CoprBuilder(copr_owner=args.copr_owner,
                                               copr_project=args.copr_project)
         for chroot in args.chroot:
-            if args.recursive:
-                copr_builder.build_tree(chroot, list(packages.values()),
-                                        args.only_new)
-            else:
-                builds = []
-                for pkg in packages.values():
-                    builds.append(
-                        copr_builder.build_spec(chroot=chroot, spec=pkg.spec))
-                copr_builder.wait_for_completion(builds)
-                for build in builds:
-                    build = build.get_self()
-                    if build.state != 'succeeded':
-                        cprint('Failed to build {}!'.format(build.package_name),
-                               'red')
+            tree = build_tree.Tree(list(packages.values()))
+            copr_builder.build_tree(chroot, tree, only_new=args.only_new)
 
 def get_build_order(packages):
     """ Get the order in which to build the given dictionary of packages.
