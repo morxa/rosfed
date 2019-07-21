@@ -143,6 +143,10 @@ class RosPkg:
                        break
                if not translated:
                    new_dependencies[from_type].add(from_pkg)
+        for dep in new_dependencies['system']:
+            new_dependencies['system'].remove(dep)
+            dep = re.sub('python2?((?=-)|$)', 'python3', dep)
+            new_dependencies['system'].add(dep)
         return new_dependencies
 
     def get_build_dependencies(self):
