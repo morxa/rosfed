@@ -1,0 +1,12 @@
+diff -ur ros_comm-release-release-melodic-message_filters-1.14.3-0/CMakeLists.txt ros_comm-release-release-melodic-message_filters-1.14.3-0.signals2/CMakeLists.txt
+--- ros_comm-release-release-melodic-message_filters-1.14.3-0/CMakeLists.txt	2018-08-06 19:38:23.000000000 +0200
++++ ros_comm-release-release-melodic-message_filters-1.14.3-0.signals2/CMakeLists.txt	2019-07-14 09:42:57.641364630 +0200
+@@ -13,7 +13,7 @@
+ )
+ catkin_python_setup()
+ 
+-find_package(Boost REQUIRED COMPONENTS signals thread)
++find_package(Boost REQUIRED COMPONENTS thread)
+ 
+ include_directories(include ${catkin_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS})
+ link_directories(${catkin_LIBRARY_DIRS})

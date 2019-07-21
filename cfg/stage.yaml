@@ -2,6 +2,3 @@ dependencies:
   build:
     system:
       - player-devel
-patches:
-  - ros-kinetic-stage.string-literal.patch
-  - ros-kinetic-stage.abs-ambiguity.patch

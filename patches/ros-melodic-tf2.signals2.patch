@@ -1,0 +1,12 @@
+diff -ur geometry2-release-release-melodic-tf2-0.6.5-0/CMakeLists.txt geometry2-release-release-melodic-tf2-0.6.5-0.signals2/CMakeLists.txt
+--- geometry2-release-release-melodic-tf2-0.6.5-0/CMakeLists.txt	2018-11-17 00:47:39.000000000 +0100
++++ geometry2-release-release-melodic-tf2-0.6.5-0.signals2/CMakeLists.txt	2019-07-14 09:16:37.153372722 +0200
+@@ -3,7 +3,7 @@
+ 
+ find_package(console_bridge REQUIRED)
+ find_package(catkin REQUIRED COMPONENTS geometry_msgs rostime tf2_msgs)
+-find_package(Boost REQUIRED COMPONENTS signals system thread)
++find_package(Boost REQUIRED COMPONENTS system thread)
+ 
+ catkin_package(
+    INCLUDE_DIRS include

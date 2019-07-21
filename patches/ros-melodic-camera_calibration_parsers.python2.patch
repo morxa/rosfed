@@ -1,0 +1,12 @@
+diff -ur image_common-release-release-melodic-camera_calibration_parsers-1.11.13-0/CMakeLists.txt image_common-release-release-melodic-camera_calibration_parsers-1.11.13-0.python2/CMakeLists.txt
+--- image_common-release-release-melodic-camera_calibration_parsers-1.11.13-0/CMakeLists.txt	2018-03-26 23:42:19.000000000 +0200
++++ image_common-release-release-melodic-camera_calibration_parsers-1.11.13-0.python2/CMakeLists.txt	2019-07-14 10:06:04.843798340 +0200
+@@ -5,7 +5,7 @@
+ 
+ find_package(PythonLibs REQUIRED)
+ if(PYTHONLIBS_VERSION_STRING VERSION_LESS 3)
+-  find_package(Boost REQUIRED COMPONENTS filesystem python)
++  find_package(Boost REQUIRED COMPONENTS filesystem python2)
+ else()
+   find_package(Boost REQUIRED COMPONENTS filesystem python3)
+ endif()

@@ -5,3 +5,5 @@ dependencies:
       - log4cxx-devel
       - console-bridge-devel
       - boost-python2-devel
+patches:
+  - ros-melodic-camera_calibration_parsers.python2.patch
