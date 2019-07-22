@@ -1,11 +1,5 @@
 {% extends "pkg.spec.j2" %}
 {% block pre_install %}
-# substitute shebang before install block because we run the local catkin script
-for f in $(find . -type f) ; do
-  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $f
-  touch -r $f.orig $f
-  rm $f.orig
-done
 {% endblock %}
 
 {% block install_catkin %}
