@@ -129,7 +129,7 @@ class RosPkg:
             translations = \
                 self.pkg_config['common']['dependencies'][dep_type]['translate']
         except KeyError:
-            return dependencies
+            translations = []
         new_dependencies = { 'ros': set(), 'system': set()}
         for from_type, from_pkgs in dependencies.items():
             for from_pkg in from_pkgs:
