@@ -19,18 +19,19 @@ class BuildState(enum.Enum):
     FAILED = enum.auto()
     SUCCEEDED = enum.auto()
     ABORTED = enum.auto()
+    SKIPPED = enum.auto()
 
 class Tree:
     def __init__(self, pkgs):
         self.nodes = {}
         for pkg in pkgs:
             self.add_pkg(pkg)
-        assert len(self.nodes) == len(pkgs), \
+        assert len([n for n in self.nodes.values() if n.is_initialized()]) == len(pkgs), \
                 'Unexpected number of nodes: {}, ' \
                 'expected: {}'.format(len(self.nodes), len(pkgs))
         for node in self.nodes.values():
-            assert node.is_initialized(), \
-                    'Node {} was not properly initialized.'.format(node.name)
+            if not node.is_initialized():
+                node.state = BuildState.SKIPPED
     def add_pkg_stub(self, pkg_name):
         """ Add a node that only contains the name to the tree.
 
@@ -68,7 +69,7 @@ class Tree:
                 continue
             is_leave = True
             for dep in node.dependencies:
-                if not dep.state == BuildState.SUCCEEDED:
+                if not dep.state in [BuildState.SUCCEEDED, BuildState.SKIPPED]:
                     is_leave = False
             if is_leave:
                 leaves.append(node)
@@ -77,7 +78,7 @@ class Tree:
     def is_built(self):
         """ Check if all packages have been built successfully. """
         for node in self.nodes.values():
-            if node.state != BuildState.SUCCEEDED:
+            if not node.state in [BuildState.SUCCEEDED, BuildState.SKIPPED]:
                 return False
         return True
     def is_failed(self):
