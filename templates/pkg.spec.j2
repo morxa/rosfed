@@ -144,7 +144,7 @@ source %{_libdir}/ros/setup.bash
 {% endblock %}
 
 # substitute shebang before install block because we run the local catkin script
-for f in $(find . -type f) ; do
+for f in $(grep -rl python .) ; do
   sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $f
   touch -r $f.orig $f
   rm $f.orig
