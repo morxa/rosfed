@@ -1,6 +1,6 @@
 Name:           ros-catkin
 Version:        melodic.0.7.17
-Release:        1%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package catkin
 
 License:        BSD
@@ -17,25 +17,25 @@ BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
-BuildRequires:  python2-devel
+BuildRequires:  python3-devel
 
 BuildRequires:  cmake
 BuildRequires:  gcc-c++
 BuildRequires:  gmock-devel
 BuildRequires:  gtest-devel
-BuildRequires:  python
-BuildRequires:  python-catkin_pkg
-BuildRequires:  python-empy
-BuildRequires:  python-mock
-BuildRequires:  python-nose
-BuildRequires:  python2-pyparsing
+BuildRequires:  python3
+BuildRequires:  python3-catkin_pkg
+BuildRequires:  python3-empy
+BuildRequires:  python3-mock
+BuildRequires:  python3-nose
+BuildRequires:  python3-pyparsing
 
-Requires:       python
-Requires:       python-catkin_pkg
-Requires:       python2-pyparsing
+Requires:       python3
+Requires:       python3-catkin_pkg
+Requires:       python3-pyparsing
 
-Provides:  ros-melodic-catkin = 0.7.17-1
-Obsoletes: ros-melodic-catkin < 0.7.17-1
+Provides:  ros-melodic-catkin = 0.7.17-3
+Obsoletes: ros-melodic-catkin < 0.7.17-3
 
 
 %description
@@ -47,16 +47,16 @@ Requires:       %{name} = %{version}-%{release}
 Requires:       cmake
 Requires:       gmock-devel
 Requires:       gtest-devel
-Requires:       python-empy
-Requires:       python-nose
+Requires:       python3-empy
+Requires:       python3-nose
 Requires:       gcc-c++
-Requires:       python
-Requires:       python-catkin_pkg
-Requires:       python-mock
-Requires:       python2-pyparsing
+Requires:       python3
+Requires:       python3-catkin_pkg
+Requires:       python3-mock
+Requires:       python3-pyparsing
 
-Provides: ros-melodic-catkin-devel = 0.7.17-1
-Obsoletes: ros-melodic-catkin-devel < 0.7.17-1
+Provides: ros-melodic-catkin-devel = 0.7.17-3
+Obsoletes: ros-melodic-catkin-devel < 0.7.17-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -84,10 +84,13 @@ FFLAGS="${FFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FFLAGS ; \
 FCFLAGS="${FCFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FCFLAGS ; \
 %{?__global_ldflags:LDFLAGS="${LDFLAGS:-%__global_ldflags}" ; export LDFLAGS ;} \
 
+
 # substitute shebang before install block because we run the local catkin script
-sed -i.orig '/^#!.*python\s*$/ { s/python/python2/ }' ./bin/catkin_make_isolated
-touch -r ./bin/catkin_make_isolated.orig ./bin/catkin_make_isolated
-rm ./bin/catkin_make_isolated.orig
+for f in $(grep -rl python .) ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $f
+  touch -r $f.orig $f
+  rm $f.orig
+done
 
 DESTDIR=%{buildroot} ; export DESTDIR
 
@@ -123,7 +126,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 # replace unversioned python shebang
 for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
-  sed -i.orig '/^#!.*python\s*$/ { s/python/python2/ }' $file
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
   touch -r $file.orig $file
   rm $file.orig
 done
@@ -151,6 +154,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.7.17-3
+- Remove obsolete python2 dependencies
+* Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.7.17-2
+- Switch to python3
 * Sat Jul 13 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.7.17-1
 - Update to ROS melodic release
 * Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.7.18-2

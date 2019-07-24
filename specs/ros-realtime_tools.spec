@@ -1,12 +1,12 @@
 Name:           ros-realtime_tools
-Version:        melodic.1.13.1
+Version:        melodic.1.14.0
 Release:        1%{?dist}
 Summary:        ROS package realtime_tools
 
 License:        BSD
 URL:            http://ros.org/wiki/realtime_tools
 
-Source0:        https://github.com/ros-gbp/realtime_tools-release/archive/release/melodic/realtime_tools/1.13.1-0.tar.gz#/ros-melodic-realtime_tools-1.13.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/realtime_tools-release/archive/release/melodic/realtime_tools/1.14.0-1.tar.gz#/ros-melodic-realtime_tools-1.14.0-source0.tar.gz
 
 
 
@@ -15,39 +15,35 @@ BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
-BuildRequires:  python2-devel
+BuildRequires:  python3-devel
 
+BuildRequires:  ros-melodic-actionlib-devel
 BuildRequires:  ros-melodic-catkin-devel
 BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-rospy-devel
+BuildRequires:  ros-melodic-rostest-devel
+BuildRequires:  ros-melodic-rosunit-devel
 
 Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-rospy
 
-Provides:  ros-melodic-realtime_tools = 1.13.1-1
-Obsoletes: ros-melodic-realtime_tools < 1.13.1-1
+Provides:  ros-melodic-realtime_tools = 1.14.0-1
+Obsoletes: ros-melodic-realtime_tools < 1.14.0-1
 
 
 %description
 Contains a set of tools that can be used from a hard realtime thread,
-without breaking the realtime behavior. The tools currently only
-provides the realtime publisher, which makes it possible to publish
-messages to a ROS topic from a realtime thread. We plan to add a basic
-implementation of a realtime buffer, to make it possible to get data
-from a (non-realtime) topic callback into the realtime loop. Once the
-lockfree buffer is created, the realtime publisher will start using
-it, which will result in major API changes for the realtime publisher
-(removal of all lock methods).
+without breaking the realtime behavior.
 
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
+Requires:       ros-melodic-actionlib-devel
 Requires:       ros-melodic-catkin-devel
 Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-rospy-devel
+Requires:       ros-melodic-rostest-devel
+Requires:       ros-melodic-rosunit-devel
 
-Provides: ros-melodic-realtime_tools-devel = 1.13.1-1
-Obsoletes: ros-melodic-realtime_tools-devel < 1.13.1-1
+Provides: ros-melodic-realtime_tools-devel = 1.14.0-1
+Obsoletes: ros-melodic-realtime_tools-devel < 1.14.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -76,12 +72,21 @@ FCFLAGS="${FCFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FCFLAGS ; \
 
 source %{_libdir}/ros/setup.bash
 
+# substitute shebang before install block because we run the local catkin script
+for f in $(grep -rl python .) ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $f
+  touch -r $f.orig $f
+  rm $f.orig
+done
+
 DESTDIR=%{buildroot} ; export DESTDIR
 
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
   -DCATKIN_ENABLE_TESTING=OFF \
+  -DPYTHON_VERSION=%{python3_version} \
+  -DPYTHON_VERSION_NODOTS=%{python3_version_nodots} \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \
@@ -110,7 +115,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 # replace unversioned python shebang
 for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
-  sed -i.orig '/^#!.*python\s*$/ { s/python/python2/ }' $file
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
   touch -r $file.orig $file
   rm $file.orig
 done
@@ -138,6 +143,12 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Jul 23 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.0-1
+- Update to latest release
+* Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.1-3
+- Remove obsolete python2 dependencies
+* Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.1-2
+- Switch to python3
 * Sat Jul 13 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.1-1
 - Update to ROS melodic release
 * Thu Mar 14 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.11.1-1

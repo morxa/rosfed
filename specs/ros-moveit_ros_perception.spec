@@ -1,12 +1,12 @@
-Name:           ros-kinetic-moveit_ros_perception
-Version:        0.9.15
+Name:           ros-moveit_ros_perception
+Version:        melodic.1.0.2
 Release:        1%{?dist}
 Summary:        ROS package moveit_ros_perception
 
 License:        BSD
 URL:            http://moveit.ros.org
 
-Source0:        https://github.com/ros-gbp/moveit-release/archive/release/kinetic/moveit_ros_perception/0.9.15-0.tar.gz#/ros-kinetic-moveit_ros_perception-0.9.15-source0.tar.gz
+Source0:        https://github.com/ros-gbp/moveit-release/archive/release/melodic/moveit_ros_perception/1.0.2-1.tar.gz#/ros-melodic-moveit_ros_perception-1.0.2-source0.tar.gz
 
 
 
@@ -15,7 +15,7 @@ BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
-BuildRequires:  python2-devel
+BuildRequires:  python3-devel
 
 BuildRequires:  eigen3-devel
 BuildRequires:  fcl-devel
@@ -27,34 +27,44 @@ BuildRequires:  poco-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
 BuildRequires:  urdfdom-devel
-BuildRequires:  ros-kinetic-catkin-devel
-BuildRequires:  ros-kinetic-cv_bridge-devel
-BuildRequires:  ros-kinetic-image_transport-devel
-BuildRequires:  ros-kinetic-message_filters-devel
-BuildRequires:  ros-kinetic-moveit_core-devel
-BuildRequires:  ros-kinetic-moveit_msgs-devel
-BuildRequires:  ros-kinetic-octomap-devel
-BuildRequires:  ros-kinetic-pluginlib-devel
-BuildRequires:  ros-kinetic-rosconsole-devel
-BuildRequires:  ros-kinetic-roscpp-devel
-BuildRequires:  ros-kinetic-sensor_msgs-devel
-BuildRequires:  ros-kinetic-tf-devel
-BuildRequires:  ros-kinetic-tf_conversions-devel
-BuildRequires:  ros-kinetic-urdf-devel
+BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-melodic-cv_bridge-devel
+BuildRequires:  ros-melodic-image_transport-devel
+BuildRequires:  ros-melodic-message_filters-devel
+BuildRequires:  ros-melodic-moveit_core-devel
+BuildRequires:  ros-melodic-moveit_msgs-devel
+BuildRequires:  ros-melodic-object_recognition_msgs-devel
+BuildRequires:  ros-melodic-octomap-devel
+BuildRequires:  ros-melodic-pluginlib-devel
+BuildRequires:  ros-melodic-rosconsole-devel
+BuildRequires:  ros-melodic-roscpp-devel
+BuildRequires:  ros-melodic-rosunit-devel
+BuildRequires:  ros-melodic-sensor_msgs-devel
+BuildRequires:  ros-melodic-tf2-devel
+BuildRequires:  ros-melodic-tf2_eigen-devel
+BuildRequires:  ros-melodic-tf2_geometry_msgs-devel
+BuildRequires:  ros-melodic-tf2_ros-devel
+BuildRequires:  ros-melodic-urdf-devel
 
-Requires:       ros-kinetic-cv_bridge
-Requires:       ros-kinetic-image_transport
-Requires:       ros-kinetic-message_filters
-Requires:       ros-kinetic-moveit_core
-Requires:       ros-kinetic-moveit_msgs
-Requires:       ros-kinetic-octomap
-Requires:       ros-kinetic-pluginlib
-Requires:       ros-kinetic-rosconsole
-Requires:       ros-kinetic-roscpp
-Requires:       ros-kinetic-sensor_msgs
-Requires:       ros-kinetic-tf
-Requires:       ros-kinetic-tf_conversions
-Requires:       ros-kinetic-urdf
+Requires:       ros-melodic-cv_bridge
+Requires:       ros-melodic-image_transport
+Requires:       ros-melodic-message_filters
+Requires:       ros-melodic-moveit_core
+Requires:       ros-melodic-moveit_msgs
+Requires:       ros-melodic-object_recognition_msgs
+Requires:       ros-melodic-octomap
+Requires:       ros-melodic-pluginlib
+Requires:       ros-melodic-rosconsole
+Requires:       ros-melodic-roscpp
+Requires:       ros-melodic-sensor_msgs
+Requires:       ros-melodic-tf2
+Requires:       ros-melodic-tf2_eigen
+Requires:       ros-melodic-tf2_geometry_msgs
+Requires:       ros-melodic-tf2_ros
+Requires:       ros-melodic-urdf
+
+Provides:  ros-melodic-moveit_ros_perception = 1.0.2-1
+Obsoletes: ros-melodic-moveit_ros_perception < 1.0.2-1
 
 
 %description
@@ -63,7 +73,7 @@ Components of MoveIt! connecting to perception
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-kinetic-catkin-devel
+Requires:       ros-melodic-catkin-devel
 Requires:       eigen3-devel
 Requires:       fcl-devel
 Requires:       freeglut-devel
@@ -74,19 +84,26 @@ Requires:       poco-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
 Requires:       urdfdom-devel
-Requires:       ros-kinetic-cv_bridge-devel
-Requires:       ros-kinetic-image_transport-devel
-Requires:       ros-kinetic-message_filters-devel
-Requires:       ros-kinetic-moveit_core-devel
-Requires:       ros-kinetic-moveit_msgs-devel
-Requires:       ros-kinetic-octomap-devel
-Requires:       ros-kinetic-pluginlib-devel
-Requires:       ros-kinetic-rosconsole-devel
-Requires:       ros-kinetic-roscpp-devel
-Requires:       ros-kinetic-sensor_msgs-devel
-Requires:       ros-kinetic-tf-devel
-Requires:       ros-kinetic-tf_conversions-devel
-Requires:       ros-kinetic-urdf-devel
+Requires:       ros-melodic-cv_bridge-devel
+Requires:       ros-melodic-image_transport-devel
+Requires:       ros-melodic-message_filters-devel
+Requires:       ros-melodic-moveit_core-devel
+Requires:       ros-melodic-moveit_msgs-devel
+Requires:       ros-melodic-object_recognition_msgs-devel
+Requires:       ros-melodic-octomap-devel
+Requires:       ros-melodic-pluginlib-devel
+Requires:       ros-melodic-rosconsole-devel
+Requires:       ros-melodic-roscpp-devel
+Requires:       ros-melodic-rosunit-devel
+Requires:       ros-melodic-sensor_msgs-devel
+Requires:       ros-melodic-tf2-devel
+Requires:       ros-melodic-tf2_eigen-devel
+Requires:       ros-melodic-tf2_geometry_msgs-devel
+Requires:       ros-melodic-tf2_ros-devel
+Requires:       ros-melodic-urdf-devel
+
+Provides: ros-melodic-moveit_ros_perception-devel = 1.0.2-1
+Obsoletes: ros-melodic-moveit_ros_perception-devel < 1.0.2-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -115,12 +132,21 @@ FCFLAGS="${FCFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FCFLAGS ; \
 
 source %{_libdir}/ros/setup.bash
 
+# substitute shebang before install block because we run the local catkin script
+for f in $(grep -rl python .) ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $f
+  touch -r $f.orig $f
+  rm $f.orig
+done
+
 DESTDIR=%{buildroot} ; export DESTDIR
 
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
   -DCATKIN_ENABLE_TESTING=OFF \
+  -DPYTHON_VERSION=%{python3_version} \
+  -DPYTHON_VERSION_NODOTS=%{python3_version_nodots} \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \
@@ -148,8 +174,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 # replace unversioned python shebang
-for file in $(grep -rIl '^#!.*python\s*$') ; do
-  sed -i.orig '/^#!.*python\s*$/ { s/python/python2/ }' $file
+for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
   touch -r $file.orig $file
   rm $file.orig
 done
@@ -177,6 +203,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Jul 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.0.2-1
+- Update to latest release
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.9.15-1
 - Update to latest release
 * Wed May 30 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.9.12-1

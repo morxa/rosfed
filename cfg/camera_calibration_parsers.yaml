@@ -1,9 +1,9 @@
 dependencies:
   build:
     system:
-      - python2-devel
+      - python3-devel
       - log4cxx-devel
       - console-bridge-devel
-      - boost-python2-devel
+      - boost-python3-devel
 patches:
-  - ros-melodic-camera_calibration_parsers.python2.patch
+  - ros-camera_calibration_parsers.python.patch

@@ -15,7 +15,14 @@ common:
             pkg: PyOpenGL
           to:
             type: system
-            pkg: python2dist(pyopengl)
+            pkg: python3dist(pyopengl)
+        - python-opencv:
+          from:
+            type: system
+            pkg: opencv-python
+          to:
+            type: system
+            pkg: python3-opencv
 
     run:
       translate:
@@ -26,13 +33,20 @@ common:
           to:
             type: system
             pkg: opencv
+        - python-opencv:
+          from:
+            type: system
+            pkg: opencv-python
+          to:
+            type: system
+            pkg: python3-opencv
         - pyopengl:
           from:
             type: system
             pkg: PyOpenGL
           to:
             type: system
-            pkg: python2dist(pyopengl)
+            pkg: python3dist(pyopengl)
     distro_names:
       gazebo9: gazebo
       gazebo: gazebo
@@ -43,4 +57,6 @@ common:
       libgpgme-dev: gpgme-devel
       python-gnupg: python2-gnupg
       python-imaging: python-pillow
-      python-wxtools: python2-wxpython
+      python-wxtools: python3-wxpython4
+      python-gnupg: python3-gnupg
+      libgpgme-dev: gpgme-devel

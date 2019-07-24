@@ -1,12 +1,12 @@
-Name:           ros-kinetic-srdfdom
-Version:        0.4.2
+Name:           ros-srdfdom
+Version:        melodic.0.5.1
 Release:        1%{?dist}
 Summary:        ROS package srdfdom
 
 License:        BSD
 URL:            http://ros.org/wiki/srdfdom
 
-Source0:        https://github.com/ros-gbp/srdfdom-release/archive/release/kinetic/srdfdom/0.4.2-1.tar.gz#/ros-kinetic-srdfdom-0.4.2-source0.tar.gz
+Source0:        https://github.com/ros-gbp/srdfdom-release/archive/release/melodic/srdfdom/0.5.1-0.tar.gz#/ros-melodic-srdfdom-0.5.1-source0.tar.gz
 
 
 
@@ -15,20 +15,23 @@ BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
-BuildRequires:  python2-devel
+BuildRequires:  python3-devel
 
 BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  urdfdom-devel
 BuildRequires:  urdfdom-headers-devel
-BuildRequires:  ros-kinetic-catkin-devel
-BuildRequires:  ros-kinetic-cmake_modules-devel
-BuildRequires:  ros-kinetic-rostest-devel
-BuildRequires:  ros-kinetic-urdf-devel
-BuildRequires:  ros-kinetic-urdfdom_py-devel
+BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-melodic-cmake_modules-devel
+BuildRequires:  ros-melodic-rostest-devel
+BuildRequires:  ros-melodic-urdf-devel
+BuildRequires:  ros-melodic-urdfdom_py-devel
 
-Requires:       ros-kinetic-urdfdom_py
+Requires:       ros-melodic-urdfdom_py
+
+Provides:  ros-melodic-srdfdom = 0.5.1-1
+Obsoletes: ros-melodic-srdfdom < 0.5.1-1
 
 
 %description
@@ -37,16 +40,19 @@ Parser for Semantic Robot Description Format (SRDF).
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-kinetic-catkin-devel
+Requires:       ros-melodic-catkin-devel
 Requires:       boost-devel
 Requires:       console-bridge-devel
 Requires:       tinyxml-devel
 Requires:       urdfdom-devel
 Requires:       urdfdom-headers-devel
-Requires:       ros-kinetic-cmake_modules-devel
-Requires:       ros-kinetic-rostest-devel
-Requires:       ros-kinetic-urdf-devel
-Requires:       ros-kinetic-urdfdom_py-devel
+Requires:       ros-melodic-cmake_modules-devel
+Requires:       ros-melodic-rostest-devel
+Requires:       ros-melodic-urdf-devel
+Requires:       ros-melodic-urdfdom_py-devel
+
+Provides: ros-melodic-srdfdom-devel = 0.5.1-1
+Obsoletes: ros-melodic-srdfdom-devel < 0.5.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -75,12 +81,21 @@ FCFLAGS="${FCFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FCFLAGS ; \
 
 source %{_libdir}/ros/setup.bash
 
+# substitute shebang before install block because we run the local catkin script
+for f in $(grep -rl python .) ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $f
+  touch -r $f.orig $f
+  rm $f.orig
+done
+
 DESTDIR=%{buildroot} ; export DESTDIR
 
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
   -DCATKIN_ENABLE_TESTING=OFF \
+  -DPYTHON_VERSION=%{python3_version} \
+  -DPYTHON_VERSION_NODOTS=%{python3_version_nodots} \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \
@@ -108,8 +123,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 # replace unversioned python shebang
-for file in $(grep -rIl '^#!.*python\s*$') ; do
-  sed -i.orig '/^#!.*python\s*$/ { s/python/python2/ }' $file
+for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
   touch -r $file.orig $file
   rm $file.orig
 done
@@ -137,5 +152,7 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Jul 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.5.1-1
+- Update to latest release
 * Thu Jan 18 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.2-1
 - Initial package

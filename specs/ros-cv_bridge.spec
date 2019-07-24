@@ -1,6 +1,6 @@
 Name:           ros-cv_bridge
 Version:        melodic.1.13.0
-Release:        1%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package cv_bridge
 
 License:        BSD
@@ -8,6 +8,7 @@ URL:            http://www.ros.org/wiki/cv_bridge
 
 Source0:        https://github.com/ros-gbp/vision_opencv-release/archive/release/melodic/cv_bridge/1.13.0-0.tar.gz#/ros-melodic-cv_bridge-1.13.0-source0.tar.gz
 
+Patch0: ros-cv_bridge.python.patch
 
 
 # common BRs
@@ -15,25 +16,25 @@ BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
-BuildRequires:  python2-devel
+BuildRequires:  python3-devel
 
 BuildRequires:  boost-devel
-BuildRequires:  boost-python2-devel
+BuildRequires:  boost-python3-devel
 BuildRequires:  numpy
 BuildRequires:  opencv-devel
-BuildRequires:  opencv-python
-BuildRequires:  python-devel
+BuildRequires:  python3-devel
+BuildRequires:  python3-opencv
 BuildRequires:  ros-melodic-catkin-devel
 BuildRequires:  ros-melodic-rosconsole-devel
 BuildRequires:  ros-melodic-roscpp_serialization-devel
 BuildRequires:  ros-melodic-rostest-devel
 BuildRequires:  ros-melodic-sensor_msgs-devel
 
-Requires:       opencv-python
+Requires:       python3-opencv
 Requires:       ros-melodic-rosconsole
 
-Provides:  ros-melodic-cv_bridge = 1.13.0-1
-Obsoletes: ros-melodic-cv_bridge < 1.13.0-1
+Provides:  ros-melodic-cv_bridge = 1.13.0-3
+Obsoletes: ros-melodic-cv_bridge < 1.13.0-3
 
 
 %description
@@ -47,16 +48,16 @@ Requires:       opencv-devel
 Requires:       ros-melodic-catkin-devel
 Requires:       ros-melodic-sensor_msgs-devel
 Requires:       boost-devel
-Requires:       boost-python2-devel
+Requires:       boost-python3-devel
 Requires:       numpy
-Requires:       opencv-python
-Requires:       python-devel
+Requires:       python3-devel
+Requires:       python3-opencv
 Requires:       ros-melodic-rosconsole-devel
 Requires:       ros-melodic-roscpp_serialization-devel
 Requires:       ros-melodic-rostest-devel
 
-Provides: ros-melodic-cv_bridge-devel = 1.13.0-1
-Obsoletes: ros-melodic-cv_bridge-devel < 1.13.0-1
+Provides: ros-melodic-cv_bridge-devel = 1.13.0-3
+Obsoletes: ros-melodic-cv_bridge-devel < 1.13.0-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -68,6 +69,7 @@ applications that use %{name}.
 
 %setup -c -T
 tar --strip-components=1 -xf %{SOURCE0}
+%patch0 -p1
 
 %build
 # nothing to do here
@@ -85,12 +87,21 @@ FCFLAGS="${FCFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FCFLAGS ; \
 
 source %{_libdir}/ros/setup.bash
 
+# substitute shebang before install block because we run the local catkin script
+for f in $(grep -rl python .) ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $f
+  touch -r $f.orig $f
+  rm $f.orig
+done
+
 DESTDIR=%{buildroot} ; export DESTDIR
 
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
   -DCATKIN_ENABLE_TESTING=OFF \
+  -DPYTHON_VERSION=%{python3_version} \
+  -DPYTHON_VERSION_NODOTS=%{python3_version_nodots} \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \
@@ -119,7 +130,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 # replace unversioned python shebang
 for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
-  sed -i.orig '/^#!.*python\s*$/ { s/python/python2/ }' $file
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
   touch -r $file.orig $file
   rm $file.orig
 done
@@ -147,6 +158,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.0-3
+- Remove obsolete python2 dependencies
+* Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.0-2
+- Switch to python3
 * Sat Jul 13 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.0-1
 - Update to ROS melodic release
 * Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.12.8-5

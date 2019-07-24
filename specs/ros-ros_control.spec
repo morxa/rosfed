@@ -1,12 +1,12 @@
-Name:           ros-kinetic-ros_control
-Version:        0.13.3
+Name:           ros-ros_control
+Version:        melodic.0.15.1
 Release:        1%{?dist}
 Summary:        ROS package ros_control
 
 License:        BSD
 URL:            http://ros.org/wiki/ros_control
 
-Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/kinetic/ros_control/0.13.3-0.tar.gz#/ros-kinetic-ros_control-0.13.3-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/melodic/ros_control/0.15.1-0.tar.gz#/ros-melodic-ros_control-0.15.1-source0.tar.gz
 
 
 BuildArch: noarch
@@ -16,20 +16,23 @@ BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
-BuildRequires:  python2-devel
+BuildRequires:  python3-devel
 
-BuildRequires:  ros-kinetic-catkin-devel
+BuildRequires:  ros-melodic-catkin-devel
 
-Requires:       ros-kinetic-combined_robot_hw
-Requires:       ros-kinetic-combined_robot_hw_tests
-Requires:       ros-kinetic-controller_interface
-Requires:       ros-kinetic-controller_manager
-Requires:       ros-kinetic-controller_manager_msgs
-Requires:       ros-kinetic-controller_manager_tests
-Requires:       ros-kinetic-hardware_interface
-Requires:       ros-kinetic-joint_limits_interface
-Requires:       ros-kinetic-realtime_tools
-Requires:       ros-kinetic-transmission_interface
+Requires:       ros-melodic-combined_robot_hw
+Requires:       ros-melodic-combined_robot_hw_tests
+Requires:       ros-melodic-controller_interface
+Requires:       ros-melodic-controller_manager
+Requires:       ros-melodic-controller_manager_msgs
+Requires:       ros-melodic-controller_manager_tests
+Requires:       ros-melodic-hardware_interface
+Requires:       ros-melodic-joint_limits_interface
+Requires:       ros-melodic-realtime_tools
+Requires:       ros-melodic-transmission_interface
+
+Provides:  ros-melodic-ros_control = 0.15.1-1
+Obsoletes: ros-melodic-ros_control < 0.15.1-1
 
 
 %description
@@ -39,17 +42,20 @@ managers, transmissions and hardware_interfaces.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-kinetic-catkin-devel
-Requires:       ros-kinetic-combined_robot_hw-devel
-Requires:       ros-kinetic-combined_robot_hw_tests-devel
-Requires:       ros-kinetic-controller_interface-devel
-Requires:       ros-kinetic-controller_manager-devel
-Requires:       ros-kinetic-controller_manager_msgs-devel
-Requires:       ros-kinetic-controller_manager_tests-devel
-Requires:       ros-kinetic-hardware_interface-devel
-Requires:       ros-kinetic-joint_limits_interface-devel
-Requires:       ros-kinetic-realtime_tools-devel
-Requires:       ros-kinetic-transmission_interface-devel
+Requires:       ros-melodic-catkin-devel
+Requires:       ros-melodic-combined_robot_hw-devel
+Requires:       ros-melodic-combined_robot_hw_tests-devel
+Requires:       ros-melodic-controller_interface-devel
+Requires:       ros-melodic-controller_manager-devel
+Requires:       ros-melodic-controller_manager_msgs-devel
+Requires:       ros-melodic-controller_manager_tests-devel
+Requires:       ros-melodic-hardware_interface-devel
+Requires:       ros-melodic-joint_limits_interface-devel
+Requires:       ros-melodic-realtime_tools-devel
+Requires:       ros-melodic-transmission_interface-devel
+
+Provides: ros-melodic-ros_control-devel = 0.15.1-1
+Obsoletes: ros-melodic-ros_control-devel < 0.15.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -78,12 +84,21 @@ FCFLAGS="${FCFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FCFLAGS ; \
 
 source %{_libdir}/ros/setup.bash
 
+# substitute shebang before install block because we run the local catkin script
+for f in $(grep -rl python .) ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $f
+  touch -r $f.orig $f
+  rm $f.orig
+done
+
 DESTDIR=%{buildroot} ; export DESTDIR
 
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
   -DCATKIN_ENABLE_TESTING=OFF \
+  -DPYTHON_VERSION=%{python3_version} \
+  -DPYTHON_VERSION_NODOTS=%{python3_version_nodots} \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \
@@ -111,8 +126,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 # replace unversioned python shebang
-for file in $(grep -rIl '^#!.*python\s*$') ; do
-  sed -i.orig '/^#!.*python\s*$/ { s/python/python2/ }' $file
+for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
   touch -r $file.orig $file
   rm $file.orig
 done
@@ -140,6 +155,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Jul 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.15.1-1
+- Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.13.3-1
 - Update to latest release
 * Thu Jan 18 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.13.0-1

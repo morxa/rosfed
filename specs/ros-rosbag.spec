@@ -1,6 +1,6 @@
 Name:           ros-rosbag
 Version:        melodic.1.14.3
-Release:        1%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package rosbag
 
 License:        BSD
@@ -15,12 +15,12 @@ BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
-BuildRequires:  python2-devel
+BuildRequires:  python3-devel
 
 BuildRequires:  boost-devel
 BuildRequires:  bzip2-devel
 BuildRequires:  lz4-devel
-BuildRequires:  python-pillow
+BuildRequires:  python3-pillow
 BuildRequires:  ros-melodic-catkin-devel
 BuildRequires:  ros-melodic-cpp_common-devel
 BuildRequires:  ros-melodic-rosbag_storage-devel
@@ -31,9 +31,9 @@ BuildRequires:  ros-melodic-std_srvs-devel
 BuildRequires:  ros-melodic-topic_tools-devel
 BuildRequires:  ros-melodic-xmlrpcpp-devel
 
-Requires:       python-crypto
-Requires:       python-rospkg
-Requires:       python2-gnupg
+Requires:       python3-crypto
+Requires:       python3-gnupg
+Requires:       python3-rospkg
 Requires:       ros-melodic-genmsg
 Requires:       ros-melodic-genpy
 Requires:       ros-melodic-rosbag_storage
@@ -45,8 +45,8 @@ Requires:       ros-melodic-std_srvs
 Requires:       ros-melodic-topic_tools
 Requires:       ros-melodic-xmlrpcpp
 
-Provides:  ros-melodic-rosbag = 1.14.3-1
-Obsoletes: ros-melodic-rosbag < 1.14.3-1
+Provides:  ros-melodic-rosbag = 1.14.3-3
+Obsoletes: ros-melodic-rosbag < 1.14.3-3
 
 
 %description
@@ -61,7 +61,7 @@ Requires:       ros-melodic-catkin-devel
 Requires:       boost-devel
 Requires:       bzip2-devel
 Requires:       lz4-devel
-Requires:       python-pillow
+Requires:       python3-pillow
 Requires:       ros-melodic-cpp_common-devel
 Requires:       ros-melodic-rosbag_storage-devel
 Requires:       ros-melodic-rosconsole-devel
@@ -75,8 +75,8 @@ Requires:       ros-melodic-genpy-devel
 Requires:       ros-melodic-roslib-devel
 Requires:       ros-melodic-rospy-devel
 
-Provides: ros-melodic-rosbag-devel = 1.14.3-1
-Obsoletes: ros-melodic-rosbag-devel < 1.14.3-1
+Provides: ros-melodic-rosbag-devel = 1.14.3-3
+Obsoletes: ros-melodic-rosbag-devel < 1.14.3-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -105,12 +105,21 @@ FCFLAGS="${FCFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FCFLAGS ; \
 
 source %{_libdir}/ros/setup.bash
 
+# substitute shebang before install block because we run the local catkin script
+for f in $(grep -rl python .) ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $f
+  touch -r $f.orig $f
+  rm $f.orig
+done
+
 DESTDIR=%{buildroot} ; export DESTDIR
 
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
   -DCATKIN_ENABLE_TESTING=OFF \
+  -DPYTHON_VERSION=%{python3_version} \
+  -DPYTHON_VERSION_NODOTS=%{python3_version_nodots} \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \
@@ -139,7 +148,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 # replace unversioned python shebang
 for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
-  sed -i.orig '/^#!.*python\s*$/ { s/python/python2/ }' $file
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
   touch -r $file.orig $file
   rm $file.orig
 done
@@ -167,6 +176,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.3-3
+- Remove obsolete python2 dependencies
+* Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.3-2
+- Switch to python3
 * Sat Jul 13 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.3-1
 - Update to ROS melodic release
 * Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.12.14-2

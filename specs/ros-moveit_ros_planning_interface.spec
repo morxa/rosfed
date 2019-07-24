@@ -1,12 +1,12 @@
-Name:           ros-kinetic-moveit_ros_planning_interface
-Version:        0.9.15
+Name:           ros-moveit_ros_planning_interface
+Version:        melodic.1.0.2
 Release:        1%{?dist}
 Summary:        ROS package moveit_ros_planning_interface
 
 License:        BSD
 URL:            http://moveit.ros.org
 
-Source0:        https://github.com/ros-gbp/moveit-release/archive/release/kinetic/moveit_ros_planning_interface/0.9.15-0.tar.gz#/ros-kinetic-moveit_ros_planning_interface-0.9.15-source0.tar.gz
+Source0:        https://github.com/ros-gbp/moveit-release/archive/release/melodic/moveit_ros_planning_interface/1.0.2-1.tar.gz#/ros-melodic-moveit_ros_planning_interface-1.0.2-source0.tar.gz
 
 
 
@@ -15,42 +15,53 @@ BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
-BuildRequires:  python2-devel
+BuildRequires:  python3-devel
 
 BuildRequires:  eigen3-devel
 BuildRequires:  fcl-devel
 BuildRequires:  poco-devel
-BuildRequires:  python-catkin_pkg
-BuildRequires:  python-devel
+BuildRequires:  python3-catkin_pkg
+BuildRequires:  python3-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
 BuildRequires:  urdfdom-devel
-BuildRequires:  ros-kinetic-actionlib-devel
-BuildRequires:  ros-kinetic-catkin-devel
-BuildRequires:  ros-kinetic-eigen_conversions-devel
-BuildRequires:  ros-kinetic-moveit_resources-devel
-BuildRequires:  ros-kinetic-moveit_ros_manipulation-devel
-BuildRequires:  ros-kinetic-moveit_ros_move_group-devel
-BuildRequires:  ros-kinetic-moveit_ros_planning-devel
-BuildRequires:  ros-kinetic-moveit_ros_warehouse-devel
-BuildRequires:  ros-kinetic-rosconsole-devel
-BuildRequires:  ros-kinetic-roscpp-devel
-BuildRequires:  ros-kinetic-rospy-devel
-BuildRequires:  ros-kinetic-rostest-devel
-BuildRequires:  ros-kinetic-tf-devel
-BuildRequires:  ros-kinetic-tf_conversions-devel
+BuildRequires:  ros-melodic-actionlib-devel
+BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-melodic-eigenpy-devel
+BuildRequires:  ros-melodic-geometry_msgs-devel
+BuildRequires:  ros-melodic-moveit_msgs-devel
+BuildRequires:  ros-melodic-moveit_resources-devel
+BuildRequires:  ros-melodic-moveit_ros_manipulation-devel
+BuildRequires:  ros-melodic-moveit_ros_move_group-devel
+BuildRequires:  ros-melodic-moveit_ros_planning-devel
+BuildRequires:  ros-melodic-moveit_ros_warehouse-devel
+BuildRequires:  ros-melodic-rosconsole-devel
+BuildRequires:  ros-melodic-roscpp-devel
+BuildRequires:  ros-melodic-rospy-devel
+BuildRequires:  ros-melodic-rostest-devel
+BuildRequires:  ros-melodic-tf2-devel
+BuildRequires:  ros-melodic-tf2_eigen-devel
+BuildRequires:  ros-melodic-tf2_geometry_msgs-devel
+BuildRequires:  ros-melodic-tf2_ros-devel
 
-Requires:       ros-kinetic-actionlib
-Requires:       ros-kinetic-eigen_conversions
-Requires:       ros-kinetic-moveit_ros_manipulation
-Requires:       ros-kinetic-moveit_ros_move_group
-Requires:       ros-kinetic-moveit_ros_planning
-Requires:       ros-kinetic-moveit_ros_warehouse
-Requires:       ros-kinetic-rosconsole
-Requires:       ros-kinetic-roscpp
-Requires:       ros-kinetic-rospy
-Requires:       ros-kinetic-tf
-Requires:       ros-kinetic-tf_conversions
+Requires:       ros-melodic-actionlib
+Requires:       ros-melodic-eigenpy
+Requires:       ros-melodic-geometry_msgs
+Requires:       ros-melodic-moveit_msgs
+Requires:       ros-melodic-moveit_ros_manipulation
+Requires:       ros-melodic-moveit_ros_move_group
+Requires:       ros-melodic-moveit_ros_planning
+Requires:       ros-melodic-moveit_ros_warehouse
+Requires:       ros-melodic-rosconsole
+Requires:       ros-melodic-roscpp
+Requires:       ros-melodic-rospy
+Requires:       ros-melodic-tf2
+Requires:       ros-melodic-tf2_eigen
+Requires:       ros-melodic-tf2_geometry_msgs
+Requires:       ros-melodic-tf2_ros
+
+Provides:  ros-melodic-moveit_ros_planning_interface = 1.0.2-1
+Obsoletes: ros-melodic-moveit_ros_planning_interface < 1.0.2-1
 
 
 %description
@@ -60,28 +71,35 @@ execution
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       python-catkin_pkg
-Requires:       ros-kinetic-catkin-devel
+Requires:       python3-catkin_pkg
+Requires:       ros-melodic-catkin-devel
 Requires:       eigen3-devel
 Requires:       fcl-devel
 Requires:       poco-devel
-Requires:       python-devel
+Requires:       python3-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
 Requires:       urdfdom-devel
-Requires:       ros-kinetic-actionlib-devel
-Requires:       ros-kinetic-eigen_conversions-devel
-Requires:       ros-kinetic-moveit_resources-devel
-Requires:       ros-kinetic-moveit_ros_manipulation-devel
-Requires:       ros-kinetic-moveit_ros_move_group-devel
-Requires:       ros-kinetic-moveit_ros_planning-devel
-Requires:       ros-kinetic-moveit_ros_warehouse-devel
-Requires:       ros-kinetic-rosconsole-devel
-Requires:       ros-kinetic-roscpp-devel
-Requires:       ros-kinetic-rospy-devel
-Requires:       ros-kinetic-rostest-devel
-Requires:       ros-kinetic-tf-devel
-Requires:       ros-kinetic-tf_conversions-devel
+Requires:       ros-melodic-actionlib-devel
+Requires:       ros-melodic-eigenpy-devel
+Requires:       ros-melodic-geometry_msgs-devel
+Requires:       ros-melodic-moveit_msgs-devel
+Requires:       ros-melodic-moveit_resources-devel
+Requires:       ros-melodic-moveit_ros_manipulation-devel
+Requires:       ros-melodic-moveit_ros_move_group-devel
+Requires:       ros-melodic-moveit_ros_planning-devel
+Requires:       ros-melodic-moveit_ros_warehouse-devel
+Requires:       ros-melodic-rosconsole-devel
+Requires:       ros-melodic-roscpp-devel
+Requires:       ros-melodic-rospy-devel
+Requires:       ros-melodic-rostest-devel
+Requires:       ros-melodic-tf2-devel
+Requires:       ros-melodic-tf2_eigen-devel
+Requires:       ros-melodic-tf2_geometry_msgs-devel
+Requires:       ros-melodic-tf2_ros-devel
+
+Provides: ros-melodic-moveit_ros_planning_interface-devel = 1.0.2-1
+Obsoletes: ros-melodic-moveit_ros_planning_interface-devel < 1.0.2-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -110,12 +128,21 @@ FCFLAGS="${FCFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FCFLAGS ; \
 
 source %{_libdir}/ros/setup.bash
 
+# substitute shebang before install block because we run the local catkin script
+for f in $(grep -rl python .) ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $f
+  touch -r $f.orig $f
+  rm $f.orig
+done
+
 DESTDIR=%{buildroot} ; export DESTDIR
 
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
   -DCATKIN_ENABLE_TESTING=OFF \
+  -DPYTHON_VERSION=%{python3_version} \
+  -DPYTHON_VERSION_NODOTS=%{python3_version_nodots} \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \
@@ -143,8 +170,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 # replace unversioned python shebang
-for file in $(grep -rIl '^#!.*python\s*$') ; do
-  sed -i.orig '/^#!.*python\s*$/ { s/python/python2/ }' $file
+for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
   touch -r $file.orig $file
   rm $file.orig
 done
@@ -172,6 +199,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Jul 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.0.2-1
+- Update to latest release
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.9.15-1
 - Update to latest release
 * Wed May 30 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.9.12-1

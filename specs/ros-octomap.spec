@@ -1,12 +1,12 @@
 Name:           ros-octomap
-Version:        kinetic.1.8.1
-Release:        10%{?dist}
+Version:        melodic.1.9.0
+Release:        1%{?dist}
 Summary:        ROS package octomap
 
 License:        BSD
 URL:            http://octomap.github.io
 
-Source0:        https://github.com/ros-gbp/octomap-release/archive/release/kinetic/octomap/1.8.1-0.tar.gz#/ros-kinetic-octomap-1.8.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/octomap-release/archive/release/melodic/octomap/1.9.0-1.tar.gz#/ros-melodic-octomap-1.9.0-source0.tar.gz
 
 
 
@@ -15,12 +15,15 @@ BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
-BuildRequires:  python2-devel
+BuildRequires:  python3-devel
 
 BuildRequires:  cmake
-BuildRequires:  ros-kinetic-catkin-devel
+BuildRequires:  ros-melodic-catkin-devel
 
-Requires:       ros-kinetic-catkin
+Requires:       ros-melodic-catkin
+
+Provides:  ros-melodic-octomap = 1.9.0-1
+Obsoletes: ros-melodic-octomap < 1.9.0-1
 
 
 %description
@@ -29,21 +32,18 @@ providing data structures and mapping algorithms in C++. The map
 implementation is based on an octree. See http://octomap.github.io for
 details.
 
-Provides:  ros-kinetic-octomap = %{version}-%{release}
-Obsoletes: ros-kinetic-octomap < %{version}-%{release}
-
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       cmake
-Requires:       ros-kinetic-catkin-devel
+Requires:       ros-melodic-catkin-devel
+
+Provides: ros-melodic-octomap-devel = 1.9.0-1
+Obsoletes: ros-melodic-octomap-devel < 1.9.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
-
-Provides: ros-kinetic-octomap-devel = %{version}-%{release}
-Obsoletes: ros-kinetic-octomap-devel < %{version}-%{release}
 
 
 
@@ -68,12 +68,21 @@ FCFLAGS="${FCFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FCFLAGS ; \
 
 source %{_libdir}/ros/setup.bash
 
+# substitute shebang before install block because we run the local catkin script
+for f in $(grep -rl python .) ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $f
+  touch -r $f.orig $f
+  rm $f.orig
+done
+
 DESTDIR=%{buildroot} ; export DESTDIR
 
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
   -DCATKIN_ENABLE_TESTING=OFF \
+  -DPYTHON_VERSION=%{python3_version} \
+  -DPYTHON_VERSION_NODOTS=%{python3_version_nodots} \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \
@@ -101,8 +110,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 # replace unversioned python shebang
-for file in $(grep -rIl '^#!.*python\s*$') ; do
-  sed -i.orig '/^#!.*python\s*$/ { s/python/python2/ }' $file
+for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
   touch -r $file.orig $file
   rm $file.orig
 done
@@ -130,6 +139,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Jul 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.9.0-1
+- Update to latest release
 * Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.8.1-10
 - Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.8.1-9

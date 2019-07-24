@@ -1,12 +1,12 @@
-Name:           ros-kinetic-combined_robot_hw
-Version:        0.13.3
+Name:           ros-combined_robot_hw
+Version:        melodic.0.15.1
 Release:        1%{?dist}
 Summary:        ROS package combined_robot_hw
 
 License:        BSD
 URL:            https://github.com/ros-controls/ros_control/wiki
 
-Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/kinetic/combined_robot_hw/0.13.3-0.tar.gz#/ros-kinetic-combined_robot_hw-0.13.3-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/melodic/combined_robot_hw/0.15.1-0.tar.gz#/ros-melodic-combined_robot_hw-0.15.1-source0.tar.gz
 
 
 
@@ -15,16 +15,19 @@ BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
-BuildRequires:  python2-devel
+BuildRequires:  python3-devel
 
-BuildRequires:  ros-kinetic-catkin-devel
-BuildRequires:  ros-kinetic-hardware_interface-devel
-BuildRequires:  ros-kinetic-pluginlib-devel
-BuildRequires:  ros-kinetic-roscpp-devel
+BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-melodic-hardware_interface-devel
+BuildRequires:  ros-melodic-pluginlib-devel
+BuildRequires:  ros-melodic-roscpp-devel
 
-Requires:       ros-kinetic-hardware_interface
-Requires:       ros-kinetic-pluginlib
-Requires:       ros-kinetic-roscpp
+Requires:       ros-melodic-hardware_interface
+Requires:       ros-melodic-pluginlib
+Requires:       ros-melodic-roscpp
+
+Provides:  ros-melodic-combined_robot_hw = 0.15.1-1
+Obsoletes: ros-melodic-combined_robot_hw < 0.15.1-1
 
 
 %description
@@ -33,10 +36,13 @@ Combined Robot HW class.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-kinetic-catkin-devel
-Requires:       ros-kinetic-hardware_interface-devel
-Requires:       ros-kinetic-pluginlib-devel
-Requires:       ros-kinetic-roscpp-devel
+Requires:       ros-melodic-catkin-devel
+Requires:       ros-melodic-hardware_interface-devel
+Requires:       ros-melodic-pluginlib-devel
+Requires:       ros-melodic-roscpp-devel
+
+Provides: ros-melodic-combined_robot_hw-devel = 0.15.1-1
+Obsoletes: ros-melodic-combined_robot_hw-devel < 0.15.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -65,12 +71,21 @@ FCFLAGS="${FCFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FCFLAGS ; \
 
 source %{_libdir}/ros/setup.bash
 
+# substitute shebang before install block because we run the local catkin script
+for f in $(grep -rl python .) ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $f
+  touch -r $f.orig $f
+  rm $f.orig
+done
+
 DESTDIR=%{buildroot} ; export DESTDIR
 
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
   -DCATKIN_ENABLE_TESTING=OFF \
+  -DPYTHON_VERSION=%{python3_version} \
+  -DPYTHON_VERSION_NODOTS=%{python3_version_nodots} \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \
@@ -98,8 +113,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 # replace unversioned python shebang
-for file in $(grep -rIl '^#!.*python\s*$') ; do
-  sed -i.orig '/^#!.*python\s*$/ { s/python/python2/ }' $file
+for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
   touch -r $file.orig $file
   rm $file.orig
 done
@@ -127,5 +142,7 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Jul 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.15.1-1
+- Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.13.3-1
 - Update to latest release

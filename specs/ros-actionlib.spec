@@ -1,6 +1,6 @@
 Name:           ros-actionlib
 Version:        melodic.1.11.13
-Release:        1%{?dist}
+Release:        4%{?dist}
 Summary:        ROS package actionlib
 
 License:        BSD
@@ -8,6 +8,7 @@ URL:            http://www.ros.org/wiki/actionlib
 
 Source0:        https://github.com/ros-gbp/actionlib-release/archive/release/melodic/actionlib/1.11.13-0.tar.gz#/ros-melodic-actionlib-1.11.13-source0.tar.gz
 
+Patch0: ros-actionlib.boost.time_duration.patch
 
 
 # common BRs
@@ -15,7 +16,7 @@ BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
-BuildRequires:  python2-devel
+BuildRequires:  python3-devel
 
 BuildRequires:  boost-devel
 BuildRequires:  ros-melodic-actionlib_msgs-devel
@@ -27,7 +28,7 @@ BuildRequires:  ros-melodic-rospy-devel
 BuildRequires:  ros-melodic-rostest-devel
 BuildRequires:  ros-melodic-std_msgs-devel
 
-Requires:       python2-wxpython
+Requires:       python3-wxpython4
 Requires:       ros-melodic-actionlib_msgs
 Requires:       ros-melodic-message_runtime
 Requires:       ros-melodic-roscpp
@@ -37,8 +38,8 @@ Requires:       ros-melodic-rostest
 Requires:       ros-melodic-rostopic
 Requires:       ros-melodic-std_msgs
 
-Provides:  ros-melodic-actionlib = 1.11.13-1
-Obsoletes: ros-melodic-actionlib < 1.11.13-1
+Provides:  ros-melodic-actionlib = 1.11.13-4
+Obsoletes: ros-melodic-actionlib < 1.11.13-4
 
 
 %description
@@ -63,8 +64,8 @@ Requires:       ros-melodic-message_runtime-devel
 Requires:       ros-melodic-roslib-devel
 Requires:       ros-melodic-rostopic-devel
 
-Provides: ros-melodic-actionlib-devel = 1.11.13-1
-Obsoletes: ros-melodic-actionlib-devel < 1.11.13-1
+Provides: ros-melodic-actionlib-devel = 1.11.13-4
+Obsoletes: ros-melodic-actionlib-devel < 1.11.13-4
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -76,6 +77,7 @@ applications that use %{name}.
 
 %setup -c -T
 tar --strip-components=1 -xf %{SOURCE0}
+%patch0 -p1
 
 %build
 # nothing to do here
@@ -93,12 +95,21 @@ FCFLAGS="${FCFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FCFLAGS ; \
 
 source %{_libdir}/ros/setup.bash
 
+# substitute shebang before install block because we run the local catkin script
+for f in $(grep -rl python .) ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $f
+  touch -r $f.orig $f
+  rm $f.orig
+done
+
 DESTDIR=%{buildroot} ; export DESTDIR
 
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
   -DCATKIN_ENABLE_TESTING=OFF \
+  -DPYTHON_VERSION=%{python3_version} \
+  -DPYTHON_VERSION_NODOTS=%{python3_version_nodots} \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \
@@ -127,7 +138,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 # replace unversioned python shebang
 for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
-  sed -i.orig '/^#!.*python\s*$/ { s/python/python2/ }' $file
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
   touch -r $file.orig $file
   rm $file.orig
 done
@@ -155,6 +166,12 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Jul 23 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.11.13-4
+- Fix type conversion in boost::posix_time
+* Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.11.13-3
+- Remove obsolete python2 dependencies
+* Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.11.13-2
+- Switch to python3
 * Sat Jul 13 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.11.13-1
 - Update to ROS melodic release
 * Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.11.13-7

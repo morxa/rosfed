@@ -1,12 +1,12 @@
-Name:           ros-kinetic-tf2_bullet
-Version:        0.5.20
+Name:           ros-tf2_bullet
+Version:        melodic.0.6.5
 Release:        1%{?dist}
 Summary:        ROS package tf2_bullet
 
 License:        BSD
 URL:            http://www.ros.org/wiki/tf2_bullet
 
-Source0:        https://github.com/ros-gbp/geometry2-release/archive/release/kinetic/tf2_bullet/0.5.20-0.tar.gz#/ros-kinetic-tf2_bullet-0.5.20-source0.tar.gz
+Source0:        https://github.com/ros-gbp/geometry2-release/archive/release/melodic/tf2_bullet/0.6.5-0.tar.gz#/ros-melodic-tf2_bullet-0.6.5-source0.tar.gz
 
 
 BuildArch: noarch
@@ -16,16 +16,19 @@ BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
-BuildRequires:  python2-devel
+BuildRequires:  python3-devel
 
 BuildRequires:  bullet-devel
 BuildRequires:  pkgconfig
-BuildRequires:  ros-kinetic-catkin-devel
-BuildRequires:  ros-kinetic-geometry_msgs-devel
-BuildRequires:  ros-kinetic-tf2-devel
+BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-melodic-geometry_msgs-devel
+BuildRequires:  ros-melodic-tf2-devel
 
-Requires:       ros-kinetic-geometry_msgs
-Requires:       ros-kinetic-tf2
+Requires:       ros-melodic-geometry_msgs
+Requires:       ros-melodic-tf2
+
+Provides:  ros-melodic-tf2_bullet = 0.6.5-1
+Obsoletes: ros-melodic-tf2_bullet < 0.6.5-1
 
 
 %description
@@ -35,10 +38,13 @@ tf2_bullet
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       pkgconfig
-Requires:       ros-kinetic-catkin-devel
+Requires:       ros-melodic-catkin-devel
 Requires:       bullet-devel
-Requires:       ros-kinetic-geometry_msgs-devel
-Requires:       ros-kinetic-tf2-devel
+Requires:       ros-melodic-geometry_msgs-devel
+Requires:       ros-melodic-tf2-devel
+
+Provides: ros-melodic-tf2_bullet-devel = 0.6.5-1
+Obsoletes: ros-melodic-tf2_bullet-devel < 0.6.5-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -67,12 +73,21 @@ FCFLAGS="${FCFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FCFLAGS ; \
 
 source %{_libdir}/ros/setup.bash
 
+# substitute shebang before install block because we run the local catkin script
+for f in $(grep -rl python .) ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $f
+  touch -r $f.orig $f
+  rm $f.orig
+done
+
 DESTDIR=%{buildroot} ; export DESTDIR
 
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
   -DCATKIN_ENABLE_TESTING=OFF \
+  -DPYTHON_VERSION=%{python3_version} \
+  -DPYTHON_VERSION_NODOTS=%{python3_version_nodots} \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \
@@ -100,8 +115,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 # replace unversioned python shebang
-for file in $(grep -rIl '^#!.*python\s*$') ; do
-  sed -i.orig '/^#!.*python\s*$/ { s/python/python2/ }' $file
+for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
   touch -r $file.orig $file
   rm $file.orig
 done
@@ -129,6 +144,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Jul 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.6.5-1
+- Update to latest release
 * Thu Mar 14 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.5.20-1
 - Update to latest release
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.5.19-1

@@ -1,12 +1,12 @@
-Name:           ros-kinetic-voxel_grid
-Version:        1.14.4
+Name:           ros-voxel_grid
+Version:        melodic.1.16.2
 Release:        1%{?dist}
 Summary:        ROS package voxel_grid
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/navigation-release/archive/release/kinetic/voxel_grid/1.14.4-0.tar.gz#/ros-kinetic-voxel_grid-1.14.4-source0.tar.gz
+Source0:        https://github.com/ros-gbp/navigation-release/archive/release/melodic/voxel_grid/1.16.2-0.tar.gz#/ros-melodic-voxel_grid-1.16.2-source0.tar.gz
 
 
 
@@ -15,14 +15,17 @@ BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
-BuildRequires:  python2-devel
+BuildRequires:  python3-devel
 
-BuildRequires:  ros-kinetic-catkin-devel
-BuildRequires:  ros-kinetic-rosconsole-devel
-BuildRequires:  ros-kinetic-roscpp-devel
-BuildRequires:  ros-kinetic-rosunit-devel
+BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-melodic-rosconsole-devel
+BuildRequires:  ros-melodic-roscpp-devel
+BuildRequires:  ros-melodic-rosunit-devel
 
-Requires:       ros-kinetic-roscpp
+Requires:       ros-melodic-roscpp
+
+Provides:  ros-melodic-voxel_grid = 1.16.2-1
+Obsoletes: ros-melodic-voxel_grid < 1.16.2-1
 
 
 %description
@@ -38,10 +41,13 @@ quite fast compared to most 3D structures.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-kinetic-catkin-devel
-Requires:       ros-kinetic-rosconsole-devel
-Requires:       ros-kinetic-roscpp-devel
-Requires:       ros-kinetic-rosunit-devel
+Requires:       ros-melodic-catkin-devel
+Requires:       ros-melodic-rosconsole-devel
+Requires:       ros-melodic-roscpp-devel
+Requires:       ros-melodic-rosunit-devel
+
+Provides: ros-melodic-voxel_grid-devel = 1.16.2-1
+Obsoletes: ros-melodic-voxel_grid-devel < 1.16.2-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -70,12 +76,21 @@ FCFLAGS="${FCFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FCFLAGS ; \
 
 source %{_libdir}/ros/setup.bash
 
+# substitute shebang before install block because we run the local catkin script
+for f in $(grep -rl python .) ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $f
+  touch -r $f.orig $f
+  rm $f.orig
+done
+
 DESTDIR=%{buildroot} ; export DESTDIR
 
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
   -DCATKIN_ENABLE_TESTING=OFF \
+  -DPYTHON_VERSION=%{python3_version} \
+  -DPYTHON_VERSION_NODOTS=%{python3_version_nodots} \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \
@@ -103,8 +118,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 # replace unversioned python shebang
-for file in $(grep -rIl '^#!.*python\s*$') ; do
-  sed -i.orig '/^#!.*python\s*$/ { s/python/python2/ }' $file
+for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
   touch -r $file.orig $file
   rm $file.orig
 done
@@ -132,6 +147,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Jul 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.16.2-1
+- Update to latest release
 * Tue Jun 26 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.14.4-1
 - Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.14.3-5

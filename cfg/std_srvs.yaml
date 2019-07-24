@@ -1,1 +1,8 @@
 noarch: true
+dependencies:
+  run:
+    system:
+      - python3-pyyaml
+  build:
+    system:
+      - python3-pyyaml

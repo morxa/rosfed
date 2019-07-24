@@ -1,0 +1,60 @@
+diff -ur actionlib-release-release-melodic-actionlib-1.11.13-0/include/actionlib/client/simple_action_client.h actionlib-release-release-melodic-actionlib-1.11.13-0.boost.time_duration/include/actionlib/client/simple_action_client.h
+--- actionlib-release-release-melodic-actionlib-1.11.13-0/include/actionlib/client/simple_action_client.h	2018-03-14 19:46:38.000000000 +0100
++++ actionlib-release-release-melodic-actionlib-1.11.13-0.boost.time_duration/include/actionlib/client/simple_action_client.h	2019-07-23 14:39:55.267512577 +0200
+@@ -601,7 +601,7 @@
+       time_left = loop_period;
+     }
+ 
+-    done_condition_.timed_wait(lock, boost::posix_time::milliseconds(time_left.toSec() * 1000.0f));
++    done_condition_.timed_wait(lock, boost::posix_time::milliseconds(static_cast<long>(time_left.toSec() * 1000.0f)));
+   }
+ 
+   return cur_simple_state_ == SimpleGoalState::DONE;
+diff -ur actionlib-release-release-melodic-actionlib-1.11.13-0/include/actionlib/destruction_guard.h actionlib-release-release-melodic-actionlib-1.11.13-0.boost.time_duration/include/actionlib/destruction_guard.h
+--- actionlib-release-release-melodic-actionlib-1.11.13-0/include/actionlib/destruction_guard.h	2018-03-14 19:46:38.000000000 +0100
++++ actionlib-release-release-melodic-actionlib-1.11.13-0.boost.time_duration/include/actionlib/destruction_guard.h	2019-07-23 14:41:22.366784348 +0200
+@@ -59,7 +59,7 @@
+     boost::mutex::scoped_lock lock(mutex_);
+     destructing_ = true;
+     while (use_count_ > 0) {
+-      count_condition_.timed_wait(lock, boost::posix_time::milliseconds(1000.0f));
++      count_condition_.timed_wait(lock, boost::posix_time::milliseconds(1000));
+     }
+   }
+ 
+diff -ur actionlib-release-release-melodic-actionlib-1.11.13-0/include/actionlib/server/simple_action_server_imp.h actionlib-release-release-melodic-actionlib-1.11.13-0.boost.time_duration/include/actionlib/server/simple_action_server_imp.h
+--- actionlib-release-release-melodic-actionlib-1.11.13-0/include/actionlib/server/simple_action_server_imp.h	2018-03-14 19:46:38.000000000 +0100
++++ actionlib-release-release-melodic-actionlib-1.11.13-0.boost.time_duration/include/actionlib/server/simple_action_server_imp.h	2019-07-23 14:41:03.935515224 +0200
+@@ -394,7 +394,7 @@
+       }
+     } else {
+       execute_condition_.timed_wait(lock,
+-        boost::posix_time::milliseconds(loop_duration.toSec() * 1000.0f));
++        boost::posix_time::milliseconds(static_cast<long>(loop_duration.toSec() * 1000.0f)));
+     }
+   }
+ }
+diff -ur actionlib-release-release-melodic-actionlib-1.11.13-0/src/connection_monitor.cpp actionlib-release-release-melodic-actionlib-1.11.13-0.boost.time_duration/src/connection_monitor.cpp
+--- actionlib-release-release-melodic-actionlib-1.11.13-0/src/connection_monitor.cpp	2018-03-14 19:46:38.000000000 +0100
++++ actionlib-release-release-melodic-actionlib-1.11.13-0.boost.time_duration/src/connection_monitor.cpp	2019-07-23 14:40:25.009946859 +0200
+@@ -275,7 +275,7 @@
+     }
+ 
+     check_connection_condition_.timed_wait(lock,
+-      boost::posix_time::milliseconds(time_left.toSec() * 1000.0f));
++      boost::posix_time::milliseconds(static_cast<long>(time_left.toSec() * 1000.0f)));
+   }
+ 
+   return isServerConnected();
+diff -ur actionlib-release-release-melodic-actionlib-1.11.13-0/test/destruction_guard_test.cpp actionlib-release-release-melodic-actionlib-1.11.13-0.boost.time_duration/test/destruction_guard_test.cpp
+--- actionlib-release-release-melodic-actionlib-1.11.13-0/test/destruction_guard_test.cpp	2018-03-14 19:46:38.000000000 +0100
++++ actionlib-release-release-melodic-actionlib-1.11.13-0.boost.time_duration/test/destruction_guard_test.cpp	2019-07-23 14:40:40.988180159 +0200
+@@ -86,7 +86,7 @@
+   {
+     boost::mutex::scoped_lock lock(mutex_);
+     while (!done_protecting_) {
+-      cond_.timed_wait(lock, boost::posix_time::milliseconds(100.0f));
++      cond_.timed_wait(lock, boost::posix_time::milliseconds(100));
+     }
+   }
+ 

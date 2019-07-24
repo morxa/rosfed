@@ -1,4 +1,0 @@
-dependencies:
-  build:
-    system:
-      - python2-devel

@@ -1,6 +1,6 @@
 Name:           ros-rviz
 Version:        melodic.1.13.3
-Release:        1%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package rviz
 
 License:        BSD
@@ -15,7 +15,7 @@ BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
-BuildRequires:  python2-devel
+BuildRequires:  python3-devel
 
 BuildRequires:  assimp-devel
 BuildRequires:  eigen3-devel
@@ -23,7 +23,7 @@ BuildRequires:  lz4-devel
 BuildRequires:  mesa-libGL-devel mesa-libGLU-devel
 BuildRequires:  ogre-devel
 BuildRequires:  poco-devel
-BuildRequires:  python-qt5-devel
+BuildRequires:  python3-qt5-devel
 BuildRequires:  qt5-qtbase
 BuildRequires:  qt5-qtbase-devel
 BuildRequires:  sip-devel
@@ -82,8 +82,8 @@ Requires:       ros-melodic-tf
 Requires:       ros-melodic-urdf
 Requires:       ros-melodic-visualization_msgs
 
-Provides:  ros-melodic-rviz = 1.13.3-1
-Obsoletes: ros-melodic-rviz < 1.13.3-1
+Provides:  ros-melodic-rviz = 1.13.3-3
+Obsoletes: ros-melodic-rviz < 1.13.3-3
 
 
 %description
@@ -99,7 +99,7 @@ Requires:       lz4-devel
 Requires:       mesa-libGL-devel mesa-libGLU-devel
 Requires:       ogre-devel
 Requires:       poco-devel
-Requires:       python-qt5-devel
+Requires:       python3-qt5-devel
 Requires:       qt5-qtbase
 Requires:       qt5-qtbase-devel
 Requires:       sip-devel
@@ -133,8 +133,8 @@ Requires:       ros-melodic-urdf-devel
 Requires:       ros-melodic-visualization_msgs-devel
 Requires:       ros-melodic-media_export-devel
 
-Provides: ros-melodic-rviz-devel = 1.13.3-1
-Obsoletes: ros-melodic-rviz-devel < 1.13.3-1
+Provides: ros-melodic-rviz-devel = 1.13.3-3
+Obsoletes: ros-melodic-rviz-devel < 1.13.3-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -164,12 +164,21 @@ FCFLAGS="${FCFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FCFLAGS ; \
 PATH="$PATH:%{_qt5_bindir}" ; export PATH
 source %{_libdir}/ros/setup.bash
 
+# substitute shebang before install block because we run the local catkin script
+for f in $(grep -rl python .) ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $f
+  touch -r $f.orig $f
+  rm $f.orig
+done
+
 DESTDIR=%{buildroot} ; export DESTDIR
 
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
   -DCATKIN_ENABLE_TESTING=OFF \
+  -DPYTHON_VERSION=%{python3_version} \
+  -DPYTHON_VERSION_NODOTS=%{python3_version_nodots} \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \
@@ -198,7 +207,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 # replace unversioned python shebang
 for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
-  sed -i.orig '/^#!.*python\s*$/ { s/python/python2/ }' $file
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
   touch -r $file.orig $file
   rm $file.orig
 done
@@ -226,6 +235,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.3-3
+- Remove obsolete python2 dependencies
+* Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.3-2
+- Switch to python3
 * Sat Jul 13 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.3-1
 - Update to ROS melodic release
 * Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 1.12.17-2

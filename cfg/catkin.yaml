@@ -2,10 +2,10 @@ noarch: true
 dependencies:
   run:
     system:
-      - python2-pyparsing
+      - python3-pyparsing
   build:
     system:
-      - python2-pyparsing
+      - python3-pyparsing
       - gcc-c++
 patches:
   - ros-kinetic-catkin.python-path-in-templates.patch

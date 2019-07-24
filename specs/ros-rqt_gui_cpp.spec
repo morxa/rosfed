@@ -1,6 +1,6 @@
 Name:           ros-rqt_gui_cpp
 Version:        melodic.0.5.0
-Release:        1%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package rqt_gui_cpp
 
 License:        BSD
@@ -15,7 +15,7 @@ BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
-BuildRequires:  python2-devel
+BuildRequires:  python3-devel
 
 BuildRequires:  libuuid-devel
 BuildRequires:  poco-devel
@@ -33,8 +33,8 @@ Requires:       ros-melodic-qt_gui
 Requires:       ros-melodic-qt_gui_cpp
 Requires:       ros-melodic-roscpp
 
-Provides:  ros-melodic-rqt_gui_cpp = 0.5.0-1
-Obsoletes: ros-melodic-rqt_gui_cpp < 0.5.0-1
+Provides:  ros-melodic-rqt_gui_cpp = 0.5.0-3
+Obsoletes: ros-melodic-rqt_gui_cpp < 0.5.0-3
 
 
 %description
@@ -54,8 +54,8 @@ Requires:       ros-melodic-qt_gui-devel
 Requires:       ros-melodic-qt_gui_cpp-devel
 Requires:       ros-melodic-roscpp-devel
 
-Provides: ros-melodic-rqt_gui_cpp-devel = 0.5.0-1
-Obsoletes: ros-melodic-rqt_gui_cpp-devel < 0.5.0-1
+Provides: ros-melodic-rqt_gui_cpp-devel = 0.5.0-3
+Obsoletes: ros-melodic-rqt_gui_cpp-devel < 0.5.0-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -84,12 +84,21 @@ FCFLAGS="${FCFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FCFLAGS ; \
 
 source %{_libdir}/ros/setup.bash
 
+# substitute shebang before install block because we run the local catkin script
+for f in $(grep -rl python .) ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $f
+  touch -r $f.orig $f
+  rm $f.orig
+done
+
 DESTDIR=%{buildroot} ; export DESTDIR
 
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
   -DCATKIN_ENABLE_TESTING=OFF \
+  -DPYTHON_VERSION=%{python3_version} \
+  -DPYTHON_VERSION_NODOTS=%{python3_version_nodots} \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \
@@ -118,7 +127,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 # replace unversioned python shebang
 for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
-  sed -i.orig '/^#!.*python\s*$/ { s/python/python2/ }' $file
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
   touch -r $file.orig $file
   rm $file.orig
 done
@@ -146,6 +155,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.5.0-3
+- Remove obsolete python2 dependencies
+* Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.5.0-2
+- Switch to python3
 * Sat Jul 13 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.5.0-1
 - Update to ROS melodic release
 * Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.5.0-12

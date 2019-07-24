@@ -1,12 +1,12 @@
-Name:           ros-kinetic-warehouse_ros
-Version:        0.9.2
+Name:           ros-warehouse_ros
+Version:        melodic.0.9.2
 Release:        1%{?dist}
 Summary:        ROS package warehouse_ros
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/warehouse_ros-release/archive/release/kinetic/warehouse_ros/0.9.2-0.tar.gz#/ros-kinetic-warehouse_ros-0.9.2-source0.tar.gz
+Source0:        https://github.com/ros-gbp/warehouse_ros-release/archive/release/melodic/warehouse_ros/0.9.2-0.tar.gz#/ros-melodic-warehouse_ros-0.9.2-source0.tar.gz
 
 
 
@@ -15,24 +15,27 @@ BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
-BuildRequires:  python2-devel
+BuildRequires:  python3-devel
 
 BuildRequires:  gtest-devel
-BuildRequires:  ros-kinetic-catkin-devel
-BuildRequires:  ros-kinetic-geometry_msgs-devel
-BuildRequires:  ros-kinetic-pluginlib-devel
-BuildRequires:  ros-kinetic-roscpp-devel
-BuildRequires:  ros-kinetic-rostest-devel
-BuildRequires:  ros-kinetic-rostime-devel
-BuildRequires:  ros-kinetic-std_msgs-devel
-BuildRequires:  ros-kinetic-tf-devel
+BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-melodic-geometry_msgs-devel
+BuildRequires:  ros-melodic-pluginlib-devel
+BuildRequires:  ros-melodic-roscpp-devel
+BuildRequires:  ros-melodic-rostest-devel
+BuildRequires:  ros-melodic-rostime-devel
+BuildRequires:  ros-melodic-std_msgs-devel
+BuildRequires:  ros-melodic-tf-devel
 
-Requires:       ros-kinetic-geometry_msgs
-Requires:       ros-kinetic-pluginlib
-Requires:       ros-kinetic-roscpp
-Requires:       ros-kinetic-rostime
-Requires:       ros-kinetic-std_msgs
-Requires:       ros-kinetic-tf
+Requires:       ros-melodic-geometry_msgs
+Requires:       ros-melodic-pluginlib
+Requires:       ros-melodic-roscpp
+Requires:       ros-melodic-rostime
+Requires:       ros-melodic-std_msgs
+Requires:       ros-melodic-tf
+
+Provides:  ros-melodic-warehouse_ros = 0.9.2-1
+Obsoletes: ros-melodic-warehouse_ros < 0.9.2-1
 
 
 %description
@@ -41,15 +44,18 @@ Persistent storage of ROS messages
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-kinetic-catkin-devel
+Requires:       ros-melodic-catkin-devel
 Requires:       gtest-devel
-Requires:       ros-kinetic-geometry_msgs-devel
-Requires:       ros-kinetic-pluginlib-devel
-Requires:       ros-kinetic-roscpp-devel
-Requires:       ros-kinetic-rostest-devel
-Requires:       ros-kinetic-rostime-devel
-Requires:       ros-kinetic-std_msgs-devel
-Requires:       ros-kinetic-tf-devel
+Requires:       ros-melodic-geometry_msgs-devel
+Requires:       ros-melodic-pluginlib-devel
+Requires:       ros-melodic-roscpp-devel
+Requires:       ros-melodic-rostest-devel
+Requires:       ros-melodic-rostime-devel
+Requires:       ros-melodic-std_msgs-devel
+Requires:       ros-melodic-tf-devel
+
+Provides: ros-melodic-warehouse_ros-devel = 0.9.2-1
+Obsoletes: ros-melodic-warehouse_ros-devel < 0.9.2-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -78,12 +84,21 @@ FCFLAGS="${FCFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FCFLAGS ; \
 
 source %{_libdir}/ros/setup.bash
 
+# substitute shebang before install block because we run the local catkin script
+for f in $(grep -rl python .) ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $f
+  touch -r $f.orig $f
+  rm $f.orig
+done
+
 DESTDIR=%{buildroot} ; export DESTDIR
 
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
   -DCATKIN_ENABLE_TESTING=OFF \
+  -DPYTHON_VERSION=%{python3_version} \
+  -DPYTHON_VERSION_NODOTS=%{python3_version_nodots} \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \
@@ -111,8 +126,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 # replace unversioned python shebang
-for file in $(grep -rIl '^#!.*python\s*$') ; do
-  sed -i.orig '/^#!.*python\s*$/ { s/python/python2/ }' $file
+for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
   touch -r $file.orig $file
   rm $file.orig
 done
@@ -140,6 +155,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Jul 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.9.2-1
+- Update to latest release
 * Thu Mar 14 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.9.2-1
 - Update to latest release
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.9.1-1

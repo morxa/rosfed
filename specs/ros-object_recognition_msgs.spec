@@ -1,12 +1,12 @@
-Name:           ros-kinetic-object_recognition_msgs
-Version:        0.4.1
+Name:           ros-object_recognition_msgs
+Version:        melodic.0.4.1
 Release:        1%{?dist}
 Summary:        ROS package object_recognition_msgs
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/object_recognition_msgs-release/archive/release/kinetic/object_recognition_msgs/0.4.1-0.tar.gz#/ros-kinetic-object_recognition_msgs-0.4.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/object_recognition_msgs-release/archive/release/melodic/object_recognition_msgs/0.4.1-0.tar.gz#/ros-melodic-object_recognition_msgs-0.4.1-source0.tar.gz
 
 
 BuildArch: noarch
@@ -16,22 +16,25 @@ BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
-BuildRequires:  python2-devel
+BuildRequires:  python3-devel
 
-BuildRequires:  ros-kinetic-actionlib_msgs-devel
-BuildRequires:  ros-kinetic-catkin-devel
-BuildRequires:  ros-kinetic-geometry_msgs-devel
-BuildRequires:  ros-kinetic-message_generation-devel
-BuildRequires:  ros-kinetic-sensor_msgs-devel
-BuildRequires:  ros-kinetic-shape_msgs-devel
-BuildRequires:  ros-kinetic-std_msgs-devel
+BuildRequires:  ros-melodic-actionlib_msgs-devel
+BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-melodic-geometry_msgs-devel
+BuildRequires:  ros-melodic-message_generation-devel
+BuildRequires:  ros-melodic-sensor_msgs-devel
+BuildRequires:  ros-melodic-shape_msgs-devel
+BuildRequires:  ros-melodic-std_msgs-devel
 
-Requires:       ros-kinetic-actionlib_msgs
-Requires:       ros-kinetic-geometry_msgs
-Requires:       ros-kinetic-message_runtime
-Requires:       ros-kinetic-sensor_msgs
-Requires:       ros-kinetic-shape_msgs
-Requires:       ros-kinetic-std_msgs
+Requires:       ros-melodic-actionlib_msgs
+Requires:       ros-melodic-geometry_msgs
+Requires:       ros-melodic-message_runtime
+Requires:       ros-melodic-sensor_msgs
+Requires:       ros-melodic-shape_msgs
+Requires:       ros-melodic-std_msgs
+
+Provides:  ros-melodic-object_recognition_msgs = 0.4.1-1
+Obsoletes: ros-melodic-object_recognition_msgs < 0.4.1-1
 
 
 %description
@@ -41,14 +44,17 @@ definition used in object_recognition_core
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-kinetic-catkin-devel
-Requires:       ros-kinetic-actionlib_msgs-devel
-Requires:       ros-kinetic-geometry_msgs-devel
-Requires:       ros-kinetic-message_generation-devel
-Requires:       ros-kinetic-sensor_msgs-devel
-Requires:       ros-kinetic-shape_msgs-devel
-Requires:       ros-kinetic-std_msgs-devel
-Requires:       ros-kinetic-message_runtime-devel
+Requires:       ros-melodic-catkin-devel
+Requires:       ros-melodic-actionlib_msgs-devel
+Requires:       ros-melodic-geometry_msgs-devel
+Requires:       ros-melodic-message_generation-devel
+Requires:       ros-melodic-sensor_msgs-devel
+Requires:       ros-melodic-shape_msgs-devel
+Requires:       ros-melodic-std_msgs-devel
+Requires:       ros-melodic-message_runtime-devel
+
+Provides: ros-melodic-object_recognition_msgs-devel = 0.4.1-1
+Obsoletes: ros-melodic-object_recognition_msgs-devel < 0.4.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -77,12 +83,21 @@ FCFLAGS="${FCFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FCFLAGS ; \
 
 source %{_libdir}/ros/setup.bash
 
+# substitute shebang before install block because we run the local catkin script
+for f in $(grep -rl python .) ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $f
+  touch -r $f.orig $f
+  rm $f.orig
+done
+
 DESTDIR=%{buildroot} ; export DESTDIR
 
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
   -DCATKIN_ENABLE_TESTING=OFF \
+  -DPYTHON_VERSION=%{python3_version} \
+  -DPYTHON_VERSION_NODOTS=%{python3_version_nodots} \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \
@@ -110,8 +125,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 # replace unversioned python shebang
-for file in $(grep -rIl '^#!.*python\s*$') ; do
-  sed -i.orig '/^#!.*python\s*$/ { s/python/python2/ }' $file
+for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
   touch -r $file.orig $file
   rm $file.orig
 done
@@ -139,5 +154,7 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Jul 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.1-1
+- Update to latest release
 * Thu Jan 18 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.4.1-1
 - Initial package

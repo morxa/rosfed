@@ -5,7 +5,6 @@ dependencies:
       - console-bridge-devel
       - poco-devel
       - log4cxx-devel
-      - python2-devel
       - tinyxml-devel
       - tinyxml2-devel
     ros:

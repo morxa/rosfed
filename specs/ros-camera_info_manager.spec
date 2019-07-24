@@ -1,6 +1,6 @@
 Name:           ros-camera_info_manager
 Version:        melodic.1.11.13
-Release:        10%{?dist}
+Release:        12%{?dist}
 Summary:        ROS package camera_info_manager
 
 License:        BSD
@@ -15,7 +15,7 @@ BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
-BuildRequires:  python2-devel
+BuildRequires:  python3-devel
 
 BuildRequires:  boost-devel
 BuildRequires:  gtest-devel
@@ -36,8 +36,8 @@ Requires:       ros-melodic-roscpp
 Requires:       ros-melodic-roslib
 Requires:       ros-melodic-sensor_msgs
 
-Provides:  ros-melodic-camera_info_manager = 1.11.13-10
-Obsoletes: ros-melodic-camera_info_manager < 1.11.13-10
+Provides:  ros-melodic-camera_info_manager = 1.11.13-12
+Obsoletes: ros-melodic-camera_info_manager < 1.11.13-12
 
 
 %description
@@ -61,8 +61,8 @@ Requires:       ros-melodic-roslib-devel
 Requires:       ros-melodic-rostest-devel
 Requires:       ros-melodic-sensor_msgs-devel
 
-Provides: ros-melodic-camera_info_manager-devel = 1.11.13-10
-Obsoletes: ros-melodic-camera_info_manager-devel < 1.11.13-10
+Provides: ros-melodic-camera_info_manager-devel = 1.11.13-12
+Obsoletes: ros-melodic-camera_info_manager-devel < 1.11.13-12
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -91,12 +91,21 @@ FCFLAGS="${FCFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FCFLAGS ; \
 
 source %{_libdir}/ros/setup.bash
 
+# substitute shebang before install block because we run the local catkin script
+for f in $(grep -rl python .) ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $f
+  touch -r $f.orig $f
+  rm $f.orig
+done
+
 DESTDIR=%{buildroot} ; export DESTDIR
 
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
   -DCATKIN_ENABLE_TESTING=OFF \
+  -DPYTHON_VERSION=%{python3_version} \
+  -DPYTHON_VERSION_NODOTS=%{python3_version_nodots} \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \
@@ -125,7 +134,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 # replace unversioned python shebang
 for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
-  sed -i.orig '/^#!.*python\s*$/ { s/python/python2/ }' $file
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
   touch -r $file.orig $file
   rm $file.orig
 done
@@ -153,6 +162,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.11.13-12
+- Remove obsolete python2 dependencies
+* Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.11.13-11
+- Switch to python3
 * Sat Jul 13 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.11.13-10
 - Update to ROS melodic release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.11.13-9

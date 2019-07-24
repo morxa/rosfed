@@ -1,12 +1,12 @@
-Name:           ros-kinetic-move_base
-Version:        1.14.4
+Name:           ros-move_base
+Version:        melodic.1.16.2
 Release:        1%{?dist}
 Summary:        ROS package move_base
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/navigation-release/archive/release/kinetic/move_base/1.14.4-0.tar.gz#/ros-kinetic-move_base-1.14.4-source0.tar.gz
+Source0:        https://github.com/ros-gbp/navigation-release/archive/release/melodic/move_base/1.16.2-0.tar.gz#/ros-melodic-move_base-1.16.2-source0.tar.gz
 
 
 
@@ -15,7 +15,7 @@ BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
-BuildRequires:  python2-devel
+BuildRequires:  python3-devel
 
 BuildRequires:  libuuid-devel
 BuildRequires:  lz4-devel
@@ -23,43 +23,49 @@ BuildRequires:  pcl-devel
 BuildRequires:  poco-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
-BuildRequires:  ros-kinetic-actionlib-devel
-BuildRequires:  ros-kinetic-base_local_planner-devel
-BuildRequires:  ros-kinetic-catkin-devel
-BuildRequires:  ros-kinetic-clear_costmap_recovery-devel
-BuildRequires:  ros-kinetic-cmake_modules-devel
-BuildRequires:  ros-kinetic-costmap_2d-devel
-BuildRequires:  ros-kinetic-dynamic_reconfigure-devel
-BuildRequires:  ros-kinetic-geometry_msgs-devel
-BuildRequires:  ros-kinetic-message_generation-devel
-BuildRequires:  ros-kinetic-move_base_msgs-devel
-BuildRequires:  ros-kinetic-nav_core-devel
-BuildRequires:  ros-kinetic-nav_msgs-devel
-BuildRequires:  ros-kinetic-navfn-devel
-BuildRequires:  ros-kinetic-pluginlib-devel
-BuildRequires:  ros-kinetic-roscpp-devel
-BuildRequires:  ros-kinetic-rospy-devel
-BuildRequires:  ros-kinetic-rotate_recovery-devel
-BuildRequires:  ros-kinetic-std_srvs-devel
-BuildRequires:  ros-kinetic-tf-devel
+BuildRequires:  ros-melodic-actionlib-devel
+BuildRequires:  ros-melodic-base_local_planner-devel
+BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-melodic-clear_costmap_recovery-devel
+BuildRequires:  ros-melodic-cmake_modules-devel
+BuildRequires:  ros-melodic-costmap_2d-devel
+BuildRequires:  ros-melodic-dynamic_reconfigure-devel
+BuildRequires:  ros-melodic-geometry_msgs-devel
+BuildRequires:  ros-melodic-message_generation-devel
+BuildRequires:  ros-melodic-move_base_msgs-devel
+BuildRequires:  ros-melodic-nav_core-devel
+BuildRequires:  ros-melodic-nav_msgs-devel
+BuildRequires:  ros-melodic-navfn-devel
+BuildRequires:  ros-melodic-pluginlib-devel
+BuildRequires:  ros-melodic-roscpp-devel
+BuildRequires:  ros-melodic-rospy-devel
+BuildRequires:  ros-melodic-rotate_recovery-devel
+BuildRequires:  ros-melodic-std_srvs-devel
+BuildRequires:  ros-melodic-tf2_geometry_msgs-devel
+BuildRequires:  ros-melodic-tf2_ros-devel
+BuildRequires:  ros-melodic-visualization_msgs-devel
 
-Requires:       ros-kinetic-actionlib
-Requires:       ros-kinetic-base_local_planner
-Requires:       ros-kinetic-clear_costmap_recovery
-Requires:       ros-kinetic-costmap_2d
-Requires:       ros-kinetic-dynamic_reconfigure
-Requires:       ros-kinetic-geometry_msgs
-Requires:       ros-kinetic-message_runtime
-Requires:       ros-kinetic-move_base_msgs
-Requires:       ros-kinetic-nav_core
-Requires:       ros-kinetic-nav_msgs
-Requires:       ros-kinetic-navfn
-Requires:       ros-kinetic-pluginlib
-Requires:       ros-kinetic-roscpp
-Requires:       ros-kinetic-rospy
-Requires:       ros-kinetic-rotate_recovery
-Requires:       ros-kinetic-std_srvs
-Requires:       ros-kinetic-tf
+Requires:       ros-melodic-actionlib
+Requires:       ros-melodic-base_local_planner
+Requires:       ros-melodic-clear_costmap_recovery
+Requires:       ros-melodic-costmap_2d
+Requires:       ros-melodic-dynamic_reconfigure
+Requires:       ros-melodic-geometry_msgs
+Requires:       ros-melodic-message_runtime
+Requires:       ros-melodic-move_base_msgs
+Requires:       ros-melodic-nav_core
+Requires:       ros-melodic-nav_msgs
+Requires:       ros-melodic-navfn
+Requires:       ros-melodic-pluginlib
+Requires:       ros-melodic-roscpp
+Requires:       ros-melodic-rospy
+Requires:       ros-melodic-rotate_recovery
+Requires:       ros-melodic-std_srvs
+Requires:       ros-melodic-tf2_ros
+Requires:       ros-melodic-visualization_msgs
+
+Provides:  ros-melodic-move_base = 1.16.2-1
+Obsoletes: ros-melodic-move_base < 1.16.2-1
 
 
 %description
@@ -68,32 +74,37 @@ The move_base package provides an implementation of an action (see the
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-kinetic-catkin-devel
+Requires:       ros-melodic-catkin-devel
 Requires:       libuuid-devel
 Requires:       lz4-devel
 Requires:       pcl-devel
 Requires:       poco-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
-Requires:       ros-kinetic-actionlib-devel
-Requires:       ros-kinetic-base_local_planner-devel
-Requires:       ros-kinetic-clear_costmap_recovery-devel
-Requires:       ros-kinetic-cmake_modules-devel
-Requires:       ros-kinetic-costmap_2d-devel
-Requires:       ros-kinetic-dynamic_reconfigure-devel
-Requires:       ros-kinetic-geometry_msgs-devel
-Requires:       ros-kinetic-message_generation-devel
-Requires:       ros-kinetic-move_base_msgs-devel
-Requires:       ros-kinetic-nav_core-devel
-Requires:       ros-kinetic-nav_msgs-devel
-Requires:       ros-kinetic-navfn-devel
-Requires:       ros-kinetic-pluginlib-devel
-Requires:       ros-kinetic-roscpp-devel
-Requires:       ros-kinetic-rospy-devel
-Requires:       ros-kinetic-rotate_recovery-devel
-Requires:       ros-kinetic-std_srvs-devel
-Requires:       ros-kinetic-tf-devel
-Requires:       ros-kinetic-message_runtime-devel
+Requires:       ros-melodic-actionlib-devel
+Requires:       ros-melodic-base_local_planner-devel
+Requires:       ros-melodic-clear_costmap_recovery-devel
+Requires:       ros-melodic-cmake_modules-devel
+Requires:       ros-melodic-costmap_2d-devel
+Requires:       ros-melodic-dynamic_reconfigure-devel
+Requires:       ros-melodic-geometry_msgs-devel
+Requires:       ros-melodic-message_generation-devel
+Requires:       ros-melodic-move_base_msgs-devel
+Requires:       ros-melodic-nav_core-devel
+Requires:       ros-melodic-nav_msgs-devel
+Requires:       ros-melodic-navfn-devel
+Requires:       ros-melodic-pluginlib-devel
+Requires:       ros-melodic-roscpp-devel
+Requires:       ros-melodic-rospy-devel
+Requires:       ros-melodic-rotate_recovery-devel
+Requires:       ros-melodic-std_srvs-devel
+Requires:       ros-melodic-tf2_geometry_msgs-devel
+Requires:       ros-melodic-tf2_ros-devel
+Requires:       ros-melodic-visualization_msgs-devel
+Requires:       ros-melodic-message_runtime-devel
+
+Provides: ros-melodic-move_base-devel = 1.16.2-1
+Obsoletes: ros-melodic-move_base-devel < 1.16.2-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -122,12 +133,21 @@ FCFLAGS="${FCFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FCFLAGS ; \
 
 source %{_libdir}/ros/setup.bash
 
+# substitute shebang before install block because we run the local catkin script
+for f in $(grep -rl python .) ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $f
+  touch -r $f.orig $f
+  rm $f.orig
+done
+
 DESTDIR=%{buildroot} ; export DESTDIR
 
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
   -DCATKIN_ENABLE_TESTING=OFF \
+  -DPYTHON_VERSION=%{python3_version} \
+  -DPYTHON_VERSION_NODOTS=%{python3_version_nodots} \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \
@@ -155,8 +175,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 # replace unversioned python shebang
-for file in $(grep -rIl '^#!.*python\s*$') ; do
-  sed -i.orig '/^#!.*python\s*$/ { s/python/python2/ }' $file
+for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
   touch -r $file.orig $file
   rm $file.orig
 done
@@ -184,6 +204,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Jul 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.16.2-1
+- Update to latest release
 * Tue Jun 26 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.14.4-1
 - Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.14.3-5

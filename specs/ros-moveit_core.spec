@@ -1,12 +1,12 @@
-Name:           ros-kinetic-moveit_core
-Version:        0.9.15
+Name:           ros-moveit_core
+Version:        melodic.1.0.2
 Release:        1%{?dist}
 Summary:        ROS package moveit_core
 
 License:        BSD
 URL:            http://moveit.ros.org
 
-Source0:        https://github.com/ros-gbp/moveit-release/archive/release/kinetic/moveit_core/0.9.15-0.tar.gz#/ros-kinetic-moveit_core-0.9.15-source0.tar.gz
+Source0:        https://github.com/ros-gbp/moveit-release/archive/release/melodic/moveit_core/1.0.2-1.tar.gz#/ros-melodic-moveit_core-1.0.2-source0.tar.gz
 
 
 
@@ -15,7 +15,7 @@ BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
-BuildRequires:  python2-devel
+BuildRequires:  python3-devel
 
 BuildRequires:  assimp
 BuildRequires:  boost-devel
@@ -27,50 +27,60 @@ BuildRequires:  pkgconfig
 BuildRequires:  tinyxml-devel
 BuildRequires:  urdfdom-devel
 BuildRequires:  urdfdom-headers-devel
-BuildRequires:  ros-kinetic-angles-devel
-BuildRequires:  ros-kinetic-catkin-devel
-BuildRequires:  ros-kinetic-eigen_conversions-devel
-BuildRequires:  ros-kinetic-eigen_stl_containers-devel
-BuildRequires:  ros-kinetic-geometric_shapes-devel
-BuildRequires:  ros-kinetic-geometry_msgs-devel
-BuildRequires:  ros-kinetic-kdl_parser-devel
-BuildRequires:  ros-kinetic-moveit_msgs-devel
-BuildRequires:  ros-kinetic-moveit_resources-devel
-BuildRequires:  ros-kinetic-octomap-devel
-BuildRequires:  ros-kinetic-octomap_msgs-devel
-BuildRequires:  ros-kinetic-orocos_kdl-devel
-BuildRequires:  ros-kinetic-random_numbers-devel
-BuildRequires:  ros-kinetic-rosconsole-devel
-BuildRequires:  ros-kinetic-roslib-devel
-BuildRequires:  ros-kinetic-rostime-devel
-BuildRequires:  ros-kinetic-rosunit-devel
-BuildRequires:  ros-kinetic-sensor_msgs-devel
-BuildRequires:  ros-kinetic-shape_msgs-devel
-BuildRequires:  ros-kinetic-srdfdom-devel
-BuildRequires:  ros-kinetic-std_msgs-devel
-BuildRequires:  ros-kinetic-tf_conversions-devel
-BuildRequires:  ros-kinetic-trajectory_msgs-devel
-BuildRequires:  ros-kinetic-urdf-devel
-BuildRequires:  ros-kinetic-visualization_msgs-devel
+BuildRequires:  ros-melodic-angles-devel
+BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-melodic-code_coverage-devel
+BuildRequires:  ros-melodic-eigen_stl_containers-devel
+BuildRequires:  ros-melodic-geometric_shapes-devel
+BuildRequires:  ros-melodic-geometry_msgs-devel
+BuildRequires:  ros-melodic-kdl_parser-devel
+BuildRequires:  ros-melodic-moveit_msgs-devel
+BuildRequires:  ros-melodic-moveit_resources-devel
+BuildRequires:  ros-melodic-octomap-devel
+BuildRequires:  ros-melodic-octomap_msgs-devel
+BuildRequires:  ros-melodic-orocos_kdl-devel
+BuildRequires:  ros-melodic-random_numbers-devel
+BuildRequires:  ros-melodic-rosconsole-devel
+BuildRequires:  ros-melodic-roslib-devel
+BuildRequires:  ros-melodic-rostime-devel
+BuildRequires:  ros-melodic-rosunit-devel
+BuildRequires:  ros-melodic-sensor_msgs-devel
+BuildRequires:  ros-melodic-shape_msgs-devel
+BuildRequires:  ros-melodic-srdfdom-devel
+BuildRequires:  ros-melodic-std_msgs-devel
+BuildRequires:  ros-melodic-tf2_eigen-devel
+BuildRequires:  ros-melodic-tf2_geometry_msgs-devel
+BuildRequires:  ros-melodic-tf2_kdl-devel
+BuildRequires:  ros-melodic-trajectory_msgs-devel
+BuildRequires:  ros-melodic-urdf-devel
+BuildRequires:  ros-melodic-visualization_msgs-devel
+BuildRequires:  ros-melodic-xmlrpcpp-devel
 
 Requires:       assimp
-Requires:       ros-kinetic-eigen_conversions
-Requires:       ros-kinetic-eigen_stl_containers
-Requires:       ros-kinetic-geometric_shapes
-Requires:       ros-kinetic-geometry_msgs
-Requires:       ros-kinetic-kdl_parser
-Requires:       ros-kinetic-moveit_msgs
-Requires:       ros-kinetic-octomap
-Requires:       ros-kinetic-octomap_msgs
-Requires:       ros-kinetic-random_numbers
-Requires:       ros-kinetic-rosconsole
-Requires:       ros-kinetic-rostime
-Requires:       ros-kinetic-sensor_msgs
-Requires:       ros-kinetic-srdfdom
-Requires:       ros-kinetic-std_msgs
-Requires:       ros-kinetic-trajectory_msgs
-Requires:       ros-kinetic-urdf
-Requires:       ros-kinetic-visualization_msgs
+Requires:       ros-melodic-eigen_stl_containers
+Requires:       ros-melodic-geometric_shapes
+Requires:       ros-melodic-geometry_msgs
+Requires:       ros-melodic-kdl_parser
+Requires:       ros-melodic-moveit_msgs
+Requires:       ros-melodic-octomap
+Requires:       ros-melodic-octomap_msgs
+Requires:       ros-melodic-random_numbers
+Requires:       ros-melodic-rosconsole
+Requires:       ros-melodic-roslib
+Requires:       ros-melodic-rostime
+Requires:       ros-melodic-sensor_msgs
+Requires:       ros-melodic-shape_msgs
+Requires:       ros-melodic-srdfdom
+Requires:       ros-melodic-std_msgs
+Requires:       ros-melodic-tf2_eigen
+Requires:       ros-melodic-tf2_geometry_msgs
+Requires:       ros-melodic-trajectory_msgs
+Requires:       ros-melodic-urdf
+Requires:       ros-melodic-visualization_msgs
+Requires:       ros-melodic-xmlrpcpp
+
+Provides:  ros-melodic-moveit_core = 1.0.2-1
+Obsoletes: ros-melodic-moveit_core < 1.0.2-1
 
 
 %description
@@ -80,7 +90,7 @@ Core libraries used by MoveIt!
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       pkgconfig
-Requires:       ros-kinetic-catkin-devel
+Requires:       ros-melodic-catkin-devel
 Requires:       assimp
 Requires:       boost-devel
 Requires:       console-bridge-devel
@@ -90,30 +100,36 @@ Requires:       libccd-devel
 Requires:       tinyxml-devel
 Requires:       urdfdom-devel
 Requires:       urdfdom-headers-devel
-Requires:       ros-kinetic-angles-devel
-Requires:       ros-kinetic-eigen_conversions-devel
-Requires:       ros-kinetic-eigen_stl_containers-devel
-Requires:       ros-kinetic-geometric_shapes-devel
-Requires:       ros-kinetic-geometry_msgs-devel
-Requires:       ros-kinetic-kdl_parser-devel
-Requires:       ros-kinetic-moveit_msgs-devel
-Requires:       ros-kinetic-moveit_resources-devel
-Requires:       ros-kinetic-octomap-devel
-Requires:       ros-kinetic-octomap_msgs-devel
-Requires:       ros-kinetic-orocos_kdl-devel
-Requires:       ros-kinetic-random_numbers-devel
-Requires:       ros-kinetic-rosconsole-devel
-Requires:       ros-kinetic-roslib-devel
-Requires:       ros-kinetic-rostime-devel
-Requires:       ros-kinetic-rosunit-devel
-Requires:       ros-kinetic-sensor_msgs-devel
-Requires:       ros-kinetic-shape_msgs-devel
-Requires:       ros-kinetic-srdfdom-devel
-Requires:       ros-kinetic-std_msgs-devel
-Requires:       ros-kinetic-tf_conversions-devel
-Requires:       ros-kinetic-trajectory_msgs-devel
-Requires:       ros-kinetic-urdf-devel
-Requires:       ros-kinetic-visualization_msgs-devel
+Requires:       ros-melodic-angles-devel
+Requires:       ros-melodic-code_coverage-devel
+Requires:       ros-melodic-eigen_stl_containers-devel
+Requires:       ros-melodic-geometric_shapes-devel
+Requires:       ros-melodic-geometry_msgs-devel
+Requires:       ros-melodic-kdl_parser-devel
+Requires:       ros-melodic-moveit_msgs-devel
+Requires:       ros-melodic-moveit_resources-devel
+Requires:       ros-melodic-octomap-devel
+Requires:       ros-melodic-octomap_msgs-devel
+Requires:       ros-melodic-orocos_kdl-devel
+Requires:       ros-melodic-random_numbers-devel
+Requires:       ros-melodic-rosconsole-devel
+Requires:       ros-melodic-roslib-devel
+Requires:       ros-melodic-rostime-devel
+Requires:       ros-melodic-rosunit-devel
+Requires:       ros-melodic-sensor_msgs-devel
+Requires:       ros-melodic-shape_msgs-devel
+Requires:       ros-melodic-srdfdom-devel
+Requires:       ros-melodic-std_msgs-devel
+Requires:       ros-melodic-tf2_eigen-devel
+Requires:       ros-melodic-tf2_geometry_msgs-devel
+Requires:       ros-melodic-tf2_kdl-devel
+Requires:       ros-melodic-trajectory_msgs-devel
+Requires:       ros-melodic-urdf-devel
+Requires:       ros-melodic-visualization_msgs-devel
+Requires:       ros-melodic-xmlrpcpp-devel
+
+Provides: ros-melodic-moveit_core-devel = 1.0.2-1
+Obsoletes: ros-melodic-moveit_core-devel < 1.0.2-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -142,12 +158,21 @@ FCFLAGS="${FCFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FCFLAGS ; \
 
 source %{_libdir}/ros/setup.bash
 
+# substitute shebang before install block because we run the local catkin script
+for f in $(grep -rl python .) ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $f
+  touch -r $f.orig $f
+  rm $f.orig
+done
+
 DESTDIR=%{buildroot} ; export DESTDIR
 
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
   -DCATKIN_ENABLE_TESTING=OFF \
+  -DPYTHON_VERSION=%{python3_version} \
+  -DPYTHON_VERSION_NODOTS=%{python3_version_nodots} \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \
@@ -175,8 +200,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 # replace unversioned python shebang
-for file in $(grep -rIl '^#!.*python\s*$') ; do
-  sed -i.orig '/^#!.*python\s*$/ { s/python/python2/ }' $file
+for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
   touch -r $file.orig $file
   rm $file.orig
 done
@@ -204,6 +229,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Jul 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.0.2-1
+- Update to latest release
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.9.15-1
 - Update to latest release
 * Wed May 30 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.9.12-1

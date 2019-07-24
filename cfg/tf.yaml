@@ -1,0 +1,2 @@
+patches:
+  - ros-tf.signals2.patch

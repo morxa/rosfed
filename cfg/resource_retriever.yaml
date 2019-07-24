@@ -4,7 +4,6 @@ dependencies:
       - boost-devel
       - log4cxx-devel
       - console-bridge-devel
-      - python2-devel
       - tinyxml-devel
       # This is most probably a bug in the package, it does not build without
       # gtest-devel even if we don't build tests explicitly

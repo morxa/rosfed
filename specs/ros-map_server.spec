@@ -1,12 +1,12 @@
-Name:           ros-kinetic-map_server
-Version:        1.14.4
+Name:           ros-map_server
+Version:        melodic.1.16.2
 Release:        1%{?dist}
 Summary:        ROS package map_server
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/navigation-release/archive/release/kinetic/map_server/1.14.4-0.tar.gz#/ros-kinetic-map_server-1.14.4-source0.tar.gz
+Source0:        https://github.com/ros-gbp/navigation-release/archive/release/melodic/map_server/1.16.2-0.tar.gz#/ros-melodic-map_server-1.16.2-source0.tar.gz
 
 
 
@@ -15,23 +15,26 @@ BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
-BuildRequires:  python2-devel
+BuildRequires:  python3-devel
 
 BuildRequires:  bullet-devel
 BuildRequires:  SDL-devel
 BuildRequires:  SDL_image-devel
 BuildRequires:  yaml-cpp-devel
-BuildRequires:  ros-kinetic-catkin-devel
-BuildRequires:  ros-kinetic-nav_msgs-devel
-BuildRequires:  ros-kinetic-roscpp-devel
-BuildRequires:  ros-kinetic-rospy-devel
-BuildRequires:  ros-kinetic-rostest-devel
-BuildRequires:  ros-kinetic-rosunit-devel
-BuildRequires:  ros-kinetic-tf2-devel
+BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-melodic-nav_msgs-devel
+BuildRequires:  ros-melodic-roscpp-devel
+BuildRequires:  ros-melodic-rospy-devel
+BuildRequires:  ros-melodic-rostest-devel
+BuildRequires:  ros-melodic-rosunit-devel
+BuildRequires:  ros-melodic-tf2-devel
 
-Requires:       ros-kinetic-nav_msgs
-Requires:       ros-kinetic-roscpp
-Requires:       ros-kinetic-tf2
+Requires:       ros-melodic-nav_msgs
+Requires:       ros-melodic-roscpp
+Requires:       ros-melodic-tf2
+
+Provides:  ros-melodic-map_server = 1.16.2-1
+Obsoletes: ros-melodic-map_server < 1.16.2-1
 
 
 %description
@@ -40,17 +43,20 @@ map_server provides the
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-kinetic-catkin-devel
+Requires:       ros-melodic-catkin-devel
 Requires:       bullet-devel
 Requires:       SDL-devel
 Requires:       SDL_image-devel
 Requires:       yaml-cpp-devel
-Requires:       ros-kinetic-nav_msgs-devel
-Requires:       ros-kinetic-roscpp-devel
-Requires:       ros-kinetic-rospy-devel
-Requires:       ros-kinetic-rostest-devel
-Requires:       ros-kinetic-rosunit-devel
-Requires:       ros-kinetic-tf2-devel
+Requires:       ros-melodic-nav_msgs-devel
+Requires:       ros-melodic-roscpp-devel
+Requires:       ros-melodic-rospy-devel
+Requires:       ros-melodic-rostest-devel
+Requires:       ros-melodic-rosunit-devel
+Requires:       ros-melodic-tf2-devel
+
+Provides: ros-melodic-map_server-devel = 1.16.2-1
+Obsoletes: ros-melodic-map_server-devel < 1.16.2-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -79,12 +85,21 @@ FCFLAGS="${FCFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FCFLAGS ; \
 
 source %{_libdir}/ros/setup.bash
 
+# substitute shebang before install block because we run the local catkin script
+for f in $(grep -rl python .) ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $f
+  touch -r $f.orig $f
+  rm $f.orig
+done
+
 DESTDIR=%{buildroot} ; export DESTDIR
 
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
   -DCATKIN_ENABLE_TESTING=OFF \
+  -DPYTHON_VERSION=%{python3_version} \
+  -DPYTHON_VERSION_NODOTS=%{python3_version_nodots} \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \
@@ -112,8 +127,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 # replace unversioned python shebang
-for file in $(grep -rIl '^#!.*python\s*$') ; do
-  sed -i.orig '/^#!.*python\s*$/ { s/python/python2/ }' $file
+for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
   touch -r $file.orig $file
   rm $file.orig
 done
@@ -141,6 +156,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Jul 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.16.2-1
+- Update to latest release
 * Tue Jun 26 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.14.4-1
 - Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.14.3-5

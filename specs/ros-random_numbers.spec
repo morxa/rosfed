@@ -1,12 +1,12 @@
 Name:           ros-random_numbers
-Version:        kinetic.0.3.1
-Release:        10%{?dist}
+Version:        melodic.0.3.2
+Release:        1%{?dist}
 Summary:        ROS package random_numbers
 
 License:        BSD
 URL:            http://ros.org/wiki/random_numbers
 
-Source0:        https://github.com/ros-gbp/random_numbers-release/archive/release/kinetic/random_numbers/0.3.1-0.tar.gz#/ros-kinetic-random_numbers-0.3.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/random_numbers-release/archive/release/melodic/random_numbers/0.3.2-0.tar.gz#/ros-melodic-random_numbers-0.3.2-source0.tar.gz
 
 
 
@@ -15,11 +15,14 @@ BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
-BuildRequires:  python2-devel
+BuildRequires:  python3-devel
 
 BuildRequires:  boost-devel
-BuildRequires:  ros-kinetic-catkin-devel
+BuildRequires:  ros-melodic-catkin-devel
 
+
+Provides:  ros-melodic-random_numbers = 0.3.2-1
+Obsoletes: ros-melodic-random_numbers < 0.3.2-1
 
 
 %description
@@ -29,21 +32,18 @@ wrapper is guaranteed to be thread safe and initialize its random
 number generator to a random seed. Seeds are obtained using a separate
 and different random number generator.
 
-Provides:  ros-kinetic-random_numbers = %{version}-%{release}
-Obsoletes: ros-kinetic-random_numbers < %{version}-%{release}
-
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-kinetic-catkin-devel
+Requires:       ros-melodic-catkin-devel
 Requires:       boost-devel
+
+Provides: ros-melodic-random_numbers-devel = 0.3.2-1
+Obsoletes: ros-melodic-random_numbers-devel < 0.3.2-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}.
-
-Provides: ros-kinetic-random_numbers-devel = %{version}-%{release}
-Obsoletes: ros-kinetic-random_numbers-devel < %{version}-%{release}
 
 
 
@@ -68,12 +68,21 @@ FCFLAGS="${FCFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FCFLAGS ; \
 
 source %{_libdir}/ros/setup.bash
 
+# substitute shebang before install block because we run the local catkin script
+for f in $(grep -rl python .) ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $f
+  touch -r $f.orig $f
+  rm $f.orig
+done
+
 DESTDIR=%{buildroot} ; export DESTDIR
 
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
   -DCATKIN_ENABLE_TESTING=OFF \
+  -DPYTHON_VERSION=%{python3_version} \
+  -DPYTHON_VERSION_NODOTS=%{python3_version_nodots} \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \
@@ -101,8 +110,8 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 # replace unversioned python shebang
-for file in $(grep -rIl '^#!.*python\s*$') ; do
-  sed -i.orig '/^#!.*python\s*$/ { s/python/python2/ }' $file
+for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
   touch -r $file.orig $file
   rm $file.orig
 done
@@ -130,6 +139,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Jul 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.3.2-1
+- Update to latest release
 * Fri Jul 12 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.3.1-10
 - Remove ROS distro from package name
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.3.1-9

@@ -1,6 +1,6 @@
 Name:           ros-perception_pcl
 Version:        melodic.1.6.2
-Release:        1%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package perception_pcl
 
 License:        BSD
@@ -16,7 +16,7 @@ BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
-BuildRequires:  python2-devel
+BuildRequires:  python3-devel
 
 BuildRequires:  ros-melodic-catkin-devel
 
@@ -24,8 +24,8 @@ Requires:       ros-melodic-pcl_conversions
 Requires:       ros-melodic-pcl_msgs
 Requires:       ros-melodic-pcl_ros
 
-Provides:  ros-melodic-perception_pcl = 1.6.2-1
-Obsoletes: ros-melodic-perception_pcl < 1.6.2-1
+Provides:  ros-melodic-perception_pcl = 1.6.2-3
+Obsoletes: ros-melodic-perception_pcl < 1.6.2-3
 
 
 %description
@@ -41,8 +41,8 @@ Requires:       ros-melodic-pcl_conversions-devel
 Requires:       ros-melodic-pcl_msgs-devel
 Requires:       ros-melodic-pcl_ros-devel
 
-Provides: ros-melodic-perception_pcl-devel = 1.6.2-1
-Obsoletes: ros-melodic-perception_pcl-devel < 1.6.2-1
+Provides: ros-melodic-perception_pcl-devel = 1.6.2-3
+Obsoletes: ros-melodic-perception_pcl-devel < 1.6.2-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -71,12 +71,21 @@ FCFLAGS="${FCFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FCFLAGS ; \
 
 source %{_libdir}/ros/setup.bash
 
+# substitute shebang before install block because we run the local catkin script
+for f in $(grep -rl python .) ; do
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $f
+  touch -r $f.orig $f
+  rm $f.orig
+done
+
 DESTDIR=%{buildroot} ; export DESTDIR
 
 
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
   -DCATKIN_ENABLE_TESTING=OFF \
+  -DPYTHON_VERSION=%{python3_version} \
+  -DPYTHON_VERSION_NODOTS=%{python3_version_nodots} \
   --source . \
   --install \
   --install-space %{_libdir}/ros/ \
@@ -105,7 +114,7 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 # replace unversioned python shebang
 for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
-  sed -i.orig '/^#!.*python\s*$/ { s/python/python2/ }' $file
+  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
   touch -r $file.orig $file
   rm $file.orig
 done
@@ -133,6 +142,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.6.2-3
+- Remove obsolete python2 dependencies
+* Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.6.2-2
+- Switch to python3
 * Sat Jul 13 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.6.2-1
 - Update to ROS melodic release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.4.4-3
