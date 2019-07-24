@@ -157,7 +157,8 @@ DESTDIR=%{buildroot} ; export DESTDIR
 catkin_make_isolated \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
   -DCATKIN_ENABLE_TESTING=OFF \
-  -DPYTHON_VERSION=3 \
+  -DPYTHON_VERSION=%{python3_version} \
+  -DPYTHON_VERSION_NODOTS=%{python3_version_nodots} \
 {% block cmake_flags %}
 {% endblock %}
   --source . \
