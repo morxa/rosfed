@@ -9,3 +9,4 @@ dependencies:
       - gcc-c++
 patches:
   - ros-kinetic-catkin.python-path-in-templates.patch
+  - ros-catkin.python3.patch
