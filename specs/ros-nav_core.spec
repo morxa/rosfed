@@ -1,3 +1,4 @@
+%global pkg_version 1.16.2
 Name:           ros-nav_core
 Version:        melodic.1.16.2
 Release:        1%{?dist}

@@ -1,3 +1,4 @@
+%global pkg_version 1.14.6
 Name:           ros-rosbash
 Version:        melodic.1.14.6
 Release:        3%{?dist}

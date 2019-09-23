@@ -1,3 +1,4 @@
+%global pkg_version 0.15.1
 Name:           ros-controller_manager
 Version:        melodic.0.15.1
 Release:        3%{?dist}

@@ -1,3 +1,4 @@
+%global pkg_version 0.4.2
 Name:           ros-cmake_modules
 Version:        melodic.0.4.2
 Release:        3%{?dist}

@@ -1,12 +1,13 @@
+%global pkg_version 1.12.0
 Name:           ros-actionlib
-Version:        melodic.1.11.13
-Release:        4%{?dist}
+Version:        melodic.1.12.0
+Release:        1%{?dist}
 Summary:        ROS package actionlib
 
 License:        BSD
 URL:            http://www.ros.org/wiki/actionlib
 
-Source0:        https://github.com/ros-gbp/actionlib-release/archive/release/melodic/actionlib/1.11.13-0.tar.gz#/ros-melodic-actionlib-1.11.13-source0.tar.gz
+Source0:        https://github.com/ros-gbp/actionlib-release/archive/release/melodic/actionlib/1.12.0-1.tar.gz#/ros-melodic-actionlib-1.12.0-source0.tar.gz
 
 Patch0: ros-actionlib.boost.time_duration.patch
 
@@ -38,8 +39,8 @@ Requires:       ros-melodic-rostest
 Requires:       ros-melodic-rostopic
 Requires:       ros-melodic-std_msgs
 
-Provides:  ros-melodic-actionlib = 1.11.13-4
-Obsoletes: ros-melodic-actionlib < 1.11.13-4
+Provides:  ros-melodic-actionlib = 1.12.0-1
+Obsoletes: ros-melodic-actionlib < 1.12.0-1
 
 
 %description
@@ -64,8 +65,8 @@ Requires:       ros-melodic-message_runtime-devel
 Requires:       ros-melodic-roslib-devel
 Requires:       ros-melodic-rostopic-devel
 
-Provides: ros-melodic-actionlib-devel = 1.11.13-4
-Obsoletes: ros-melodic-actionlib-devel < 1.11.13-4
+Provides: ros-melodic-actionlib-devel = 1.12.0-1
+Obsoletes: ros-melodic-actionlib-devel < 1.12.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -166,6 +167,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Thu Sep 12 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.12.0-1
+- Update to latest release
 * Tue Jul 23 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.11.13-4
 - Fix type conversion in boost::posix_time
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.11.13-3

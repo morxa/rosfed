@@ -1,3 +1,4 @@
+%global pkg_version 1.12.1
 Name:           ros-pluginlib
 Version:        melodic.1.12.1
 Release:        3%{?dist}

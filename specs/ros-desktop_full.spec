@@ -1,3 +1,4 @@
+%global pkg_version 1.4.1
 Name:           ros-desktop_full
 Version:        melodic.1.4.1
 Release:        4%{?dist}

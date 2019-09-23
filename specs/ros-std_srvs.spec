@@ -1,3 +1,4 @@
+%global pkg_version 1.11.2
 Name:           ros-std_srvs
 Version:        melodic.1.11.2
 Release:        3%{?dist}

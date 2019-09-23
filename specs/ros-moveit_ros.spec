@@ -1,3 +1,4 @@
+%global pkg_version 1.0.2
 Name:           ros-moveit_ros
 Version:        melodic.1.0.2
 Release:        1%{?dist}

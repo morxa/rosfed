@@ -1,3 +1,4 @@
+%global pkg_version 1.13.0
 Name:           ros-move_base_msgs
 Version:        melodic.1.13.0
 Release:        1%{?dist}

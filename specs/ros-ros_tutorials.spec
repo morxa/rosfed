@@ -1,3 +1,4 @@
+%global pkg_version 0.9.1
 Name:           ros-ros_tutorials
 Version:        melodic.0.9.1
 Release:        3%{?dist}

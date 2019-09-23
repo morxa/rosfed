@@ -1,3 +1,4 @@
+%global pkg_version 0.15.1
 Name:           ros-hardware_interface
 Version:        melodic.0.15.1
 Release:        3%{?dist}

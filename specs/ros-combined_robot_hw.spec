@@ -1,3 +1,4 @@
+%global pkg_version 0.15.1
 Name:           ros-combined_robot_hw
 Version:        melodic.0.15.1
 Release:        1%{?dist}

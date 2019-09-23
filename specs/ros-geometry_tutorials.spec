@@ -1,3 +1,4 @@
+%global pkg_version 0.2.2
 Name:           ros-geometry_tutorials
 Version:        melodic.0.2.2
 Release:        3%{?dist}

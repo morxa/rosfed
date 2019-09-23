@@ -1,3 +1,4 @@
+%global pkg_version 1.14.3
 Name:           ros-rosservice
 Version:        melodic.1.14.3
 Release:        3%{?dist}

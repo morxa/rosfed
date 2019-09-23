@@ -6,7 +6,8 @@ Summary:        ROS package eigenpy
 License:        BSD
 URL:            https://github.com/stack-of-tasks/eigenpy
 
-Source0:        https://github.com/ipab-slmc/eigenpy_catkin-release/archive/release/melodic/eigenpy/1.5.1-2.tar.gz#/ros-melodic-eigenpy-1.5.1-source0.tar.gz
+Source0:        https://github.com/stack-of-tasks/eigenpy/archive/v%{pkg_version}/eigenpy.tar.gz#/ros-melodic-eigenpy-1.5.1-source0.tar.gz
+Source1:        https://github.com/ipab-slmc/eigenpy_catkin-release/archive/release/melodic/eigenpy/1.5.1-2.tar.gz#/ros-melodic-eigenpy-1.5.1-source1.tar.gz
 
 
 
@@ -27,7 +28,6 @@ BuildRequires:  ros-melodic-catkin-devel
 Requires:       numpy
 
 Provides:  ros-melodic-eigenpy = 1.5.1-1
-Obsoletes: ros-melodic-eigenpy < 1.5.1-1
 
 
 %description
@@ -45,7 +45,6 @@ Requires:       numpy
 Requires:       python3-devel
 
 Provides: ros-melodic-eigenpy-devel = 1.5.1-1
-Obsoletes: ros-melodic-eigenpy-devel < 1.5.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -54,9 +53,9 @@ applications that use %{name}.
 
 
 %prep
-
-%setup -c -T
-tar --strip-components=1 -xf %{SOURCE0}
+tar --strip-components=1 -xf %{SOURCE1}
+mkdir -p eigenpy
+tar --strip-components=1 -C eigenpy -xf %{SOURCE0}
 
 %build
 # nothing to do here

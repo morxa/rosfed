@@ -1,3 +1,4 @@
+%global pkg_version 0.11.2
 Name:           ros-roslint
 Version:        melodic.0.11.2
 Release:        3%{?dist}

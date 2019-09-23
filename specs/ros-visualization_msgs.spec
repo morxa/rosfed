@@ -1,3 +1,4 @@
+%global pkg_version 1.12.7
 Name:           ros-visualization_msgs
 Version:        melodic.1.12.7
 Release:        3%{?dist}

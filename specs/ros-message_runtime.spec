@@ -1,3 +1,4 @@
+%global pkg_version 0.4.12
 Name:           ros-message_runtime
 Version:        melodic.0.4.12
 Release:        3%{?dist}

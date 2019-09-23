@@ -1,3 +1,4 @@
+%global pkg_version 0.6.5
 Name:           ros-tf2_bullet
 Version:        melodic.0.6.5
 Release:        1%{?dist}

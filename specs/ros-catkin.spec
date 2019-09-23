@@ -1,6 +1,7 @@
+%global pkg_version 0.7.17
 Name:           ros-catkin
 Version:        melodic.0.7.17
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        ROS package catkin
 
 License:        BSD
@@ -9,6 +10,7 @@ URL:            http://www.ros.org/wiki/catkin
 Source0:        https://github.com/ros-gbp/catkin-release/archive/release/melodic/catkin/0.7.17-0.tar.gz#/ros-melodic-catkin-0.7.17-source0.tar.gz
 
 Patch0: ros-kinetic-catkin.python-path-in-templates.patch
+Patch1: ros-catkin.python3.patch
 
 BuildArch: noarch
 
@@ -34,8 +36,8 @@ Requires:       python3
 Requires:       python3-catkin_pkg
 Requires:       python3-pyparsing
 
-Provides:  ros-melodic-catkin = 0.7.17-3
-Obsoletes: ros-melodic-catkin < 0.7.17-3
+Provides:  ros-melodic-catkin = 0.7.17-4
+Obsoletes: ros-melodic-catkin < 0.7.17-4
 
 
 %description
@@ -55,8 +57,8 @@ Requires:       python3-catkin_pkg
 Requires:       python3-mock
 Requires:       python3-pyparsing
 
-Provides: ros-melodic-catkin-devel = 0.7.17-3
-Obsoletes: ros-melodic-catkin-devel < 0.7.17-3
+Provides: ros-melodic-catkin-devel = 0.7.17-4
+Obsoletes: ros-melodic-catkin-devel < 0.7.17-4
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -69,6 +71,7 @@ applications that use %{name}.
 %setup -c -T
 tar --strip-components=1 -xf %{SOURCE0}
 %patch0 -p1
+%patch1 -p1
 
 %build
 # nothing to do here
@@ -154,6 +157,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Aug 16 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.7.17-4
+- Add patch to enforce python3 as interpreter
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.7.17-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.7.17-2

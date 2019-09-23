@@ -1,3 +1,4 @@
+%global pkg_version 1.9.11
 Name:           ros-angles
 Version:        melodic.1.9.11
 Release:        3%{?dist}

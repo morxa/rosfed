@@ -1,3 +1,4 @@
+%global pkg_version 1.13.1
 Name:           ros-urdf
 Version:        melodic.1.13.1
 Release:        3%{?dist}

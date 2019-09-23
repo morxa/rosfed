@@ -1,3 +1,4 @@
+%global pkg_version 0.5.12
 Name:           ros-std_msgs
 Version:        melodic.0.5.12
 Release:        3%{?dist}

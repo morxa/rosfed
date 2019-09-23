@@ -1,3 +1,4 @@
+%global pkg_version 0.10.3
 Name:           ros-visualization_tutorials
 Version:        melodic.0.10.3
 Release:        3%{?dist}

@@ -1,3 +1,4 @@
+%global pkg_version 1.6.0
 Name:           ros-dynamic_reconfigure
 Version:        melodic.1.6.0
 Release:        3%{?dist}

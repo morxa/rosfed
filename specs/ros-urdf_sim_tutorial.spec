@@ -1,3 +1,4 @@
+%global pkg_version 0.4.0
 Name:           ros-urdf_sim_tutorial
 Version:        melodic.0.4.0
 Release:        3%{?dist}
