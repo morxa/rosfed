@@ -1,13 +1,12 @@
-%global pkg_version 0.7.17
 Name:           ros-catkin
-Version:        melodic.0.7.17
-Release:        4%{?dist}
+Version:        melodic.0.7.19
+Release:        1%{?dist}
 Summary:        ROS package catkin
 
 License:        BSD
-URL:            http://www.ros.org/wiki/catkin
+URL:            http://wiki.ros.org/catkin
 
-Source0:        https://github.com/ros-gbp/catkin-release/archive/release/melodic/catkin/0.7.17-0.tar.gz#/ros-melodic-catkin-0.7.17-source0.tar.gz
+Source0:        https://github.com/ros-gbp/catkin-release/archive/release/melodic/catkin/0.7.19-1.tar.gz#/ros-melodic-catkin-0.7.19-source0.tar.gz
 
 Patch0: ros-kinetic-catkin.python-path-in-templates.patch
 Patch1: ros-catkin.python3.patch
@@ -34,10 +33,11 @@ BuildRequires:  python3-pyparsing
 
 Requires:       python3
 Requires:       python3-catkin_pkg
+Requires:       python3-empy
 Requires:       python3-pyparsing
 
-Provides:  ros-melodic-catkin = 0.7.17-4
-Obsoletes: ros-melodic-catkin < 0.7.17-4
+Provides:  ros-melodic-catkin = 0.7.19-1
+Obsoletes: ros-melodic-catkin < 0.7.19-1
 
 
 %description
@@ -49,16 +49,16 @@ Requires:       %{name} = %{version}-%{release}
 Requires:       cmake
 Requires:       gmock-devel
 Requires:       gtest-devel
-Requires:       python3-empy
 Requires:       python3-nose
 Requires:       gcc-c++
 Requires:       python3
 Requires:       python3-catkin_pkg
+Requires:       python3-empy
 Requires:       python3-mock
 Requires:       python3-pyparsing
 
-Provides: ros-melodic-catkin-devel = 0.7.17-4
-Obsoletes: ros-melodic-catkin-devel < 0.7.17-4
+Provides: ros-melodic-catkin-devel = 0.7.19-1
+Obsoletes: ros-melodic-catkin-devel < 0.7.19-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -146,9 +146,9 @@ done
 
 echo "This is a package automatically generated with rosfed." >> README_FEDORA
 echo "See https://pagure.io/ros for more information." >> README_FEDORA
-install -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
 echo %{_docdir}/%{name} >> files.list
-install -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
 echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
@@ -157,6 +157,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Thu Oct 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.7.19-1
+- Update to latest release
 * Fri Aug 16 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.7.17-4
 - Add patch to enforce python3 as interpreter
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.7.17-3
