@@ -1,6 +1,6 @@
 Name:           ros-catkin
 Version:        melodic.0.7.19
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package catkin
 
 License:        BSD
@@ -36,8 +36,8 @@ Requires:       python3-catkin_pkg
 Requires:       python3-empy
 Requires:       python3-pyparsing
 
-Provides:  ros-melodic-catkin = 0.7.19-1
-Obsoletes: ros-melodic-catkin < 0.7.19-1
+Provides:  ros-melodic-catkin = 0.7.19-2
+Obsoletes: ros-melodic-catkin < 0.7.19-2
 
 
 %description
@@ -57,8 +57,8 @@ Requires:       python3-empy
 Requires:       python3-mock
 Requires:       python3-pyparsing
 
-Provides: ros-melodic-catkin-devel = 0.7.19-1
-Obsoletes: ros-melodic-catkin-devel < 0.7.19-1
+Provides: ros-melodic-catkin-devel = 0.7.19-2
+Obsoletes: ros-melodic-catkin-devel < 0.7.19-2
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -127,6 +127,13 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 
+# replace cmake python macro in shebang
+for file in $(grep -rIl '^#!.*@PYTHON_EXECUTABLE@*$' %{buildroot}) ; do
+  sed -i.orig 's:^#!\s*@PYTHON_EXECUTABLE@\s*:%{__python3}:' $file
+  touch -r $file.orig $file
+  rm $file.orig
+done
+
 # replace unversioned python shebang
 for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
   sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
@@ -157,6 +164,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Thu Oct 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.7.19-2
+- Replace python shebang macros
 * Thu Oct 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.7.19-1
 - Update to latest release
 * Fri Aug 16 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.7.17-4
