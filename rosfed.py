@@ -32,7 +32,7 @@ def get_system_package_name(pkg_name, rosdistro):
     cmd = subprocess.run(
         ['rosdep', '--rosdistro={}'.format(rosdistro),
          'resolve', pkg_name],
-        stdout=subprocess.PIPE
+        stdout=subprocess.PIPE, stderr=subprocess.PIPE
     )
     deps = []
     if cmd.returncode == 0:
@@ -47,7 +47,7 @@ def get_system_package_name(pkg_name, rosdistro):
         res = avail.filter(name=pkg_name)
         deps = [ pkg.name for pkg in res ]
         assert len(deps) > 0, 'Could not find system package {}: {}'.format(
-            pkg_name, cmd.stderr or cmd.stdout.decode())
+            pkg_name, cmd.stderr.decode().rstrip() or cmd.stdout.decode().rstrip())
     assert len(deps) == 1, 'Expected exactly one name, got: {}'.format(deps)
     return deps[0]
 
