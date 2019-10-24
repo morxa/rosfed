@@ -49,14 +49,14 @@ common:
             pkg: python3dist(pyopengl)
     distro_names:
       gazebo9: gazebo
-      gazebo: gazebo
       libgazebo7-dev: gazebo-devel
       libgazebo7: gazebo-libs
       libgazebo9-dev: gazebo-devel
       libgazebo9: gazebo-libs
       libgpgme-dev: gpgme-devel
       python-gnupg: python2-gnupg
+      python-gnupg: python3-gnupg
       python-imaging: python-pillow
       python-wxtools: python3-wxpython4
-      python-gnupg: python3-gnupg
+      python3-catkin-pkg: python3-catkin_pkg
       libgpgme-dev: gpgme-devel

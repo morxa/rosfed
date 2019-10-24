@@ -13,6 +13,7 @@ Generate Spec files for ROS packages with the rosinstall_generator.
 import argparse
 import build_tree
 import copr_build
+import dnf
 import jinja2
 import os
 import re
@@ -33,10 +34,20 @@ def get_system_package_name(pkg_name, rosdistro):
          'resolve', pkg_name],
         stdout=subprocess.PIPE
     )
-    assert cmd.returncode == 0, 'Could not find system package {}: {}'.format(
-        pkg_name, cmd.stderr or cmd.stdout.decode())
-    lines = cmd.stdout.decode().split('\n')
-    deps = [ dep for dep in lines if not (dep == '' or dep == '#dnf') ]
+    deps = []
+    if cmd.returncode == 0:
+        lines = cmd.stdout.decode().split('\n')
+        deps = [ dep for dep in lines if not (dep == '' or dep == '#dnf') ]
+    else:
+        base = dnf.Base()
+        base.read_all_repos()
+        base.fill_sack()
+        q = base.sack.query()
+        avail = q.available()
+        res = avail.filter(name=pkg_name)
+        deps = [ pkg.name for pkg in res ]
+        assert len(deps) > 0, 'Could not find system package {}: {}'.format(
+            pkg_name, cmd.stderr or cmd.stdout.decode())
     assert len(deps) == 1, 'Expected exactly one name, got: {}'.format(deps)
     return deps[0]
 
