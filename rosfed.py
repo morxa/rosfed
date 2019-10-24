@@ -122,6 +122,14 @@ class RosPkg:
             deps[key] = set(val)
         return deps
 
+    def translate_python_dependencies(self, dependencies):
+        """For a set of dependencies, translate all python packages to python3 packages."""
+        translated_dependencies = set()
+        for dep in dependencies:
+            new_dep = re.sub('python2?((?=-)|$)', 'python3', dep)
+            translated_dependencies.add(new_dep)
+        return translated_dependencies
+
     def translate_dependencies(self, dep_type, dependencies):
         """Translate a dependency from ROS' package.xml into a user-defined dep.
          This allows to use system replacements, e.g., by translating the ROS
@@ -144,10 +152,7 @@ class RosPkg:
                        break
                if not translated:
                    new_dependencies[from_type].add(from_pkg)
-        for dep in new_dependencies['system']:
-            new_dependencies['system'].remove(dep)
-            dep = re.sub('python2?((?=-)|$)', 'python3', dep)
-            new_dependencies['system'].add(dep)
+        new_dependencies['system'] = self.translate_python_dependencies(new_dependencies['system'])
         return new_dependencies
 
     def get_build_dependencies(self):
