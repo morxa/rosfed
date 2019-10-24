@@ -122,6 +122,12 @@ class RosPkg:
             deps[key] = set(val)
         return deps
 
+    def get_sources_from_cfg(self):
+        try:
+            return self.pkg_config['sources']
+        except KeyError:
+            return []
+
     def translate_python_dependencies(self, dependencies):
         """For a set of dependencies, translate all python packages to python3 packages."""
         translated_dependencies = set()
@@ -204,9 +210,11 @@ class RosPkg:
             self.get_devel_dependencies()['ros']
 
     def get_sources(self):
+        sources = self.get_sources_from_cfg()
         ros_pkg = generator.generate_rosinstall(
             self.rosdistro, [self.name], deps=False, wet_only=True, tar=True)
-        return [ros_pkg[0]['tar']['uri']]
+        sources.append(ros_pkg[0]['tar']['uri'])
+        return sources
 
     def get_version(self):
         ros_pkg = generator.generate_rosinstall(
