@@ -218,10 +218,10 @@ done
 
 echo "This is a package automatically generated with rosfed." >> README_FEDORA
 echo "See https://pagure.io/ros for more information." >> README_FEDORA
-install -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
 echo %{_docdir}/%{name} >> files.list
 {% if has_devel %}
-install -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
 echo %{_docdir}/%{name}-devel >> files_devel.list
 {% endif %}
 
