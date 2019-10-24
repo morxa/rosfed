@@ -98,9 +98,8 @@ class CoprBuilder:
         raise Exception(
             'Could not find node of build {} in build tree'.format(build))
 
-    def build_tree(self, chroot, pkgs, only_new=False):
+    def build_tree(self, chroot, tree, only_new=False):
         """ Build a set of packages in order of dependencies. """
-        tree = build_tree.Tree(pkgs)
         build_ids = []
         while not tree.is_built():
             wait_for_build = True

@@ -11,6 +11,7 @@ Generate Spec files for ROS packages with the rosinstall_generator.
 """
 
 import argparse
+import build_tree
 import copr_build
 import jinja2
 import os
