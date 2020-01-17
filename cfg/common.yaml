@@ -72,7 +72,8 @@ common:
       python-gnupg: python2-gnupg
       python-gnupg: python3-gnupg
       python-imaging: python-pillow
+      python-opencv: python3-opencv
       python-wxtools: python3-wxpython4
       python3-catkin-pkg: python3-catkin_pkg
-      python3-yaml: python3-pyyaml
       python3-qt5-bindings: python3-pyside2
+      python3-yaml: python3-pyyaml
