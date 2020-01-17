@@ -62,7 +62,7 @@ class CoprBuilder:
                              universal_newlines=True,
                              stdout=subprocess.PIPE)
         assert res.returncode == 0, 'Failed to build SRPM for ' + spec
-        match = re.match('Wrote: (\S+)', res.stdout)
+        match = re.search('Wrote: (\S+)', res.stdout)
         assert match, 'Unexpected output from rpmbuild: "%s"'.format(res.stdout)
         srpm = match.group(1)
         return self.build_srpm(chroot, srpm, wait_for_completion)
