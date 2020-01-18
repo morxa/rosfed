@@ -9,6 +9,9 @@ The ``rosfed.py`` script works as follows:
 1. It fetches package information about the upstream ROS package with the
    ``rosinstall_generator``. This includes dependencies, license, sources, and
    the version.
+
+   **Note:** It is important to have an updated rosdep database. You can update it
+   by executing ``rosdep update``.
 2. With this information, it generates a SPEC file using the template in
    ``./templates/``. The generic template in ``./templates/pkg.spec.j2`` works for
    most packages. For some packages, the template needs to be modified, in
