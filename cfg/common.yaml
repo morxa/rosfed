@@ -23,6 +23,13 @@ common:
           to:
             type: system
             pkg: python3-opencv
+        - numpy:
+          from:
+            type: system
+            pkg: numpy
+          to:
+            type: system
+            pkg: python3dist(numpy)
 
     run:
       translate:
@@ -47,6 +54,13 @@ common:
           to:
             type: system
             pkg: python3dist(pyopengl)
+        - numpy:
+          from:
+            type: system
+            pkg: numpy
+          to:
+            type: system
+            pkg: python3dist(numpy)
     distro_names:
       gazebo9: gazebo
       libgazebo7-dev: gazebo-devel
