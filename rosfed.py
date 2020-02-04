@@ -45,11 +45,11 @@ def get_system_package_name(pkg_name, rosdistro):
         q = base.sack.query()
         avail = q.available()
         res = avail.filter(name=pkg_name)
-        deps = [ pkg.name for pkg in res ]
+        deps = set([ pkg.name for pkg in res ])
         assert len(deps) > 0, 'Could not find system package {}: {}'.format(
             pkg_name, cmd.stderr.decode().rstrip() or cmd.stdout.decode().rstrip())
     assert len(deps) == 1, 'Expected exactly one name, got: {}'.format(deps)
-    return deps[0]
+    return deps.pop()
 
 def get_changelog_from_spec(spec):
     """ Get the changelog of an existing Spec file.
