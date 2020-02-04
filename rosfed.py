@@ -28,28 +28,31 @@ from rosinstall_generator import generator
 from defusedxml import ElementTree
 from termcolor import cprint
 
-def get_system_package_name(pkg_name, rosdistro):
-    cmd = subprocess.run(
-        ['rosdep', '--rosdistro={}'.format(rosdistro),
-         'resolve', pkg_name],
-        stdout=subprocess.PIPE, stderr=subprocess.PIPE
-    )
-    deps = []
-    if cmd.returncode == 0:
-        lines = cmd.stdout.decode().split('\n')
-        deps = [ dep for dep in lines if not (dep == '' or dep == '#dnf') ]
-    else:
+class PkgResolver:
+    def __init__(self):
         base = dnf.Base()
         base.read_all_repos()
         base.fill_sack()
         q = base.sack.query()
-        avail = q.available()
-        res = avail.filter(name=pkg_name)
-        deps = set([ pkg.name for pkg in res ])
-        assert len(deps) > 0, 'Could not find system package {}: {}'.format(
-            pkg_name, cmd.stderr.decode().rstrip() or cmd.stdout.decode().rstrip())
-    assert len(deps) == 1, 'Expected exactly one name, got: {}'.format(deps)
-    return deps.pop()
+        self.available_pkgs = q.available()
+
+    def get_system_package_name(self, pkg_name, rosdistro):
+        cmd = subprocess.run(
+            ['rosdep', '--rosdistro={}'.format(rosdistro),
+             'resolve', pkg_name],
+            stdout=subprocess.PIPE, stderr=subprocess.PIPE
+        )
+        deps = []
+        if cmd.returncode == 0:
+            lines = cmd.stdout.decode().split('\n')
+            deps = [ dep for dep in lines if not (dep == '' or dep == '#dnf') ]
+        else:
+            res = self.available_pkgs.filter(name=pkg_name)
+            deps = set([ pkg.name for pkg in res ])
+            assert len(deps) > 0, 'Could not find system package {}: {}'.format(
+                pkg_name, cmd.stderr.decode().rstrip() or cmd.stdout.decode().rstrip())
+        assert len(deps) == 1, 'Expected exactly one name, got: {}'.format(deps)
+        return deps.pop()
 
 def get_changelog_from_spec(spec):
     """ Get the changelog of an existing Spec file.
@@ -63,7 +66,8 @@ def get_changelog_from_spec(spec):
     return ''.join(spec_as_list[spec_as_list.index('%changelog\n')+1:])
 
 class RosPkg:
-    def __init__(self, name, distro):
+    def __init__(self, name, distro, pkg_resolver):
+        self.resolver = pkg_resolver
         self.rosdistro = distro
         self.name = name
         self.spec = ''
@@ -120,7 +124,7 @@ class RosPkg:
                                 dep_list['system'].add(dep)
                         except KeyError:
                             system_pkg = \
-                                    get_system_package_name(pkg, self.rosdistro)
+                                    self.resolver.get_system_package_name(pkg, self.rosdistro)
                             for dep_list in dep_lists:
                                 dep_list['system'].add(system_pkg)
 
@@ -377,11 +381,12 @@ def generate_spec_files(packages, distro, bump_release, release_version,
         lstrip_blocks=True,
     )
     i = 0
+    pkg_resolver = PkgResolver()
     generated_packages = {}
     while i < len(packages):
         print('Generating Spec file for {}.'.format(packages[i]))
         # TODO: skip if already in generated_packages
-        ros_pkg = RosPkg(name=packages[i], distro=distro)
+        ros_pkg = RosPkg(name=packages[i], distro=distro, pkg_resolver=pkg_resolver)
         i += 1
         build_deps = ros_pkg.get_build_dependencies()
         run_deps = ros_pkg.get_run_dependencies()
