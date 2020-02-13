@@ -1,12 +1,12 @@
 Name:           ros-catkin
-Version:        melodic.0.7.19
-Release:        2%{?dist}
+Version:        melodic.0.7.20
+Release:        1%{?dist}
 Summary:        ROS package catkin
 
 License:        BSD
 URL:            http://wiki.ros.org/catkin
 
-Source0:        https://github.com/ros-gbp/catkin-release/archive/release/melodic/catkin/0.7.19-1.tar.gz#/ros-melodic-catkin-0.7.19-source0.tar.gz
+Source0:        https://github.com/ros-gbp/catkin-release/archive/release/melodic/catkin/0.7.20-1.tar.gz#/ros-melodic-catkin-0.7.20-source0.tar.gz
 
 Patch0: ros-kinetic-catkin.python-path-in-templates.patch
 Patch1: ros-catkin.python3.patch
@@ -36,8 +36,9 @@ Requires:       python3-catkin_pkg
 Requires:       python3-empy
 Requires:       python3-pyparsing
 
-Provides:  ros-melodic-catkin = 0.7.19-2
-Obsoletes: ros-melodic-catkin < 0.7.19-2
+Provides:  ros-melodic-catkin = 0.7.20-1
+Obsoletes: ros-melodic-catkin < 0.7.20-1
+Obsoletes: ros-kinetic-catkin
 
 
 %description
@@ -57,8 +58,9 @@ Requires:       python3-empy
 Requires:       python3-mock
 Requires:       python3-pyparsing
 
-Provides: ros-melodic-catkin-devel = 0.7.19-2
-Obsoletes: ros-melodic-catkin-devel < 0.7.19-2
+Provides: ros-melodic-catkin-devel = 0.7.20-1
+Obsoletes: ros-melodic-catkin-devel < 0.7.20-1
+Obsoletes: ros-kinetic-catkin-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -164,6 +166,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.7.20-1
+- Update to latest release
 * Thu Oct 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.7.19-2
 - Replace python shebang macros
 * Thu Oct 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.7.19-1

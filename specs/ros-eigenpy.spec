@@ -1,13 +1,12 @@
 Name:           ros-eigenpy
-Version:        melodic.1.5.1
+Version:        melodic.1.6.9
 Release:        1%{?dist}
 Summary:        ROS package eigenpy
 
 License:        BSD
 URL:            https://github.com/stack-of-tasks/eigenpy
 
-Source0:        https://github.com/stack-of-tasks/eigenpy/archive/v%{pkg_version}/eigenpy.tar.gz#/ros-melodic-eigenpy-1.5.1-source0.tar.gz
-Source1:        https://github.com/ipab-slmc/eigenpy_catkin-release/archive/release/melodic/eigenpy/1.5.1-2.tar.gz#/ros-melodic-eigenpy-1.5.1-source1.tar.gz
+Source0:        https://github.com/ipab-slmc/eigenpy_catkin-release/archive/release/melodic/eigenpy/1.6.9-1.tar.gz#/ros-melodic-eigenpy-1.6.9-source0.tar.gz
 
 
 
@@ -18,33 +17,42 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  boost-devel
+BuildRequires:  boost-devel boost-python3-devel boost-python3-devel
+BuildRequires:  boost-python3-devel
+BuildRequires:  cmake
+BuildRequires:  doxygen
 BuildRequires:  eigen3-devel
 BuildRequires:  git
-BuildRequires:  numpy
 BuildRequires:  python3-devel
+BuildRequires:  python3dist(numpy)
 BuildRequires:  ros-melodic-catkin-devel
 
-Requires:       numpy
+Requires:       python3dist(numpy)
 
-Provides:  ros-melodic-eigenpy = 1.5.1-1
+Provides:  ros-melodic-eigenpy = 1.6.9-1
+Obsoletes: ros-melodic-eigenpy < 1.6.9-1
+Obsoletes: ros-kinetic-eigenpy
 
 
 %description
-Bindings between Numpy and Eigen using Boost.Python - wrapped for
-catkin.
+Bindings between Numpy and Eigen using Boost.Python
 
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       boost-devel
+Requires:       cmake
+Requires:       boost-devel boost-python3-devel boost-python3-devel
+Requires:       boost-python3-devel
+Requires:       doxygen
 Requires:       eigen3-devel
 Requires:       git
-Requires:       numpy
 Requires:       python3-devel
+Requires:       python3dist(numpy)
+Requires:       ros-melodic-catkin-devel
 
-Provides: ros-melodic-eigenpy-devel = 1.5.1-1
+Provides: ros-melodic-eigenpy-devel = 1.6.9-1
+Obsoletes: ros-melodic-eigenpy-devel < 1.6.9-1
+Obsoletes: ros-kinetic-eigenpy-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -53,9 +61,9 @@ applications that use %{name}.
 
 
 %prep
-tar --strip-components=1 -xf %{SOURCE1}
-mkdir -p eigenpy
-tar --strip-components=1 -C eigenpy -xf %{SOURCE0}
+
+%setup -c -T
+tar --strip-components=1 -xf %{SOURCE0}
 
 %build
 # nothing to do here
@@ -114,6 +122,13 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 
+# replace cmake python macro in shebang
+for file in $(grep -rIl '^#!.*@PYTHON_EXECUTABLE@*$' %{buildroot}) ; do
+  sed -i.orig 's:^#!\s*@PYTHON_EXECUTABLE@\s*:%{__python3}:' $file
+  touch -r $file.orig $file
+  rm $file.orig
+done
+
 # replace unversioned python shebang
 for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
   sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
@@ -133,9 +148,9 @@ done
 
 echo "This is a package automatically generated with rosfed." >> README_FEDORA
 echo "See https://pagure.io/ros for more information." >> README_FEDORA
-install -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
 echo %{_docdir}/%{name} >> files.list
-install -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
 echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
@@ -144,5 +159,7 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.6.9-1
+- Update to latest release
 * Wed Jul 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.5.1-1
 - Update to latest release

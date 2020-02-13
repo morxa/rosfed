@@ -1,13 +1,12 @@
-%global pkg_version 0.15.1
 Name:           ros-transmission_interface
-Version:        melodic.0.15.1
-Release:        3%{?dist}
+Version:        melodic.0.16.0
+Release:        1%{?dist}
 Summary:        ROS package transmission_interface
 
 License:        BSD
 URL:            https://github.com/ros-controls/ros_control/wiki
 
-Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/melodic/transmission_interface/0.15.1-0.tar.gz#/ros-melodic-transmission_interface-0.15.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/melodic/transmission_interface/0.16.0-1.tar.gz#/ros-melodic-transmission_interface-0.16.0-source0.tar.gz
 
 
 
@@ -18,6 +17,7 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
+BuildRequires:  boost-devel boost-python3-devel boost-python3-devel
 BuildRequires:  poco-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
@@ -27,13 +27,12 @@ BuildRequires:  ros-melodic-hardware_interface-devel
 BuildRequires:  ros-melodic-pluginlib-devel
 BuildRequires:  ros-melodic-resource_retriever-devel
 BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-rosunit-devel
 
-Requires:       ros-melodic-pluginlib
 Requires:       ros-melodic-roscpp
 
-Provides:  ros-melodic-transmission_interface = 0.15.1-3
-Obsoletes: ros-melodic-transmission_interface < 0.15.1-3
+Provides:  ros-melodic-transmission_interface = 0.16.0-1
+Obsoletes: ros-melodic-transmission_interface < 0.16.0-1
+Obsoletes: ros-kinetic-transmission_interface
 
 
 %description
@@ -42,19 +41,20 @@ Transmission Interface.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
+Requires:       boost-devel boost-python3-devel boost-python3-devel
 Requires:       ros-melodic-catkin-devel
+Requires:       ros-melodic-hardware_interface-devel
+Requires:       ros-melodic-pluginlib-devel
 Requires:       poco-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
 Requires:       ros-melodic-cmake_modules-devel
-Requires:       ros-melodic-hardware_interface-devel
-Requires:       ros-melodic-pluginlib-devel
 Requires:       ros-melodic-resource_retriever-devel
 Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-rosunit-devel
 
-Provides: ros-melodic-transmission_interface-devel = 0.15.1-3
-Obsoletes: ros-melodic-transmission_interface-devel < 0.15.1-3
+Provides: ros-melodic-transmission_interface-devel = 0.16.0-1
+Obsoletes: ros-melodic-transmission_interface-devel < 0.16.0-1
+Obsoletes: ros-kinetic-transmission_interface-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -124,6 +124,13 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 
+# replace cmake python macro in shebang
+for file in $(grep -rIl '^#!.*@PYTHON_EXECUTABLE@*$' %{buildroot}) ; do
+  sed -i.orig 's:^#!\s*@PYTHON_EXECUTABLE@\s*:%{__python3}:' $file
+  touch -r $file.orig $file
+  rm $file.orig
+done
+
 # replace unversioned python shebang
 for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
   sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
@@ -143,9 +150,9 @@ done
 
 echo "This is a package automatically generated with rosfed." >> README_FEDORA
 echo "See https://pagure.io/ros for more information." >> README_FEDORA
-install -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
 echo %{_docdir}/%{name} >> files.list
-install -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
 echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
@@ -154,6 +161,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.16.0-1
+- Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.15.1-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.15.1-2

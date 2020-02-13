@@ -1,12 +1,12 @@
 Name:           ros-warehouse_ros
-Version:        melodic.0.9.2
+Version:        melodic.0.9.3
 Release:        1%{?dist}
 Summary:        ROS package warehouse_ros
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/warehouse_ros-release/archive/release/melodic/warehouse_ros/0.9.2-0.tar.gz#/ros-melodic-warehouse_ros-0.9.2-source0.tar.gz
+Source0:        https://github.com/ros-gbp/warehouse_ros-release/archive/release/melodic/warehouse_ros/0.9.3-1.tar.gz#/ros-melodic-warehouse_ros-0.9.3-source0.tar.gz
 
 
 
@@ -34,8 +34,9 @@ Requires:       ros-melodic-rostime
 Requires:       ros-melodic-std_msgs
 Requires:       ros-melodic-tf
 
-Provides:  ros-melodic-warehouse_ros = 0.9.2-1
-Obsoletes: ros-melodic-warehouse_ros < 0.9.2-1
+Provides:  ros-melodic-warehouse_ros = 0.9.3-1
+Obsoletes: ros-melodic-warehouse_ros < 0.9.3-1
+Obsoletes: ros-kinetic-warehouse_ros
 
 
 %description
@@ -54,8 +55,9 @@ Requires:       ros-melodic-rostime-devel
 Requires:       ros-melodic-std_msgs-devel
 Requires:       ros-melodic-tf-devel
 
-Provides: ros-melodic-warehouse_ros-devel = 0.9.2-1
-Obsoletes: ros-melodic-warehouse_ros-devel < 0.9.2-1
+Provides: ros-melodic-warehouse_ros-devel = 0.9.3-1
+Obsoletes: ros-melodic-warehouse_ros-devel < 0.9.3-1
+Obsoletes: ros-kinetic-warehouse_ros-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -125,6 +127,13 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 
+# replace cmake python macro in shebang
+for file in $(grep -rIl '^#!.*@PYTHON_EXECUTABLE@*$' %{buildroot}) ; do
+  sed -i.orig 's:^#!\s*@PYTHON_EXECUTABLE@\s*:%{__python3}:' $file
+  touch -r $file.orig $file
+  rm $file.orig
+done
+
 # replace unversioned python shebang
 for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
   sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
@@ -144,9 +153,9 @@ done
 
 echo "This is a package automatically generated with rosfed." >> README_FEDORA
 echo "See https://pagure.io/ros for more information." >> README_FEDORA
-install -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
 echo %{_docdir}/%{name} >> files.list
-install -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
 echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
@@ -155,6 +164,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.9.3-1
+- Update to latest release
 * Wed Jul 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.9.2-1
 - Update to latest release
 * Thu Mar 14 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.9.2-1

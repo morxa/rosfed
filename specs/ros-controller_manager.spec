@@ -1,13 +1,12 @@
-%global pkg_version 0.15.1
 Name:           ros-controller_manager
-Version:        melodic.0.15.1
-Release:        3%{?dist}
+Version:        melodic.0.16.0
+Release:        1%{?dist}
 Summary:        ROS package controller_manager
 
 License:        BSD
 URL:            https://github.com/ros-controls/ros_control/wiki
 
-Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/melodic/controller_manager/0.15.1-0.tar.gz#/ros-melodic-controller_manager-0.15.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/melodic/controller_manager/0.16.0-1.tar.gz#/ros-melodic-controller_manager-0.16.0-source0.tar.gz
 
 
 
@@ -18,6 +17,7 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
+BuildRequires:  boost-devel boost-python3-devel boost-python3-devel
 BuildRequires:  poco-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
@@ -26,15 +26,17 @@ BuildRequires:  ros-melodic-controller_interface-devel
 BuildRequires:  ros-melodic-controller_manager_msgs-devel
 BuildRequires:  ros-melodic-hardware_interface-devel
 BuildRequires:  ros-melodic-pluginlib-devel
+BuildRequires:  ros-melodic-roscpp-devel
 BuildRequires:  ros-melodic-rostest-devel
 
-Requires:       ros-melodic-controller_interface
-Requires:       ros-melodic-controller_manager_msgs
-Requires:       ros-melodic-hardware_interface
-Requires:       ros-melodic-pluginlib
+Requires:       ros-melodic-roscpp
+Requires:       ros-melodic-rosparam
+Requires:       ros-melodic-rospy
+Requires:       ros-melodic-std_msgs
 
-Provides:  ros-melodic-controller_manager = 0.15.1-3
-Obsoletes: ros-melodic-controller_manager < 0.15.1-3
+Provides:  ros-melodic-controller_manager = 0.16.0-1
+Obsoletes: ros-melodic-controller_manager < 0.16.0-1
+Obsoletes: ros-kinetic-controller_manager
 
 
 %description
@@ -44,17 +46,23 @@ The controller manager.
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       ros-melodic-catkin-devel
-Requires:       poco-devel
-Requires:       tinyxml-devel
-Requires:       tinyxml2-devel
 Requires:       ros-melodic-controller_interface-devel
 Requires:       ros-melodic-controller_manager_msgs-devel
 Requires:       ros-melodic-hardware_interface-devel
 Requires:       ros-melodic-pluginlib-devel
+Requires:       boost-devel boost-python3-devel boost-python3-devel
+Requires:       poco-devel
+Requires:       tinyxml-devel
+Requires:       tinyxml2-devel
+Requires:       ros-melodic-roscpp-devel
 Requires:       ros-melodic-rostest-devel
+Requires:       ros-melodic-rosparam-devel
+Requires:       ros-melodic-rospy-devel
+Requires:       ros-melodic-std_msgs-devel
 
-Provides: ros-melodic-controller_manager-devel = 0.15.1-3
-Obsoletes: ros-melodic-controller_manager-devel < 0.15.1-3
+Provides: ros-melodic-controller_manager-devel = 0.16.0-1
+Obsoletes: ros-melodic-controller_manager-devel < 0.16.0-1
+Obsoletes: ros-kinetic-controller_manager-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -124,6 +132,13 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 
+# replace cmake python macro in shebang
+for file in $(grep -rIl '^#!.*@PYTHON_EXECUTABLE@*$' %{buildroot}) ; do
+  sed -i.orig 's:^#!\s*@PYTHON_EXECUTABLE@\s*:%{__python3}:' $file
+  touch -r $file.orig $file
+  rm $file.orig
+done
+
 # replace unversioned python shebang
 for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
   sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
@@ -143,9 +158,9 @@ done
 
 echo "This is a package automatically generated with rosfed." >> README_FEDORA
 echo "See https://pagure.io/ros for more information." >> README_FEDORA
-install -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
 echo %{_docdir}/%{name} >> files.list
-install -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
 echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
@@ -154,6 +169,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.16.0-1
+- Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.15.1-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.15.1-2

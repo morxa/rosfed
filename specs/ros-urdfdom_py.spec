@@ -1,12 +1,12 @@
 Name:           ros-urdfdom_py
-Version:        melodic.0.4.0
-Release:        3%{?dist}
+Version:        melodic.0.4.2
+Release:        1%{?dist}
 Summary:        ROS package urdfdom_py
 
 License:        BSD
 URL:            http://wiki.ros.org/urdfdom_py
 
-Source0:        https://github.com/ros-gbp/urdfdom_py-release/archive/release/melodic/urdfdom_py/0.4.0-0.tar.gz#/ros-melodic-urdfdom_py-0.4.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/urdfdom_py-release/archive/release/melodic/urdfdom_py/0.4.2-1.tar.gz#/ros-melodic-urdfdom_py-0.4.2-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,15 +18,17 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  python3-devel
 BuildRequires:  python3-mock
 BuildRequires:  ros-melodic-catkin-devel
 
 Requires:       python3-lxml
+Requires:       python3-pyyaml
 Requires:       PyYAML
+Requires:       ros-melodic-rospy
 
-Provides:  ros-melodic-urdfdom_py = 0.4.0-3
-Obsoletes: ros-melodic-urdfdom_py < 0.4.0-3
+Provides:  ros-melodic-urdfdom_py = 0.4.2-1
+Obsoletes: ros-melodic-urdfdom_py < 0.4.2-1
+Obsoletes: ros-kinetic-urdfdom_py
 
 
 %description
@@ -36,11 +38,12 @@ Python implementation of the URDF parser.
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-melodic-catkin-devel
-Requires:       python3-devel
 Requires:       python3-mock
+Requires:       ros-melodic-rospy-devel
 
-Provides: ros-melodic-urdfdom_py-devel = 0.4.0-3
-Obsoletes: ros-melodic-urdfdom_py-devel < 0.4.0-3
+Provides: ros-melodic-urdfdom_py-devel = 0.4.2-1
+Obsoletes: ros-melodic-urdfdom_py-devel < 0.4.2-1
+Obsoletes: ros-kinetic-urdfdom_py-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -110,6 +113,13 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 
+# replace cmake python macro in shebang
+for file in $(grep -rIl '^#!.*@PYTHON_EXECUTABLE@*$' %{buildroot}) ; do
+  sed -i.orig 's:^#!\s*@PYTHON_EXECUTABLE@\s*:%{__python3}:' $file
+  touch -r $file.orig $file
+  rm $file.orig
+done
+
 # replace unversioned python shebang
 for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
   sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
@@ -129,9 +139,9 @@ done
 
 echo "This is a package automatically generated with rosfed." >> README_FEDORA
 echo "See https://pagure.io/ros for more information." >> README_FEDORA
-install -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
 echo %{_docdir}/%{name} >> files.list
-install -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
 echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
@@ -140,6 +150,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.2-1
+- Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.0-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.0-2

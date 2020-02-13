@@ -1,12 +1,12 @@
 Name:           ros-joint_state_publisher
-Version:        melodic.1.12.13
-Release:        3%{?dist}
+Version:        melodic.1.12.14
+Release:        1%{?dist}
 Summary:        ROS package joint_state_publisher
 
 License:        BSD
 URL:            http://www.ros.org/wiki/joint_state_publisher
 
-Source0:        https://github.com/ros-gbp/joint_state_publisher-release/archive/release/melodic/joint_state_publisher/1.12.13-0.tar.gz#/ros-melodic-joint_state_publisher-1.12.13-source0.tar.gz
+Source0:        https://github.com/ros-gbp/joint_state_publisher-release/archive/release/melodic/joint_state_publisher/1.12.14-1.tar.gz#/ros-melodic-joint_state_publisher-1.12.14-source0.tar.gz
 
 
 BuildArch: noarch
@@ -21,12 +21,12 @@ BuildRequires:  python3-devel
 BuildRequires:  ros-melodic-catkin-devel
 BuildRequires:  ros-melodic-rostest-devel
 
-Requires:       ros-melodic-python_qt_binding
 Requires:       ros-melodic-rospy
 Requires:       ros-melodic-sensor_msgs
 
-Provides:  ros-melodic-joint_state_publisher = 1.12.13-3
-Obsoletes: ros-melodic-joint_state_publisher < 1.12.13-3
+Provides:  ros-melodic-joint_state_publisher = 1.12.14-1
+Obsoletes: ros-melodic-joint_state_publisher < 1.12.14-1
+Obsoletes: ros-kinetic-joint_state_publisher
 
 
 %description
@@ -38,12 +38,12 @@ Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-melodic-catkin-devel
 Requires:       ros-melodic-rostest-devel
-Requires:       ros-melodic-python_qt_binding-devel
 Requires:       ros-melodic-rospy-devel
 Requires:       ros-melodic-sensor_msgs-devel
 
-Provides: ros-melodic-joint_state_publisher-devel = 1.12.13-3
-Obsoletes: ros-melodic-joint_state_publisher-devel < 1.12.13-3
+Provides: ros-melodic-joint_state_publisher-devel = 1.12.14-1
+Obsoletes: ros-melodic-joint_state_publisher-devel < 1.12.14-1
+Obsoletes: ros-kinetic-joint_state_publisher-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -113,6 +113,13 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 
+# replace cmake python macro in shebang
+for file in $(grep -rIl '^#!.*@PYTHON_EXECUTABLE@*$' %{buildroot}) ; do
+  sed -i.orig 's:^#!\s*@PYTHON_EXECUTABLE@\s*:%{__python3}:' $file
+  touch -r $file.orig $file
+  rm $file.orig
+done
+
 # replace unversioned python shebang
 for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
   sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
@@ -132,9 +139,9 @@ done
 
 echo "This is a package automatically generated with rosfed." >> README_FEDORA
 echo "See https://pagure.io/ros for more information." >> README_FEDORA
-install -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
 echo %{_docdir}/%{name} >> files.list
-install -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
 echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
@@ -143,6 +150,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.12.14-1
+- Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.12.13-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.12.13-2

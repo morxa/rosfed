@@ -30,6 +30,7 @@ Requires:       ros-melodic-roscpp
 
 Provides:  ros-melodic-actionlib_tutorials = 0.1.11-3
 Obsoletes: ros-melodic-actionlib_tutorials < 0.1.11-3
+Obsoletes: ros-kinetic-actionlib_tutorials
 
 
 %description
@@ -48,6 +49,7 @@ Requires:       ros-melodic-message_runtime-devel
 
 Provides: ros-melodic-actionlib_tutorials-devel = 0.1.11-3
 Obsoletes: ros-melodic-actionlib_tutorials-devel < 0.1.11-3
+Obsoletes: ros-kinetic-actionlib_tutorials-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -117,6 +119,13 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 
+# replace cmake python macro in shebang
+for file in $(grep -rIl '^#!.*@PYTHON_EXECUTABLE@*$' %{buildroot}) ; do
+  sed -i.orig 's:^#!\s*@PYTHON_EXECUTABLE@\s*:%{__python3}:' $file
+  touch -r $file.orig $file
+  rm $file.orig
+done
+
 # replace unversioned python shebang
 for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
   sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
@@ -136,9 +145,9 @@ done
 
 echo "This is a package automatically generated with rosfed." >> README_FEDORA
 echo "See https://pagure.io/ros for more information." >> README_FEDORA
-install -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
 echo %{_docdir}/%{name} >> files.list
-install -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
 echo %{_docdir}/%{name}-devel >> files_devel.list
 
 

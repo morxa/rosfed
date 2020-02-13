@@ -1,12 +1,12 @@
 Name:           ros-python_qt_binding
-Version:        melodic.0.3.5
-Release:        3%{?dist}
+Version:        melodic.0.3.6
+Release:        1%{?dist}
 Summary:        ROS package python_qt_binding
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/python_qt_binding-release/archive/release/melodic/python_qt_binding/0.3.5-0.tar.gz#/ros-melodic-python_qt_binding-0.3.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/python_qt_binding-release/archive/release/melodic/python_qt_binding/0.3.6-2.tar.gz#/ros-melodic-python_qt_binding-0.3.6-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,15 +18,17 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  python3-qt5 sip
+BuildRequires:  python3-pyside2
+BuildRequires:  python3-qt5-devel sip
 BuildRequires:  qt5-qtbase-devel
 BuildRequires:  ros-melodic-catkin-devel
 BuildRequires:  ros-melodic-rosbuild-devel
 
-Requires:       python3-qt5 sip
+Requires:       python3-pyside2
 
-Provides:  ros-melodic-python_qt_binding = 0.3.5-3
-Obsoletes: ros-melodic-python_qt_binding < 0.3.5-3
+Provides:  ros-melodic-python_qt_binding = 0.3.6-1
+Obsoletes: ros-melodic-python_qt_binding < 0.3.6-1
+Obsoletes: ros-kinetic-python_qt_binding
 
 
 %description
@@ -43,12 +45,14 @@ these.
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-melodic-catkin-devel
-Requires:       python3-qt5 sip
+Requires:       python3-pyside2
+Requires:       python3-qt5-devel sip
 Requires:       qt5-qtbase-devel
 Requires:       ros-melodic-rosbuild-devel
 
-Provides: ros-melodic-python_qt_binding-devel = 0.3.5-3
-Obsoletes: ros-melodic-python_qt_binding-devel < 0.3.5-3
+Provides: ros-melodic-python_qt_binding-devel = 0.3.6-1
+Obsoletes: ros-melodic-python_qt_binding-devel < 0.3.6-1
+Obsoletes: ros-kinetic-python_qt_binding-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -118,6 +122,13 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 
+# replace cmake python macro in shebang
+for file in $(grep -rIl '^#!.*@PYTHON_EXECUTABLE@*$' %{buildroot}) ; do
+  sed -i.orig 's:^#!\s*@PYTHON_EXECUTABLE@\s*:%{__python3}:' $file
+  touch -r $file.orig $file
+  rm $file.orig
+done
+
 # replace unversioned python shebang
 for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
   sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
@@ -137,9 +148,9 @@ done
 
 echo "This is a package automatically generated with rosfed." >> README_FEDORA
 echo "See https://pagure.io/ros for more information." >> README_FEDORA
-install -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
 echo %{_docdir}/%{name} >> files.list
-install -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
 echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
@@ -148,6 +159,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.3.6-1
+- Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.3.5-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.3.5-2

@@ -1,4 +1,3 @@
-%global pkg_version 1.12.0
 Name:           ros-actionlib
 Version:        melodic.1.12.0
 Release:        1%{?dist}
@@ -9,7 +8,6 @@ URL:            http://www.ros.org/wiki/actionlib
 
 Source0:        https://github.com/ros-gbp/actionlib-release/archive/release/melodic/actionlib/1.12.0-1.tar.gz#/ros-melodic-actionlib-1.12.0-source0.tar.gz
 
-Patch0: ros-actionlib.boost.time_duration.patch
 
 
 # common BRs
@@ -19,7 +17,7 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  boost-devel
+BuildRequires:  boost-devel boost-python3-devel boost-python3-devel
 BuildRequires:  ros-melodic-actionlib_msgs-devel
 BuildRequires:  ros-melodic-catkin-devel
 BuildRequires:  ros-melodic-message_generation-devel
@@ -41,6 +39,7 @@ Requires:       ros-melodic-std_msgs
 
 Provides:  ros-melodic-actionlib = 1.12.0-1
 Obsoletes: ros-melodic-actionlib < 1.12.0-1
+Obsoletes: ros-kinetic-actionlib
 
 
 %description
@@ -53,7 +52,7 @@ point cloud, detecting the handle of a door, etc.
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       ros-melodic-catkin-devel
-Requires:       boost-devel
+Requires:       boost-devel boost-python3-devel boost-python3-devel
 Requires:       ros-melodic-actionlib_msgs-devel
 Requires:       ros-melodic-message_generation-devel
 Requires:       ros-melodic-roscpp-devel
@@ -67,6 +66,7 @@ Requires:       ros-melodic-rostopic-devel
 
 Provides: ros-melodic-actionlib-devel = 1.12.0-1
 Obsoletes: ros-melodic-actionlib-devel < 1.12.0-1
+Obsoletes: ros-kinetic-actionlib-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -78,7 +78,6 @@ applications that use %{name}.
 
 %setup -c -T
 tar --strip-components=1 -xf %{SOURCE0}
-%patch0 -p1
 
 %build
 # nothing to do here
@@ -137,6 +136,13 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 
+# replace cmake python macro in shebang
+for file in $(grep -rIl '^#!.*@PYTHON_EXECUTABLE@*$' %{buildroot}) ; do
+  sed -i.orig 's:^#!\s*@PYTHON_EXECUTABLE@\s*:%{__python3}:' $file
+  touch -r $file.orig $file
+  rm $file.orig
+done
+
 # replace unversioned python shebang
 for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
   sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
@@ -156,9 +162,9 @@ done
 
 echo "This is a package automatically generated with rosfed." >> README_FEDORA
 echo "See https://pagure.io/ros for more information." >> README_FEDORA
-install -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
 echo %{_docdir}/%{name} >> files.list
-install -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
 echo %{_docdir}/%{name}-devel >> files_devel.list
 
 

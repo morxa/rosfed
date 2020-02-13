@@ -1,12 +1,12 @@
 Name:           ros-gazebo_ros
-Version:        melodic.2.8.4
-Release:        3%{?dist}
+Version:        melodic.2.8.6
+Release:        1%{?dist}
 Summary:        ROS package gazebo_ros
 
 License:        Apache 2.0
 URL:            http://gazebosim.org/tutorials?cat=connect_ros
 
-Source0:        https://github.com/ros-gbp/gazebo_ros_pkgs-release/archive/release/melodic/gazebo_ros/2.8.4-0.tar.gz#/ros-melodic-gazebo_ros-2.8.4-source0.tar.gz
+Source0:        https://github.com/ros-gbp/gazebo_ros_pkgs-release/archive/release/melodic/gazebo_ros/2.8.6-1.tar.gz#/ros-melodic-gazebo_ros-2.8.6-source0.tar.gz
 
 
 
@@ -47,8 +47,9 @@ Requires:       ros-melodic-std_msgs
 Requires:       ros-melodic-std_srvs
 Requires:       ros-melodic-tf
 
-Provides:  ros-melodic-gazebo_ros = 2.8.4-3
-Obsoletes: ros-melodic-gazebo_ros < 2.8.4-3
+Provides:  ros-melodic-gazebo_ros = 2.8.6-1
+Obsoletes: ros-melodic-gazebo_ros < 2.8.6-1
+Obsoletes: ros-kinetic-gazebo_ros
 
 
 %description
@@ -76,8 +77,9 @@ Requires:       ros-melodic-std_srvs-devel
 Requires:       ros-melodic-tf-devel
 Requires:       ros-melodic-trajectory_msgs-devel
 
-Provides: ros-melodic-gazebo_ros-devel = 2.8.4-3
-Obsoletes: ros-melodic-gazebo_ros-devel < 2.8.4-3
+Provides: ros-melodic-gazebo_ros-devel = 2.8.6-1
+Obsoletes: ros-melodic-gazebo_ros-devel < 2.8.6-1
+Obsoletes: ros-kinetic-gazebo_ros-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -147,6 +149,13 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 
+# replace cmake python macro in shebang
+for file in $(grep -rIl '^#!.*@PYTHON_EXECUTABLE@*$' %{buildroot}) ; do
+  sed -i.orig 's:^#!\s*@PYTHON_EXECUTABLE@\s*:%{__python3}:' $file
+  touch -r $file.orig $file
+  rm $file.orig
+done
+
 # replace unversioned python shebang
 for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
   sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
@@ -166,9 +175,9 @@ done
 
 echo "This is a package automatically generated with rosfed." >> README_FEDORA
 echo "See https://pagure.io/ros for more information." >> README_FEDORA
-install -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
 echo %{_docdir}/%{name} >> files.list
-install -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
 echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
@@ -177,6 +186,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.2.8.6-1
+- Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.2.8.4-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.2.8.4-2

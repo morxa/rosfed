@@ -1,12 +1,12 @@
 Name:           ros-roscpp_serialization
-Version:        melodic.0.6.12
-Release:        3%{?dist}
+Version:        melodic.0.6.13
+Release:        1%{?dist}
 Summary:        ROS package roscpp_serialization
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/roscpp_core-release/archive/release/melodic/roscpp_serialization/0.6.12-0.tar.gz#/ros-melodic-roscpp_serialization-0.6.12-source0.tar.gz
+Source0:        https://github.com/ros-gbp/roscpp_core-release/archive/release/melodic/roscpp_serialization/0.6.13-1.tar.gz#/ros-melodic-roscpp_serialization-0.6.13-source0.tar.gz
 
 
 
@@ -27,8 +27,9 @@ Requires:       ros-melodic-cpp_common
 Requires:       ros-melodic-roscpp_traits
 Requires:       ros-melodic-rostime
 
-Provides:  ros-melodic-roscpp_serialization = 0.6.12-3
-Obsoletes: ros-melodic-roscpp_serialization < 0.6.12-3
+Provides:  ros-melodic-roscpp_serialization = 0.6.13-1
+Obsoletes: ros-melodic-roscpp_serialization < 0.6.13-1
+Obsoletes: ros-kinetic-roscpp_serialization
 
 
 %description
@@ -44,8 +45,9 @@ Requires:       ros-melodic-cpp_common-devel
 Requires:       ros-melodic-roscpp_traits-devel
 Requires:       ros-melodic-rostime-devel
 
-Provides: ros-melodic-roscpp_serialization-devel = 0.6.12-3
-Obsoletes: ros-melodic-roscpp_serialization-devel < 0.6.12-3
+Provides: ros-melodic-roscpp_serialization-devel = 0.6.13-1
+Obsoletes: ros-melodic-roscpp_serialization-devel < 0.6.13-1
+Obsoletes: ros-kinetic-roscpp_serialization-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -115,6 +117,13 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 
+# replace cmake python macro in shebang
+for file in $(grep -rIl '^#!.*@PYTHON_EXECUTABLE@*$' %{buildroot}) ; do
+  sed -i.orig 's:^#!\s*@PYTHON_EXECUTABLE@\s*:%{__python3}:' $file
+  touch -r $file.orig $file
+  rm $file.orig
+done
+
 # replace unversioned python shebang
 for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
   sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
@@ -134,9 +143,9 @@ done
 
 echo "This is a package automatically generated with rosfed." >> README_FEDORA
 echo "See https://pagure.io/ros for more information." >> README_FEDORA
-install -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
 echo %{_docdir}/%{name} >> files.list
-install -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
 echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
@@ -145,6 +154,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.6.13-1
+- Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.6.12-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.6.12-2

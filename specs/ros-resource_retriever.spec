@@ -1,12 +1,12 @@
 Name:           ros-resource_retriever
-Version:        melodic.1.12.4
-Release:        3%{?dist}
+Version:        melodic.1.12.5
+Release:        1%{?dist}
 Summary:        ROS package resource_retriever
 
 License:        BSD
 URL:            http://ros.org/wiki/resource_retriever
 
-Source0:        https://github.com/ros-gbp/resource_retriever-release/archive/release/melodic/resource_retriever/1.12.4-0.tar.gz#/ros-melodic-resource_retriever-1.12.4-source0.tar.gz
+Source0:        https://github.com/ros-gbp/resource_retriever-release/archive/release/melodic/resource_retriever/1.12.5-1.tar.gz#/ros-melodic-resource_retriever-1.12.5-source0.tar.gz
 
 
 
@@ -18,6 +18,7 @@ BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
 BuildRequires:  boost-devel
+BuildRequires:  boost-devel boost-python3-devel boost-python3-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  gtest-devel
 BuildRequires:  libcurl-devel curl
@@ -31,8 +32,9 @@ Requires:       python3-rospkg
 Requires:       ros-melodic-rosconsole
 Requires:       ros-melodic-roslib
 
-Provides:  ros-melodic-resource_retriever = 1.12.4-3
-Obsoletes: ros-melodic-resource_retriever < 1.12.4-3
+Provides:  ros-melodic-resource_retriever = 1.12.5-1
+Obsoletes: ros-melodic-resource_retriever < 1.12.5-1
+Obsoletes: ros-kinetic-resource_retriever
 
 
 %description
@@ -48,6 +50,7 @@ Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       ros-melodic-catkin-devel
 Requires:       boost-devel
+Requires:       boost-devel boost-python3-devel boost-python3-devel
 Requires:       console-bridge-devel
 Requires:       gtest-devel
 Requires:       libcurl-devel curl
@@ -56,8 +59,9 @@ Requires:       tinyxml-devel
 Requires:       ros-melodic-rosconsole-devel
 Requires:       ros-melodic-roslib-devel
 
-Provides: ros-melodic-resource_retriever-devel = 1.12.4-3
-Obsoletes: ros-melodic-resource_retriever-devel < 1.12.4-3
+Provides: ros-melodic-resource_retriever-devel = 1.12.5-1
+Obsoletes: ros-melodic-resource_retriever-devel < 1.12.5-1
+Obsoletes: ros-kinetic-resource_retriever-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -127,6 +131,13 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 
+# replace cmake python macro in shebang
+for file in $(grep -rIl '^#!.*@PYTHON_EXECUTABLE@*$' %{buildroot}) ; do
+  sed -i.orig 's:^#!\s*@PYTHON_EXECUTABLE@\s*:%{__python3}:' $file
+  touch -r $file.orig $file
+  rm $file.orig
+done
+
 # replace unversioned python shebang
 for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
   sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
@@ -146,9 +157,9 @@ done
 
 echo "This is a package automatically generated with rosfed." >> README_FEDORA
 echo "See https://pagure.io/ros for more information." >> README_FEDORA
-install -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
 echo %{_docdir}/%{name} >> files.list
-install -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
 echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
@@ -157,6 +168,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.12.5-1
+- Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.12.4-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.12.4-2

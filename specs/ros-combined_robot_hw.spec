@@ -1,13 +1,12 @@
-%global pkg_version 0.15.1
 Name:           ros-combined_robot_hw
-Version:        melodic.0.15.1
+Version:        melodic.0.16.0
 Release:        1%{?dist}
 Summary:        ROS package combined_robot_hw
 
 License:        BSD
 URL:            https://github.com/ros-controls/ros_control/wiki
 
-Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/melodic/combined_robot_hw/0.15.1-0.tar.gz#/ros-melodic-combined_robot_hw-0.15.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/melodic/combined_robot_hw/0.16.0-1.tar.gz#/ros-melodic-combined_robot_hw-0.16.0-source0.tar.gz
 
 
 
@@ -23,12 +22,11 @@ BuildRequires:  ros-melodic-hardware_interface-devel
 BuildRequires:  ros-melodic-pluginlib-devel
 BuildRequires:  ros-melodic-roscpp-devel
 
-Requires:       ros-melodic-hardware_interface
-Requires:       ros-melodic-pluginlib
 Requires:       ros-melodic-roscpp
 
-Provides:  ros-melodic-combined_robot_hw = 0.15.1-1
-Obsoletes: ros-melodic-combined_robot_hw < 0.15.1-1
+Provides:  ros-melodic-combined_robot_hw = 0.16.0-1
+Obsoletes: ros-melodic-combined_robot_hw < 0.16.0-1
+Obsoletes: ros-kinetic-combined_robot_hw
 
 
 %description
@@ -42,8 +40,9 @@ Requires:       ros-melodic-hardware_interface-devel
 Requires:       ros-melodic-pluginlib-devel
 Requires:       ros-melodic-roscpp-devel
 
-Provides: ros-melodic-combined_robot_hw-devel = 0.15.1-1
-Obsoletes: ros-melodic-combined_robot_hw-devel < 0.15.1-1
+Provides: ros-melodic-combined_robot_hw-devel = 0.16.0-1
+Obsoletes: ros-melodic-combined_robot_hw-devel < 0.16.0-1
+Obsoletes: ros-kinetic-combined_robot_hw-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -113,6 +112,13 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 
+# replace cmake python macro in shebang
+for file in $(grep -rIl '^#!.*@PYTHON_EXECUTABLE@*$' %{buildroot}) ; do
+  sed -i.orig 's:^#!\s*@PYTHON_EXECUTABLE@\s*:%{__python3}:' $file
+  touch -r $file.orig $file
+  rm $file.orig
+done
+
 # replace unversioned python shebang
 for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
   sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
@@ -132,9 +138,9 @@ done
 
 echo "This is a package automatically generated with rosfed." >> README_FEDORA
 echo "See https://pagure.io/ros for more information." >> README_FEDORA
-install -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
 echo %{_docdir}/%{name} >> files.list
-install -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
 echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
@@ -143,6 +149,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.16.0-1
+- Update to latest release
 * Wed Jul 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.15.1-1
 - Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.13.3-1

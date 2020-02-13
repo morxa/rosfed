@@ -1,12 +1,12 @@
 Name:           ros-voxel_grid
-Version:        melodic.1.16.2
+Version:        melodic.1.16.3
 Release:        1%{?dist}
 Summary:        ROS package voxel_grid
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/navigation-release/archive/release/melodic/voxel_grid/1.16.2-0.tar.gz#/ros-melodic-voxel_grid-1.16.2-source0.tar.gz
+Source0:        https://github.com/ros-gbp/navigation-release/archive/release/melodic/voxel_grid/1.16.3-1.tar.gz#/ros-melodic-voxel_grid-1.16.3-source0.tar.gz
 
 
 
@@ -24,8 +24,9 @@ BuildRequires:  ros-melodic-rosunit-devel
 
 Requires:       ros-melodic-roscpp
 
-Provides:  ros-melodic-voxel_grid = 1.16.2-1
-Obsoletes: ros-melodic-voxel_grid < 1.16.2-1
+Provides:  ros-melodic-voxel_grid = 1.16.3-1
+Obsoletes: ros-melodic-voxel_grid < 1.16.3-1
+Obsoletes: ros-kinetic-voxel_grid
 
 
 %description
@@ -46,8 +47,9 @@ Requires:       ros-melodic-rosconsole-devel
 Requires:       ros-melodic-roscpp-devel
 Requires:       ros-melodic-rosunit-devel
 
-Provides: ros-melodic-voxel_grid-devel = 1.16.2-1
-Obsoletes: ros-melodic-voxel_grid-devel < 1.16.2-1
+Provides: ros-melodic-voxel_grid-devel = 1.16.3-1
+Obsoletes: ros-melodic-voxel_grid-devel < 1.16.3-1
+Obsoletes: ros-kinetic-voxel_grid-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -117,6 +119,13 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 
+# replace cmake python macro in shebang
+for file in $(grep -rIl '^#!.*@PYTHON_EXECUTABLE@*$' %{buildroot}) ; do
+  sed -i.orig 's:^#!\s*@PYTHON_EXECUTABLE@\s*:%{__python3}:' $file
+  touch -r $file.orig $file
+  rm $file.orig
+done
+
 # replace unversioned python shebang
 for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
   sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
@@ -136,9 +145,9 @@ done
 
 echo "This is a package automatically generated with rosfed." >> README_FEDORA
 echo "See https://pagure.io/ros for more information." >> README_FEDORA
-install -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
 echo %{_docdir}/%{name} >> files.list
-install -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
 echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
@@ -147,6 +156,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.16.3-1
+- Update to latest release
 * Wed Jul 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.16.2-1
 - Update to latest release
 * Tue Jun 26 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.14.4-1

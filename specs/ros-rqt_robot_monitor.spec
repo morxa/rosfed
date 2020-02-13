@@ -1,12 +1,12 @@
 Name:           ros-rqt_robot_monitor
-Version:        melodic.0.5.8
-Release:        3%{?dist}
+Version:        melodic.0.5.9
+Release:        1%{?dist}
 Summary:        ROS package rqt_robot_monitor
 
 License:        BSD
 URL:            http://wiki.ros.org/rqt_robot_monitor
 
-Source0:        https://github.com/ros-gbp/rqt_robot_monitor-release/archive/release/melodic/rqt_robot_monitor/0.5.8-0.tar.gz#/ros-melodic-rqt_robot_monitor-0.5.8-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt_robot_monitor-release/archive/release/melodic/rqt_robot_monitor/0.5.9-1.tar.gz#/ros-melodic-rqt_robot_monitor-0.5.9-source0.tar.gz
 
 
 BuildArch: noarch
@@ -31,8 +31,9 @@ Requires:       ros-melodic-rqt_gui
 Requires:       ros-melodic-rqt_gui_py
 Requires:       ros-melodic-rqt_py_common
 
-Provides:  ros-melodic-rqt_robot_monitor = 0.5.8-3
-Obsoletes: ros-melodic-rqt_robot_monitor < 0.5.8-3
+Provides:  ros-melodic-rqt_robot_monitor = 0.5.9-1
+Obsoletes: ros-melodic-rqt_robot_monitor < 0.5.9-1
+Obsoletes: ros-kinetic-rqt_robot_monitor
 
 
 %description
@@ -53,8 +54,9 @@ Requires:       ros-melodic-rqt_gui-devel
 Requires:       ros-melodic-rqt_gui_py-devel
 Requires:       ros-melodic-rqt_py_common-devel
 
-Provides: ros-melodic-rqt_robot_monitor-devel = 0.5.8-3
-Obsoletes: ros-melodic-rqt_robot_monitor-devel < 0.5.8-3
+Provides: ros-melodic-rqt_robot_monitor-devel = 0.5.9-1
+Obsoletes: ros-melodic-rqt_robot_monitor-devel < 0.5.9-1
+Obsoletes: ros-kinetic-rqt_robot_monitor-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -124,6 +126,13 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 
+# replace cmake python macro in shebang
+for file in $(grep -rIl '^#!.*@PYTHON_EXECUTABLE@*$' %{buildroot}) ; do
+  sed -i.orig 's:^#!\s*@PYTHON_EXECUTABLE@\s*:%{__python3}:' $file
+  touch -r $file.orig $file
+  rm $file.orig
+done
+
 # replace unversioned python shebang
 for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
   sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
@@ -143,9 +152,9 @@ done
 
 echo "This is a package automatically generated with rosfed." >> README_FEDORA
 echo "See https://pagure.io/ros for more information." >> README_FEDORA
-install -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
 echo %{_docdir}/%{name} >> files.list
-install -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
 echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
@@ -154,6 +163,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.5.9-1
+- Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.5.8-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.5.8-2

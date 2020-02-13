@@ -1,12 +1,12 @@
 Name:           ros-pcl_ros
-Version:        melodic.1.6.2
-Release:        3%{?dist}
+Version:        melodic.1.7.0
+Release:        1%{?dist}
 Summary:        ROS package pcl_ros
 
 License:        BSD
 URL:            http://ros.org/wiki/perception_pcl
 
-Source0:        https://github.com/ros-gbp/perception_pcl-release/archive/release/melodic/pcl_ros/1.6.2-0.tar.gz#/ros-melodic-pcl_ros-1.6.2-source0.tar.gz
+Source0:        https://github.com/ros-gbp/perception_pcl-release/archive/release/melodic/pcl_ros/1.7.0-2.tar.gz#/ros-melodic-pcl_ros-1.7.0-source0.tar.gz
 
 
 
@@ -27,6 +27,7 @@ BuildRequires:  tinyxml2-devel
 BuildRequires:  ros-melodic-catkin-devel
 BuildRequires:  ros-melodic-cmake_modules-devel
 BuildRequires:  ros-melodic-dynamic_reconfigure-devel
+BuildRequires:  ros-melodic-geometry_msgs-devel
 BuildRequires:  ros-melodic-message_filters-devel
 BuildRequires:  ros-melodic-nodelet-devel
 BuildRequires:  ros-melodic-nodelet_topic_tools-devel
@@ -41,9 +42,12 @@ BuildRequires:  ros-melodic-rostest-devel
 BuildRequires:  ros-melodic-sensor_msgs-devel
 BuildRequires:  ros-melodic-std_msgs-devel
 BuildRequires:  ros-melodic-tf-devel
+BuildRequires:  ros-melodic-tf2-devel
 BuildRequires:  ros-melodic-tf2_eigen-devel
+BuildRequires:  ros-melodic-tf2_ros-devel
 
 Requires:       ros-melodic-dynamic_reconfigure
+Requires:       ros-melodic-geometry_msgs
 Requires:       ros-melodic-message_filters
 Requires:       ros-melodic-nodelet
 Requires:       ros-melodic-nodelet_topic_tools
@@ -55,10 +59,13 @@ Requires:       ros-melodic-roscpp
 Requires:       ros-melodic-sensor_msgs
 Requires:       ros-melodic-std_msgs
 Requires:       ros-melodic-tf
+Requires:       ros-melodic-tf2
 Requires:       ros-melodic-tf2_eigen
+Requires:       ros-melodic-tf2_ros
 
-Provides:  ros-melodic-pcl_ros = 1.6.2-3
-Obsoletes: ros-melodic-pcl_ros < 1.6.2-3
+Provides:  ros-melodic-pcl_ros = 1.7.0-1
+Obsoletes: ros-melodic-pcl_ros < 1.7.0-1
+Obsoletes: ros-kinetic-pcl_ros
 
 
 %description
@@ -79,6 +86,7 @@ Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
 Requires:       ros-melodic-cmake_modules-devel
 Requires:       ros-melodic-dynamic_reconfigure-devel
+Requires:       ros-melodic-geometry_msgs-devel
 Requires:       ros-melodic-message_filters-devel
 Requires:       ros-melodic-nodelet-devel
 Requires:       ros-melodic-nodelet_topic_tools-devel
@@ -93,10 +101,13 @@ Requires:       ros-melodic-rostest-devel
 Requires:       ros-melodic-sensor_msgs-devel
 Requires:       ros-melodic-std_msgs-devel
 Requires:       ros-melodic-tf-devel
+Requires:       ros-melodic-tf2-devel
 Requires:       ros-melodic-tf2_eigen-devel
+Requires:       ros-melodic-tf2_ros-devel
 
-Provides: ros-melodic-pcl_ros-devel = 1.6.2-3
-Obsoletes: ros-melodic-pcl_ros-devel < 1.6.2-3
+Provides: ros-melodic-pcl_ros-devel = 1.7.0-1
+Obsoletes: ros-melodic-pcl_ros-devel < 1.7.0-1
+Obsoletes: ros-kinetic-pcl_ros-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -166,6 +177,13 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 
+# replace cmake python macro in shebang
+for file in $(grep -rIl '^#!.*@PYTHON_EXECUTABLE@*$' %{buildroot}) ; do
+  sed -i.orig 's:^#!\s*@PYTHON_EXECUTABLE@\s*:%{__python3}:' $file
+  touch -r $file.orig $file
+  rm $file.orig
+done
+
 # replace unversioned python shebang
 for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
   sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
@@ -185,9 +203,9 @@ done
 
 echo "This is a package automatically generated with rosfed." >> README_FEDORA
 echo "See https://pagure.io/ros for more information." >> README_FEDORA
-install -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
 echo %{_docdir}/%{name} >> files.list
-install -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
 echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
@@ -196,6 +214,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.7.0-1
+- Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.6.2-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.6.2-2

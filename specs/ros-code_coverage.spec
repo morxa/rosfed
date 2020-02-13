@@ -1,14 +1,15 @@
 Name:           ros-code_coverage
-Version:        melodic.0.2.4
+Version:        melodic.0.3.0
 Release:        1%{?dist}
 Summary:        ROS package code_coverage
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/mikeferguson/code_coverage-gbp/archive/release/melodic/code_coverage/0.2.4-1.tar.gz#/ros-melodic-code_coverage-0.2.4-source0.tar.gz
+Source0:        https://github.com/mikeferguson/code_coverage-gbp/archive/release/melodic/code_coverage/0.3.0-1.tar.gz#/ros-melodic-code_coverage-0.3.0-source0.tar.gz
 
 
+BuildArch: noarch
 
 # common BRs
 BuildRequires:  boost-devel
@@ -22,8 +23,9 @@ BuildRequires:  ros-melodic-catkin-devel
 
 Requires:       lcov
 
-Provides:  ros-melodic-code_coverage = 0.2.4-1
-Obsoletes: ros-melodic-code_coverage < 0.2.4-1
+Provides:  ros-melodic-code_coverage = 0.3.0-1
+Obsoletes: ros-melodic-code_coverage < 0.3.0-1
+Obsoletes: ros-kinetic-code_coverage
 
 
 %description
@@ -31,12 +33,13 @@ CMake configuration to run coverage
 
 %package        devel
 Summary:        Development files for %{name}
-Requires:       %{name}%{?_isa} = %{version}-%{release}
+Requires:       %{name} = %{version}-%{release}
 Requires:       ros-melodic-catkin-devel
 Requires:       lcov
 
-Provides: ros-melodic-code_coverage-devel = 0.2.4-1
-Obsoletes: ros-melodic-code_coverage-devel < 0.2.4-1
+Provides: ros-melodic-code_coverage-devel = 0.3.0-1
+Obsoletes: ros-melodic-code_coverage-devel < 0.3.0-1
+Obsoletes: ros-kinetic-code_coverage-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -106,6 +109,13 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 
+# replace cmake python macro in shebang
+for file in $(grep -rIl '^#!.*@PYTHON_EXECUTABLE@*$' %{buildroot}) ; do
+  sed -i.orig 's:^#!\s*@PYTHON_EXECUTABLE@\s*:%{__python3}:' $file
+  touch -r $file.orig $file
+  rm $file.orig
+done
+
 # replace unversioned python shebang
 for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
   sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
@@ -125,9 +135,9 @@ done
 
 echo "This is a package automatically generated with rosfed." >> README_FEDORA
 echo "See https://pagure.io/ros for more information." >> README_FEDORA
-install -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
 echo %{_docdir}/%{name} >> files.list
-install -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
 echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
@@ -136,5 +146,7 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.3.0-1
+- Update to latest release
 * Wed Jul 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.2.4-1
 - Update to latest release

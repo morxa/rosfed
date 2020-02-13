@@ -1,13 +1,12 @@
-%global pkg_version 0.15.1
 Name:           ros-controller_manager_msgs
-Version:        melodic.0.15.1
-Release:        3%{?dist}
+Version:        melodic.0.16.0
+Release:        1%{?dist}
 Summary:        ROS package controller_manager_msgs
 
 License:        BSD
 URL:            https://github.com/ros-controls/ros_control/wiki
 
-Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/melodic/controller_manager_msgs/0.15.1-0.tar.gz#/ros-melodic-controller_manager_msgs-0.15.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/melodic/controller_manager_msgs/0.16.0-1.tar.gz#/ros-melodic-controller_manager_msgs-0.16.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -24,10 +23,13 @@ BuildRequires:  ros-melodic-message_generation-devel
 BuildRequires:  ros-melodic-std_msgs-devel
 
 Requires:       ros-melodic-message_runtime
+Requires:       ros-melodic-rospy
+Requires:       ros-melodic-rosservice
 Requires:       ros-melodic-std_msgs
 
-Provides:  ros-melodic-controller_manager_msgs = 0.15.1-3
-Obsoletes: ros-melodic-controller_manager_msgs < 0.15.1-3
+Provides:  ros-melodic-controller_manager_msgs = 0.16.0-1
+Obsoletes: ros-melodic-controller_manager_msgs < 0.16.0-1
+Obsoletes: ros-kinetic-controller_manager_msgs
 
 
 %description
@@ -40,9 +42,12 @@ Requires:       ros-melodic-catkin-devel
 Requires:       ros-melodic-message_generation-devel
 Requires:       ros-melodic-std_msgs-devel
 Requires:       ros-melodic-message_runtime-devel
+Requires:       ros-melodic-rospy-devel
+Requires:       ros-melodic-rosservice-devel
 
-Provides: ros-melodic-controller_manager_msgs-devel = 0.15.1-3
-Obsoletes: ros-melodic-controller_manager_msgs-devel < 0.15.1-3
+Provides: ros-melodic-controller_manager_msgs-devel = 0.16.0-1
+Obsoletes: ros-melodic-controller_manager_msgs-devel < 0.16.0-1
+Obsoletes: ros-kinetic-controller_manager_msgs-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -112,6 +117,13 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 
+# replace cmake python macro in shebang
+for file in $(grep -rIl '^#!.*@PYTHON_EXECUTABLE@*$' %{buildroot}) ; do
+  sed -i.orig 's:^#!\s*@PYTHON_EXECUTABLE@\s*:%{__python3}:' $file
+  touch -r $file.orig $file
+  rm $file.orig
+done
+
 # replace unversioned python shebang
 for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
   sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
@@ -131,9 +143,9 @@ done
 
 echo "This is a package automatically generated with rosfed." >> README_FEDORA
 echo "See https://pagure.io/ros for more information." >> README_FEDORA
-install -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
 echo %{_docdir}/%{name} >> files.list
-install -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
 echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
@@ -142,6 +154,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.16.0-1
+- Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.15.1-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.15.1-2

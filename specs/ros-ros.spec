@@ -1,12 +1,12 @@
 Name:           ros-ros
-Version:        melodic.1.14.6
-Release:        3%{?dist}
+Version:        melodic.1.14.7
+Release:        1%{?dist}
 Summary:        ROS package ros
 
 License:        BSD
 URL:            http://www.ros.org/wiki/ROS
 
-Source0:        https://github.com/ros-gbp/ros-release/archive/release/melodic/ros/1.14.6-0.tar.gz#/ros-melodic-ros-1.14.6-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros-release/archive/release/melodic/ros/1.14.7-1.tar.gz#/ros-melodic-ros-1.14.7-source0.tar.gz
 
 
 BuildArch: noarch
@@ -32,8 +32,9 @@ Requires:       ros-melodic-roslib
 Requires:       ros-melodic-rosmake
 Requires:       ros-melodic-rosunit
 
-Provides:  ros-melodic-ros = 1.14.6-3
-Obsoletes: ros-melodic-ros < 1.14.6-3
+Provides:  ros-melodic-ros = 1.14.7-1
+Obsoletes: ros-melodic-ros < 1.14.7-1
+Obsoletes: ros-kinetic-ros
 
 
 %description
@@ -54,8 +55,9 @@ Requires:       ros-melodic-roslib-devel
 Requires:       ros-melodic-rosmake-devel
 Requires:       ros-melodic-rosunit-devel
 
-Provides: ros-melodic-ros-devel = 1.14.6-3
-Obsoletes: ros-melodic-ros-devel < 1.14.6-3
+Provides: ros-melodic-ros-devel = 1.14.7-1
+Obsoletes: ros-melodic-ros-devel < 1.14.7-1
+Obsoletes: ros-kinetic-ros-devel
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -125,6 +127,13 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 
+# replace cmake python macro in shebang
+for file in $(grep -rIl '^#!.*@PYTHON_EXECUTABLE@*$' %{buildroot}) ; do
+  sed -i.orig 's:^#!\s*@PYTHON_EXECUTABLE@\s*:%{__python3}:' $file
+  touch -r $file.orig $file
+  rm $file.orig
+done
+
 # replace unversioned python shebang
 for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
   sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
@@ -144,9 +153,9 @@ done
 
 echo "This is a package automatically generated with rosfed." >> README_FEDORA
 echo "See https://pagure.io/ros for more information." >> README_FEDORA
-install -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name} README_FEDORA
 echo %{_docdir}/%{name} >> files.list
-install -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
+install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
 echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
@@ -155,6 +164,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.7-1
+- Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.6-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.6-2
