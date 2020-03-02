@@ -1,12 +1,12 @@
 Name:           ros-realtime_tools
-Version:        melodic.1.15.0
+Version:        melodic.1.15.1
 Release:        1%{?dist}
 Summary:        ROS package realtime_tools
 
 License:        BSD
 URL:            http://ros.org/wiki/realtime_tools
 
-Source0:        https://github.com/ros-gbp/realtime_tools-release/archive/release/melodic/realtime_tools/1.15.0-1.tar.gz#/ros-melodic-realtime_tools-1.15.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/realtime_tools-release/archive/release/melodic/realtime_tools/1.15.1-1.tar.gz#/ros-melodic-realtime_tools-1.15.1-source0.tar.gz
 
 
 
@@ -25,8 +25,8 @@ BuildRequires:  ros-melodic-rosunit-devel
 
 Requires:       ros-melodic-roscpp
 
-Provides:  ros-melodic-realtime_tools = 1.15.0-1
-Obsoletes: ros-melodic-realtime_tools < 1.15.0-1
+Provides:  ros-melodic-realtime_tools = 1.15.1-1
+Obsoletes: ros-melodic-realtime_tools < 1.15.1-1
 Obsoletes: ros-kinetic-realtime_tools
 
 
@@ -43,8 +43,8 @@ Requires:       ros-melodic-roscpp-devel
 Requires:       ros-melodic-rostest-devel
 Requires:       ros-melodic-rosunit-devel
 
-Provides: ros-melodic-realtime_tools-devel = 1.15.0-1
-Obsoletes: ros-melodic-realtime_tools-devel < 1.15.0-1
+Provides: ros-melodic-realtime_tools-devel = 1.15.1-1
+Obsoletes: ros-melodic-realtime_tools-devel < 1.15.1-1
 Obsoletes: ros-kinetic-realtime_tools-devel
 
 %description devel
@@ -152,6 +152,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Feb 14 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.15.1-1
+- Update to latest release
 * Thu Sep 12 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.15.0-1
 - Update to latest release
 * Tue Jul 23 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.0-1
