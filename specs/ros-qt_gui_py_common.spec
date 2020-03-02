@@ -1,12 +1,12 @@
 Name:           ros-qt_gui_py_common
-Version:        melodic.0.3.16
+Version:        melodic.0.4.0
 Release:        1%{?dist}
 Summary:        ROS package qt_gui_py_common
 
 License:        BSD
 URL:            http://ros.org/wiki/qt_gui_py_common
 
-Source0:        https://github.com/ros-gbp/qt_gui_core-release/archive/release/melodic/qt_gui_py_common/0.3.16-1.tar.gz#/ros-melodic-qt_gui_py_common-0.3.16-source0.tar.gz
+Source0:        https://github.com/ros-gbp/qt_gui_core-release/archive/release/melodic/qt_gui_py_common/0.4.0-1.tar.gz#/ros-melodic-qt_gui_py_common-0.4.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -23,8 +23,8 @@ BuildRequires:  ros-melodic-catkin-devel
 Requires:       python3-rospkg
 Requires:       ros-melodic-python_qt_binding
 
-Provides:  ros-melodic-qt_gui_py_common = 0.3.16-1
-Obsoletes: ros-melodic-qt_gui_py_common < 0.3.16-1
+Provides:  ros-melodic-qt_gui_py_common = 0.4.0-1
+Obsoletes: ros-melodic-qt_gui_py_common < 0.4.0-1
 Obsoletes: ros-kinetic-qt_gui_py_common
 
 
@@ -38,8 +38,8 @@ Requires:       %{name} = %{version}-%{release}
 Requires:       ros-melodic-catkin-devel
 Requires:       ros-melodic-python_qt_binding-devel
 
-Provides: ros-melodic-qt_gui_py_common-devel = 0.3.16-1
-Obsoletes: ros-melodic-qt_gui_py_common-devel < 0.3.16-1
+Provides: ros-melodic-qt_gui_py_common-devel = 0.4.0-1
+Obsoletes: ros-melodic-qt_gui_py_common-devel < 0.4.0-1
 Obsoletes: ros-kinetic-qt_gui_py_common-devel
 
 %description devel
@@ -147,6 +147,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Mar 02 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.0-1
+- Update to latest release
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.3.16-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.3.11-3

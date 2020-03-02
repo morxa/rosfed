@@ -1,12 +1,12 @@
 Name:           ros-resource_retriever
-Version:        melodic.1.12.5
+Version:        melodic.1.12.6
 Release:        1%{?dist}
 Summary:        ROS package resource_retriever
 
 License:        BSD
 URL:            http://ros.org/wiki/resource_retriever
 
-Source0:        https://github.com/ros-gbp/resource_retriever-release/archive/release/melodic/resource_retriever/1.12.5-1.tar.gz#/ros-melodic-resource_retriever-1.12.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/resource_retriever-release/archive/release/melodic/resource_retriever/1.12.6-1.tar.gz#/ros-melodic-resource_retriever-1.12.6-source0.tar.gz
 
 
 
@@ -32,8 +32,8 @@ Requires:       python3-rospkg
 Requires:       ros-melodic-rosconsole
 Requires:       ros-melodic-roslib
 
-Provides:  ros-melodic-resource_retriever = 1.12.5-1
-Obsoletes: ros-melodic-resource_retriever < 1.12.5-1
+Provides:  ros-melodic-resource_retriever = 1.12.6-1
+Obsoletes: ros-melodic-resource_retriever < 1.12.6-1
 Obsoletes: ros-kinetic-resource_retriever
 
 
@@ -59,8 +59,8 @@ Requires:       tinyxml-devel
 Requires:       ros-melodic-rosconsole-devel
 Requires:       ros-melodic-roslib-devel
 
-Provides: ros-melodic-resource_retriever-devel = 1.12.5-1
-Obsoletes: ros-melodic-resource_retriever-devel < 1.12.5-1
+Provides: ros-melodic-resource_retriever-devel = 1.12.6-1
+Obsoletes: ros-melodic-resource_retriever-devel < 1.12.6-1
 Obsoletes: ros-kinetic-resource_retriever-devel
 
 %description devel
@@ -168,6 +168,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Mar 02 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.12.6-1
+- Update to latest release
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.12.5-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.12.4-3

@@ -1,12 +1,12 @@
 Name:           ros-controller_manager
-Version:        melodic.0.16.0
+Version:        melodic.0.17.0
 Release:        1%{?dist}
 Summary:        ROS package controller_manager
 
 License:        BSD
 URL:            https://github.com/ros-controls/ros_control/wiki
 
-Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/melodic/controller_manager/0.16.0-1.tar.gz#/ros-melodic-controller_manager-0.16.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/melodic/controller_manager/0.17.0-1.tar.gz#/ros-melodic-controller_manager-0.17.0-source0.tar.gz
 
 
 
@@ -17,7 +17,6 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  boost-devel boost-python3-devel boost-python3-devel
 BuildRequires:  poco-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
@@ -34,8 +33,8 @@ Requires:       ros-melodic-rosparam
 Requires:       ros-melodic-rospy
 Requires:       ros-melodic-std_msgs
 
-Provides:  ros-melodic-controller_manager = 0.16.0-1
-Obsoletes: ros-melodic-controller_manager < 0.16.0-1
+Provides:  ros-melodic-controller_manager = 0.17.0-1
+Obsoletes: ros-melodic-controller_manager < 0.17.0-1
 Obsoletes: ros-kinetic-controller_manager
 
 
@@ -50,7 +49,6 @@ Requires:       ros-melodic-controller_interface-devel
 Requires:       ros-melodic-controller_manager_msgs-devel
 Requires:       ros-melodic-hardware_interface-devel
 Requires:       ros-melodic-pluginlib-devel
-Requires:       boost-devel boost-python3-devel boost-python3-devel
 Requires:       poco-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
@@ -60,8 +58,8 @@ Requires:       ros-melodic-rosparam-devel
 Requires:       ros-melodic-rospy-devel
 Requires:       ros-melodic-std_msgs-devel
 
-Provides: ros-melodic-controller_manager-devel = 0.16.0-1
-Obsoletes: ros-melodic-controller_manager-devel < 0.16.0-1
+Provides: ros-melodic-controller_manager-devel = 0.17.0-1
+Obsoletes: ros-melodic-controller_manager-devel < 0.17.0-1
 Obsoletes: ros-kinetic-controller_manager-devel
 
 %description devel
@@ -169,6 +167,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Mar 02 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.17.0-1
+- Update to latest release
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.16.0-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.15.1-3

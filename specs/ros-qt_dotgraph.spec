@@ -1,12 +1,12 @@
 Name:           ros-qt_dotgraph
-Version:        melodic.0.3.16
+Version:        melodic.0.4.0
 Release:        1%{?dist}
 Summary:        ROS package qt_dotgraph
 
 License:        BSD
 URL:            http://ros.org/wiki/qt_dotgraph
 
-Source0:        https://github.com/ros-gbp/qt_gui_core-release/archive/release/melodic/qt_dotgraph/0.3.16-1.tar.gz#/ros-melodic-qt_dotgraph-0.3.16-source0.tar.gz
+Source0:        https://github.com/ros-gbp/qt_gui_core-release/archive/release/melodic/qt_dotgraph/0.4.0-1.tar.gz#/ros-melodic-qt_dotgraph-0.4.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -26,8 +26,8 @@ Requires:       pydot
 Requires:       python3-pydot
 Requires:       ros-melodic-python_qt_binding
 
-Provides:  ros-melodic-qt_dotgraph = 0.3.16-1
-Obsoletes: ros-melodic-qt_dotgraph < 0.3.16-1
+Provides:  ros-melodic-qt_dotgraph = 0.4.0-1
+Obsoletes: ros-melodic-qt_dotgraph < 0.4.0-1
 Obsoletes: ros-kinetic-qt_dotgraph
 
 
@@ -42,8 +42,8 @@ Requires:       graphviz-python3
 Requires:       python3-pygraphviz
 Requires:       ros-melodic-python_qt_binding-devel
 
-Provides: ros-melodic-qt_dotgraph-devel = 0.3.16-1
-Obsoletes: ros-melodic-qt_dotgraph-devel < 0.3.16-1
+Provides: ros-melodic-qt_dotgraph-devel = 0.4.0-1
+Obsoletes: ros-melodic-qt_dotgraph-devel < 0.4.0-1
 Obsoletes: ros-kinetic-qt_dotgraph-devel
 
 %description devel
@@ -151,6 +151,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Mar 02 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.0-1
+- Update to latest release
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.3.16-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.3.11-3

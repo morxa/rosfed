@@ -1,12 +1,12 @@
 Name:           ros-moveit_resources
-Version:        melodic.0.6.4
+Version:        melodic.0.6.5
 Release:        1%{?dist}
 Summary:        ROS package moveit_resources
 
 License:        BSD
 URL:            http://moveit.ros.org
 
-Source0:        https://github.com/ros-gbp/moveit_resources-release/archive/release/melodic/moveit_resources/0.6.4-0.tar.gz#/ros-melodic-moveit_resources-0.6.4-source0.tar.gz
+Source0:        https://github.com/ros-gbp/moveit_resources-release/archive/release/melodic/moveit_resources/0.6.5-1.tar.gz#/ros-melodic-moveit_resources-0.6.5-source0.tar.gz
 
 
 BuildArch: noarch
@@ -23,8 +23,8 @@ BuildRequires:  ros-melodic-catkin-devel
 Requires:       ros-melodic-joint_state_publisher
 Requires:       ros-melodic-robot_state_publisher
 
-Provides:  ros-melodic-moveit_resources = 0.6.4-1
-Obsoletes: ros-melodic-moveit_resources < 0.6.4-1
+Provides:  ros-melodic-moveit_resources = 0.6.5-1
+Obsoletes: ros-melodic-moveit_resources < 0.6.5-1
 Obsoletes: ros-kinetic-moveit_resources
 
 
@@ -38,8 +38,8 @@ Requires:       ros-melodic-catkin-devel
 Requires:       ros-melodic-joint_state_publisher-devel
 Requires:       ros-melodic-robot_state_publisher-devel
 
-Provides: ros-melodic-moveit_resources-devel = 0.6.4-1
-Obsoletes: ros-melodic-moveit_resources-devel < 0.6.4-1
+Provides: ros-melodic-moveit_resources-devel = 0.6.5-1
+Obsoletes: ros-melodic-moveit_resources-devel < 0.6.5-1
 Obsoletes: ros-kinetic-moveit_resources-devel
 
 %description devel
@@ -147,6 +147,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Mar 02 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.6.5-1
+- Update to latest release
 * Wed Jul 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.6.4-1
 - Update to latest release
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.6.4-1

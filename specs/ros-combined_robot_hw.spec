@@ -1,12 +1,12 @@
 Name:           ros-combined_robot_hw
-Version:        melodic.0.16.0
+Version:        melodic.0.17.0
 Release:        1%{?dist}
 Summary:        ROS package combined_robot_hw
 
 License:        BSD
 URL:            https://github.com/ros-controls/ros_control/wiki
 
-Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/melodic/combined_robot_hw/0.16.0-1.tar.gz#/ros-melodic-combined_robot_hw-0.16.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/melodic/combined_robot_hw/0.17.0-1.tar.gz#/ros-melodic-combined_robot_hw-0.17.0-source0.tar.gz
 
 
 
@@ -24,8 +24,8 @@ BuildRequires:  ros-melodic-roscpp-devel
 
 Requires:       ros-melodic-roscpp
 
-Provides:  ros-melodic-combined_robot_hw = 0.16.0-1
-Obsoletes: ros-melodic-combined_robot_hw < 0.16.0-1
+Provides:  ros-melodic-combined_robot_hw = 0.17.0-1
+Obsoletes: ros-melodic-combined_robot_hw < 0.17.0-1
 Obsoletes: ros-kinetic-combined_robot_hw
 
 
@@ -40,8 +40,8 @@ Requires:       ros-melodic-hardware_interface-devel
 Requires:       ros-melodic-pluginlib-devel
 Requires:       ros-melodic-roscpp-devel
 
-Provides: ros-melodic-combined_robot_hw-devel = 0.16.0-1
-Obsoletes: ros-melodic-combined_robot_hw-devel < 0.16.0-1
+Provides: ros-melodic-combined_robot_hw-devel = 0.17.0-1
+Obsoletes: ros-melodic-combined_robot_hw-devel < 0.17.0-1
 Obsoletes: ros-kinetic-combined_robot_hw-devel
 
 %description devel
@@ -149,6 +149,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Mar 02 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.17.0-1
+- Update to latest release
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.16.0-1
 - Update to latest release
 * Wed Jul 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.15.1-1

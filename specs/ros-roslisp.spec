@@ -1,12 +1,12 @@
 Name:           ros-roslisp
-Version:        melodic.1.9.22
-Release:        3%{?dist}
+Version:        melodic.1.9.24
+Release:        1%{?dist}
 Summary:        ROS package roslisp
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/roslisp-release/archive/release/melodic/roslisp/1.9.22-0.tar.gz#/ros-melodic-roslisp-1.9.22-source0.tar.gz
+Source0:        https://github.com/ros-gbp/roslisp-release/archive/release/melodic/roslisp/1.9.24-1.tar.gz#/ros-melodic-roslisp-1.9.24-source0.tar.gz
 
 
 BuildArch: noarch
@@ -21,13 +21,14 @@ BuildRequires:  python3-devel
 BuildRequires:  ros-melodic-catkin-devel
 
 Requires:       sbcl
+Requires:       ros-melodic-ros_environment
 Requires:       ros-melodic-rosgraph_msgs
 Requires:       ros-melodic-roslang
 Requires:       ros-melodic-rospack
 Requires:       ros-melodic-std_srvs
 
-Provides:  ros-melodic-roslisp = 1.9.22-3
-Obsoletes: ros-melodic-roslisp < 1.9.22-3
+Provides:  ros-melodic-roslisp = 1.9.24-1
+Obsoletes: ros-melodic-roslisp < 1.9.24-1
 Obsoletes: ros-kinetic-roslisp
 
 
@@ -38,13 +39,14 @@ Lisp client library for ROS, the Robot Operating System.
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-melodic-catkin-devel
+Requires:       ros-melodic-ros_environment-devel
 Requires:       ros-melodic-rosgraph_msgs-devel
 Requires:       ros-melodic-roslang-devel
 Requires:       ros-melodic-rospack-devel
 Requires:       ros-melodic-std_srvs-devel
 
-Provides: ros-melodic-roslisp-devel = 1.9.22-3
-Obsoletes: ros-melodic-roslisp-devel < 1.9.22-3
+Provides: ros-melodic-roslisp-devel = 1.9.24-1
+Obsoletes: ros-melodic-roslisp-devel < 1.9.24-1
 Obsoletes: ros-kinetic-roslisp-devel
 
 %description devel
@@ -152,6 +154,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Mar 02 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.9.24-1
+- Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.9.22-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.9.22-2

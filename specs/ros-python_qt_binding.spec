@@ -1,12 +1,12 @@
 Name:           ros-python_qt_binding
-Version:        melodic.0.3.6
+Version:        melodic.0.4.0
 Release:        1%{?dist}
 Summary:        ROS package python_qt_binding
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/python_qt_binding-release/archive/release/melodic/python_qt_binding/0.3.6-2.tar.gz#/ros-melodic-python_qt_binding-0.3.6-source0.tar.gz
+Source0:        https://github.com/ros-gbp/python_qt_binding-release/archive/release/melodic/python_qt_binding/0.4.0-1.tar.gz#/ros-melodic-python_qt_binding-0.4.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -26,8 +26,8 @@ BuildRequires:  ros-melodic-rosbuild-devel
 
 Requires:       python3-pyside2
 
-Provides:  ros-melodic-python_qt_binding = 0.3.6-1
-Obsoletes: ros-melodic-python_qt_binding < 0.3.6-1
+Provides:  ros-melodic-python_qt_binding = 0.4.0-1
+Obsoletes: ros-melodic-python_qt_binding < 0.4.0-1
 Obsoletes: ros-kinetic-python_qt_binding
 
 
@@ -50,8 +50,8 @@ Requires:       python3-qt5-devel sip
 Requires:       qt5-qtbase-devel
 Requires:       ros-melodic-rosbuild-devel
 
-Provides: ros-melodic-python_qt_binding-devel = 0.3.6-1
-Obsoletes: ros-melodic-python_qt_binding-devel < 0.3.6-1
+Provides: ros-melodic-python_qt_binding-devel = 0.4.0-1
+Obsoletes: ros-melodic-python_qt_binding-devel < 0.4.0-1
 Obsoletes: ros-kinetic-python_qt_binding-devel
 
 %description devel
@@ -159,6 +159,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Mar 02 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.0-1
+- Update to latest release
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.3.6-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.3.5-3
