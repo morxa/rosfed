@@ -1,6 +1,6 @@
 Name:           ros-python_orocos_kdl
 Version:        melodic.1.4.0
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        ROS package python_orocos_kdl
 
 License:        LGPL
@@ -24,12 +24,11 @@ BuildRequires:  sip-devel
 BuildRequires:  ros-melodic-catkin-devel
 BuildRequires:  ros-melodic-orocos_kdl-devel
 
-Requires:       python3-sip
 Requires:       ros-melodic-catkin
 Requires:       ros-melodic-orocos_kdl
 
-Provides:  ros-melodic-python_orocos_kdl = 1.4.0-3
-Obsoletes: ros-melodic-python_orocos_kdl < 1.4.0-3
+Provides:  ros-melodic-python_orocos_kdl = 1.4.0-4
+Obsoletes: ros-melodic-python_orocos_kdl < 1.4.0-4
 Obsoletes: ros-kinetic-python_orocos_kdl
 
 
@@ -47,8 +46,8 @@ Requires:       sip-devel
 Requires:       ros-melodic-catkin-devel
 Requires:       ros-melodic-orocos_kdl-devel
 
-Provides: ros-melodic-python_orocos_kdl-devel = 1.4.0-3
-Obsoletes: ros-melodic-python_orocos_kdl-devel < 1.4.0-3
+Provides: ros-melodic-python_orocos_kdl-devel = 1.4.0-4
+Obsoletes: ros-melodic-python_orocos_kdl-devel < 1.4.0-4
 Obsoletes: ros-kinetic-python_orocos_kdl-devel
 
 %description devel
@@ -156,6 +155,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Mar 02 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.4.0-4
+- Remove dependency on python3-sip
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.4.0-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.4.0-2
