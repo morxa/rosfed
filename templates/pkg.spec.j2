@@ -52,7 +52,7 @@ Requires:       ros-{{ distro }}-{{ dep }}
 Provides:  ros-{{ distro }}-{{ pkg_name }} = {{ pkg_version }}-{{ pkg_release }}
 {% if obsolete_distro_pkg %}
 Obsoletes: ros-{{ distro }}-{{ pkg_name }} < {{ pkg_version }}-{{ pkg_release }}
-Obsoletes: ros-kinetic-{{ pkg_name }}
+Obsoletes: ros-kinetic-{{ pkg_name }} < {{ pkg_version }}-{{ pkg_release }}
 {% endif %}
 
 {% if not has_devel %}
@@ -96,7 +96,7 @@ Requires:       ros-{{ distro }}-{{ dep }}-devel
 Provides: ros-{{ distro }}-{{ pkg_name }}-devel = {{ pkg_version }}-{{ pkg_release }}
 {% if obsolete_distro_pkg %}
 Obsoletes: ros-{{ distro }}-{{ pkg_name }}-devel < {{ pkg_version }}-{{ pkg_release }}
-Obsoletes: ros-kinetic-{{ pkg_name }}-devel
+Obsoletes: ros-kinetic-{{ pkg_name }}-devel < {{ pkg_version }}-{{ pkg_release }}
 {% endif %}
 
 %description devel
