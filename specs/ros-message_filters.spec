@@ -1,6 +1,6 @@
 Name:           ros-message_filters
 Version:        melodic.1.14.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package message_filters
 
 License:        BSD
@@ -8,7 +8,6 @@ URL:            http://www.ros.org/
 
 Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/melodic/message_filters/1.14.4-1.tar.gz#/ros-melodic-message_filters-1.14.4-source0.tar.gz
 
-Patch0: ros-melodic-message_filters.signals2.patch
 
 
 # common BRs
@@ -28,9 +27,9 @@ BuildRequires:  ros-melodic-rosunit-devel
 Requires:       ros-melodic-rosconsole
 Requires:       ros-melodic-roscpp
 
-Provides:  ros-melodic-message_filters = 1.14.4-1
-Obsoletes: ros-melodic-message_filters < 1.14.4-1
-Obsoletes: ros-kinetic-message_filters < 1.14.4-1
+Provides:  ros-melodic-message_filters = 1.14.4-2
+Obsoletes: ros-melodic-message_filters < 1.14.4-2
+Obsoletes: ros-kinetic-message_filters < 1.14.4-2
 
 
 %description
@@ -48,9 +47,9 @@ Requires:       ros-melodic-roscpp-devel
 Requires:       ros-melodic-rostest-devel
 Requires:       ros-melodic-rosunit-devel
 
-Provides: ros-melodic-message_filters-devel = 1.14.4-1
-Obsoletes: ros-melodic-message_filters-devel < 1.14.4-1
-Obsoletes: ros-kinetic-message_filters-devel < 1.14.4-1
+Provides: ros-melodic-message_filters-devel = 1.14.4-2
+Obsoletes: ros-melodic-message_filters-devel < 1.14.4-2
+Obsoletes: ros-kinetic-message_filters-devel < 1.14.4-2
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -62,7 +61,6 @@ applications that use %{name}.
 
 %setup -c -T
 tar --strip-components=1 -xf %{SOURCE0}
-%patch0 -p1
 
 %build
 # nothing to do here
@@ -158,6 +156,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Thu Mar 05 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.4-2
+- Remove upstreamed patch
 * Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.4-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.3-3
