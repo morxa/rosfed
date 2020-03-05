@@ -1,6 +1,6 @@
 Name:           ros-roscpp
 Version:        melodic.1.14.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package roscpp
 
 License:        BSD
@@ -8,7 +8,6 @@ URL:            http://www.ros.org/
 
 Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/melodic/roscpp/1.14.4-1.tar.gz#/ros-melodic-roscpp-1.14.4-source0.tar.gz
 
-Patch0: ros-melodic-roscpp.signals2.patch
 
 
 # common BRs
@@ -44,9 +43,9 @@ Requires:       ros-melodic-rostime
 Requires:       ros-melodic-std_msgs
 Requires:       ros-melodic-xmlrpcpp
 
-Provides:  ros-melodic-roscpp = 1.14.4-1
-Obsoletes: ros-melodic-roscpp < 1.14.4-1
-Obsoletes: ros-kinetic-roscpp < 1.14.4-1
+Provides:  ros-melodic-roscpp = 1.14.4-2
+Obsoletes: ros-melodic-roscpp < 1.14.4-2
+Obsoletes: ros-kinetic-roscpp < 1.14.4-2
 
 
 %description
@@ -72,9 +71,9 @@ Requires:       ros-melodic-std_msgs-devel
 Requires:       ros-melodic-xmlrpcpp-devel
 Requires:       ros-melodic-message_runtime-devel
 
-Provides: ros-melodic-roscpp-devel = 1.14.4-1
-Obsoletes: ros-melodic-roscpp-devel < 1.14.4-1
-Obsoletes: ros-kinetic-roscpp-devel < 1.14.4-1
+Provides: ros-melodic-roscpp-devel = 1.14.4-2
+Obsoletes: ros-melodic-roscpp-devel < 1.14.4-2
+Obsoletes: ros-kinetic-roscpp-devel < 1.14.4-2
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -86,7 +85,6 @@ applications that use %{name}.
 
 %setup -c -T
 tar --strip-components=1 -xf %{SOURCE0}
-%patch0 -p1
 
 %build
 # nothing to do here
@@ -182,6 +180,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Thu Mar 05 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.4-2
+- Remove upstreamed patch
 * Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.4-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.3-3
