@@ -24,9 +24,9 @@ BuildRequires:  mesa-libGL-devel mesa-libGLU-devel
 BuildRequires:  ogre-devel
 BuildRequires:  poco-devel
 BuildRequires:  python3-qt5-devel
+BuildRequires:  python3-sip-devel
 BuildRequires:  qt5-qtbase
 BuildRequires:  qt5-qtbase-devel
-BuildRequires:  sip-devel
 BuildRequires:  tinyxml2-devel
 BuildRequires:  urdfdom-devel
 BuildRequires:  urdfdom-headers-devel
@@ -101,9 +101,9 @@ Requires:       mesa-libGL-devel mesa-libGLU-devel
 Requires:       ogre-devel
 Requires:       poco-devel
 Requires:       python3-qt5-devel
+Requires:       python3-sip-devel
 Requires:       qt5-qtbase
 Requires:       qt5-qtbase-devel
-Requires:       sip-devel
 Requires:       tinyxml2-devel
 Requires:       urdfdom-devel
 Requires:       urdfdom-headers-devel

@@ -1,6 +1,6 @@
 Name:           ros-python_orocos_kdl
 Version:        melodic.1.4.0
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        ROS package python_orocos_kdl
 
 License:        LGPL
@@ -20,16 +20,15 @@ BuildRequires:  python3-devel
 BuildRequires:  cmake
 BuildRequires:  eigen3-devel
 BuildRequires:  python3-sip-devel
-BuildRequires:  sip-devel
 BuildRequires:  ros-melodic-catkin-devel
 BuildRequires:  ros-melodic-orocos_kdl-devel
 
 Requires:       ros-melodic-catkin
 Requires:       ros-melodic-orocos_kdl
 
-Provides:  ros-melodic-python_orocos_kdl = 1.4.0-4
-Obsoletes: ros-melodic-python_orocos_kdl < 1.4.0-4
-Obsoletes: ros-kinetic-python_orocos_kdl < 1.4.0-4
+Provides:  ros-melodic-python_orocos_kdl = 1.4.0-5
+Obsoletes: ros-melodic-python_orocos_kdl < 1.4.0-5
+Obsoletes: ros-kinetic-python_orocos_kdl < 1.4.0-5
 
 
 %description
@@ -42,13 +41,12 @@ Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       cmake
 Requires:       eigen3-devel
 Requires:       python3-sip-devel
-Requires:       sip-devel
 Requires:       ros-melodic-catkin-devel
 Requires:       ros-melodic-orocos_kdl-devel
 
-Provides: ros-melodic-python_orocos_kdl-devel = 1.4.0-4
-Obsoletes: ros-melodic-python_orocos_kdl-devel < 1.4.0-4
-Obsoletes: ros-kinetic-python_orocos_kdl-devel < 1.4.0-4
+Provides: ros-melodic-python_orocos_kdl-devel = 1.4.0-5
+Obsoletes: ros-melodic-python_orocos_kdl-devel < 1.4.0-5
+Obsoletes: ros-kinetic-python_orocos_kdl-devel < 1.4.0-5
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -155,6 +153,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Thu Mar 05 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.4.0-5
+- Fix sip-devel dependency
 * Mon Mar 02 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.4.0-4
 - Remove dependency on python3-sip
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.4.0-3

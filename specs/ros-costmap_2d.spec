@@ -1,12 +1,12 @@
 Name:           ros-costmap_2d
-Version:        melodic.1.16.3
+Version:        melodic.1.16.4
 Release:        1%{?dist}
 Summary:        ROS package costmap_2d
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/navigation-release/archive/release/melodic/costmap_2d/1.16.3-1.tar.gz#/ros-melodic-costmap_2d-1.16.3-source0.tar.gz
+Source0:        https://github.com/ros-gbp/navigation-release/archive/release/melodic/costmap_2d/1.16.4-1.tar.gz#/ros-melodic-costmap_2d-1.16.4-source0.tar.gz
 
 
 
@@ -66,9 +66,9 @@ Requires:       ros-melodic-tf2_ros
 Requires:       ros-melodic-visualization_msgs
 Requires:       ros-melodic-voxel_grid
 
-Provides:  ros-melodic-costmap_2d = 1.16.3-1
-Obsoletes: ros-melodic-costmap_2d < 1.16.3-1
-Obsoletes: ros-kinetic-costmap_2d < 1.16.3-1
+Provides:  ros-melodic-costmap_2d = 1.16.4-1
+Obsoletes: ros-melodic-costmap_2d < 1.16.4-1
+Obsoletes: ros-kinetic-costmap_2d < 1.16.4-1
 
 
 %description
@@ -117,9 +117,9 @@ Requires:       ros-melodic-voxel_grid-devel
 Requires:       ros-melodic-message_runtime-devel
 Requires:       ros-melodic-rosconsole-devel
 
-Provides: ros-melodic-costmap_2d-devel = 1.16.3-1
-Obsoletes: ros-melodic-costmap_2d-devel < 1.16.3-1
-Obsoletes: ros-kinetic-costmap_2d-devel < 1.16.3-1
+Provides: ros-melodic-costmap_2d-devel = 1.16.4-1
+Obsoletes: ros-melodic-costmap_2d-devel < 1.16.4-1
+Obsoletes: ros-kinetic-costmap_2d-devel < 1.16.4-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -226,6 +226,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Thu Mar 05 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.16.4-1
+- Update to latest release
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.16.3-1
 - Update to latest release
 * Wed Jul 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.16.2-1

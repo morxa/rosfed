@@ -1,12 +1,12 @@
 Name:           ros-navfn
-Version:        melodic.1.16.3
+Version:        melodic.1.16.4
 Release:        1%{?dist}
 Summary:        ROS package navfn
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/navigation-release/archive/release/melodic/navfn/1.16.3-1.tar.gz#/ros-melodic-navfn-1.16.3-source0.tar.gz
+Source0:        https://github.com/ros-gbp/navigation-release/archive/release/melodic/navfn/1.16.4-1.tar.gz#/ros-melodic-navfn-1.16.4-source0.tar.gz
 
 
 
@@ -51,9 +51,9 @@ Requires:       ros-melodic-sensor_msgs
 Requires:       ros-melodic-tf2_ros
 Requires:       ros-melodic-visualization_msgs
 
-Provides:  ros-melodic-navfn = 1.16.3-1
-Obsoletes: ros-melodic-navfn < 1.16.3-1
-Obsoletes: ros-kinetic-navfn < 1.16.3-1
+Provides:  ros-melodic-navfn = 1.16.4-1
+Obsoletes: ros-melodic-navfn < 1.16.4-1
+Obsoletes: ros-kinetic-navfn < 1.16.4-1
 
 
 %description
@@ -92,9 +92,9 @@ Requires:       ros-melodic-tf2_ros-devel
 Requires:       ros-melodic-visualization_msgs-devel
 Requires:       ros-melodic-message_runtime-devel
 
-Provides: ros-melodic-navfn-devel = 1.16.3-1
-Obsoletes: ros-melodic-navfn-devel < 1.16.3-1
-Obsoletes: ros-kinetic-navfn-devel < 1.16.3-1
+Provides: ros-melodic-navfn-devel = 1.16.4-1
+Obsoletes: ros-melodic-navfn-devel < 1.16.4-1
+Obsoletes: ros-kinetic-navfn-devel < 1.16.4-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -201,6 +201,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Thu Mar 05 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.16.4-1
+- Update to latest release
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.16.3-1
 - Update to latest release
 * Wed Jul 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.16.2-1

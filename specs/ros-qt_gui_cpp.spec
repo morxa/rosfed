@@ -22,10 +22,10 @@ BuildRequires:  console-bridge-devel
 BuildRequires:  pkgconfig
 BuildRequires:  poco-devel
 BuildRequires:  python3-qt5-devel
+BuildRequires:  python3-sip-devel
 BuildRequires:  qt5-qtbase-devel
 BuildRequires:  qtermwidget-qt5-devel
 BuildRequires:  shiboken-devel
-BuildRequires:  sip-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
 BuildRequires:  ros-melodic-catkin-devel
@@ -55,10 +55,10 @@ Requires:       console-bridge-devel
 Requires:       pkgconfig
 Requires:       poco-devel
 Requires:       python3-qt5-devel
+Requires:       python3-sip-devel
 Requires:       qt5-qtbase-devel
 Requires:       qtermwidget-qt5-devel
 Requires:       shiboken-devel
-Requires:       sip-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
 Requires:       ros-melodic-cmake_modules-devel
