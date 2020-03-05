@@ -2,4 +2,3 @@ dependencies:
   build:
     system:
       - eigen3-devel
-      - python3-sip-devel

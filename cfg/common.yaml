@@ -77,3 +77,4 @@ common:
       python3-catkin-pkg: python3-catkin_pkg
       python3-qt5-bindings: python3-pyside2
       python3-yaml: python3-pyyaml
+      sip-devel: python3-sip-devel
