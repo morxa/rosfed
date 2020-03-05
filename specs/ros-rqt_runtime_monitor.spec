@@ -30,7 +30,7 @@ Requires:       ros-melodic-rqt_gui_py
 
 Provides:  ros-melodic-rqt_runtime_monitor = 0.5.7-3
 Obsoletes: ros-melodic-rqt_runtime_monitor < 0.5.7-3
-Obsoletes: ros-kinetic-rqt_runtime_monitor
+Obsoletes: ros-kinetic-rqt_runtime_monitor < 0.5.7-3
 
 
 %description
@@ -50,7 +50,7 @@ Requires:       ros-melodic-rqt_gui_py-devel
 
 Provides: ros-melodic-rqt_runtime_monitor-devel = 0.5.7-3
 Obsoletes: ros-melodic-rqt_runtime_monitor-devel < 0.5.7-3
-Obsoletes: ros-kinetic-rqt_runtime_monitor-devel
+Obsoletes: ros-kinetic-rqt_runtime_monitor-devel < 0.5.7-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

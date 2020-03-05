@@ -34,7 +34,7 @@ Requires:       ros-melodic-tf2_ros
 
 Provides:  ros-melodic-tf2_geometry_msgs = 0.6.5-3
 Obsoletes: ros-melodic-tf2_geometry_msgs < 0.6.5-3
-Obsoletes: ros-kinetic-tf2_geometry_msgs
+Obsoletes: ros-kinetic-tf2_geometry_msgs < 0.6.5-3
 
 
 %description
@@ -53,7 +53,7 @@ Requires:       ros-melodic-tf2_ros-devel
 
 Provides: ros-melodic-tf2_geometry_msgs-devel = 0.6.5-3
 Obsoletes: ros-melodic-tf2_geometry_msgs-devel < 0.6.5-3
-Obsoletes: ros-kinetic-tf2_geometry_msgs-devel
+Obsoletes: ros-kinetic-tf2_geometry_msgs-devel < 0.6.5-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

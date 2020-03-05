@@ -1,12 +1,12 @@
 Name:           ros-roswtf
-Version:        melodic.1.14.3
-Release:        3%{?dist}
+Version:        melodic.1.14.4
+Release:        1%{?dist}
 Summary:        ROS package roswtf
 
 License:        BSD
-URL:            http://www.ros.org/
+URL:            http://wiki.ros.org/roswtf
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/melodic/roswtf/1.14.3-0.tar.gz#/ros-melodic-roswtf-1.14.3-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/melodic/roswtf/1.14.4-1.tar.gz#/ros-melodic-roswtf-1.14.4-source0.tar.gz
 
 
 BuildArch: noarch
@@ -21,6 +21,7 @@ BuildRequires:  python3-devel
 BuildRequires:  ros-melodic-catkin-devel
 BuildRequires:  ros-melodic-cmake_modules-devel
 BuildRequires:  ros-melodic-rosbag-devel
+BuildRequires:  ros-melodic-roslang-devel
 BuildRequires:  ros-melodic-rostest-devel
 BuildRequires:  ros-melodic-std_srvs-devel
 
@@ -33,9 +34,9 @@ Requires:       ros-melodic-roslib
 Requires:       ros-melodic-rosnode
 Requires:       ros-melodic-rosservice
 
-Provides:  ros-melodic-roswtf = 1.14.3-3
-Obsoletes: ros-melodic-roswtf < 1.14.3-3
-Obsoletes: ros-kinetic-roswtf
+Provides:  ros-melodic-roswtf = 1.14.4-1
+Obsoletes: ros-melodic-roswtf < 1.14.4-1
+Obsoletes: ros-kinetic-roswtf < 1.14.4-1
 
 
 %description
@@ -48,6 +49,7 @@ Requires:       %{name} = %{version}-%{release}
 Requires:       ros-melodic-catkin-devel
 Requires:       ros-melodic-cmake_modules-devel
 Requires:       ros-melodic-rosbag-devel
+Requires:       ros-melodic-roslang-devel
 Requires:       ros-melodic-rostest-devel
 Requires:       ros-melodic-std_srvs-devel
 Requires:       ros-melodic-rosbuild-devel
@@ -57,9 +59,9 @@ Requires:       ros-melodic-roslib-devel
 Requires:       ros-melodic-rosnode-devel
 Requires:       ros-melodic-rosservice-devel
 
-Provides: ros-melodic-roswtf-devel = 1.14.3-3
-Obsoletes: ros-melodic-roswtf-devel < 1.14.3-3
-Obsoletes: ros-kinetic-roswtf-devel
+Provides: ros-melodic-roswtf-devel = 1.14.4-1
+Obsoletes: ros-melodic-roswtf-devel < 1.14.4-1
+Obsoletes: ros-kinetic-roswtf-devel < 1.14.4-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -166,6 +168,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.4-1
+- Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.3-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.3-2

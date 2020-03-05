@@ -24,7 +24,7 @@ Requires:       ros-melodic-catkin
 
 Provides:  ros-melodic-octomap = 1.9.0-1
 Obsoletes: ros-melodic-octomap < 1.9.0-1
-Obsoletes: ros-kinetic-octomap
+Obsoletes: ros-kinetic-octomap < 1.9.0-1
 
 
 %description
@@ -41,7 +41,7 @@ Requires:       ros-melodic-catkin-devel
 
 Provides: ros-melodic-octomap-devel = 1.9.0-1
 Obsoletes: ros-melodic-octomap-devel < 1.9.0-1
-Obsoletes: ros-kinetic-octomap-devel
+Obsoletes: ros-kinetic-octomap-devel < 1.9.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

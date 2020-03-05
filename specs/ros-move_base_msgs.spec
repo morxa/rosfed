@@ -29,7 +29,7 @@ Requires:       ros-melodic-message_runtime
 
 Provides:  ros-melodic-move_base_msgs = 1.13.0-1
 Obsoletes: ros-melodic-move_base_msgs < 1.13.0-1
-Obsoletes: ros-kinetic-move_base_msgs
+Obsoletes: ros-kinetic-move_base_msgs < 1.13.0-1
 
 
 %description
@@ -47,7 +47,7 @@ Requires:       ros-melodic-message_runtime-devel
 
 Provides: ros-melodic-move_base_msgs-devel = 1.13.0-1
 Obsoletes: ros-melodic-move_base_msgs-devel < 1.13.0-1
-Obsoletes: ros-kinetic-move_base_msgs-devel
+Obsoletes: ros-kinetic-move_base_msgs-devel < 1.13.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

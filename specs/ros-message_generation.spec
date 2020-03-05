@@ -1,12 +1,12 @@
 Name:           ros-message_generation
-Version:        melodic.0.4.0
-Release:        3%{?dist}
+Version:        melodic.0.4.1
+Release:        1%{?dist}
 Summary:        ROS package message_generation
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/message_generation-release/archive/release/melodic/message_generation/0.4.0-0.tar.gz#/ros-melodic-message_generation-0.4.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/message_generation-release/archive/release/melodic/message_generation/0.4.1-1.tar.gz#/ros-melodic-message_generation-0.4.1-source0.tar.gz
 
 
 BuildArch: noarch
@@ -27,9 +27,9 @@ Requires:       ros-melodic-genmsg
 Requires:       ros-melodic-gennodejs
 Requires:       ros-melodic-genpy
 
-Provides:  ros-melodic-message_generation = 0.4.0-3
-Obsoletes: ros-melodic-message_generation < 0.4.0-3
-Obsoletes: ros-kinetic-message_generation
+Provides:  ros-melodic-message_generation = 0.4.1-1
+Obsoletes: ros-melodic-message_generation < 0.4.1-1
+Obsoletes: ros-kinetic-message_generation < 0.4.1-1
 
 
 %description
@@ -47,9 +47,9 @@ Requires:       ros-melodic-genmsg-devel
 Requires:       ros-melodic-gennodejs-devel
 Requires:       ros-melodic-genpy-devel
 
-Provides: ros-melodic-message_generation-devel = 0.4.0-3
-Obsoletes: ros-melodic-message_generation-devel < 0.4.0-3
-Obsoletes: ros-kinetic-message_generation-devel
+Provides: ros-melodic-message_generation-devel = 0.4.1-1
+Obsoletes: ros-melodic-message_generation-devel < 0.4.1-1
+Obsoletes: ros-kinetic-message_generation-devel < 0.4.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -156,6 +156,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.1-1
+- Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.0-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.0-2

@@ -23,7 +23,7 @@ BuildRequires:  ros-melodic-catkin-devel
 
 Provides:  ros-melodic-random_numbers = 0.3.2-1
 Obsoletes: ros-melodic-random_numbers < 0.3.2-1
-Obsoletes: ros-kinetic-random_numbers
+Obsoletes: ros-kinetic-random_numbers < 0.3.2-1
 
 
 %description
@@ -41,7 +41,7 @@ Requires:       boost-devel boost-python3-devel boost-python3-devel
 
 Provides: ros-melodic-random_numbers-devel = 0.3.2-1
 Obsoletes: ros-melodic-random_numbers-devel < 0.3.2-1
-Obsoletes: ros-kinetic-random_numbers-devel
+Obsoletes: ros-kinetic-random_numbers-devel < 0.3.2-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -29,7 +29,7 @@ Requires:       ros-melodic-python_qt_binding
 
 Provides:  ros-melodic-qt_gui = 0.4.0-1
 Obsoletes: ros-melodic-qt_gui < 0.4.0-1
-Obsoletes: ros-kinetic-qt_gui
+Obsoletes: ros-kinetic-qt_gui < 0.4.0-1
 
 
 %description
@@ -49,7 +49,7 @@ Requires:       ros-melodic-python_qt_binding-devel
 
 Provides: ros-melodic-qt_gui-devel = 0.4.0-1
 Obsoletes: ros-melodic-qt_gui-devel < 0.4.0-1
-Obsoletes: ros-kinetic-qt_gui-devel
+Obsoletes: ros-kinetic-qt_gui-devel < 0.4.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

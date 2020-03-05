@@ -46,7 +46,7 @@ Requires:       ros-melodic-tf2_kdl
 
 Provides:  ros-melodic-moveit_kinematics = 1.0.2-1
 Obsoletes: ros-melodic-moveit_kinematics < 1.0.2-1
-Obsoletes: ros-kinetic-moveit_kinematics
+Obsoletes: ros-kinetic-moveit_kinematics < 1.0.2-1
 
 
 %description
@@ -75,7 +75,7 @@ Requires:       ros-melodic-xmlrpcpp-devel
 
 Provides: ros-melodic-moveit_kinematics-devel = 1.0.2-1
 Obsoletes: ros-melodic-moveit_kinematics-devel < 1.0.2-1
-Obsoletes: ros-kinetic-moveit_kinematics-devel
+Obsoletes: ros-kinetic-moveit_kinematics-devel < 1.0.2-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

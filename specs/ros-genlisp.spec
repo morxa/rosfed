@@ -25,7 +25,7 @@ Requires:       ros-melodic-genmsg
 
 Provides:  ros-melodic-genlisp = 0.4.16-3
 Obsoletes: ros-melodic-genlisp < 0.4.16-3
-Obsoletes: ros-kinetic-genlisp
+Obsoletes: ros-kinetic-genlisp < 0.4.16-3
 
 
 %description
@@ -39,7 +39,7 @@ Requires:       ros-melodic-genmsg-devel
 
 Provides: ros-melodic-genlisp-devel = 0.4.16-3
 Obsoletes: ros-melodic-genlisp-devel < 0.4.16-3
-Obsoletes: ros-kinetic-genlisp-devel
+Obsoletes: ros-kinetic-genlisp-devel < 0.4.16-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -31,7 +31,7 @@ Requires:       ros-melodic-std_msgs
 
 Provides:  ros-melodic-map_msgs = 1.13.0-3
 Obsoletes: ros-melodic-map_msgs < 1.13.0-3
-Obsoletes: ros-kinetic-map_msgs
+Obsoletes: ros-kinetic-map_msgs < 1.13.0-3
 
 
 %description
@@ -49,7 +49,7 @@ Requires:       ros-melodic-message_runtime-devel
 
 Provides: ros-melodic-map_msgs-devel = 1.13.0-3
 Obsoletes: ros-melodic-map_msgs-devel < 1.13.0-3
-Obsoletes: ros-kinetic-map_msgs-devel
+Obsoletes: ros-kinetic-map_msgs-devel < 1.13.0-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

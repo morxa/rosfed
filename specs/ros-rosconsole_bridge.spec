@@ -29,7 +29,7 @@ Requires:       ros-melodic-rosconsole
 
 Provides:  ros-melodic-rosconsole_bridge = 0.5.3-3
 Obsoletes: ros-melodic-rosconsole_bridge < 0.5.3-3
-Obsoletes: ros-kinetic-rosconsole_bridge
+Obsoletes: ros-kinetic-rosconsole_bridge < 0.5.3-3
 
 
 %description
@@ -49,7 +49,7 @@ Requires:       ros-melodic-rosconsole-devel
 
 Provides: ros-melodic-rosconsole_bridge-devel = 0.5.3-3
 Obsoletes: ros-melodic-rosconsole_bridge-devel < 0.5.3-3
-Obsoletes: ros-kinetic-rosconsole_bridge-devel
+Obsoletes: ros-kinetic-rosconsole_bridge-devel < 0.5.3-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

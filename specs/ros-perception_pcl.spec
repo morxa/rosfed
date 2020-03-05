@@ -26,7 +26,7 @@ Requires:       ros-melodic-pcl_ros
 
 Provides:  ros-melodic-perception_pcl = 1.7.0-1
 Obsoletes: ros-melodic-perception_pcl < 1.7.0-1
-Obsoletes: ros-kinetic-perception_pcl
+Obsoletes: ros-kinetic-perception_pcl < 1.7.0-1
 
 
 %description
@@ -44,7 +44,7 @@ Requires:       ros-melodic-pcl_ros-devel
 
 Provides: ros-melodic-perception_pcl-devel = 1.7.0-1
 Obsoletes: ros-melodic-perception_pcl-devel < 1.7.0-1
-Obsoletes: ros-kinetic-perception_pcl-devel
+Obsoletes: ros-kinetic-perception_pcl-devel < 1.7.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

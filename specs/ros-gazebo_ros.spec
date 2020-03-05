@@ -49,7 +49,7 @@ Requires:       ros-melodic-tf
 
 Provides:  ros-melodic-gazebo_ros = 2.8.6-1
 Obsoletes: ros-melodic-gazebo_ros < 2.8.6-1
-Obsoletes: ros-kinetic-gazebo_ros
+Obsoletes: ros-kinetic-gazebo_ros < 2.8.6-1
 
 
 %description
@@ -79,7 +79,7 @@ Requires:       ros-melodic-trajectory_msgs-devel
 
 Provides: ros-melodic-gazebo_ros-devel = 2.8.6-1
 Obsoletes: ros-melodic-gazebo_ros-devel < 2.8.6-1
-Obsoletes: ros-kinetic-gazebo_ros-devel
+Obsoletes: ros-kinetic-gazebo_ros-devel < 2.8.6-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

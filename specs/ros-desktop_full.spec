@@ -27,7 +27,7 @@ Requires:       ros-melodic-urdf_sim_tutorial
 
 Provides:  ros-melodic-desktop_full = 1.4.1-4
 Obsoletes: ros-melodic-desktop_full < 1.4.1-4
-Obsoletes: ros-kinetic-desktop_full
+Obsoletes: ros-kinetic-desktop_full < 1.4.1-4
 
 
 %description
@@ -44,7 +44,7 @@ Requires:       ros-melodic-urdf_sim_tutorial-devel
 
 Provides: ros-melodic-desktop_full-devel = 1.4.1-4
 Obsoletes: ros-melodic-desktop_full-devel < 1.4.1-4
-Obsoletes: ros-kinetic-desktop_full-devel
+Obsoletes: ros-kinetic-desktop_full-devel < 1.4.1-4
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

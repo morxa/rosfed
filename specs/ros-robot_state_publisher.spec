@@ -46,7 +46,7 @@ Requires:       ros-melodic-tf2_ros
 
 Provides:  ros-melodic-robot_state_publisher = 1.14.0-1
 Obsoletes: ros-melodic-robot_state_publisher < 1.14.0-1
-Obsoletes: ros-kinetic-robot_state_publisher
+Obsoletes: ros-kinetic-robot_state_publisher < 1.14.0-1
 
 
 %description
@@ -73,7 +73,7 @@ Requires:       ros-melodic-tf2_ros-devel
 
 Provides: ros-melodic-robot_state_publisher-devel = 1.14.0-1
 Obsoletes: ros-melodic-robot_state_publisher-devel < 1.14.0-1
-Obsoletes: ros-kinetic-robot_state_publisher-devel
+Obsoletes: ros-kinetic-robot_state_publisher-devel < 1.14.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

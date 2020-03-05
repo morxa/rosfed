@@ -29,7 +29,7 @@ BuildRequires:  ros-melodic-std_msgs-devel
 
 Provides:  ros-melodic-pcl_conversions = 1.7.0-1
 Obsoletes: ros-melodic-pcl_conversions < 1.7.0-1
-Obsoletes: ros-kinetic-pcl_conversions
+Obsoletes: ros-kinetic-pcl_conversions < 1.7.0-1
 
 
 %description
@@ -48,7 +48,7 @@ Requires:       ros-melodic-std_msgs-devel
 
 Provides: ros-melodic-pcl_conversions-devel = 1.7.0-1
 Obsoletes: ros-melodic-pcl_conversions-devel < 1.7.0-1
-Obsoletes: ros-kinetic-pcl_conversions-devel
+Obsoletes: ros-kinetic-pcl_conversions-devel < 1.7.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

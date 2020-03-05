@@ -31,7 +31,7 @@ Requires:       ros-melodic-roscpp
 
 Provides:  ros-melodic-transmission_interface = 0.17.0-1
 Obsoletes: ros-melodic-transmission_interface < 0.17.0-1
-Obsoletes: ros-kinetic-transmission_interface
+Obsoletes: ros-kinetic-transmission_interface < 0.17.0-1
 
 
 %description
@@ -52,7 +52,7 @@ Requires:       ros-melodic-roscpp-devel
 
 Provides: ros-melodic-transmission_interface-devel = 0.17.0-1
 Obsoletes: ros-melodic-transmission_interface-devel < 0.17.0-1
-Obsoletes: ros-kinetic-transmission_interface-devel
+Obsoletes: ros-kinetic-transmission_interface-devel < 0.17.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

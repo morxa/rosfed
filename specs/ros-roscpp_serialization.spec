@@ -29,7 +29,7 @@ Requires:       ros-melodic-rostime
 
 Provides:  ros-melodic-roscpp_serialization = 0.6.13-1
 Obsoletes: ros-melodic-roscpp_serialization < 0.6.13-1
-Obsoletes: ros-kinetic-roscpp_serialization
+Obsoletes: ros-kinetic-roscpp_serialization < 0.6.13-1
 
 
 %description
@@ -47,7 +47,7 @@ Requires:       ros-melodic-rostime-devel
 
 Provides: ros-melodic-roscpp_serialization-devel = 0.6.13-1
 Obsoletes: ros-melodic-roscpp_serialization-devel < 0.6.13-1
-Obsoletes: ros-kinetic-roscpp_serialization-devel
+Obsoletes: ros-kinetic-roscpp_serialization-devel < 0.6.13-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

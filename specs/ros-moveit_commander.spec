@@ -35,7 +35,7 @@ Requires:       ros-melodic-tf
 
 Provides:  ros-melodic-moveit_commander = 1.0.2-1
 Obsoletes: ros-melodic-moveit_commander < 1.0.2-1
-Obsoletes: ros-kinetic-moveit_commander
+Obsoletes: ros-kinetic-moveit_commander < 1.0.2-1
 
 
 %description
@@ -59,7 +59,7 @@ Requires:       ros-melodic-tf-devel
 
 Provides: ros-melodic-moveit_commander-devel = 1.0.2-1
 Obsoletes: ros-melodic-moveit_commander-devel < 1.0.2-1
-Obsoletes: ros-kinetic-moveit_commander-devel
+Obsoletes: ros-kinetic-moveit_commander-devel < 1.0.2-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

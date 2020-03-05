@@ -29,7 +29,7 @@ Requires:       ros-melodic-rqt_gui_py
 
 Provides:  ros-melodic-rqt_robot_steering = 0.5.10-1
 Obsoletes: ros-melodic-rqt_robot_steering < 0.5.10-1
-Obsoletes: ros-kinetic-rqt_robot_steering
+Obsoletes: ros-kinetic-rqt_robot_steering < 0.5.10-1
 
 
 %description
@@ -48,7 +48,7 @@ Requires:       ros-melodic-rqt_gui_py-devel
 
 Provides: ros-melodic-rqt_robot_steering-devel = 0.5.10-1
 Obsoletes: ros-melodic-rqt_robot_steering-devel < 0.5.10-1
-Obsoletes: ros-kinetic-rqt_robot_steering-devel
+Obsoletes: ros-kinetic-rqt_robot_steering-devel < 0.5.10-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

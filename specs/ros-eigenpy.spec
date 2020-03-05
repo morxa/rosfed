@@ -31,7 +31,7 @@ Requires:       python3dist(numpy)
 
 Provides:  ros-melodic-eigenpy = 1.6.9-1
 Obsoletes: ros-melodic-eigenpy < 1.6.9-1
-Obsoletes: ros-kinetic-eigenpy
+Obsoletes: ros-kinetic-eigenpy < 1.6.9-1
 
 
 %description
@@ -52,7 +52,7 @@ Requires:       ros-melodic-catkin-devel
 
 Provides: ros-melodic-eigenpy-devel = 1.6.9-1
 Obsoletes: ros-melodic-eigenpy-devel < 1.6.9-1
-Obsoletes: ros-kinetic-eigenpy-devel
+Obsoletes: ros-kinetic-eigenpy-devel < 1.6.9-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

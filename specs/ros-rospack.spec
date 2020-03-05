@@ -1,12 +1,12 @@
 Name:           ros-rospack
-Version:        melodic.2.5.4
+Version:        melodic.2.5.5
 Release:        1%{?dist}
 Summary:        ROS package rospack
 
 License:        BSD
 URL:            http://wiki.ros.org/rospack
 
-Source0:        https://github.com/ros-gbp/rospack-release/archive/release/melodic/rospack/2.5.4-1.tar.gz#/ros-melodic-rospack-2.5.4-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rospack-release/archive/release/melodic/rospack/2.5.5-1.tar.gz#/ros-melodic-rospack-2.5.5-source0.tar.gz
 
 
 
@@ -31,9 +31,9 @@ Requires:       python3-catkin_pkg
 Requires:       python3-rosdep
 Requires:       ros-melodic-ros_environment
 
-Provides:  ros-melodic-rospack = 2.5.4-1
-Obsoletes: ros-melodic-rospack < 2.5.4-1
-Obsoletes: ros-kinetic-rospack
+Provides:  ros-melodic-rospack = 2.5.5-1
+Obsoletes: ros-melodic-rospack < 2.5.5-1
+Obsoletes: ros-kinetic-rospack < 2.5.5-1
 
 
 %description
@@ -52,9 +52,9 @@ Requires:       tinyxml2-devel
 Requires:       ros-melodic-cmake_modules-devel
 Requires:       ros-melodic-ros_environment-devel
 
-Provides: ros-melodic-rospack-devel = 2.5.4-1
-Obsoletes: ros-melodic-rospack-devel < 2.5.4-1
-Obsoletes: ros-kinetic-rospack-devel
+Provides: ros-melodic-rospack-devel = 2.5.5-1
+Obsoletes: ros-melodic-rospack-devel < 2.5.5-1
+Obsoletes: ros-kinetic-rospack-devel < 2.5.5-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -161,6 +161,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.2.5.5-1
+- Update to latest release
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.2.5.4-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.2.5.3-3

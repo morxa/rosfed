@@ -25,7 +25,7 @@ Requires:       ros-melodic-genmsg
 
 Provides:  ros-melodic-geneus = 2.2.6-3
 Obsoletes: ros-melodic-geneus < 2.2.6-3
-Obsoletes: ros-kinetic-geneus
+Obsoletes: ros-kinetic-geneus < 2.2.6-3
 
 
 %description
@@ -39,7 +39,7 @@ Requires:       ros-melodic-genmsg-devel
 
 Provides: ros-melodic-geneus-devel = 2.2.6-3
 Obsoletes: ros-melodic-geneus-devel < 2.2.6-3
-Obsoletes: ros-kinetic-geneus-devel
+Obsoletes: ros-kinetic-geneus-devel < 2.2.6-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

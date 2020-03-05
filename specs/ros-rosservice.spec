@@ -1,12 +1,12 @@
 Name:           ros-rosservice
-Version:        melodic.1.14.3
-Release:        3%{?dist}
+Version:        melodic.1.14.4
+Release:        1%{?dist}
 Summary:        ROS package rosservice
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/melodic/rosservice/1.14.3-0.tar.gz#/ros-melodic-rosservice-1.14.3-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/melodic/rosservice/1.14.4-1.tar.gz#/ros-melodic-rosservice-1.14.4-source0.tar.gz
 
 
 BuildArch: noarch
@@ -26,9 +26,9 @@ Requires:       ros-melodic-roslib
 Requires:       ros-melodic-rosmsg
 Requires:       ros-melodic-rospy
 
-Provides:  ros-melodic-rosservice = 1.14.3-3
-Obsoletes: ros-melodic-rosservice < 1.14.3-3
-Obsoletes: ros-kinetic-rosservice
+Provides:  ros-melodic-rosservice = 1.14.4-1
+Obsoletes: ros-melodic-rosservice < 1.14.4-1
+Obsoletes: ros-kinetic-rosservice < 1.14.4-1
 
 
 %description
@@ -45,9 +45,9 @@ Requires:       ros-melodic-roslib-devel
 Requires:       ros-melodic-rosmsg-devel
 Requires:       ros-melodic-rospy-devel
 
-Provides: ros-melodic-rosservice-devel = 1.14.3-3
-Obsoletes: ros-melodic-rosservice-devel < 1.14.3-3
-Obsoletes: ros-kinetic-rosservice-devel
+Provides: ros-melodic-rosservice-devel = 1.14.4-1
+Obsoletes: ros-melodic-rosservice-devel < 1.14.4-1
+Obsoletes: ros-kinetic-rosservice-devel < 1.14.4-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -154,6 +154,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.4-1
+- Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.3-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.3-2

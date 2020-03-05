@@ -44,7 +44,7 @@ Requires:       ros-melodic-rqt_web
 
 Provides:  ros-melodic-rqt_common_plugins = 0.4.8-3
 Obsoletes: ros-melodic-rqt_common_plugins < 0.4.8-3
-Obsoletes: ros-kinetic-rqt_common_plugins
+Obsoletes: ros-kinetic-rqt_common_plugins < 0.4.8-3
 
 
 %description
@@ -79,7 +79,7 @@ Requires:       ros-melodic-rqt_web-devel
 
 Provides: ros-melodic-rqt_common_plugins-devel = 0.4.8-3
 Obsoletes: ros-melodic-rqt_common_plugins-devel < 0.4.8-3
-Obsoletes: ros-kinetic-rqt_common_plugins-devel
+Obsoletes: ros-kinetic-rqt_common_plugins-devel < 0.4.8-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

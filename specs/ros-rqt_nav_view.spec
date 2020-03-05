@@ -32,7 +32,7 @@ Requires:       ros-melodic-tf
 
 Provides:  ros-melodic-rqt_nav_view = 0.5.7-3
 Obsoletes: ros-melodic-rqt_nav_view < 0.5.7-3
-Obsoletes: ros-kinetic-rqt_nav_view
+Obsoletes: ros-kinetic-rqt_nav_view < 0.5.7-3
 
 
 %description
@@ -54,7 +54,7 @@ Requires:       ros-melodic-tf-devel
 
 Provides: ros-melodic-rqt_nav_view-devel = 0.5.7-3
 Obsoletes: ros-melodic-rqt_nav_view-devel < 0.5.7-3
-Obsoletes: ros-kinetic-rqt_nav_view-devel
+Obsoletes: ros-kinetic-rqt_nav_view-devel < 0.5.7-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

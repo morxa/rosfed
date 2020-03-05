@@ -39,7 +39,7 @@ Requires:       ros-melodic-std_msgs
 
 Provides:  ros-melodic-actionlib = 1.12.0-1
 Obsoletes: ros-melodic-actionlib < 1.12.0-1
-Obsoletes: ros-kinetic-actionlib
+Obsoletes: ros-kinetic-actionlib < 1.12.0-1
 
 
 %description
@@ -66,7 +66,7 @@ Requires:       ros-melodic-rostopic-devel
 
 Provides: ros-melodic-actionlib-devel = 1.12.0-1
 Obsoletes: ros-melodic-actionlib-devel < 1.12.0-1
-Obsoletes: ros-kinetic-actionlib-devel
+Obsoletes: ros-kinetic-actionlib-devel < 1.12.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

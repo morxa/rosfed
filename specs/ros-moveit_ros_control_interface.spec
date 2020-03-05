@@ -40,7 +40,7 @@ Requires:       ros-melodic-trajectory_msgs
 
 Provides:  ros-melodic-moveit_ros_control_interface = 1.0.2-1
 Obsoletes: ros-melodic-moveit_ros_control_interface < 1.0.2-1
-Obsoletes: ros-kinetic-moveit_ros_control_interface
+Obsoletes: ros-kinetic-moveit_ros_control_interface < 1.0.2-1
 
 
 %description
@@ -65,7 +65,7 @@ Requires:       ros-melodic-trajectory_msgs-devel
 
 Provides: ros-melodic-moveit_ros_control_interface-devel = 1.0.2-1
 Obsoletes: ros-melodic-moveit_ros_control_interface-devel < 1.0.2-1
-Obsoletes: ros-kinetic-moveit_ros_control_interface-devel
+Obsoletes: ros-kinetic-moveit_ros_control_interface-devel < 1.0.2-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

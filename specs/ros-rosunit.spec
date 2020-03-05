@@ -1,12 +1,12 @@
 Name:           ros-rosunit
-Version:        melodic.1.14.7
+Version:        melodic.1.14.8
 Release:        1%{?dist}
 Summary:        ROS package rosunit
 
 License:        BSD
 URL:            http://wiki.ros.org/rosunit
 
-Source0:        https://github.com/ros-gbp/ros-release/archive/release/melodic/rosunit/1.14.7-1.tar.gz#/ros-melodic-rosunit-1.14.7-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros-release/archive/release/melodic/rosunit/1.14.8-1.tar.gz#/ros-melodic-rosunit-1.14.8-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,14 +18,15 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
+BuildRequires:  python3-setuptools
 BuildRequires:  ros-melodic-catkin-devel
 
 Requires:       python3-rospkg
 Requires:       ros-melodic-roslib
 
-Provides:  ros-melodic-rosunit = 1.14.7-1
-Obsoletes: ros-melodic-rosunit < 1.14.7-1
-Obsoletes: ros-kinetic-rosunit
+Provides:  ros-melodic-rosunit = 1.14.8-1
+Obsoletes: ros-melodic-rosunit < 1.14.8-1
+Obsoletes: ros-kinetic-rosunit < 1.14.8-1
 
 
 %description
@@ -36,12 +37,13 @@ tests.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
+Requires:       python3-setuptools
 Requires:       ros-melodic-catkin-devel
 Requires:       ros-melodic-roslib-devel
 
-Provides: ros-melodic-rosunit-devel = 1.14.7-1
-Obsoletes: ros-melodic-rosunit-devel < 1.14.7-1
-Obsoletes: ros-kinetic-rosunit-devel
+Provides: ros-melodic-rosunit-devel = 1.14.8-1
+Obsoletes: ros-melodic-rosunit-devel < 1.14.8-1
+Obsoletes: ros-kinetic-rosunit-devel < 1.14.8-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -148,6 +150,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.8-1
+- Update to latest release
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.7-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.6-3

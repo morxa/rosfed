@@ -62,7 +62,7 @@ Requires:       ros-melodic-tf2_ros
 
 Provides:  ros-melodic-moveit_ros_planning_interface = 1.0.2-1
 Obsoletes: ros-melodic-moveit_ros_planning_interface < 1.0.2-1
-Obsoletes: ros-kinetic-moveit_ros_planning_interface
+Obsoletes: ros-kinetic-moveit_ros_planning_interface < 1.0.2-1
 
 
 %description
@@ -101,7 +101,7 @@ Requires:       ros-melodic-tf2_ros-devel
 
 Provides: ros-melodic-moveit_ros_planning_interface-devel = 1.0.2-1
 Obsoletes: ros-melodic-moveit_ros_planning_interface-devel < 1.0.2-1
-Obsoletes: ros-kinetic-moveit_ros_planning_interface-devel
+Obsoletes: ros-kinetic-moveit_ros_planning_interface-devel < 1.0.2-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

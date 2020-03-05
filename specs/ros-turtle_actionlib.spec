@@ -40,7 +40,7 @@ Requires:       ros-melodic-turtlesim
 
 Provides:  ros-melodic-turtle_actionlib = 0.1.11-3
 Obsoletes: ros-melodic-turtle_actionlib < 0.1.11-3
-Obsoletes: ros-kinetic-turtle_actionlib
+Obsoletes: ros-kinetic-turtle_actionlib < 0.1.11-3
 
 
 %description
@@ -65,7 +65,7 @@ Requires:       ros-melodic-message_runtime-devel
 
 Provides: ros-melodic-turtle_actionlib-devel = 0.1.11-3
 Obsoletes: ros-melodic-turtle_actionlib-devel < 0.1.11-3
-Obsoletes: ros-kinetic-turtle_actionlib-devel
+Obsoletes: ros-kinetic-turtle_actionlib-devel < 0.1.11-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

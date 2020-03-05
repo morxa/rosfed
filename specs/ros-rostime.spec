@@ -25,7 +25,7 @@ Requires:       ros-melodic-cpp_common
 
 Provides:  ros-melodic-rostime = 0.6.13-1
 Obsoletes: ros-melodic-rostime < 0.6.13-1
-Obsoletes: ros-kinetic-rostime
+Obsoletes: ros-kinetic-rostime < 0.6.13-1
 
 
 %description
@@ -40,7 +40,7 @@ Requires:       boost-devel boost-python3-devel boost-python3-devel
 
 Provides: ros-melodic-rostime-devel = 0.6.13-1
 Obsoletes: ros-melodic-rostime-devel < 0.6.13-1
-Obsoletes: ros-kinetic-rostime-devel
+Obsoletes: ros-kinetic-rostime-devel < 0.6.13-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

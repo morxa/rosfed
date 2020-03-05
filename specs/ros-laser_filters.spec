@@ -43,7 +43,7 @@ Requires:       ros-melodic-tf
 
 Provides:  ros-melodic-laser_filters = 1.8.8-1
 Obsoletes: ros-melodic-laser_filters < 1.8.8-1
-Obsoletes: ros-kinetic-laser_filters
+Obsoletes: ros-kinetic-laser_filters < 1.8.8-1
 
 
 %description
@@ -70,7 +70,7 @@ Requires:       ros-melodic-tf-devel
 
 Provides: ros-melodic-laser_filters-devel = 1.8.8-1
 Obsoletes: ros-melodic-laser_filters-devel < 1.8.8-1
-Obsoletes: ros-kinetic-laser_filters-devel
+Obsoletes: ros-kinetic-laser_filters-devel < 1.8.8-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -31,7 +31,7 @@ Requires:       ros-melodic-tf
 
 Provides:  ros-melodic-diagnostic_common_diagnostics = 1.9.3-3
 Obsoletes: ros-melodic-diagnostic_common_diagnostics < 1.9.3-3
-Obsoletes: ros-kinetic-diagnostic_common_diagnostics
+Obsoletes: ros-kinetic-diagnostic_common_diagnostics < 1.9.3-3
 
 
 %description
@@ -48,7 +48,7 @@ Requires:       ros-melodic-tf-devel
 
 Provides: ros-melodic-diagnostic_common_diagnostics-devel = 1.9.3-3
 Obsoletes: ros-melodic-diagnostic_common_diagnostics-devel < 1.9.3-3
-Obsoletes: ros-kinetic-diagnostic_common_diagnostics-devel
+Obsoletes: ros-kinetic-diagnostic_common_diagnostics-devel < 1.9.3-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

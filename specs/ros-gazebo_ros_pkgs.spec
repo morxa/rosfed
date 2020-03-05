@@ -27,7 +27,7 @@ Requires:       ros-melodic-gazebo_ros
 
 Provides:  ros-melodic-gazebo_ros_pkgs = 2.8.6-1
 Obsoletes: ros-melodic-gazebo_ros_pkgs < 2.8.6-1
-Obsoletes: ros-kinetic-gazebo_ros_pkgs
+Obsoletes: ros-kinetic-gazebo_ros_pkgs < 2.8.6-1
 
 
 %description
@@ -44,7 +44,7 @@ Requires:       ros-melodic-gazebo_ros-devel
 
 Provides: ros-melodic-gazebo_ros_pkgs-devel = 2.8.6-1
 Obsoletes: ros-melodic-gazebo_ros_pkgs-devel < 2.8.6-1
-Obsoletes: ros-kinetic-gazebo_ros_pkgs-devel
+Obsoletes: ros-kinetic-gazebo_ros_pkgs-devel < 2.8.6-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

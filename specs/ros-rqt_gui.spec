@@ -26,7 +26,7 @@ Requires:       ros-melodic-qt_gui
 
 Provides:  ros-melodic-rqt_gui = 0.5.0-3
 Obsoletes: ros-melodic-rqt_gui < 0.5.0-3
-Obsoletes: ros-kinetic-rqt_gui
+Obsoletes: ros-kinetic-rqt_gui < 0.5.0-3
 
 
 %description
@@ -41,7 +41,7 @@ Requires:       ros-melodic-qt_gui-devel
 
 Provides: ros-melodic-rqt_gui-devel = 0.5.0-3
 Obsoletes: ros-melodic-rqt_gui-devel < 0.5.0-3
-Obsoletes: ros-kinetic-rqt_gui-devel
+Obsoletes: ros-kinetic-rqt_gui-devel < 0.5.0-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

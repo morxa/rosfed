@@ -25,7 +25,7 @@ Requires:       ros-melodic-turtle_tf2
 
 Provides:  ros-melodic-geometry_tutorials = 0.2.2-3
 Obsoletes: ros-melodic-geometry_tutorials < 0.2.2-3
-Obsoletes: ros-kinetic-geometry_tutorials
+Obsoletes: ros-kinetic-geometry_tutorials < 0.2.2-3
 
 
 %description
@@ -40,7 +40,7 @@ Requires:       ros-melodic-turtle_tf2-devel
 
 Provides: ros-melodic-geometry_tutorials-devel = 0.2.2-3
 Obsoletes: ros-melodic-geometry_tutorials-devel < 0.2.2-3
-Obsoletes: ros-kinetic-geometry_tutorials-devel
+Obsoletes: ros-kinetic-geometry_tutorials-devel < 0.2.2-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

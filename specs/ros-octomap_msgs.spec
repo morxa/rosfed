@@ -29,7 +29,7 @@ Requires:       ros-melodic-std_msgs
 
 Provides:  ros-melodic-octomap_msgs = 0.3.3-1
 Obsoletes: ros-melodic-octomap_msgs < 0.3.3-1
-Obsoletes: ros-kinetic-octomap_msgs
+Obsoletes: ros-kinetic-octomap_msgs < 0.3.3-1
 
 
 %description
@@ -46,7 +46,7 @@ Requires:       ros-melodic-message_runtime-devel
 
 Provides: ros-melodic-octomap_msgs-devel = 0.3.3-1
 Obsoletes: ros-melodic-octomap_msgs-devel < 0.3.3-1
-Obsoletes: ros-kinetic-octomap_msgs-devel
+Obsoletes: ros-kinetic-octomap_msgs-devel < 0.3.3-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

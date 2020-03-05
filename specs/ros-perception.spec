@@ -30,7 +30,7 @@ Requires:       ros-melodic-vision_opencv
 
 Provides:  ros-melodic-perception = 1.4.1-3
 Obsoletes: ros-melodic-perception < 1.4.1-3
-Obsoletes: ros-kinetic-perception
+Obsoletes: ros-kinetic-perception < 1.4.1-3
 
 
 %description
@@ -50,7 +50,7 @@ Requires:       ros-melodic-vision_opencv-devel
 
 Provides: ros-melodic-perception-devel = 1.4.1-3
 Obsoletes: ros-melodic-perception-devel < 1.4.1-3
-Obsoletes: ros-kinetic-perception-devel
+Obsoletes: ros-kinetic-perception-devel < 1.4.1-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -35,7 +35,7 @@ Requires:       ros-melodic-trajectory_msgs
 
 Provides:  ros-melodic-gazebo_msgs = 2.8.6-1
 Obsoletes: ros-melodic-gazebo_msgs < 2.8.6-1
-Obsoletes: ros-kinetic-gazebo_msgs
+Obsoletes: ros-kinetic-gazebo_msgs < 2.8.6-1
 
 
 %description
@@ -56,7 +56,7 @@ Requires:       ros-melodic-message_runtime-devel
 
 Provides: ros-melodic-gazebo_msgs-devel = 2.8.6-1
 Obsoletes: ros-melodic-gazebo_msgs-devel < 2.8.6-1
-Obsoletes: ros-kinetic-gazebo_msgs-devel
+Obsoletes: ros-kinetic-gazebo_msgs-devel < 2.8.6-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

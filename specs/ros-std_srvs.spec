@@ -27,7 +27,7 @@ Requires:       ros-melodic-message_runtime
 
 Provides:  ros-melodic-std_srvs = 1.11.2-3
 Obsoletes: ros-melodic-std_srvs < 1.11.2-3
-Obsoletes: ros-kinetic-std_srvs
+Obsoletes: ros-kinetic-std_srvs < 1.11.2-3
 
 
 %description
@@ -43,7 +43,7 @@ Requires:       ros-melodic-message_runtime-devel
 
 Provides: ros-melodic-std_srvs-devel = 1.11.2-3
 Obsoletes: ros-melodic-std_srvs-devel < 1.11.2-3
-Obsoletes: ros-kinetic-std_srvs-devel
+Obsoletes: ros-kinetic-std_srvs-devel < 1.11.2-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

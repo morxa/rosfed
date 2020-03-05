@@ -39,7 +39,7 @@ Requires:       ros-melodic-sensor_msgs
 
 Provides:  ros-melodic-camera_calibration_parsers = 1.11.13-13
 Obsoletes: ros-melodic-camera_calibration_parsers < 1.11.13-13
-Obsoletes: ros-kinetic-camera_calibration_parsers
+Obsoletes: ros-kinetic-camera_calibration_parsers < 1.11.13-13
 
 
 %description
@@ -66,7 +66,7 @@ Requires:       ros-melodic-sensor_msgs-devel
 
 Provides: ros-melodic-camera_calibration_parsers-devel = 1.11.13-13
 Obsoletes: ros-melodic-camera_calibration_parsers-devel < 1.11.13-13
-Obsoletes: ros-kinetic-camera_calibration_parsers-devel
+Obsoletes: ros-kinetic-camera_calibration_parsers-devel < 1.11.13-13
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

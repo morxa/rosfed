@@ -1,12 +1,12 @@
 Name:           ros-genmsg
-Version:        melodic.0.5.12
-Release:        3%{?dist}
+Version:        melodic.0.5.15
+Release:        1%{?dist}
 Summary:        ROS package genmsg
 
 License:        BSD
-URL:            http://www.ros.org/wiki/genmsg
+URL:            http://wiki.ros.org/genmsg
 
-Source0:        https://github.com/ros-gbp/genmsg-release/archive/release/melodic/genmsg/0.5.12-0.tar.gz#/ros-melodic-genmsg-0.5.12-source0.tar.gz
+Source0:        https://github.com/ros-gbp/genmsg-release/archive/release/melodic/genmsg/0.5.15-1.tar.gz#/ros-melodic-genmsg-0.5.15-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,14 +18,15 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
+BuildRequires:  python3-setuptools
 BuildRequires:  ros-melodic-catkin-devel
 
 Requires:       python3-empy
 Requires:       ros-melodic-catkin
 
-Provides:  ros-melodic-genmsg = 0.5.12-3
-Obsoletes: ros-melodic-genmsg < 0.5.12-3
-Obsoletes: ros-kinetic-genmsg
+Provides:  ros-melodic-genmsg = 0.5.15-1
+Obsoletes: ros-melodic-genmsg < 0.5.15-1
+Obsoletes: ros-kinetic-genmsg < 0.5.15-1
 
 
 %description
@@ -35,11 +36,12 @@ structures for various languages.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
+Requires:       python3-setuptools
 Requires:       ros-melodic-catkin-devel
 
-Provides: ros-melodic-genmsg-devel = 0.5.12-3
-Obsoletes: ros-melodic-genmsg-devel < 0.5.12-3
-Obsoletes: ros-kinetic-genmsg-devel
+Provides: ros-melodic-genmsg-devel = 0.5.15-1
+Obsoletes: ros-melodic-genmsg-devel < 0.5.15-1
+Obsoletes: ros-kinetic-genmsg-devel < 0.5.15-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -146,6 +148,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.5.15-1
+- Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.5.12-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.5.12-2

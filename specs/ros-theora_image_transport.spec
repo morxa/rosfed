@@ -43,7 +43,7 @@ Requires:       ros-melodic-std_msgs
 
 Provides:  ros-melodic-theora_image_transport = 1.9.5-13
 Obsoletes: ros-melodic-theora_image_transport < 1.9.5-13
-Obsoletes: ros-kinetic-theora_image_transport
+Obsoletes: ros-kinetic-theora_image_transport < 1.9.5-13
 
 
 %description
@@ -72,7 +72,7 @@ Requires:       ros-melodic-message_runtime-devel
 
 Provides: ros-melodic-theora_image_transport-devel = 1.9.5-13
 Obsoletes: ros-melodic-theora_image_transport-devel < 1.9.5-13
-Obsoletes: ros-kinetic-theora_image_transport-devel
+Obsoletes: ros-kinetic-theora_image_transport-devel < 1.9.5-13
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

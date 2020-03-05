@@ -24,7 +24,7 @@ BuildRequires:  ros-melodic-catkin-devel
 
 Provides:  ros-melodic-cpp_common = 0.6.13-1
 Obsoletes: ros-melodic-cpp_common < 0.6.13-1
-Obsoletes: ros-kinetic-cpp_common
+Obsoletes: ros-kinetic-cpp_common < 0.6.13-1
 
 
 %description
@@ -42,7 +42,7 @@ Requires:       console-bridge-devel
 
 Provides: ros-melodic-cpp_common-devel = 0.6.13-1
 Obsoletes: ros-melodic-cpp_common-devel < 0.6.13-1
-Obsoletes: ros-kinetic-cpp_common-devel
+Obsoletes: ros-kinetic-cpp_common-devel < 0.6.13-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

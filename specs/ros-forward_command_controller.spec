@@ -31,7 +31,7 @@ Requires:       ros-melodic-std_msgs
 
 Provides:  ros-melodic-forward_command_controller = 0.15.0-3
 Obsoletes: ros-melodic-forward_command_controller < 0.15.0-3
-Obsoletes: ros-kinetic-forward_command_controller
+Obsoletes: ros-kinetic-forward_command_controller < 0.15.0-3
 
 
 %description
@@ -48,7 +48,7 @@ Requires:       ros-melodic-std_msgs-devel
 
 Provides: ros-melodic-forward_command_controller-devel = 0.15.0-3
 Obsoletes: ros-melodic-forward_command_controller-devel < 0.15.0-3
-Obsoletes: ros-kinetic-forward_command_controller-devel
+Obsoletes: ros-kinetic-forward_command_controller-devel < 0.15.0-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

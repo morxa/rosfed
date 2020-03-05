@@ -28,7 +28,7 @@ Requires:       ros-melodic-rqt_gui_py
 
 Provides:  ros-melodic-rqt_top = 0.4.8-3
 Obsoletes: ros-melodic-rqt_top < 0.4.8-3
-Obsoletes: ros-kinetic-rqt_top
+Obsoletes: ros-kinetic-rqt_top < 0.4.8-3
 
 
 %description
@@ -45,7 +45,7 @@ Requires:       ros-melodic-rqt_gui_py-devel
 
 Provides: ros-melodic-rqt_top-devel = 0.4.8-3
 Obsoletes: ros-melodic-rqt_top-devel < 0.4.8-3
-Obsoletes: ros-kinetic-rqt_top-devel
+Obsoletes: ros-kinetic-rqt_top-devel < 0.4.8-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

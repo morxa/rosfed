@@ -26,7 +26,7 @@ Requires:       ros-melodic-tf2
 
 Provides:  ros-melodic-tf2_py = 0.6.5-3
 Obsoletes: ros-melodic-tf2_py < 0.6.5-3
-Obsoletes: ros-kinetic-tf2_py
+Obsoletes: ros-kinetic-tf2_py < 0.6.5-3
 
 
 %description
@@ -41,7 +41,7 @@ Requires:       ros-melodic-tf2-devel
 
 Provides: ros-melodic-tf2_py-devel = 0.6.5-3
 Obsoletes: ros-melodic-tf2_py-devel < 0.6.5-3
-Obsoletes: ros-kinetic-tf2_py-devel
+Obsoletes: ros-kinetic-tf2_py-devel < 0.6.5-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

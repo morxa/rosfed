@@ -35,7 +35,7 @@ Requires:       ros-melodic-tf
 
 Provides:  ros-melodic-laser_geometry = 1.6.4-3
 Obsoletes: ros-melodic-laser_geometry < 1.6.4-3
-Obsoletes: ros-kinetic-laser_geometry
+Obsoletes: ros-kinetic-laser_geometry < 1.6.4-3
 
 
 %description
@@ -60,7 +60,7 @@ Requires:       ros-melodic-tf-devel
 
 Provides: ros-melodic-laser_geometry-devel = 1.6.4-3
 Obsoletes: ros-melodic-laser_geometry-devel < 1.6.4-3
-Obsoletes: ros-kinetic-laser_geometry-devel
+Obsoletes: ros-kinetic-laser_geometry-devel < 1.6.4-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

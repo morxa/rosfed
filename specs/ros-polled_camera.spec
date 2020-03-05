@@ -35,7 +35,7 @@ Requires:       ros-melodic-std_msgs
 
 Provides:  ros-melodic-polled_camera = 1.11.13-12
 Obsoletes: ros-melodic-polled_camera < 1.11.13-12
-Obsoletes: ros-kinetic-polled_camera
+Obsoletes: ros-kinetic-polled_camera < 1.11.13-12
 
 
 %description
@@ -60,7 +60,7 @@ Requires:       ros-melodic-message_runtime-devel
 
 Provides: ros-melodic-polled_camera-devel = 1.11.13-12
 Obsoletes: ros-melodic-polled_camera-devel < 1.11.13-12
-Obsoletes: ros-kinetic-polled_camera-devel
+Obsoletes: ros-kinetic-polled_camera-devel < 1.11.13-12
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

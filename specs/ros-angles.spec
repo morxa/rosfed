@@ -24,7 +24,7 @@ BuildRequires:  ros-melodic-rosunit-devel
 
 Provides:  ros-melodic-angles = 1.9.12-1
 Obsoletes: ros-melodic-angles < 1.9.12-1
-Obsoletes: ros-kinetic-angles
+Obsoletes: ros-kinetic-angles < 1.9.12-1
 
 
 %description
@@ -45,7 +45,7 @@ Requires:       ros-melodic-rosunit-devel
 
 Provides: ros-melodic-angles-devel = 1.9.12-1
 Obsoletes: ros-melodic-angles-devel < 1.9.12-1
-Obsoletes: ros-kinetic-angles-devel
+Obsoletes: ros-kinetic-angles-devel < 1.9.12-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

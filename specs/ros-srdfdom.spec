@@ -32,7 +32,7 @@ Requires:       ros-melodic-urdfdom_py
 
 Provides:  ros-melodic-srdfdom = 0.5.1-1
 Obsoletes: ros-melodic-srdfdom < 0.5.1-1
-Obsoletes: ros-kinetic-srdfdom
+Obsoletes: ros-kinetic-srdfdom < 0.5.1-1
 
 
 %description
@@ -54,7 +54,7 @@ Requires:       ros-melodic-urdfdom_py-devel
 
 Provides: ros-melodic-srdfdom-devel = 0.5.1-1
 Obsoletes: ros-melodic-srdfdom-devel < 0.5.1-1
-Obsoletes: ros-kinetic-srdfdom-devel
+Obsoletes: ros-kinetic-srdfdom-devel < 0.5.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -25,7 +25,7 @@ Requires:       ros-melodic-genmsg
 
 Provides:  ros-melodic-gennodejs = 2.0.1-3
 Obsoletes: ros-melodic-gennodejs < 2.0.1-3
-Obsoletes: ros-kinetic-gennodejs
+Obsoletes: ros-kinetic-gennodejs < 2.0.1-3
 
 
 %description
@@ -39,7 +39,7 @@ Requires:       ros-melodic-genmsg-devel
 
 Provides: ros-melodic-gennodejs-devel = 2.0.1-3
 Obsoletes: ros-melodic-gennodejs-devel < 2.0.1-3
-Obsoletes: ros-kinetic-gennodejs-devel
+Obsoletes: ros-kinetic-gennodejs-devel < 2.0.1-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

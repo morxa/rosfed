@@ -37,7 +37,7 @@ Requires:       ros-melodic-roslib
 
 Provides:  ros-melodic-pluginlib = 1.12.1-3
 Obsoletes: ros-melodic-pluginlib < 1.12.1-3
-Obsoletes: ros-kinetic-pluginlib
+Obsoletes: ros-kinetic-pluginlib < 1.12.1-3
 
 
 %description
@@ -64,7 +64,7 @@ Requires:       ros-melodic-rostime-devel
 
 Provides: ros-melodic-pluginlib-devel = 1.12.1-3
 Obsoletes: ros-melodic-pluginlib-devel < 1.12.1-3
-Obsoletes: ros-kinetic-pluginlib-devel
+Obsoletes: ros-kinetic-pluginlib-devel < 1.12.1-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

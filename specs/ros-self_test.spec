@@ -29,7 +29,7 @@ Requires:       ros-melodic-roscpp
 
 Provides:  ros-melodic-self_test = 1.9.3-3
 Obsoletes: ros-melodic-self_test < 1.9.3-3
-Obsoletes: ros-kinetic-self_test
+Obsoletes: ros-kinetic-self_test < 1.9.3-3
 
 
 %description
@@ -46,7 +46,7 @@ Requires:       ros-melodic-rostest-devel
 
 Provides: ros-melodic-self_test-devel = 1.9.3-3
 Obsoletes: ros-melodic-self_test-devel < 1.9.3-3
-Obsoletes: ros-kinetic-self_test-devel
+Obsoletes: ros-kinetic-self_test-devel < 1.9.3-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

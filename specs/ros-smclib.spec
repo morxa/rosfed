@@ -23,7 +23,7 @@ BuildRequires:  ros-melodic-catkin-devel
 
 Provides:  ros-melodic-smclib = 1.8.3-3
 Obsoletes: ros-melodic-smclib < 1.8.3-3
-Obsoletes: ros-kinetic-smclib
+Obsoletes: ros-kinetic-smclib < 1.8.3-3
 
 
 %description
@@ -40,7 +40,7 @@ Requires:       ros-melodic-catkin-devel
 
 Provides: ros-melodic-smclib-devel = 1.8.3-3
 Obsoletes: ros-melodic-smclib-devel < 1.8.3-3
-Obsoletes: ros-kinetic-smclib-devel
+Obsoletes: ros-kinetic-smclib-devel < 1.8.3-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

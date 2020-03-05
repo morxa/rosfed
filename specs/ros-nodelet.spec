@@ -41,7 +41,7 @@ Requires:       ros-melodic-std_msgs
 
 Provides:  ros-melodic-nodelet = 1.9.16-3
 Obsoletes: ros-melodic-nodelet < 1.9.16-3
-Obsoletes: ros-kinetic-nodelet
+Obsoletes: ros-kinetic-nodelet < 1.9.16-3
 
 
 %description
@@ -72,7 +72,7 @@ Requires:       ros-melodic-rospy-devel
 
 Provides: ros-melodic-nodelet-devel = 1.9.16-3
 Obsoletes: ros-melodic-nodelet-devel < 1.9.16-3
-Obsoletes: ros-kinetic-nodelet-devel
+Obsoletes: ros-kinetic-nodelet-devel < 1.9.16-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

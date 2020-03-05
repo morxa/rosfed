@@ -48,7 +48,7 @@ Requires:       ros-melodic-tf2_ros
 
 Provides:  ros-melodic-rotate_recovery = 1.16.3-1
 Obsoletes: ros-melodic-rotate_recovery < 1.16.3-1
-Obsoletes: ros-kinetic-rotate_recovery
+Obsoletes: ros-kinetic-rotate_recovery < 1.16.3-1
 
 
 %description
@@ -81,7 +81,7 @@ Requires:       ros-melodic-tf2_ros-devel
 
 Provides: ros-melodic-rotate_recovery-devel = 1.16.3-1
 Obsoletes: ros-melodic-rotate_recovery-devel < 1.16.3-1
-Obsoletes: ros-kinetic-rotate_recovery-devel
+Obsoletes: ros-kinetic-rotate_recovery-devel < 1.16.3-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

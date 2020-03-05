@@ -27,7 +27,7 @@ Requires:       ros-melodic-genmsg
 
 Provides:  ros-melodic-genpy = 0.6.9-1
 Obsoletes: ros-melodic-genpy < 0.6.9-1
-Obsoletes: ros-kinetic-genpy
+Obsoletes: ros-kinetic-genpy < 0.6.9-1
 
 
 %description
@@ -41,7 +41,7 @@ Requires:       ros-melodic-genmsg-devel
 
 Provides: ros-melodic-genpy-devel = 0.6.9-1
 Obsoletes: ros-melodic-genpy-devel < 0.6.9-1
-Obsoletes: ros-kinetic-genpy-devel
+Obsoletes: ros-kinetic-genpy-devel < 0.6.9-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

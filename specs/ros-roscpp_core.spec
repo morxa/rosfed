@@ -27,7 +27,7 @@ Requires:       ros-melodic-rostime
 
 Provides:  ros-melodic-roscpp_core = 0.6.13-1
 Obsoletes: ros-melodic-roscpp_core < 0.6.13-1
-Obsoletes: ros-kinetic-roscpp_core
+Obsoletes: ros-kinetic-roscpp_core < 0.6.13-1
 
 
 %description
@@ -44,7 +44,7 @@ Requires:       ros-melodic-roscpp_traits-devel
 
 Provides: ros-melodic-roscpp_core-devel = 0.6.13-1
 Obsoletes: ros-melodic-roscpp_core-devel < 0.6.13-1
-Obsoletes: ros-kinetic-roscpp_core-devel
+Obsoletes: ros-kinetic-roscpp_core-devel < 0.6.13-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

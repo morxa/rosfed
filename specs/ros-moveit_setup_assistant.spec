@@ -51,7 +51,7 @@ Requires:       ros-melodic-xacro
 
 Provides:  ros-melodic-moveit_setup_assistant = 1.0.2-1
 Obsoletes: ros-melodic-moveit_setup_assistant < 1.0.2-1
-Obsoletes: ros-kinetic-moveit_setup_assistant
+Obsoletes: ros-kinetic-moveit_setup_assistant < 1.0.2-1
 
 
 %description
@@ -85,7 +85,7 @@ Requires:       ros-melodic-xacro-devel
 
 Provides: ros-melodic-moveit_setup_assistant-devel = 1.0.2-1
 Obsoletes: ros-melodic-moveit_setup_assistant-devel < 1.0.2-1
-Obsoletes: ros-kinetic-moveit_setup_assistant-devel
+Obsoletes: ros-kinetic-moveit_setup_assistant-devel < 1.0.2-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

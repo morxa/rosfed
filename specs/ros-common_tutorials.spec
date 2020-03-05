@@ -27,7 +27,7 @@ Requires:       ros-melodic-turtle_actionlib
 
 Provides:  ros-melodic-common_tutorials = 0.1.11-3
 Obsoletes: ros-melodic-common_tutorials < 0.1.11-3
-Obsoletes: ros-kinetic-common_tutorials
+Obsoletes: ros-kinetic-common_tutorials < 0.1.11-3
 
 
 %description
@@ -44,7 +44,7 @@ Requires:       ros-melodic-turtle_actionlib-devel
 
 Provides: ros-melodic-common_tutorials-devel = 0.1.11-3
 Obsoletes: ros-melodic-common_tutorials-devel < 0.1.11-3
-Obsoletes: ros-kinetic-common_tutorials-devel
+Obsoletes: ros-kinetic-common_tutorials-devel < 0.1.11-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

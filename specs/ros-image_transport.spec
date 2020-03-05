@@ -37,7 +37,7 @@ Requires:       ros-melodic-sensor_msgs
 
 Provides:  ros-melodic-image_transport = 1.11.13-3
 Obsoletes: ros-melodic-image_transport < 1.11.13-3
-Obsoletes: ros-kinetic-image_transport
+Obsoletes: ros-kinetic-image_transport < 1.11.13-3
 
 
 %description
@@ -63,7 +63,7 @@ Requires:       ros-melodic-sensor_msgs-devel
 
 Provides: ros-melodic-image_transport-devel = 1.11.13-3
 Obsoletes: ros-melodic-image_transport-devel < 1.11.13-3
-Obsoletes: ros-kinetic-image_transport-devel
+Obsoletes: ros-kinetic-image_transport-devel < 1.11.13-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

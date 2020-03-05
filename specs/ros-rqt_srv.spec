@@ -28,7 +28,7 @@ Requires:       ros-melodic-rqt_msg
 
 Provides:  ros-melodic-rqt_srv = 0.4.8-3
 Obsoletes: ros-melodic-rqt_srv < 0.4.8-3
-Obsoletes: ros-kinetic-rqt_srv
+Obsoletes: ros-kinetic-rqt_srv < 0.4.8-3
 
 
 %description
@@ -49,7 +49,7 @@ Requires:       ros-melodic-rqt_msg-devel
 
 Provides: ros-melodic-rqt_srv-devel = 0.4.8-3
 Obsoletes: ros-melodic-rqt_srv-devel < 0.4.8-3
-Obsoletes: ros-kinetic-rqt_srv-devel
+Obsoletes: ros-kinetic-rqt_srv-devel < 0.4.8-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

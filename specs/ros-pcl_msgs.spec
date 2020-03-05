@@ -29,7 +29,7 @@ Requires:       ros-melodic-std_msgs
 
 Provides:  ros-melodic-pcl_msgs = 0.2.0-14
 Obsoletes: ros-melodic-pcl_msgs < 0.2.0-14
-Obsoletes: ros-kinetic-pcl_msgs
+Obsoletes: ros-kinetic-pcl_msgs < 0.2.0-14
 
 
 %description
@@ -46,7 +46,7 @@ Requires:       ros-melodic-message_runtime-devel
 
 Provides: ros-melodic-pcl_msgs-devel = 0.2.0-14
 Obsoletes: ros-melodic-pcl_msgs-devel < 0.2.0-14
-Obsoletes: ros-kinetic-pcl_msgs-devel
+Obsoletes: ros-kinetic-pcl_msgs-devel < 0.2.0-14
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

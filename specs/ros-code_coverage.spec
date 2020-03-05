@@ -25,7 +25,7 @@ Requires:       lcov
 
 Provides:  ros-melodic-code_coverage = 0.3.0-1
 Obsoletes: ros-melodic-code_coverage < 0.3.0-1
-Obsoletes: ros-kinetic-code_coverage
+Obsoletes: ros-kinetic-code_coverage < 0.3.0-1
 
 
 %description
@@ -39,7 +39,7 @@ Requires:       lcov
 
 Provides: ros-melodic-code_coverage-devel = 0.3.0-1
 Obsoletes: ros-melodic-code_coverage-devel < 0.3.0-1
-Obsoletes: ros-kinetic-code_coverage-devel
+Obsoletes: ros-kinetic-code_coverage-devel < 0.3.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

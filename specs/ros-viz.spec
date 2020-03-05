@@ -27,7 +27,7 @@ Requires:       ros-melodic-rviz
 
 Provides:  ros-melodic-viz = 1.4.1-3
 Obsoletes: ros-melodic-viz < 1.4.1-3
-Obsoletes: ros-kinetic-viz
+Obsoletes: ros-kinetic-viz < 1.4.1-3
 
 
 %description
@@ -44,7 +44,7 @@ Requires:       ros-melodic-rviz-devel
 
 Provides: ros-melodic-viz-devel = 1.4.1-3
 Obsoletes: ros-melodic-viz-devel < 1.4.1-3
-Obsoletes: ros-kinetic-viz-devel
+Obsoletes: ros-kinetic-viz-devel < 1.4.1-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

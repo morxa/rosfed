@@ -32,7 +32,7 @@ Requires:       ros-melodic-sensor_msgs
 
 Provides:  ros-melodic-rqt_moveit = 0.5.7-3
 Obsoletes: ros-melodic-rqt_moveit < 0.5.7-3
-Obsoletes: ros-kinetic-rqt_moveit
+Obsoletes: ros-kinetic-rqt_moveit < 0.5.7-3
 
 
 %description
@@ -54,7 +54,7 @@ Requires:       ros-melodic-sensor_msgs-devel
 
 Provides: ros-melodic-rqt_moveit-devel = 0.5.7-3
 Obsoletes: ros-melodic-rqt_moveit-devel < 0.5.7-3
-Obsoletes: ros-kinetic-rqt_moveit-devel
+Obsoletes: ros-kinetic-rqt_moveit-devel < 0.5.7-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

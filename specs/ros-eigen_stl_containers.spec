@@ -25,7 +25,7 @@ BuildRequires:  ros-melodic-cmake_modules-devel
 
 Provides:  ros-melodic-eigen_stl_containers = 0.1.8-1
 Obsoletes: ros-melodic-eigen_stl_containers < 0.1.8-1
-Obsoletes: ros-kinetic-eigen_stl_containers
+Obsoletes: ros-kinetic-eigen_stl_containers < 0.1.8-1
 
 
 %description
@@ -41,7 +41,7 @@ Requires:       ros-melodic-cmake_modules-devel
 
 Provides: ros-melodic-eigen_stl_containers-devel = 0.1.8-1
 Obsoletes: ros-melodic-eigen_stl_containers-devel < 0.1.8-1
-Obsoletes: ros-kinetic-eigen_stl_containers-devel
+Obsoletes: ros-kinetic-eigen_stl_containers-devel < 0.1.8-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

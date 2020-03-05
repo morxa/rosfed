@@ -40,7 +40,7 @@ Requires:       ros-melodic-rviz
 
 Provides:  ros-melodic-rqt_rviz = 0.6.0-3
 Obsoletes: ros-melodic-rqt_rviz < 0.6.0-3
-Obsoletes: ros-kinetic-rqt_rviz
+Obsoletes: ros-kinetic-rqt_rviz < 0.6.0-3
 
 
 %description
@@ -67,7 +67,7 @@ Requires:       ros-melodic-rviz-devel
 
 Provides: ros-melodic-rqt_rviz-devel = 0.6.0-3
 Obsoletes: ros-melodic-rqt_rviz-devel < 0.6.0-3
-Obsoletes: ros-kinetic-rqt_rviz-devel
+Obsoletes: ros-kinetic-rqt_rviz-devel < 0.6.0-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

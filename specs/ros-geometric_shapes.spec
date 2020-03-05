@@ -44,7 +44,7 @@ Requires:       ros-melodic-visualization_msgs
 
 Provides:  ros-melodic-geometric_shapes = 0.6.1-1
 Obsoletes: ros-melodic-geometric_shapes < 0.6.1-1
-Obsoletes: ros-kinetic-geometric_shapes
+Obsoletes: ros-kinetic-geometric_shapes < 0.6.1-1
 
 
 %description
@@ -73,7 +73,7 @@ Requires:       ros-melodic-visualization_msgs-devel
 
 Provides: ros-melodic-geometric_shapes-devel = 0.6.1-1
 Obsoletes: ros-melodic-geometric_shapes-devel < 0.6.1-1
-Obsoletes: ros-kinetic-geometric_shapes-devel
+Obsoletes: ros-kinetic-geometric_shapes-devel < 0.6.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

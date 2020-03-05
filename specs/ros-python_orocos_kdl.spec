@@ -29,7 +29,7 @@ Requires:       ros-melodic-orocos_kdl
 
 Provides:  ros-melodic-python_orocos_kdl = 1.4.0-4
 Obsoletes: ros-melodic-python_orocos_kdl < 1.4.0-4
-Obsoletes: ros-kinetic-python_orocos_kdl
+Obsoletes: ros-kinetic-python_orocos_kdl < 1.4.0-4
 
 
 %description
@@ -48,7 +48,7 @@ Requires:       ros-melodic-orocos_kdl-devel
 
 Provides: ros-melodic-python_orocos_kdl-devel = 1.4.0-4
 Obsoletes: ros-melodic-python_orocos_kdl-devel < 1.4.0-4
-Obsoletes: ros-kinetic-python_orocos_kdl-devel
+Obsoletes: ros-kinetic-python_orocos_kdl-devel < 1.4.0-4
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

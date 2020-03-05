@@ -1,12 +1,12 @@
 Name:           ros-ros_comm
-Version:        melodic.1.14.3
-Release:        3%{?dist}
+Version:        melodic.1.14.4
+Release:        1%{?dist}
 Summary:        ROS package ros_comm
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/melodic/ros_comm/1.14.3-0.tar.gz#/ros-melodic-ros_comm-1.14.3-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/melodic/ros_comm/1.14.4-1.tar.gz#/ros-melodic-ros_comm-1.14.4-source0.tar.gz
 
 
 BuildArch: noarch
@@ -43,9 +43,9 @@ Requires:       ros-melodic-std_srvs
 Requires:       ros-melodic-topic_tools
 Requires:       ros-melodic-xmlrpcpp
 
-Provides:  ros-melodic-ros_comm = 1.14.3-3
-Obsoletes: ros-melodic-ros_comm < 1.14.3-3
-Obsoletes: ros-kinetic-ros_comm
+Provides:  ros-melodic-ros_comm = 1.14.4-1
+Obsoletes: ros-melodic-ros_comm < 1.14.4-1
+Obsoletes: ros-kinetic-ros_comm < 1.14.4-1
 
 
 %description
@@ -80,9 +80,9 @@ Requires:       ros-melodic-std_srvs-devel
 Requires:       ros-melodic-topic_tools-devel
 Requires:       ros-melodic-xmlrpcpp-devel
 
-Provides: ros-melodic-ros_comm-devel = 1.14.3-3
-Obsoletes: ros-melodic-ros_comm-devel < 1.14.3-3
-Obsoletes: ros-kinetic-ros_comm-devel
+Provides: ros-melodic-ros_comm-devel = 1.14.4-1
+Obsoletes: ros-melodic-ros_comm-devel < 1.14.4-1
+Obsoletes: ros-kinetic-ros_comm-devel < 1.14.4-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -189,6 +189,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.4-1
+- Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.3-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.3-2

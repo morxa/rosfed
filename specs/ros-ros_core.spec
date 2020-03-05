@@ -47,7 +47,7 @@ Requires:       ros-melodic-std_srvs
 
 Provides:  ros-melodic-ros_core = 1.4.1-3
 Obsoletes: ros-melodic-ros_core < 1.4.1-3
-Obsoletes: ros-kinetic-ros_core
+Obsoletes: ros-kinetic-ros_core < 1.4.1-3
 
 
 %description
@@ -84,7 +84,7 @@ Requires:       ros-melodic-std_srvs-devel
 
 Provides: ros-melodic-ros_core-devel = 1.4.1-3
 Obsoletes: ros-melodic-ros_core-devel < 1.4.1-3
-Obsoletes: ros-kinetic-ros_core-devel
+Obsoletes: ros-kinetic-ros_core-devel < 1.4.1-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

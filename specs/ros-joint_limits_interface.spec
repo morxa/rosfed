@@ -29,7 +29,7 @@ Requires:       ros-melodic-urdf
 
 Provides:  ros-melodic-joint_limits_interface = 0.17.0-1
 Obsoletes: ros-melodic-joint_limits_interface < 0.17.0-1
-Obsoletes: ros-kinetic-joint_limits_interface
+Obsoletes: ros-kinetic-joint_limits_interface < 0.17.0-1
 
 
 %description
@@ -46,7 +46,7 @@ Requires:       ros-melodic-urdf-devel
 
 Provides: ros-melodic-joint_limits_interface-devel = 0.17.0-1
 Obsoletes: ros-melodic-joint_limits_interface-devel < 0.17.0-1
-Obsoletes: ros-kinetic-joint_limits_interface-devel
+Obsoletes: ros-kinetic-joint_limits_interface-devel < 0.17.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -36,7 +36,7 @@ Requires:       ros-melodic-xacro
 
 Provides:  ros-melodic-robot = 1.4.1-3
 Obsoletes: ros-melodic-robot < 1.4.1-3
-Obsoletes: ros-kinetic-robot
+Obsoletes: ros-kinetic-robot < 1.4.1-3
 
 
 %description
@@ -63,7 +63,7 @@ Requires:       ros-melodic-xacro-devel
 
 Provides: ros-melodic-robot-devel = 1.4.1-3
 Obsoletes: ros-melodic-robot-devel < 1.4.1-3
-Obsoletes: ros-kinetic-robot-devel
+Obsoletes: ros-kinetic-robot-devel < 1.4.1-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

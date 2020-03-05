@@ -1,12 +1,12 @@
 Name:           ros-catkin
-Version:        melodic.0.7.20
+Version:        melodic.0.7.23
 Release:        1%{?dist}
 Summary:        ROS package catkin
 
 License:        BSD
 URL:            http://wiki.ros.org/catkin
 
-Source0:        https://github.com/ros-gbp/catkin-release/archive/release/melodic/catkin/0.7.20-1.tar.gz#/ros-melodic-catkin-0.7.20-source0.tar.gz
+Source0:        https://github.com/ros-gbp/catkin-release/archive/release/melodic/catkin/0.7.23-1.tar.gz#/ros-melodic-catkin-0.7.23-source0.tar.gz
 
 Patch0: ros-kinetic-catkin.python-path-in-templates.patch
 Patch1: ros-catkin.python3.patch
@@ -30,15 +30,16 @@ BuildRequires:  python3-empy
 BuildRequires:  python3-mock
 BuildRequires:  python3-nose
 BuildRequires:  python3-pyparsing
+BuildRequires:  python3-setuptools
 
 Requires:       python3
 Requires:       python3-catkin_pkg
 Requires:       python3-empy
 Requires:       python3-pyparsing
 
-Provides:  ros-melodic-catkin = 0.7.20-1
-Obsoletes: ros-melodic-catkin < 0.7.20-1
-Obsoletes: ros-kinetic-catkin
+Provides:  ros-melodic-catkin = 0.7.23-1
+Obsoletes: ros-melodic-catkin < 0.7.23-1
+Obsoletes: ros-kinetic-catkin < 0.7.23-1
 
 
 %description
@@ -51,6 +52,7 @@ Requires:       cmake
 Requires:       gmock-devel
 Requires:       gtest-devel
 Requires:       python3-nose
+Requires:       python3-setuptools
 Requires:       gcc-c++
 Requires:       python3
 Requires:       python3-catkin_pkg
@@ -58,9 +60,9 @@ Requires:       python3-empy
 Requires:       python3-mock
 Requires:       python3-pyparsing
 
-Provides: ros-melodic-catkin-devel = 0.7.20-1
-Obsoletes: ros-melodic-catkin-devel < 0.7.20-1
-Obsoletes: ros-kinetic-catkin-devel
+Provides: ros-melodic-catkin-devel = 0.7.23-1
+Obsoletes: ros-melodic-catkin-devel < 0.7.23-1
+Obsoletes: ros-kinetic-catkin-devel < 0.7.23-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -166,6 +168,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.7.23-1
+- Update to latest release
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.7.20-1
 - Update to latest release
 * Thu Oct 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.7.19-2

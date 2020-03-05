@@ -32,7 +32,7 @@ Requires:       ros-melodic-roscpp
 
 Provides:  ros-melodic-moveit_planners_chomp = 1.0.2-1
 Obsoletes: ros-melodic-moveit_planners_chomp < 1.0.2-1
-Obsoletes: ros-kinetic-moveit_planners_chomp
+Obsoletes: ros-kinetic-moveit_planners_chomp < 1.0.2-1
 
 
 %description
@@ -51,7 +51,7 @@ Requires:       ros-melodic-rostest-devel
 
 Provides: ros-melodic-moveit_planners_chomp-devel = 1.0.2-1
 Obsoletes: ros-melodic-moveit_planners_chomp-devel < 1.0.2-1
-Obsoletes: ros-kinetic-moveit_planners_chomp-devel
+Obsoletes: ros-kinetic-moveit_planners_chomp-devel < 1.0.2-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -35,7 +35,7 @@ Requires:       ros-melodic-std_msgs
 
 Provides:  ros-melodic-dynamic_reconfigure = 1.6.0-3
 Obsoletes: ros-melodic-dynamic_reconfigure < 1.6.0-3
-Obsoletes: ros-kinetic-dynamic_reconfigure
+Obsoletes: ros-kinetic-dynamic_reconfigure < 1.6.0-3
 
 
 %description
@@ -61,7 +61,7 @@ Requires:       ros-melodic-rosservice-devel
 
 Provides: ros-melodic-dynamic_reconfigure-devel = 1.6.0-3
 Obsoletes: ros-melodic-dynamic_reconfigure-devel < 1.6.0-3
-Obsoletes: ros-kinetic-dynamic_reconfigure-devel
+Obsoletes: ros-kinetic-dynamic_reconfigure-devel < 1.6.0-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

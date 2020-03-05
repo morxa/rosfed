@@ -43,7 +43,7 @@ Requires:       ros-melodic-tf2_ros
 
 Provides:  ros-melodic-moveit_ros_robot_interaction = 1.0.2-1
 Obsoletes: ros-melodic-moveit_ros_robot_interaction < 1.0.2-1
-Obsoletes: ros-kinetic-moveit_ros_robot_interaction
+Obsoletes: ros-kinetic-moveit_ros_robot_interaction < 1.0.2-1
 
 
 %description
@@ -70,7 +70,7 @@ Requires:       ros-melodic-tf2_ros-devel
 
 Provides: ros-melodic-moveit_ros_robot_interaction-devel = 1.0.2-1
 Obsoletes: ros-melodic-moveit_ros_robot_interaction-devel < 1.0.2-1
-Obsoletes: ros-kinetic-moveit_ros_robot_interaction-devel
+Obsoletes: ros-kinetic-moveit_ros_robot_interaction-devel < 1.0.2-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

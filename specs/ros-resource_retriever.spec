@@ -34,7 +34,7 @@ Requires:       ros-melodic-roslib
 
 Provides:  ros-melodic-resource_retriever = 1.12.6-1
 Obsoletes: ros-melodic-resource_retriever < 1.12.6-1
-Obsoletes: ros-kinetic-resource_retriever
+Obsoletes: ros-kinetic-resource_retriever < 1.12.6-1
 
 
 %description
@@ -61,7 +61,7 @@ Requires:       ros-melodic-roslib-devel
 
 Provides: ros-melodic-resource_retriever-devel = 1.12.6-1
 Obsoletes: ros-melodic-resource_retriever-devel < 1.12.6-1
-Obsoletes: ros-kinetic-resource_retriever-devel
+Obsoletes: ros-kinetic-resource_retriever-devel < 1.12.6-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

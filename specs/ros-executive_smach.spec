@@ -26,7 +26,7 @@ Requires:       ros-melodic-smach_ros
 
 Provides:  ros-melodic-executive_smach = 2.0.1-3
 Obsoletes: ros-melodic-executive_smach < 2.0.1-3
-Obsoletes: ros-kinetic-executive_smach
+Obsoletes: ros-kinetic-executive_smach < 2.0.1-3
 
 
 %description
@@ -43,7 +43,7 @@ Requires:       ros-melodic-smach_ros-devel
 
 Provides: ros-melodic-executive_smach-devel = 2.0.1-3
 Obsoletes: ros-melodic-executive_smach-devel < 2.0.1-3
-Obsoletes: ros-kinetic-executive_smach-devel
+Obsoletes: ros-kinetic-executive_smach-devel < 2.0.1-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

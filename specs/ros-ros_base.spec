@@ -28,7 +28,7 @@ Requires:       ros-melodic-ros_core
 
 Provides:  ros-melodic-ros_base = 1.4.1-3
 Obsoletes: ros-melodic-ros_base < 1.4.1-3
-Obsoletes: ros-kinetic-ros_base
+Obsoletes: ros-kinetic-ros_base < 1.4.1-3
 
 
 %description
@@ -48,7 +48,7 @@ Requires:       ros-melodic-ros_core-devel
 
 Provides: ros-melodic-ros_base-devel = 1.4.1-3
 Obsoletes: ros-melodic-ros_base-devel < 1.4.1-3
-Obsoletes: ros-kinetic-ros_base-devel
+Obsoletes: ros-kinetic-ros_base-devel < 1.4.1-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

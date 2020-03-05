@@ -26,7 +26,7 @@ BuildRequires:  ros-melodic-cmake_modules-devel
 
 Provides:  ros-melodic-class_loader = 0.4.1-3
 Obsoletes: ros-melodic-class_loader < 0.4.1-3
-Obsoletes: ros-kinetic-class_loader
+Obsoletes: ros-kinetic-class_loader < 0.4.1-3
 
 
 %description
@@ -49,7 +49,7 @@ Requires:       ros-melodic-cmake_modules-devel
 
 Provides: ros-melodic-class_loader-devel = 0.4.1-3
 Obsoletes: ros-melodic-class_loader-devel < 0.4.1-3
-Obsoletes: ros-kinetic-class_loader-devel
+Obsoletes: ros-kinetic-class_loader-devel < 0.4.1-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

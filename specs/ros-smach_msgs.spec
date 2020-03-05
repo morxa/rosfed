@@ -28,7 +28,7 @@ Requires:       ros-melodic-std_msgs
 
 Provides:  ros-melodic-smach_msgs = 2.0.1-3
 Obsoletes: ros-melodic-smach_msgs < 2.0.1-3
-Obsoletes: ros-kinetic-smach_msgs
+Obsoletes: ros-kinetic-smach_msgs < 2.0.1-3
 
 
 %description
@@ -45,7 +45,7 @@ Requires:       ros-melodic-std_msgs-devel
 
 Provides: ros-melodic-smach_msgs-devel = 2.0.1-3
 Obsoletes: ros-melodic-smach_msgs-devel < 2.0.1-3
-Obsoletes: ros-kinetic-smach_msgs-devel
+Obsoletes: ros-kinetic-smach_msgs-devel < 2.0.1-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

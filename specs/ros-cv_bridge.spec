@@ -35,7 +35,7 @@ Requires:       ros-melodic-rosconsole
 
 Provides:  ros-melodic-cv_bridge = 1.13.0-3
 Obsoletes: ros-melodic-cv_bridge < 1.13.0-3
-Obsoletes: ros-kinetic-cv_bridge
+Obsoletes: ros-kinetic-cv_bridge < 1.13.0-3
 
 
 %description
@@ -59,7 +59,7 @@ Requires:       ros-melodic-rostest-devel
 
 Provides: ros-melodic-cv_bridge-devel = 1.13.0-3
 Obsoletes: ros-melodic-cv_bridge-devel < 1.13.0-3
-Obsoletes: ros-kinetic-cv_bridge-devel
+Obsoletes: ros-kinetic-cv_bridge-devel < 1.13.0-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

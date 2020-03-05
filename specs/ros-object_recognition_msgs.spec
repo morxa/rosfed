@@ -35,7 +35,7 @@ Requires:       ros-melodic-std_msgs
 
 Provides:  ros-melodic-object_recognition_msgs = 0.4.1-1
 Obsoletes: ros-melodic-object_recognition_msgs < 0.4.1-1
-Obsoletes: ros-kinetic-object_recognition_msgs
+Obsoletes: ros-kinetic-object_recognition_msgs < 0.4.1-1
 
 
 %description
@@ -56,7 +56,7 @@ Requires:       ros-melodic-message_runtime-devel
 
 Provides: ros-melodic-object_recognition_msgs-devel = 0.4.1-1
 Obsoletes: ros-melodic-object_recognition_msgs-devel < 0.4.1-1
-Obsoletes: ros-kinetic-object_recognition_msgs-devel
+Obsoletes: ros-kinetic-object_recognition_msgs-devel < 0.4.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

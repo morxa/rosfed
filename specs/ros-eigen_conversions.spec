@@ -33,7 +33,7 @@ Requires:       ros-melodic-std_msgs
 
 Provides:  ros-melodic-eigen_conversions = 1.12.0-3
 Obsoletes: ros-melodic-eigen_conversions < 1.12.0-3
-Obsoletes: ros-kinetic-eigen_conversions
+Obsoletes: ros-kinetic-eigen_conversions < 1.12.0-3
 
 
 %description
@@ -55,7 +55,7 @@ Requires:       ros-melodic-std_msgs-devel
 
 Provides: ros-melodic-eigen_conversions-devel = 1.12.0-3
 Obsoletes: ros-melodic-eigen_conversions-devel < 1.12.0-3
-Obsoletes: ros-kinetic-eigen_conversions-devel
+Obsoletes: ros-kinetic-eigen_conversions-devel < 1.12.0-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

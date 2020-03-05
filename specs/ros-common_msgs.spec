@@ -32,7 +32,7 @@ Requires:       ros-melodic-visualization_msgs
 
 Provides:  ros-melodic-common_msgs = 1.12.7-3
 Obsoletes: ros-melodic-common_msgs < 1.12.7-3
-Obsoletes: ros-kinetic-common_msgs
+Obsoletes: ros-kinetic-common_msgs < 1.12.7-3
 
 
 %description
@@ -55,7 +55,7 @@ Requires:       ros-melodic-visualization_msgs-devel
 
 Provides: ros-melodic-common_msgs-devel = 1.12.7-3
 Obsoletes: ros-melodic-common_msgs-devel < 1.12.7-3
-Obsoletes: ros-kinetic-common_msgs-devel
+Obsoletes: ros-kinetic-common_msgs-devel < 1.12.7-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

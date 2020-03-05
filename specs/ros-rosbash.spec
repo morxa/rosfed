@@ -1,12 +1,12 @@
 Name:           ros-rosbash
-Version:        melodic.1.14.7
+Version:        melodic.1.14.8
 Release:        1%{?dist}
 Summary:        ROS package rosbash
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/ros-release/archive/release/melodic/rosbash/1.14.7-1.tar.gz#/ros-melodic-rosbash-1.14.7-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros-release/archive/release/melodic/rosbash/1.14.8-1.tar.gz#/ros-melodic-rosbash-1.14.8-source0.tar.gz
 
 
 BuildArch: noarch
@@ -23,9 +23,9 @@ BuildRequires:  ros-melodic-catkin-devel
 Requires:       ros-melodic-catkin
 Requires:       ros-melodic-rospack
 
-Provides:  ros-melodic-rosbash = 1.14.7-1
-Obsoletes: ros-melodic-rosbash < 1.14.7-1
-Obsoletes: ros-kinetic-rosbash
+Provides:  ros-melodic-rosbash = 1.14.8-1
+Obsoletes: ros-melodic-rosbash < 1.14.8-1
+Obsoletes: ros-kinetic-rosbash < 1.14.8-1
 
 
 %description
@@ -37,9 +37,9 @@ Requires:       %{name} = %{version}-%{release}
 Requires:       ros-melodic-catkin-devel
 Requires:       ros-melodic-rospack-devel
 
-Provides: ros-melodic-rosbash-devel = 1.14.7-1
-Obsoletes: ros-melodic-rosbash-devel < 1.14.7-1
-Obsoletes: ros-kinetic-rosbash-devel
+Provides: ros-melodic-rosbash-devel = 1.14.8-1
+Obsoletes: ros-melodic-rosbash-devel < 1.14.8-1
+Obsoletes: ros-kinetic-rosbash-devel < 1.14.8-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -146,6 +146,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.8-1
+- Update to latest release
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.7-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.6-3

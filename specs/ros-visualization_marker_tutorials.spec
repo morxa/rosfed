@@ -29,7 +29,7 @@ Requires:       ros-melodic-visualization_msgs
 
 Provides:  ros-melodic-visualization_marker_tutorials = 0.10.3-3
 Obsoletes: ros-melodic-visualization_marker_tutorials < 0.10.3-3
-Obsoletes: ros-kinetic-visualization_marker_tutorials
+Obsoletes: ros-kinetic-visualization_marker_tutorials < 0.10.3-3
 
 
 %description
@@ -47,7 +47,7 @@ Requires:       ros-melodic-visualization_msgs-devel
 
 Provides: ros-melodic-visualization_marker_tutorials-devel = 0.10.3-3
 Obsoletes: ros-melodic-visualization_marker_tutorials-devel < 0.10.3-3
-Obsoletes: ros-kinetic-visualization_marker_tutorials-devel
+Obsoletes: ros-kinetic-visualization_marker_tutorials-devel < 0.10.3-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

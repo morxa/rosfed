@@ -36,7 +36,7 @@ Requires:       ros-melodic-roscpp
 
 Provides:  ros-melodic-urdf = 1.13.1-3
 Obsoletes: ros-melodic-urdf < 1.13.1-3
-Obsoletes: ros-kinetic-urdf
+Obsoletes: ros-kinetic-urdf < 1.13.1-3
 
 
 %description
@@ -63,7 +63,7 @@ Requires:       ros-melodic-urdf_parser_plugin-devel
 
 Provides: ros-melodic-urdf-devel = 1.13.1-3
 Obsoletes: ros-melodic-urdf-devel < 1.13.1-3
-Obsoletes: ros-kinetic-urdf-devel
+Obsoletes: ros-kinetic-urdf-devel < 1.13.1-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

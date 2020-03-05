@@ -36,7 +36,7 @@ Requires:       ros-melodic-turtlesim
 
 Provides:  ros-melodic-turtle_tf2 = 0.2.2-3
 Obsoletes: ros-melodic-turtle_tf2 < 0.2.2-3
-Obsoletes: ros-kinetic-turtle_tf2
+Obsoletes: ros-kinetic-turtle_tf2 < 0.2.2-3
 
 
 %description
@@ -58,7 +58,7 @@ Requires:       ros-melodic-turtlesim-devel
 
 Provides: ros-melodic-turtle_tf2-devel = 0.2.2-3
 Obsoletes: ros-melodic-turtle_tf2-devel < 0.2.2-3
-Obsoletes: ros-kinetic-turtle_tf2-devel
+Obsoletes: ros-kinetic-turtle_tf2-devel < 0.2.2-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

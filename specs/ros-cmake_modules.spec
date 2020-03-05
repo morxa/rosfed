@@ -23,7 +23,7 @@ BuildRequires:  ros-melodic-catkin-devel
 
 Provides:  ros-melodic-cmake_modules = 0.4.2-3
 Obsoletes: ros-melodic-cmake_modules < 0.4.2-3
-Obsoletes: ros-kinetic-cmake_modules
+Obsoletes: ros-kinetic-cmake_modules < 0.4.2-3
 
 
 %description
@@ -37,7 +37,7 @@ Requires:       ros-melodic-catkin-devel
 
 Provides: ros-melodic-cmake_modules-devel = 0.4.2-3
 Obsoletes: ros-melodic-cmake_modules-devel < 0.4.2-3
-Obsoletes: ros-kinetic-cmake_modules-devel
+Obsoletes: ros-kinetic-cmake_modules-devel < 0.4.2-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -27,7 +27,7 @@ Requires:       ros-melodic-std_msgs
 
 Provides:  ros-melodic-rosgraph_msgs = 1.11.2-3
 Obsoletes: ros-melodic-rosgraph_msgs < 1.11.2-3
-Obsoletes: ros-kinetic-rosgraph_msgs
+Obsoletes: ros-kinetic-rosgraph_msgs < 1.11.2-3
 
 
 %description
@@ -45,7 +45,7 @@ Requires:       ros-melodic-message_runtime-devel
 
 Provides: ros-melodic-rosgraph_msgs-devel = 1.11.2-3
 Obsoletes: ros-melodic-rosgraph_msgs-devel < 1.11.2-3
-Obsoletes: ros-kinetic-rosgraph_msgs-devel
+Obsoletes: ros-kinetic-rosgraph_msgs-devel < 1.11.2-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

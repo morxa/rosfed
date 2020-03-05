@@ -46,7 +46,7 @@ Requires:       ros-melodic-stereo_msgs
 
 Provides:  ros-melodic-stereo_image_proc = 1.14.0-1
 Obsoletes: ros-melodic-stereo_image_proc < 1.14.0-1
-Obsoletes: ros-kinetic-stereo_image_proc
+Obsoletes: ros-kinetic-stereo_image_proc < 1.14.0-1
 
 
 %description
@@ -74,7 +74,7 @@ Requires:       ros-melodic-stereo_msgs-devel
 
 Provides: ros-melodic-stereo_image_proc-devel = 1.14.0-1
 Obsoletes: ros-melodic-stereo_image_proc-devel < 1.14.0-1
-Obsoletes: ros-kinetic-stereo_image_proc-devel
+Obsoletes: ros-kinetic-stereo_image_proc-devel < 1.14.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

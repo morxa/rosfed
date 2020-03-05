@@ -52,7 +52,7 @@ Requires:       ros-melodic-urdf
 
 Provides:  ros-melodic-gazebo_ros_control = 2.8.6-1
 Obsoletes: ros-melodic-gazebo_ros_control < 2.8.6-1
-Obsoletes: ros-kinetic-gazebo_ros_control
+Obsoletes: ros-kinetic-gazebo_ros_control < 2.8.6-1
 
 
 %description
@@ -85,7 +85,7 @@ Requires:       ros-melodic-gazebo_ros-devel
 
 Provides: ros-melodic-gazebo_ros_control-devel = 2.8.6-1
 Obsoletes: ros-melodic-gazebo_ros_control-devel < 2.8.6-1
-Obsoletes: ros-kinetic-gazebo_ros_control-devel
+Obsoletes: ros-kinetic-gazebo_ros_control-devel < 2.8.6-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

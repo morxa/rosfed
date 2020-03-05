@@ -32,7 +32,7 @@ Requires:       ros-melodic-tf
 
 Provides:  ros-melodic-tf_conversions = 1.12.0-3
 Obsoletes: ros-melodic-tf_conversions < 1.12.0-3
-Obsoletes: ros-kinetic-tf_conversions
+Obsoletes: ros-kinetic-tf_conversions < 1.12.0-3
 
 
 %description
@@ -58,7 +58,7 @@ Requires:       ros-melodic-python_orocos_kdl-devel
 
 Provides: ros-melodic-tf_conversions-devel = 1.12.0-3
 Obsoletes: ros-melodic-tf_conversions-devel < 1.12.0-3
-Obsoletes: ros-kinetic-tf_conversions-devel
+Obsoletes: ros-kinetic-tf_conversions-devel < 1.12.0-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

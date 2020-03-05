@@ -60,7 +60,7 @@ Requires:       ros-melodic-urdf
 
 Provides:  ros-melodic-moveit_ros_planning = 1.0.2-1
 Obsoletes: ros-melodic-moveit_ros_planning < 1.0.2-1
-Obsoletes: ros-kinetic-moveit_ros_planning
+Obsoletes: ros-kinetic-moveit_ros_planning < 1.0.2-1
 
 
 %description
@@ -95,7 +95,7 @@ Requires:       ros-melodic-urdf-devel
 
 Provides: ros-melodic-moveit_ros_planning-devel = 1.0.2-1
 Obsoletes: ros-melodic-moveit_ros_planning-devel < 1.0.2-1
-Obsoletes: ros-kinetic-moveit_ros_planning-devel
+Obsoletes: ros-kinetic-moveit_ros_planning-devel < 1.0.2-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

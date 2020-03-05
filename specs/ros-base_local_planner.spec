@@ -66,7 +66,7 @@ Requires:       ros-melodic-voxel_grid
 
 Provides:  ros-melodic-base_local_planner = 1.16.3-1
 Obsoletes: ros-melodic-base_local_planner < 1.16.3-1
-Obsoletes: ros-kinetic-base_local_planner
+Obsoletes: ros-kinetic-base_local_planner < 1.16.3-1
 
 
 %description
@@ -115,7 +115,7 @@ Requires:       ros-melodic-message_runtime-devel
 
 Provides: ros-melodic-base_local_planner-devel = 1.16.3-1
 Obsoletes: ros-melodic-base_local_planner-devel < 1.16.3-1
-Obsoletes: ros-kinetic-base_local_planner-devel
+Obsoletes: ros-kinetic-base_local_planner-devel < 1.16.3-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -32,7 +32,7 @@ Requires:       ros-melodic-image_transport
 
 Provides:  ros-melodic-compressed_image_transport = 1.9.5-13
 Obsoletes: ros-melodic-compressed_image_transport < 1.9.5-13
-Obsoletes: ros-kinetic-compressed_image_transport
+Obsoletes: ros-kinetic-compressed_image_transport < 1.9.5-13
 
 
 %description
@@ -53,7 +53,7 @@ Requires:       ros-melodic-image_transport-devel
 
 Provides: ros-melodic-compressed_image_transport-devel = 1.9.5-13
 Obsoletes: ros-melodic-compressed_image_transport-devel < 1.9.5-13
-Obsoletes: ros-kinetic-compressed_image_transport-devel
+Obsoletes: ros-kinetic-compressed_image_transport-devel < 1.9.5-13
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

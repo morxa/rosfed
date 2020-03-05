@@ -41,7 +41,7 @@ Requires:       ros-melodic-urdf
 
 Provides:  ros-melodic-diff_drive_controller = 0.15.0-3
 Obsoletes: ros-melodic-diff_drive_controller < 0.15.0-3
-Obsoletes: ros-kinetic-diff_drive_controller
+Obsoletes: ros-kinetic-diff_drive_controller < 0.15.0-3
 
 
 %description
@@ -66,7 +66,7 @@ Requires:       ros-melodic-xacro-devel
 
 Provides: ros-melodic-diff_drive_controller-devel = 0.15.0-3
 Obsoletes: ros-melodic-diff_drive_controller-devel < 0.15.0-3
-Obsoletes: ros-kinetic-diff_drive_controller-devel
+Obsoletes: ros-kinetic-diff_drive_controller-devel < 0.15.0-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

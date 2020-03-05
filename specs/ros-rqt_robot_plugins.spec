@@ -32,7 +32,7 @@ Requires:       ros-melodic-rqt_tf_tree
 
 Provides:  ros-melodic-rqt_robot_plugins = 0.5.7-3
 Obsoletes: ros-melodic-rqt_robot_plugins < 0.5.7-3
-Obsoletes: ros-kinetic-rqt_robot_plugins
+Obsoletes: ros-kinetic-rqt_robot_plugins < 0.5.7-3
 
 
 %description
@@ -55,7 +55,7 @@ Requires:       ros-melodic-rqt_tf_tree-devel
 
 Provides: ros-melodic-rqt_robot_plugins-devel = 0.5.7-3
 Obsoletes: ros-melodic-rqt_robot_plugins-devel < 0.5.7-3
-Obsoletes: ros-kinetic-rqt_robot_plugins-devel
+Obsoletes: ros-kinetic-rqt_robot_plugins-devel < 0.5.7-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

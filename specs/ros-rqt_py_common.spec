@@ -33,7 +33,7 @@ Requires:       ros-melodic-rostopic
 
 Provides:  ros-melodic-rqt_py_common = 0.5.0-3
 Obsoletes: ros-melodic-rqt_py_common < 0.5.0-3
-Obsoletes: ros-kinetic-rqt_py_common
+Obsoletes: ros-kinetic-rqt_py_common < 0.5.0-3
 
 
 %description
@@ -62,7 +62,7 @@ Requires:       ros-melodic-rostopic-devel
 
 Provides: ros-melodic-rqt_py_common-devel = 0.5.0-3
 Obsoletes: ros-melodic-rqt_py_common-devel < 0.5.0-3
-Obsoletes: ros-kinetic-rqt_py_common-devel
+Obsoletes: ros-kinetic-rqt_py_common-devel < 0.5.0-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -37,7 +37,7 @@ Requires:       ros-melodic-std_msgs
 
 Provides:  ros-melodic-control_toolbox = 1.17.0-3
 Obsoletes: ros-melodic-control_toolbox < 1.17.0-3
-Obsoletes: ros-kinetic-control_toolbox
+Obsoletes: ros-kinetic-control_toolbox < 1.17.0-3
 
 
 %description
@@ -61,7 +61,7 @@ Requires:       ros-melodic-message_runtime-devel
 
 Provides: ros-melodic-control_toolbox-devel = 1.17.0-3
 Obsoletes: ros-melodic-control_toolbox-devel < 1.17.0-3
-Obsoletes: ros-kinetic-control_toolbox-devel
+Obsoletes: ros-kinetic-control_toolbox-devel < 1.17.0-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

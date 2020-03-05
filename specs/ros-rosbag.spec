@@ -1,12 +1,12 @@
 Name:           ros-rosbag
-Version:        melodic.1.14.3
-Release:        3%{?dist}
+Version:        melodic.1.14.4
+Release:        1%{?dist}
 Summary:        ROS package rosbag
 
 License:        BSD
-URL:            http://www.ros.org/
+URL:            http://wiki.ros.org/rosbag
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/melodic/rosbag/1.14.3-0.tar.gz#/ros-melodic-rosbag-1.14.3-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/melodic/rosbag/1.14.4-1.tar.gz#/ros-melodic-rosbag-1.14.4-source0.tar.gz
 
 
 
@@ -21,6 +21,7 @@ BuildRequires:  boost-devel boost-python3-devel boost-python3-devel
 BuildRequires:  bzip2-devel
 BuildRequires:  lz4-devel
 BuildRequires:  python3-pillow
+BuildRequires:  python3-pillow python3-pillow-qt
 BuildRequires:  ros-melodic-catkin-devel
 BuildRequires:  ros-melodic-cpp_common-devel
 BuildRequires:  ros-melodic-rosbag_storage-devel
@@ -31,8 +32,8 @@ BuildRequires:  ros-melodic-std_srvs-devel
 BuildRequires:  ros-melodic-topic_tools-devel
 BuildRequires:  ros-melodic-xmlrpcpp-devel
 
-Requires:       python3-crypto
 Requires:       python3-gnupg
+Requires:       python3-pycryptodomex
 Requires:       python3-rospkg
 Requires:       ros-melodic-genmsg
 Requires:       ros-melodic-genpy
@@ -45,9 +46,9 @@ Requires:       ros-melodic-std_srvs
 Requires:       ros-melodic-topic_tools
 Requires:       ros-melodic-xmlrpcpp
 
-Provides:  ros-melodic-rosbag = 1.14.3-3
-Obsoletes: ros-melodic-rosbag < 1.14.3-3
-Obsoletes: ros-kinetic-rosbag
+Provides:  ros-melodic-rosbag = 1.14.4-1
+Obsoletes: ros-melodic-rosbag < 1.14.4-1
+Obsoletes: ros-kinetic-rosbag < 1.14.4-1
 
 
 %description
@@ -63,6 +64,7 @@ Requires:       boost-devel boost-python3-devel boost-python3-devel
 Requires:       bzip2-devel
 Requires:       lz4-devel
 Requires:       python3-pillow
+Requires:       python3-pillow python3-pillow-qt
 Requires:       ros-melodic-cpp_common-devel
 Requires:       ros-melodic-rosbag_storage-devel
 Requires:       ros-melodic-rosconsole-devel
@@ -76,9 +78,9 @@ Requires:       ros-melodic-genpy-devel
 Requires:       ros-melodic-roslib-devel
 Requires:       ros-melodic-rospy-devel
 
-Provides: ros-melodic-rosbag-devel = 1.14.3-3
-Obsoletes: ros-melodic-rosbag-devel < 1.14.3-3
-Obsoletes: ros-kinetic-rosbag-devel
+Provides: ros-melodic-rosbag-devel = 1.14.4-1
+Obsoletes: ros-melodic-rosbag-devel < 1.14.4-1
+Obsoletes: ros-kinetic-rosbag-devel < 1.14.4-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -185,6 +187,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.4-1
+- Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.3-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.3-2

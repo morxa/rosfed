@@ -41,7 +41,7 @@ Requires:       ros-melodic-trajectory_msgs
 
 Provides:  ros-melodic-moveit_msgs = 0.10.0-1
 Obsoletes: ros-melodic-moveit_msgs < 0.10.0-1
-Obsoletes: ros-kinetic-moveit_msgs
+Obsoletes: ros-kinetic-moveit_msgs < 0.10.0-1
 
 
 %description
@@ -64,7 +64,7 @@ Requires:       ros-melodic-message_runtime-devel
 
 Provides: ros-melodic-moveit_msgs-devel = 0.10.0-1
 Obsoletes: ros-melodic-moveit_msgs-devel < 0.10.0-1
-Obsoletes: ros-kinetic-moveit_msgs-devel
+Obsoletes: ros-kinetic-moveit_msgs-devel < 0.10.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

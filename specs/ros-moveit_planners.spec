@@ -26,7 +26,7 @@ Requires:       ros-melodic-moveit_planners_ompl
 
 Provides:  ros-melodic-moveit_planners = 1.0.2-1
 Obsoletes: ros-melodic-moveit_planners < 1.0.2-1
-Obsoletes: ros-kinetic-moveit_planners
+Obsoletes: ros-kinetic-moveit_planners < 1.0.2-1
 
 
 %description
@@ -42,7 +42,7 @@ Requires:       ros-melodic-moveit_planners_ompl-devel
 
 Provides: ros-melodic-moveit_planners-devel = 1.0.2-1
 Obsoletes: ros-melodic-moveit_planners-devel < 1.0.2-1
-Obsoletes: ros-kinetic-moveit_planners-devel
+Obsoletes: ros-kinetic-moveit_planners-devel < 1.0.2-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

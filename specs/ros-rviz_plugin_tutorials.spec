@@ -33,7 +33,7 @@ Requires:       ros-melodic-rviz
 
 Provides:  ros-melodic-rviz_plugin_tutorials = 0.10.3-3
 Obsoletes: ros-melodic-rviz_plugin_tutorials < 0.10.3-3
-Obsoletes: ros-kinetic-rviz_plugin_tutorials
+Obsoletes: ros-kinetic-rviz_plugin_tutorials < 0.10.3-3
 
 
 %description
@@ -54,7 +54,7 @@ Requires:       ros-melodic-rviz-devel
 
 Provides: ros-melodic-rviz_plugin_tutorials-devel = 0.10.3-3
 Obsoletes: ros-melodic-rviz_plugin_tutorials-devel < 0.10.3-3
-Obsoletes: ros-kinetic-rviz_plugin_tutorials-devel
+Obsoletes: ros-kinetic-rviz_plugin_tutorials-devel < 0.10.3-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

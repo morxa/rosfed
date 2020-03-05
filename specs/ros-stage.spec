@@ -31,7 +31,7 @@ Requires:       ros-melodic-catkin
 
 Provides:  ros-melodic-stage = 4.3.0-3
 Obsoletes: ros-melodic-stage < 4.3.0-3
-Obsoletes: ros-kinetic-stage
+Obsoletes: ros-kinetic-stage < 4.3.0-3
 
 
 %description
@@ -52,7 +52,7 @@ Requires:       ros-melodic-catkin-devel
 
 Provides: ros-melodic-stage-devel = 4.3.0-3
 Obsoletes: ros-melodic-stage-devel < 4.3.0-3
-Obsoletes: ros-kinetic-stage-devel
+Obsoletes: ros-kinetic-stage-devel < 4.3.0-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

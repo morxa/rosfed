@@ -30,7 +30,7 @@ Requires:       ros-melodic-std_msgs
 
 Provides:  ros-melodic-trajectory_msgs = 1.12.7-3
 Obsoletes: ros-melodic-trajectory_msgs < 1.12.7-3
-Obsoletes: ros-kinetic-trajectory_msgs
+Obsoletes: ros-kinetic-trajectory_msgs < 1.12.7-3
 
 
 %description
@@ -49,7 +49,7 @@ Requires:       ros-melodic-rosbag_migration_rule-devel
 
 Provides: ros-melodic-trajectory_msgs-devel = 1.12.7-3
 Obsoletes: ros-melodic-trajectory_msgs-devel < 1.12.7-3
-Obsoletes: ros-kinetic-trajectory_msgs-devel
+Obsoletes: ros-kinetic-trajectory_msgs-devel < 1.12.7-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -30,7 +30,7 @@ Requires:       ros-melodic-std_srvs
 
 Provides:  ros-melodic-camera_calibration = 1.14.0-1
 Obsoletes: ros-melodic-camera_calibration < 1.14.0-1
-Obsoletes: ros-kinetic-camera_calibration
+Obsoletes: ros-kinetic-camera_calibration < 1.14.0-1
 
 
 %description
@@ -51,7 +51,7 @@ Requires:       ros-melodic-std_srvs-devel
 
 Provides: ros-melodic-camera_calibration-devel = 1.14.0-1
 Obsoletes: ros-melodic-camera_calibration-devel < 1.14.0-1
-Obsoletes: ros-kinetic-camera_calibration-devel
+Obsoletes: ros-kinetic-camera_calibration-devel < 1.14.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -32,7 +32,7 @@ Requires:       ros-melodic-viz
 
 Provides:  ros-melodic-desktop = 1.4.1-3
 Obsoletes: ros-melodic-desktop < 1.4.1-3
-Obsoletes: ros-kinetic-desktop
+Obsoletes: ros-kinetic-desktop < 1.4.1-3
 
 
 %description
@@ -54,7 +54,7 @@ Requires:       ros-melodic-viz-devel
 
 Provides: ros-melodic-desktop-devel = 1.4.1-3
 Obsoletes: ros-melodic-desktop-devel < 1.4.1-3
-Obsoletes: ros-kinetic-desktop-devel
+Obsoletes: ros-kinetic-desktop-devel < 1.4.1-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

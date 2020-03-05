@@ -32,7 +32,7 @@ Requires:       ros-melodic-rostime
 
 Provides:  ros-melodic-rosconsole = 1.13.11-1
 Obsoletes: ros-melodic-rosconsole < 1.13.11-1
-Obsoletes: ros-kinetic-rosconsole
+Obsoletes: ros-kinetic-rosconsole < 1.13.11-1
 
 
 %description
@@ -53,7 +53,7 @@ Requires:       ros-melodic-rosbuild-devel
 
 Provides: ros-melodic-rosconsole-devel = 1.13.11-1
 Obsoletes: ros-melodic-rosconsole-devel < 1.13.11-1
-Obsoletes: ros-kinetic-rosconsole-devel
+Obsoletes: ros-kinetic-rosconsole-devel < 1.13.11-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

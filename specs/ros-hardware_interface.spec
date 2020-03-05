@@ -25,7 +25,7 @@ Requires:       ros-melodic-roscpp
 
 Provides:  ros-melodic-hardware_interface = 0.17.0-1
 Obsoletes: ros-melodic-hardware_interface < 0.17.0-1
-Obsoletes: ros-kinetic-hardware_interface
+Obsoletes: ros-kinetic-hardware_interface < 0.17.0-1
 
 
 %description
@@ -39,7 +39,7 @@ Requires:       ros-melodic-roscpp-devel
 
 Provides: ros-melodic-hardware_interface-devel = 0.17.0-1
 Obsoletes: ros-melodic-hardware_interface-devel < 0.17.0-1
-Obsoletes: ros-kinetic-hardware_interface-devel
+Obsoletes: ros-kinetic-hardware_interface-devel < 0.17.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

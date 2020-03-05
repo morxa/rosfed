@@ -34,7 +34,7 @@ Requires:       ros-melodic-smclib
 
 Provides:  ros-melodic-bondcpp = 1.8.3-3
 Obsoletes: ros-melodic-bondcpp < 1.8.3-3
-Obsoletes: ros-kinetic-bondcpp
+Obsoletes: ros-kinetic-bondcpp < 1.8.3-3
 
 
 %description
@@ -57,7 +57,7 @@ Requires:       ros-melodic-smclib-devel
 
 Provides: ros-melodic-bondcpp-devel = 1.8.3-3
 Obsoletes: ros-melodic-bondcpp-devel < 1.8.3-3
-Obsoletes: ros-kinetic-bondcpp-devel
+Obsoletes: ros-kinetic-bondcpp-devel < 1.8.3-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

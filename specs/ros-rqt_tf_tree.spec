@@ -35,7 +35,7 @@ Requires:       ros-melodic-tf2_ros
 
 Provides:  ros-melodic-rqt_tf_tree = 0.6.0-3
 Obsoletes: ros-melodic-rqt_tf_tree < 0.6.0-3
-Obsoletes: ros-kinetic-rqt_tf_tree
+Obsoletes: ros-kinetic-rqt_tf_tree < 0.6.0-3
 
 
 %description
@@ -60,7 +60,7 @@ Requires:       ros-melodic-tf2_ros-devel
 
 Provides: ros-melodic-rqt_tf_tree-devel = 0.6.0-3
 Obsoletes: ros-melodic-rqt_tf_tree-devel < 0.6.0-3
-Obsoletes: ros-kinetic-rqt_tf_tree-devel
+Obsoletes: ros-kinetic-rqt_tf_tree-devel < 0.6.0-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -1,12 +1,12 @@
 Name:           ros-roslaunch
-Version:        melodic.1.14.3
-Release:        3%{?dist}
+Version:        melodic.1.14.4
+Release:        1%{?dist}
 Summary:        ROS package roslaunch
 
 License:        BSD
-URL:            http://www.ros.org/
+URL:            http://wiki.ros.org/roslaunch
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/melodic/roslaunch/1.14.3-0.tar.gz#/ros-melodic-roslaunch-1.14.3-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/melodic/roslaunch/1.14.4-1.tar.gz#/ros-melodic-roslaunch-1.14.4-source0.tar.gz
 
 
 BuildArch: noarch
@@ -22,6 +22,7 @@ BuildRequires:  ros-melodic-catkin-devel
 BuildRequires:  ros-melodic-rosbuild-devel
 
 Requires:       python3-paramiko
+Requires:       python3-pyyaml
 Requires:       python3-rospkg
 Requires:       PyYAML
 Requires:       ros-melodic-rosclean
@@ -32,9 +33,9 @@ Requires:       ros-melodic-rosout
 Requires:       ros-melodic-rosparam
 Requires:       ros-melodic-rosunit
 
-Provides:  ros-melodic-roslaunch = 1.14.3-3
-Obsoletes: ros-melodic-roslaunch < 1.14.3-3
-Obsoletes: ros-kinetic-roslaunch
+Provides:  ros-melodic-roslaunch = 1.14.4-1
+Obsoletes: ros-melodic-roslaunch < 1.14.4-1
+Obsoletes: ros-kinetic-roslaunch < 1.14.4-1
 
 
 %description
@@ -53,9 +54,9 @@ Requires:       ros-melodic-rosout-devel
 Requires:       ros-melodic-rosparam-devel
 Requires:       ros-melodic-rosunit-devel
 
-Provides: ros-melodic-roslaunch-devel = 1.14.3-3
-Obsoletes: ros-melodic-roslaunch-devel < 1.14.3-3
-Obsoletes: ros-kinetic-roslaunch-devel
+Provides: ros-melodic-roslaunch-devel = 1.14.4-1
+Obsoletes: ros-melodic-roslaunch-devel < 1.14.4-1
+Obsoletes: ros-kinetic-roslaunch-devel < 1.14.4-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -162,6 +163,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.4-1
+- Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.3-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.3-2

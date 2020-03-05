@@ -53,7 +53,7 @@ Requires:       ros-melodic-visualization_msgs
 
 Provides:  ros-melodic-navfn = 1.16.3-1
 Obsoletes: ros-melodic-navfn < 1.16.3-1
-Obsoletes: ros-kinetic-navfn
+Obsoletes: ros-kinetic-navfn < 1.16.3-1
 
 
 %description
@@ -94,7 +94,7 @@ Requires:       ros-melodic-message_runtime-devel
 
 Provides: ros-melodic-navfn-devel = 1.16.3-1
 Obsoletes: ros-melodic-navfn-devel < 1.16.3-1
-Obsoletes: ros-kinetic-navfn-devel
+Obsoletes: ros-kinetic-navfn-devel < 1.16.3-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

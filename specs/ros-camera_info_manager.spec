@@ -38,7 +38,7 @@ Requires:       ros-melodic-sensor_msgs
 
 Provides:  ros-melodic-camera_info_manager = 1.11.13-12
 Obsoletes: ros-melodic-camera_info_manager < 1.11.13-12
-Obsoletes: ros-kinetic-camera_info_manager
+Obsoletes: ros-kinetic-camera_info_manager < 1.11.13-12
 
 
 %description
@@ -64,7 +64,7 @@ Requires:       ros-melodic-sensor_msgs-devel
 
 Provides: ros-melodic-camera_info_manager-devel = 1.11.13-12
 Obsoletes: ros-melodic-camera_info_manager-devel < 1.11.13-12
-Obsoletes: ros-kinetic-camera_info_manager-devel
+Obsoletes: ros-kinetic-camera_info_manager-devel < 1.11.13-12
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

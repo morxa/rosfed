@@ -36,7 +36,7 @@ Requires:       ros-melodic-tf
 
 Provides:  ros-melodic-warehouse_ros = 0.9.3-1
 Obsoletes: ros-melodic-warehouse_ros < 0.9.3-1
-Obsoletes: ros-kinetic-warehouse_ros
+Obsoletes: ros-kinetic-warehouse_ros < 0.9.3-1
 
 
 %description
@@ -57,7 +57,7 @@ Requires:       ros-melodic-tf-devel
 
 Provides: ros-melodic-warehouse_ros-devel = 0.9.3-1
 Obsoletes: ros-melodic-warehouse_ros-devel < 0.9.3-1
-Obsoletes: ros-kinetic-warehouse_ros-devel
+Obsoletes: ros-kinetic-warehouse_ros-devel < 0.9.3-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

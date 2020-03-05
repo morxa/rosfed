@@ -32,7 +32,7 @@ Requires:       ros-melodic-moveit_ros_warehouse
 
 Provides:  ros-melodic-moveit_ros = 1.0.2-1
 Obsoletes: ros-melodic-moveit_ros < 1.0.2-1
-Obsoletes: ros-kinetic-moveit_ros
+Obsoletes: ros-kinetic-moveit_ros < 1.0.2-1
 
 
 %description
@@ -54,7 +54,7 @@ Requires:       ros-melodic-moveit_ros_warehouse-devel
 
 Provides: ros-melodic-moveit_ros-devel = 1.0.2-1
 Obsoletes: ros-melodic-moveit_ros-devel < 1.0.2-1
-Obsoletes: ros-kinetic-moveit_ros-devel
+Obsoletes: ros-kinetic-moveit_ros-devel < 1.0.2-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

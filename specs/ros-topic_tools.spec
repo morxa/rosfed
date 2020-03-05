@@ -1,12 +1,12 @@
 Name:           ros-topic_tools
-Version:        melodic.1.14.3
-Release:        3%{?dist}
+Version:        melodic.1.14.4
+Release:        1%{?dist}
 Summary:        ROS package topic_tools
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/melodic/topic_tools/1.14.3-0.tar.gz#/ros-melodic-topic_tools-1.14.3-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/melodic/topic_tools/1.14.4-1.tar.gz#/ros-melodic-topic_tools-1.14.4-source0.tar.gz
 
 
 
@@ -20,6 +20,7 @@ BuildRequires:  python3-devel
 BuildRequires:  ros-melodic-catkin-devel
 BuildRequires:  ros-melodic-cpp_common-devel
 BuildRequires:  ros-melodic-message_generation-devel
+BuildRequires:  ros-melodic-rosbash-devel
 BuildRequires:  ros-melodic-rosconsole-devel
 BuildRequires:  ros-melodic-roscpp-devel
 BuildRequires:  ros-melodic-rostest-devel
@@ -35,9 +36,9 @@ Requires:       ros-melodic-rostime
 Requires:       ros-melodic-std_msgs
 Requires:       ros-melodic-xmlrpcpp
 
-Provides:  ros-melodic-topic_tools = 1.14.3-3
-Obsoletes: ros-melodic-topic_tools < 1.14.3-3
-Obsoletes: ros-kinetic-topic_tools
+Provides:  ros-melodic-topic_tools = 1.14.4-1
+Obsoletes: ros-melodic-topic_tools < 1.14.4-1
+Obsoletes: ros-kinetic-topic_tools < 1.14.4-1
 
 
 %description
@@ -53,6 +54,7 @@ Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       ros-melodic-catkin-devel
 Requires:       ros-melodic-cpp_common-devel
 Requires:       ros-melodic-message_generation-devel
+Requires:       ros-melodic-rosbash-devel
 Requires:       ros-melodic-rosconsole-devel
 Requires:       ros-melodic-roscpp-devel
 Requires:       ros-melodic-rostest-devel
@@ -62,9 +64,9 @@ Requires:       ros-melodic-std_msgs-devel
 Requires:       ros-melodic-xmlrpcpp-devel
 Requires:       ros-melodic-message_runtime-devel
 
-Provides: ros-melodic-topic_tools-devel = 1.14.3-3
-Obsoletes: ros-melodic-topic_tools-devel < 1.14.3-3
-Obsoletes: ros-kinetic-topic_tools-devel
+Provides: ros-melodic-topic_tools-devel = 1.14.4-1
+Obsoletes: ros-melodic-topic_tools-devel < 1.14.4-1
+Obsoletes: ros-kinetic-topic_tools-devel < 1.14.4-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -171,6 +173,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.4-1
+- Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.3-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.3-2

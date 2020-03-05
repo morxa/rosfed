@@ -29,7 +29,7 @@ Requires:       ros-melodic-std_msgs
 
 Provides:  ros-melodic-controller_manager_msgs = 0.17.0-1
 Obsoletes: ros-melodic-controller_manager_msgs < 0.17.0-1
-Obsoletes: ros-kinetic-controller_manager_msgs
+Obsoletes: ros-kinetic-controller_manager_msgs < 0.17.0-1
 
 
 %description
@@ -47,7 +47,7 @@ Requires:       ros-melodic-rosservice-devel
 
 Provides: ros-melodic-controller_manager_msgs-devel = 0.17.0-1
 Obsoletes: ros-melodic-controller_manager_msgs-devel < 0.17.0-1
-Obsoletes: ros-kinetic-controller_manager_msgs-devel
+Obsoletes: ros-kinetic-controller_manager_msgs-devel < 0.17.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

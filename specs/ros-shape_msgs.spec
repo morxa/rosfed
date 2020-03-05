@@ -29,7 +29,7 @@ Requires:       ros-melodic-std_msgs
 
 Provides:  ros-melodic-shape_msgs = 1.12.7-3
 Obsoletes: ros-melodic-shape_msgs < 1.12.7-3
-Obsoletes: ros-kinetic-shape_msgs
+Obsoletes: ros-kinetic-shape_msgs < 1.12.7-3
 
 
 %description
@@ -47,7 +47,7 @@ Requires:       ros-melodic-message_runtime-devel
 
 Provides: ros-melodic-shape_msgs-devel = 1.12.7-3
 Obsoletes: ros-melodic-shape_msgs-devel < 1.12.7-3
-Obsoletes: ros-kinetic-shape_msgs-devel
+Obsoletes: ros-kinetic-shape_msgs-devel < 1.12.7-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

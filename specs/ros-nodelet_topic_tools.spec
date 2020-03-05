@@ -30,7 +30,7 @@ Requires:       ros-melodic-dynamic_reconfigure
 
 Provides:  ros-melodic-nodelet_topic_tools = 1.9.16-3
 Obsoletes: ros-melodic-nodelet_topic_tools < 1.9.16-3
-Obsoletes: ros-kinetic-nodelet_topic_tools
+Obsoletes: ros-kinetic-nodelet_topic_tools < 1.9.16-3
 
 
 %description
@@ -50,7 +50,7 @@ Requires:       ros-melodic-dynamic_reconfigure-devel
 
 Provides: ros-melodic-nodelet_topic_tools-devel = 1.9.16-3
 Obsoletes: ros-melodic-nodelet_topic_tools-devel < 1.9.16-3
-Obsoletes: ros-kinetic-nodelet_topic_tools-devel
+Obsoletes: ros-kinetic-nodelet_topic_tools-devel < 1.9.16-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -50,7 +50,7 @@ Requires:       ros-melodic-std_srvs
 
 Provides:  ros-melodic-image_view = 1.14.0-1
 Obsoletes: ros-melodic-image_view < 1.14.0-1
-Obsoletes: ros-kinetic-image_view
+Obsoletes: ros-kinetic-image_view < 1.14.0-1
 
 
 %description
@@ -83,7 +83,7 @@ Requires:       ros-melodic-stereo_msgs-devel
 
 Provides: ros-melodic-image_view-devel = 1.14.0-1
 Obsoletes: ros-melodic-image_view-devel < 1.14.0-1
-Obsoletes: ros-kinetic-image_view-devel
+Obsoletes: ros-kinetic-image_view-devel < 1.14.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

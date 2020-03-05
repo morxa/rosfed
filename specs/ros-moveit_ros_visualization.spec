@@ -60,7 +60,7 @@ Requires:       ros-melodic-tf2_eigen
 
 Provides:  ros-melodic-moveit_ros_visualization = 1.0.2-1
 Obsoletes: ros-melodic-moveit_ros_visualization < 1.0.2-1
-Obsoletes: ros-kinetic-moveit_ros_visualization
+Obsoletes: ros-kinetic-moveit_ros_visualization < 1.0.2-1
 
 
 %description
@@ -98,7 +98,7 @@ Requires:       ros-melodic-tf2_eigen-devel
 
 Provides: ros-melodic-moveit_ros_visualization-devel = 1.0.2-1
 Obsoletes: ros-melodic-moveit_ros_visualization-devel < 1.0.2-1
-Obsoletes: ros-kinetic-moveit_ros_visualization-devel
+Obsoletes: ros-kinetic-moveit_ros_visualization-devel < 1.0.2-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

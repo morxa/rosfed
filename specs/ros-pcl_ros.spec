@@ -65,7 +65,7 @@ Requires:       ros-melodic-tf2_ros
 
 Provides:  ros-melodic-pcl_ros = 1.7.0-1
 Obsoletes: ros-melodic-pcl_ros < 1.7.0-1
-Obsoletes: ros-kinetic-pcl_ros
+Obsoletes: ros-kinetic-pcl_ros < 1.7.0-1
 
 
 %description
@@ -107,7 +107,7 @@ Requires:       ros-melodic-tf2_ros-devel
 
 Provides: ros-melodic-pcl_ros-devel = 1.7.0-1
 Obsoletes: ros-melodic-pcl_ros-devel < 1.7.0-1
-Obsoletes: ros-kinetic-pcl_ros-devel
+Obsoletes: ros-kinetic-pcl_ros-devel < 1.7.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

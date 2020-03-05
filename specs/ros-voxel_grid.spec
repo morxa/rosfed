@@ -26,7 +26,7 @@ Requires:       ros-melodic-roscpp
 
 Provides:  ros-melodic-voxel_grid = 1.16.3-1
 Obsoletes: ros-melodic-voxel_grid < 1.16.3-1
-Obsoletes: ros-kinetic-voxel_grid
+Obsoletes: ros-kinetic-voxel_grid < 1.16.3-1
 
 
 %description
@@ -49,7 +49,7 @@ Requires:       ros-melodic-rosunit-devel
 
 Provides: ros-melodic-voxel_grid-devel = 1.16.3-1
 Obsoletes: ros-melodic-voxel_grid-devel < 1.16.3-1
-Obsoletes: ros-kinetic-voxel_grid-devel
+Obsoletes: ros-kinetic-voxel_grid-devel < 1.16.3-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

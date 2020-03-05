@@ -81,7 +81,7 @@ Requires:       ros-melodic-xmlrpcpp
 
 Provides:  ros-melodic-moveit_core = 1.0.2-1
 Obsoletes: ros-melodic-moveit_core < 1.0.2-1
-Obsoletes: ros-kinetic-moveit_core
+Obsoletes: ros-kinetic-moveit_core < 1.0.2-1
 
 
 %description
@@ -131,7 +131,7 @@ Requires:       ros-melodic-xmlrpcpp-devel
 
 Provides: ros-melodic-moveit_core-devel = 1.0.2-1
 Obsoletes: ros-melodic-moveit_core-devel < 1.0.2-1
-Obsoletes: ros-kinetic-moveit_core-devel
+Obsoletes: ros-kinetic-moveit_core-devel < 1.0.2-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

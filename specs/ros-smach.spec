@@ -23,7 +23,7 @@ BuildRequires:  ros-melodic-catkin-devel
 
 Provides:  ros-melodic-smach = 2.0.1-3
 Obsoletes: ros-melodic-smach < 2.0.1-3
-Obsoletes: ros-kinetic-smach
+Obsoletes: ros-kinetic-smach < 2.0.1-3
 
 
 %description
@@ -40,7 +40,7 @@ Requires:       ros-melodic-catkin-devel
 
 Provides: ros-melodic-smach-devel = 2.0.1-3
 Obsoletes: ros-melodic-smach-devel < 2.0.1-3
-Obsoletes: ros-kinetic-smach-devel
+Obsoletes: ros-kinetic-smach-devel < 2.0.1-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

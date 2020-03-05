@@ -41,7 +41,7 @@ Requires:       ros-melodic-sensor_msgs
 
 Provides:  ros-melodic-image_publisher = 1.14.0-1
 Obsoletes: ros-melodic-image_publisher < 1.14.0-1
-Obsoletes: ros-kinetic-image_publisher
+Obsoletes: ros-kinetic-image_publisher < 1.14.0-1
 
 
 %description
@@ -66,7 +66,7 @@ Requires:       ros-melodic-sensor_msgs-devel
 
 Provides: ros-melodic-image_publisher-devel = 1.14.0-1
 Obsoletes: ros-melodic-image_publisher-devel < 1.14.0-1
-Obsoletes: ros-kinetic-image_publisher-devel
+Obsoletes: ros-kinetic-image_publisher-devel < 1.14.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

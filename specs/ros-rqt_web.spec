@@ -30,7 +30,7 @@ Requires:       ros-melodic-webkit_dependency
 
 Provides:  ros-melodic-rqt_web = 0.4.8-3
 Obsoletes: ros-melodic-rqt_web < 0.4.8-3
-Obsoletes: ros-kinetic-rqt_web
+Obsoletes: ros-kinetic-rqt_web < 0.4.8-3
 
 
 %description
@@ -50,7 +50,7 @@ Requires:       ros-melodic-webkit_dependency-devel
 
 Provides: ros-melodic-rqt_web-devel = 0.4.8-3
 Obsoletes: ros-melodic-rqt_web-devel < 0.4.8-3
-Obsoletes: ros-kinetic-rqt_web-devel
+Obsoletes: ros-kinetic-rqt_web-devel < 0.4.8-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

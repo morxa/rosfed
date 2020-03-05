@@ -28,7 +28,7 @@ Requires:       ros-melodic-xacro
 
 Provides:  ros-melodic-urdf_tutorial = 0.4.0-3
 Obsoletes: ros-melodic-urdf_tutorial < 0.4.0-3
-Obsoletes: ros-kinetic-urdf_tutorial
+Obsoletes: ros-kinetic-urdf_tutorial < 0.4.0-3
 
 
 %description
@@ -46,7 +46,7 @@ Requires:       ros-melodic-xacro-devel
 
 Provides: ros-melodic-urdf_tutorial-devel = 0.4.0-3
 Obsoletes: ros-melodic-urdf_tutorial-devel < 0.4.0-3
-Obsoletes: ros-kinetic-urdf_tutorial-devel
+Obsoletes: ros-kinetic-urdf_tutorial-devel < 0.4.0-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

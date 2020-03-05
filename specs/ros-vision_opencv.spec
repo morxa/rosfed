@@ -25,7 +25,7 @@ Requires:       ros-melodic-image_geometry
 
 Provides:  ros-melodic-vision_opencv = 1.13.0-3
 Obsoletes: ros-melodic-vision_opencv < 1.13.0-3
-Obsoletes: ros-kinetic-vision_opencv
+Obsoletes: ros-kinetic-vision_opencv < 1.13.0-3
 
 
 %description
@@ -41,7 +41,7 @@ Requires:       ros-melodic-image_geometry-devel
 
 Provides: ros-melodic-vision_opencv-devel = 1.13.0-3
 Obsoletes: ros-melodic-vision_opencv-devel < 1.13.0-3
-Obsoletes: ros-kinetic-vision_opencv-devel
+Obsoletes: ros-kinetic-vision_opencv-devel < 1.13.0-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

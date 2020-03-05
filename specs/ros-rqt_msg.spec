@@ -32,7 +32,7 @@ Requires:       ros-melodic-rqt_py_common
 
 Provides:  ros-melodic-rqt_msg = 0.4.8-3
 Obsoletes: ros-melodic-rqt_msg < 0.4.8-3
-Obsoletes: ros-kinetic-rqt_msg
+Obsoletes: ros-kinetic-rqt_msg < 0.4.8-3
 
 
 %description
@@ -56,7 +56,7 @@ Requires:       ros-melodic-rqt_py_common-devel
 
 Provides: ros-melodic-rqt_msg-devel = 0.4.8-3
 Obsoletes: ros-melodic-rqt_msg-devel < 0.4.8-3
-Obsoletes: ros-kinetic-rqt_msg-devel
+Obsoletes: ros-kinetic-rqt_msg-devel < 0.4.8-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

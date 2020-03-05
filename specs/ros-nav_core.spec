@@ -32,7 +32,7 @@ Requires:       ros-melodic-tf2_ros
 
 Provides:  ros-melodic-nav_core = 1.16.3-1
 Obsoletes: ros-melodic-nav_core < 1.16.3-1
-Obsoletes: ros-kinetic-nav_core
+Obsoletes: ros-kinetic-nav_core < 1.16.3-1
 
 
 %description
@@ -54,7 +54,7 @@ Requires:       ros-melodic-tf2_ros-devel
 
 Provides: ros-melodic-nav_core-devel = 1.16.3-1
 Obsoletes: ros-melodic-nav_core-devel < 1.16.3-1
-Obsoletes: ros-kinetic-nav_core-devel
+Obsoletes: ros-kinetic-nav_core-devel < 1.16.3-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -68,7 +68,7 @@ Requires:       ros-melodic-voxel_grid
 
 Provides:  ros-melodic-costmap_2d = 1.16.3-1
 Obsoletes: ros-melodic-costmap_2d < 1.16.3-1
-Obsoletes: ros-kinetic-costmap_2d
+Obsoletes: ros-kinetic-costmap_2d < 1.16.3-1
 
 
 %description
@@ -119,7 +119,7 @@ Requires:       ros-melodic-rosconsole-devel
 
 Provides: ros-melodic-costmap_2d-devel = 1.16.3-1
 Obsoletes: ros-melodic-costmap_2d-devel < 1.16.3-1
-Obsoletes: ros-kinetic-costmap_2d-devel
+Obsoletes: ros-kinetic-costmap_2d-devel < 1.16.3-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

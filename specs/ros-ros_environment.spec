@@ -23,7 +23,7 @@ BuildRequires:  ros-melodic-catkin-devel
 
 Provides:  ros-melodic-ros_environment = 1.2.2-1
 Obsoletes: ros-melodic-ros_environment < 1.2.2-1
-Obsoletes: ros-kinetic-ros_environment
+Obsoletes: ros-kinetic-ros_environment < 1.2.2-1
 
 
 %description
@@ -37,7 +37,7 @@ Requires:       ros-melodic-catkin-devel
 
 Provides: ros-melodic-ros_environment-devel = 1.2.2-1
 Obsoletes: ros-melodic-ros_environment-devel < 1.2.2-1
-Obsoletes: ros-kinetic-ros_environment-devel
+Obsoletes: ros-kinetic-ros_environment-devel < 1.2.2-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -28,7 +28,7 @@ Requires:       ros-melodic-tf_conversions
 
 Provides:  ros-melodic-geometry = 1.12.0-3
 Obsoletes: ros-melodic-geometry < 1.12.0-3
-Obsoletes: ros-kinetic-geometry
+Obsoletes: ros-kinetic-geometry < 1.12.0-3
 
 
 %description
@@ -46,7 +46,7 @@ Requires:       ros-melodic-tf_conversions-devel
 
 Provides: ros-melodic-geometry-devel = 1.12.0-3
 Obsoletes: ros-melodic-geometry-devel < 1.12.0-3
-Obsoletes: ros-kinetic-geometry-devel
+Obsoletes: ros-kinetic-geometry-devel < 1.12.0-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

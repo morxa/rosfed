@@ -26,7 +26,7 @@ Requires:       ros-melodic-moveit_simple_controller_manager
 
 Provides:  ros-melodic-moveit_plugins = 1.0.2-1
 Obsoletes: ros-melodic-moveit_plugins < 1.0.2-1
-Obsoletes: ros-kinetic-moveit_plugins
+Obsoletes: ros-kinetic-moveit_plugins < 1.0.2-1
 
 
 %description
@@ -42,7 +42,7 @@ Requires:       ros-melodic-moveit_simple_controller_manager-devel
 
 Provides: ros-melodic-moveit_plugins-devel = 1.0.2-1
 Obsoletes: ros-melodic-moveit_plugins-devel < 1.0.2-1
-Obsoletes: ros-kinetic-moveit_plugins-devel
+Obsoletes: ros-kinetic-moveit_plugins-devel < 1.0.2-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

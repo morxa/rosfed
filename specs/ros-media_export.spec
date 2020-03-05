@@ -23,7 +23,7 @@ BuildRequires:  ros-melodic-catkin-devel
 
 Provides:  ros-melodic-media_export = 0.2.0-3
 Obsoletes: ros-melodic-media_export < 0.2.0-3
-Obsoletes: ros-kinetic-media_export
+Obsoletes: ros-kinetic-media_export < 0.2.0-3
 
 
 %description
@@ -36,7 +36,7 @@ Requires:       ros-melodic-catkin-devel
 
 Provides: ros-melodic-media_export-devel = 0.2.0-3
 Obsoletes: ros-melodic-media_export-devel < 0.2.0-3
-Obsoletes: ros-kinetic-media_export-devel
+Obsoletes: ros-kinetic-media_export-devel < 0.2.0-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

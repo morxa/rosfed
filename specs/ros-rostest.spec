@@ -1,12 +1,12 @@
 Name:           ros-rostest
-Version:        melodic.1.14.3
-Release:        3%{?dist}
+Version:        melodic.1.14.4
+Release:        1%{?dist}
 Summary:        ROS package rostest
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/melodic/rostest/1.14.3-0.tar.gz#/ros-melodic-rostest-1.14.3-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/melodic/rostest/1.14.4-1.tar.gz#/ros-melodic-rostest-1.14.4-source0.tar.gz
 
 
 BuildArch: noarch
@@ -28,9 +28,9 @@ Requires:       ros-melodic-rosmaster
 Requires:       ros-melodic-rospy
 Requires:       ros-melodic-rosunit
 
-Provides:  ros-melodic-rostest = 1.14.3-3
-Obsoletes: ros-melodic-rostest < 1.14.3-3
-Obsoletes: ros-kinetic-rostest
+Provides:  ros-melodic-rostest = 1.14.4-1
+Obsoletes: ros-melodic-rostest < 1.14.4-1
+Obsoletes: ros-kinetic-rostest < 1.14.4-1
 
 
 %description
@@ -48,9 +48,9 @@ Requires:       ros-melodic-roslaunch-devel
 Requires:       ros-melodic-rosmaster-devel
 Requires:       ros-melodic-rospy-devel
 
-Provides: ros-melodic-rostest-devel = 1.14.3-3
-Obsoletes: ros-melodic-rostest-devel < 1.14.3-3
-Obsoletes: ros-kinetic-rostest-devel
+Provides: ros-melodic-rostest-devel = 1.14.4-1
+Obsoletes: ros-melodic-rostest-devel < 1.14.4-1
+Obsoletes: ros-kinetic-rostest-devel < 1.14.4-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -157,6 +157,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.4-1
+- Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.3-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.3-2

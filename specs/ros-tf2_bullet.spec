@@ -29,7 +29,7 @@ Requires:       ros-melodic-tf2
 
 Provides:  ros-melodic-tf2_bullet = 0.6.5-1
 Obsoletes: ros-melodic-tf2_bullet < 0.6.5-1
-Obsoletes: ros-kinetic-tf2_bullet
+Obsoletes: ros-kinetic-tf2_bullet < 0.6.5-1
 
 
 %description
@@ -46,7 +46,7 @@ Requires:       ros-melodic-tf2-devel
 
 Provides: ros-melodic-tf2_bullet-devel = 0.6.5-1
 Obsoletes: ros-melodic-tf2_bullet-devel < 0.6.5-1
-Obsoletes: ros-kinetic-tf2_bullet-devel
+Obsoletes: ros-kinetic-tf2_bullet-devel < 0.6.5-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

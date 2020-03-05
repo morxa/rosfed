@@ -24,7 +24,7 @@ BuildRequires:  ros-melodic-catkin-devel
 
 Provides:  ros-melodic-urdf_parser_plugin = 1.13.1-3
 Obsoletes: ros-melodic-urdf_parser_plugin < 1.13.1-3
-Obsoletes: ros-kinetic-urdf_parser_plugin
+Obsoletes: ros-kinetic-urdf_parser_plugin < 1.13.1-3
 
 
 %description
@@ -38,7 +38,7 @@ Requires:       urdfdom-headers-devel
 
 Provides: ros-melodic-urdf_parser_plugin-devel = 1.13.1-3
 Obsoletes: ros-melodic-urdf_parser_plugin-devel < 1.13.1-3
-Obsoletes: ros-kinetic-urdf_parser_plugin-devel
+Obsoletes: ros-kinetic-urdf_parser_plugin-devel < 1.13.1-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

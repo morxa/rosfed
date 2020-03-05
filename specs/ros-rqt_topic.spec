@@ -29,7 +29,7 @@ Requires:       ros-melodic-std_msgs
 
 Provides:  ros-melodic-rqt_topic = 0.4.11-1
 Obsoletes: ros-melodic-rqt_topic < 0.4.11-1
-Obsoletes: ros-kinetic-rqt_topic
+Obsoletes: ros-kinetic-rqt_topic < 0.4.11-1
 
 
 %description
@@ -49,7 +49,7 @@ Requires:       ros-melodic-std_msgs-devel
 
 Provides: ros-melodic-rqt_topic-devel = 0.4.11-1
 Obsoletes: ros-melodic-rqt_topic-devel < 0.4.11-1
-Obsoletes: ros-kinetic-rqt_topic-devel
+Obsoletes: ros-kinetic-rqt_topic-devel < 0.4.11-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

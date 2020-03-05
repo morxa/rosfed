@@ -28,7 +28,7 @@ Requires:       ros-melodic-stage_ros
 
 Provides:  ros-melodic-simulators = 1.4.1-3
 Obsoletes: ros-melodic-simulators < 1.4.1-3
-Obsoletes: ros-kinetic-simulators
+Obsoletes: ros-kinetic-simulators < 1.4.1-3
 
 
 %description
@@ -46,7 +46,7 @@ Requires:       ros-melodic-stage_ros-devel
 
 Provides: ros-melodic-simulators-devel = 1.4.1-3
 Obsoletes: ros-melodic-simulators-devel < 1.4.1-3
-Obsoletes: ros-kinetic-simulators-devel
+Obsoletes: ros-kinetic-simulators-devel < 1.4.1-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

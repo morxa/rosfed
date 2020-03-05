@@ -32,7 +32,7 @@ Requires:       ros-melodic-std_srvs
 
 Provides:  ros-melodic-smach_ros = 2.0.1-3
 Obsoletes: ros-melodic-smach_ros < 2.0.1-3
-Obsoletes: ros-kinetic-smach_ros
+Obsoletes: ros-kinetic-smach_ros < 2.0.1-3
 
 
 %description
@@ -56,7 +56,7 @@ Requires:       ros-melodic-std_srvs-devel
 
 Provides: ros-melodic-smach_ros-devel = 2.0.1-3
 Obsoletes: ros-melodic-smach_ros-devel < 2.0.1-3
-Obsoletes: ros-kinetic-smach_ros-devel
+Obsoletes: ros-kinetic-smach_ros-devel < 2.0.1-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

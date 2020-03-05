@@ -27,7 +27,7 @@ Requires:       ros-melodic-std_msgs
 
 Provides:  ros-melodic-bond = 1.8.3-3
 Obsoletes: ros-melodic-bond < 1.8.3-3
-Obsoletes: ros-kinetic-bond
+Obsoletes: ros-kinetic-bond < 1.8.3-3
 
 
 %description
@@ -45,7 +45,7 @@ Requires:       ros-melodic-message_runtime-devel
 
 Provides: ros-melodic-bond-devel = 1.8.3-3
 Obsoletes: ros-melodic-bond-devel < 1.8.3-3
-Obsoletes: ros-kinetic-bond-devel
+Obsoletes: ros-kinetic-bond-devel < 1.8.3-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

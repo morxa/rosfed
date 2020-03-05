@@ -34,7 +34,7 @@ Requires:       ros-melodic-roslib
 
 Provides:  ros-melodic-filters = 1.8.1-3
 Obsoletes: ros-melodic-filters < 1.8.1-3
-Obsoletes: ros-kinetic-filters
+Obsoletes: ros-kinetic-filters < 1.8.1-3
 
 
 %description
@@ -58,7 +58,7 @@ Requires:       ros-melodic-rostest-devel
 
 Provides: ros-melodic-filters-devel = 1.8.1-3
 Obsoletes: ros-melodic-filters-devel < 1.8.1-3
-Obsoletes: ros-kinetic-filters-devel
+Obsoletes: ros-kinetic-filters-devel < 1.8.1-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

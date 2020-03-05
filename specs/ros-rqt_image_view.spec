@@ -42,7 +42,7 @@ Requires:       ros-melodic-sensor_msgs
 
 Provides:  ros-melodic-rqt_image_view = 0.4.14-1
 Obsoletes: ros-melodic-rqt_image_view < 0.4.14-1
-Obsoletes: ros-kinetic-rqt_image_view
+Obsoletes: ros-kinetic-rqt_image_view < 0.4.14-1
 
 
 %description
@@ -70,7 +70,7 @@ Requires:       ros-melodic-sensor_msgs-devel
 
 Provides: ros-melodic-rqt_image_view-devel = 0.4.14-1
 Obsoletes: ros-melodic-rqt_image_view-devel < 0.4.14-1
-Obsoletes: ros-kinetic-rqt_image_view-devel
+Obsoletes: ros-kinetic-rqt_image_view-devel < 0.4.14-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

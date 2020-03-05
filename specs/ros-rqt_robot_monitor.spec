@@ -33,7 +33,7 @@ Requires:       ros-melodic-rqt_py_common
 
 Provides:  ros-melodic-rqt_robot_monitor = 0.5.9-1
 Obsoletes: ros-melodic-rqt_robot_monitor < 0.5.9-1
-Obsoletes: ros-kinetic-rqt_robot_monitor
+Obsoletes: ros-kinetic-rqt_robot_monitor < 0.5.9-1
 
 
 %description
@@ -56,7 +56,7 @@ Requires:       ros-melodic-rqt_py_common-devel
 
 Provides: ros-melodic-rqt_robot_monitor-devel = 0.5.9-1
 Obsoletes: ros-melodic-rqt_robot_monitor-devel < 0.5.9-1
-Obsoletes: ros-kinetic-rqt_robot_monitor-devel
+Obsoletes: ros-kinetic-rqt_robot_monitor-devel < 0.5.9-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

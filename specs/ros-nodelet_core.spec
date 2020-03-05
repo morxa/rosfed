@@ -25,7 +25,7 @@ Requires:       ros-melodic-nodelet_topic_tools
 
 Provides:  ros-melodic-nodelet_core = 1.9.16-3
 Obsoletes: ros-melodic-nodelet_core < 1.9.16-3
-Obsoletes: ros-kinetic-nodelet_core
+Obsoletes: ros-kinetic-nodelet_core < 1.9.16-3
 
 
 %description
@@ -40,7 +40,7 @@ Requires:       ros-melodic-nodelet_topic_tools-devel
 
 Provides: ros-melodic-nodelet_core-devel = 1.9.16-3
 Obsoletes: ros-melodic-nodelet_core-devel < 1.9.16-3
-Obsoletes: ros-kinetic-nodelet_core-devel
+Obsoletes: ros-kinetic-nodelet_core-devel < 1.9.16-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

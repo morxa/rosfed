@@ -30,7 +30,7 @@ Requires:       ros-melodic-stereo_image_proc
 
 Provides:  ros-melodic-image_pipeline = 1.14.0-1
 Obsoletes: ros-melodic-image_pipeline < 1.14.0-1
-Obsoletes: ros-kinetic-image_pipeline
+Obsoletes: ros-kinetic-image_pipeline < 1.14.0-1
 
 
 %description
@@ -51,7 +51,7 @@ Requires:       ros-melodic-stereo_image_proc-devel
 
 Provides: ros-melodic-image_pipeline-devel = 1.14.0-1
 Obsoletes: ros-melodic-image_pipeline-devel < 1.14.0-1
-Obsoletes: ros-kinetic-image_pipeline-devel
+Obsoletes: ros-kinetic-image_pipeline-devel < 1.14.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

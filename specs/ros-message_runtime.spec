@@ -28,7 +28,7 @@ Requires:       ros-melodic-rostime
 
 Provides:  ros-melodic-message_runtime = 0.4.12-3
 Obsoletes: ros-melodic-message_runtime < 0.4.12-3
-Obsoletes: ros-kinetic-message_runtime
+Obsoletes: ros-kinetic-message_runtime < 0.4.12-3
 
 
 %description
@@ -47,7 +47,7 @@ Requires:       ros-melodic-rostime-devel
 
 Provides: ros-melodic-message_runtime-devel = 0.4.12-3
 Obsoletes: ros-melodic-message_runtime-devel < 0.4.12-3
-Obsoletes: ros-kinetic-message_runtime-devel
+Obsoletes: ros-kinetic-message_runtime-devel < 0.4.12-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -28,7 +28,7 @@ Requires:       ros-melodic-self_test
 
 Provides:  ros-melodic-diagnostics = 1.9.3-3
 Obsoletes: ros-melodic-diagnostics < 1.9.3-3
-Obsoletes: ros-kinetic-diagnostics
+Obsoletes: ros-kinetic-diagnostics < 1.9.3-3
 
 
 %description
@@ -46,7 +46,7 @@ Requires:       ros-melodic-self_test-devel
 
 Provides: ros-melodic-diagnostics-devel = 1.9.3-3
 Obsoletes: ros-melodic-diagnostics-devel < 1.9.3-3
-Obsoletes: ros-kinetic-diagnostics-devel
+Obsoletes: ros-kinetic-diagnostics-devel < 1.9.3-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

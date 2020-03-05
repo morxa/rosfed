@@ -23,7 +23,7 @@ BuildRequires:  ros-melodic-catkin-devel
 
 Provides:  ros-melodic-rosbag_migration_rule = 1.0.0-3
 Obsoletes: ros-melodic-rosbag_migration_rule < 1.0.0-3
-Obsoletes: ros-kinetic-rosbag_migration_rule
+Obsoletes: ros-kinetic-rosbag_migration_rule < 1.0.0-3
 
 
 %description
@@ -37,7 +37,7 @@ Requires:       ros-melodic-catkin-devel
 
 Provides: ros-melodic-rosbag_migration_rule-devel = 1.0.0-3
 Obsoletes: ros-melodic-rosbag_migration_rule-devel < 1.0.0-3
-Obsoletes: ros-kinetic-rosbag_migration_rule-devel
+Obsoletes: ros-kinetic-rosbag_migration_rule-devel < 1.0.0-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -35,7 +35,7 @@ Requires:       ros-melodic-tf2_ros
 
 Provides:  ros-melodic-tf2_sensor_msgs = 0.6.5-1
 Obsoletes: ros-melodic-tf2_sensor_msgs < 0.6.5-1
-Obsoletes: ros-kinetic-tf2_sensor_msgs
+Obsoletes: ros-kinetic-tf2_sensor_msgs < 0.6.5-1
 
 
 %description
@@ -57,7 +57,7 @@ Requires:       ros-melodic-rospy-devel
 
 Provides: ros-melodic-tf2_sensor_msgs-devel = 0.6.5-1
 Obsoletes: ros-melodic-tf2_sensor_msgs-devel < 0.6.5-1
-Obsoletes: ros-kinetic-tf2_sensor_msgs-devel
+Obsoletes: ros-kinetic-tf2_sensor_msgs-devel < 0.6.5-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

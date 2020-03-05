@@ -31,7 +31,7 @@ Requires:       ros-melodic-rqt_py_common
 
 Provides:  ros-melodic-rqt_console = 0.4.9-1
 Obsoletes: ros-melodic-rqt_console < 0.4.9-1
-Obsoletes: ros-kinetic-rqt_console
+Obsoletes: ros-kinetic-rqt_console < 0.4.9-1
 
 
 %description
@@ -52,7 +52,7 @@ Requires:       ros-melodic-rqt_py_common-devel
 
 Provides: ros-melodic-rqt_console-devel = 0.4.9-1
 Obsoletes: ros-melodic-rqt_console-devel < 0.4.9-1
-Obsoletes: ros-kinetic-rqt_console-devel
+Obsoletes: ros-kinetic-rqt_console-devel < 0.4.9-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

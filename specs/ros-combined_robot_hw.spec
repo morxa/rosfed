@@ -26,7 +26,7 @@ Requires:       ros-melodic-roscpp
 
 Provides:  ros-melodic-combined_robot_hw = 0.17.0-1
 Obsoletes: ros-melodic-combined_robot_hw < 0.17.0-1
-Obsoletes: ros-kinetic-combined_robot_hw
+Obsoletes: ros-kinetic-combined_robot_hw < 0.17.0-1
 
 
 %description
@@ -42,7 +42,7 @@ Requires:       ros-melodic-roscpp-devel
 
 Provides: ros-melodic-combined_robot_hw-devel = 0.17.0-1
 Obsoletes: ros-melodic-combined_robot_hw-devel < 0.17.0-1
-Obsoletes: ros-kinetic-combined_robot_hw-devel
+Obsoletes: ros-kinetic-combined_robot_hw-devel < 0.17.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -30,7 +30,7 @@ Requires:       ros-melodic-std_msgs
 
 Provides:  ros-melodic-diagnostic_updater = 1.9.3-3
 Obsoletes: ros-melodic-diagnostic_updater < 1.9.3-3
-Obsoletes: ros-kinetic-diagnostic_updater
+Obsoletes: ros-kinetic-diagnostic_updater < 1.9.3-3
 
 
 %description
@@ -49,7 +49,7 @@ Requires:       ros-melodic-std_msgs-devel
 
 Provides: ros-melodic-diagnostic_updater-devel = 1.9.3-3
 Obsoletes: ros-melodic-diagnostic_updater-devel < 1.9.3-3
-Obsoletes: ros-kinetic-diagnostic_updater-devel
+Obsoletes: ros-kinetic-diagnostic_updater-devel < 1.9.3-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

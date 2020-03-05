@@ -26,7 +26,7 @@ Requires:       ros-melodic-sensor_msgs
 
 Provides:  ros-melodic-joint_state_publisher = 1.12.14-1
 Obsoletes: ros-melodic-joint_state_publisher < 1.12.14-1
-Obsoletes: ros-kinetic-joint_state_publisher
+Obsoletes: ros-kinetic-joint_state_publisher < 1.12.14-1
 
 
 %description
@@ -43,7 +43,7 @@ Requires:       ros-melodic-sensor_msgs-devel
 
 Provides: ros-melodic-joint_state_publisher-devel = 1.12.14-1
 Obsoletes: ros-melodic-joint_state_publisher-devel < 1.12.14-1
-Obsoletes: ros-kinetic-joint_state_publisher-devel
+Obsoletes: ros-kinetic-joint_state_publisher-devel < 1.12.14-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

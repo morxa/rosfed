@@ -28,7 +28,7 @@ Requires:       python3-pyside2
 
 Provides:  ros-melodic-python_qt_binding = 0.4.0-1
 Obsoletes: ros-melodic-python_qt_binding < 0.4.0-1
-Obsoletes: ros-kinetic-python_qt_binding
+Obsoletes: ros-kinetic-python_qt_binding < 0.4.0-1
 
 
 %description
@@ -52,7 +52,7 @@ Requires:       ros-melodic-rosbuild-devel
 
 Provides: ros-melodic-python_qt_binding-devel = 0.4.0-1
 Obsoletes: ros-melodic-python_qt_binding-devel < 0.4.0-1
-Obsoletes: ros-kinetic-python_qt_binding-devel
+Obsoletes: ros-kinetic-python_qt_binding-devel < 0.4.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

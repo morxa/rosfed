@@ -35,7 +35,7 @@ Requires:       ros-melodic-tf2
 
 Provides:  ros-melodic-map_server = 1.16.3-1
 Obsoletes: ros-melodic-map_server < 1.16.3-1
-Obsoletes: ros-kinetic-map_server
+Obsoletes: ros-kinetic-map_server < 1.16.3-1
 
 
 %description
@@ -58,7 +58,7 @@ Requires:       ros-melodic-tf2-devel
 
 Provides: ros-melodic-map_server-devel = 1.16.3-1
 Obsoletes: ros-melodic-map_server-devel < 1.16.3-1
-Obsoletes: ros-kinetic-map_server-devel
+Obsoletes: ros-kinetic-map_server-devel < 1.16.3-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

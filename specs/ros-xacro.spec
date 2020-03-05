@@ -26,7 +26,7 @@ Requires:       ros-melodic-roslaunch
 
 Provides:  ros-melodic-xacro = 1.13.5-1
 Obsoletes: ros-melodic-xacro < 1.13.5-1
-Obsoletes: ros-kinetic-xacro
+Obsoletes: ros-kinetic-xacro < 1.13.5-1
 
 
 %description
@@ -44,7 +44,7 @@ Requires:       ros-melodic-roslaunch-devel
 
 Provides: ros-melodic-xacro-devel = 1.13.5-1
 Obsoletes: ros-melodic-xacro-devel < 1.13.5-1
-Obsoletes: ros-kinetic-xacro-devel
+Obsoletes: ros-kinetic-xacro-devel < 1.13.5-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

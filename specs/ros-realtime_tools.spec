@@ -27,7 +27,7 @@ Requires:       ros-melodic-roscpp
 
 Provides:  ros-melodic-realtime_tools = 1.15.1-1
 Obsoletes: ros-melodic-realtime_tools < 1.15.1-1
-Obsoletes: ros-kinetic-realtime_tools
+Obsoletes: ros-kinetic-realtime_tools < 1.15.1-1
 
 
 %description
@@ -45,7 +45,7 @@ Requires:       ros-melodic-rosunit-devel
 
 Provides: ros-melodic-realtime_tools-devel = 1.15.1-1
 Obsoletes: ros-melodic-realtime_tools-devel < 1.15.1-1
-Obsoletes: ros-kinetic-realtime_tools-devel
+Obsoletes: ros-kinetic-realtime_tools-devel < 1.15.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -27,7 +27,7 @@ Requires:       ros-melodic-catkin
 
 Provides:  ros-melodic-orocos_kdl = 1.4.0-3
 Obsoletes: ros-melodic-orocos_kdl < 1.4.0-3
-Obsoletes: ros-kinetic-orocos_kdl
+Obsoletes: ros-kinetic-orocos_kdl < 1.4.0-3
 
 
 %description
@@ -44,7 +44,7 @@ Requires:       ros-melodic-catkin-devel
 
 Provides: ros-melodic-orocos_kdl-devel = 1.4.0-3
 Obsoletes: ros-melodic-orocos_kdl-devel < 1.4.0-3
-Obsoletes: ros-kinetic-orocos_kdl-devel
+Obsoletes: ros-kinetic-orocos_kdl-devel < 1.4.0-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

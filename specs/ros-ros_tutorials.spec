@@ -1,12 +1,12 @@
 Name:           ros-ros_tutorials
-Version:        melodic.0.9.1
-Release:        3%{?dist}
+Version:        melodic.0.9.2
+Release:        1%{?dist}
 Summary:        ROS package ros_tutorials
 
 License:        BSD
 URL:            http://www.ros.org/wiki/ros_tutorials
 
-Source0:        https://github.com/ros-gbp/ros_tutorials-release/archive/release/melodic/ros_tutorials/0.9.1-0.tar.gz#/ros-melodic-ros_tutorials-0.9.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_tutorials-release/archive/release/melodic/ros_tutorials/0.9.2-1.tar.gz#/ros-melodic-ros_tutorials-0.9.2-source0.tar.gz
 
 
 BuildArch: noarch
@@ -24,9 +24,9 @@ Requires:       ros-melodic-roscpp_tutorials
 Requires:       ros-melodic-rospy_tutorials
 Requires:       ros-melodic-turtlesim
 
-Provides:  ros-melodic-ros_tutorials = 0.9.1-3
-Obsoletes: ros-melodic-ros_tutorials < 0.9.1-3
-Obsoletes: ros-kinetic-ros_tutorials
+Provides:  ros-melodic-ros_tutorials = 0.9.2-1
+Obsoletes: ros-melodic-ros_tutorials < 0.9.2-1
+Obsoletes: ros-kinetic-ros_tutorials < 0.9.2-1
 
 
 %description
@@ -42,9 +42,9 @@ Requires:       ros-melodic-roscpp_tutorials-devel
 Requires:       ros-melodic-rospy_tutorials-devel
 Requires:       ros-melodic-turtlesim-devel
 
-Provides: ros-melodic-ros_tutorials-devel = 0.9.1-3
-Obsoletes: ros-melodic-ros_tutorials-devel < 0.9.1-3
-Obsoletes: ros-kinetic-ros_tutorials-devel
+Provides: ros-melodic-ros_tutorials-devel = 0.9.2-1
+Obsoletes: ros-melodic-ros_tutorials-devel < 0.9.2-1
+Obsoletes: ros-kinetic-ros_tutorials-devel < 0.9.2-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -151,6 +151,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.9.2-1
+- Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.9.1-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.9.1-2

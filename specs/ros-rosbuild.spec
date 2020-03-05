@@ -1,12 +1,12 @@
 Name:           ros-rosbuild
-Version:        melodic.1.14.7
+Version:        melodic.1.14.8
 Release:        1%{?dist}
 Summary:        ROS package rosbuild
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/ros-release/archive/release/melodic/rosbuild/1.14.7-1.tar.gz#/ros-melodic-rosbuild-1.14.7-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros-release/archive/release/melodic/rosbuild/1.14.8-1.tar.gz#/ros-melodic-rosbuild-1.14.8-source0.tar.gz
 
 
 BuildArch: noarch
@@ -25,9 +25,9 @@ Requires:       ros-melodic-catkin
 Requires:       ros-melodic-message_generation
 Requires:       ros-melodic-message_runtime
 
-Provides:  ros-melodic-rosbuild = 1.14.7-1
-Obsoletes: ros-melodic-rosbuild < 1.14.7-1
-Obsoletes: ros-kinetic-rosbuild
+Provides:  ros-melodic-rosbuild = 1.14.8-1
+Obsoletes: ros-melodic-rosbuild < 1.14.8-1
+Obsoletes: ros-kinetic-rosbuild < 1.14.8-1
 
 
 %description
@@ -42,9 +42,9 @@ Requires:       pkgconfig
 Requires:       ros-melodic-message_generation-devel
 Requires:       ros-melodic-message_runtime-devel
 
-Provides: ros-melodic-rosbuild-devel = 1.14.7-1
-Obsoletes: ros-melodic-rosbuild-devel < 1.14.7-1
-Obsoletes: ros-kinetic-rosbuild-devel
+Provides: ros-melodic-rosbuild-devel = 1.14.8-1
+Obsoletes: ros-melodic-rosbuild-devel < 1.14.8-1
+Obsoletes: ros-kinetic-rosbuild-devel < 1.14.8-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -151,6 +151,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.8-1
+- Update to latest release
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.7-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.6-3

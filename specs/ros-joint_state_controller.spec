@@ -38,7 +38,7 @@ Requires:       ros-melodic-sensor_msgs
 
 Provides:  ros-melodic-joint_state_controller = 0.15.0-3
 Obsoletes: ros-melodic-joint_state_controller < 0.15.0-3
-Obsoletes: ros-kinetic-joint_state_controller
+Obsoletes: ros-kinetic-joint_state_controller < 0.15.0-3
 
 
 %description
@@ -61,7 +61,7 @@ Requires:       ros-melodic-sensor_msgs-devel
 
 Provides: ros-melodic-joint_state_controller-devel = 0.15.0-3
 Obsoletes: ros-melodic-joint_state_controller-devel < 0.15.0-3
-Obsoletes: ros-kinetic-joint_state_controller-devel
+Obsoletes: ros-kinetic-joint_state_controller-devel < 0.15.0-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

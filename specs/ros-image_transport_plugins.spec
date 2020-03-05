@@ -26,7 +26,7 @@ Requires:       ros-melodic-theora_image_transport
 
 Provides:  ros-melodic-image_transport_plugins = 1.9.5-13
 Obsoletes: ros-melodic-image_transport_plugins < 1.9.5-13
-Obsoletes: ros-kinetic-image_transport_plugins
+Obsoletes: ros-kinetic-image_transport_plugins < 1.9.5-13
 
 
 %description
@@ -47,7 +47,7 @@ Requires:       ros-melodic-theora_image_transport-devel
 
 Provides: ros-melodic-image_transport_plugins-devel = 1.9.5-13
 Obsoletes: ros-melodic-image_transport_plugins-devel < 1.9.5-13
-Obsoletes: ros-kinetic-image_transport_plugins-devel
+Obsoletes: ros-kinetic-image_transport_plugins-devel < 1.9.5-13
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

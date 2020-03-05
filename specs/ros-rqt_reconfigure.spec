@@ -33,7 +33,7 @@ Requires:       ros-melodic-rqt_py_common
 
 Provides:  ros-melodic-rqt_reconfigure = 0.5.1-1
 Obsoletes: ros-melodic-rqt_reconfigure < 0.5.1-1
-Obsoletes: ros-kinetic-rqt_reconfigure
+Obsoletes: ros-kinetic-rqt_reconfigure < 0.5.1-1
 
 
 %description
@@ -57,7 +57,7 @@ Requires:       ros-melodic-rqt_py_common-devel
 
 Provides: ros-melodic-rqt_reconfigure-devel = 0.5.1-1
 Obsoletes: ros-melodic-rqt_reconfigure-devel < 0.5.1-1
-Obsoletes: ros-kinetic-rqt_reconfigure-devel
+Obsoletes: ros-kinetic-rqt_reconfigure-devel < 0.5.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

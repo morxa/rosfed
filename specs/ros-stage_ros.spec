@@ -41,7 +41,7 @@ Requires:       ros-melodic-tf
 
 Provides:  ros-melodic-stage_ros = 1.8.0-3
 Obsoletes: ros-melodic-stage_ros < 1.8.0-3
-Obsoletes: ros-kinetic-stage_ros
+Obsoletes: ros-kinetic-stage_ros < 1.8.0-3
 
 
 %description
@@ -65,7 +65,7 @@ Requires:       ros-melodic-tf-devel
 
 Provides: ros-melodic-stage_ros-devel = 1.8.0-3
 Obsoletes: ros-melodic-stage_ros-devel < 1.8.0-3
-Obsoletes: ros-kinetic-stage_ros-devel
+Obsoletes: ros-kinetic-stage_ros-devel < 1.8.0-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -29,7 +29,7 @@ Requires:       ros-melodic-std_srvs
 
 Provides:  ros-melodic-roslisp = 1.9.24-1
 Obsoletes: ros-melodic-roslisp < 1.9.24-1
-Obsoletes: ros-kinetic-roslisp
+Obsoletes: ros-kinetic-roslisp < 1.9.24-1
 
 
 %description
@@ -47,7 +47,7 @@ Requires:       ros-melodic-std_srvs-devel
 
 Provides: ros-melodic-roslisp-devel = 1.9.24-1
 Obsoletes: ros-melodic-roslisp-devel < 1.9.24-1
-Obsoletes: ros-kinetic-roslisp-devel
+Obsoletes: ros-kinetic-roslisp-devel < 1.9.24-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

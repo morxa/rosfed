@@ -32,7 +32,7 @@ Requires:       ros-melodic-rqt_robot_monitor
 
 Provides:  ros-melodic-rqt_robot_dashboard = 0.5.7-3
 Obsoletes: ros-melodic-rqt_robot_dashboard < 0.5.7-3
-Obsoletes: ros-kinetic-rqt_robot_dashboard
+Obsoletes: ros-kinetic-rqt_robot_dashboard < 0.5.7-3
 
 
 %description
@@ -55,7 +55,7 @@ Requires:       ros-melodic-rqt_robot_monitor-devel
 
 Provides: ros-melodic-rqt_robot_dashboard-devel = 0.5.7-3
 Obsoletes: ros-melodic-rqt_robot_dashboard-devel < 0.5.7-3
-Obsoletes: ros-kinetic-rqt_robot_dashboard-devel
+Obsoletes: ros-kinetic-rqt_robot_dashboard-devel < 0.5.7-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

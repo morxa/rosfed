@@ -30,7 +30,7 @@ Requires:       ros-melodic-roslib
 
 Provides:  ros-melodic-diagnostic_analysis = 1.9.3-3
 Obsoletes: ros-melodic-diagnostic_analysis < 1.9.3-3
-Obsoletes: ros-kinetic-diagnostic_analysis
+Obsoletes: ros-kinetic-diagnostic_analysis < 1.9.3-3
 
 
 %description
@@ -49,7 +49,7 @@ Requires:       ros-melodic-rostest-devel
 
 Provides: ros-melodic-diagnostic_analysis-devel = 1.9.3-3
 Obsoletes: ros-melodic-diagnostic_analysis-devel < 1.9.3-3
-Obsoletes: ros-kinetic-diagnostic_analysis-devel
+Obsoletes: ros-kinetic-diagnostic_analysis-devel < 1.9.3-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

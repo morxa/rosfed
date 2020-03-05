@@ -45,7 +45,7 @@ Requires:       ros-melodic-tf2_ros
 
 Provides:  ros-melodic-tf = 1.12.0-4
 Obsoletes: ros-melodic-tf < 1.12.0-4
-Obsoletes: ros-kinetic-tf
+Obsoletes: ros-kinetic-tf < 1.12.0-4
 
 
 %description
@@ -76,7 +76,7 @@ Requires:       ros-melodic-roswtf-devel
 
 Provides: ros-melodic-tf-devel = 1.12.0-4
 Obsoletes: ros-melodic-tf-devel < 1.12.0-4
-Obsoletes: ros-kinetic-tf-devel
+Obsoletes: ros-kinetic-tf-devel < 1.12.0-4
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

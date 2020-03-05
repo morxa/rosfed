@@ -23,7 +23,7 @@ BuildRequires:  ros-melodic-catkin-devel
 
 Provides:  ros-melodic-qwt_dependency = 1.1.0-3
 Obsoletes: ros-melodic-qwt_dependency < 1.1.0-3
-Obsoletes: ros-kinetic-qwt_dependency
+Obsoletes: ros-kinetic-qwt_dependency < 1.1.0-3
 
 
 %description
@@ -37,7 +37,7 @@ Requires:       ros-melodic-catkin-devel
 
 Provides: ros-melodic-qwt_dependency-devel = 1.1.0-3
 Obsoletes: ros-melodic-qwt_dependency-devel < 1.1.0-3
-Obsoletes: ros-kinetic-qwt_dependency-devel
+Obsoletes: ros-kinetic-qwt_dependency-devel < 1.1.0-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

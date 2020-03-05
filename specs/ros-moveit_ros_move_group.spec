@@ -49,7 +49,7 @@ Requires:       ros-melodic-tf2_ros
 
 Provides:  ros-melodic-moveit_ros_move_group = 1.0.2-1
 Obsoletes: ros-melodic-moveit_ros_move_group < 1.0.2-1
-Obsoletes: ros-kinetic-moveit_ros_move_group
+Obsoletes: ros-kinetic-moveit_ros_move_group < 1.0.2-1
 
 
 %description
@@ -80,7 +80,7 @@ Requires:       ros-melodic-moveit_kinematics-devel
 
 Provides: ros-melodic-moveit_ros_move_group-devel = 1.0.2-1
 Obsoletes: ros-melodic-moveit_ros_move_group-devel < 1.0.2-1
-Obsoletes: ros-kinetic-moveit_ros_move_group-devel
+Obsoletes: ros-kinetic-moveit_ros_move_group-devel < 1.0.2-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -33,7 +33,7 @@ Requires:       ros-melodic-urdfdom_py
 
 Provides:  ros-melodic-kdl_parser_py = 1.13.1-3
 Obsoletes: ros-melodic-kdl_parser_py < 1.13.1-3
-Obsoletes: ros-kinetic-kdl_parser_py
+Obsoletes: ros-kinetic-kdl_parser_py < 1.13.1-3
 
 
 %description
@@ -53,7 +53,7 @@ Requires:       ros-melodic-urdf-devel
 
 Provides: ros-melodic-kdl_parser_py-devel = 1.13.1-3
 Obsoletes: ros-melodic-kdl_parser_py-devel < 1.13.1-3
-Obsoletes: ros-kinetic-kdl_parser_py-devel
+Obsoletes: ros-kinetic-kdl_parser_py-devel < 1.13.1-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

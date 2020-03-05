@@ -26,7 +26,7 @@ Requires:       ros-melodic-forward_command_controller
 
 Provides:  ros-melodic-position_controllers = 0.15.0-3
 Obsoletes: ros-melodic-position_controllers < 0.15.0-3
-Obsoletes: ros-kinetic-position_controllers
+Obsoletes: ros-kinetic-position_controllers < 0.15.0-3
 
 
 %description
@@ -41,7 +41,7 @@ Requires:       ros-melodic-forward_command_controller-devel
 
 Provides: ros-melodic-position_controllers-devel = 0.15.0-3
 Obsoletes: ros-melodic-position_controllers-devel < 0.15.0-3
-Obsoletes: ros-kinetic-position_controllers-devel
+Obsoletes: ros-kinetic-position_controllers-devel < 0.15.0-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

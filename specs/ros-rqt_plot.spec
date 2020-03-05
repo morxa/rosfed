@@ -35,7 +35,7 @@ Requires:       ros-melodic-std_msgs
 
 Provides:  ros-melodic-rqt_plot = 0.4.9-3
 Obsoletes: ros-melodic-rqt_plot < 0.4.9-3
-Obsoletes: ros-kinetic-rqt_plot
+Obsoletes: ros-kinetic-rqt_plot < 0.4.9-3
 
 
 %description
@@ -58,7 +58,7 @@ Requires:       ros-melodic-std_msgs-devel
 
 Provides: ros-melodic-rqt_plot-devel = 0.4.9-3
 Obsoletes: ros-melodic-rqt_plot-devel < 0.4.9-3
-Obsoletes: ros-kinetic-rqt_plot-devel
+Obsoletes: ros-kinetic-rqt_plot-devel < 0.4.9-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

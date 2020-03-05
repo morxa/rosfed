@@ -1,12 +1,12 @@
 Name:           ros-roslib
-Version:        melodic.1.14.7
+Version:        melodic.1.14.8
 Release:        1%{?dist}
 Summary:        ROS package roslib
 
 License:        BSD
 URL:            http://wiki.ros.org/roslib
 
-Source0:        https://github.com/ros-gbp/ros-release/archive/release/melodic/roslib/1.14.7-1.tar.gz#/ros-melodic-roslib-1.14.7-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros-release/archive/release/melodic/roslib/1.14.8-1.tar.gz#/ros-melodic-roslib-1.14.8-source0.tar.gz
 
 
 
@@ -17,7 +17,8 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  boost-devel boost-python3-devel boost-python3-devel
+BuildRequires:  boost-devel
+BuildRequires:  python3-setuptools
 BuildRequires:  tinyxml-devel
 BuildRequires:  ros-melodic-catkin-devel
 BuildRequires:  ros-melodic-rosmake-devel
@@ -28,9 +29,9 @@ Requires:       ros-melodic-catkin
 Requires:       ros-melodic-ros_environment
 Requires:       ros-melodic-rospack
 
-Provides:  ros-melodic-roslib = 1.14.7-1
-Obsoletes: ros-melodic-roslib < 1.14.7-1
-Obsoletes: ros-kinetic-roslib
+Provides:  ros-melodic-roslib = 1.14.8-1
+Obsoletes: ros-melodic-roslib < 1.14.8-1
+Obsoletes: ros-kinetic-roslib < 1.14.8-1
 
 
 %description
@@ -41,16 +42,17 @@ client library implementations.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
+Requires:       python3-setuptools
 Requires:       ros-melodic-catkin-devel
-Requires:       boost-devel boost-python3-devel boost-python3-devel
+Requires:       boost-devel
 Requires:       tinyxml-devel
 Requires:       ros-melodic-rosmake-devel
 Requires:       ros-melodic-rospack-devel
 Requires:       ros-melodic-ros_environment-devel
 
-Provides: ros-melodic-roslib-devel = 1.14.7-1
-Obsoletes: ros-melodic-roslib-devel < 1.14.7-1
-Obsoletes: ros-kinetic-roslib-devel
+Provides: ros-melodic-roslib-devel = 1.14.8-1
+Obsoletes: ros-melodic-roslib-devel < 1.14.8-1
+Obsoletes: ros-kinetic-roslib-devel < 1.14.8-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -157,6 +159,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.8-1
+- Update to latest release
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.7-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.6-3

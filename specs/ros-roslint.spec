@@ -23,7 +23,7 @@ BuildRequires:  ros-melodic-catkin-devel
 
 Provides:  ros-melodic-roslint = 0.11.2-3
 Obsoletes: ros-melodic-roslint < 0.11.2-3
-Obsoletes: ros-kinetic-roslint
+Obsoletes: ros-kinetic-roslint < 0.11.2-3
 
 
 %description
@@ -38,7 +38,7 @@ Requires:       ros-melodic-catkin-devel
 
 Provides: ros-melodic-roslint-devel = 0.11.2-3
 Obsoletes: ros-melodic-roslint-devel < 0.11.2-3
-Obsoletes: ros-kinetic-roslint-devel
+Obsoletes: ros-kinetic-roslint-devel < 0.11.2-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

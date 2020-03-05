@@ -41,7 +41,7 @@ Requires:       ros-melodic-xmlrpcpp
 
 Provides:  ros-melodic-diagnostic_aggregator = 1.9.3-3
 Obsoletes: ros-melodic-diagnostic_aggregator < 1.9.3-3
-Obsoletes: ros-kinetic-diagnostic_aggregator
+Obsoletes: ros-kinetic-diagnostic_aggregator < 1.9.3-3
 
 
 %description
@@ -66,7 +66,7 @@ Requires:       ros-melodic-xmlrpcpp-devel
 
 Provides: ros-melodic-diagnostic_aggregator-devel = 1.9.3-3
 Obsoletes: ros-melodic-diagnostic_aggregator-devel < 1.9.3-3
-Obsoletes: ros-kinetic-diagnostic_aggregator-devel
+Obsoletes: ros-kinetic-diagnostic_aggregator-devel < 1.9.3-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

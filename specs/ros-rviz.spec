@@ -84,7 +84,7 @@ Requires:       ros-melodic-visualization_msgs
 
 Provides:  ros-melodic-rviz = 1.13.7-1
 Obsoletes: ros-melodic-rviz < 1.13.7-1
-Obsoletes: ros-kinetic-rviz
+Obsoletes: ros-kinetic-rviz < 1.13.7-1
 
 
 %description
@@ -136,7 +136,7 @@ Requires:       ros-melodic-media_export-devel
 
 Provides: ros-melodic-rviz-devel = 1.13.7-1
 Obsoletes: ros-melodic-rviz-devel < 1.13.7-1
-Obsoletes: ros-kinetic-rviz-devel
+Obsoletes: ros-kinetic-rviz-devel < 1.13.7-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

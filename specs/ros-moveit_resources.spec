@@ -25,7 +25,7 @@ Requires:       ros-melodic-robot_state_publisher
 
 Provides:  ros-melodic-moveit_resources = 0.6.5-1
 Obsoletes: ros-melodic-moveit_resources < 0.6.5-1
-Obsoletes: ros-kinetic-moveit_resources
+Obsoletes: ros-kinetic-moveit_resources < 0.6.5-1
 
 
 %description
@@ -40,7 +40,7 @@ Requires:       ros-melodic-robot_state_publisher-devel
 
 Provides: ros-melodic-moveit_resources-devel = 0.6.5-1
 Obsoletes: ros-melodic-moveit_resources-devel < 0.6.5-1
-Obsoletes: ros-kinetic-moveit_resources-devel
+Obsoletes: ros-kinetic-moveit_resources-devel < 0.6.5-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

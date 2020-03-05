@@ -27,7 +27,7 @@ BuildRequires:  ros-melodic-catkin-devel
 
 Provides:  ros-melodic-ompl = 1.4.2-1
 Obsoletes: ros-melodic-ompl < 1.4.2-1
-Obsoletes: ros-kinetic-ompl
+Obsoletes: ros-kinetic-ompl < 1.4.2-1
 
 
 %description
@@ -45,7 +45,7 @@ Requires:       ros-melodic-catkin-devel
 
 Provides: ros-melodic-ompl-devel = 1.4.2-1
 Obsoletes: ros-melodic-ompl-devel < 1.4.2-1
-Obsoletes: ros-kinetic-ompl-devel
+Obsoletes: ros-kinetic-ompl-devel < 1.4.2-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

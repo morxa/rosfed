@@ -41,7 +41,7 @@ Requires:       ros-melodic-tf2_ros
 
 Provides:  ros-melodic-clear_costmap_recovery = 1.16.3-1
 Obsoletes: ros-melodic-clear_costmap_recovery < 1.16.3-1
-Obsoletes: ros-kinetic-clear_costmap_recovery
+Obsoletes: ros-kinetic-clear_costmap_recovery < 1.16.3-1
 
 
 %description
@@ -70,7 +70,7 @@ Requires:       ros-melodic-tf2_ros-devel
 
 Provides: ros-melodic-clear_costmap_recovery-devel = 1.16.3-1
 Obsoletes: ros-melodic-clear_costmap_recovery-devel < 1.16.3-1
-Obsoletes: ros-kinetic-clear_costmap_recovery-devel
+Obsoletes: ros-kinetic-clear_costmap_recovery-devel < 1.16.3-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

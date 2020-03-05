@@ -33,7 +33,7 @@ Requires:       ros-melodic-trajectory_msgs
 
 Provides:  ros-melodic-control_msgs = 1.5.1-1
 Obsoletes: ros-melodic-control_msgs < 1.5.1-1
-Obsoletes: ros-kinetic-control_msgs
+Obsoletes: ros-kinetic-control_msgs < 1.5.1-1
 
 
 %description
@@ -54,7 +54,7 @@ Requires:       ros-melodic-message_runtime-devel
 
 Provides: ros-melodic-control_msgs-devel = 1.5.1-1
 Obsoletes: ros-melodic-control_msgs-devel < 1.5.1-1
-Obsoletes: ros-kinetic-control_msgs-devel
+Obsoletes: ros-kinetic-control_msgs-devel < 1.5.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
