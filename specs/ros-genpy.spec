@@ -1,6 +1,6 @@
 Name:           ros-genpy
 Version:        melodic.0.6.9
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package genpy
 
 License:        BSD
@@ -22,12 +22,12 @@ BuildRequires:  ros-melodic-catkin-devel
 BuildRequires:  ros-melodic-genmsg-devel
 
 Requires:       python3-pyyaml
-Requires:       PyYAML
+Requires:       python3dist(pyyaml)
 Requires:       ros-melodic-genmsg
 
-Provides:  ros-melodic-genpy = 0.6.9-1
-Obsoletes: ros-melodic-genpy < 0.6.9-1
-Obsoletes: ros-kinetic-genpy < 0.6.9-1
+Provides:  ros-melodic-genpy = 0.6.9-2
+Obsoletes: ros-melodic-genpy < 0.6.9-2
+Obsoletes: ros-kinetic-genpy < 0.6.9-2
 
 
 %description
@@ -39,9 +39,9 @@ Requires:       %{name} = %{version}-%{release}
 Requires:       ros-melodic-catkin-devel
 Requires:       ros-melodic-genmsg-devel
 
-Provides: ros-melodic-genpy-devel = 0.6.9-1
-Obsoletes: ros-melodic-genpy-devel < 0.6.9-1
-Obsoletes: ros-kinetic-genpy-devel < 0.6.9-1
+Provides: ros-melodic-genpy-devel = 0.6.9-2
+Obsoletes: ros-melodic-genpy-devel < 0.6.9-2
+Obsoletes: ros-kinetic-genpy-devel < 0.6.9-2
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -148,6 +148,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Thu Mar 05 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.6.9-2
+- Fix dependency on python3-pyyaml
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.6.9-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.6.8-3

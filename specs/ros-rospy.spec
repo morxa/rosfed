@@ -1,6 +1,6 @@
 Name:           ros-rospy
 Version:        melodic.1.14.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package rospy
 
 License:        BSD
@@ -24,7 +24,7 @@ Requires:       python3-numpy
 Requires:       python3-pyyaml
 Requires:       python3-rospkg
 Requires:       python3dist(numpy)
-Requires:       PyYAML
+Requires:       python3dist(pyyaml)
 Requires:       ros-melodic-genpy
 Requires:       ros-melodic-roscpp
 Requires:       ros-melodic-rosgraph
@@ -32,9 +32,9 @@ Requires:       ros-melodic-rosgraph_msgs
 Requires:       ros-melodic-roslib
 Requires:       ros-melodic-std_msgs
 
-Provides:  ros-melodic-rospy = 1.14.4-1
-Obsoletes: ros-melodic-rospy < 1.14.4-1
-Obsoletes: ros-kinetic-rospy < 1.14.4-1
+Provides:  ros-melodic-rospy = 1.14.4-2
+Obsoletes: ros-melodic-rospy < 1.14.4-2
+Obsoletes: ros-kinetic-rospy < 1.14.4-2
 
 
 %description
@@ -52,9 +52,9 @@ Requires:       ros-melodic-rosgraph_msgs-devel
 Requires:       ros-melodic-roslib-devel
 Requires:       ros-melodic-std_msgs-devel
 
-Provides: ros-melodic-rospy-devel = 1.14.4-1
-Obsoletes: ros-melodic-rospy-devel < 1.14.4-1
-Obsoletes: ros-kinetic-rospy-devel < 1.14.4-1
+Provides: ros-melodic-rospy-devel = 1.14.4-2
+Obsoletes: ros-melodic-rospy-devel < 1.14.4-2
+Obsoletes: ros-kinetic-rospy-devel < 1.14.4-2
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -161,6 +161,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Thu Mar 05 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.4-2
+- Fix dependency on python3-pyyaml
 * Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.4-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.3-3

@@ -1,6 +1,6 @@
 Name:           ros-rosgraph
 Version:        melodic.1.14.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package rosgraph
 
 License:        BSD
@@ -24,11 +24,11 @@ BuildRequires:  ros-melodic-catkin-devel
 Requires:       python3-netifaces
 Requires:       python3-pyyaml
 Requires:       python3-rospkg
-Requires:       PyYAML
+Requires:       python3dist(pyyaml)
 
-Provides:  ros-melodic-rosgraph = 1.14.4-1
-Obsoletes: ros-melodic-rosgraph < 1.14.4-1
-Obsoletes: ros-kinetic-rosgraph < 1.14.4-1
+Provides:  ros-melodic-rosgraph = 1.14.4-2
+Obsoletes: ros-melodic-rosgraph < 1.14.4-2
+Obsoletes: ros-kinetic-rosgraph < 1.14.4-2
 
 
 %description
@@ -42,9 +42,9 @@ Requires:       %{name} = %{version}-%{release}
 Requires:       ros-melodic-catkin-devel
 Requires:       python3-mock
 
-Provides: ros-melodic-rosgraph-devel = 1.14.4-1
-Obsoletes: ros-melodic-rosgraph-devel < 1.14.4-1
-Obsoletes: ros-kinetic-rosgraph-devel < 1.14.4-1
+Provides: ros-melodic-rosgraph-devel = 1.14.4-2
+Obsoletes: ros-melodic-rosgraph-devel < 1.14.4-2
+Obsoletes: ros-kinetic-rosgraph-devel < 1.14.4-2
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -151,6 +151,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Thu Mar 05 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.4-2
+- Fix dependency on python3-pyyaml
 * Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.4-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.3-3
