@@ -88,6 +88,21 @@ class Tree:
                 return True
         return False
 
+    def get_build_progress(self):
+        """ Count the number of finished and failed builds in the tree."""
+        building = 0
+        finished = 0
+        failed = 0
+        for node in self.nodes.values():
+            if node.state == BuildState.BUILDING:
+                building += 1
+            elif node.state in [BuildState.SUCCEEDED, BuildState.SKIPPED]:
+                finished += 1
+            elif node.state == BuildState.FAILED:
+                failed += 1
+        return {'building': building, 'finished': finished, 'failed': failed,
+                'total': len(self.nodes) }
+
     def to_dot(self):
         """ Generate a DOT representation of the tree.
 

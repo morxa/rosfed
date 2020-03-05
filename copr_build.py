@@ -116,8 +116,10 @@ class CoprBuilder:
                 if self.pkg_is_built(chroot, node.pkg.get_full_name(),
                                      pkg_version):
                     node.state = build_tree.BuildState.SUCCEEDED
-                    cprint('{} is already built, skipping!'.format(node.name),
-                           'green')
+                    build_progress = tree.get_build_progress()
+                    cprint('{}/{}/{}: {} is already built, skipping!'.format(
+                        build_progress['building'], build_progress['finished'],
+                        build_progress['total'], node.name), 'green')
                     wait_for_build = False
                 else:
                     assert node.state == build_tree.BuildState.PENDING, \
@@ -134,11 +136,17 @@ class CoprBuilder:
             node = self.get_node_of_build(tree.nodes.values(), finished_build.id)
             build_ids.remove(finished_build.id)
             if finished_build.state == 'succeeded':
-                cprint('Successful build: {}'.format(node.name), 'green')
                 node.state = build_tree.BuildState.SUCCEEDED
+                build_progress = tree.get_build_progress()
+                cprint('{}/{}/{}: Successful build: {}'.format(
+                    build_progress['building'], build_progress['finished'],
+                    build_progress['total'], node.name), 'green')
             else:
-                cprint('Failed build: {}'.format(node.name), 'red')
                 node.state = build_tree.BuildState.FAILED
+                build_progress = tree.get_build_progress()
+                cprint('{}/{}/{}: Failed build: {}'.format(
+                    build_progress['building'], build_progress['finished'],
+                    build_progress['total'], node.name), 'red')
 
     @functools.lru_cache(16)
     def get_builds(self):
