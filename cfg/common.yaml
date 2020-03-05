@@ -37,6 +37,13 @@ common:
           to:
             type: system
             pkg: python3dist(pyyaml)
+        - sip:
+          from:
+            type: system
+            pkg: sip-devel
+          to:
+            type: system
+            pkg: python3-sip-devel
     run:
       translate:
         - opencv:
@@ -74,6 +81,13 @@ common:
           to:
             type: system
             pkg: python3dist(pyyaml)
+        - sip:
+          from:
+            type: system
+            pkg: sip-devel
+          to:
+            type: system
+            pkg: python3-sip-devel
     distro_names:
       gazebo9: gazebo
       libgazebo7-dev: gazebo-devel
@@ -90,4 +104,3 @@ common:
       python3-catkin-pkg: python3-catkin_pkg
       python3-qt5-bindings: python3-pyside2
       python3-yaml: python3-pyyaml
-      sip-devel: python3-sip-devel
