@@ -28,9 +28,9 @@ BuildRequires:  ros-melodic-catkin-devel
 
 Requires:       ros-melodic-catkin
 
-Provides:  ros-melodic-libg2o = 2018.3.25-3
-Obsoletes: ros-melodic-libg2o < 2018.3.25-3
-Obsoletes: ros-kinetic-libg2o
+Provides:  ros-melodic-libg2o = 2018.3.25-1
+Obsoletes: ros-melodic-libg2o < 2018.3.25-1
+Obsoletes: ros-kinetic-libg2o < 2018.3.25-1
 
 
 %description
@@ -48,9 +48,9 @@ Requires:       openblas-devel
 Requires:       suitesparse-devel
 Requires:       ros-melodic-catkin-devel
 
-Provides: ros-melodic-libg2o-devel = 2018.3.25-3
-Obsoletes: ros-melodic-libg2o-devel < 2018.3.25-3
-Obsoletes: ros-kinetic-libg2o-devel
+Provides: ros-melodic-libg2o-devel = 2018.3.25-1
+Obsoletes: ros-melodic-libg2o-devel < 2018.3.25-1
+Obsoletes: ros-kinetic-libg2o-devel < 2018.3.25-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
