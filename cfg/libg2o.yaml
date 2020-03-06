@@ -1,0 +1,5 @@
+dependencies:
+  build:
+    system:
+      - openblas-devel
+      - lapack-devel
