@@ -1,12 +1,12 @@
 Name:           ros-voxel_grid
-Version:        melodic.1.16.4
+Version:        melodic.1.16.5
 Release:        1%{?dist}
 Summary:        ROS package voxel_grid
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/navigation-release/archive/release/melodic/voxel_grid/1.16.4-1.tar.gz#/ros-melodic-voxel_grid-1.16.4-source0.tar.gz
+Source0:        https://github.com/ros-gbp/navigation-release/archive/release/melodic/voxel_grid/1.16.5-1.tar.gz#/ros-melodic-voxel_grid-1.16.5-source0.tar.gz
 
 
 
@@ -24,9 +24,9 @@ BuildRequires:  ros-melodic-rosunit-devel
 
 Requires:       ros-melodic-roscpp
 
-Provides:  ros-melodic-voxel_grid = 1.16.4-1
-Obsoletes: ros-melodic-voxel_grid < 1.16.4-1
-Obsoletes: ros-kinetic-voxel_grid < 1.16.4-1
+Provides:  ros-melodic-voxel_grid = 1.16.5-1
+Obsoletes: ros-melodic-voxel_grid < 1.16.5-1
+Obsoletes: ros-kinetic-voxel_grid < 1.16.5-1
 
 
 %description
@@ -47,9 +47,9 @@ Requires:       ros-melodic-rosconsole-devel
 Requires:       ros-melodic-roscpp-devel
 Requires:       ros-melodic-rosunit-devel
 
-Provides: ros-melodic-voxel_grid-devel = 1.16.4-1
-Obsoletes: ros-melodic-voxel_grid-devel < 1.16.4-1
-Obsoletes: ros-kinetic-voxel_grid-devel < 1.16.4-1
+Provides: ros-melodic-voxel_grid-devel = 1.16.5-1
+Obsoletes: ros-melodic-voxel_grid-devel < 1.16.5-1
+Obsoletes: ros-kinetic-voxel_grid-devel < 1.16.5-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -156,6 +156,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Mar 18 2020 Nicolas Limpert - melodic.1.16.5-1
+- Update to latest release
 * Thu Mar 05 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.16.4-1
 - Update to latest release
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.16.3-1
