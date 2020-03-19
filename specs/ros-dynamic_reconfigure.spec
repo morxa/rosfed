@@ -1,12 +1,12 @@
 Name:           ros-dynamic_reconfigure
-Version:        melodic.1.6.0
-Release:        3%{?dist}
+Version:        melodic.1.6.1
+Release:        1%{?dist}
 Summary:        ROS package dynamic_reconfigure
 
 License:        BSD
 URL:            http://ros.org/wiki/dynamic_reconfigure
 
-Source0:        https://github.com/ros-gbp/dynamic_reconfigure-release/archive/release/melodic/dynamic_reconfigure/1.6.0-0.tar.gz#/ros-melodic-dynamic_reconfigure-1.6.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/dynamic_reconfigure-release/archive/release/melodic/dynamic_reconfigure/1.6.1-1.tar.gz#/ros-melodic-dynamic_reconfigure-1.6.1-source0.tar.gz
 
 
 
@@ -33,15 +33,14 @@ Requires:       ros-melodic-rospy
 Requires:       ros-melodic-rosservice
 Requires:       ros-melodic-std_msgs
 
-Provides:  ros-melodic-dynamic_reconfigure = 1.6.0-3
-Obsoletes: ros-melodic-dynamic_reconfigure < 1.6.0-3
-Obsoletes: ros-kinetic-dynamic_reconfigure < 1.6.0-3
+Provides:  ros-melodic-dynamic_reconfigure = 1.6.1-1
+Obsoletes: ros-melodic-dynamic_reconfigure < 1.6.1-1
+Obsoletes: ros-kinetic-dynamic_reconfigure < 1.6.1-1
 
 
 %description
-This unary stack contains the dynamic_reconfigure package which
-provides a means to change node parameters at any time without having
-to restart the node.
+The dynamic_reconfigure package provides a means to update parameters
+at runtime without having to restart the node.
 
 %package        devel
 Summary:        Development files for %{name}
@@ -59,9 +58,9 @@ Requires:       ros-melodic-roslib-devel
 Requires:       ros-melodic-rospy-devel
 Requires:       ros-melodic-rosservice-devel
 
-Provides: ros-melodic-dynamic_reconfigure-devel = 1.6.0-3
-Obsoletes: ros-melodic-dynamic_reconfigure-devel < 1.6.0-3
-Obsoletes: ros-kinetic-dynamic_reconfigure-devel < 1.6.0-3
+Provides: ros-melodic-dynamic_reconfigure-devel = 1.6.1-1
+Obsoletes: ros-melodic-dynamic_reconfigure-devel < 1.6.1-1
+Obsoletes: ros-kinetic-dynamic_reconfigure-devel < 1.6.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -168,6 +167,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Mar 18 2020 Nicolas Limpert - melodic.1.6.1-1
+- Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.6.0-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.6.0-2
