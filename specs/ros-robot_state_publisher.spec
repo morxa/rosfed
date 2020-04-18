@@ -1,12 +1,12 @@
 Name:           ros-robot_state_publisher
-Version:        melodic.1.14.0
+Version:        melodic.1.14.1
 Release:        1%{?dist}
 Summary:        ROS package robot_state_publisher
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/robot_state_publisher-release/archive/release/melodic/robot_state_publisher/1.14.0-1.tar.gz#/ros-melodic-robot_state_publisher-1.14.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/robot_state_publisher-release/archive/release/melodic/robot_state_publisher/1.14.1-1.tar.gz#/ros-melodic-robot_state_publisher-1.14.1-source0.tar.gz
 
 
 
@@ -44,9 +44,9 @@ Requires:       ros-melodic-tf
 Requires:       ros-melodic-tf2_kdl
 Requires:       ros-melodic-tf2_ros
 
-Provides:  ros-melodic-robot_state_publisher = 1.14.0-1
-Obsoletes: ros-melodic-robot_state_publisher < 1.14.0-1
-Obsoletes: ros-kinetic-robot_state_publisher < 1.14.0-1
+Provides:  ros-melodic-robot_state_publisher = 1.14.1-1
+Obsoletes: ros-melodic-robot_state_publisher < 1.14.1-1
+Obsoletes: ros-kinetic-robot_state_publisher < 1.14.1-1
 
 
 %description
@@ -71,9 +71,9 @@ Requires:       ros-melodic-tf-devel
 Requires:       ros-melodic-tf2_kdl-devel
 Requires:       ros-melodic-tf2_ros-devel
 
-Provides: ros-melodic-robot_state_publisher-devel = 1.14.0-1
-Obsoletes: ros-melodic-robot_state_publisher-devel < 1.14.0-1
-Obsoletes: ros-kinetic-robot_state_publisher-devel < 1.14.0-1
+Provides: ros-melodic-robot_state_publisher-devel = 1.14.1-1
+Obsoletes: ros-melodic-robot_state_publisher-devel < 1.14.1-1
+Obsoletes: ros-kinetic-robot_state_publisher-devel < 1.14.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -180,6 +180,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.1-1
+- Update to latest release
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.0-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.6-3

@@ -1,12 +1,12 @@
 Name:           ros-kdl_conversions
-Version:        melodic.1.12.0
-Release:        3%{?dist}
+Version:        melodic.1.12.1
+Release:        1%{?dist}
 Summary:        ROS package kdl_conversions
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/geometry-release/archive/release/melodic/kdl_conversions/1.12.0-0.tar.gz#/ros-melodic-kdl_conversions-1.12.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/geometry-release/archive/release/melodic/kdl_conversions/1.12.1-1.tar.gz#/ros-melodic-kdl_conversions-1.12.1-source0.tar.gz
 
 
 
@@ -28,9 +28,9 @@ BuildRequires:  ros-melodic-roscpp_serialization-devel
 Requires:       ros-melodic-geometry_msgs
 Requires:       ros-melodic-orocos_kdl
 
-Provides:  ros-melodic-kdl_conversions = 1.12.0-3
-Obsoletes: ros-melodic-kdl_conversions < 1.12.0-3
-Obsoletes: ros-kinetic-kdl_conversions < 1.12.0-3
+Provides:  ros-melodic-kdl_conversions = 1.12.1-1
+Obsoletes: ros-melodic-kdl_conversions < 1.12.1-1
+Obsoletes: ros-kinetic-kdl_conversions < 1.12.1-1
 
 
 %description
@@ -47,9 +47,9 @@ Requires:       ros-melodic-geometry_msgs-devel
 Requires:       ros-melodic-orocos_kdl-devel
 Requires:       ros-melodic-roscpp_serialization-devel
 
-Provides: ros-melodic-kdl_conversions-devel = 1.12.0-3
-Obsoletes: ros-melodic-kdl_conversions-devel < 1.12.0-3
-Obsoletes: ros-kinetic-kdl_conversions-devel < 1.12.0-3
+Provides: ros-melodic-kdl_conversions-devel = 1.12.1-1
+Obsoletes: ros-melodic-kdl_conversions-devel < 1.12.1-1
+Obsoletes: ros-kinetic-kdl_conversions-devel < 1.12.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -156,6 +156,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.12.1-1
+- Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.12.0-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.12.0-2

@@ -1,12 +1,12 @@
 Name:           ros-nav_core
-Version:        melodic.1.16.5
+Version:        melodic.1.16.6
 Release:        1%{?dist}
 Summary:        ROS package nav_core
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/navigation-release/archive/release/melodic/nav_core/1.16.5-1.tar.gz#/ros-melodic-nav_core-1.16.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/navigation-release/archive/release/melodic/nav_core/1.16.6-1.tar.gz#/ros-melodic-nav_core-1.16.6-source0.tar.gz
 
 
 BuildArch: noarch
@@ -30,9 +30,9 @@ Requires:       ros-melodic-geometry_msgs
 Requires:       ros-melodic-std_msgs
 Requires:       ros-melodic-tf2_ros
 
-Provides:  ros-melodic-nav_core = 1.16.5-1
-Obsoletes: ros-melodic-nav_core < 1.16.5-1
-Obsoletes: ros-kinetic-nav_core < 1.16.5-1
+Provides:  ros-melodic-nav_core = 1.16.6-1
+Obsoletes: ros-melodic-nav_core < 1.16.6-1
+Obsoletes: ros-kinetic-nav_core < 1.16.6-1
 
 
 %description
@@ -52,9 +52,9 @@ Requires:       ros-melodic-geometry_msgs-devel
 Requires:       ros-melodic-std_msgs-devel
 Requires:       ros-melodic-tf2_ros-devel
 
-Provides: ros-melodic-nav_core-devel = 1.16.5-1
-Obsoletes: ros-melodic-nav_core-devel < 1.16.5-1
-Obsoletes: ros-kinetic-nav_core-devel < 1.16.5-1
+Provides: ros-melodic-nav_core-devel = 1.16.6-1
+Obsoletes: ros-melodic-nav_core-devel < 1.16.6-1
+Obsoletes: ros-kinetic-nav_core-devel < 1.16.6-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -161,6 +161,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.16.6-1
+- Update to latest release
 * Wed Mar 18 2020 Nicolas Limpert - melodic.1.16.5-1
 - Update to latest release
 * Thu Mar 05 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.16.4-1

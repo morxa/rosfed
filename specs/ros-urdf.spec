@@ -1,12 +1,12 @@
 Name:           ros-urdf
-Version:        melodic.1.13.1
-Release:        3%{?dist}
+Version:        melodic.1.13.2
+Release:        1%{?dist}
 Summary:        ROS package urdf
 
 License:        BSD
 URL:            http://ros.org/wiki/urdf
 
-Source0:        https://github.com/ros-gbp/urdf-release/archive/release/melodic/urdf/1.13.1-0.tar.gz#/ros-melodic-urdf-1.13.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/urdf-release/archive/release/melodic/urdf/1.13.2-1.tar.gz#/ros-melodic-urdf-1.13.2-source0.tar.gz
 
 
 
@@ -34,9 +34,9 @@ Requires:       ros-melodic-pluginlib
 Requires:       ros-melodic-rosconsole_bridge
 Requires:       ros-melodic-roscpp
 
-Provides:  ros-melodic-urdf = 1.13.1-3
-Obsoletes: ros-melodic-urdf < 1.13.1-3
-Obsoletes: ros-kinetic-urdf < 1.13.1-3
+Provides:  ros-melodic-urdf = 1.13.2-1
+Obsoletes: ros-melodic-urdf < 1.13.2-1
+Obsoletes: ros-kinetic-urdf < 1.13.2-1
 
 
 %description
@@ -61,9 +61,9 @@ Requires:       ros-melodic-roscpp-devel
 Requires:       ros-melodic-rostest-devel
 Requires:       ros-melodic-urdf_parser_plugin-devel
 
-Provides: ros-melodic-urdf-devel = 1.13.1-3
-Obsoletes: ros-melodic-urdf-devel < 1.13.1-3
-Obsoletes: ros-kinetic-urdf-devel < 1.13.1-3
+Provides: ros-melodic-urdf-devel = 1.13.2-1
+Obsoletes: ros-melodic-urdf-devel < 1.13.2-1
+Obsoletes: ros-kinetic-urdf-devel < 1.13.2-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -170,6 +170,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.2-1
+- Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.1-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.1-2

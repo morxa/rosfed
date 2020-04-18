@@ -1,12 +1,12 @@
 Name:           ros-urdfdom_py
-Version:        melodic.0.4.2
-Release:        2%{?dist}
+Version:        melodic.0.4.3
+Release:        1%{?dist}
 Summary:        ROS package urdfdom_py
 
 License:        BSD
 URL:            http://wiki.ros.org/urdfdom_py
 
-Source0:        https://github.com/ros-gbp/urdfdom_py-release/archive/release/melodic/urdfdom_py/0.4.2-1.tar.gz#/ros-melodic-urdfdom_py-0.4.2-source0.tar.gz
+Source0:        https://github.com/ros-gbp/urdfdom_py-release/archive/release/melodic/urdfdom_py/0.4.3-1.tar.gz#/ros-melodic-urdfdom_py-0.4.3-source0.tar.gz
 
 
 BuildArch: noarch
@@ -19,16 +19,16 @@ BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
 BuildRequires:  python3-mock
+BuildRequires:  python3-setuptools
 BuildRequires:  ros-melodic-catkin-devel
 
-Requires:       python3-lxml
 Requires:       python3-pyyaml
 Requires:       python3dist(pyyaml)
 Requires:       ros-melodic-rospy
 
-Provides:  ros-melodic-urdfdom_py = 0.4.2-2
-Obsoletes: ros-melodic-urdfdom_py < 0.4.2-2
-Obsoletes: ros-kinetic-urdfdom_py < 0.4.2-2
+Provides:  ros-melodic-urdfdom_py = 0.4.3-1
+Obsoletes: ros-melodic-urdfdom_py < 0.4.3-1
+Obsoletes: ros-kinetic-urdfdom_py < 0.4.3-1
 
 
 %description
@@ -37,13 +37,14 @@ Python implementation of the URDF parser.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
+Requires:       python3-setuptools
 Requires:       ros-melodic-catkin-devel
 Requires:       python3-mock
 Requires:       ros-melodic-rospy-devel
 
-Provides: ros-melodic-urdfdom_py-devel = 0.4.2-2
-Obsoletes: ros-melodic-urdfdom_py-devel < 0.4.2-2
-Obsoletes: ros-kinetic-urdfdom_py-devel < 0.4.2-2
+Provides: ros-melodic-urdfdom_py-devel = 0.4.3-1
+Obsoletes: ros-melodic-urdfdom_py-devel < 0.4.3-1
+Obsoletes: ros-kinetic-urdfdom_py-devel < 0.4.3-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -150,6 +151,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.3-1
+- Update to latest release
 * Thu Mar 05 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.2-2
 - Fix dependency on python3-pyyaml
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.2-1

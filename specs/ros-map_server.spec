@@ -1,12 +1,12 @@
 Name:           ros-map_server
-Version:        melodic.1.16.5
+Version:        melodic.1.16.6
 Release:        1%{?dist}
 Summary:        ROS package map_server
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/navigation-release/archive/release/melodic/map_server/1.16.5-1.tar.gz#/ros-melodic-map_server-1.16.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/navigation-release/archive/release/melodic/map_server/1.16.6-1.tar.gz#/ros-melodic-map_server-1.16.6-source0.tar.gz
 
 
 
@@ -33,9 +33,9 @@ Requires:       ros-melodic-nav_msgs
 Requires:       ros-melodic-roscpp
 Requires:       ros-melodic-tf2
 
-Provides:  ros-melodic-map_server = 1.16.5-1
-Obsoletes: ros-melodic-map_server < 1.16.5-1
-Obsoletes: ros-kinetic-map_server < 1.16.5-1
+Provides:  ros-melodic-map_server = 1.16.6-1
+Obsoletes: ros-melodic-map_server < 1.16.6-1
+Obsoletes: ros-kinetic-map_server < 1.16.6-1
 
 
 %description
@@ -56,9 +56,9 @@ Requires:       ros-melodic-rostest-devel
 Requires:       ros-melodic-rosunit-devel
 Requires:       ros-melodic-tf2-devel
 
-Provides: ros-melodic-map_server-devel = 1.16.5-1
-Obsoletes: ros-melodic-map_server-devel < 1.16.5-1
-Obsoletes: ros-kinetic-map_server-devel < 1.16.5-1
+Provides: ros-melodic-map_server-devel = 1.16.6-1
+Obsoletes: ros-melodic-map_server-devel < 1.16.6-1
+Obsoletes: ros-kinetic-map_server-devel < 1.16.6-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -165,6 +165,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.16.6-1
+- Update to latest release
 * Wed Mar 18 2020 Nicolas Limpert - melodic.1.16.5-1
 - Update to latest release
 * Thu Mar 05 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.16.4-1

@@ -1,12 +1,12 @@
 Name:           ros-media_export
-Version:        melodic.0.2.0
-Release:        3%{?dist}
+Version:        melodic.0.3.0
+Release:        1%{?dist}
 Summary:        ROS package media_export
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/media_export-release/archive/release/melodic/media_export/0.2.0-0.tar.gz#/ros-melodic-media_export-0.2.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/media_export-release/archive/release/melodic/media_export/0.3.0-1.tar.gz#/ros-melodic-media_export-0.3.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -21,9 +21,9 @@ BuildRequires:  python3-devel
 BuildRequires:  ros-melodic-catkin-devel
 
 
-Provides:  ros-melodic-media_export = 0.2.0-3
-Obsoletes: ros-melodic-media_export < 0.2.0-3
-Obsoletes: ros-kinetic-media_export < 0.2.0-3
+Provides:  ros-melodic-media_export = 0.3.0-1
+Obsoletes: ros-melodic-media_export < 0.3.0-1
+Obsoletes: ros-kinetic-media_export < 0.3.0-1
 
 
 %description
@@ -34,9 +34,9 @@ Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-melodic-catkin-devel
 
-Provides: ros-melodic-media_export-devel = 0.2.0-3
-Obsoletes: ros-melodic-media_export-devel < 0.2.0-3
-Obsoletes: ros-kinetic-media_export-devel < 0.2.0-3
+Provides: ros-melodic-media_export-devel = 0.3.0-1
+Obsoletes: ros-melodic-media_export-devel < 0.3.0-1
+Obsoletes: ros-kinetic-media_export-devel < 0.3.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -143,6 +143,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.3.0-1
+- Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.2.0-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.2.0-2

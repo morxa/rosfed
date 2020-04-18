@@ -1,12 +1,12 @@
 Name:           ros-pcl_conversions
-Version:        melodic.1.7.0
+Version:        melodic.1.7.1
 Release:        1%{?dist}
 Summary:        ROS package pcl_conversions
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/perception_pcl-release/archive/release/melodic/pcl_conversions/1.7.0-2.tar.gz#/ros-melodic-pcl_conversions-1.7.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/perception_pcl-release/archive/release/melodic/pcl_conversions/1.7.1-1.tar.gz#/ros-melodic-pcl_conversions-1.7.1-source0.tar.gz
 
 
 BuildArch: noarch
@@ -27,9 +27,9 @@ BuildRequires:  ros-melodic-sensor_msgs-devel
 BuildRequires:  ros-melodic-std_msgs-devel
 
 
-Provides:  ros-melodic-pcl_conversions = 1.7.0-1
-Obsoletes: ros-melodic-pcl_conversions < 1.7.0-1
-Obsoletes: ros-kinetic-pcl_conversions < 1.7.0-1
+Provides:  ros-melodic-pcl_conversions = 1.7.1-1
+Obsoletes: ros-melodic-pcl_conversions < 1.7.1-1
+Obsoletes: ros-kinetic-pcl_conversions < 1.7.1-1
 
 
 %description
@@ -46,9 +46,9 @@ Requires:       ros-melodic-roscpp-devel
 Requires:       ros-melodic-sensor_msgs-devel
 Requires:       ros-melodic-std_msgs-devel
 
-Provides: ros-melodic-pcl_conversions-devel = 1.7.0-1
-Obsoletes: ros-melodic-pcl_conversions-devel < 1.7.0-1
-Obsoletes: ros-kinetic-pcl_conversions-devel < 1.7.0-1
+Provides: ros-melodic-pcl_conversions-devel = 1.7.1-1
+Obsoletes: ros-melodic-pcl_conversions-devel < 1.7.1-1
+Obsoletes: ros-kinetic-pcl_conversions-devel < 1.7.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -155,6 +155,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.7.1-1
+- Update to latest release
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.7.0-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.6.2-3

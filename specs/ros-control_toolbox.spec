@@ -1,12 +1,12 @@
 Name:           ros-control_toolbox
-Version:        melodic.1.17.0
-Release:        3%{?dist}
+Version:        melodic.1.18.0
+Release:        1%{?dist}
 Summary:        ROS package control_toolbox
 
 License:        BSD
 URL:            http://ros.org/wiki/control_toolbox
 
-Source0:        https://github.com/ros-gbp/control_toolbox-release/archive/release/melodic/control_toolbox/1.17.0-0.tar.gz#/ros-melodic-control_toolbox-1.17.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/control_toolbox-release/archive/release/melodic/control_toolbox/1.18.0-1.tar.gz#/ros-melodic-control_toolbox-1.18.0-source0.tar.gz
 
 
 
@@ -35,9 +35,9 @@ Requires:       ros-melodic-realtime_tools
 Requires:       ros-melodic-roscpp
 Requires:       ros-melodic-std_msgs
 
-Provides:  ros-melodic-control_toolbox = 1.17.0-3
-Obsoletes: ros-melodic-control_toolbox < 1.17.0-3
-Obsoletes: ros-kinetic-control_toolbox < 1.17.0-3
+Provides:  ros-melodic-control_toolbox = 1.18.0-1
+Obsoletes: ros-melodic-control_toolbox < 1.18.0-1
+Obsoletes: ros-kinetic-control_toolbox < 1.18.0-1
 
 
 %description
@@ -59,9 +59,9 @@ Requires:       ros-melodic-rosunit-devel
 Requires:       ros-melodic-std_msgs-devel
 Requires:       ros-melodic-message_runtime-devel
 
-Provides: ros-melodic-control_toolbox-devel = 1.17.0-3
-Obsoletes: ros-melodic-control_toolbox-devel < 1.17.0-3
-Obsoletes: ros-kinetic-control_toolbox-devel < 1.17.0-3
+Provides: ros-melodic-control_toolbox-devel = 1.18.0-1
+Obsoletes: ros-melodic-control_toolbox-devel < 1.18.0-1
+Obsoletes: ros-kinetic-control_toolbox-devel < 1.18.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -168,6 +168,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.18.0-1
+- Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.17.0-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.17.0-2

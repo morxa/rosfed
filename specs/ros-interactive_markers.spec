@@ -1,12 +1,12 @@
 Name:           ros-interactive_markers
-Version:        melodic.1.11.4
-Release:        3%{?dist}
+Version:        melodic.1.11.5
+Release:        1%{?dist}
 Summary:        ROS package interactive_markers
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/interactive_markers-release/archive/release/melodic/interactive_markers/1.11.4-0.tar.gz#/ros-melodic-interactive_markers-1.11.4-source0.tar.gz
+Source0:        https://github.com/ros-gbp/interactive_markers-release/archive/release/melodic/interactive_markers/1.11.5-1.tar.gz#/ros-melodic-interactive_markers-1.11.5-source0.tar.gz
 
 
 
@@ -34,9 +34,9 @@ Requires:       ros-melodic-std_msgs
 Requires:       ros-melodic-tf
 Requires:       ros-melodic-visualization_msgs
 
-Provides:  ros-melodic-interactive_markers = 1.11.4-3
-Obsoletes: ros-melodic-interactive_markers < 1.11.4-3
-Obsoletes: ros-kinetic-interactive_markers < 1.11.4-3
+Provides:  ros-melodic-interactive_markers = 1.11.5-1
+Obsoletes: ros-melodic-interactive_markers < 1.11.5-1
+Obsoletes: ros-kinetic-interactive_markers < 1.11.5-1
 
 
 %description
@@ -55,9 +55,9 @@ Requires:       ros-melodic-std_msgs-devel
 Requires:       ros-melodic-tf-devel
 Requires:       ros-melodic-visualization_msgs-devel
 
-Provides: ros-melodic-interactive_markers-devel = 1.11.4-3
-Obsoletes: ros-melodic-interactive_markers-devel < 1.11.4-3
-Obsoletes: ros-kinetic-interactive_markers-devel < 1.11.4-3
+Provides: ros-melodic-interactive_markers-devel = 1.11.5-1
+Obsoletes: ros-melodic-interactive_markers-devel < 1.11.5-1
+Obsoletes: ros-kinetic-interactive_markers-devel < 1.11.5-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -164,6 +164,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.11.5-1
+- Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.11.4-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.11.4-2

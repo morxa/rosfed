@@ -1,12 +1,12 @@
 Name:           ros-code_coverage
-Version:        melodic.0.3.0
+Version:        melodic.0.4.0
 Release:        1%{?dist}
 Summary:        ROS package code_coverage
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/mikeferguson/code_coverage-gbp/archive/release/melodic/code_coverage/0.3.0-1.tar.gz#/ros-melodic-code_coverage-0.3.0-source0.tar.gz
+Source0:        https://github.com/mikeferguson/code_coverage-gbp/archive/release/melodic/code_coverage/0.4.0-1.tar.gz#/ros-melodic-code_coverage-0.4.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -19,13 +19,15 @@ BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
 BuildRequires:  lcov
+BuildRequires:  python3-coverage
 BuildRequires:  ros-melodic-catkin-devel
 
 Requires:       lcov
+Requires:       python3-coverage
 
-Provides:  ros-melodic-code_coverage = 0.3.0-1
-Obsoletes: ros-melodic-code_coverage < 0.3.0-1
-Obsoletes: ros-kinetic-code_coverage < 0.3.0-1
+Provides:  ros-melodic-code_coverage = 0.4.0-1
+Obsoletes: ros-melodic-code_coverage < 0.4.0-1
+Obsoletes: ros-kinetic-code_coverage < 0.4.0-1
 
 
 %description
@@ -36,10 +38,11 @@ Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-melodic-catkin-devel
 Requires:       lcov
+Requires:       python3-coverage
 
-Provides: ros-melodic-code_coverage-devel = 0.3.0-1
-Obsoletes: ros-melodic-code_coverage-devel < 0.3.0-1
-Obsoletes: ros-kinetic-code_coverage-devel < 0.3.0-1
+Provides: ros-melodic-code_coverage-devel = 0.4.0-1
+Obsoletes: ros-melodic-code_coverage-devel < 0.4.0-1
+Obsoletes: ros-kinetic-code_coverage-devel < 0.4.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -146,6 +149,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.0-1
+- Update to latest release
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.3.0-1
 - Update to latest release
 * Wed Jul 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.2.4-1

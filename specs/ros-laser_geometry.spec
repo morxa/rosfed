@@ -1,12 +1,12 @@
 Name:           ros-laser_geometry
-Version:        melodic.1.6.4
-Release:        3%{?dist}
+Version:        melodic.1.6.5
+Release:        1%{?dist}
 Summary:        ROS package laser_geometry
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/laser_geometry-release/archive/release/melodic/laser_geometry/1.6.4-0.tar.gz#/ros-melodic-laser_geometry-1.6.4-source0.tar.gz
+Source0:        https://github.com/ros-gbp/laser_geometry-release/archive/release/melodic/laser_geometry/1.6.5-1.tar.gz#/ros-melodic-laser_geometry-1.6.5-source0.tar.gz
 
 
 
@@ -21,21 +21,23 @@ BuildRequires:  boost-devel boost-python3-devel boost-python3-devel
 BuildRequires:  eigen3-devel
 BuildRequires:  ros-melodic-angles-devel
 BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-cmake_modules-devel
 BuildRequires:  ros-melodic-roscpp-devel
 BuildRequires:  ros-melodic-rosunit-devel
 BuildRequires:  ros-melodic-sensor_msgs-devel
 BuildRequires:  ros-melodic-tf-devel
+BuildRequires:  ros-melodic-tf2-devel
 
+Requires:       python3-numpy
 Requires:       python3dist(numpy)
 Requires:       ros-melodic-angles
 Requires:       ros-melodic-roscpp
 Requires:       ros-melodic-sensor_msgs
 Requires:       ros-melodic-tf
+Requires:       ros-melodic-tf2
 
-Provides:  ros-melodic-laser_geometry = 1.6.4-3
-Obsoletes: ros-melodic-laser_geometry < 1.6.4-3
-Obsoletes: ros-kinetic-laser_geometry < 1.6.4-3
+Provides:  ros-melodic-laser_geometry = 1.6.5-1
+Obsoletes: ros-melodic-laser_geometry < 1.6.5-1
+Obsoletes: ros-kinetic-laser_geometry < 1.6.5-1
 
 
 %description
@@ -52,15 +54,15 @@ Requires:       ros-melodic-catkin-devel
 Requires:       boost-devel boost-python3-devel boost-python3-devel
 Requires:       eigen3-devel
 Requires:       ros-melodic-angles-devel
-Requires:       ros-melodic-cmake_modules-devel
 Requires:       ros-melodic-roscpp-devel
 Requires:       ros-melodic-rosunit-devel
 Requires:       ros-melodic-sensor_msgs-devel
 Requires:       ros-melodic-tf-devel
+Requires:       ros-melodic-tf2-devel
 
-Provides: ros-melodic-laser_geometry-devel = 1.6.4-3
-Obsoletes: ros-melodic-laser_geometry-devel < 1.6.4-3
-Obsoletes: ros-kinetic-laser_geometry-devel < 1.6.4-3
+Provides: ros-melodic-laser_geometry-devel = 1.6.5-1
+Obsoletes: ros-melodic-laser_geometry-devel < 1.6.5-1
+Obsoletes: ros-kinetic-laser_geometry-devel < 1.6.5-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -167,6 +169,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.6.5-1
+- Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.6.4-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.6.4-2

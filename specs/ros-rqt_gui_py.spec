@@ -1,12 +1,12 @@
 Name:           ros-rqt_gui_py
-Version:        melodic.0.5.0
-Release:        3%{?dist}
+Version:        melodic.0.5.1
+Release:        1%{?dist}
 Summary:        ROS package rqt_gui_py
 
 License:        BSD
 URL:            http://ros.org/wiki/rqt_gui_py
 
-Source0:        https://github.com/ros-gbp/rqt-release/archive/release/melodic/rqt_gui_py/0.5.0-0.tar.gz#/ros-melodic-rqt_gui_py-0.5.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt-release/archive/release/melodic/rqt_gui_py/0.5.1-1.tar.gz#/ros-melodic-rqt_gui_py-0.5.1-source0.tar.gz
 
 
 BuildArch: noarch
@@ -27,9 +27,9 @@ Requires:       ros-melodic-qt_gui
 Requires:       ros-melodic-rospy
 Requires:       ros-melodic-rqt_gui
 
-Provides:  ros-melodic-rqt_gui_py = 0.5.0-3
-Obsoletes: ros-melodic-rqt_gui_py < 0.5.0-3
-Obsoletes: ros-kinetic-rqt_gui_py < 0.5.0-3
+Provides:  ros-melodic-rqt_gui_py = 0.5.1-1
+Obsoletes: ros-melodic-rqt_gui_py < 0.5.1-1
+Obsoletes: ros-kinetic-rqt_gui_py < 0.5.1-1
 
 
 %description
@@ -44,9 +44,9 @@ Requires:       ros-melodic-qt_gui-devel
 Requires:       ros-melodic-rospy-devel
 Requires:       ros-melodic-rqt_gui-devel
 
-Provides: ros-melodic-rqt_gui_py-devel = 0.5.0-3
-Obsoletes: ros-melodic-rqt_gui_py-devel < 0.5.0-3
-Obsoletes: ros-kinetic-rqt_gui_py-devel < 0.5.0-3
+Provides: ros-melodic-rqt_gui_py-devel = 0.5.1-1
+Obsoletes: ros-melodic-rqt_gui_py-devel < 0.5.1-1
+Obsoletes: ros-kinetic-rqt_gui_py-devel < 0.5.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -153,6 +153,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.5.1-1
+- Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.5.0-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.5.0-2

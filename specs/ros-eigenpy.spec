@@ -1,12 +1,12 @@
 Name:           ros-eigenpy
-Version:        melodic.1.6.9
+Version:        melodic.2.3.1
 Release:        1%{?dist}
 Summary:        ROS package eigenpy
 
 License:        BSD
 URL:            https://github.com/stack-of-tasks/eigenpy
 
-Source0:        https://github.com/ipab-slmc/eigenpy_catkin-release/archive/release/melodic/eigenpy/1.6.9-1.tar.gz#/ros-melodic-eigenpy-1.6.9-source0.tar.gz
+Source0:        https://github.com/ipab-slmc/eigenpy_catkin-release/archive/release/melodic/eigenpy/2.3.1-1.tar.gz#/ros-melodic-eigenpy-2.3.1-source0.tar.gz
 
 
 
@@ -29,9 +29,9 @@ BuildRequires:  ros-melodic-catkin-devel
 
 Requires:       python3dist(numpy)
 
-Provides:  ros-melodic-eigenpy = 1.6.9-1
-Obsoletes: ros-melodic-eigenpy < 1.6.9-1
-Obsoletes: ros-kinetic-eigenpy < 1.6.9-1
+Provides:  ros-melodic-eigenpy = 2.3.1-1
+Obsoletes: ros-melodic-eigenpy < 2.3.1-1
+Obsoletes: ros-kinetic-eigenpy < 2.3.1-1
 
 
 %description
@@ -50,9 +50,9 @@ Requires:       python3-devel
 Requires:       python3dist(numpy)
 Requires:       ros-melodic-catkin-devel
 
-Provides: ros-melodic-eigenpy-devel = 1.6.9-1
-Obsoletes: ros-melodic-eigenpy-devel < 1.6.9-1
-Obsoletes: ros-kinetic-eigenpy-devel < 1.6.9-1
+Provides: ros-melodic-eigenpy-devel = 2.3.1-1
+Obsoletes: ros-melodic-eigenpy-devel < 2.3.1-1
+Obsoletes: ros-kinetic-eigenpy-devel < 2.3.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -159,6 +159,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.2.3.1-1
+- Update to latest release
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.6.9-1
 - Update to latest release
 * Wed Jul 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.5.1-1

@@ -1,12 +1,12 @@
 Name:           ros-pcl_ros
-Version:        melodic.1.7.0
+Version:        melodic.1.7.1
 Release:        1%{?dist}
 Summary:        ROS package pcl_ros
 
 License:        BSD
 URL:            http://ros.org/wiki/perception_pcl
 
-Source0:        https://github.com/ros-gbp/perception_pcl-release/archive/release/melodic/pcl_ros/1.7.0-2.tar.gz#/ros-melodic-pcl_ros-1.7.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/perception_pcl-release/archive/release/melodic/pcl_ros/1.7.1-1.tar.gz#/ros-melodic-pcl_ros-1.7.1-source0.tar.gz
 
 
 
@@ -63,9 +63,9 @@ Requires:       ros-melodic-tf2
 Requires:       ros-melodic-tf2_eigen
 Requires:       ros-melodic-tf2_ros
 
-Provides:  ros-melodic-pcl_ros = 1.7.0-1
-Obsoletes: ros-melodic-pcl_ros < 1.7.0-1
-Obsoletes: ros-kinetic-pcl_ros < 1.7.0-1
+Provides:  ros-melodic-pcl_ros = 1.7.1-1
+Obsoletes: ros-melodic-pcl_ros < 1.7.1-1
+Obsoletes: ros-kinetic-pcl_ros < 1.7.1-1
 
 
 %description
@@ -105,9 +105,9 @@ Requires:       ros-melodic-tf2-devel
 Requires:       ros-melodic-tf2_eigen-devel
 Requires:       ros-melodic-tf2_ros-devel
 
-Provides: ros-melodic-pcl_ros-devel = 1.7.0-1
-Obsoletes: ros-melodic-pcl_ros-devel < 1.7.0-1
-Obsoletes: ros-kinetic-pcl_ros-devel < 1.7.0-1
+Provides: ros-melodic-pcl_ros-devel = 1.7.1-1
+Obsoletes: ros-melodic-pcl_ros-devel < 1.7.1-1
+Obsoletes: ros-kinetic-pcl_ros-devel < 1.7.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -214,6 +214,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.7.1-1
+- Update to latest release
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.7.0-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.6.2-3

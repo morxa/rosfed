@@ -1,12 +1,12 @@
 Name:           ros-clear_costmap_recovery
-Version:        melodic.1.16.4
+Version:        melodic.1.16.6
 Release:        1%{?dist}
 Summary:        ROS package clear_costmap_recovery
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/navigation-release/archive/release/melodic/clear_costmap_recovery/1.16.4-1.tar.gz#/ros-melodic-clear_costmap_recovery-1.16.4-source0.tar.gz
+Source0:        https://github.com/ros-gbp/navigation-release/archive/release/melodic/clear_costmap_recovery/1.16.6-1.tar.gz#/ros-melodic-clear_costmap_recovery-1.16.6-source0.tar.gz
 
 
 
@@ -39,9 +39,9 @@ Requires:       ros-melodic-pluginlib
 Requires:       ros-melodic-roscpp
 Requires:       ros-melodic-tf2_ros
 
-Provides:  ros-melodic-clear_costmap_recovery = 1.16.4-1
-Obsoletes: ros-melodic-clear_costmap_recovery < 1.16.4-1
-Obsoletes: ros-kinetic-clear_costmap_recovery < 1.16.4-1
+Provides:  ros-melodic-clear_costmap_recovery = 1.16.6-1
+Obsoletes: ros-melodic-clear_costmap_recovery < 1.16.6-1
+Obsoletes: ros-kinetic-clear_costmap_recovery < 1.16.6-1
 
 
 %description
@@ -68,9 +68,9 @@ Requires:       ros-melodic-roscpp-devel
 Requires:       ros-melodic-rostest-devel
 Requires:       ros-melodic-tf2_ros-devel
 
-Provides: ros-melodic-clear_costmap_recovery-devel = 1.16.4-1
-Obsoletes: ros-melodic-clear_costmap_recovery-devel < 1.16.4-1
-Obsoletes: ros-kinetic-clear_costmap_recovery-devel < 1.16.4-1
+Provides: ros-melodic-clear_costmap_recovery-devel = 1.16.6-1
+Obsoletes: ros-melodic-clear_costmap_recovery-devel < 1.16.6-1
+Obsoletes: ros-kinetic-clear_costmap_recovery-devel < 1.16.6-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -177,6 +177,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.16.6-1
+- Update to latest release
 * Thu Mar 05 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.16.4-1
 - Update to latest release
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.16.3-1

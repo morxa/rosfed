@@ -1,12 +1,12 @@
 Name:           ros-diff_drive_controller
-Version:        melodic.0.15.0
-Release:        3%{?dist}
+Version:        melodic.0.15.1
+Release:        1%{?dist}
 Summary:        ROS package diff_drive_controller
 
 License:        BSD
 URL:            https://github.com/ros-controls/ros_controllers/wiki
 
-Source0:        https://github.com/ros-gbp/ros_controllers-release/archive/release/melodic/diff_drive_controller/0.15.0-0.tar.gz#/ros-melodic-diff_drive_controller-0.15.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_controllers-release/archive/release/melodic/diff_drive_controller/0.15.1-1.tar.gz#/ros-melodic-diff_drive_controller-0.15.1-source0.tar.gz
 
 
 
@@ -23,6 +23,7 @@ BuildRequires:  ros-melodic-controller_interface-devel
 BuildRequires:  ros-melodic-controller_manager-devel
 BuildRequires:  ros-melodic-dynamic_reconfigure-devel
 BuildRequires:  ros-melodic-nav_msgs-devel
+BuildRequires:  ros-melodic-pluginlib-devel
 BuildRequires:  ros-melodic-realtime_tools-devel
 BuildRequires:  ros-melodic-rosgraph_msgs-devel
 BuildRequires:  ros-melodic-rostest-devel
@@ -35,13 +36,14 @@ Requires:       ros-melodic-control_msgs
 Requires:       ros-melodic-controller_interface
 Requires:       ros-melodic-dynamic_reconfigure
 Requires:       ros-melodic-nav_msgs
+Requires:       ros-melodic-pluginlib
 Requires:       ros-melodic-realtime_tools
 Requires:       ros-melodic-tf
 Requires:       ros-melodic-urdf
 
-Provides:  ros-melodic-diff_drive_controller = 0.15.0-3
-Obsoletes: ros-melodic-diff_drive_controller < 0.15.0-3
-Obsoletes: ros-kinetic-diff_drive_controller < 0.15.0-3
+Provides:  ros-melodic-diff_drive_controller = 0.15.1-1
+Obsoletes: ros-melodic-diff_drive_controller < 0.15.1-1
+Obsoletes: ros-kinetic-diff_drive_controller < 0.15.1-1
 
 
 %description
@@ -56,6 +58,7 @@ Requires:       ros-melodic-controller_interface-devel
 Requires:       ros-melodic-controller_manager-devel
 Requires:       ros-melodic-dynamic_reconfigure-devel
 Requires:       ros-melodic-nav_msgs-devel
+Requires:       ros-melodic-pluginlib-devel
 Requires:       ros-melodic-realtime_tools-devel
 Requires:       ros-melodic-rosgraph_msgs-devel
 Requires:       ros-melodic-rostest-devel
@@ -64,9 +67,9 @@ Requires:       ros-melodic-tf-devel
 Requires:       ros-melodic-urdf-devel
 Requires:       ros-melodic-xacro-devel
 
-Provides: ros-melodic-diff_drive_controller-devel = 0.15.0-3
-Obsoletes: ros-melodic-diff_drive_controller-devel < 0.15.0-3
-Obsoletes: ros-kinetic-diff_drive_controller-devel < 0.15.0-3
+Provides: ros-melodic-diff_drive_controller-devel = 0.15.1-1
+Obsoletes: ros-melodic-diff_drive_controller-devel < 0.15.1-1
+Obsoletes: ros-kinetic-diff_drive_controller-devel < 0.15.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -173,6 +176,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.15.1-1
+- Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.15.0-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.15.0-2

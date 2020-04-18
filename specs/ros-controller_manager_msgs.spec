@@ -1,12 +1,12 @@
 Name:           ros-controller_manager_msgs
-Version:        melodic.0.17.0
+Version:        melodic.0.18.0
 Release:        1%{?dist}
 Summary:        ROS package controller_manager_msgs
 
 License:        BSD
 URL:            https://github.com/ros-controls/ros_control/wiki
 
-Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/melodic/controller_manager_msgs/0.17.0-1.tar.gz#/ros-melodic-controller_manager_msgs-0.17.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/melodic/controller_manager_msgs/0.18.0-1.tar.gz#/ros-melodic-controller_manager_msgs-0.18.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -27,9 +27,9 @@ Requires:       ros-melodic-rospy
 Requires:       ros-melodic-rosservice
 Requires:       ros-melodic-std_msgs
 
-Provides:  ros-melodic-controller_manager_msgs = 0.17.0-1
-Obsoletes: ros-melodic-controller_manager_msgs < 0.17.0-1
-Obsoletes: ros-kinetic-controller_manager_msgs < 0.17.0-1
+Provides:  ros-melodic-controller_manager_msgs = 0.18.0-1
+Obsoletes: ros-melodic-controller_manager_msgs < 0.18.0-1
+Obsoletes: ros-kinetic-controller_manager_msgs < 0.18.0-1
 
 
 %description
@@ -45,9 +45,9 @@ Requires:       ros-melodic-message_runtime-devel
 Requires:       ros-melodic-rospy-devel
 Requires:       ros-melodic-rosservice-devel
 
-Provides: ros-melodic-controller_manager_msgs-devel = 0.17.0-1
-Obsoletes: ros-melodic-controller_manager_msgs-devel < 0.17.0-1
-Obsoletes: ros-kinetic-controller_manager_msgs-devel < 0.17.0-1
+Provides: ros-melodic-controller_manager_msgs-devel = 0.18.0-1
+Obsoletes: ros-melodic-controller_manager_msgs-devel < 0.18.0-1
+Obsoletes: ros-kinetic-controller_manager_msgs-devel < 0.18.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -154,6 +154,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.18.0-1
+- Update to latest release
 * Mon Mar 02 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.17.0-1
 - Update to latest release
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.16.0-1

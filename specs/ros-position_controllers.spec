@@ -1,12 +1,12 @@
 Name:           ros-position_controllers
-Version:        melodic.0.15.0
-Release:        3%{?dist}
+Version:        melodic.0.15.1
+Release:        1%{?dist}
 Summary:        ROS package position_controllers
 
 License:        BSD
 URL:            https://github.com/ros-controls/ros_controllers/wiki
 
-Source0:        https://github.com/ros-gbp/ros_controllers-release/archive/release/melodic/position_controllers/0.15.0-0.tar.gz#/ros-melodic-position_controllers-0.15.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_controllers-release/archive/release/melodic/position_controllers/0.15.1-1.tar.gz#/ros-melodic-position_controllers-0.15.1-source0.tar.gz
 
 
 
@@ -20,13 +20,15 @@ BuildRequires:  python3-devel
 BuildRequires:  ros-melodic-catkin-devel
 BuildRequires:  ros-melodic-controller_interface-devel
 BuildRequires:  ros-melodic-forward_command_controller-devel
+BuildRequires:  ros-melodic-pluginlib-devel
 
 Requires:       ros-melodic-controller_interface
 Requires:       ros-melodic-forward_command_controller
+Requires:       ros-melodic-pluginlib
 
-Provides:  ros-melodic-position_controllers = 0.15.0-3
-Obsoletes: ros-melodic-position_controllers < 0.15.0-3
-Obsoletes: ros-kinetic-position_controllers < 0.15.0-3
+Provides:  ros-melodic-position_controllers = 0.15.1-1
+Obsoletes: ros-melodic-position_controllers < 0.15.1-1
+Obsoletes: ros-kinetic-position_controllers < 0.15.1-1
 
 
 %description
@@ -38,10 +40,11 @@ Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       ros-melodic-catkin-devel
 Requires:       ros-melodic-controller_interface-devel
 Requires:       ros-melodic-forward_command_controller-devel
+Requires:       ros-melodic-pluginlib-devel
 
-Provides: ros-melodic-position_controllers-devel = 0.15.0-3
-Obsoletes: ros-melodic-position_controllers-devel < 0.15.0-3
-Obsoletes: ros-kinetic-position_controllers-devel < 0.15.0-3
+Provides: ros-melodic-position_controllers-devel = 0.15.1-1
+Obsoletes: ros-melodic-position_controllers-devel < 0.15.1-1
+Obsoletes: ros-kinetic-position_controllers-devel < 0.15.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -148,6 +151,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.15.1-1
+- Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.15.0-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.15.0-2

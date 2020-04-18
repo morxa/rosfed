@@ -1,12 +1,12 @@
 Name:           ros-ros_control
-Version:        melodic.0.17.0
+Version:        melodic.0.18.0
 Release:        1%{?dist}
 Summary:        ROS package ros_control
 
 License:        BSD
 URL:            http://ros.org/wiki/ros_control
 
-Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/melodic/ros_control/0.17.0-1.tar.gz#/ros-melodic-ros_control-0.17.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/melodic/ros_control/0.18.0-1.tar.gz#/ros-melodic-ros_control-0.18.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -29,9 +29,9 @@ Requires:       ros-melodic-joint_limits_interface
 Requires:       ros-melodic-realtime_tools
 Requires:       ros-melodic-transmission_interface
 
-Provides:  ros-melodic-ros_control = 0.17.0-1
-Obsoletes: ros-melodic-ros_control < 0.17.0-1
-Obsoletes: ros-kinetic-ros_control < 0.17.0-1
+Provides:  ros-melodic-ros_control = 0.18.0-1
+Obsoletes: ros-melodic-ros_control < 0.18.0-1
+Obsoletes: ros-kinetic-ros_control < 0.18.0-1
 
 
 %description
@@ -51,9 +51,9 @@ Requires:       ros-melodic-joint_limits_interface-devel
 Requires:       ros-melodic-realtime_tools-devel
 Requires:       ros-melodic-transmission_interface-devel
 
-Provides: ros-melodic-ros_control-devel = 0.17.0-1
-Obsoletes: ros-melodic-ros_control-devel < 0.17.0-1
-Obsoletes: ros-kinetic-ros_control-devel < 0.17.0-1
+Provides: ros-melodic-ros_control-devel = 0.18.0-1
+Obsoletes: ros-melodic-ros_control-devel < 0.18.0-1
+Obsoletes: ros-kinetic-ros_control-devel < 0.18.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -160,6 +160,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.18.0-1
+- Update to latest release
 * Mon Mar 02 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.17.0-1
 - Update to latest release
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.16.0-1

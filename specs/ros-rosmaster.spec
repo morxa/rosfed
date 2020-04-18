@@ -1,12 +1,12 @@
 Name:           ros-rosmaster
-Version:        melodic.1.14.4
+Version:        melodic.1.14.5
 Release:        1%{?dist}
 Summary:        ROS package rosmaster
 
 License:        BSD
 URL:            http://wiki.ros.org/rosmaster
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/melodic/rosmaster/1.14.4-1.tar.gz#/ros-melodic-rosmaster-1.14.4-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/melodic/rosmaster/1.14.5-1.tar.gz#/ros-melodic-rosmaster-1.14.5-source0.tar.gz
 
 
 BuildArch: noarch
@@ -23,9 +23,9 @@ BuildRequires:  ros-melodic-catkin-devel
 Requires:       python3-defusedxml
 Requires:       ros-melodic-rosgraph
 
-Provides:  ros-melodic-rosmaster = 1.14.4-1
-Obsoletes: ros-melodic-rosmaster < 1.14.4-1
-Obsoletes: ros-kinetic-rosmaster < 1.14.4-1
+Provides:  ros-melodic-rosmaster = 1.14.5-1
+Obsoletes: ros-melodic-rosmaster < 1.14.5-1
+Obsoletes: ros-kinetic-rosmaster < 1.14.5-1
 
 
 %description
@@ -37,9 +37,9 @@ Requires:       %{name} = %{version}-%{release}
 Requires:       ros-melodic-catkin-devel
 Requires:       ros-melodic-rosgraph-devel
 
-Provides: ros-melodic-rosmaster-devel = 1.14.4-1
-Obsoletes: ros-melodic-rosmaster-devel < 1.14.4-1
-Obsoletes: ros-kinetic-rosmaster-devel < 1.14.4-1
+Provides: ros-melodic-rosmaster-devel = 1.14.5-1
+Obsoletes: ros-melodic-rosmaster-devel < 1.14.5-1
+Obsoletes: ros-kinetic-rosmaster-devel < 1.14.5-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -146,6 +146,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.5-1
+- Update to latest release
 * Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.4-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.3-3

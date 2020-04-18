@@ -1,12 +1,12 @@
 Name:           ros-rospy
-Version:        melodic.1.14.4
-Release:        2%{?dist}
+Version:        melodic.1.14.5
+Release:        1%{?dist}
 Summary:        ROS package rospy
 
 License:        BSD
 URL:            http://wiki.ros.org/rospy
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/melodic/rospy/1.14.4-1.tar.gz#/ros-melodic-rospy-1.14.4-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/melodic/rospy/1.14.5-1.tar.gz#/ros-melodic-rospy-1.14.5-source0.tar.gz
 
 
 BuildArch: noarch
@@ -32,9 +32,9 @@ Requires:       ros-melodic-rosgraph_msgs
 Requires:       ros-melodic-roslib
 Requires:       ros-melodic-std_msgs
 
-Provides:  ros-melodic-rospy = 1.14.4-2
-Obsoletes: ros-melodic-rospy < 1.14.4-2
-Obsoletes: ros-kinetic-rospy < 1.14.4-2
+Provides:  ros-melodic-rospy = 1.14.5-1
+Obsoletes: ros-melodic-rospy < 1.14.5-1
+Obsoletes: ros-kinetic-rospy < 1.14.5-1
 
 
 %description
@@ -52,9 +52,9 @@ Requires:       ros-melodic-rosgraph_msgs-devel
 Requires:       ros-melodic-roslib-devel
 Requires:       ros-melodic-std_msgs-devel
 
-Provides: ros-melodic-rospy-devel = 1.14.4-2
-Obsoletes: ros-melodic-rospy-devel < 1.14.4-2
-Obsoletes: ros-kinetic-rospy-devel < 1.14.4-2
+Provides: ros-melodic-rospy-devel = 1.14.5-1
+Obsoletes: ros-melodic-rospy-devel < 1.14.5-1
+Obsoletes: ros-kinetic-rospy-devel < 1.14.5-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -161,6 +161,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.5-1
+- Update to latest release
 * Thu Mar 05 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.4-2
 - Fix dependency on python3-pyyaml
 * Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.4-1

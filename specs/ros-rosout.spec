@@ -1,12 +1,12 @@
 Name:           ros-rosout
-Version:        melodic.1.14.4
+Version:        melodic.1.14.5
 Release:        1%{?dist}
 Summary:        ROS package rosout
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/melodic/rosout/1.14.4-1.tar.gz#/ros-melodic-rosout-1.14.4-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/melodic/rosout/1.14.5-1.tar.gz#/ros-melodic-rosout-1.14.5-source0.tar.gz
 
 
 
@@ -27,9 +27,9 @@ BuildRequires:  ros-melodic-rostime-devel
 Requires:       ros-melodic-roscpp
 Requires:       ros-melodic-rosgraph_msgs
 
-Provides:  ros-melodic-rosout = 1.14.4-1
-Obsoletes: ros-melodic-rosout < 1.14.4-1
-Obsoletes: ros-kinetic-rosout < 1.14.4-1
+Provides:  ros-melodic-rosout = 1.14.5-1
+Obsoletes: ros-melodic-rosout < 1.14.5-1
+Obsoletes: ros-kinetic-rosout < 1.14.5-1
 
 
 %description
@@ -45,9 +45,9 @@ Requires:       ros-melodic-roscpp-devel
 Requires:       ros-melodic-rosgraph_msgs-devel
 Requires:       ros-melodic-rostime-devel
 
-Provides: ros-melodic-rosout-devel = 1.14.4-1
-Obsoletes: ros-melodic-rosout-devel < 1.14.4-1
-Obsoletes: ros-kinetic-rosout-devel < 1.14.4-1
+Provides: ros-melodic-rosout-devel = 1.14.5-1
+Obsoletes: ros-melodic-rosout-devel < 1.14.5-1
+Obsoletes: ros-kinetic-rosout-devel < 1.14.5-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -154,6 +154,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.5-1
+- Update to latest release
 * Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.4-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.3-3
