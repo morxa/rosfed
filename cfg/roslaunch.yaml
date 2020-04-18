@@ -1,1 +1,5 @@
 noarch: true
+dependencies:
+  run:
+    system:
+      - /usr/bin/rosversion

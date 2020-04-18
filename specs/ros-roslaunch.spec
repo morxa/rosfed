@@ -1,6 +1,6 @@
 Name:           ros-roslaunch
 Version:        melodic.1.14.5
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package roslaunch
 
 License:        BSD
@@ -21,6 +21,7 @@ BuildRequires:  python3-devel
 BuildRequires:  ros-melodic-catkin-devel
 BuildRequires:  ros-melodic-rosbuild-devel
 
+Requires:       /usr/bin/rosversion
 Requires:       python3-paramiko
 Requires:       python3-pyyaml
 Requires:       python3-rospkg
@@ -33,9 +34,9 @@ Requires:       ros-melodic-rosout
 Requires:       ros-melodic-rosparam
 Requires:       ros-melodic-rosunit
 
-Provides:  ros-melodic-roslaunch = 1.14.5-1
-Obsoletes: ros-melodic-roslaunch < 1.14.5-1
-Obsoletes: ros-kinetic-roslaunch < 1.14.5-1
+Provides:  ros-melodic-roslaunch = 1.14.5-2
+Obsoletes: ros-melodic-roslaunch < 1.14.5-2
+Obsoletes: ros-kinetic-roslaunch < 1.14.5-2
 
 
 %description
@@ -54,9 +55,9 @@ Requires:       ros-melodic-rosout-devel
 Requires:       ros-melodic-rosparam-devel
 Requires:       ros-melodic-rosunit-devel
 
-Provides: ros-melodic-roslaunch-devel = 1.14.5-1
-Obsoletes: ros-melodic-roslaunch-devel < 1.14.5-1
-Obsoletes: ros-kinetic-roslaunch-devel < 1.14.5-1
+Provides: ros-melodic-roslaunch-devel = 1.14.5-2
+Obsoletes: ros-melodic-roslaunch-devel < 1.14.5-2
+Obsoletes: ros-kinetic-roslaunch-devel < 1.14.5-2
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -163,6 +164,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sat Apr 18 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.5-2
+- Add dependency on rosversion
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.5-1
 - Update to latest release
 * Thu Mar 05 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.4-2
