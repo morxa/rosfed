@@ -1,6 +1,6 @@
 Name:           ros-qt_gui_cpp
 Version:        melodic.0.4.0
-Release:        1%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package qt_gui_cpp
 
 License:        BSD
@@ -19,13 +19,13 @@ BuildRequires:  python3-devel
 
 BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
+BuildRequires:  libXext-devel
 BuildRequires:  pkgconfig
 BuildRequires:  poco-devel
 BuildRequires:  python3-qt5-devel
 BuildRequires:  python3-sip-devel
 BuildRequires:  qt5-qtbase-devel
 BuildRequires:  qtermwidget-qt5-devel
-BuildRequires:  shiboken-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
 BuildRequires:  ros-melodic-catkin-devel
@@ -36,9 +36,9 @@ BuildRequires:  ros-melodic-python_qt_binding-devel
 Requires:       ros-melodic-pluginlib
 Requires:       ros-melodic-qt_gui
 
-Provides:  ros-melodic-qt_gui_cpp = 0.4.0-1
-Obsoletes: ros-melodic-qt_gui_cpp < 0.4.0-1
-Obsoletes: ros-kinetic-qt_gui_cpp < 0.4.0-1
+Provides:  ros-melodic-qt_gui_cpp = 0.4.0-3
+Obsoletes: ros-melodic-qt_gui_cpp < 0.4.0-3
+Obsoletes: ros-kinetic-qt_gui_cpp < 0.4.0-3
 
 
 %description
@@ -52,13 +52,13 @@ Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       ros-melodic-catkin-devel
 Requires:       boost-devel
 Requires:       console-bridge-devel
+Requires:       libXext-devel
 Requires:       pkgconfig
 Requires:       poco-devel
 Requires:       python3-qt5-devel
 Requires:       python3-sip-devel
 Requires:       qt5-qtbase-devel
 Requires:       qtermwidget-qt5-devel
-Requires:       shiboken-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
 Requires:       ros-melodic-cmake_modules-devel
@@ -66,9 +66,9 @@ Requires:       ros-melodic-pluginlib-devel
 Requires:       ros-melodic-python_qt_binding-devel
 Requires:       ros-melodic-qt_gui-devel
 
-Provides: ros-melodic-qt_gui_cpp-devel = 0.4.0-1
-Obsoletes: ros-melodic-qt_gui_cpp-devel < 0.4.0-1
-Obsoletes: ros-kinetic-qt_gui_cpp-devel < 0.4.0-1
+Provides: ros-melodic-qt_gui_cpp-devel = 0.4.0-3
+Obsoletes: ros-melodic-qt_gui_cpp-devel < 0.4.0-3
+Obsoletes: ros-kinetic-qt_gui_cpp-devel < 0.4.0-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -176,6 +176,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Apr 29 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.0-3
+- Add BR on libXext
+* Wed Apr 29 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.0-2
+- Remove BR on shiboken
 * Mon Mar 02 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.0-1
 - Update to latest release
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.3.16-1
