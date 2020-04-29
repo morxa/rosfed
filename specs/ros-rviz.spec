@@ -1,6 +1,6 @@
 Name:           ros-rviz
 Version:        melodic.1.13.11
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package rviz
 
 License:        BSD
@@ -19,6 +19,7 @@ BuildRequires:  python3-devel
 
 BuildRequires:  assimp-devel
 BuildRequires:  eigen3-devel
+BuildRequires:  libXext-devel
 BuildRequires:  lz4-devel
 BuildRequires:  mesa-libGL-devel mesa-libGLU-devel
 BuildRequires:  ogre-devel
@@ -84,9 +85,9 @@ Requires:       ros-melodic-tf
 Requires:       ros-melodic-urdf
 Requires:       ros-melodic-visualization_msgs
 
-Provides:  ros-melodic-rviz = 1.13.11-1
-Obsoletes: ros-melodic-rviz < 1.13.11-1
-Obsoletes: ros-kinetic-rviz < 1.13.11-1
+Provides:  ros-melodic-rviz = 1.13.11-2
+Obsoletes: ros-melodic-rviz < 1.13.11-2
+Obsoletes: ros-kinetic-rviz < 1.13.11-2
 
 
 %description
@@ -98,6 +99,7 @@ Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       ros-melodic-catkin-devel
 Requires:       assimp-devel
 Requires:       eigen3-devel
+Requires:       libXext-devel
 Requires:       lz4-devel
 Requires:       mesa-libGL-devel mesa-libGLU-devel
 Requires:       ogre-devel
@@ -138,9 +140,9 @@ Requires:       ros-melodic-visualization_msgs-devel
 Requires:       ros-melodic-media_export-devel
 Requires:       ros-melodic-message_runtime-devel
 
-Provides: ros-melodic-rviz-devel = 1.13.11-1
-Obsoletes: ros-melodic-rviz-devel < 1.13.11-1
-Obsoletes: ros-kinetic-rviz-devel < 1.13.11-1
+Provides: ros-melodic-rviz-devel = 1.13.11-2
+Obsoletes: ros-melodic-rviz-devel < 1.13.11-2
+Obsoletes: ros-kinetic-rviz-devel < 1.13.11-2
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -248,6 +250,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Apr 29 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.11-2
+- Add BR on libXext
 * Wed Apr 29 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.11-1
 - Update to latest release
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.9-1

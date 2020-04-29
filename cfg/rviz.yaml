@@ -7,3 +7,4 @@ dependencies:
       - tinyxml2-devel
       - lz4-devel
       - urdfdom-devel
+      - libXext-devel
