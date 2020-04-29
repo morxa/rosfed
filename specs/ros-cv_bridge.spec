@@ -1,6 +1,6 @@
 Name:           ros-cv_bridge
 Version:        melodic.1.13.0
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        ROS package cv_bridge
 
 License:        BSD
@@ -8,7 +8,7 @@ URL:            http://www.ros.org/wiki/cv_bridge
 
 Source0:        https://github.com/ros-gbp/vision_opencv-release/archive/release/melodic/cv_bridge/1.13.0-0.tar.gz#/ros-melodic-cv_bridge-1.13.0-source0.tar.gz
 
-Patch0: ros-cv_bridge.python.patch
+Patch0: ros-cv_bridge.opencv4.patch
 
 
 # common BRs
@@ -33,9 +33,9 @@ BuildRequires:  ros-melodic-sensor_msgs-devel
 Requires:       python3-opencv
 Requires:       ros-melodic-rosconsole
 
-Provides:  ros-melodic-cv_bridge = 1.13.0-3
-Obsoletes: ros-melodic-cv_bridge < 1.13.0-3
-Obsoletes: ros-kinetic-cv_bridge < 1.13.0-3
+Provides:  ros-melodic-cv_bridge = 1.13.0-4
+Obsoletes: ros-melodic-cv_bridge < 1.13.0-4
+Obsoletes: ros-kinetic-cv_bridge < 1.13.0-4
 
 
 %description
@@ -57,9 +57,9 @@ Requires:       ros-melodic-rosconsole-devel
 Requires:       ros-melodic-roscpp_serialization-devel
 Requires:       ros-melodic-rostest-devel
 
-Provides: ros-melodic-cv_bridge-devel = 1.13.0-3
-Obsoletes: ros-melodic-cv_bridge-devel < 1.13.0-3
-Obsoletes: ros-kinetic-cv_bridge-devel < 1.13.0-3
+Provides: ros-melodic-cv_bridge-devel = 1.13.0-4
+Obsoletes: ros-melodic-cv_bridge-devel < 1.13.0-4
+Obsoletes: ros-kinetic-cv_bridge-devel < 1.13.0-4
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -167,6 +167,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Apr 29 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.0-4
+- Add patch for OpenCV4 compatitibility
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.0-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.0-2

@@ -5,4 +5,4 @@ dependencies:
     ros:
       - roscpp_serialization
 patches:
-  - ros-cv_bridge.python.patch
+  - ros-cv_bridge.opencv4.patch
