@@ -1,12 +1,12 @@
 Name:           ros-moveit_ros_robot_interaction
-Version:        melodic.1.0.2
+Version:        melodic.1.0.3
 Release:        1%{?dist}
 Summary:        ROS package moveit_ros_robot_interaction
 
 License:        BSD
 URL:            http://moveit.ros.org
 
-Source0:        https://github.com/ros-gbp/moveit-release/archive/release/melodic/moveit_ros_robot_interaction/1.0.2-1.tar.gz#/ros-melodic-moveit_ros_robot_interaction-1.0.2-source0.tar.gz
+Source0:        https://github.com/ros-gbp/moveit-release/archive/release/melodic/moveit_ros_robot_interaction/1.0.3-1.tar.gz#/ros-melodic-moveit_ros_robot_interaction-1.0.3-source0.tar.gz
 
 
 
@@ -41,9 +41,9 @@ Requires:       ros-melodic-tf2_eigen
 Requires:       ros-melodic-tf2_geometry_msgs
 Requires:       ros-melodic-tf2_ros
 
-Provides:  ros-melodic-moveit_ros_robot_interaction = 1.0.2-1
-Obsoletes: ros-melodic-moveit_ros_robot_interaction < 1.0.2-1
-Obsoletes: ros-kinetic-moveit_ros_robot_interaction < 1.0.2-1
+Provides:  ros-melodic-moveit_ros_robot_interaction = 1.0.3-1
+Obsoletes: ros-melodic-moveit_ros_robot_interaction < 1.0.3-1
+Obsoletes: ros-kinetic-moveit_ros_robot_interaction < 1.0.3-1
 
 
 %description
@@ -68,9 +68,9 @@ Requires:       ros-melodic-tf2_eigen-devel
 Requires:       ros-melodic-tf2_geometry_msgs-devel
 Requires:       ros-melodic-tf2_ros-devel
 
-Provides: ros-melodic-moveit_ros_robot_interaction-devel = 1.0.2-1
-Obsoletes: ros-melodic-moveit_ros_robot_interaction-devel < 1.0.2-1
-Obsoletes: ros-kinetic-moveit_ros_robot_interaction-devel < 1.0.2-1
+Provides: ros-melodic-moveit_ros_robot_interaction-devel = 1.0.3-1
+Obsoletes: ros-melodic-moveit_ros_robot_interaction-devel < 1.0.3-1
+Obsoletes: ros-kinetic-moveit_ros_robot_interaction-devel < 1.0.3-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -177,6 +177,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Apr 29 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.0.3-1
+- Update to latest release
 * Wed Jul 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.0.2-1
 - Update to latest release
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.9.15-1

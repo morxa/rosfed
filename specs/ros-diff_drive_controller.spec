@@ -1,12 +1,12 @@
 Name:           ros-diff_drive_controller
-Version:        melodic.0.15.1
+Version:        melodic.0.16.1
 Release:        1%{?dist}
 Summary:        ROS package diff_drive_controller
 
 License:        BSD
 URL:            https://github.com/ros-controls/ros_controllers/wiki
 
-Source0:        https://github.com/ros-gbp/ros_controllers-release/archive/release/melodic/diff_drive_controller/0.15.1-1.tar.gz#/ros-melodic-diff_drive_controller-0.15.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_controllers-release/archive/release/melodic/diff_drive_controller/0.16.1-1.tar.gz#/ros-melodic-diff_drive_controller-0.16.1-source0.tar.gz
 
 
 
@@ -41,9 +41,9 @@ Requires:       ros-melodic-realtime_tools
 Requires:       ros-melodic-tf
 Requires:       ros-melodic-urdf
 
-Provides:  ros-melodic-diff_drive_controller = 0.15.1-1
-Obsoletes: ros-melodic-diff_drive_controller < 0.15.1-1
-Obsoletes: ros-kinetic-diff_drive_controller < 0.15.1-1
+Provides:  ros-melodic-diff_drive_controller = 0.16.1-1
+Obsoletes: ros-melodic-diff_drive_controller < 0.16.1-1
+Obsoletes: ros-kinetic-diff_drive_controller < 0.16.1-1
 
 
 %description
@@ -67,9 +67,9 @@ Requires:       ros-melodic-tf-devel
 Requires:       ros-melodic-urdf-devel
 Requires:       ros-melodic-xacro-devel
 
-Provides: ros-melodic-diff_drive_controller-devel = 0.15.1-1
-Obsoletes: ros-melodic-diff_drive_controller-devel < 0.15.1-1
-Obsoletes: ros-kinetic-diff_drive_controller-devel < 0.15.1-1
+Provides: ros-melodic-diff_drive_controller-devel = 0.16.1-1
+Obsoletes: ros-melodic-diff_drive_controller-devel < 0.16.1-1
+Obsoletes: ros-kinetic-diff_drive_controller-devel < 0.16.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -176,6 +176,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Apr 29 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.16.1-1
+- Update to latest release
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.15.1-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.15.0-3

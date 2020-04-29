@@ -1,12 +1,12 @@
 Name:           ros-chomp_motion_planner
-Version:        melodic.1.0.2
+Version:        melodic.1.0.3
 Release:        1%{?dist}
 Summary:        ROS package chomp_motion_planner
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/moveit-release/archive/release/melodic/chomp_motion_planner/1.0.2-1.tar.gz#/ros-melodic-chomp_motion_planner-1.0.2-source0.tar.gz
+Source0:        https://github.com/ros-gbp/moveit-release/archive/release/melodic/chomp_motion_planner/1.0.3-1.tar.gz#/ros-melodic-chomp_motion_planner-1.0.3-source0.tar.gz
 
 
 
@@ -22,9 +22,9 @@ BuildRequires:  ros-melodic-moveit_core-devel
 BuildRequires:  ros-melodic-roscpp-devel
 
 
-Provides:  ros-melodic-chomp_motion_planner = 1.0.2-1
-Obsoletes: ros-melodic-chomp_motion_planner < 1.0.2-1
-Obsoletes: ros-kinetic-chomp_motion_planner < 1.0.2-1
+Provides:  ros-melodic-chomp_motion_planner = 1.0.3-1
+Obsoletes: ros-melodic-chomp_motion_planner < 1.0.3-1
+Obsoletes: ros-kinetic-chomp_motion_planner < 1.0.3-1
 
 
 %description
@@ -37,9 +37,9 @@ Requires:       ros-melodic-catkin-devel
 Requires:       ros-melodic-moveit_core-devel
 Requires:       ros-melodic-roscpp-devel
 
-Provides: ros-melodic-chomp_motion_planner-devel = 1.0.2-1
-Obsoletes: ros-melodic-chomp_motion_planner-devel < 1.0.2-1
-Obsoletes: ros-kinetic-chomp_motion_planner-devel < 1.0.2-1
+Provides: ros-melodic-chomp_motion_planner-devel = 1.0.3-1
+Obsoletes: ros-melodic-chomp_motion_planner-devel < 1.0.3-1
+Obsoletes: ros-kinetic-chomp_motion_planner-devel < 1.0.3-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -146,6 +146,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Apr 29 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.0.3-1
+- Update to latest release
 * Wed Jul 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.0.2-1
 - Update to latest release
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.9.15-1

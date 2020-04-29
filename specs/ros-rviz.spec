@@ -1,12 +1,12 @@
 Name:           ros-rviz
-Version:        melodic.1.13.9
+Version:        melodic.1.13.11
 Release:        1%{?dist}
 Summary:        ROS package rviz
 
 License:        BSD
 URL:            http://wiki.ros.org/rviz
 
-Source0:        https://github.com/ros-gbp/rviz-release/archive/release/melodic/rviz/1.13.9-2.tar.gz#/ros-melodic-rviz-1.13.9-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rviz-release/archive/release/melodic/rviz/1.13.11-1.tar.gz#/ros-melodic-rviz-1.13.11-source0.tar.gz
 
 
 
@@ -39,6 +39,7 @@ BuildRequires:  ros-melodic-interactive_markers-devel
 BuildRequires:  ros-melodic-laser_geometry-devel
 BuildRequires:  ros-melodic-map_msgs-devel
 BuildRequires:  ros-melodic-message_filters-devel
+BuildRequires:  ros-melodic-message_generation-devel
 BuildRequires:  ros-melodic-nav_msgs-devel
 BuildRequires:  ros-melodic-pluginlib-devel
 BuildRequires:  ros-melodic-python_qt_binding-devel
@@ -66,6 +67,7 @@ Requires:       ros-melodic-laser_geometry
 Requires:       ros-melodic-map_msgs
 Requires:       ros-melodic-media_export
 Requires:       ros-melodic-message_filters
+Requires:       ros-melodic-message_runtime
 Requires:       ros-melodic-nav_msgs
 Requires:       ros-melodic-pluginlib
 Requires:       ros-melodic-python_qt_binding
@@ -82,9 +84,9 @@ Requires:       ros-melodic-tf
 Requires:       ros-melodic-urdf
 Requires:       ros-melodic-visualization_msgs
 
-Provides:  ros-melodic-rviz = 1.13.9-1
-Obsoletes: ros-melodic-rviz < 1.13.9-1
-Obsoletes: ros-kinetic-rviz < 1.13.9-1
+Provides:  ros-melodic-rviz = 1.13.11-1
+Obsoletes: ros-melodic-rviz < 1.13.11-1
+Obsoletes: ros-kinetic-rviz < 1.13.11-1
 
 
 %description
@@ -115,6 +117,7 @@ Requires:       ros-melodic-interactive_markers-devel
 Requires:       ros-melodic-laser_geometry-devel
 Requires:       ros-melodic-map_msgs-devel
 Requires:       ros-melodic-message_filters-devel
+Requires:       ros-melodic-message_generation-devel
 Requires:       ros-melodic-nav_msgs-devel
 Requires:       ros-melodic-pluginlib-devel
 Requires:       ros-melodic-python_qt_binding-devel
@@ -133,10 +136,11 @@ Requires:       ros-melodic-tf-devel
 Requires:       ros-melodic-urdf-devel
 Requires:       ros-melodic-visualization_msgs-devel
 Requires:       ros-melodic-media_export-devel
+Requires:       ros-melodic-message_runtime-devel
 
-Provides: ros-melodic-rviz-devel = 1.13.9-1
-Obsoletes: ros-melodic-rviz-devel < 1.13.9-1
-Obsoletes: ros-kinetic-rviz-devel < 1.13.9-1
+Provides: ros-melodic-rviz-devel = 1.13.11-1
+Obsoletes: ros-melodic-rviz-devel < 1.13.11-1
+Obsoletes: ros-kinetic-rviz-devel < 1.13.11-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -244,6 +248,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Apr 29 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.11-1
+- Update to latest release
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.9-1
 - Update to latest release
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.7-1

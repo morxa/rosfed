@@ -1,12 +1,12 @@
 Name:           ros-octomap_msgs
-Version:        melodic.0.3.3
+Version:        melodic.0.3.5
 Release:        1%{?dist}
 Summary:        ROS package octomap_msgs
 
 License:        BSD
 URL:            http://ros.org/wiki/octomap_msgs
 
-Source0:        https://github.com/ros-gbp/octomap_msgs-release/archive/release/melodic/octomap_msgs/0.3.3-1.tar.gz#/ros-melodic-octomap_msgs-0.3.3-source0.tar.gz
+Source0:        https://github.com/ros-gbp/octomap_msgs-release/archive/release/melodic/octomap_msgs/0.3.5-1.tar.gz#/ros-melodic-octomap_msgs-0.3.5-source0.tar.gz
 
 
 BuildArch: noarch
@@ -27,9 +27,9 @@ Requires:       ros-melodic-geometry_msgs
 Requires:       ros-melodic-message_runtime
 Requires:       ros-melodic-std_msgs
 
-Provides:  ros-melodic-octomap_msgs = 0.3.3-1
-Obsoletes: ros-melodic-octomap_msgs < 0.3.3-1
-Obsoletes: ros-kinetic-octomap_msgs < 0.3.3-1
+Provides:  ros-melodic-octomap_msgs = 0.3.5-1
+Obsoletes: ros-melodic-octomap_msgs < 0.3.5-1
+Obsoletes: ros-kinetic-octomap_msgs < 0.3.5-1
 
 
 %description
@@ -44,9 +44,9 @@ Requires:       ros-melodic-message_generation-devel
 Requires:       ros-melodic-std_msgs-devel
 Requires:       ros-melodic-message_runtime-devel
 
-Provides: ros-melodic-octomap_msgs-devel = 0.3.3-1
-Obsoletes: ros-melodic-octomap_msgs-devel < 0.3.3-1
-Obsoletes: ros-kinetic-octomap_msgs-devel < 0.3.3-1
+Provides: ros-melodic-octomap_msgs-devel = 0.3.5-1
+Obsoletes: ros-melodic-octomap_msgs-devel < 0.3.5-1
+Obsoletes: ros-kinetic-octomap_msgs-devel < 0.3.5-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -153,6 +153,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Apr 29 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.3.5-1
+- Update to latest release
 * Wed Jul 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.3.3-1
 - Update to latest release
 * Thu Jan 18 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.3.3-1

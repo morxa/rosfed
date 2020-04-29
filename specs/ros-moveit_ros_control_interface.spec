@@ -1,12 +1,12 @@
 Name:           ros-moveit_ros_control_interface
-Version:        melodic.1.0.2
+Version:        melodic.1.0.3
 Release:        1%{?dist}
 Summary:        ROS package moveit_ros_control_interface
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/moveit-release/archive/release/melodic/moveit_ros_control_interface/1.0.2-1.tar.gz#/ros-melodic-moveit_ros_control_interface-1.0.2-source0.tar.gz
+Source0:        https://github.com/ros-gbp/moveit-release/archive/release/melodic/moveit_ros_control_interface/1.0.3-1.tar.gz#/ros-melodic-moveit_ros_control_interface-1.0.3-source0.tar.gz
 
 
 
@@ -38,9 +38,9 @@ Requires:       ros-melodic-moveit_simple_controller_manager
 Requires:       ros-melodic-pluginlib
 Requires:       ros-melodic-trajectory_msgs
 
-Provides:  ros-melodic-moveit_ros_control_interface = 1.0.2-1
-Obsoletes: ros-melodic-moveit_ros_control_interface < 1.0.2-1
-Obsoletes: ros-kinetic-moveit_ros_control_interface < 1.0.2-1
+Provides:  ros-melodic-moveit_ros_control_interface = 1.0.3-1
+Obsoletes: ros-melodic-moveit_ros_control_interface < 1.0.3-1
+Obsoletes: ros-kinetic-moveit_ros_control_interface < 1.0.3-1
 
 
 %description
@@ -63,9 +63,9 @@ Requires:       ros-melodic-moveit_simple_controller_manager-devel
 Requires:       ros-melodic-pluginlib-devel
 Requires:       ros-melodic-trajectory_msgs-devel
 
-Provides: ros-melodic-moveit_ros_control_interface-devel = 1.0.2-1
-Obsoletes: ros-melodic-moveit_ros_control_interface-devel < 1.0.2-1
-Obsoletes: ros-kinetic-moveit_ros_control_interface-devel < 1.0.2-1
+Provides: ros-melodic-moveit_ros_control_interface-devel = 1.0.3-1
+Obsoletes: ros-melodic-moveit_ros_control_interface-devel < 1.0.3-1
+Obsoletes: ros-kinetic-moveit_ros_control_interface-devel < 1.0.3-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -172,6 +172,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Apr 29 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.0.3-1
+- Update to latest release
 * Wed Jul 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.0.2-1
 - Update to latest release
 * Wed Nov 07 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.9.15-1
