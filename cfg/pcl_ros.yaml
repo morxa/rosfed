@@ -6,3 +6,4 @@ dependencies:
       - tinyxml2-devel
       - poco-devel
       - lz4-devel
+      - libXext-devel
