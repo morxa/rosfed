@@ -355,9 +355,11 @@ def main():
         action='store_true',
         help='Only build packages that are not in the repo yet')
     parser.add_argument(
-        '--obsolete-distro-pkg',
-        action='store_true',
-        help='Obsolete distro-specific package, e.g., ros-kinetic-catkin')
+        '--no-obsolete-distro-pkg',
+        dest='obsolete_distro_pkg',
+        action='store_false',
+        help='Do not obsolete distro-specific package, e.g., ros-kinetic-catkin'
+    )
     parser.add_argument('ros_pkg', nargs='+', help='ROS package name')
     args = parser.parse_args()
     os.makedirs(args.destination, exist_ok=True)
