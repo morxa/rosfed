@@ -5,7 +5,6 @@
 # Copyright © 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de>
 #
 # Distributed under terms of the MIT license.
-
 """
 Generate Spec files for ROS packages with the rosinstall_generator.
 """
@@ -28,6 +27,7 @@ from rosinstall_generator import generator
 from defusedxml import ElementTree
 from termcolor import cprint
 
+
 class PkgResolver:
     def __init__(self):
         base = dnf.Base()
@@ -37,22 +37,27 @@ class PkgResolver:
         self.available_pkgs = q.available()
 
     def get_system_package_name(self, pkg_name, rosdistro):
-        cmd = subprocess.run(
-            ['rosdep', '--rosdistro={}'.format(rosdistro),
-             'resolve', pkg_name],
-            stdout=subprocess.PIPE, stderr=subprocess.PIPE
-        )
+        cmd = subprocess.run([
+            'rosdep', '--rosdistro={}'.format(rosdistro), 'resolve', pkg_name
+        ],
+                             stdout=subprocess.PIPE,
+                             stderr=subprocess.PIPE)
         deps = []
         if cmd.returncode == 0:
             lines = cmd.stdout.decode().split('\n')
-            deps = [ dep for dep in lines if not (dep == '' or dep == '#dnf') ]
+            deps = [dep for dep in lines if not (dep == '' or dep == '#dnf')]
         else:
             res = self.available_pkgs.filter(name=pkg_name)
-            deps = set([ pkg.name for pkg in res ])
-            assert len(deps) > 0, 'Could not find system package {}: {}'.format(
-                pkg_name, cmd.stderr.decode().rstrip() or cmd.stdout.decode().rstrip())
-        assert len(deps) == 1, 'Expected exactly one name, got: {}'.format(deps)
+            deps = set([pkg.name for pkg in res])
+            assert len(
+                deps) > 0, 'Could not find system package {}: {}'.format(
+                    pkg_name,
+                    cmd.stderr.decode().rstrip()
+                    or cmd.stdout.decode().rstrip())
+        assert len(deps) == 1, 'Expected exactly one name, got: {}'.format(
+            deps)
         return deps.pop()
+
 
 def get_changelog_from_spec(spec):
     """ Get the changelog of an existing Spec file.
@@ -63,7 +68,8 @@ def get_changelog_from_spec(spec):
         The changelog in the Spec file as string, excluding the %changelog tag.
     """
     spec_as_list = open(spec, 'r').readlines()
-    return ''.join(spec_as_list[spec_as_list.index('%changelog\n')+1:])
+    return ''.join(spec_as_list[spec_as_list.index('%changelog\n') + 1:])
+
 
 class RosPkg:
     def __init__(self, name, distro, pkg_resolver):
@@ -74,23 +80,23 @@ class RosPkg:
         self.distro_info = generator.get_wet_distro(distro)
         xml_string = self.distro_info.get_release_package_xml(name)
         self.xml = ElementTree.fromstring(xml_string)
-        self.build_deps = { 'ros': set(), 'system': set() }
-        self.run_deps = { 'ros': set(), 'system': set() }
-        self.devel_deps = { 'ros': set(), 'system': set() }
+        self.build_deps = {'ros': set(), 'system': set()}
+        self.run_deps = {'ros': set(), 'system': set()}
+        self.devel_deps = {'ros': set(), 'system': set()}
         try:
             common_config = yaml.load(open('cfg/common.yaml'),
                                       Loader=yaml.FullLoader)
         except FileNotFoundError:
             common_config = {}
         try:
-            pkg_specific_config = yaml.load(
-                open('cfg/{}.yaml'.format(self.name), 'r'),
-                Loader=yaml.FullLoader)
+            pkg_specific_config = yaml.load(open(
+                'cfg/{}.yaml'.format(self.name), 'r'),
+                                            Loader=yaml.FullLoader)
         except FileNotFoundError:
             pkg_specific_config = {}
-        self.pkg_config = { **common_config, **pkg_specific_config }
+        self.pkg_config = {**common_config, **pkg_specific_config}
         self.release = self.pkg_config.get('release', 1)
-        self.deps_mapping ={
+        self.deps_mapping = {
             'build_depend': [self.build_deps],
             'test_depend': [self.build_deps],
             'run_depend': [self.run_deps],
@@ -160,20 +166,21 @@ class RosPkg:
                 self.pkg_config['common']['dependencies'][dep_type]['translate']
         except KeyError:
             translations = []
-        new_dependencies = { 'ros': set(), 'system': set()}
+        new_dependencies = {'ros': set(), 'system': set()}
         for from_type, from_pkgs in dependencies.items():
             for from_pkg in from_pkgs:
-               translated = False
-               for translation in translations:
-                   if translation['from']['type'] == from_type and \
-                      translation['from']['pkg'] == from_pkg:
-                       new_dependencies[translation['to']['type']].add(
-                           translation['to']['pkg'])
-                       translated = True
-                       break
-               if not translated:
-                   new_dependencies[from_type].add(from_pkg)
-        new_dependencies['system'] = self.translate_python_dependencies(new_dependencies['system'])
+                translated = False
+                for translation in translations:
+                    if translation['from']['type'] == from_type and \
+                       translation['from']['pkg'] == from_pkg:
+                        new_dependencies[translation['to']['type']].add(
+                            translation['to']['pkg'])
+                        translated = True
+                        break
+                if not translated:
+                    new_dependencies[from_type].add(from_pkg)
+        new_dependencies['system'] = self.translate_python_dependencies(
+            new_dependencies['system'])
         return new_dependencies
 
     def get_build_dependencies(self):
@@ -226,14 +233,18 @@ class RosPkg:
 
     def get_sources(self):
         sources = self.get_sources_from_cfg()
-        ros_pkg = generator.generate_rosinstall(
-            self.rosdistro, [self.name], deps=False, wet_only=True, tar=True)
+        ros_pkg = generator.generate_rosinstall(self.rosdistro, [self.name],
+                                                deps=False,
+                                                wet_only=True,
+                                                tar=True)
         sources.append(ros_pkg[0]['tar']['uri'])
         return sources
 
     def get_version(self):
-        ros_pkg = generator.generate_rosinstall(
-            self.rosdistro, [self.name], deps=False, wet_only=True, tar=True)
+        ros_pkg = generator.generate_rosinstall(self.rosdistro, [self.name],
+                                                deps=False,
+                                                wet_only=True,
+                                                tar=True)
         return re.match('[\w-]*-([0-9-_.]*)(-[0-9-]*)',
                         ros_pkg[0]['tar']['version']).group(1)
 
@@ -258,7 +269,8 @@ class RosPkg:
         self.release = release
 
     def get_version_release(self):
-        return '{}.{}-{}'.format(self.rosdistro, self.get_version(), self.get_release())
+        return '{}.{}-{}'.format(self.rosdistro, self.get_version(),
+                                 self.get_release())
 
     def is_noarch(self):
         return self.pkg_config.get('noarch', False)
@@ -279,64 +291,90 @@ class RosPkg:
     def has_no_debug(self):
         return self.pkg_config.get('no_debug', False)
 
+
 def main():
     parser = argparse.ArgumentParser(
         description='Generate Spec files for ROS packages with the '
-                    'rosinstall_generator.')
-    parser.add_argument('-r', '--recursive', action='store_true', default=False,
+        'rosinstall_generator.')
+    parser.add_argument('-r',
+                        '--recursive',
+                        action='store_true',
+                        default=False,
                         help='Also generate Spec files for dependencies')
-    parser.add_argument('--distro', default='kinetic',
-                        help='The ROS distro')
-    parser.add_argument('-t', '--template', default='templates/pkg.spec.j2',
+    parser.add_argument('--distro', default='kinetic', help='The ROS distro')
+    parser.add_argument('-t',
+                        '--template',
+                        default='templates/pkg.spec.j2',
                         help='Path to the Jinja template for the Spec file')
-    parser.add_argument('--user_string', default = '',
+    parser.add_argument('--user_string',
+                        default='',
                         help='The user string to use for the changelog')
-    parser.add_argument('--bump-release', default=False, action='store_true',
+    parser.add_argument('--bump-release',
+                        default=False,
+                        action='store_true',
                         help='If set to true, bump the Release: tag by 1')
-    parser.add_argument('--release-version', default='',
+    parser.add_argument('--release-version',
+                        default='',
                         help='The Release: of the resulting Spec files')
-    parser.add_argument('-d', '--destination', default='./specs',
+    parser.add_argument('-d',
+                        '--destination',
+                        default='./specs',
                         help='Write generated Spec files to this directory')
-    parser.add_argument('-c', '--changelog', type=str,
+    parser.add_argument('-c',
+                        '--changelog',
+                        type=str,
                         default='',
                         help='The new changelog entry line')
     build_args = parser.add_argument_group('build arguments')
-    build_args.add_argument('-b', '--build', action='store_true', default=False,
+    build_args.add_argument('-b',
+                            '--build',
+                            action='store_true',
+                            default=False,
                             help='Build the generated SPEC file')
-    build_args.add_argument('--copr-owner', type=str,
-                            help='The owner of the COPR project to use for builds')
-    build_args.add_argument('--copr-project', type=str,
+    build_args.add_argument(
+        '--copr-owner',
+        type=str,
+        help='The owner of the COPR project to use for builds')
+    build_args.add_argument('--copr-project',
+                            type=str,
                             help='The COPR project to use for builds')
-    build_args.add_argument('--chroot', action='append', type=str,
+    build_args.add_argument('--chroot',
+                            action='append',
+                            type=str,
                             help='The chroot used for building the packages, '
-                                 'specify multiple chroots by using the flag '
-                                 'multiple times')
-    parser.add_argument('-B', '--build-order-file', type=argparse.FileType('w'),
+                            'specify multiple chroots by using the flag '
+                            'multiple times')
+    parser.add_argument('-B',
+                        '--build-order-file',
+                        type=argparse.FileType('w'),
                         default=None,
                         help='Print the order in which the packages should be '
-                             'built, requires -r')
-    parser.add_argument('--only-new', action='store_true',
-                        help='Only build packages that are not in the repo yet')
-    parser.add_argument('--obsolete-distro-pkg', action='store_true',
-                        help='Obsolete distro-specific package, e.g., ros-kinetic-catkin')
-    parser.add_argument('ros_pkg', nargs='+',
-                        help='ROS package name')
+                        'built, requires -r')
+    parser.add_argument(
+        '--only-new',
+        action='store_true',
+        help='Only build packages that are not in the repo yet')
+    parser.add_argument(
+        '--obsolete-distro-pkg',
+        action='store_true',
+        help='Obsolete distro-specific package, e.g., ros-kinetic-catkin')
+    parser.add_argument('ros_pkg', nargs='+', help='ROS package name')
     args = parser.parse_args()
     os.makedirs(args.destination, exist_ok=True)
     if not args.user_string:
         user_string = subprocess.run(["rpmdev-packager"],
-                                      stderr=subprocess.DEVNULL,
-                                      stdout=subprocess.PIPE).stdout
+                                     stderr=subprocess.DEVNULL,
+                                     stdout=subprocess.PIPE).stdout
         if sys.version_info[0] > 2:
             user_string = user_string.decode(errors='replace')
         args.user_string = user_string.strip()
     # TODO: Improve design, we should not resolve dependencies and generate SPEC
     # files in one step, these are not really related.
-    packages = generate_spec_files(
-        args.ros_pkg, args.distro, args.bump_release, args.release_version,
-        args.user_string, args.changelog, args.recursive, args.only_new,
-        args.obsolete_distro_pkg,
-        args.destination)
+    packages = generate_spec_files(args.ros_pkg, args.distro,
+                                   args.bump_release, args.release_version,
+                                   args.user_string, args.changelog,
+                                   args.recursive, args.only_new,
+                                   args.obsolete_distro_pkg, args.destination)
     if args.build_order_file:
         order = get_build_order(packages)
         for stage in order:
@@ -350,6 +388,7 @@ def main():
         for chroot in args.chroot:
             tree = build_tree.Tree(list(packages.values()))
             copr_builder.build_tree(chroot, tree, only_new=args.only_new)
+
 
 def get_build_order(packages):
     """ Get the order in which to build the given dictionary of packages.
@@ -371,6 +410,7 @@ def get_build_order(packages):
         resolved_pkgs |= leaves
     return order
 
+
 def generate_spec_files(packages, distro, bump_release, release_version,
                         user_string, changelog_entry, recursive, only_new,
                         obsolete_distro_pkg, destination):
@@ -386,7 +426,9 @@ def generate_spec_files(packages, distro, bump_release, release_version,
     while i < len(packages):
         print('Generating Spec file for {}.'.format(packages[i]))
         # TODO: skip if already in generated_packages
-        ros_pkg = RosPkg(name=packages[i], distro=distro, pkg_resolver=pkg_resolver)
+        ros_pkg = RosPkg(name=packages[i],
+                         distro=distro,
+                         pkg_resolver=pkg_resolver)
         i += 1
         build_deps = ros_pkg.get_build_dependencies()
         run_deps = ros_pkg.get_run_dependencies()
@@ -396,11 +438,10 @@ def generate_spec_files(packages, distro, bump_release, release_version,
         if recursive:
             # Append all items that are not already in packages. We cannot use a
             # set, because we need to loop over it while we append items.
-            packages += [ dep for dep in ros_deps if  not dep in packages ]
+            packages += [dep for dep in ros_deps if not dep in packages]
         sources = ros_pkg.get_sources()
         version = ros_pkg.get_version()
-        outfile = os.path.join(destination,
-                               'ros-{}.spec'.format(ros_pkg.name))
+        outfile = os.path.join(destination, 'ros-{}.spec'.format(ros_pkg.name))
         ros_pkg.spec = outfile
         pkg_changelog_entry = changelog_entry
         if os.path.isfile(outfile):
@@ -429,8 +470,8 @@ def generate_spec_files(packages, distro, bump_release, release_version,
             changelog = ''
             assert pkg_changelog_entry, 'Please provide a changelog entry.'
         try:
-            spec_template = jinja_env.get_template(
-                '{}.spec.j2'.format(ros_pkg.name))
+            spec_template = jinja_env.get_template('{}.spec.j2'.format(
+                ros_pkg.name))
         except jinja2.exceptions.TemplateNotFound:
             spec_template = jinja_env.get_template('pkg.spec.j2')
         spec = spec_template.render(

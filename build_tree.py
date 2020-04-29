@@ -5,13 +5,13 @@
 # Copyright © 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de>
 #
 # Distributed under terms of the MIT license.
-
 """
 A dependency tree representation.
 """
 
 import enum
 import pygraphviz as pgv
+
 
 class BuildState(enum.Enum):
     PENDING = enum.auto()
@@ -20,6 +20,7 @@ class BuildState(enum.Enum):
     SUCCEEDED = enum.auto()
     ABORTED = enum.auto()
     SKIPPED = enum.auto()
+
 
 class Tree:
     def __init__(self, pkgs):
@@ -32,6 +33,7 @@ class Tree:
         for node in self.nodes.values():
             if not node.is_initialized():
                 node.state = BuildState.SKIPPED
+
     def add_pkg_stub(self, pkg_name):
         """ Add a node that only contains the name to the tree.
 
@@ -81,6 +83,7 @@ class Tree:
             if not node.state in [BuildState.SUCCEEDED, BuildState.SKIPPED]:
                 return False
         return True
+
     def is_failed(self):
         """ Check if any build and therefore the build tree failed. """
         for node in self.nodes.values():
@@ -100,8 +103,12 @@ class Tree:
                 finished += 1
             elif node.state == BuildState.FAILED:
                 failed += 1
-        return {'building': building, 'finished': finished, 'failed': failed,
-                'total': len(self.nodes) }
+        return {
+            'building': building,
+            'finished': finished,
+            'failed': failed,
+            'total': len(self.nodes)
+        }
 
     def to_dot(self):
         """ Generate a DOT representation of the tree.
@@ -120,10 +127,11 @@ class Tree:
 
     def draw_tree(self, output_file):
         graph = self.to_dot()
-        graph.draw(output_file,prog='dot')
+        graph.draw(output_file, prog='dot')
+
 
 class Node:
-    def __init__(self, name, pkg = None):
+    def __init__(self, name, pkg=None):
         """Fully initialize the note.
 
         Args:
@@ -136,6 +144,7 @@ class Node:
         self.initialized = False
         self.pkg = pkg
         self.dependencies = None
+
     def init_deps(self, deps):
         """ Initialize the dependencies of the node.
 
@@ -146,7 +155,9 @@ class Node:
             deps: A list of strings of package name this package depends on.
         """
         self.dependencies = deps
+
     def is_initialized(self):
         return self.pkg != None and self.dependencies != None
+
     def is_built(self):
         return self.built

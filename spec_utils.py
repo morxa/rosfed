@@ -5,12 +5,12 @@
 # Copyright © 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de>
 #
 # Distributed under terms of the MIT license.
-
 """
 Util functions for Spec files.
 """
 
 import re
+
 
 def get_version_from_spec(spec):
     """ Get the version and release from a Spec file.
@@ -32,4 +32,3 @@ def get_version_from_spec(spec):
     assert 'version' in version_info, 'Could not find a Version: tag'
     assert 'release' in version_info, 'Could not find a Release: tag'
     return version_info
-

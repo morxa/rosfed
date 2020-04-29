@@ -5,7 +5,6 @@
 # Copyright © 2017 Till Hofmann <hofmann@kbsg.rwth-aachen.de>
 #
 # Distributed under terms of the MIT license.
-
 """
 For a given SPEC file, this module can check if the package was already built in
 the specified COPR and if not, will submit a new build to the COPR.
@@ -24,11 +23,14 @@ import subprocess
 
 from termcolor import cprint
 
+
 class CoprBuildError(Exception):
     def __init__(self, error):
         self.error = error
+
     def __str__(self):
         return repr(self.error)
+
 
 class CoprBuilder:
     def __init__(self, copr_owner, copr_project):
@@ -51,19 +53,23 @@ class CoprBuilder:
             wait_for_completion: If set to true, wait for the build to finish
         """
         print('Building {} for chroot {}'.format(spec, chroot))
-        res = subprocess.run(['spectool', '-g', spec, '-C',
-                              os.path.expanduser('~/rpmbuild/SOURCES')],
-                             stdout=subprocess.PIPE,
-                             stderr=subprocess.STDOUT,
-                             check=True,
-                            )
+        res = subprocess.run(
+            [
+                'spectool', '-g', spec, '-C',
+                os.path.expanduser('~/rpmbuild/SOURCES')
+            ],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            check=True,
+        )
         assert res.returncode == 0, 'Failed to fetch sources for ' + spec
         res = subprocess.run(['rpmbuild', '-bs', spec],
                              universal_newlines=True,
                              stdout=subprocess.PIPE)
         assert res.returncode == 0, 'Failed to build SRPM for ' + spec
         match = re.search('Wrote: (\S+)', res.stdout)
-        assert match, 'Unexpected output from rpmbuild: "%s"'.format(res.stdout)
+        assert match, 'Unexpected output from rpmbuild: "%s"'.format(
+            res.stdout)
         srpm = match.group(1)
         return self.build_srpm(chroot, srpm, wait_for_completion)
 
@@ -81,8 +87,10 @@ class CoprBuilder:
         print('Building {} for project {}/{} with chroot {}'.format(
             srpm, self.owner, self.project, chroot))
         build = self.copr_client.build_proxy.create_from_file(
-            ownername=self.owner, projectname=self.project,
-            path=srpm, buildopts={ 'chroots': [chroot] })
+            ownername=self.owner,
+            projectname=self.project,
+            path=srpm,
+            buildopts={'chroots': [chroot]})
         assert build, 'COPR client returned build object "{}"'.format(build)
         if wait_for_completion:
             self.wait_for_completion([build])
@@ -117,9 +125,11 @@ class CoprBuilder:
                                      pkg_version):
                     node.state = build_tree.BuildState.SUCCEEDED
                     build_progress = tree.get_build_progress()
-                    cprint('{}/{}/{}: {} is already built, skipping!'.format(
-                        build_progress['building'], build_progress['finished'],
-                        build_progress['total'], node.name), 'green')
+                    cprint(
+                        '{}/{}/{}: {} is already built, skipping!'.format(
+                            build_progress['building'],
+                            build_progress['finished'],
+                            build_progress['total'], node.name), 'green')
                     wait_for_build = False
                 else:
                     assert node.state == build_tree.BuildState.PENDING, \
@@ -133,20 +143,23 @@ class CoprBuilder:
                 continue
             print('Waiting for a build to finish...')
             finished_build = self.wait_for_one_build(build_ids)
-            node = self.get_node_of_build(tree.nodes.values(), finished_build.id)
+            node = self.get_node_of_build(tree.nodes.values(),
+                                          finished_build.id)
             build_ids.remove(finished_build.id)
             if finished_build.state == 'succeeded':
                 node.state = build_tree.BuildState.SUCCEEDED
                 build_progress = tree.get_build_progress()
-                cprint('{}/{}/{}: Successful build: {}'.format(
-                    build_progress['building'], build_progress['finished'],
-                    build_progress['total'], node.name), 'green')
+                cprint(
+                    '{}/{}/{}: Successful build: {}'.format(
+                        build_progress['building'], build_progress['finished'],
+                        build_progress['total'], node.name), 'green')
             else:
                 node.state = build_tree.BuildState.FAILED
                 build_progress = tree.get_build_progress()
-                cprint('{}/{}/{}: Failed build: {}'.format(
-                    build_progress['building'], build_progress['finished'],
-                    build_progress['total'], node.name), 'red')
+                cprint(
+                    '{}/{}/{}: Failed build: {}'.format(
+                        build_progress['building'], build_progress['finished'],
+                        build_progress['total'], node.name), 'red')
 
     @functools.lru_cache(16)
     def get_builds(self):
@@ -163,7 +176,8 @@ class CoprBuilder:
         Returns:
             True iff the package was already built in the project and chroot.
         """
-        for build in self.copr_client.build_proxy.get_list(self.owner, self.project, pkg_name):
+        for build in self.copr_client.build_proxy.get_list(
+                self.owner, self.project, pkg_name):
             if build.state != 'succeeded':
                 continue
             if chroot not in build.chroots:
@@ -195,21 +209,31 @@ class CoprBuilder:
         while True:
             for build_id in build_ids:
                 build = self.copr_client.build_proxy.get(build_id)
-                if build.state in ['succeeded', 'failed', 'canceled', 'cancelled']:
+                if build.state in [
+                        'succeeded', 'failed', 'canceled', 'cancelled'
+                ]:
                     return build
+
 
 def main():
     """ Main function to directly build a SPEC file. """
     parser = argparse.ArgumentParser()
-    parser.add_argument('-f', '--force', action='store_true', default=False,
+    parser.add_argument('-f',
+                        '--force',
+                        action='store_true',
+                        default=False,
                         help='Force a rebuild if package was already built')
-    parser.add_argument('--copr-owner', type=str,
+    parser.add_argument('--copr-owner',
+                        type=str,
                         help='The owner of the COPR project to use for builds')
-    parser.add_argument('--copr-project', type=str,
+    parser.add_argument('--copr-project',
+                        type=str,
                         help='The COPR project to use for builds')
-    parser.add_argument('--chroot', action='append',
+    parser.add_argument('--chroot',
+                        action='append',
                         help='The chroot(s) to use for the packages')
-    parser.add_argument('--spec-dir', default='./specs/',
+    parser.add_argument('--spec-dir',
+                        default='./specs/',
                         help='The directory where to look for SPEC files')
     parser.add_argument('pkg_name', nargs='+')
     args = parser.parse_args()
@@ -220,12 +244,15 @@ def main():
             need_build = args.force
             if not need_build:
                 version_info = spec_utils.get_version_from_spec(spec)
-                ver_rel = '{}-{}'.format(
-                    version_info['version'], version_info['release'])
-                need_build = not copr_builder.pkg_is_built(chroot, pkg, ver_rel)
+                ver_rel = '{}-{}'.format(version_info['version'],
+                                         version_info['release'])
+                need_build = not copr_builder.pkg_is_built(
+                    chroot, pkg, ver_rel)
             if need_build:
-                copr_builder.build_spec(chroot=chroot, spec=spec,
+                copr_builder.build_spec(chroot=chroot,
+                                        spec=spec,
                                         wait_for_completion=True)
+
 
 if __name__ == '__main__':
     main()
