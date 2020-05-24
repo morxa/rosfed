@@ -1,12 +1,12 @@
 Name:           ros-simulators
-Version:        melodic.1.4.1
-Release:        3%{?dist}
+Version:        noetic.1.5.0
+Release:        1%{?dist}
 Summary:        ROS package simulators
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/metapackages-release/archive/release/melodic/simulators/1.4.1-0.tar.gz#/ros-melodic-simulators-1.4.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/metapackages-release/archive/release/noetic/simulators/1.5.0-1.tar.gz#/ros-noetic-simulators-1.5.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,17 +18,17 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
-Requires:       ros-melodic-gazebo_ros_pkgs
-Requires:       ros-melodic-robot
-Requires:       ros-melodic-rqt_common_plugins
-Requires:       ros-melodic-rqt_robot_plugins
-Requires:       ros-melodic-stage_ros
+Requires:       ros-noetic-gazebo_ros_pkgs
+Requires:       ros-noetic-robot
+Requires:       ros-noetic-rqt_common_plugins
+Requires:       ros-noetic-rqt_robot_plugins
+Requires:       ros-noetic-stage_ros
 
-Provides:  ros-melodic-simulators = 1.4.1-3
-Obsoletes: ros-melodic-simulators < 1.4.1-3
-Obsoletes: ros-kinetic-simulators < 1.4.1-3
+Provides:  ros-noetic-simulators = 1.5.0-1
+Obsoletes: ros-noetic-simulators < 1.5.0-1
+Obsoletes: ros-kinetic-simulators < 1.5.0-1
 
 
 %description
@@ -37,16 +37,16 @@ A metapackage to aggregate several packages.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-gazebo_ros_pkgs-devel
-Requires:       ros-melodic-robot-devel
-Requires:       ros-melodic-rqt_common_plugins-devel
-Requires:       ros-melodic-rqt_robot_plugins-devel
-Requires:       ros-melodic-stage_ros-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-gazebo_ros_pkgs-devel
+Requires:       ros-noetic-robot-devel
+Requires:       ros-noetic-rqt_common_plugins-devel
+Requires:       ros-noetic-rqt_robot_plugins-devel
+Requires:       ros-noetic-stage_ros-devel
 
-Provides: ros-melodic-simulators-devel = 1.4.1-3
-Obsoletes: ros-melodic-simulators-devel < 1.4.1-3
-Obsoletes: ros-kinetic-simulators-devel < 1.4.1-3
+Provides: ros-noetic-simulators-devel = 1.5.0-1
+Obsoletes: ros-noetic-simulators-devel < 1.5.0-1
+Obsoletes: ros-kinetic-simulators-devel < 1.5.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -153,6 +153,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.5.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.4.1-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.4.1-2

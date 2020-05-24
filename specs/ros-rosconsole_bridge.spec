@@ -1,12 +1,12 @@
 Name:           ros-rosconsole_bridge
-Version:        melodic.0.5.3
-Release:        3%{?dist}
+Version:        noetic.0.5.4
+Release:        1%{?dist}
 Summary:        ROS package rosconsole_bridge
 
 License:        BSD
 URL:            http://www.ros.org/wiki/rosconsole_bridge
 
-Source0:        https://github.com/ros-gbp/rosconsole_bridge-release/archive/release/melodic/rosconsole_bridge/0.5.3-0.tar.gz#/ros-melodic-rosconsole_bridge-0.5.3-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rosconsole_bridge-release/archive/release/noetic/rosconsole_bridge/0.5.4-1.tar.gz#/ros-noetic-rosconsole_bridge-0.5.4-source0.tar.gz
 
 
 
@@ -20,16 +20,16 @@ BuildRequires:  python3-devel
 BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  log4cxx-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-cpp_common-devel
-BuildRequires:  ros-melodic-rosconsole-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-cpp_common-devel
+BuildRequires:  ros-noetic-rosconsole-devel
 
-Requires:       ros-melodic-cpp_common
-Requires:       ros-melodic-rosconsole
+Requires:       ros-noetic-cpp_common
+Requires:       ros-noetic-rosconsole
 
-Provides:  ros-melodic-rosconsole_bridge = 0.5.3-3
-Obsoletes: ros-melodic-rosconsole_bridge < 0.5.3-3
-Obsoletes: ros-kinetic-rosconsole_bridge < 0.5.3-3
+Provides:  ros-noetic-rosconsole_bridge = 0.5.4-1
+Obsoletes: ros-noetic-rosconsole_bridge < 0.5.4-1
+Obsoletes: ros-kinetic-rosconsole_bridge < 0.5.4-1
 
 
 %description
@@ -40,16 +40,16 @@ rosconsole-based logging.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       boost-devel
 Requires:       console-bridge-devel
 Requires:       log4cxx-devel
-Requires:       ros-melodic-cpp_common-devel
-Requires:       ros-melodic-rosconsole-devel
+Requires:       ros-noetic-cpp_common-devel
+Requires:       ros-noetic-rosconsole-devel
 
-Provides: ros-melodic-rosconsole_bridge-devel = 0.5.3-3
-Obsoletes: ros-melodic-rosconsole_bridge-devel < 0.5.3-3
-Obsoletes: ros-kinetic-rosconsole_bridge-devel < 0.5.3-3
+Provides: ros-noetic-rosconsole_bridge-devel = 0.5.4-1
+Obsoletes: ros-noetic-rosconsole_bridge-devel < 0.5.4-1
+Obsoletes: ros-kinetic-rosconsole_bridge-devel < 0.5.4-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -156,6 +156,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.4-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.5.3-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.5.3-2

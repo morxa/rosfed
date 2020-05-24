@@ -1,12 +1,12 @@
 Name:           ros-eigen_conversions
-Version:        melodic.1.12.1
+Version:        noetic.1.13.1
 Release:        1%{?dist}
 Summary:        ROS package eigen_conversions
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/geometry-release/archive/release/melodic/eigen_conversions/1.12.1-1.tar.gz#/ros-melodic-eigen_conversions-1.12.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/geometry-release/archive/release/noetic/eigen_conversions/1.13.1-1.tar.gz#/ros-noetic-eigen_conversions-1.13.1-source0.tar.gz
 
 
 
@@ -20,20 +20,20 @@ BuildRequires:  python3-devel
 BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  eigen3-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-cpp_common-devel
-BuildRequires:  ros-melodic-geometry_msgs-devel
-BuildRequires:  ros-melodic-orocos_kdl-devel
-BuildRequires:  ros-melodic-roscpp_serialization-devel
-BuildRequires:  ros-melodic-std_msgs-devel
+BuildRequires:  orocos-kdl-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-cpp_common-devel
+BuildRequires:  ros-noetic-geometry_msgs-devel
+BuildRequires:  ros-noetic-roscpp_serialization-devel
+BuildRequires:  ros-noetic-std_msgs-devel
 
-Requires:       ros-melodic-geometry_msgs
-Requires:       ros-melodic-orocos_kdl
-Requires:       ros-melodic-std_msgs
+Requires:       orocos-kdl
+Requires:       ros-noetic-geometry_msgs
+Requires:       ros-noetic-std_msgs
 
-Provides:  ros-melodic-eigen_conversions = 1.12.1-1
-Obsoletes: ros-melodic-eigen_conversions < 1.12.1-1
-Obsoletes: ros-kinetic-eigen_conversions < 1.12.1-1
+Provides:  ros-noetic-eigen_conversions = 1.13.1-1
+Obsoletes: ros-noetic-eigen_conversions < 1.13.1-1
+Obsoletes: ros-kinetic-eigen_conversions < 1.13.1-1
 
 
 %description
@@ -43,19 +43,19 @@ geometry_msgs.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       orocos-kdl-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       boost-devel
 Requires:       console-bridge-devel
 Requires:       eigen3-devel
-Requires:       ros-melodic-cpp_common-devel
-Requires:       ros-melodic-geometry_msgs-devel
-Requires:       ros-melodic-orocos_kdl-devel
-Requires:       ros-melodic-roscpp_serialization-devel
-Requires:       ros-melodic-std_msgs-devel
+Requires:       ros-noetic-cpp_common-devel
+Requires:       ros-noetic-geometry_msgs-devel
+Requires:       ros-noetic-roscpp_serialization-devel
+Requires:       ros-noetic-std_msgs-devel
 
-Provides: ros-melodic-eigen_conversions-devel = 1.12.1-1
-Obsoletes: ros-melodic-eigen_conversions-devel < 1.12.1-1
-Obsoletes: ros-kinetic-eigen_conversions-devel < 1.12.1-1
+Provides: ros-noetic-eigen_conversions-devel = 1.13.1-1
+Obsoletes: ros-noetic-eigen_conversions-devel < 1.13.1-1
+Obsoletes: ros-kinetic-eigen_conversions-devel < 1.13.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -162,6 +162,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.1-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.12.1-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.12.0-3

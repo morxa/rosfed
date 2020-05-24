@@ -1,12 +1,12 @@
 Name:           ros-image_transport_plugins
-Version:        melodic.1.9.5
-Release:        13%{?dist}
+Version:        noetic.1.14.0
+Release:        1%{?dist}
 Summary:        ROS package image_transport_plugins
 
 License:        BSD
 URL:            http://www.ros.org/wiki/image_transport_plugins
 
-Source0:        https://github.com/ros-gbp/image_transport_plugins-release/archive/release/melodic/image_transport_plugins/1.9.5-0.tar.gz#/ros-melodic-image_transport_plugins-1.9.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/image_transport_plugins-release/archive/release/noetic/image_transport_plugins/1.14.0-1.tar.gz#/ros-noetic-image_transport_plugins-1.14.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,15 +18,15 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
-Requires:       ros-melodic-compressed_depth_image_transport
-Requires:       ros-melodic-compressed_image_transport
-Requires:       ros-melodic-theora_image_transport
+Requires:       ros-noetic-compressed_depth_image_transport
+Requires:       ros-noetic-compressed_image_transport
+Requires:       ros-noetic-theora_image_transport
 
-Provides:  ros-melodic-image_transport_plugins = 1.9.5-13
-Obsoletes: ros-melodic-image_transport_plugins < 1.9.5-13
-Obsoletes: ros-kinetic-image_transport_plugins < 1.9.5-13
+Provides:  ros-noetic-image_transport_plugins = 1.14.0-1
+Obsoletes: ros-noetic-image_transport_plugins < 1.14.0-1
+Obsoletes: ros-kinetic-image_transport_plugins < 1.14.0-1
 
 
 %description
@@ -40,14 +40,14 @@ compressed form.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-compressed_depth_image_transport-devel
-Requires:       ros-melodic-compressed_image_transport-devel
-Requires:       ros-melodic-theora_image_transport-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-compressed_depth_image_transport-devel
+Requires:       ros-noetic-compressed_image_transport-devel
+Requires:       ros-noetic-theora_image_transport-devel
 
-Provides: ros-melodic-image_transport_plugins-devel = 1.9.5-13
-Obsoletes: ros-melodic-image_transport_plugins-devel < 1.9.5-13
-Obsoletes: ros-kinetic-image_transport_plugins-devel < 1.9.5-13
+Provides: ros-noetic-image_transport_plugins-devel = 1.14.0-1
+Obsoletes: ros-noetic-image_transport_plugins-devel < 1.14.0-1
+Obsoletes: ros-kinetic-image_transport_plugins-devel < 1.14.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -154,6 +154,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.9.5-13
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.9.5-12

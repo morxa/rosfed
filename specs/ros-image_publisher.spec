@@ -1,12 +1,12 @@
 Name:           ros-image_publisher
-Version:        melodic.1.14.0
+Version:        noetic.1.15.2
 Release:        1%{?dist}
 Summary:        ROS package image_publisher
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/image_pipeline-release/archive/release/melodic/image_publisher/1.14.0-1.tar.gz#/ros-melodic-image_publisher-1.14.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/image_pipeline-release/archive/release/noetic/image_publisher/1.15.2-1.tar.gz#/ros-noetic-image_publisher-1.15.2-source0.tar.gz
 
 
 
@@ -22,51 +22,51 @@ BuildRequires:  opencv-devel
 BuildRequires:  poco-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
-BuildRequires:  ros-melodic-camera_info_manager-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-cv_bridge-devel
-BuildRequires:  ros-melodic-dynamic_reconfigure-devel
-BuildRequires:  ros-melodic-image_transport-devel
-BuildRequires:  ros-melodic-nodelet-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-sensor_msgs-devel
+BuildRequires:  ros-noetic-camera_info_manager-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-cv_bridge-devel
+BuildRequires:  ros-noetic-dynamic_reconfigure-devel
+BuildRequires:  ros-noetic-image_transport-devel
+BuildRequires:  ros-noetic-nodelet-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-sensor_msgs-devel
 
-Requires:       ros-melodic-camera_info_manager
-Requires:       ros-melodic-cv_bridge
-Requires:       ros-melodic-dynamic_reconfigure
-Requires:       ros-melodic-image_transport
-Requires:       ros-melodic-nodelet
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-sensor_msgs
+Requires:       ros-noetic-camera_info_manager
+Requires:       ros-noetic-cv_bridge
+Requires:       ros-noetic-dynamic_reconfigure
+Requires:       ros-noetic-image_transport
+Requires:       ros-noetic-nodelet
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-sensor_msgs
 
-Provides:  ros-melodic-image_publisher = 1.14.0-1
-Obsoletes: ros-melodic-image_publisher < 1.14.0-1
-Obsoletes: ros-kinetic-image_publisher < 1.14.0-1
+Provides:  ros-noetic-image_publisher = 1.15.2-1
+Obsoletes: ros-noetic-image_publisher < 1.15.2-1
+Obsoletes: ros-kinetic-image_publisher < 1.15.2-1
 
 
 %description
-ROS melodic package image_publisher.
+ROS noetic package image_publisher.
 
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       libuuid-devel
 Requires:       opencv-devel
 Requires:       poco-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
-Requires:       ros-melodic-camera_info_manager-devel
-Requires:       ros-melodic-cv_bridge-devel
-Requires:       ros-melodic-dynamic_reconfigure-devel
-Requires:       ros-melodic-image_transport-devel
-Requires:       ros-melodic-nodelet-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-sensor_msgs-devel
+Requires:       ros-noetic-camera_info_manager-devel
+Requires:       ros-noetic-cv_bridge-devel
+Requires:       ros-noetic-dynamic_reconfigure-devel
+Requires:       ros-noetic-image_transport-devel
+Requires:       ros-noetic-nodelet-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-sensor_msgs-devel
 
-Provides: ros-melodic-image_publisher-devel = 1.14.0-1
-Obsoletes: ros-melodic-image_publisher-devel < 1.14.0-1
-Obsoletes: ros-kinetic-image_publisher-devel < 1.14.0-1
+Provides: ros-noetic-image_publisher-devel = 1.15.2-1
+Obsoletes: ros-noetic-image_publisher-devel < 1.15.2-1
+Obsoletes: ros-kinetic-image_publisher-devel < 1.15.2-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -173,6 +173,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.2-1
+- Upgrade to noetic
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.0-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.0-3

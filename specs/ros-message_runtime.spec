@@ -1,12 +1,12 @@
 Name:           ros-message_runtime
-Version:        melodic.0.4.12
-Release:        3%{?dist}
+Version:        noetic.0.4.13
+Release:        1%{?dist}
 Summary:        ROS package message_runtime
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/message_runtime-release/archive/release/melodic/message_runtime/0.4.12-0.tar.gz#/ros-melodic-message_runtime-0.4.12-source0.tar.gz
+Source0:        https://github.com/ros-gbp/message_runtime-release/archive/release/noetic/message_runtime/0.4.13-1.tar.gz#/ros-noetic-message_runtime-0.4.13-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,17 +18,17 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
-Requires:       ros-melodic-cpp_common
-Requires:       ros-melodic-genpy
-Requires:       ros-melodic-roscpp_serialization
-Requires:       ros-melodic-roscpp_traits
-Requires:       ros-melodic-rostime
+Requires:       ros-noetic-cpp_common
+Requires:       ros-noetic-genpy
+Requires:       ros-noetic-roscpp_serialization
+Requires:       ros-noetic-roscpp_traits
+Requires:       ros-noetic-rostime
 
-Provides:  ros-melodic-message_runtime = 0.4.12-3
-Obsoletes: ros-melodic-message_runtime < 0.4.12-3
-Obsoletes: ros-kinetic-message_runtime < 0.4.12-3
+Provides:  ros-noetic-message_runtime = 0.4.13-1
+Obsoletes: ros-noetic-message_runtime < 0.4.13-1
+Obsoletes: ros-kinetic-message_runtime < 0.4.13-1
 
 
 %description
@@ -38,16 +38,16 @@ messages.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-cpp_common-devel
-Requires:       ros-melodic-genpy-devel
-Requires:       ros-melodic-roscpp_serialization-devel
-Requires:       ros-melodic-roscpp_traits-devel
-Requires:       ros-melodic-rostime-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-cpp_common-devel
+Requires:       ros-noetic-genpy-devel
+Requires:       ros-noetic-roscpp_serialization-devel
+Requires:       ros-noetic-roscpp_traits-devel
+Requires:       ros-noetic-rostime-devel
 
-Provides: ros-melodic-message_runtime-devel = 0.4.12-3
-Obsoletes: ros-melodic-message_runtime-devel < 0.4.12-3
-Obsoletes: ros-kinetic-message_runtime-devel < 0.4.12-3
+Provides: ros-noetic-message_runtime-devel = 0.4.13-1
+Obsoletes: ros-noetic-message_runtime-devel < 0.4.13-1
+Obsoletes: ros-kinetic-message_runtime-devel < 0.4.13-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -154,6 +154,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.13-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.12-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.12-2

@@ -1,12 +1,12 @@
 Name:           ros-class_loader
-Version:        melodic.0.4.1
-Release:        3%{?dist}
+Version:        noetic.0.5.0
+Release:        1%{?dist}
 Summary:        ROS package class_loader
 
 License:        BSD
 URL:            http://ros.org/wiki/class_loader
 
-Source0:        https://github.com/ros-gbp/class_loader-release/archive/release/melodic/class_loader/0.4.1-0.tar.gz#/ros-melodic-class_loader-0.4.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/class_loader-release/archive/release/noetic/class_loader/0.5.0-1.tar.gz#/ros-noetic-class_loader-0.5.0-source0.tar.gz
 
 
 
@@ -17,16 +17,16 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  boost-devel boost-python3-devel boost-python3-devel
+BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  poco-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-cmake_modules-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-cmake_modules-devel
 
 
-Provides:  ros-melodic-class_loader = 0.4.1-3
-Obsoletes: ros-melodic-class_loader < 0.4.1-3
-Obsoletes: ros-kinetic-class_loader < 0.4.1-3
+Provides:  ros-noetic-class_loader = 0.5.0-1
+Obsoletes: ros-noetic-class_loader < 0.5.0-1
+Obsoletes: ros-kinetic-class_loader < 0.5.0-1
 
 
 %description
@@ -41,15 +41,15 @@ declaration (i.e. header file) for those classes.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       boost-devel boost-python3-devel boost-python3-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       boost-devel
 Requires:       console-bridge-devel
 Requires:       poco-devel
-Requires:       ros-melodic-cmake_modules-devel
+Requires:       ros-noetic-cmake_modules-devel
 
-Provides: ros-melodic-class_loader-devel = 0.4.1-3
-Obsoletes: ros-melodic-class_loader-devel < 0.4.1-3
-Obsoletes: ros-kinetic-class_loader-devel < 0.4.1-3
+Provides: ros-noetic-class_loader-devel = 0.5.0-1
+Obsoletes: ros-noetic-class_loader-devel < 0.5.0-1
+Obsoletes: ros-kinetic-class_loader-devel < 0.5.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -156,6 +156,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.1-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.1-2

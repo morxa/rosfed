@@ -1,12 +1,12 @@
 Name:           ros-roscpp_tutorials
-Version:        melodic.0.9.2
+Version:        noetic.0.10.1
 Release:        1%{?dist}
 Summary:        ROS package roscpp_tutorials
 
 License:        BSD
 URL:            http://www.ros.org/wiki/roscpp_tutorials
 
-Source0:        https://github.com/ros-gbp/ros_tutorials-release/archive/release/melodic/roscpp_tutorials/0.9.2-1.tar.gz#/ros-melodic-roscpp_tutorials-0.9.2-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_tutorials-release/archive/release/noetic/roscpp_tutorials/0.10.1-1.tar.gz#/ros-noetic-roscpp_tutorials-0.10.1-source0.tar.gz
 
 
 
@@ -20,24 +20,24 @@ BuildRequires:  python3-devel
 BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  log4cxx-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-message_generation-devel
-BuildRequires:  ros-melodic-rosconsole-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-roscpp_serialization-devel
-BuildRequires:  ros-melodic-rostime-devel
-BuildRequires:  ros-melodic-std_msgs-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-message_generation-devel
+BuildRequires:  ros-noetic-rosconsole-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-roscpp_serialization-devel
+BuildRequires:  ros-noetic-rostime-devel
+BuildRequires:  ros-noetic-std_msgs-devel
 
-Requires:       ros-melodic-message_runtime
-Requires:       ros-melodic-rosconsole
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-roscpp_serialization
-Requires:       ros-melodic-rostime
-Requires:       ros-melodic-std_msgs
+Requires:       ros-noetic-message_runtime
+Requires:       ros-noetic-rosconsole
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-roscpp_serialization
+Requires:       ros-noetic-rostime
+Requires:       ros-noetic-std_msgs
 
-Provides:  ros-melodic-roscpp_tutorials = 0.9.2-1
-Obsoletes: ros-melodic-roscpp_tutorials < 0.9.2-1
-Obsoletes: ros-kinetic-roscpp_tutorials < 0.9.2-1
+Provides:  ros-noetic-roscpp_tutorials = 0.10.1-1
+Obsoletes: ros-noetic-roscpp_tutorials < 0.10.1-1
+Obsoletes: ros-kinetic-roscpp_tutorials < 0.10.1-1
 
 
 %description
@@ -47,21 +47,21 @@ including using messages, servers, parameters, etc.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       boost-devel
 Requires:       console-bridge-devel
 Requires:       log4cxx-devel
-Requires:       ros-melodic-message_generation-devel
-Requires:       ros-melodic-rosconsole-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-roscpp_serialization-devel
-Requires:       ros-melodic-rostime-devel
-Requires:       ros-melodic-std_msgs-devel
-Requires:       ros-melodic-message_runtime-devel
+Requires:       ros-noetic-message_generation-devel
+Requires:       ros-noetic-rosconsole-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-roscpp_serialization-devel
+Requires:       ros-noetic-rostime-devel
+Requires:       ros-noetic-std_msgs-devel
+Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-melodic-roscpp_tutorials-devel = 0.9.2-1
-Obsoletes: ros-melodic-roscpp_tutorials-devel < 0.9.2-1
-Obsoletes: ros-kinetic-roscpp_tutorials-devel < 0.9.2-1
+Provides: ros-noetic-roscpp_tutorials-devel = 0.10.1-1
+Obsoletes: ros-noetic-roscpp_tutorials-devel < 0.10.1-1
+Obsoletes: ros-kinetic-roscpp_tutorials-devel < 0.10.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -168,6 +168,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.10.1-1
+- Upgrade to noetic
 * Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.9.2-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.9.1-3

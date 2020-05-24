@@ -1,12 +1,12 @@
 Name:           ros-rospy
-Version:        melodic.1.14.5
+Version:        noetic.1.15.6
 Release:        1%{?dist}
 Summary:        ROS package rospy
 
 License:        BSD
 URL:            http://wiki.ros.org/rospy
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/melodic/rospy/1.14.5-1.tar.gz#/ros-melodic-rospy-1.14.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/rospy/1.15.6-1.tar.gz#/ros-noetic-rospy-1.15.6-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,23 +18,23 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
 Requires:       python3-numpy
 Requires:       python3-pyyaml
 Requires:       python3-rospkg
 Requires:       python3dist(numpy)
 Requires:       python3dist(pyyaml)
-Requires:       ros-melodic-genpy
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-rosgraph
-Requires:       ros-melodic-rosgraph_msgs
-Requires:       ros-melodic-roslib
-Requires:       ros-melodic-std_msgs
+Requires:       ros-noetic-genpy
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-rosgraph
+Requires:       ros-noetic-rosgraph_msgs
+Requires:       ros-noetic-roslib
+Requires:       ros-noetic-std_msgs
 
-Provides:  ros-melodic-rospy = 1.14.5-1
-Obsoletes: ros-melodic-rospy < 1.14.5-1
-Obsoletes: ros-kinetic-rospy < 1.14.5-1
+Provides:  ros-noetic-rospy = 1.15.6-1
+Obsoletes: ros-noetic-rospy < 1.15.6-1
+Obsoletes: ros-kinetic-rospy < 1.15.6-1
 
 
 %description
@@ -44,17 +44,17 @@ enables Python programmers to quickly interface with ROS
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-genpy-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-rosgraph-devel
-Requires:       ros-melodic-rosgraph_msgs-devel
-Requires:       ros-melodic-roslib-devel
-Requires:       ros-melodic-std_msgs-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-genpy-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-rosgraph-devel
+Requires:       ros-noetic-rosgraph_msgs-devel
+Requires:       ros-noetic-roslib-devel
+Requires:       ros-noetic-std_msgs-devel
 
-Provides: ros-melodic-rospy-devel = 1.14.5-1
-Obsoletes: ros-melodic-rospy-devel < 1.14.5-1
-Obsoletes: ros-kinetic-rospy-devel < 1.14.5-1
+Provides: ros-noetic-rospy-devel = 1.15.6-1
+Obsoletes: ros-noetic-rospy-devel < 1.15.6-1
+Obsoletes: ros-kinetic-rospy-devel < 1.15.6-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -161,6 +161,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.6-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.5-1
 - Update to latest release
 * Thu Mar 05 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.4-2

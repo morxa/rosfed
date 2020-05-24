@@ -1,12 +1,12 @@
 Name:           ros-smclib
-Version:        melodic.1.8.3
-Release:        3%{?dist}
+Version:        noetic.1.8.5
+Release:        1%{?dist}
 Summary:        ROS package smclib
 
 License:        Mozilla Public License Version 1.1
 URL:            http://smc.sourceforge.net/
 
-Source0:        https://github.com/ros-gbp/bond_core-release/archive/release/melodic/smclib/1.8.3-0.tar.gz#/ros-melodic-smclib-1.8.3-source0.tar.gz
+Source0:        https://github.com/ros-gbp/bond_core-release/archive/release/noetic/smclib/1.8.5-1.tar.gz#/ros-noetic-smclib-1.8.5-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,12 +18,13 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  python3-setuptools
+BuildRequires:  ros-noetic-catkin-devel
 
 
-Provides:  ros-melodic-smclib = 1.8.3-3
-Obsoletes: ros-melodic-smclib < 1.8.3-3
-Obsoletes: ros-kinetic-smclib < 1.8.3-3
+Provides:  ros-noetic-smclib = 1.8.5-1
+Obsoletes: ros-noetic-smclib < 1.8.5-1
+Obsoletes: ros-kinetic-smclib < 1.8.5-1
 
 
 %description
@@ -36,11 +37,12 @@ not contain the compiler itself.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       python3-setuptools
+Requires:       ros-noetic-catkin-devel
 
-Provides: ros-melodic-smclib-devel = 1.8.3-3
-Obsoletes: ros-melodic-smclib-devel < 1.8.3-3
-Obsoletes: ros-kinetic-smclib-devel < 1.8.3-3
+Provides: ros-noetic-smclib-devel = 1.8.5-1
+Obsoletes: ros-noetic-smclib-devel < 1.8.5-1
+Obsoletes: ros-kinetic-smclib-devel < 1.8.5-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -147,6 +149,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.8.5-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.8.3-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.8.3-2

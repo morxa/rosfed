@@ -1,12 +1,12 @@
 Name:           ros-polled_camera
-Version:        melodic.1.11.13
-Release:        12%{?dist}
+Version:        noetic.1.12.0
+Release:        1%{?dist}
 Summary:        ROS package polled_camera
 
 License:        BSD
 URL:            http://ros.org/wiki/polled_camera
 
-Source0:        https://github.com/ros-gbp/image_common-release/archive/release/melodic/polled_camera/1.11.13-0.tar.gz#/ros-melodic-polled_camera-1.11.13-source0.tar.gz
+Source0:        https://github.com/ros-gbp/image_common-release/archive/release/noetic/polled_camera/1.12.0-1.tar.gz#/ros-noetic-polled_camera-1.12.0-source0.tar.gz
 
 
 
@@ -20,22 +20,22 @@ BuildRequires:  python3-devel
 BuildRequires:  poco-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-image_transport-devel
-BuildRequires:  ros-melodic-message_generation-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-sensor_msgs-devel
-BuildRequires:  ros-melodic-std_msgs-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-image_transport-devel
+BuildRequires:  ros-noetic-message_generation-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-sensor_msgs-devel
+BuildRequires:  ros-noetic-std_msgs-devel
 
-Requires:       ros-melodic-image_transport
-Requires:       ros-melodic-message_runtime
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-sensor_msgs
-Requires:       ros-melodic-std_msgs
+Requires:       ros-noetic-image_transport
+Requires:       ros-noetic-message_runtime
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-sensor_msgs
+Requires:       ros-noetic-std_msgs
 
-Provides:  ros-melodic-polled_camera = 1.11.13-12
-Obsoletes: ros-melodic-polled_camera < 1.11.13-12
-Obsoletes: ros-kinetic-polled_camera < 1.11.13-12
+Provides:  ros-noetic-polled_camera = 1.12.0-1
+Obsoletes: ros-noetic-polled_camera < 1.12.0-1
+Obsoletes: ros-kinetic-polled_camera < 1.12.0-1
 
 
 %description
@@ -47,20 +47,20 @@ under development.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       poco-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
-Requires:       ros-melodic-image_transport-devel
-Requires:       ros-melodic-message_generation-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-sensor_msgs-devel
-Requires:       ros-melodic-std_msgs-devel
-Requires:       ros-melodic-message_runtime-devel
+Requires:       ros-noetic-image_transport-devel
+Requires:       ros-noetic-message_generation-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-sensor_msgs-devel
+Requires:       ros-noetic-std_msgs-devel
+Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-melodic-polled_camera-devel = 1.11.13-12
-Obsoletes: ros-melodic-polled_camera-devel < 1.11.13-12
-Obsoletes: ros-kinetic-polled_camera-devel < 1.11.13-12
+Provides: ros-noetic-polled_camera-devel = 1.12.0-1
+Obsoletes: ros-noetic-polled_camera-devel < 1.12.0-1
+Obsoletes: ros-kinetic-polled_camera-devel < 1.12.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -167,6 +167,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.12.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.11.13-12
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.11.13-11

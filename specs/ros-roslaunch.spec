@@ -1,12 +1,12 @@
 Name:           ros-roslaunch
-Version:        melodic.1.14.5
-Release:        2%{?dist}
+Version:        noetic.1.15.6
+Release:        1%{?dist}
 Summary:        ROS package roslaunch
 
 License:        BSD
 URL:            http://wiki.ros.org/roslaunch
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/melodic/roslaunch/1.14.5-1.tar.gz#/ros-melodic-roslaunch-1.14.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/roslaunch/1.15.6-1.tar.gz#/ros-noetic-roslaunch-1.15.6-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,25 +18,25 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-rosbuild-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-rosbuild-devel
 
 Requires:       /usr/bin/rosversion
 Requires:       python3-paramiko
 Requires:       python3-pyyaml
 Requires:       python3-rospkg
 Requires:       python3dist(pyyaml)
-Requires:       ros-melodic-rosclean
-Requires:       ros-melodic-rosgraph_msgs
-Requires:       ros-melodic-roslib
-Requires:       ros-melodic-rosmaster
-Requires:       ros-melodic-rosout
-Requires:       ros-melodic-rosparam
-Requires:       ros-melodic-rosunit
+Requires:       ros-noetic-rosclean
+Requires:       ros-noetic-rosgraph_msgs
+Requires:       ros-noetic-roslib
+Requires:       ros-noetic-rosmaster
+Requires:       ros-noetic-rosout
+Requires:       ros-noetic-rosparam
+Requires:       ros-noetic-rosunit
 
-Provides:  ros-melodic-roslaunch = 1.14.5-2
-Obsoletes: ros-melodic-roslaunch < 1.14.5-2
-Obsoletes: ros-kinetic-roslaunch < 1.14.5-2
+Provides:  ros-noetic-roslaunch = 1.15.6-1
+Obsoletes: ros-noetic-roslaunch < 1.15.6-1
+Obsoletes: ros-kinetic-roslaunch < 1.15.6-1
 
 
 %description
@@ -45,19 +45,19 @@ roslaunch is a tool for easily launching multiple ROS
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-rosbuild-devel
-Requires:       ros-melodic-rosclean-devel
-Requires:       ros-melodic-rosgraph_msgs-devel
-Requires:       ros-melodic-roslib-devel
-Requires:       ros-melodic-rosmaster-devel
-Requires:       ros-melodic-rosout-devel
-Requires:       ros-melodic-rosparam-devel
-Requires:       ros-melodic-rosunit-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-rosbuild-devel
+Requires:       ros-noetic-rosclean-devel
+Requires:       ros-noetic-rosgraph_msgs-devel
+Requires:       ros-noetic-roslib-devel
+Requires:       ros-noetic-rosmaster-devel
+Requires:       ros-noetic-rosout-devel
+Requires:       ros-noetic-rosparam-devel
+Requires:       ros-noetic-rosunit-devel
 
-Provides: ros-melodic-roslaunch-devel = 1.14.5-2
-Obsoletes: ros-melodic-roslaunch-devel < 1.14.5-2
-Obsoletes: ros-kinetic-roslaunch-devel < 1.14.5-2
+Provides: ros-noetic-roslaunch-devel = 1.15.6-1
+Obsoletes: ros-noetic-roslaunch-devel < 1.15.6-1
+Obsoletes: ros-kinetic-roslaunch-devel < 1.15.6-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -164,6 +164,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.6-1
+- Upgrade to noetic
 * Sat Apr 18 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.5-2
 - Add dependency on rosversion
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.5-1

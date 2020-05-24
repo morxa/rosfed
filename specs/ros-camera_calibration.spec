@@ -1,12 +1,12 @@
 Name:           ros-camera_calibration
-Version:        melodic.1.14.0
+Version:        noetic.1.15.2
 Release:        1%{?dist}
 Summary:        ROS package camera_calibration
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/image_pipeline-release/archive/release/melodic/camera_calibration/1.14.0-1.tar.gz#/ros-melodic-camera_calibration-1.14.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/image_pipeline-release/archive/release/noetic/camera_calibration/1.15.2-1.tar.gz#/ros-noetic-camera_calibration-1.15.2-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,19 +18,19 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-rostest-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-rostest-devel
 
-Requires:       ros-melodic-cv_bridge
-Requires:       ros-melodic-image_geometry
-Requires:       ros-melodic-message_filters
-Requires:       ros-melodic-rospy
-Requires:       ros-melodic-sensor_msgs
-Requires:       ros-melodic-std_srvs
+Requires:       ros-noetic-cv_bridge
+Requires:       ros-noetic-image_geometry
+Requires:       ros-noetic-message_filters
+Requires:       ros-noetic-rospy
+Requires:       ros-noetic-sensor_msgs
+Requires:       ros-noetic-std_srvs
 
-Provides:  ros-melodic-camera_calibration = 1.14.0-1
-Obsoletes: ros-melodic-camera_calibration < 1.14.0-1
-Obsoletes: ros-kinetic-camera_calibration < 1.14.0-1
+Provides:  ros-noetic-camera_calibration = 1.15.2-1
+Obsoletes: ros-noetic-camera_calibration < 1.15.2-1
+Obsoletes: ros-kinetic-camera_calibration < 1.15.2-1
 
 
 %description
@@ -40,18 +40,18 @@ cameras using a checkerboard calibration target.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-rostest-devel
-Requires:       ros-melodic-cv_bridge-devel
-Requires:       ros-melodic-image_geometry-devel
-Requires:       ros-melodic-message_filters-devel
-Requires:       ros-melodic-rospy-devel
-Requires:       ros-melodic-sensor_msgs-devel
-Requires:       ros-melodic-std_srvs-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-rostest-devel
+Requires:       ros-noetic-cv_bridge-devel
+Requires:       ros-noetic-image_geometry-devel
+Requires:       ros-noetic-message_filters-devel
+Requires:       ros-noetic-rospy-devel
+Requires:       ros-noetic-sensor_msgs-devel
+Requires:       ros-noetic-std_srvs-devel
 
-Provides: ros-melodic-camera_calibration-devel = 1.14.0-1
-Obsoletes: ros-melodic-camera_calibration-devel < 1.14.0-1
-Obsoletes: ros-kinetic-camera_calibration-devel < 1.14.0-1
+Provides: ros-noetic-camera_calibration-devel = 1.15.2-1
+Obsoletes: ros-noetic-camera_calibration-devel < 1.15.2-1
+Obsoletes: ros-kinetic-camera_calibration-devel < 1.15.2-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -158,6 +158,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.2-1
+- Upgrade to noetic
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.0-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.0-3

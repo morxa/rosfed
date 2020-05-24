@@ -1,12 +1,12 @@
 Name:           ros-nodelet_topic_tools
-Version:        melodic.1.9.16
-Release:        3%{?dist}
+Version:        noetic.1.10.0
+Release:        1%{?dist}
 Summary:        ROS package nodelet_topic_tools
 
 License:        BSD
 URL:            http://ros.org/wiki/nodelet_topic_tools
 
-Source0:        https://github.com/ros-gbp/nodelet_core-release/archive/release/melodic/nodelet_topic_tools/1.9.16-0.tar.gz#/ros-melodic-nodelet_topic_tools-1.9.16-source0.tar.gz
+Source0:        https://github.com/ros-gbp/nodelet_core-release/archive/release/noetic/nodelet_topic_tools/1.10.0-1.tar.gz#/ros-noetic-nodelet_topic_tools-1.10.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,19 +18,19 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  boost-devel boost-python3-devel boost-python3-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-dynamic_reconfigure-devel
-BuildRequires:  ros-melodic-message_filters-devel
-BuildRequires:  ros-melodic-nodelet-devel
-BuildRequires:  ros-melodic-pluginlib-devel
-BuildRequires:  ros-melodic-roscpp-devel
+BuildRequires:  boost-devel boost-python3-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-dynamic_reconfigure-devel
+BuildRequires:  ros-noetic-message_filters-devel
+BuildRequires:  ros-noetic-nodelet-devel
+BuildRequires:  ros-noetic-pluginlib-devel
+BuildRequires:  ros-noetic-roscpp-devel
 
-Requires:       ros-melodic-dynamic_reconfigure
+Requires:       ros-noetic-dynamic_reconfigure
 
-Provides:  ros-melodic-nodelet_topic_tools = 1.9.16-3
-Obsoletes: ros-melodic-nodelet_topic_tools < 1.9.16-3
-Obsoletes: ros-kinetic-nodelet_topic_tools < 1.9.16-3
+Provides:  ros-noetic-nodelet_topic_tools = 1.10.0-1
+Obsoletes: ros-noetic-nodelet_topic_tools < 1.10.0-1
+Obsoletes: ros-kinetic-nodelet_topic_tools < 1.10.0-1
 
 
 %description
@@ -40,17 +40,17 @@ throttle.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-message_filters-devel
-Requires:       ros-melodic-nodelet-devel
-Requires:       ros-melodic-pluginlib-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       boost-devel boost-python3-devel boost-python3-devel
-Requires:       ros-melodic-dynamic_reconfigure-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-message_filters-devel
+Requires:       ros-noetic-nodelet-devel
+Requires:       ros-noetic-pluginlib-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       boost-devel boost-python3-devel
+Requires:       ros-noetic-dynamic_reconfigure-devel
 
-Provides: ros-melodic-nodelet_topic_tools-devel = 1.9.16-3
-Obsoletes: ros-melodic-nodelet_topic_tools-devel < 1.9.16-3
-Obsoletes: ros-kinetic-nodelet_topic_tools-devel < 1.9.16-3
+Provides: ros-noetic-nodelet_topic_tools-devel = 1.10.0-1
+Obsoletes: ros-noetic-nodelet_topic_tools-devel < 1.10.0-1
+Obsoletes: ros-kinetic-nodelet_topic_tools-devel < 1.10.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -157,6 +157,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.10.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.9.16-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.9.16-2

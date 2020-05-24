@@ -1,12 +1,12 @@
 Name:           ros-rqt_tf_tree
-Version:        melodic.0.6.0
-Release:        3%{?dist}
+Version:        noetic.0.6.1
+Release:        1%{?dist}
 Summary:        ROS package rqt_tf_tree
 
 License:        BSD
 URL:            http://wiki.ros.org/rqt_tf_tree
 
-Source0:        https://github.com/ros-gbp/rqt_tf_tree-release/archive/release/melodic/rqt_tf_tree/0.6.0-0.tar.gz#/ros-melodic-rqt_tf_tree-0.6.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt_tf_tree-release/archive/release/noetic/rqt_tf_tree/0.6.1-1.tar.gz#/ros-noetic-rqt_tf_tree-0.6.1-source0.tar.gz
 
 
 BuildArch: noarch
@@ -19,23 +19,21 @@ BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
 BuildRequires:  python3-mock
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
 Requires:       python3-rospkg
-Requires:       ros-melodic-geometry_msgs
-Requires:       ros-melodic-python_qt_binding
-Requires:       ros-melodic-qt_dotgraph
-Requires:       ros-melodic-rospy
-Requires:       ros-melodic-rqt_graph
-Requires:       ros-melodic-rqt_gui
-Requires:       ros-melodic-rqt_gui_py
-Requires:       ros-melodic-tf2
-Requires:       ros-melodic-tf2_msgs
-Requires:       ros-melodic-tf2_ros
+Requires:       ros-noetic-python_qt_binding
+Requires:       ros-noetic-qt_dotgraph
+Requires:       ros-noetic-rospy
+Requires:       ros-noetic-rqt_graph
+Requires:       ros-noetic-rqt_gui
+Requires:       ros-noetic-rqt_gui_py
+Requires:       ros-noetic-tf2_msgs
+Requires:       ros-noetic-tf2_ros
 
-Provides:  ros-melodic-rqt_tf_tree = 0.6.0-3
-Obsoletes: ros-melodic-rqt_tf_tree < 0.6.0-3
-Obsoletes: ros-kinetic-rqt_tf_tree < 0.6.0-3
+Provides:  ros-noetic-rqt_tf_tree = 0.6.1-1
+Obsoletes: ros-noetic-rqt_tf_tree < 0.6.1-1
+Obsoletes: ros-kinetic-rqt_tf_tree < 0.6.1-1
 
 
 %description
@@ -45,22 +43,20 @@ tree.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       python3-mock
-Requires:       ros-melodic-geometry_msgs-devel
-Requires:       ros-melodic-python_qt_binding-devel
-Requires:       ros-melodic-qt_dotgraph-devel
-Requires:       ros-melodic-rospy-devel
-Requires:       ros-melodic-rqt_graph-devel
-Requires:       ros-melodic-rqt_gui-devel
-Requires:       ros-melodic-rqt_gui_py-devel
-Requires:       ros-melodic-tf2-devel
-Requires:       ros-melodic-tf2_msgs-devel
-Requires:       ros-melodic-tf2_ros-devel
+Requires:       ros-noetic-python_qt_binding-devel
+Requires:       ros-noetic-qt_dotgraph-devel
+Requires:       ros-noetic-rospy-devel
+Requires:       ros-noetic-rqt_graph-devel
+Requires:       ros-noetic-rqt_gui-devel
+Requires:       ros-noetic-rqt_gui_py-devel
+Requires:       ros-noetic-tf2_msgs-devel
+Requires:       ros-noetic-tf2_ros-devel
 
-Provides: ros-melodic-rqt_tf_tree-devel = 0.6.0-3
-Obsoletes: ros-melodic-rqt_tf_tree-devel < 0.6.0-3
-Obsoletes: ros-kinetic-rqt_tf_tree-devel < 0.6.0-3
+Provides: ros-noetic-rqt_tf_tree-devel = 0.6.1-1
+Obsoletes: ros-noetic-rqt_tf_tree-devel < 0.6.1-1
+Obsoletes: ros-kinetic-rqt_tf_tree-devel < 0.6.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -167,6 +163,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.6.1-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.6.0-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.6.0-2

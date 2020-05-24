@@ -1,12 +1,12 @@
 Name:           ros-tf_conversions
-Version:        melodic.1.12.1
+Version:        noetic.1.13.1
 Release:        1%{?dist}
 Summary:        ROS package tf_conversions
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/geometry-release/archive/release/melodic/tf_conversions/1.12.1-1.tar.gz#/ros-melodic-tf_conversions-1.12.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/geometry-release/archive/release/noetic/tf_conversions/1.13.1-1.tar.gz#/ros-noetic-tf_conversions-1.13.1-source0.tar.gz
 
 
 
@@ -18,21 +18,21 @@ BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
 BuildRequires:  eigen3-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-geometry_msgs-devel
-BuildRequires:  ros-melodic-kdl_conversions-devel
-BuildRequires:  ros-melodic-orocos_kdl-devel
-BuildRequires:  ros-melodic-tf-devel
+BuildRequires:  orocos-kdl-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-geometry_msgs-devel
+BuildRequires:  ros-noetic-kdl_conversions-devel
+BuildRequires:  ros-noetic-tf-devel
 
-Requires:       ros-melodic-geometry_msgs
-Requires:       ros-melodic-kdl_conversions
-Requires:       ros-melodic-orocos_kdl
-Requires:       ros-melodic-python_orocos_kdl
-Requires:       ros-melodic-tf
+Requires:       orocos-kdl
+Requires:       python3-pykdl
+Requires:       ros-noetic-geometry_msgs
+Requires:       ros-noetic-kdl_conversions
+Requires:       ros-noetic-tf
 
-Provides:  ros-melodic-tf_conversions = 1.12.1-1
-Obsoletes: ros-melodic-tf_conversions < 1.12.1-1
-Obsoletes: ros-kinetic-tf_conversions < 1.12.1-1
+Provides:  ros-noetic-tf_conversions = 1.13.1-1
+Obsoletes: ros-noetic-tf_conversions < 1.13.1-1
+Obsoletes: ros-kinetic-tf_conversions < 1.13.1-1
 
 
 %description
@@ -48,17 +48,16 @@ major release cycle (see roadmap).
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       orocos-kdl-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       eigen3-devel
-Requires:       ros-melodic-geometry_msgs-devel
-Requires:       ros-melodic-kdl_conversions-devel
-Requires:       ros-melodic-orocos_kdl-devel
-Requires:       ros-melodic-tf-devel
-Requires:       ros-melodic-python_orocos_kdl-devel
+Requires:       ros-noetic-geometry_msgs-devel
+Requires:       ros-noetic-kdl_conversions-devel
+Requires:       ros-noetic-tf-devel
 
-Provides: ros-melodic-tf_conversions-devel = 1.12.1-1
-Obsoletes: ros-melodic-tf_conversions-devel < 1.12.1-1
-Obsoletes: ros-kinetic-tf_conversions-devel < 1.12.1-1
+Provides: ros-noetic-tf_conversions-devel = 1.13.1-1
+Obsoletes: ros-noetic-tf_conversions-devel < 1.13.1-1
+Obsoletes: ros-kinetic-tf_conversions-devel < 1.13.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -165,6 +164,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.1-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.12.1-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.12.0-3

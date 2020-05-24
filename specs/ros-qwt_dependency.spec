@@ -1,12 +1,12 @@
 Name:           ros-qwt_dependency
-Version:        melodic.1.1.0
-Release:        3%{?dist}
+Version:        noetic.1.1.1
+Release:        1%{?dist}
 Summary:        ROS package qwt_dependency
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/qwt_dependency-release/archive/release/melodic/qwt_dependency/1.1.0-0.tar.gz#/ros-melodic-qwt_dependency-1.1.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/qwt_dependency-release/archive/release/noetic/qwt_dependency/1.1.1-1.tar.gz#/ros-noetic-qwt_dependency-1.1.1-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,12 +18,12 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
 
-Provides:  ros-melodic-qwt_dependency = 1.1.0-3
-Obsoletes: ros-melodic-qwt_dependency < 1.1.0-3
-Obsoletes: ros-kinetic-qwt_dependency < 1.1.0-3
+Provides:  ros-noetic-qwt_dependency = 1.1.1-1
+Obsoletes: ros-noetic-qwt_dependency < 1.1.1-1
+Obsoletes: ros-kinetic-qwt_dependency < 1.1.1-1
 
 
 %description
@@ -33,11 +33,11 @@ and its Qt version
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 
-Provides: ros-melodic-qwt_dependency-devel = 1.1.0-3
-Obsoletes: ros-melodic-qwt_dependency-devel < 1.1.0-3
-Obsoletes: ros-kinetic-qwt_dependency-devel < 1.1.0-3
+Provides: ros-noetic-qwt_dependency-devel = 1.1.1-1
+Obsoletes: ros-noetic-qwt_dependency-devel < 1.1.1-1
+Obsoletes: ros-kinetic-qwt_dependency-devel < 1.1.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -144,6 +144,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.1.1-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.1.0-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.1.0-2

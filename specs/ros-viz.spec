@@ -1,12 +1,12 @@
 Name:           ros-viz
-Version:        melodic.1.4.1
-Release:        3%{?dist}
+Version:        noetic.1.5.0
+Release:        1%{?dist}
 Summary:        ROS package viz
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/metapackages-release/archive/release/melodic/viz/1.4.1-0.tar.gz#/ros-melodic-viz-1.4.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/metapackages-release/archive/release/noetic/viz/1.5.0-1.tar.gz#/ros-noetic-viz-1.5.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,16 +18,16 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
-Requires:       ros-melodic-ros_base
-Requires:       ros-melodic-rqt_common_plugins
-Requires:       ros-melodic-rqt_robot_plugins
-Requires:       ros-melodic-rviz
+Requires:       ros-noetic-ros_base
+Requires:       ros-noetic-rqt_common_plugins
+Requires:       ros-noetic-rqt_robot_plugins
+Requires:       ros-noetic-rviz
 
-Provides:  ros-melodic-viz = 1.4.1-3
-Obsoletes: ros-melodic-viz < 1.4.1-3
-Obsoletes: ros-kinetic-viz < 1.4.1-3
+Provides:  ros-noetic-viz = 1.5.0-1
+Obsoletes: ros-noetic-viz < 1.5.0-1
+Obsoletes: ros-kinetic-viz < 1.5.0-1
 
 
 %description
@@ -36,15 +36,15 @@ A metapackage to aggregate several packages.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-ros_base-devel
-Requires:       ros-melodic-rqt_common_plugins-devel
-Requires:       ros-melodic-rqt_robot_plugins-devel
-Requires:       ros-melodic-rviz-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-ros_base-devel
+Requires:       ros-noetic-rqt_common_plugins-devel
+Requires:       ros-noetic-rqt_robot_plugins-devel
+Requires:       ros-noetic-rviz-devel
 
-Provides: ros-melodic-viz-devel = 1.4.1-3
-Obsoletes: ros-melodic-viz-devel < 1.4.1-3
-Obsoletes: ros-kinetic-viz-devel < 1.4.1-3
+Provides: ros-noetic-viz-devel = 1.5.0-1
+Obsoletes: ros-noetic-viz-devel < 1.5.0-1
+Obsoletes: ros-kinetic-viz-devel < 1.5.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -151,6 +151,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.5.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.4.1-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.4.1-2

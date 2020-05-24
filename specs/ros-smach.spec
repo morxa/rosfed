@@ -1,12 +1,12 @@
 Name:           ros-smach
-Version:        melodic.2.0.1
-Release:        3%{?dist}
+Version:        noetic.2.5.0
+Release:        1%{?dist}
 Summary:        ROS package smach
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/executive_smach-release/archive/release/melodic/smach/2.0.1-0.tar.gz#/ros-melodic-smach-2.0.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/executive_smach-release/archive/release/noetic/smach/2.5.0-1.tar.gz#/ros-noetic-smach-2.5.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,12 +18,12 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
 
-Provides:  ros-melodic-smach = 2.0.1-3
-Obsoletes: ros-melodic-smach < 2.0.1-3
-Obsoletes: ros-kinetic-smach < 2.0.1-3
+Provides:  ros-noetic-smach = 2.5.0-1
+Obsoletes: ros-noetic-smach < 2.5.0-1
+Obsoletes: ros-kinetic-smach < 2.5.0-1
 
 
 %description
@@ -36,11 +36,11 @@ behavior with maintainable and modular code.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 
-Provides: ros-melodic-smach-devel = 2.0.1-3
-Obsoletes: ros-melodic-smach-devel < 2.0.1-3
-Obsoletes: ros-kinetic-smach-devel < 2.0.1-3
+Provides: ros-noetic-smach-devel = 2.5.0-1
+Obsoletes: ros-noetic-smach-devel < 2.5.0-1
+Obsoletes: ros-kinetic-smach-devel < 2.5.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -147,6 +147,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.2.5.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.2.0.1-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.2.0.1-2

@@ -1,12 +1,12 @@
 Name:           ros-rqt_robot_plugins
-Version:        melodic.0.5.7
-Release:        3%{?dist}
+Version:        noetic.0.5.8
+Release:        1%{?dist}
 Summary:        ROS package rqt_robot_plugins
 
 License:        BSD
 URL:            http://ros.org/wiki/rqt_robot_plugins
 
-Source0:        https://github.com/ros-gbp/rqt_robot_plugins-release/archive/release/melodic/rqt_robot_plugins/0.5.7-0.tar.gz#/ros-melodic-rqt_robot_plugins-0.5.7-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt_robot_plugins-release/archive/release/noetic/rqt_robot_plugins/0.5.8-1.tar.gz#/ros-noetic-rqt_robot_plugins-0.5.8-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,21 +18,21 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
-Requires:       ros-melodic-rqt_moveit
-Requires:       ros-melodic-rqt_nav_view
-Requires:       ros-melodic-rqt_pose_view
-Requires:       ros-melodic-rqt_robot_dashboard
-Requires:       ros-melodic-rqt_robot_monitor
-Requires:       ros-melodic-rqt_robot_steering
-Requires:       ros-melodic-rqt_runtime_monitor
-Requires:       ros-melodic-rqt_rviz
-Requires:       ros-melodic-rqt_tf_tree
+Requires:       ros-noetic-rqt_moveit
+Requires:       ros-noetic-rqt_nav_view
+Requires:       ros-noetic-rqt_pose_view
+Requires:       ros-noetic-rqt_robot_dashboard
+Requires:       ros-noetic-rqt_robot_monitor
+Requires:       ros-noetic-rqt_robot_steering
+Requires:       ros-noetic-rqt_runtime_monitor
+Requires:       ros-noetic-rqt_rviz
+Requires:       ros-noetic-rqt_tf_tree
 
-Provides:  ros-melodic-rqt_robot_plugins = 0.5.7-3
-Obsoletes: ros-melodic-rqt_robot_plugins < 0.5.7-3
-Obsoletes: ros-kinetic-rqt_robot_plugins < 0.5.7-3
+Provides:  ros-noetic-rqt_robot_plugins = 0.5.8-1
+Obsoletes: ros-noetic-rqt_robot_plugins < 0.5.8-1
+Obsoletes: ros-kinetic-rqt_robot_plugins < 0.5.8-1
 
 
 %description
@@ -42,20 +42,20 @@ during its operation.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-rqt_moveit-devel
-Requires:       ros-melodic-rqt_nav_view-devel
-Requires:       ros-melodic-rqt_pose_view-devel
-Requires:       ros-melodic-rqt_robot_dashboard-devel
-Requires:       ros-melodic-rqt_robot_monitor-devel
-Requires:       ros-melodic-rqt_robot_steering-devel
-Requires:       ros-melodic-rqt_runtime_monitor-devel
-Requires:       ros-melodic-rqt_rviz-devel
-Requires:       ros-melodic-rqt_tf_tree-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-rqt_moveit-devel
+Requires:       ros-noetic-rqt_nav_view-devel
+Requires:       ros-noetic-rqt_pose_view-devel
+Requires:       ros-noetic-rqt_robot_dashboard-devel
+Requires:       ros-noetic-rqt_robot_monitor-devel
+Requires:       ros-noetic-rqt_robot_steering-devel
+Requires:       ros-noetic-rqt_runtime_monitor-devel
+Requires:       ros-noetic-rqt_rviz-devel
+Requires:       ros-noetic-rqt_tf_tree-devel
 
-Provides: ros-melodic-rqt_robot_plugins-devel = 0.5.7-3
-Obsoletes: ros-melodic-rqt_robot_plugins-devel < 0.5.7-3
-Obsoletes: ros-kinetic-rqt_robot_plugins-devel < 0.5.7-3
+Provides: ros-noetic-rqt_robot_plugins-devel = 0.5.8-1
+Obsoletes: ros-noetic-rqt_robot_plugins-devel < 0.5.8-1
+Obsoletes: ros-kinetic-rqt_robot_plugins-devel < 0.5.8-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -162,6 +162,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.8-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.5.7-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.5.7-2

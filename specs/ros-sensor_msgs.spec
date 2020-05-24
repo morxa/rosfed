@@ -1,12 +1,12 @@
 Name:           ros-sensor_msgs
-Version:        melodic.1.12.7
-Release:        3%{?dist}
+Version:        noetic.1.13.0
+Release:        1%{?dist}
 Summary:        ROS package sensor_msgs
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/common_msgs-release/archive/release/melodic/sensor_msgs/1.12.7-0.tar.gz#/ros-melodic-sensor_msgs-1.12.7-source0.tar.gz
+Source0:        https://github.com/ros-gbp/common_msgs-release/archive/release/noetic/sensor_msgs/1.13.0-1.tar.gz#/ros-noetic-sensor_msgs-1.13.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,20 +18,21 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-geometry_msgs-devel
-BuildRequires:  ros-melodic-message_generation-devel
-BuildRequires:  ros-melodic-rosbag-devel
-BuildRequires:  ros-melodic-rosunit-devel
-BuildRequires:  ros-melodic-std_msgs-devel
+BuildRequires:  python3-setuptools
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-geometry_msgs-devel
+BuildRequires:  ros-noetic-message_generation-devel
+BuildRequires:  ros-noetic-rosbag-devel
+BuildRequires:  ros-noetic-rosunit-devel
+BuildRequires:  ros-noetic-std_msgs-devel
 
-Requires:       ros-melodic-geometry_msgs
-Requires:       ros-melodic-message_runtime
-Requires:       ros-melodic-std_msgs
+Requires:       ros-noetic-geometry_msgs
+Requires:       ros-noetic-message_runtime
+Requires:       ros-noetic-std_msgs
 
-Provides:  ros-melodic-sensor_msgs = 1.12.7-3
-Obsoletes: ros-melodic-sensor_msgs < 1.12.7-3
-Obsoletes: ros-kinetic-sensor_msgs < 1.12.7-3
+Provides:  ros-noetic-sensor_msgs = 1.13.0-1
+Obsoletes: ros-noetic-sensor_msgs < 1.13.0-1
+Obsoletes: ros-kinetic-sensor_msgs < 1.13.0-1
 
 
 %description
@@ -41,18 +42,19 @@ cameras and scanning laser rangefinders.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-roscpp_serialization-devel
-Requires:       ros-melodic-geometry_msgs-devel
-Requires:       ros-melodic-message_generation-devel
-Requires:       ros-melodic-rosbag-devel
-Requires:       ros-melodic-rosunit-devel
-Requires:       ros-melodic-std_msgs-devel
-Requires:       ros-melodic-message_runtime-devel
+Requires:       python3-setuptools
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-roscpp_serialization-devel
+Requires:       ros-noetic-geometry_msgs-devel
+Requires:       ros-noetic-message_generation-devel
+Requires:       ros-noetic-rosbag-devel
+Requires:       ros-noetic-rosunit-devel
+Requires:       ros-noetic-std_msgs-devel
+Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-melodic-sensor_msgs-devel = 1.12.7-3
-Obsoletes: ros-melodic-sensor_msgs-devel < 1.12.7-3
-Obsoletes: ros-kinetic-sensor_msgs-devel < 1.12.7-3
+Provides: ros-noetic-sensor_msgs-devel = 1.13.0-1
+Obsoletes: ros-noetic-sensor_msgs-devel < 1.13.0-1
+Obsoletes: ros-kinetic-sensor_msgs-devel < 1.13.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -159,6 +161,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.12.7-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.12.7-2

@@ -1,12 +1,12 @@
 Name:           ros-roscpp_serialization
-Version:        melodic.0.6.13
+Version:        noetic.0.7.1
 Release:        1%{?dist}
 Summary:        ROS package roscpp_serialization
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/roscpp_core-release/archive/release/melodic/roscpp_serialization/0.6.13-1.tar.gz#/ros-melodic-roscpp_serialization-0.6.13-source0.tar.gz
+Source0:        https://github.com/ros-gbp/roscpp_core-release/archive/release/noetic/roscpp_serialization/0.7.1-1.tar.gz#/ros-noetic-roscpp_serialization-0.7.1-source0.tar.gz
 
 
 
@@ -18,18 +18,18 @@ BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
 BuildRequires:  boost-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-cpp_common-devel
-BuildRequires:  ros-melodic-roscpp_traits-devel
-BuildRequires:  ros-melodic-rostime-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-cpp_common-devel
+BuildRequires:  ros-noetic-roscpp_traits-devel
+BuildRequires:  ros-noetic-rostime-devel
 
-Requires:       ros-melodic-cpp_common
-Requires:       ros-melodic-roscpp_traits
-Requires:       ros-melodic-rostime
+Requires:       ros-noetic-cpp_common
+Requires:       ros-noetic-roscpp_traits
+Requires:       ros-noetic-rostime
 
-Provides:  ros-melodic-roscpp_serialization = 0.6.13-1
-Obsoletes: ros-melodic-roscpp_serialization < 0.6.13-1
-Obsoletes: ros-kinetic-roscpp_serialization < 0.6.13-1
+Provides:  ros-noetic-roscpp_serialization = 0.7.1-1
+Obsoletes: ros-noetic-roscpp_serialization < 0.7.1-1
+Obsoletes: ros-kinetic-roscpp_serialization < 0.7.1-1
 
 
 %description
@@ -39,15 +39,15 @@ in
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       boost-devel
-Requires:       ros-melodic-cpp_common-devel
-Requires:       ros-melodic-roscpp_traits-devel
-Requires:       ros-melodic-rostime-devel
+Requires:       ros-noetic-cpp_common-devel
+Requires:       ros-noetic-roscpp_traits-devel
+Requires:       ros-noetic-rostime-devel
 
-Provides: ros-melodic-roscpp_serialization-devel = 0.6.13-1
-Obsoletes: ros-melodic-roscpp_serialization-devel < 0.6.13-1
-Obsoletes: ros-kinetic-roscpp_serialization-devel < 0.6.13-1
+Provides: ros-noetic-roscpp_serialization-devel = 0.7.1-1
+Obsoletes: ros-noetic-roscpp_serialization-devel < 0.7.1-1
+Obsoletes: ros-kinetic-roscpp_serialization-devel < 0.7.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -154,6 +154,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.7.1-1
+- Upgrade to noetic
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.6.13-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.6.12-3

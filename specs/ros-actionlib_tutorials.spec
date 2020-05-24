@@ -1,12 +1,12 @@
 Name:           ros-actionlib_tutorials
-Version:        melodic.0.1.11
-Release:        3%{?dist}
+Version:        noetic.0.1.12
+Release:        1%{?dist}
 Summary:        ROS package actionlib_tutorials
 
 License:        BSD
 URL:            http://www.ros.org/wiki/actionlib/Tutorials
 
-Source0:        https://github.com/ros-gbp/common_tutorials-release/archive/release/melodic/actionlib_tutorials/0.1.11-0.tar.gz#/ros-melodic-actionlib_tutorials-0.1.11-source0.tar.gz
+Source0:        https://github.com/ros-gbp/common_tutorials-release/archive/release/noetic/actionlib_tutorials/0.1.12-1.tar.gz#/ros-noetic-actionlib_tutorials-0.1.12-source0.tar.gz
 
 
 
@@ -17,20 +17,20 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-actionlib-devel
-BuildRequires:  ros-melodic-actionlib_msgs-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-message_generation-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-std_msgs-devel
+BuildRequires:  ros-noetic-actionlib-devel
+BuildRequires:  ros-noetic-actionlib_msgs-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-message_generation-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-std_msgs-devel
 
-Requires:       ros-melodic-actionlib
-Requires:       ros-melodic-message_runtime
-Requires:       ros-melodic-roscpp
+Requires:       ros-noetic-actionlib
+Requires:       ros-noetic-message_runtime
+Requires:       ros-noetic-roscpp
 
-Provides:  ros-melodic-actionlib_tutorials = 0.1.11-3
-Obsoletes: ros-melodic-actionlib_tutorials < 0.1.11-3
-Obsoletes: ros-kinetic-actionlib_tutorials < 0.1.11-3
+Provides:  ros-noetic-actionlib_tutorials = 0.1.12-1
+Obsoletes: ros-noetic-actionlib_tutorials < 0.1.12-1
+Obsoletes: ros-kinetic-actionlib_tutorials < 0.1.12-1
 
 
 %description
@@ -39,17 +39,17 @@ The actionlib_tutorials package
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-actionlib-devel
-Requires:       ros-melodic-actionlib_msgs-devel
-Requires:       ros-melodic-message_generation-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-std_msgs-devel
-Requires:       ros-melodic-message_runtime-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-actionlib-devel
+Requires:       ros-noetic-actionlib_msgs-devel
+Requires:       ros-noetic-message_generation-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-std_msgs-devel
+Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-melodic-actionlib_tutorials-devel = 0.1.11-3
-Obsoletes: ros-melodic-actionlib_tutorials-devel < 0.1.11-3
-Obsoletes: ros-kinetic-actionlib_tutorials-devel < 0.1.11-3
+Provides: ros-noetic-actionlib_tutorials-devel = 0.1.12-1
+Obsoletes: ros-noetic-actionlib_tutorials-devel < 0.1.12-1
+Obsoletes: ros-kinetic-actionlib_tutorials-devel < 0.1.12-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -156,6 +156,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.1.12-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.1.11-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.1.11-2

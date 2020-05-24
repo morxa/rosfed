@@ -1,12 +1,12 @@
 Name:           ros-rqt_rviz
-Version:        melodic.0.6.0
-Release:        3%{?dist}
+Version:        noetic.0.6.1
+Release:        1%{?dist}
 Summary:        ROS package rqt_rviz
 
 License:        BSD
 URL:            http://wiki.ros.org/rqt_rviz
 
-Source0:        https://github.com/ros-gbp/rqt_rviz-release/archive/release/melodic/rqt_rviz/0.6.0-0.tar.gz#/ros-melodic-rqt_rviz-0.6.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt_rviz-release/archive/release/noetic/rqt_rviz/0.6.1-1.tar.gz#/ros-noetic-rqt_rviz-0.6.1-source0.tar.gz
 
 
 
@@ -17,7 +17,7 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  boost-devel boost-python3-devel boost-python3-devel
+BuildRequires:  boost-devel boost-python3-devel
 BuildRequires:  eigen3-devel
 BuildRequires:  libuuid-devel
 BuildRequires:  ogre-devel
@@ -27,20 +27,20 @@ BuildRequires:  qtermwidget-qt5-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
 BuildRequires:  urdfdom-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-pluginlib-devel
-BuildRequires:  ros-melodic-rqt_gui-devel
-BuildRequires:  ros-melodic-rqt_gui_cpp-devel
-BuildRequires:  ros-melodic-rviz-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-pluginlib-devel
+BuildRequires:  ros-noetic-rqt_gui-devel
+BuildRequires:  ros-noetic-rqt_gui_cpp-devel
+BuildRequires:  ros-noetic-rviz-devel
 
-Requires:       ros-melodic-pluginlib
-Requires:       ros-melodic-rqt_gui
-Requires:       ros-melodic-rqt_gui_cpp
-Requires:       ros-melodic-rviz
+Requires:       ros-noetic-pluginlib
+Requires:       ros-noetic-rqt_gui
+Requires:       ros-noetic-rqt_gui_cpp
+Requires:       ros-noetic-rviz
 
-Provides:  ros-melodic-rqt_rviz = 0.6.0-3
-Obsoletes: ros-melodic-rqt_rviz < 0.6.0-3
-Obsoletes: ros-kinetic-rqt_rviz < 0.6.0-3
+Provides:  ros-noetic-rqt_rviz = 0.6.1-1
+Obsoletes: ros-noetic-rqt_rviz < 0.6.1-1
+Obsoletes: ros-kinetic-rqt_rviz < 0.6.1-1
 
 
 %description
@@ -49,8 +49,8 @@ rqt_rviz provides a GUI plugin embedding
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       boost-devel boost-python3-devel boost-python3-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       boost-devel boost-python3-devel
 Requires:       eigen3-devel
 Requires:       libuuid-devel
 Requires:       ogre-devel
@@ -60,14 +60,14 @@ Requires:       qtermwidget-qt5-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
 Requires:       urdfdom-devel
-Requires:       ros-melodic-pluginlib-devel
-Requires:       ros-melodic-rqt_gui-devel
-Requires:       ros-melodic-rqt_gui_cpp-devel
-Requires:       ros-melodic-rviz-devel
+Requires:       ros-noetic-pluginlib-devel
+Requires:       ros-noetic-rqt_gui-devel
+Requires:       ros-noetic-rqt_gui_cpp-devel
+Requires:       ros-noetic-rviz-devel
 
-Provides: ros-melodic-rqt_rviz-devel = 0.6.0-3
-Obsoletes: ros-melodic-rqt_rviz-devel < 0.6.0-3
-Obsoletes: ros-kinetic-rqt_rviz-devel < 0.6.0-3
+Provides: ros-noetic-rqt_rviz-devel = 0.6.1-1
+Obsoletes: ros-noetic-rqt_rviz-devel < 0.6.1-1
+Obsoletes: ros-kinetic-rqt_rviz-devel < 0.6.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -174,6 +174,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.6.1-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.6.0-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.6.0-2

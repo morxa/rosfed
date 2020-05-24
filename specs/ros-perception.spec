@@ -1,12 +1,12 @@
 Name:           ros-perception
-Version:        melodic.1.4.1
-Release:        3%{?dist}
+Version:        noetic.1.5.0
+Release:        1%{?dist}
 Summary:        ROS package perception
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/metapackages-release/archive/release/melodic/perception/1.4.1-0.tar.gz#/ros-melodic-perception-1.4.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/metapackages-release/archive/release/noetic/perception/1.5.0-1.tar.gz#/ros-noetic-perception-1.5.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,19 +18,19 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
-Requires:       ros-melodic-image_common
-Requires:       ros-melodic-image_pipeline
-Requires:       ros-melodic-image_transport_plugins
-Requires:       ros-melodic-laser_pipeline
-Requires:       ros-melodic-perception_pcl
-Requires:       ros-melodic-ros_base
-Requires:       ros-melodic-vision_opencv
+Requires:       ros-noetic-image_common
+Requires:       ros-noetic-image_pipeline
+Requires:       ros-noetic-image_transport_plugins
+Requires:       ros-noetic-laser_pipeline
+Requires:       ros-noetic-perception_pcl
+Requires:       ros-noetic-ros_base
+Requires:       ros-noetic-vision_opencv
 
-Provides:  ros-melodic-perception = 1.4.1-3
-Obsoletes: ros-melodic-perception < 1.4.1-3
-Obsoletes: ros-kinetic-perception < 1.4.1-3
+Provides:  ros-noetic-perception = 1.5.0-1
+Obsoletes: ros-noetic-perception < 1.5.0-1
+Obsoletes: ros-kinetic-perception < 1.5.0-1
 
 
 %description
@@ -39,18 +39,18 @@ A metapackage to aggregate several packages.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-image_common-devel
-Requires:       ros-melodic-image_pipeline-devel
-Requires:       ros-melodic-image_transport_plugins-devel
-Requires:       ros-melodic-laser_pipeline-devel
-Requires:       ros-melodic-perception_pcl-devel
-Requires:       ros-melodic-ros_base-devel
-Requires:       ros-melodic-vision_opencv-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-image_common-devel
+Requires:       ros-noetic-image_pipeline-devel
+Requires:       ros-noetic-image_transport_plugins-devel
+Requires:       ros-noetic-laser_pipeline-devel
+Requires:       ros-noetic-perception_pcl-devel
+Requires:       ros-noetic-ros_base-devel
+Requires:       ros-noetic-vision_opencv-devel
 
-Provides: ros-melodic-perception-devel = 1.4.1-3
-Obsoletes: ros-melodic-perception-devel < 1.4.1-3
-Obsoletes: ros-kinetic-perception-devel < 1.4.1-3
+Provides: ros-noetic-perception-devel = 1.5.0-1
+Obsoletes: ros-noetic-perception-devel < 1.5.0-1
+Obsoletes: ros-kinetic-perception-devel < 1.5.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -157,6 +157,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.5.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.4.1-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.4.1-2

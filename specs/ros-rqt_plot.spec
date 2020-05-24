@@ -1,12 +1,12 @@
 Name:           ros-rqt_plot
-Version:        melodic.0.4.9
-Release:        3%{?dist}
+Version:        noetic.0.4.12
+Release:        1%{?dist}
 Summary:        ROS package rqt_plot
 
 License:        BSD
 URL:            http://wiki.ros.org/rqt_plot
 
-Source0:        https://github.com/ros-gbp/rqt_plot-release/archive/release/melodic/rqt_plot/0.4.9-0.tar.gz#/ros-melodic-rqt_plot-0.4.9-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt_plot-release/archive/release/noetic/rqt_plot/0.4.12-1.tar.gz#/ros-noetic-rqt_plot-0.4.12-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,24 +18,25 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
 Requires:       python3-matplotlib
+Requires:       python3-numpy
 Requires:       python3-rospkg
 Requires:       python3dist(numpy)
-Requires:       ros-melodic-python_qt_binding
-Requires:       ros-melodic-qt_gui_py_common
-Requires:       ros-melodic-qwt_dependency
-Requires:       ros-melodic-rosgraph
-Requires:       ros-melodic-rostopic
-Requires:       ros-melodic-rqt_gui
-Requires:       ros-melodic-rqt_gui_py
-Requires:       ros-melodic-rqt_py_common
-Requires:       ros-melodic-std_msgs
+Requires:       ros-noetic-python_qt_binding
+Requires:       ros-noetic-qt_gui_py_common
+Requires:       ros-noetic-qwt_dependency
+Requires:       ros-noetic-rosgraph
+Requires:       ros-noetic-rostopic
+Requires:       ros-noetic-rqt_gui
+Requires:       ros-noetic-rqt_gui_py
+Requires:       ros-noetic-rqt_py_common
+Requires:       ros-noetic-std_msgs
 
-Provides:  ros-melodic-rqt_plot = 0.4.9-3
-Obsoletes: ros-melodic-rqt_plot < 0.4.9-3
-Obsoletes: ros-kinetic-rqt_plot < 0.4.9-3
+Provides:  ros-noetic-rqt_plot = 0.4.12-1
+Obsoletes: ros-noetic-rqt_plot < 0.4.12-1
+Obsoletes: ros-kinetic-rqt_plot < 0.4.12-1
 
 
 %description
@@ -45,20 +46,20 @@ using different plotting backends.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-python_qt_binding-devel
-Requires:       ros-melodic-qt_gui_py_common-devel
-Requires:       ros-melodic-qwt_dependency-devel
-Requires:       ros-melodic-rosgraph-devel
-Requires:       ros-melodic-rostopic-devel
-Requires:       ros-melodic-rqt_gui-devel
-Requires:       ros-melodic-rqt_gui_py-devel
-Requires:       ros-melodic-rqt_py_common-devel
-Requires:       ros-melodic-std_msgs-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-python_qt_binding-devel
+Requires:       ros-noetic-qt_gui_py_common-devel
+Requires:       ros-noetic-qwt_dependency-devel
+Requires:       ros-noetic-rosgraph-devel
+Requires:       ros-noetic-rostopic-devel
+Requires:       ros-noetic-rqt_gui-devel
+Requires:       ros-noetic-rqt_gui_py-devel
+Requires:       ros-noetic-rqt_py_common-devel
+Requires:       ros-noetic-std_msgs-devel
 
-Provides: ros-melodic-rqt_plot-devel = 0.4.9-3
-Obsoletes: ros-melodic-rqt_plot-devel < 0.4.9-3
-Obsoletes: ros-kinetic-rqt_plot-devel < 0.4.9-3
+Provides: ros-noetic-rqt_plot-devel = 0.4.12-1
+Obsoletes: ros-noetic-rqt_plot-devel < 0.4.12-1
+Obsoletes: ros-kinetic-rqt_plot-devel < 0.4.12-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -165,6 +166,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.12-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.9-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.9-2

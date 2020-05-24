@@ -1,12 +1,12 @@
 Name:           ros-diagnostic_aggregator
-Version:        melodic.1.9.3
-Release:        3%{?dist}
+Version:        noetic.1.9.4
+Release:        1%{?dist}
 Summary:        ROS package diagnostic_aggregator
 
 License:        BSD
 URL:            http://www.ros.org/wiki/diagnostic_aggregator
 
-Source0:        https://github.com/ros-gbp/diagnostics-release/archive/release/melodic/diagnostic_aggregator/1.9.3-0.tar.gz#/ros-melodic-diagnostic_aggregator-1.9.3-source0.tar.gz
+Source0:        https://github.com/ros-gbp/diagnostics-release/archive/release/noetic/diagnostic_aggregator/1.9.4-1.tar.gz#/ros-noetic-diagnostic_aggregator-1.9.4-source0.tar.gz
 
 
 
@@ -21,27 +21,27 @@ BuildRequires:  libuuid-devel
 BuildRequires:  poco-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
-BuildRequires:  ros-melodic-bondcpp-devel
-BuildRequires:  ros-melodic-bondpy-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-diagnostic_msgs-devel
-BuildRequires:  ros-melodic-pluginlib-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-rospy-devel
-BuildRequires:  ros-melodic-rostest-devel
-BuildRequires:  ros-melodic-xmlrpcpp-devel
+BuildRequires:  ros-noetic-bondcpp-devel
+BuildRequires:  ros-noetic-bondpy-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-diagnostic_msgs-devel
+BuildRequires:  ros-noetic-pluginlib-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-rospy-devel
+BuildRequires:  ros-noetic-rostest-devel
+BuildRequires:  ros-noetic-xmlrpcpp-devel
 
-Requires:       ros-melodic-bondcpp
-Requires:       ros-melodic-bondpy
-Requires:       ros-melodic-diagnostic_msgs
-Requires:       ros-melodic-pluginlib
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-rospy
-Requires:       ros-melodic-xmlrpcpp
+Requires:       ros-noetic-bondcpp
+Requires:       ros-noetic-bondpy
+Requires:       ros-noetic-diagnostic_msgs
+Requires:       ros-noetic-pluginlib
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-rospy
+Requires:       ros-noetic-xmlrpcpp
 
-Provides:  ros-melodic-diagnostic_aggregator = 1.9.3-3
-Obsoletes: ros-melodic-diagnostic_aggregator < 1.9.3-3
-Obsoletes: ros-kinetic-diagnostic_aggregator < 1.9.3-3
+Provides:  ros-noetic-diagnostic_aggregator = 1.9.4-1
+Obsoletes: ros-noetic-diagnostic_aggregator < 1.9.4-1
+Obsoletes: ros-kinetic-diagnostic_aggregator < 1.9.4-1
 
 
 %description
@@ -50,23 +50,23 @@ diagnostic_aggregator
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       libuuid-devel
 Requires:       poco-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
-Requires:       ros-melodic-bondcpp-devel
-Requires:       ros-melodic-bondpy-devel
-Requires:       ros-melodic-diagnostic_msgs-devel
-Requires:       ros-melodic-pluginlib-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-rospy-devel
-Requires:       ros-melodic-rostest-devel
-Requires:       ros-melodic-xmlrpcpp-devel
+Requires:       ros-noetic-bondcpp-devel
+Requires:       ros-noetic-bondpy-devel
+Requires:       ros-noetic-diagnostic_msgs-devel
+Requires:       ros-noetic-pluginlib-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-rospy-devel
+Requires:       ros-noetic-rostest-devel
+Requires:       ros-noetic-xmlrpcpp-devel
 
-Provides: ros-melodic-diagnostic_aggregator-devel = 1.9.3-3
-Obsoletes: ros-melodic-diagnostic_aggregator-devel < 1.9.3-3
-Obsoletes: ros-kinetic-diagnostic_aggregator-devel < 1.9.3-3
+Provides: ros-noetic-diagnostic_aggregator-devel = 1.9.4-1
+Obsoletes: ros-noetic-diagnostic_aggregator-devel < 1.9.4-1
+Obsoletes: ros-kinetic-diagnostic_aggregator-devel < 1.9.4-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -173,6 +173,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.9.4-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.9.3-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.9.3-2

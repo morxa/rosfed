@@ -1,12 +1,12 @@
 Name:           ros-rqt_reconfigure
-Version:        melodic.0.5.1
-Release:        2%{?dist}
+Version:        noetic.0.5.2
+Release:        1%{?dist}
 Summary:        ROS package rqt_reconfigure
 
 License:        BSD
 URL:            http://wiki.ros.org/rqt_reconfigure
 
-Source0:        https://github.com/ros-gbp/rqt_reconfigure-release/archive/release/melodic/rqt_reconfigure/0.5.1-1.tar.gz#/ros-melodic-rqt_reconfigure-0.5.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt_reconfigure-release/archive/release/noetic/rqt_reconfigure/0.5.2-1.tar.gz#/ros-noetic-rqt_reconfigure-0.5.2-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,22 +18,24 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-roslint-devel
-BuildRequires:  ros-melodic-rostest-devel
+BuildRequires:  python3-setuptools
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-roslint-devel
+BuildRequires:  ros-noetic-rostest-devel
 
+Requires:       python3-pyyaml
 Requires:       python3dist(pyyaml)
-Requires:       ros-melodic-dynamic_reconfigure
-Requires:       ros-melodic-python_qt_binding
-Requires:       ros-melodic-rospy
-Requires:       ros-melodic-rqt_console
-Requires:       ros-melodic-rqt_gui
-Requires:       ros-melodic-rqt_gui_py
-Requires:       ros-melodic-rqt_py_common
+Requires:       ros-noetic-dynamic_reconfigure
+Requires:       ros-noetic-python_qt_binding
+Requires:       ros-noetic-rospy
+Requires:       ros-noetic-rqt_console
+Requires:       ros-noetic-rqt_gui
+Requires:       ros-noetic-rqt_gui_py
+Requires:       ros-noetic-rqt_py_common
 
-Provides:  ros-melodic-rqt_reconfigure = 0.5.1-2
-Obsoletes: ros-melodic-rqt_reconfigure < 0.5.1-2
-Obsoletes: ros-kinetic-rqt_reconfigure < 0.5.1-2
+Provides:  ros-noetic-rqt_reconfigure = 0.5.2-1
+Obsoletes: ros-noetic-rqt_reconfigure < 0.5.2-1
+Obsoletes: ros-kinetic-rqt_reconfigure < 0.5.2-1
 
 
 %description
@@ -44,20 +46,21 @@ parameters that are accessible via dynamic_reconfigure.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-roslint-devel
-Requires:       ros-melodic-rostest-devel
-Requires:       ros-melodic-dynamic_reconfigure-devel
-Requires:       ros-melodic-python_qt_binding-devel
-Requires:       ros-melodic-rospy-devel
-Requires:       ros-melodic-rqt_console-devel
-Requires:       ros-melodic-rqt_gui-devel
-Requires:       ros-melodic-rqt_gui_py-devel
-Requires:       ros-melodic-rqt_py_common-devel
+Requires:       python3-setuptools
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-roslint-devel
+Requires:       ros-noetic-rostest-devel
+Requires:       ros-noetic-dynamic_reconfigure-devel
+Requires:       ros-noetic-python_qt_binding-devel
+Requires:       ros-noetic-rospy-devel
+Requires:       ros-noetic-rqt_console-devel
+Requires:       ros-noetic-rqt_gui-devel
+Requires:       ros-noetic-rqt_gui_py-devel
+Requires:       ros-noetic-rqt_py_common-devel
 
-Provides: ros-melodic-rqt_reconfigure-devel = 0.5.1-2
-Obsoletes: ros-melodic-rqt_reconfigure-devel < 0.5.1-2
-Obsoletes: ros-kinetic-rqt_reconfigure-devel < 0.5.1-2
+Provides: ros-noetic-rqt_reconfigure-devel = 0.5.2-1
+Obsoletes: ros-noetic-rqt_reconfigure-devel < 0.5.2-1
+Obsoletes: ros-kinetic-rqt_reconfigure-devel < 0.5.2-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -164,6 +167,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.2-1
+- Upgrade to noetic
 * Thu Mar 05 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.5.1-2
 - Fix dependency on python3-pyyaml
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.5.1-1

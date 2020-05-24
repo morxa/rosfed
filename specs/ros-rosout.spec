@@ -1,12 +1,12 @@
 Name:           ros-rosout
-Version:        melodic.1.14.5
+Version:        noetic.1.15.6
 Release:        1%{?dist}
 Summary:        ROS package rosout
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/melodic/rosout/1.14.5-1.tar.gz#/ros-melodic-rosout-1.14.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/rosout/1.15.6-1.tar.gz#/ros-noetic-rosout-1.15.6-source0.tar.gz
 
 
 
@@ -19,17 +19,17 @@ BuildRequires:  python3-devel
 
 BuildRequires:  boost-devel
 BuildRequires:  log4cxx-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-rosgraph_msgs-devel
-BuildRequires:  ros-melodic-rostime-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-rosgraph_msgs-devel
+BuildRequires:  ros-noetic-rostime-devel
 
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-rosgraph_msgs
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-rosgraph_msgs
 
-Provides:  ros-melodic-rosout = 1.14.5-1
-Obsoletes: ros-melodic-rosout < 1.14.5-1
-Obsoletes: ros-kinetic-rosout < 1.14.5-1
+Provides:  ros-noetic-rosout = 1.15.6-1
+Obsoletes: ros-noetic-rosout < 1.15.6-1
+Obsoletes: ros-kinetic-rosout < 1.15.6-1
 
 
 %description
@@ -38,16 +38,16 @@ System-wide logging mechanism for messages sent to the /rosout topic.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       boost-devel
 Requires:       log4cxx-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-rosgraph_msgs-devel
-Requires:       ros-melodic-rostime-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-rosgraph_msgs-devel
+Requires:       ros-noetic-rostime-devel
 
-Provides: ros-melodic-rosout-devel = 1.14.5-1
-Obsoletes: ros-melodic-rosout-devel < 1.14.5-1
-Obsoletes: ros-kinetic-rosout-devel < 1.14.5-1
+Provides: ros-noetic-rosout-devel = 1.15.6-1
+Obsoletes: ros-noetic-rosout-devel < 1.15.6-1
+Obsoletes: ros-kinetic-rosout-devel < 1.15.6-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -154,6 +154,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.6-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.5-1
 - Update to latest release
 * Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.4-1

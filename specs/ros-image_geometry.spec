@@ -1,12 +1,12 @@
 Name:           ros-image_geometry
-Version:        melodic.1.13.0
-Release:        3%{?dist}
+Version:        noetic.1.15.0
+Release:        1%{?dist}
 Summary:        ROS package image_geometry
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/vision_opencv-release/archive/release/melodic/image_geometry/1.13.0-0.tar.gz#/ros-melodic-image_geometry-1.13.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/vision_opencv-release/archive/release/noetic/image_geometry/1.15.0-1.tar.gz#/ros-noetic-image_geometry-1.15.0-source0.tar.gz
 
 Patch0: ros-kinetic-image_geometry.catkin-fix-order.patch
 
@@ -21,14 +21,14 @@ BuildRequires:  python3-devel
 BuildRequires:  boost-devel
 BuildRequires:  gtest-devel
 BuildRequires:  opencv-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-cpp_common-devel
-BuildRequires:  ros-melodic-sensor_msgs-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-cpp_common-devel
+BuildRequires:  ros-noetic-sensor_msgs-devel
 
 
-Provides:  ros-melodic-image_geometry = 1.13.0-3
-Obsoletes: ros-melodic-image_geometry < 1.13.0-3
-Obsoletes: ros-kinetic-image_geometry < 1.13.0-3
+Provides:  ros-noetic-image_geometry = 1.15.0-1
+Obsoletes: ros-noetic-image_geometry < 1.15.0-1
+Obsoletes: ros-kinetic-image_geometry < 1.15.0-1
 
 
 %description
@@ -42,15 +42,15 @@ OpenCV data types.
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       opencv-devel
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-sensor_msgs-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-sensor_msgs-devel
 Requires:       boost-devel
 Requires:       gtest-devel
-Requires:       ros-melodic-cpp_common-devel
+Requires:       ros-noetic-cpp_common-devel
 
-Provides: ros-melodic-image_geometry-devel = 1.13.0-3
-Obsoletes: ros-melodic-image_geometry-devel < 1.13.0-3
-Obsoletes: ros-kinetic-image_geometry-devel < 1.13.0-3
+Provides: ros-noetic-image_geometry-devel = 1.15.0-1
+Obsoletes: ros-noetic-image_geometry-devel < 1.15.0-1
+Obsoletes: ros-kinetic-image_geometry-devel < 1.15.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -158,6 +158,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.0-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.0-2

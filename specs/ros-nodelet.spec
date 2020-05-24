@@ -1,12 +1,12 @@
 Name:           ros-nodelet
-Version:        melodic.1.9.16
-Release:        3%{?dist}
+Version:        noetic.1.10.0
+Release:        1%{?dist}
 Summary:        ROS package nodelet
 
 License:        BSD
 URL:            http://ros.org/wiki/nodelet
 
-Source0:        https://github.com/ros-gbp/nodelet_core-release/archive/release/melodic/nodelet/1.9.16-0.tar.gz#/ros-melodic-nodelet-1.9.16-source0.tar.gz
+Source0:        https://github.com/ros-gbp/nodelet_core-release/archive/release/noetic/nodelet/1.10.0-1.tar.gz#/ros-noetic-nodelet-1.10.0-source0.tar.gz
 
 
 
@@ -17,31 +17,31 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  boost-devel boost-python3-devel boost-python3-devel
+BuildRequires:  boost-devel boost-python3-devel
 BuildRequires:  libuuid-devel
 BuildRequires:  poco-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
-BuildRequires:  ros-melodic-bondcpp-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-cmake_modules-devel
-BuildRequires:  ros-melodic-message_generation-devel
-BuildRequires:  ros-melodic-pluginlib-devel
-BuildRequires:  ros-melodic-rosconsole-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-std_msgs-devel
+BuildRequires:  ros-noetic-bondcpp-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-cmake_modules-devel
+BuildRequires:  ros-noetic-message_generation-devel
+BuildRequires:  ros-noetic-pluginlib-devel
+BuildRequires:  ros-noetic-rosconsole-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-std_msgs-devel
 
-Requires:       ros-melodic-bondcpp
-Requires:       ros-melodic-message_runtime
-Requires:       ros-melodic-pluginlib
-Requires:       ros-melodic-rosconsole
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-rospy
-Requires:       ros-melodic-std_msgs
+Requires:       ros-noetic-bondcpp
+Requires:       ros-noetic-message_runtime
+Requires:       ros-noetic-pluginlib
+Requires:       ros-noetic-rosconsole
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-rospy
+Requires:       ros-noetic-std_msgs
 
-Provides:  ros-melodic-nodelet = 1.9.16-3
-Obsoletes: ros-melodic-nodelet < 1.9.16-3
-Obsoletes: ros-kinetic-nodelet < 1.9.16-3
+Provides:  ros-noetic-nodelet = 1.10.0-1
+Obsoletes: ros-noetic-nodelet < 1.10.0-1
+Obsoletes: ros-kinetic-nodelet < 1.10.0-1
 
 
 %description
@@ -54,25 +54,25 @@ for instantiating nodelets.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       boost-devel boost-python3-devel boost-python3-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       boost-devel boost-python3-devel
 Requires:       libuuid-devel
 Requires:       poco-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
-Requires:       ros-melodic-bondcpp-devel
-Requires:       ros-melodic-cmake_modules-devel
-Requires:       ros-melodic-message_generation-devel
-Requires:       ros-melodic-pluginlib-devel
-Requires:       ros-melodic-rosconsole-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-std_msgs-devel
-Requires:       ros-melodic-message_runtime-devel
-Requires:       ros-melodic-rospy-devel
+Requires:       ros-noetic-bondcpp-devel
+Requires:       ros-noetic-cmake_modules-devel
+Requires:       ros-noetic-message_generation-devel
+Requires:       ros-noetic-pluginlib-devel
+Requires:       ros-noetic-rosconsole-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-std_msgs-devel
+Requires:       ros-noetic-message_runtime-devel
+Requires:       ros-noetic-rospy-devel
 
-Provides: ros-melodic-nodelet-devel = 1.9.16-3
-Obsoletes: ros-melodic-nodelet-devel < 1.9.16-3
-Obsoletes: ros-kinetic-nodelet-devel < 1.9.16-3
+Provides: ros-noetic-nodelet-devel = 1.10.0-1
+Obsoletes: ros-noetic-nodelet-devel < 1.10.0-1
+Obsoletes: ros-kinetic-nodelet-devel < 1.10.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -179,6 +179,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.10.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.9.16-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.9.16-2

@@ -1,12 +1,12 @@
 Name:           ros-rosmsg
-Version:        melodic.1.14.5
+Version:        noetic.1.15.6
 Release:        1%{?dist}
 Summary:        ROS package rosmsg
 
 License:        BSD
 URL:            http://wiki.ros.org/rosmsg
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/melodic/rosmsg/1.14.5-1.tar.gz#/ros-melodic-rosmsg-1.14.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/rosmsg/1.15.6-1.tar.gz#/ros-noetic-rosmsg-1.15.6-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,19 +18,19 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-std_msgs-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-std_msgs-devel
 
 Requires:       python3-rospkg
-Requires:       ros-melodic-catkin
-Requires:       ros-melodic-genmsg
-Requires:       ros-melodic-genpy
-Requires:       ros-melodic-rosbag
-Requires:       ros-melodic-roslib
+Requires:       ros-noetic-catkin
+Requires:       ros-noetic-genmsg
+Requires:       ros-noetic-genpy
+Requires:       ros-noetic-rosbag
+Requires:       ros-noetic-roslib
 
-Provides:  ros-melodic-rosmsg = 1.14.5-1
-Obsoletes: ros-melodic-rosmsg < 1.14.5-1
-Obsoletes: ros-kinetic-rosmsg < 1.14.5-1
+Provides:  ros-noetic-rosmsg = 1.15.6-1
+Obsoletes: ros-noetic-rosmsg < 1.15.6-1
+Obsoletes: ros-kinetic-rosmsg < 1.15.6-1
 
 
 %description
@@ -39,16 +39,16 @@ rosmsg contains two command-line tools:
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-std_msgs-devel
-Requires:       ros-melodic-genmsg-devel
-Requires:       ros-melodic-genpy-devel
-Requires:       ros-melodic-rosbag-devel
-Requires:       ros-melodic-roslib-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-std_msgs-devel
+Requires:       ros-noetic-genmsg-devel
+Requires:       ros-noetic-genpy-devel
+Requires:       ros-noetic-rosbag-devel
+Requires:       ros-noetic-roslib-devel
 
-Provides: ros-melodic-rosmsg-devel = 1.14.5-1
-Obsoletes: ros-melodic-rosmsg-devel < 1.14.5-1
-Obsoletes: ros-kinetic-rosmsg-devel < 1.14.5-1
+Provides: ros-noetic-rosmsg-devel = 1.15.6-1
+Obsoletes: ros-noetic-rosmsg-devel < 1.15.6-1
+Obsoletes: ros-kinetic-rosmsg-devel < 1.15.6-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -155,6 +155,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.6-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.5-1
 - Update to latest release
 * Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.4-1

@@ -1,12 +1,12 @@
 Name:           ros-tf2_ros
-Version:        melodic.0.6.5
-Release:        3%{?dist}
+Version:        noetic.0.7.1
+Release:        1%{?dist}
 Summary:        ROS package tf2_ros
 
 License:        BSD
 URL:            http://www.ros.org/wiki/tf2_ros
 
-Source0:        https://github.com/ros-gbp/geometry2-release/archive/release/melodic/tf2_ros/0.6.5-0.tar.gz#/ros-melodic-tf2_ros-0.6.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/geometry2-release/archive/release/noetic/tf2_ros/0.7.1-1.tar.gz#/ros-noetic-tf2_ros-0.7.1-source0.tar.gz
 
 
 
@@ -17,37 +17,37 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-actionlib-devel
-BuildRequires:  ros-melodic-actionlib_msgs-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-geometry_msgs-devel
-BuildRequires:  ros-melodic-message_filters-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-rosgraph-devel
-BuildRequires:  ros-melodic-rospy-devel
-BuildRequires:  ros-melodic-rostest-devel
-BuildRequires:  ros-melodic-std_msgs-devel
-BuildRequires:  ros-melodic-tf2-devel
-BuildRequires:  ros-melodic-tf2_msgs-devel
-BuildRequires:  ros-melodic-tf2_py-devel
-BuildRequires:  ros-melodic-xmlrpcpp-devel
+BuildRequires:  ros-noetic-actionlib-devel
+BuildRequires:  ros-noetic-actionlib_msgs-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-geometry_msgs-devel
+BuildRequires:  ros-noetic-message_filters-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-rosgraph-devel
+BuildRequires:  ros-noetic-rospy-devel
+BuildRequires:  ros-noetic-rostest-devel
+BuildRequires:  ros-noetic-std_msgs-devel
+BuildRequires:  ros-noetic-tf2-devel
+BuildRequires:  ros-noetic-tf2_msgs-devel
+BuildRequires:  ros-noetic-tf2_py-devel
+BuildRequires:  ros-noetic-xmlrpcpp-devel
 
-Requires:       ros-melodic-actionlib
-Requires:       ros-melodic-actionlib_msgs
-Requires:       ros-melodic-geometry_msgs
-Requires:       ros-melodic-message_filters
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-rosgraph
-Requires:       ros-melodic-rospy
-Requires:       ros-melodic-std_msgs
-Requires:       ros-melodic-tf2
-Requires:       ros-melodic-tf2_msgs
-Requires:       ros-melodic-tf2_py
-Requires:       ros-melodic-xmlrpcpp
+Requires:       ros-noetic-actionlib
+Requires:       ros-noetic-actionlib_msgs
+Requires:       ros-noetic-geometry_msgs
+Requires:       ros-noetic-message_filters
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-rosgraph
+Requires:       ros-noetic-rospy
+Requires:       ros-noetic-std_msgs
+Requires:       ros-noetic-tf2
+Requires:       ros-noetic-tf2_msgs
+Requires:       ros-noetic-tf2_py
+Requires:       ros-noetic-xmlrpcpp
 
-Provides:  ros-melodic-tf2_ros = 0.6.5-3
-Obsoletes: ros-melodic-tf2_ros < 0.6.5-3
-Obsoletes: ros-kinetic-tf2_ros < 0.6.5-3
+Provides:  ros-noetic-tf2_ros = 0.7.1-1
+Obsoletes: ros-noetic-tf2_ros < 0.7.1-1
+Obsoletes: ros-kinetic-tf2_ros < 0.7.1-1
 
 
 %description
@@ -57,24 +57,24 @@ Python and C++.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-actionlib-devel
-Requires:       ros-melodic-actionlib_msgs-devel
-Requires:       ros-melodic-geometry_msgs-devel
-Requires:       ros-melodic-message_filters-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-rosgraph-devel
-Requires:       ros-melodic-rospy-devel
-Requires:       ros-melodic-rostest-devel
-Requires:       ros-melodic-std_msgs-devel
-Requires:       ros-melodic-tf2-devel
-Requires:       ros-melodic-tf2_msgs-devel
-Requires:       ros-melodic-tf2_py-devel
-Requires:       ros-melodic-xmlrpcpp-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-actionlib-devel
+Requires:       ros-noetic-actionlib_msgs-devel
+Requires:       ros-noetic-geometry_msgs-devel
+Requires:       ros-noetic-message_filters-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-rosgraph-devel
+Requires:       ros-noetic-rospy-devel
+Requires:       ros-noetic-rostest-devel
+Requires:       ros-noetic-std_msgs-devel
+Requires:       ros-noetic-tf2-devel
+Requires:       ros-noetic-tf2_msgs-devel
+Requires:       ros-noetic-tf2_py-devel
+Requires:       ros-noetic-xmlrpcpp-devel
 
-Provides: ros-melodic-tf2_ros-devel = 0.6.5-3
-Obsoletes: ros-melodic-tf2_ros-devel < 0.6.5-3
-Obsoletes: ros-kinetic-tf2_ros-devel < 0.6.5-3
+Provides: ros-noetic-tf2_ros-devel = 0.7.1-1
+Obsoletes: ros-noetic-tf2_ros-devel < 0.7.1-1
+Obsoletes: ros-kinetic-tf2_ros-devel < 0.7.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -181,6 +181,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.7.1-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.6.5-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.6.5-2

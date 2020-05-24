@@ -1,12 +1,12 @@
 Name:           ros-gazebo_msgs
-Version:        melodic.2.8.6
+Version:        noetic.2.9.1
 Release:        1%{?dist}
 Summary:        ROS package gazebo_msgs
 
 License:        BSD
 URL:            http://gazebosim.org/tutorials?cat=connect_ros
 
-Source0:        https://github.com/ros-gbp/gazebo_ros_pkgs-release/archive/release/melodic/gazebo_msgs/2.8.6-1.tar.gz#/ros-melodic-gazebo_msgs-2.8.6-source0.tar.gz
+Source0:        https://github.com/ros-gbp/gazebo_ros_pkgs-release/archive/release/noetic/gazebo_msgs/2.9.1-1.tar.gz#/ros-noetic-gazebo_msgs-2.9.1-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,24 +18,24 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-geometry_msgs-devel
-BuildRequires:  ros-melodic-message_generation-devel
-BuildRequires:  ros-melodic-sensor_msgs-devel
-BuildRequires:  ros-melodic-std_msgs-devel
-BuildRequires:  ros-melodic-std_srvs-devel
-BuildRequires:  ros-melodic-trajectory_msgs-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-geometry_msgs-devel
+BuildRequires:  ros-noetic-message_generation-devel
+BuildRequires:  ros-noetic-sensor_msgs-devel
+BuildRequires:  ros-noetic-std_msgs-devel
+BuildRequires:  ros-noetic-std_srvs-devel
+BuildRequires:  ros-noetic-trajectory_msgs-devel
 
-Requires:       ros-melodic-geometry_msgs
-Requires:       ros-melodic-message_runtime
-Requires:       ros-melodic-sensor_msgs
-Requires:       ros-melodic-std_msgs
-Requires:       ros-melodic-std_srvs
-Requires:       ros-melodic-trajectory_msgs
+Requires:       ros-noetic-geometry_msgs
+Requires:       ros-noetic-message_runtime
+Requires:       ros-noetic-sensor_msgs
+Requires:       ros-noetic-std_msgs
+Requires:       ros-noetic-std_srvs
+Requires:       ros-noetic-trajectory_msgs
 
-Provides:  ros-melodic-gazebo_msgs = 2.8.6-1
-Obsoletes: ros-melodic-gazebo_msgs < 2.8.6-1
-Obsoletes: ros-kinetic-gazebo_msgs < 2.8.6-1
+Provides:  ros-noetic-gazebo_msgs = 2.9.1-1
+Obsoletes: ros-noetic-gazebo_msgs < 2.9.1-1
+Obsoletes: ros-kinetic-gazebo_msgs < 2.9.1-1
 
 
 %description
@@ -45,18 +45,18 @@ ROS.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-geometry_msgs-devel
-Requires:       ros-melodic-message_generation-devel
-Requires:       ros-melodic-sensor_msgs-devel
-Requires:       ros-melodic-std_msgs-devel
-Requires:       ros-melodic-std_srvs-devel
-Requires:       ros-melodic-trajectory_msgs-devel
-Requires:       ros-melodic-message_runtime-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-geometry_msgs-devel
+Requires:       ros-noetic-message_generation-devel
+Requires:       ros-noetic-sensor_msgs-devel
+Requires:       ros-noetic-std_msgs-devel
+Requires:       ros-noetic-std_srvs-devel
+Requires:       ros-noetic-trajectory_msgs-devel
+Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-melodic-gazebo_msgs-devel = 2.8.6-1
-Obsoletes: ros-melodic-gazebo_msgs-devel < 2.8.6-1
-Obsoletes: ros-kinetic-gazebo_msgs-devel < 2.8.6-1
+Provides: ros-noetic-gazebo_msgs-devel = 2.9.1-1
+Obsoletes: ros-noetic-gazebo_msgs-devel < 2.9.1-1
+Obsoletes: ros-kinetic-gazebo_msgs-devel < 2.9.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -163,6 +163,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.2.9.1-1
+- Upgrade to noetic
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.2.8.6-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.2.8.4-3

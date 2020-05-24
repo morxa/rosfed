@@ -1,12 +1,12 @@
 Name:           ros-rosgraph_msgs
-Version:        melodic.1.11.2
-Release:        3%{?dist}
+Version:        noetic.1.11.3
+Release:        1%{?dist}
 Summary:        ROS package rosgraph_msgs
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/ros_comm_msgs-release/archive/release/melodic/rosgraph_msgs/1.11.2-0.tar.gz#/ros-melodic-rosgraph_msgs-1.11.2-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm_msgs-release/archive/release/noetic/rosgraph_msgs/1.11.3-1.tar.gz#/ros-noetic-rosgraph_msgs-1.11.3-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,16 +18,16 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-message_generation-devel
-BuildRequires:  ros-melodic-std_msgs-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-message_generation-devel
+BuildRequires:  ros-noetic-std_msgs-devel
 
-Requires:       ros-melodic-message_runtime
-Requires:       ros-melodic-std_msgs
+Requires:       ros-noetic-message_runtime
+Requires:       ros-noetic-std_msgs
 
-Provides:  ros-melodic-rosgraph_msgs = 1.11.2-3
-Obsoletes: ros-melodic-rosgraph_msgs < 1.11.2-3
-Obsoletes: ros-kinetic-rosgraph_msgs < 1.11.2-3
+Provides:  ros-noetic-rosgraph_msgs = 1.11.3-1
+Obsoletes: ros-noetic-rosgraph_msgs < 1.11.3-1
+Obsoletes: ros-kinetic-rosgraph_msgs < 1.11.3-1
 
 
 %description
@@ -38,14 +38,14 @@ with.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-message_generation-devel
-Requires:       ros-melodic-std_msgs-devel
-Requires:       ros-melodic-message_runtime-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-message_generation-devel
+Requires:       ros-noetic-std_msgs-devel
+Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-melodic-rosgraph_msgs-devel = 1.11.2-3
-Obsoletes: ros-melodic-rosgraph_msgs-devel < 1.11.2-3
-Obsoletes: ros-kinetic-rosgraph_msgs-devel < 1.11.2-3
+Provides: ros-noetic-rosgraph_msgs-devel = 1.11.3-1
+Obsoletes: ros-noetic-rosgraph_msgs-devel < 1.11.3-1
+Obsoletes: ros-kinetic-rosgraph_msgs-devel < 1.11.3-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -152,6 +152,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.11.3-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.11.2-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.11.2-2

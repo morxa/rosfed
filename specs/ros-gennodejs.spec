@@ -1,12 +1,12 @@
 Name:           ros-gennodejs
-Version:        melodic.2.0.1
-Release:        3%{?dist}
+Version:        noetic.2.0.2
+Release:        1%{?dist}
 Summary:        ROS package gennodejs
 
 License:        Apache 2.0
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/RethinkRobotics-release/gennodejs-release/archive/release/melodic/gennodejs/2.0.1-0.tar.gz#/ros-melodic-gennodejs-2.0.1-source0.tar.gz
+Source0:        https://github.com/sloretz/gennodejs-release/archive/release/noetic/gennodejs/2.0.2-1.tar.gz#/ros-noetic-gennodejs-2.0.2-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,14 +18,15 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-genmsg-devel
+BuildRequires:  python3-setuptools
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-genmsg-devel
 
-Requires:       ros-melodic-genmsg
+Requires:       ros-noetic-genmsg
 
-Provides:  ros-melodic-gennodejs = 2.0.1-3
-Obsoletes: ros-melodic-gennodejs < 2.0.1-3
-Obsoletes: ros-kinetic-gennodejs < 2.0.1-3
+Provides:  ros-noetic-gennodejs = 2.0.2-1
+Obsoletes: ros-noetic-gennodejs < 2.0.2-1
+Obsoletes: ros-kinetic-gennodejs < 2.0.2-1
 
 
 %description
@@ -34,12 +35,13 @@ Javascript ROS message and service generators.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-genmsg-devel
+Requires:       python3-setuptools
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-genmsg-devel
 
-Provides: ros-melodic-gennodejs-devel = 2.0.1-3
-Obsoletes: ros-melodic-gennodejs-devel < 2.0.1-3
-Obsoletes: ros-kinetic-gennodejs-devel < 2.0.1-3
+Provides: ros-noetic-gennodejs-devel = 2.0.2-1
+Obsoletes: ros-noetic-gennodejs-devel < 2.0.2-1
+Obsoletes: ros-kinetic-gennodejs-devel < 2.0.2-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -146,6 +148,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.2.0.2-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.2.0.1-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.2.0.1-2

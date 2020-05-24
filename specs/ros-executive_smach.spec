@@ -1,12 +1,12 @@
 Name:           ros-executive_smach
-Version:        melodic.2.0.1
-Release:        3%{?dist}
+Version:        noetic.2.5.0
+Release:        1%{?dist}
 Summary:        ROS package executive_smach
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/executive_smach-release/archive/release/melodic/executive_smach/2.0.1-0.tar.gz#/ros-melodic-executive_smach-2.0.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/executive_smach-release/archive/release/noetic/executive_smach/2.5.0-1.tar.gz#/ros-noetic-executive_smach-2.5.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,15 +18,15 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
-Requires:       ros-melodic-smach
-Requires:       ros-melodic-smach_msgs
-Requires:       ros-melodic-smach_ros
+Requires:       ros-noetic-smach
+Requires:       ros-noetic-smach_msgs
+Requires:       ros-noetic-smach_ros
 
-Provides:  ros-melodic-executive_smach = 2.0.1-3
-Obsoletes: ros-melodic-executive_smach < 2.0.1-3
-Obsoletes: ros-kinetic-executive_smach < 2.0.1-3
+Provides:  ros-noetic-executive_smach = 2.5.0-1
+Obsoletes: ros-noetic-executive_smach < 2.5.0-1
+Obsoletes: ros-kinetic-executive_smach < 2.5.0-1
 
 
 %description
@@ -36,14 +36,14 @@ integration packages.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-smach-devel
-Requires:       ros-melodic-smach_msgs-devel
-Requires:       ros-melodic-smach_ros-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-smach-devel
+Requires:       ros-noetic-smach_msgs-devel
+Requires:       ros-noetic-smach_ros-devel
 
-Provides: ros-melodic-executive_smach-devel = 2.0.1-3
-Obsoletes: ros-melodic-executive_smach-devel < 2.0.1-3
-Obsoletes: ros-kinetic-executive_smach-devel < 2.0.1-3
+Provides: ros-noetic-executive_smach-devel = 2.5.0-1
+Obsoletes: ros-noetic-executive_smach-devel < 2.5.0-1
+Obsoletes: ros-kinetic-executive_smach-devel < 2.5.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -150,6 +150,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.2.5.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.2.0.1-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.2.0.1-2

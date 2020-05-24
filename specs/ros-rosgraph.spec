@@ -1,12 +1,12 @@
 Name:           ros-rosgraph
-Version:        melodic.1.14.5
+Version:        noetic.1.15.6
 Release:        1%{?dist}
 Summary:        ROS package rosgraph
 
 License:        BSD
 URL:            http://wiki.ros.org/rosgraph
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/melodic/rosgraph/1.14.5-1.tar.gz#/ros-melodic-rosgraph-1.14.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/rosgraph/1.15.6-1.tar.gz#/ros-noetic-rosgraph-1.15.6-source0.tar.gz
 
 
 BuildArch: noarch
@@ -19,16 +19,16 @@ BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
 BuildRequires:  python3-mock
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
 Requires:       python3-netifaces
 Requires:       python3-pyyaml
 Requires:       python3-rospkg
 Requires:       python3dist(pyyaml)
 
-Provides:  ros-melodic-rosgraph = 1.14.5-1
-Obsoletes: ros-melodic-rosgraph < 1.14.5-1
-Obsoletes: ros-kinetic-rosgraph < 1.14.5-1
+Provides:  ros-noetic-rosgraph = 1.15.6-1
+Obsoletes: ros-noetic-rosgraph < 1.15.6-1
+Obsoletes: ros-kinetic-rosgraph < 1.15.6-1
 
 
 %description
@@ -39,12 +39,12 @@ internal library that can be used by graphical tools.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       python3-mock
 
-Provides: ros-melodic-rosgraph-devel = 1.14.5-1
-Obsoletes: ros-melodic-rosgraph-devel < 1.14.5-1
-Obsoletes: ros-kinetic-rosgraph-devel < 1.14.5-1
+Provides: ros-noetic-rosgraph-devel = 1.15.6-1
+Obsoletes: ros-noetic-rosgraph-devel < 1.15.6-1
+Obsoletes: ros-kinetic-rosgraph-devel < 1.15.6-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -151,6 +151,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.6-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.5-1
 - Update to latest release
 * Thu Mar 05 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.4-2

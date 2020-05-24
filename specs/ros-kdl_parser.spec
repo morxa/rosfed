@@ -1,12 +1,12 @@
 Name:           ros-kdl_parser
-Version:        melodic.1.13.1
-Release:        3%{?dist}
+Version:        noetic.1.14.0
+Release:        1%{?dist}
 Summary:        ROS package kdl_parser
 
 License:        BSD
 URL:            http://ros.org/wiki/kdl_parser
 
-Source0:        https://github.com/ros-gbp/kdl_parser-release/archive/release/melodic/kdl_parser/1.13.1-0.tar.gz#/ros-melodic-kdl_parser-1.13.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/kdl_parser-release/archive/release/noetic/kdl_parser/1.14.0-1.tar.gz#/ros-noetic-kdl_parser-1.14.0-source0.tar.gz
 
 
 
@@ -18,25 +18,24 @@ BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
 BuildRequires:  eigen3-devel
+BuildRequires:  orocos-kdl-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
 BuildRequires:  urdfdom-devel
 BuildRequires:  urdfdom-headers-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-cmake_modules-devel
-BuildRequires:  ros-melodic-orocos_kdl-devel
-BuildRequires:  ros-melodic-rosconsole-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-rostest-devel
-BuildRequires:  ros-melodic-urdf-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-cmake_modules-devel
+BuildRequires:  ros-noetic-rosconsole-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-rostest-devel
+BuildRequires:  ros-noetic-urdf-devel
 
-Requires:       ros-melodic-orocos_kdl
-Requires:       ros-melodic-rosconsole
-Requires:       ros-melodic-urdf
+Requires:       ros-noetic-rosconsole
+Requires:       ros-noetic-urdf
 
-Provides:  ros-melodic-kdl_parser = 1.13.1-3
-Obsoletes: ros-melodic-kdl_parser < 1.13.1-3
-Obsoletes: ros-kinetic-kdl_parser < 1.13.1-3
+Provides:  ros-noetic-kdl_parser = 1.14.0-1
+Obsoletes: ros-noetic-kdl_parser < 1.14.0-1
+Obsoletes: ros-kinetic-kdl_parser < 1.14.0-1
 
 
 %description
@@ -47,21 +46,21 @@ represent the kinematic and dynamic parameters of a robot mechanism.
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       urdfdom-headers-devel
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       eigen3-devel
+Requires:       orocos-kdl-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
 Requires:       urdfdom-devel
-Requires:       ros-melodic-cmake_modules-devel
-Requires:       ros-melodic-orocos_kdl-devel
-Requires:       ros-melodic-rosconsole-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-rostest-devel
-Requires:       ros-melodic-urdf-devel
+Requires:       ros-noetic-cmake_modules-devel
+Requires:       ros-noetic-rosconsole-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-rostest-devel
+Requires:       ros-noetic-urdf-devel
 
-Provides: ros-melodic-kdl_parser-devel = 1.13.1-3
-Obsoletes: ros-melodic-kdl_parser-devel < 1.13.1-3
-Obsoletes: ros-kinetic-kdl_parser-devel < 1.13.1-3
+Provides: ros-noetic-kdl_parser-devel = 1.14.0-1
+Obsoletes: ros-noetic-kdl_parser-devel < 1.14.0-1
+Obsoletes: ros-kinetic-kdl_parser-devel < 1.14.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -168,6 +167,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.1-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.1-2

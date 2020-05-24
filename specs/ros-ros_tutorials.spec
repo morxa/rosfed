@@ -1,12 +1,12 @@
 Name:           ros-ros_tutorials
-Version:        melodic.0.9.2
+Version:        noetic.0.10.1
 Release:        1%{?dist}
 Summary:        ROS package ros_tutorials
 
 License:        BSD
 URL:            http://www.ros.org/wiki/ros_tutorials
 
-Source0:        https://github.com/ros-gbp/ros_tutorials-release/archive/release/melodic/ros_tutorials/0.9.2-1.tar.gz#/ros-melodic-ros_tutorials-0.9.2-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_tutorials-release/archive/release/noetic/ros_tutorials/0.10.1-1.tar.gz#/ros-noetic-ros_tutorials-0.10.1-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,15 +18,15 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
-Requires:       ros-melodic-roscpp_tutorials
-Requires:       ros-melodic-rospy_tutorials
-Requires:       ros-melodic-turtlesim
+Requires:       ros-noetic-roscpp_tutorials
+Requires:       ros-noetic-rospy_tutorials
+Requires:       ros-noetic-turtlesim
 
-Provides:  ros-melodic-ros_tutorials = 0.9.2-1
-Obsoletes: ros-melodic-ros_tutorials < 0.9.2-1
-Obsoletes: ros-kinetic-ros_tutorials < 0.9.2-1
+Provides:  ros-noetic-ros_tutorials = 0.10.1-1
+Obsoletes: ros-noetic-ros_tutorials < 0.10.1-1
+Obsoletes: ros-kinetic-ros_tutorials < 0.10.1-1
 
 
 %description
@@ -37,14 +37,14 @@ features.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-roscpp_tutorials-devel
-Requires:       ros-melodic-rospy_tutorials-devel
-Requires:       ros-melodic-turtlesim-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-roscpp_tutorials-devel
+Requires:       ros-noetic-rospy_tutorials-devel
+Requires:       ros-noetic-turtlesim-devel
 
-Provides: ros-melodic-ros_tutorials-devel = 0.9.2-1
-Obsoletes: ros-melodic-ros_tutorials-devel < 0.9.2-1
-Obsoletes: ros-kinetic-ros_tutorials-devel < 0.9.2-1
+Provides: ros-noetic-ros_tutorials-devel = 0.10.1-1
+Obsoletes: ros-noetic-ros_tutorials-devel < 0.10.1-1
+Obsoletes: ros-kinetic-ros_tutorials-devel < 0.10.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -151,6 +151,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.10.1-1
+- Upgrade to noetic
 * Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.9.2-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.9.1-3

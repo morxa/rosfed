@@ -1,12 +1,12 @@
 Name:           ros-rviz
-Version:        melodic.1.13.11
-Release:        2%{?dist}
+Version:        noetic.1.14.0
+Release:        1%{?dist}
 Summary:        ROS package rviz
 
 License:        BSD
 URL:            http://wiki.ros.org/rviz
 
-Source0:        https://github.com/ros-gbp/rviz-release/archive/release/melodic/rviz/1.13.11-1.tar.gz#/ros-melodic-rviz-1.13.11-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rviz-release/archive/release/noetic/rviz/1.14.0-2.tar.gz#/ros-noetic-rviz-1.14.0-source0.tar.gz
 
 
 
@@ -26,68 +26,69 @@ BuildRequires:  ogre-devel
 BuildRequires:  poco-devel
 BuildRequires:  python3-qt5-devel
 BuildRequires:  python3-sip-devel
-BuildRequires:  qt5-qtbase
 BuildRequires:  qt5-qtbase-devel
 BuildRequires:  tinyxml2-devel
 BuildRequires:  urdfdom-devel
 BuildRequires:  urdfdom-headers-devel
 BuildRequires:  yaml-cpp-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-cmake_modules-devel
-BuildRequires:  ros-melodic-geometry_msgs-devel
-BuildRequires:  ros-melodic-image_transport-devel
-BuildRequires:  ros-melodic-interactive_markers-devel
-BuildRequires:  ros-melodic-laser_geometry-devel
-BuildRequires:  ros-melodic-map_msgs-devel
-BuildRequires:  ros-melodic-message_filters-devel
-BuildRequires:  ros-melodic-message_generation-devel
-BuildRequires:  ros-melodic-nav_msgs-devel
-BuildRequires:  ros-melodic-pluginlib-devel
-BuildRequires:  ros-melodic-python_qt_binding-devel
-BuildRequires:  ros-melodic-resource_retriever-devel
-BuildRequires:  ros-melodic-rosbag-devel
-BuildRequires:  ros-melodic-rosconsole-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-roslib-devel
-BuildRequires:  ros-melodic-rospy-devel
-BuildRequires:  ros-melodic-rostest-devel
-BuildRequires:  ros-melodic-rosunit-devel
-BuildRequires:  ros-melodic-sensor_msgs-devel
-BuildRequires:  ros-melodic-std_msgs-devel
-BuildRequires:  ros-melodic-std_srvs-devel
-BuildRequires:  ros-melodic-tf-devel
-BuildRequires:  ros-melodic-urdf-devel
-BuildRequires:  ros-melodic-visualization_msgs-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-cmake_modules-devel
+BuildRequires:  ros-noetic-geometry_msgs-devel
+BuildRequires:  ros-noetic-image_transport-devel
+BuildRequires:  ros-noetic-interactive_markers-devel
+BuildRequires:  ros-noetic-laser_geometry-devel
+BuildRequires:  ros-noetic-map_msgs-devel
+BuildRequires:  ros-noetic-message_filters-devel
+BuildRequires:  ros-noetic-message_generation-devel
+BuildRequires:  ros-noetic-nav_msgs-devel
+BuildRequires:  ros-noetic-pluginlib-devel
+BuildRequires:  ros-noetic-python_qt_binding-devel
+BuildRequires:  ros-noetic-resource_retriever-devel
+BuildRequires:  ros-noetic-rosbag-devel
+BuildRequires:  ros-noetic-rosconsole-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-roslib-devel
+BuildRequires:  ros-noetic-rospy-devel
+BuildRequires:  ros-noetic-rostest-devel
+BuildRequires:  ros-noetic-rosunit-devel
+BuildRequires:  ros-noetic-sensor_msgs-devel
+BuildRequires:  ros-noetic-std_msgs-devel
+BuildRequires:  ros-noetic-std_srvs-devel
+BuildRequires:  ros-noetic-tf2_geometry_msgs-devel
+BuildRequires:  ros-noetic-tf2_ros-devel
+BuildRequires:  ros-noetic-urdf-devel
+BuildRequires:  ros-noetic-visualization_msgs-devel
 
 Requires:       qt5-qtbase
 Requires:       qt5-qtbase-gui
-Requires:       ros-melodic-geometry_msgs
-Requires:       ros-melodic-image_transport
-Requires:       ros-melodic-interactive_markers
-Requires:       ros-melodic-laser_geometry
-Requires:       ros-melodic-map_msgs
-Requires:       ros-melodic-media_export
-Requires:       ros-melodic-message_filters
-Requires:       ros-melodic-message_runtime
-Requires:       ros-melodic-nav_msgs
-Requires:       ros-melodic-pluginlib
-Requires:       ros-melodic-python_qt_binding
-Requires:       ros-melodic-resource_retriever
-Requires:       ros-melodic-rosbag
-Requires:       ros-melodic-rosconsole
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-roslib
-Requires:       ros-melodic-rospy
-Requires:       ros-melodic-sensor_msgs
-Requires:       ros-melodic-std_msgs
-Requires:       ros-melodic-std_srvs
-Requires:       ros-melodic-tf
-Requires:       ros-melodic-urdf
-Requires:       ros-melodic-visualization_msgs
+Requires:       ros-noetic-geometry_msgs
+Requires:       ros-noetic-image_transport
+Requires:       ros-noetic-interactive_markers
+Requires:       ros-noetic-laser_geometry
+Requires:       ros-noetic-map_msgs
+Requires:       ros-noetic-media_export
+Requires:       ros-noetic-message_filters
+Requires:       ros-noetic-message_runtime
+Requires:       ros-noetic-nav_msgs
+Requires:       ros-noetic-pluginlib
+Requires:       ros-noetic-python_qt_binding
+Requires:       ros-noetic-resource_retriever
+Requires:       ros-noetic-rosbag
+Requires:       ros-noetic-rosconsole
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-roslib
+Requires:       ros-noetic-rospy
+Requires:       ros-noetic-sensor_msgs
+Requires:       ros-noetic-std_msgs
+Requires:       ros-noetic-std_srvs
+Requires:       ros-noetic-tf2_geometry_msgs
+Requires:       ros-noetic-tf2_ros
+Requires:       ros-noetic-urdf
+Requires:       ros-noetic-visualization_msgs
 
-Provides:  ros-melodic-rviz = 1.13.11-2
-Obsoletes: ros-melodic-rviz < 1.13.11-2
-Obsoletes: ros-kinetic-rviz < 1.13.11-2
+Provides:  ros-noetic-rviz = 1.14.0-1
+Obsoletes: ros-noetic-rviz < 1.14.0-1
+Obsoletes: ros-kinetic-rviz < 1.14.0-1
 
 
 %description
@@ -96,53 +97,53 @@ Obsoletes: ros-kinetic-rviz < 1.13.11-2
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ogre-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       assimp-devel
 Requires:       eigen3-devel
 Requires:       libXext-devel
 Requires:       lz4-devel
 Requires:       mesa-libGL-devel mesa-libGLU-devel
-Requires:       ogre-devel
 Requires:       poco-devel
 Requires:       python3-qt5-devel
 Requires:       python3-sip-devel
-Requires:       qt5-qtbase
 Requires:       qt5-qtbase-devel
 Requires:       tinyxml2-devel
 Requires:       urdfdom-devel
 Requires:       urdfdom-headers-devel
 Requires:       yaml-cpp-devel
-Requires:       ros-melodic-cmake_modules-devel
-Requires:       ros-melodic-geometry_msgs-devel
-Requires:       ros-melodic-image_transport-devel
-Requires:       ros-melodic-interactive_markers-devel
-Requires:       ros-melodic-laser_geometry-devel
-Requires:       ros-melodic-map_msgs-devel
-Requires:       ros-melodic-message_filters-devel
-Requires:       ros-melodic-message_generation-devel
-Requires:       ros-melodic-nav_msgs-devel
-Requires:       ros-melodic-pluginlib-devel
-Requires:       ros-melodic-python_qt_binding-devel
-Requires:       ros-melodic-resource_retriever-devel
-Requires:       ros-melodic-rosbag-devel
-Requires:       ros-melodic-rosconsole-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-roslib-devel
-Requires:       ros-melodic-rospy-devel
-Requires:       ros-melodic-rostest-devel
-Requires:       ros-melodic-rosunit-devel
-Requires:       ros-melodic-sensor_msgs-devel
-Requires:       ros-melodic-std_msgs-devel
-Requires:       ros-melodic-std_srvs-devel
-Requires:       ros-melodic-tf-devel
-Requires:       ros-melodic-urdf-devel
-Requires:       ros-melodic-visualization_msgs-devel
-Requires:       ros-melodic-media_export-devel
-Requires:       ros-melodic-message_runtime-devel
+Requires:       ros-noetic-cmake_modules-devel
+Requires:       ros-noetic-geometry_msgs-devel
+Requires:       ros-noetic-image_transport-devel
+Requires:       ros-noetic-interactive_markers-devel
+Requires:       ros-noetic-laser_geometry-devel
+Requires:       ros-noetic-map_msgs-devel
+Requires:       ros-noetic-message_filters-devel
+Requires:       ros-noetic-message_generation-devel
+Requires:       ros-noetic-nav_msgs-devel
+Requires:       ros-noetic-pluginlib-devel
+Requires:       ros-noetic-python_qt_binding-devel
+Requires:       ros-noetic-resource_retriever-devel
+Requires:       ros-noetic-rosbag-devel
+Requires:       ros-noetic-rosconsole-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-roslib-devel
+Requires:       ros-noetic-rospy-devel
+Requires:       ros-noetic-rostest-devel
+Requires:       ros-noetic-rosunit-devel
+Requires:       ros-noetic-sensor_msgs-devel
+Requires:       ros-noetic-std_msgs-devel
+Requires:       ros-noetic-std_srvs-devel
+Requires:       ros-noetic-tf2_geometry_msgs-devel
+Requires:       ros-noetic-tf2_ros-devel
+Requires:       ros-noetic-urdf-devel
+Requires:       ros-noetic-visualization_msgs-devel
+Requires:       ros-noetic-media_export-devel
+Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-melodic-rviz-devel = 1.13.11-2
-Obsoletes: ros-melodic-rviz-devel < 1.13.11-2
-Obsoletes: ros-kinetic-rviz-devel < 1.13.11-2
+Provides: ros-noetic-rviz-devel = 1.14.0-1
+Obsoletes: ros-noetic-rviz-devel < 1.14.0-1
+Obsoletes: ros-kinetic-rviz-devel < 1.14.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -250,6 +251,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.0-1
+- Upgrade to noetic
 * Wed Apr 29 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.11-2
 - Add BR on libXext
 * Wed Apr 29 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.11-1

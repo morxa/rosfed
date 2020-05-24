@@ -1,12 +1,12 @@
 Name:           ros-bondcpp
-Version:        melodic.1.8.3
-Release:        3%{?dist}
+Version:        noetic.1.8.5
+Release:        1%{?dist}
 Summary:        ROS package bondcpp
 
 License:        BSD
 URL:            http://www.ros.org/wiki/bondcpp
 
-Source0:        https://github.com/ros-gbp/bond_core-release/archive/release/melodic/bondcpp/1.8.3-0.tar.gz#/ros-melodic-bondcpp-1.8.3-source0.tar.gz
+Source0:        https://github.com/ros-gbp/bond_core-release/archive/release/noetic/bondcpp/1.8.5-1.tar.gz#/ros-noetic-bondcpp-1.8.5-source0.tar.gz
 
 
 
@@ -17,24 +17,24 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  boost-devel boost-python3-devel boost-python3-devel
+BuildRequires:  boost-devel boost-python3-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  libuuid-devel
 BuildRequires:  log4cxx-devel
-BuildRequires:  ros-melodic-bond-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-cmake_modules-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-rostime-devel
-BuildRequires:  ros-melodic-smclib-devel
+BuildRequires:  ros-noetic-bond-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-cmake_modules-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-rostime-devel
+BuildRequires:  ros-noetic-smclib-devel
 
-Requires:       ros-melodic-bond
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-smclib
+Requires:       ros-noetic-bond
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-smclib
 
-Provides:  ros-melodic-bondcpp = 1.8.3-3
-Obsoletes: ros-melodic-bondcpp < 1.8.3-3
-Obsoletes: ros-kinetic-bondcpp < 1.8.3-3
+Provides:  ros-noetic-bondcpp = 1.8.5-1
+Obsoletes: ros-noetic-bondcpp < 1.8.5-1
+Obsoletes: ros-kinetic-bondcpp < 1.8.5-1
 
 
 %description
@@ -44,20 +44,20 @@ process has terminated.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       boost-devel boost-python3-devel boost-python3-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       boost-devel boost-python3-devel
 Requires:       console-bridge-devel
 Requires:       libuuid-devel
 Requires:       log4cxx-devel
-Requires:       ros-melodic-bond-devel
-Requires:       ros-melodic-cmake_modules-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-rostime-devel
-Requires:       ros-melodic-smclib-devel
+Requires:       ros-noetic-bond-devel
+Requires:       ros-noetic-cmake_modules-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-rostime-devel
+Requires:       ros-noetic-smclib-devel
 
-Provides: ros-melodic-bondcpp-devel = 1.8.3-3
-Obsoletes: ros-melodic-bondcpp-devel < 1.8.3-3
-Obsoletes: ros-kinetic-bondcpp-devel < 1.8.3-3
+Provides: ros-noetic-bondcpp-devel = 1.8.5-1
+Obsoletes: ros-noetic-bondcpp-devel < 1.8.5-1
+Obsoletes: ros-kinetic-bondcpp-devel < 1.8.5-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -164,6 +164,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.8.5-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.8.3-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.8.3-2

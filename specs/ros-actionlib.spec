@@ -1,12 +1,12 @@
 Name:           ros-actionlib
-Version:        melodic.1.12.0
+Version:        noetic.1.13.1
 Release:        1%{?dist}
 Summary:        ROS package actionlib
 
 License:        BSD
 URL:            http://www.ros.org/wiki/actionlib
 
-Source0:        https://github.com/ros-gbp/actionlib-release/archive/release/melodic/actionlib/1.12.0-1.tar.gz#/ros-melodic-actionlib-1.12.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/actionlib-release/archive/release/noetic/actionlib/1.13.1-1.tar.gz#/ros-noetic-actionlib-1.13.1-source0.tar.gz
 
 
 
@@ -17,29 +17,27 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  boost-devel boost-python3-devel boost-python3-devel
-BuildRequires:  ros-melodic-actionlib_msgs-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-message_generation-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-rosnode-devel
-BuildRequires:  ros-melodic-rospy-devel
-BuildRequires:  ros-melodic-rostest-devel
-BuildRequires:  ros-melodic-std_msgs-devel
+BuildRequires:  boost-devel boost-python3-devel
+BuildRequires:  ros-noetic-actionlib_msgs-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-message_generation-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-rosnode-devel
+BuildRequires:  ros-noetic-rospy-devel
+BuildRequires:  ros-noetic-rostest-devel
+BuildRequires:  ros-noetic-rosunit-devel
+BuildRequires:  ros-noetic-std_msgs-devel
 
-Requires:       python3-wxpython4
-Requires:       ros-melodic-actionlib_msgs
-Requires:       ros-melodic-message_runtime
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-roslib
-Requires:       ros-melodic-rospy
-Requires:       ros-melodic-rostest
-Requires:       ros-melodic-rostopic
-Requires:       ros-melodic-std_msgs
+Requires:       ros-noetic-actionlib_msgs
+Requires:       ros-noetic-message_runtime
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-rospy
+Requires:       ros-noetic-rostest
+Requires:       ros-noetic-std_msgs
 
-Provides:  ros-melodic-actionlib = 1.12.0-1
-Obsoletes: ros-melodic-actionlib < 1.12.0-1
-Obsoletes: ros-kinetic-actionlib < 1.12.0-1
+Provides:  ros-noetic-actionlib = 1.13.1-1
+Obsoletes: ros-noetic-actionlib < 1.13.1-1
+Obsoletes: ros-kinetic-actionlib < 1.13.1-1
 
 
 %description
@@ -51,22 +49,21 @@ point cloud, detecting the handle of a door, etc.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       boost-devel boost-python3-devel boost-python3-devel
-Requires:       ros-melodic-actionlib_msgs-devel
-Requires:       ros-melodic-message_generation-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-rosnode-devel
-Requires:       ros-melodic-rospy-devel
-Requires:       ros-melodic-rostest-devel
-Requires:       ros-melodic-std_msgs-devel
-Requires:       ros-melodic-message_runtime-devel
-Requires:       ros-melodic-roslib-devel
-Requires:       ros-melodic-rostopic-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       boost-devel boost-python3-devel
+Requires:       ros-noetic-actionlib_msgs-devel
+Requires:       ros-noetic-message_generation-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-rosnode-devel
+Requires:       ros-noetic-rospy-devel
+Requires:       ros-noetic-rostest-devel
+Requires:       ros-noetic-rosunit-devel
+Requires:       ros-noetic-std_msgs-devel
+Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-melodic-actionlib-devel = 1.12.0-1
-Obsoletes: ros-melodic-actionlib-devel < 1.12.0-1
-Obsoletes: ros-kinetic-actionlib-devel < 1.12.0-1
+Provides: ros-noetic-actionlib-devel = 1.13.1-1
+Obsoletes: ros-noetic-actionlib-devel < 1.13.1-1
+Obsoletes: ros-kinetic-actionlib-devel < 1.13.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -173,6 +170,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.1-1
+- Upgrade to noetic
 * Thu Sep 12 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.12.0-1
 - Update to latest release
 * Tue Jul 23 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.11.13-4

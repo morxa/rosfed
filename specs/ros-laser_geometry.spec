@@ -1,12 +1,12 @@
 Name:           ros-laser_geometry
-Version:        melodic.1.6.5
+Version:        noetic.1.6.5
 Release:        1%{?dist}
 Summary:        ROS package laser_geometry
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/laser_geometry-release/archive/release/melodic/laser_geometry/1.6.5-1.tar.gz#/ros-melodic-laser_geometry-1.6.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/laser_geometry-release/archive/release/noetic/laser_geometry/1.6.5-1.tar.gz#/ros-noetic-laser_geometry-1.6.5-source0.tar.gz
 
 
 
@@ -17,26 +17,26 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  boost-devel boost-python3-devel boost-python3-devel
+BuildRequires:  boost-devel boost-python3-devel
 BuildRequires:  eigen3-devel
-BuildRequires:  ros-melodic-angles-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-rosunit-devel
-BuildRequires:  ros-melodic-sensor_msgs-devel
-BuildRequires:  ros-melodic-tf-devel
-BuildRequires:  ros-melodic-tf2-devel
+BuildRequires:  ros-noetic-angles-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-rosunit-devel
+BuildRequires:  ros-noetic-sensor_msgs-devel
+BuildRequires:  ros-noetic-tf-devel
+BuildRequires:  ros-noetic-tf2-devel
 
 Requires:       python3-numpy
 Requires:       python3dist(numpy)
-Requires:       ros-melodic-angles
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-sensor_msgs
-Requires:       ros-melodic-tf
-Requires:       ros-melodic-tf2
+Requires:       ros-noetic-angles
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-sensor_msgs
+Requires:       ros-noetic-tf
+Requires:       ros-noetic-tf2
 
-Provides:  ros-melodic-laser_geometry = 1.6.5-1
-Obsoletes: ros-melodic-laser_geometry < 1.6.5-1
+Provides:  ros-noetic-laser_geometry = 1.6.5-1
+Obsoletes: ros-noetic-laser_geometry < 1.6.5-1
 Obsoletes: ros-kinetic-laser_geometry < 1.6.5-1
 
 
@@ -50,18 +50,18 @@ robots or tilting laser scanners.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       boost-devel boost-python3-devel boost-python3-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       boost-devel boost-python3-devel
 Requires:       eigen3-devel
-Requires:       ros-melodic-angles-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-rosunit-devel
-Requires:       ros-melodic-sensor_msgs-devel
-Requires:       ros-melodic-tf-devel
-Requires:       ros-melodic-tf2-devel
+Requires:       ros-noetic-angles-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-rosunit-devel
+Requires:       ros-noetic-sensor_msgs-devel
+Requires:       ros-noetic-tf-devel
+Requires:       ros-noetic-tf2-devel
 
-Provides: ros-melodic-laser_geometry-devel = 1.6.5-1
-Obsoletes: ros-melodic-laser_geometry-devel < 1.6.5-1
+Provides: ros-noetic-laser_geometry-devel = 1.6.5-1
+Obsoletes: ros-noetic-laser_geometry-devel < 1.6.5-1
 Obsoletes: ros-kinetic-laser_geometry-devel < 1.6.5-1
 
 %description devel
@@ -169,6 +169,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.6.5-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.6.5-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.6.4-3

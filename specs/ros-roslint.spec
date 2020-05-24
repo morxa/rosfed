@@ -1,12 +1,12 @@
 Name:           ros-roslint
-Version:        melodic.0.11.2
-Release:        3%{?dist}
+Version:        noetic.0.12.0
+Release:        1%{?dist}
 Summary:        ROS package roslint
 
 License:        BSD
 URL:            http://ros.org/wiki/roslint
 
-Source0:        https://github.com/ros-gbp/roslint-release/archive/release/melodic/roslint/0.11.2-0.tar.gz#/ros-melodic-roslint-0.11.2-source0.tar.gz
+Source0:        https://github.com/ros-gbp/roslint-release/archive/release/noetic/roslint/0.12.0-1.tar.gz#/ros-noetic-roslint-0.12.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,12 +18,12 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
 
-Provides:  ros-melodic-roslint = 0.11.2-3
-Obsoletes: ros-melodic-roslint < 0.11.2-3
-Obsoletes: ros-kinetic-roslint < 0.11.2-3
+Provides:  ros-noetic-roslint = 0.12.0-1
+Obsoletes: ros-noetic-roslint < 0.12.0-1
+Obsoletes: ros-kinetic-roslint < 0.12.0-1
 
 
 %description
@@ -34,11 +34,11 @@ compliance.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 
-Provides: ros-melodic-roslint-devel = 0.11.2-3
-Obsoletes: ros-melodic-roslint-devel < 0.11.2-3
-Obsoletes: ros-kinetic-roslint-devel < 0.11.2-3
+Provides: ros-noetic-roslint-devel = 0.12.0-1
+Obsoletes: ros-noetic-roslint-devel < 0.12.0-1
+Obsoletes: ros-kinetic-roslint-devel < 0.12.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -145,6 +145,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.12.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.11.2-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.11.2-2

@@ -1,12 +1,12 @@
 Name:           ros-pcl_ros
-Version:        melodic.1.7.1
-Release:        2%{?dist}
+Version:        noetic.1.7.1
+Release:        1%{?dist}
 Summary:        ROS package pcl_ros
 
 License:        BSD
 URL:            http://ros.org/wiki/perception_pcl
 
-Source0:        https://github.com/ros-gbp/perception_pcl-release/archive/release/melodic/pcl_ros/1.7.1-1.tar.gz#/ros-melodic-pcl_ros-1.7.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/perception_pcl-release/archive/release/noetic/pcl_ros/1.7.1-1.tar.gz#/ros-noetic-pcl_ros-1.7.1-source0.tar.gz
 
 
 
@@ -25,48 +25,48 @@ BuildRequires:  pcl-devel
 BuildRequires:  poco-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-cmake_modules-devel
-BuildRequires:  ros-melodic-dynamic_reconfigure-devel
-BuildRequires:  ros-melodic-geometry_msgs-devel
-BuildRequires:  ros-melodic-message_filters-devel
-BuildRequires:  ros-melodic-nodelet-devel
-BuildRequires:  ros-melodic-nodelet_topic_tools-devel
-BuildRequires:  ros-melodic-pcl_conversions-devel
-BuildRequires:  ros-melodic-pcl_msgs-devel
-BuildRequires:  ros-melodic-pluginlib-devel
-BuildRequires:  ros-melodic-rosbag-devel
-BuildRequires:  ros-melodic-rosconsole-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-roslib-devel
-BuildRequires:  ros-melodic-rostest-devel
-BuildRequires:  ros-melodic-sensor_msgs-devel
-BuildRequires:  ros-melodic-std_msgs-devel
-BuildRequires:  ros-melodic-tf-devel
-BuildRequires:  ros-melodic-tf2-devel
-BuildRequires:  ros-melodic-tf2_eigen-devel
-BuildRequires:  ros-melodic-tf2_ros-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-cmake_modules-devel
+BuildRequires:  ros-noetic-dynamic_reconfigure-devel
+BuildRequires:  ros-noetic-geometry_msgs-devel
+BuildRequires:  ros-noetic-message_filters-devel
+BuildRequires:  ros-noetic-nodelet-devel
+BuildRequires:  ros-noetic-nodelet_topic_tools-devel
+BuildRequires:  ros-noetic-pcl_conversions-devel
+BuildRequires:  ros-noetic-pcl_msgs-devel
+BuildRequires:  ros-noetic-pluginlib-devel
+BuildRequires:  ros-noetic-rosbag-devel
+BuildRequires:  ros-noetic-rosconsole-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-roslib-devel
+BuildRequires:  ros-noetic-rostest-devel
+BuildRequires:  ros-noetic-sensor_msgs-devel
+BuildRequires:  ros-noetic-std_msgs-devel
+BuildRequires:  ros-noetic-tf-devel
+BuildRequires:  ros-noetic-tf2-devel
+BuildRequires:  ros-noetic-tf2_eigen-devel
+BuildRequires:  ros-noetic-tf2_ros-devel
 
-Requires:       ros-melodic-dynamic_reconfigure
-Requires:       ros-melodic-geometry_msgs
-Requires:       ros-melodic-message_filters
-Requires:       ros-melodic-nodelet
-Requires:       ros-melodic-nodelet_topic_tools
-Requires:       ros-melodic-pcl_conversions
-Requires:       ros-melodic-pcl_msgs
-Requires:       ros-melodic-pluginlib
-Requires:       ros-melodic-rosbag
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-sensor_msgs
-Requires:       ros-melodic-std_msgs
-Requires:       ros-melodic-tf
-Requires:       ros-melodic-tf2
-Requires:       ros-melodic-tf2_eigen
-Requires:       ros-melodic-tf2_ros
+Requires:       ros-noetic-dynamic_reconfigure
+Requires:       ros-noetic-geometry_msgs
+Requires:       ros-noetic-message_filters
+Requires:       ros-noetic-nodelet
+Requires:       ros-noetic-nodelet_topic_tools
+Requires:       ros-noetic-pcl_conversions
+Requires:       ros-noetic-pcl_msgs
+Requires:       ros-noetic-pluginlib
+Requires:       ros-noetic-rosbag
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-sensor_msgs
+Requires:       ros-noetic-std_msgs
+Requires:       ros-noetic-tf
+Requires:       ros-noetic-tf2
+Requires:       ros-noetic-tf2_eigen
+Requires:       ros-noetic-tf2_ros
 
-Provides:  ros-melodic-pcl_ros = 1.7.1-2
-Obsoletes: ros-melodic-pcl_ros < 1.7.1-2
-Obsoletes: ros-kinetic-pcl_ros < 1.7.1-2
+Provides:  ros-noetic-pcl_ros = 1.7.1-1
+Obsoletes: ros-noetic-pcl_ros < 1.7.1-1
+Obsoletes: ros-kinetic-pcl_ros < 1.7.1-1
 
 
 %description
@@ -77,7 +77,7 @@ geometry processing in ROS.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       eigen3-devel
 Requires:       libuuid-devel
 Requires:       libXext-devel
@@ -86,30 +86,30 @@ Requires:       pcl-devel
 Requires:       poco-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
-Requires:       ros-melodic-cmake_modules-devel
-Requires:       ros-melodic-dynamic_reconfigure-devel
-Requires:       ros-melodic-geometry_msgs-devel
-Requires:       ros-melodic-message_filters-devel
-Requires:       ros-melodic-nodelet-devel
-Requires:       ros-melodic-nodelet_topic_tools-devel
-Requires:       ros-melodic-pcl_conversions-devel
-Requires:       ros-melodic-pcl_msgs-devel
-Requires:       ros-melodic-pluginlib-devel
-Requires:       ros-melodic-rosbag-devel
-Requires:       ros-melodic-rosconsole-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-roslib-devel
-Requires:       ros-melodic-rostest-devel
-Requires:       ros-melodic-sensor_msgs-devel
-Requires:       ros-melodic-std_msgs-devel
-Requires:       ros-melodic-tf-devel
-Requires:       ros-melodic-tf2-devel
-Requires:       ros-melodic-tf2_eigen-devel
-Requires:       ros-melodic-tf2_ros-devel
+Requires:       ros-noetic-cmake_modules-devel
+Requires:       ros-noetic-dynamic_reconfigure-devel
+Requires:       ros-noetic-geometry_msgs-devel
+Requires:       ros-noetic-message_filters-devel
+Requires:       ros-noetic-nodelet-devel
+Requires:       ros-noetic-nodelet_topic_tools-devel
+Requires:       ros-noetic-pcl_conversions-devel
+Requires:       ros-noetic-pcl_msgs-devel
+Requires:       ros-noetic-pluginlib-devel
+Requires:       ros-noetic-rosbag-devel
+Requires:       ros-noetic-rosconsole-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-roslib-devel
+Requires:       ros-noetic-rostest-devel
+Requires:       ros-noetic-sensor_msgs-devel
+Requires:       ros-noetic-std_msgs-devel
+Requires:       ros-noetic-tf-devel
+Requires:       ros-noetic-tf2-devel
+Requires:       ros-noetic-tf2_eigen-devel
+Requires:       ros-noetic-tf2_ros-devel
 
-Provides: ros-melodic-pcl_ros-devel = 1.7.1-2
-Obsoletes: ros-melodic-pcl_ros-devel < 1.7.1-2
-Obsoletes: ros-kinetic-pcl_ros-devel < 1.7.1-2
+Provides: ros-noetic-pcl_ros-devel = 1.7.1-1
+Obsoletes: ros-noetic-pcl_ros-devel < 1.7.1-1
+Obsoletes: ros-kinetic-pcl_ros-devel < 1.7.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -216,6 +216,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.1-1
+- Upgrade to noetic
 * Fri Apr 24 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.7.1-2
 - Add dependency on libXext
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.7.1-1

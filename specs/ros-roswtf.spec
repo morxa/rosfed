@@ -1,12 +1,12 @@
 Name:           ros-roswtf
-Version:        melodic.1.14.5
+Version:        noetic.1.15.6
 Release:        1%{?dist}
 Summary:        ROS package roswtf
 
 License:        BSD
 URL:            http://wiki.ros.org/roswtf
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/melodic/roswtf/1.14.5-1.tar.gz#/ros-melodic-roswtf-1.14.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/roswtf/1.15.6-1.tar.gz#/ros-noetic-roswtf-1.15.6-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,25 +18,25 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-cmake_modules-devel
-BuildRequires:  ros-melodic-rosbag-devel
-BuildRequires:  ros-melodic-roslang-devel
-BuildRequires:  ros-melodic-rostest-devel
-BuildRequires:  ros-melodic-std_srvs-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-cmake_modules-devel
+BuildRequires:  ros-noetic-rosbag-devel
+BuildRequires:  ros-noetic-roslang-devel
+BuildRequires:  ros-noetic-rostest-devel
+BuildRequires:  ros-noetic-std_srvs-devel
 
 Requires:       python3-paramiko
 Requires:       python3-rospkg
-Requires:       ros-melodic-rosbuild
-Requires:       ros-melodic-rosgraph
-Requires:       ros-melodic-roslaunch
-Requires:       ros-melodic-roslib
-Requires:       ros-melodic-rosnode
-Requires:       ros-melodic-rosservice
+Requires:       ros-noetic-rosbuild
+Requires:       ros-noetic-rosgraph
+Requires:       ros-noetic-roslaunch
+Requires:       ros-noetic-roslib
+Requires:       ros-noetic-rosnode
+Requires:       ros-noetic-rosservice
 
-Provides:  ros-melodic-roswtf = 1.14.5-1
-Obsoletes: ros-melodic-roswtf < 1.14.5-1
-Obsoletes: ros-kinetic-roswtf < 1.14.5-1
+Provides:  ros-noetic-roswtf = 1.15.6-1
+Obsoletes: ros-noetic-roswtf < 1.15.6-1
+Obsoletes: ros-kinetic-roswtf < 1.15.6-1
 
 
 %description
@@ -46,22 +46,22 @@ Think of it as a FAQ implemented in code.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-cmake_modules-devel
-Requires:       ros-melodic-rosbag-devel
-Requires:       ros-melodic-roslang-devel
-Requires:       ros-melodic-rostest-devel
-Requires:       ros-melodic-std_srvs-devel
-Requires:       ros-melodic-rosbuild-devel
-Requires:       ros-melodic-rosgraph-devel
-Requires:       ros-melodic-roslaunch-devel
-Requires:       ros-melodic-roslib-devel
-Requires:       ros-melodic-rosnode-devel
-Requires:       ros-melodic-rosservice-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-cmake_modules-devel
+Requires:       ros-noetic-rosbag-devel
+Requires:       ros-noetic-roslang-devel
+Requires:       ros-noetic-rostest-devel
+Requires:       ros-noetic-std_srvs-devel
+Requires:       ros-noetic-rosbuild-devel
+Requires:       ros-noetic-rosgraph-devel
+Requires:       ros-noetic-roslaunch-devel
+Requires:       ros-noetic-roslib-devel
+Requires:       ros-noetic-rosnode-devel
+Requires:       ros-noetic-rosservice-devel
 
-Provides: ros-melodic-roswtf-devel = 1.14.5-1
-Obsoletes: ros-melodic-roswtf-devel < 1.14.5-1
-Obsoletes: ros-kinetic-roswtf-devel < 1.14.5-1
+Provides: ros-noetic-roswtf-devel = 1.15.6-1
+Obsoletes: ros-noetic-roswtf-devel < 1.15.6-1
+Obsoletes: ros-kinetic-roswtf-devel < 1.15.6-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -168,6 +168,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.6-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.5-1
 - Update to latest release
 * Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.4-1

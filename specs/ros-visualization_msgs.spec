@@ -1,12 +1,12 @@
 Name:           ros-visualization_msgs
-Version:        melodic.1.12.7
-Release:        3%{?dist}
+Version:        noetic.1.13.0
+Release:        1%{?dist}
 Summary:        ROS package visualization_msgs
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/common_msgs-release/archive/release/melodic/visualization_msgs/1.12.7-0.tar.gz#/ros-melodic-visualization_msgs-1.12.7-source0.tar.gz
+Source0:        https://github.com/ros-gbp/common_msgs-release/archive/release/noetic/visualization_msgs/1.13.0-1.tar.gz#/ros-noetic-visualization_msgs-1.13.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,18 +18,18 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-geometry_msgs-devel
-BuildRequires:  ros-melodic-message_generation-devel
-BuildRequires:  ros-melodic-std_msgs-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-geometry_msgs-devel
+BuildRequires:  ros-noetic-message_generation-devel
+BuildRequires:  ros-noetic-std_msgs-devel
 
-Requires:       ros-melodic-geometry_msgs
-Requires:       ros-melodic-message_runtime
-Requires:       ros-melodic-std_msgs
+Requires:       ros-noetic-geometry_msgs
+Requires:       ros-noetic-message_runtime
+Requires:       ros-noetic-std_msgs
 
-Provides:  ros-melodic-visualization_msgs = 1.12.7-3
-Obsoletes: ros-melodic-visualization_msgs < 1.12.7-3
-Obsoletes: ros-kinetic-visualization_msgs < 1.12.7-3
+Provides:  ros-noetic-visualization_msgs = 1.13.0-1
+Obsoletes: ros-noetic-visualization_msgs < 1.13.0-1
+Obsoletes: ros-kinetic-visualization_msgs < 1.13.0-1
 
 
 %description
@@ -39,15 +39,15 @@ such as
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-geometry_msgs-devel
-Requires:       ros-melodic-message_generation-devel
-Requires:       ros-melodic-std_msgs-devel
-Requires:       ros-melodic-message_runtime-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-geometry_msgs-devel
+Requires:       ros-noetic-message_generation-devel
+Requires:       ros-noetic-std_msgs-devel
+Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-melodic-visualization_msgs-devel = 1.12.7-3
-Obsoletes: ros-melodic-visualization_msgs-devel < 1.12.7-3
-Obsoletes: ros-kinetic-visualization_msgs-devel < 1.12.7-3
+Provides: ros-noetic-visualization_msgs-devel = 1.13.0-1
+Obsoletes: ros-noetic-visualization_msgs-devel < 1.13.0-1
+Obsoletes: ros-kinetic-visualization_msgs-devel < 1.13.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -154,6 +154,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.12.7-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.12.7-2

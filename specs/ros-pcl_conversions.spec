@@ -1,12 +1,12 @@
 Name:           ros-pcl_conversions
-Version:        melodic.1.7.1
+Version:        noetic.1.7.1
 Release:        1%{?dist}
 Summary:        ROS package pcl_conversions
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/perception_pcl-release/archive/release/melodic/pcl_conversions/1.7.1-1.tar.gz#/ros-melodic-pcl_conversions-1.7.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/perception_pcl-release/archive/release/noetic/pcl_conversions/1.7.1-1.tar.gz#/ros-noetic-pcl_conversions-1.7.1-source0.tar.gz
 
 
 BuildArch: noarch
@@ -20,15 +20,15 @@ BuildRequires:  python3-devel
 
 BuildRequires:  eigen3-devel
 BuildRequires:  pcl-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-pcl_msgs-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-sensor_msgs-devel
-BuildRequires:  ros-melodic-std_msgs-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-pcl_msgs-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-sensor_msgs-devel
+BuildRequires:  ros-noetic-std_msgs-devel
 
 
-Provides:  ros-melodic-pcl_conversions = 1.7.1-1
-Obsoletes: ros-melodic-pcl_conversions < 1.7.1-1
+Provides:  ros-noetic-pcl_conversions = 1.7.1-1
+Obsoletes: ros-noetic-pcl_conversions < 1.7.1-1
 Obsoletes: ros-kinetic-pcl_conversions < 1.7.1-1
 
 
@@ -40,14 +40,14 @@ Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       eigen3-devel
 Requires:       pcl-devel
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-pcl_msgs-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-sensor_msgs-devel
-Requires:       ros-melodic-std_msgs-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-pcl_msgs-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-sensor_msgs-devel
+Requires:       ros-noetic-std_msgs-devel
 
-Provides: ros-melodic-pcl_conversions-devel = 1.7.1-1
-Obsoletes: ros-melodic-pcl_conversions-devel < 1.7.1-1
+Provides: ros-noetic-pcl_conversions-devel = 1.7.1-1
+Obsoletes: ros-noetic-pcl_conversions-devel < 1.7.1-1
 Obsoletes: ros-kinetic-pcl_conversions-devel < 1.7.1-1
 
 %description devel
@@ -155,6 +155,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.1-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.7.1-1
 - Update to latest release
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.7.0-1

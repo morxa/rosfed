@@ -1,12 +1,12 @@
 Name:           ros-gazebo_plugins
-Version:        melodic.2.8.6
+Version:        noetic.2.9.1
 Release:        1%{?dist}
 Summary:        ROS package gazebo_plugins
 
 License:        BSD, Apache 2.0
 URL:            http://gazebosim.org/tutorials?cat=connect_ros
 
-Source0:        https://github.com/ros-gbp/gazebo_ros_pkgs-release/archive/release/melodic/gazebo_plugins/2.8.6-1.tar.gz#/ros-melodic-gazebo_plugins-2.8.6-source0.tar.gz
+Source0:        https://github.com/ros-gbp/gazebo_ros_pkgs-release/archive/release/noetic/gazebo_plugins/2.9.1-1.tar.gz#/ros-noetic-gazebo_plugins-2.9.1-source0.tar.gz
 
 
 
@@ -25,63 +25,65 @@ BuildRequires:  poco-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
 BuildRequires:  urdfdom-devel
-BuildRequires:  ros-melodic-angles-devel
-BuildRequires:  ros-melodic-camera_info_manager-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-cv_bridge-devel
-BuildRequires:  ros-melodic-diagnostic_updater-devel
-BuildRequires:  ros-melodic-dynamic_reconfigure-devel
-BuildRequires:  ros-melodic-gazebo_dev-devel
-BuildRequires:  ros-melodic-gazebo_msgs-devel
-BuildRequires:  ros-melodic-gazebo_ros-devel
-BuildRequires:  ros-melodic-geometry_msgs-devel
-BuildRequires:  ros-melodic-image_transport-devel
-BuildRequires:  ros-melodic-message_generation-devel
-BuildRequires:  ros-melodic-nav_msgs-devel
-BuildRequires:  ros-melodic-nodelet-devel
-BuildRequires:  ros-melodic-polled_camera-devel
-BuildRequires:  ros-melodic-rosconsole-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-rosgraph_msgs-devel
-BuildRequires:  ros-melodic-rospy-devel
-BuildRequires:  ros-melodic-rostest-devel
-BuildRequires:  ros-melodic-sensor_msgs-devel
-BuildRequires:  ros-melodic-std_msgs-devel
-BuildRequires:  ros-melodic-std_srvs-devel
-BuildRequires:  ros-melodic-tf-devel
-BuildRequires:  ros-melodic-tf2_ros-devel
-BuildRequires:  ros-melodic-trajectory_msgs-devel
-BuildRequires:  ros-melodic-urdf-devel
+BuildRequires:  ros-noetic-angles-devel
+BuildRequires:  ros-noetic-camera_info_manager-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-cv_bridge-devel
+BuildRequires:  ros-noetic-diagnostic_updater-devel
+BuildRequires:  ros-noetic-dynamic_reconfigure-devel
+BuildRequires:  ros-noetic-gazebo_dev-devel
+BuildRequires:  ros-noetic-gazebo_msgs-devel
+BuildRequires:  ros-noetic-gazebo_ros-devel
+BuildRequires:  ros-noetic-geometry_msgs-devel
+BuildRequires:  ros-noetic-image_transport-devel
+BuildRequires:  ros-noetic-message_generation-devel
+BuildRequires:  ros-noetic-nav_msgs-devel
+BuildRequires:  ros-noetic-nodelet-devel
+BuildRequires:  ros-noetic-polled_camera-devel
+BuildRequires:  ros-noetic-rosconsole-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-rosgraph_msgs-devel
+BuildRequires:  ros-noetic-rospy-devel
+BuildRequires:  ros-noetic-rostest-devel
+BuildRequires:  ros-noetic-sensor_msgs-devel
+BuildRequires:  ros-noetic-std_msgs-devel
+BuildRequires:  ros-noetic-std_srvs-devel
+BuildRequires:  ros-noetic-tf-devel
+BuildRequires:  ros-noetic-tf2_ros-devel
+BuildRequires:  ros-noetic-trajectory_msgs-devel
+BuildRequires:  ros-noetic-urdf-devel
+BuildRequires:  ros-noetic-visualization_msgs-devel
 
-Requires:       ros-melodic-angles
-Requires:       ros-melodic-camera_info_manager
-Requires:       ros-melodic-cv_bridge
-Requires:       ros-melodic-diagnostic_updater
-Requires:       ros-melodic-dynamic_reconfigure
-Requires:       ros-melodic-gazebo_dev
-Requires:       ros-melodic-gazebo_msgs
-Requires:       ros-melodic-gazebo_ros
-Requires:       ros-melodic-geometry_msgs
-Requires:       ros-melodic-image_transport
-Requires:       ros-melodic-message_runtime
-Requires:       ros-melodic-nav_msgs
-Requires:       ros-melodic-nodelet
-Requires:       ros-melodic-polled_camera
-Requires:       ros-melodic-rosconsole
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-rosgraph_msgs
-Requires:       ros-melodic-rospy
-Requires:       ros-melodic-sensor_msgs
-Requires:       ros-melodic-std_msgs
-Requires:       ros-melodic-std_srvs
-Requires:       ros-melodic-tf
-Requires:       ros-melodic-tf2_ros
-Requires:       ros-melodic-trajectory_msgs
-Requires:       ros-melodic-urdf
+Requires:       ros-noetic-angles
+Requires:       ros-noetic-camera_info_manager
+Requires:       ros-noetic-cv_bridge
+Requires:       ros-noetic-diagnostic_updater
+Requires:       ros-noetic-dynamic_reconfigure
+Requires:       ros-noetic-gazebo_dev
+Requires:       ros-noetic-gazebo_msgs
+Requires:       ros-noetic-gazebo_ros
+Requires:       ros-noetic-geometry_msgs
+Requires:       ros-noetic-image_transport
+Requires:       ros-noetic-message_runtime
+Requires:       ros-noetic-nav_msgs
+Requires:       ros-noetic-nodelet
+Requires:       ros-noetic-polled_camera
+Requires:       ros-noetic-rosconsole
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-rosgraph_msgs
+Requires:       ros-noetic-rospy
+Requires:       ros-noetic-sensor_msgs
+Requires:       ros-noetic-std_msgs
+Requires:       ros-noetic-std_srvs
+Requires:       ros-noetic-tf
+Requires:       ros-noetic-tf2_ros
+Requires:       ros-noetic-trajectory_msgs
+Requires:       ros-noetic-urdf
+Requires:       ros-noetic-visualization_msgs
 
-Provides:  ros-melodic-gazebo_plugins = 2.8.6-1
-Obsoletes: ros-melodic-gazebo_plugins < 2.8.6-1
-Obsoletes: ros-kinetic-gazebo_plugins < 2.8.6-1
+Provides:  ros-noetic-gazebo_plugins = 2.9.1-1
+Obsoletes: ros-noetic-gazebo_plugins < 2.9.1-1
+Obsoletes: ros-kinetic-gazebo_plugins < 2.9.1-1
 
 
 %description
@@ -91,7 +93,7 @@ reconfigurable components.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       bullet-devel
 Requires:       gazebo-devel
 Requires:       libuuid-devel
@@ -100,37 +102,38 @@ Requires:       poco-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
 Requires:       urdfdom-devel
-Requires:       ros-melodic-angles-devel
-Requires:       ros-melodic-camera_info_manager-devel
-Requires:       ros-melodic-cv_bridge-devel
-Requires:       ros-melodic-diagnostic_updater-devel
-Requires:       ros-melodic-dynamic_reconfigure-devel
-Requires:       ros-melodic-gazebo_dev-devel
-Requires:       ros-melodic-gazebo_msgs-devel
-Requires:       ros-melodic-gazebo_ros-devel
-Requires:       ros-melodic-geometry_msgs-devel
-Requires:       ros-melodic-image_transport-devel
-Requires:       ros-melodic-message_generation-devel
-Requires:       ros-melodic-nav_msgs-devel
-Requires:       ros-melodic-nodelet-devel
-Requires:       ros-melodic-polled_camera-devel
-Requires:       ros-melodic-rosconsole-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-rosgraph_msgs-devel
-Requires:       ros-melodic-rospy-devel
-Requires:       ros-melodic-rostest-devel
-Requires:       ros-melodic-sensor_msgs-devel
-Requires:       ros-melodic-std_msgs-devel
-Requires:       ros-melodic-std_srvs-devel
-Requires:       ros-melodic-tf-devel
-Requires:       ros-melodic-tf2_ros-devel
-Requires:       ros-melodic-trajectory_msgs-devel
-Requires:       ros-melodic-urdf-devel
-Requires:       ros-melodic-message_runtime-devel
+Requires:       ros-noetic-angles-devel
+Requires:       ros-noetic-camera_info_manager-devel
+Requires:       ros-noetic-cv_bridge-devel
+Requires:       ros-noetic-diagnostic_updater-devel
+Requires:       ros-noetic-dynamic_reconfigure-devel
+Requires:       ros-noetic-gazebo_dev-devel
+Requires:       ros-noetic-gazebo_msgs-devel
+Requires:       ros-noetic-gazebo_ros-devel
+Requires:       ros-noetic-geometry_msgs-devel
+Requires:       ros-noetic-image_transport-devel
+Requires:       ros-noetic-message_generation-devel
+Requires:       ros-noetic-nav_msgs-devel
+Requires:       ros-noetic-nodelet-devel
+Requires:       ros-noetic-polled_camera-devel
+Requires:       ros-noetic-rosconsole-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-rosgraph_msgs-devel
+Requires:       ros-noetic-rospy-devel
+Requires:       ros-noetic-rostest-devel
+Requires:       ros-noetic-sensor_msgs-devel
+Requires:       ros-noetic-std_msgs-devel
+Requires:       ros-noetic-std_srvs-devel
+Requires:       ros-noetic-tf-devel
+Requires:       ros-noetic-tf2_ros-devel
+Requires:       ros-noetic-trajectory_msgs-devel
+Requires:       ros-noetic-urdf-devel
+Requires:       ros-noetic-visualization_msgs-devel
+Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-melodic-gazebo_plugins-devel = 2.8.6-1
-Obsoletes: ros-melodic-gazebo_plugins-devel < 2.8.6-1
-Obsoletes: ros-kinetic-gazebo_plugins-devel < 2.8.6-1
+Provides: ros-noetic-gazebo_plugins-devel = 2.9.1-1
+Obsoletes: ros-noetic-gazebo_plugins-devel < 2.9.1-1
+Obsoletes: ros-kinetic-gazebo_plugins-devel < 2.9.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -237,6 +240,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.2.9.1-1
+- Upgrade to noetic
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.2.8.6-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.2.8.4-3

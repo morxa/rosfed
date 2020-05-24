@@ -1,12 +1,12 @@
 Name:           ros-gazebo_dev
-Version:        melodic.2.8.6
+Version:        noetic.2.9.1
 Release:        1%{?dist}
 Summary:        ROS package gazebo_dev
 
 License:        Apache 2.0
 URL:            http://gazebosim.org/tutorials?cat=connect_ros
 
-Source0:        https://github.com/ros-gbp/gazebo_ros_pkgs-release/archive/release/melodic/gazebo_dev/2.8.6-1.tar.gz#/ros-melodic-gazebo_dev-2.8.6-source0.tar.gz
+Source0:        https://github.com/ros-gbp/gazebo_ros_pkgs-release/archive/release/noetic/gazebo_dev/2.9.1-1.tar.gz#/ros-noetic-gazebo_dev-2.9.1-source0.tar.gz
 
 
 BuildArch: noarch
@@ -19,13 +19,13 @@ BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
 BuildRequires:  gazebo-devel
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
 Requires:       gazebo
 
-Provides:  ros-melodic-gazebo_dev = 2.8.6-1
-Obsoletes: ros-melodic-gazebo_dev < 2.8.6-1
-Obsoletes: ros-kinetic-gazebo_dev < 2.8.6-1
+Provides:  ros-noetic-gazebo_dev = 2.9.1-1
+Obsoletes: ros-noetic-gazebo_dev < 2.9.1-1
+Obsoletes: ros-kinetic-gazebo_dev < 2.9.1-1
 
 
 %description
@@ -36,11 +36,11 @@ distribution.
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       gazebo-devel
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 
-Provides: ros-melodic-gazebo_dev-devel = 2.8.6-1
-Obsoletes: ros-melodic-gazebo_dev-devel < 2.8.6-1
-Obsoletes: ros-kinetic-gazebo_dev-devel < 2.8.6-1
+Provides: ros-noetic-gazebo_dev-devel = 2.9.1-1
+Obsoletes: ros-noetic-gazebo_dev-devel < 2.9.1-1
+Obsoletes: ros-kinetic-gazebo_dev-devel < 2.9.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -147,6 +147,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.2.9.1-1
+- Upgrade to noetic
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.2.8.6-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.2.8.4-3

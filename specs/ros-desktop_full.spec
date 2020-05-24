@@ -1,12 +1,12 @@
 Name:           ros-desktop_full
-Version:        melodic.1.4.1
-Release:        4%{?dist}
+Version:        noetic.1.5.0
+Release:        1%{?dist}
 Summary:        ROS package desktop_full
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/metapackages-release/archive/release/melodic/desktop_full/1.4.1-0.tar.gz#/ros-melodic-desktop_full-1.4.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/metapackages-release/archive/release/noetic/desktop_full/1.5.0-1.tar.gz#/ros-noetic-desktop_full-1.5.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,16 +18,16 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
-Requires:       ros-melodic-desktop
-Requires:       ros-melodic-perception
-Requires:       ros-melodic-simulators
-Requires:       ros-melodic-urdf_sim_tutorial
+Requires:       ros-noetic-desktop
+Requires:       ros-noetic-perception
+Requires:       ros-noetic-simulators
+Requires:       ros-noetic-urdf_sim_tutorial
 
-Provides:  ros-melodic-desktop_full = 1.4.1-4
-Obsoletes: ros-melodic-desktop_full < 1.4.1-4
-Obsoletes: ros-kinetic-desktop_full < 1.4.1-4
+Provides:  ros-noetic-desktop_full = 1.5.0-1
+Obsoletes: ros-noetic-desktop_full < 1.5.0-1
+Obsoletes: ros-kinetic-desktop_full < 1.5.0-1
 
 
 %description
@@ -36,15 +36,15 @@ A metapackage to aggregate several packages.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-desktop-devel
-Requires:       ros-melodic-perception-devel
-Requires:       ros-melodic-simulators-devel
-Requires:       ros-melodic-urdf_sim_tutorial-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-desktop-devel
+Requires:       ros-noetic-perception-devel
+Requires:       ros-noetic-simulators-devel
+Requires:       ros-noetic-urdf_sim_tutorial-devel
 
-Provides: ros-melodic-desktop_full-devel = 1.4.1-4
-Obsoletes: ros-melodic-desktop_full-devel < 1.4.1-4
-Obsoletes: ros-kinetic-desktop_full-devel < 1.4.1-4
+Provides: ros-noetic-desktop_full-devel = 1.5.0-1
+Obsoletes: ros-noetic-desktop_full-devel < 1.5.0-1
+Obsoletes: ros-kinetic-desktop_full-devel < 1.5.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -151,6 +151,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.5.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.4.1-4
 - Remove obsolete python2 dependencies
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.4.1-3

@@ -1,12 +1,12 @@
 Name:           ros-cv_bridge
-Version:        melodic.1.13.0
-Release:        4%{?dist}
+Version:        noetic.1.15.0
+Release:        1%{?dist}
 Summary:        ROS package cv_bridge
 
 License:        BSD
 URL:            http://www.ros.org/wiki/cv_bridge
 
-Source0:        https://github.com/ros-gbp/vision_opencv-release/archive/release/melodic/cv_bridge/1.13.0-0.tar.gz#/ros-melodic-cv_bridge-1.13.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/vision_opencv-release/archive/release/noetic/cv_bridge/1.15.0-1.tar.gz#/ros-noetic-cv_bridge-1.15.0-source0.tar.gz
 
 Patch0: ros-cv_bridge.opencv4.patch
 
@@ -18,24 +18,24 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  boost-devel boost-python3-devel boost-python3-devel
+BuildRequires:  boost-devel boost-python3-devel
 BuildRequires:  boost-python3-devel
 BuildRequires:  opencv-devel
 BuildRequires:  python3-devel
+BuildRequires:  python3-numpy
 BuildRequires:  python3-opencv
-BuildRequires:  python3dist(numpy)
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-rosconsole-devel
-BuildRequires:  ros-melodic-roscpp_serialization-devel
-BuildRequires:  ros-melodic-rostest-devel
-BuildRequires:  ros-melodic-sensor_msgs-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-rosconsole-devel
+BuildRequires:  ros-noetic-roscpp_serialization-devel
+BuildRequires:  ros-noetic-rostest-devel
+BuildRequires:  ros-noetic-sensor_msgs-devel
 
 Requires:       python3-opencv
-Requires:       ros-melodic-rosconsole
+Requires:       ros-noetic-rosconsole
 
-Provides:  ros-melodic-cv_bridge = 1.13.0-4
-Obsoletes: ros-melodic-cv_bridge < 1.13.0-4
-Obsoletes: ros-kinetic-cv_bridge < 1.13.0-4
+Provides:  ros-noetic-cv_bridge = 1.15.0-1
+Obsoletes: ros-noetic-cv_bridge < 1.15.0-1
+Obsoletes: ros-kinetic-cv_bridge < 1.15.0-1
 
 
 %description
@@ -46,20 +46,20 @@ OpenCV images.
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       opencv-devel
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-sensor_msgs-devel
-Requires:       boost-devel boost-python3-devel boost-python3-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-sensor_msgs-devel
+Requires:       boost-devel boost-python3-devel
 Requires:       boost-python3-devel
 Requires:       python3-devel
+Requires:       python3-numpy
 Requires:       python3-opencv
-Requires:       python3dist(numpy)
-Requires:       ros-melodic-rosconsole-devel
-Requires:       ros-melodic-roscpp_serialization-devel
-Requires:       ros-melodic-rostest-devel
+Requires:       ros-noetic-rosconsole-devel
+Requires:       ros-noetic-roscpp_serialization-devel
+Requires:       ros-noetic-rostest-devel
 
-Provides: ros-melodic-cv_bridge-devel = 1.13.0-4
-Obsoletes: ros-melodic-cv_bridge-devel < 1.13.0-4
-Obsoletes: ros-kinetic-cv_bridge-devel < 1.13.0-4
+Provides: ros-noetic-cv_bridge-devel = 1.15.0-1
+Obsoletes: ros-noetic-cv_bridge-devel < 1.15.0-1
+Obsoletes: ros-kinetic-cv_bridge-devel < 1.15.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -167,6 +167,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.0-1
+- Upgrade to noetic
 * Wed Apr 29 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.0-4
 - Add patch for OpenCV4 compatitibility
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.0-3

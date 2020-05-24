@@ -1,12 +1,12 @@
 Name:           ros-roscpp
-Version:        melodic.1.14.5
+Version:        noetic.1.15.6
 Release:        1%{?dist}
 Summary:        ROS package roscpp
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/melodic/roscpp/1.14.5-1.tar.gz#/ros-melodic-roscpp-1.14.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/roscpp/1.15.6-1.tar.gz#/ros-noetic-roscpp-1.15.6-source0.tar.gz
 
 
 
@@ -21,31 +21,31 @@ BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  pkgconfig
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-cpp_common-devel
-BuildRequires:  ros-melodic-message_generation-devel
-BuildRequires:  ros-melodic-rosconsole-devel
-BuildRequires:  ros-melodic-roscpp_serialization-devel
-BuildRequires:  ros-melodic-roscpp_traits-devel
-BuildRequires:  ros-melodic-rosgraph_msgs-devel
-BuildRequires:  ros-melodic-roslang-devel
-BuildRequires:  ros-melodic-rostime-devel
-BuildRequires:  ros-melodic-std_msgs-devel
-BuildRequires:  ros-melodic-xmlrpcpp-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-cpp_common-devel
+BuildRequires:  ros-noetic-message_generation-devel
+BuildRequires:  ros-noetic-rosconsole-devel
+BuildRequires:  ros-noetic-roscpp_serialization-devel
+BuildRequires:  ros-noetic-roscpp_traits-devel
+BuildRequires:  ros-noetic-rosgraph_msgs-devel
+BuildRequires:  ros-noetic-roslang-devel
+BuildRequires:  ros-noetic-rostime-devel
+BuildRequires:  ros-noetic-std_msgs-devel
+BuildRequires:  ros-noetic-xmlrpcpp-devel
 
-Requires:       ros-melodic-cpp_common
-Requires:       ros-melodic-message_runtime
-Requires:       ros-melodic-rosconsole
-Requires:       ros-melodic-roscpp_serialization
-Requires:       ros-melodic-roscpp_traits
-Requires:       ros-melodic-rosgraph_msgs
-Requires:       ros-melodic-rostime
-Requires:       ros-melodic-std_msgs
-Requires:       ros-melodic-xmlrpcpp
+Requires:       ros-noetic-cpp_common
+Requires:       ros-noetic-message_runtime
+Requires:       ros-noetic-rosconsole
+Requires:       ros-noetic-roscpp_serialization
+Requires:       ros-noetic-roscpp_traits
+Requires:       ros-noetic-rosgraph_msgs
+Requires:       ros-noetic-rostime
+Requires:       ros-noetic-std_msgs
+Requires:       ros-noetic-xmlrpcpp
 
-Provides:  ros-melodic-roscpp = 1.14.5-1
-Obsoletes: ros-melodic-roscpp < 1.14.5-1
-Obsoletes: ros-kinetic-roscpp < 1.14.5-1
+Provides:  ros-noetic-roscpp = 1.15.6-1
+Obsoletes: ros-noetic-roscpp < 1.15.6-1
+Obsoletes: ros-kinetic-roscpp < 1.15.6-1
 
 
 %description
@@ -54,26 +54,26 @@ roscpp is a C++ implementation of ROS. It provides a
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       boost-devel
 Requires:       console-bridge-devel
 Requires:       log4cxx-devel
 Requires:       pkgconfig
-Requires:       ros-melodic-cpp_common-devel
-Requires:       ros-melodic-message_generation-devel
-Requires:       ros-melodic-rosconsole-devel
-Requires:       ros-melodic-roscpp_serialization-devel
-Requires:       ros-melodic-roscpp_traits-devel
-Requires:       ros-melodic-rosgraph_msgs-devel
-Requires:       ros-melodic-roslang-devel
-Requires:       ros-melodic-rostime-devel
-Requires:       ros-melodic-std_msgs-devel
-Requires:       ros-melodic-xmlrpcpp-devel
-Requires:       ros-melodic-message_runtime-devel
+Requires:       ros-noetic-cpp_common-devel
+Requires:       ros-noetic-message_generation-devel
+Requires:       ros-noetic-rosconsole-devel
+Requires:       ros-noetic-roscpp_serialization-devel
+Requires:       ros-noetic-roscpp_traits-devel
+Requires:       ros-noetic-rosgraph_msgs-devel
+Requires:       ros-noetic-roslang-devel
+Requires:       ros-noetic-rostime-devel
+Requires:       ros-noetic-std_msgs-devel
+Requires:       ros-noetic-xmlrpcpp-devel
+Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-melodic-roscpp-devel = 1.14.5-1
-Obsoletes: ros-melodic-roscpp-devel < 1.14.5-1
-Obsoletes: ros-kinetic-roscpp-devel < 1.14.5-1
+Provides: ros-noetic-roscpp-devel = 1.15.6-1
+Obsoletes: ros-noetic-roscpp-devel < 1.15.6-1
+Obsoletes: ros-kinetic-roscpp-devel < 1.15.6-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -180,6 +180,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.6-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.5-1
 - Update to latest release
 * Thu Mar 05 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.4-2

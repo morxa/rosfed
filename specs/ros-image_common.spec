@@ -1,12 +1,12 @@
 Name:           ros-image_common
-Version:        melodic.1.11.13
-Release:        12%{?dist}
+Version:        noetic.1.12.0
+Release:        1%{?dist}
 Summary:        ROS package image_common
 
 License:        BSD
 URL:            http://www.ros.org/wiki/image_common
 
-Source0:        https://github.com/ros-gbp/image_common-release/archive/release/melodic/image_common/1.11.13-0.tar.gz#/ros-melodic-image_common-1.11.13-source0.tar.gz
+Source0:        https://github.com/ros-gbp/image_common-release/archive/release/noetic/image_common/1.12.0-1.tar.gz#/ros-noetic-image_common-1.12.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,16 +18,16 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
-Requires:       ros-melodic-camera_calibration_parsers
-Requires:       ros-melodic-camera_info_manager
-Requires:       ros-melodic-image_transport
-Requires:       ros-melodic-polled_camera
+Requires:       ros-noetic-camera_calibration_parsers
+Requires:       ros-noetic-camera_info_manager
+Requires:       ros-noetic-image_transport
+Requires:       ros-noetic-polled_camera
 
-Provides:  ros-melodic-image_common = 1.11.13-12
-Obsoletes: ros-melodic-image_common < 1.11.13-12
-Obsoletes: ros-kinetic-image_common < 1.11.13-12
+Provides:  ros-noetic-image_common = 1.12.0-1
+Obsoletes: ros-noetic-image_common < 1.12.0-1
+Obsoletes: ros-kinetic-image_common < 1.12.0-1
 
 
 %description
@@ -36,15 +36,15 @@ Common code for working with images in ROS.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-camera_calibration_parsers-devel
-Requires:       ros-melodic-camera_info_manager-devel
-Requires:       ros-melodic-image_transport-devel
-Requires:       ros-melodic-polled_camera-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-camera_calibration_parsers-devel
+Requires:       ros-noetic-camera_info_manager-devel
+Requires:       ros-noetic-image_transport-devel
+Requires:       ros-noetic-polled_camera-devel
 
-Provides: ros-melodic-image_common-devel = 1.11.13-12
-Obsoletes: ros-melodic-image_common-devel < 1.11.13-12
-Obsoletes: ros-kinetic-image_common-devel < 1.11.13-12
+Provides: ros-noetic-image_common-devel = 1.12.0-1
+Obsoletes: ros-noetic-image_common-devel < 1.12.0-1
+Obsoletes: ros-kinetic-image_common-devel < 1.12.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -151,6 +151,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.12.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.11.13-12
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.11.13-11

@@ -1,12 +1,12 @@
 Name:           ros-desktop
-Version:        melodic.1.4.1
-Release:        3%{?dist}
+Version:        noetic.1.5.0
+Release:        1%{?dist}
 Summary:        ROS package desktop
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/metapackages-release/archive/release/melodic/desktop/1.4.1-0.tar.gz#/ros-melodic-desktop-1.4.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/metapackages-release/archive/release/noetic/desktop/1.5.0-1.tar.gz#/ros-noetic-desktop-1.5.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,21 +18,22 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
-Requires:       ros-melodic-angles
-Requires:       ros-melodic-common_tutorials
-Requires:       ros-melodic-geometry_tutorials
-Requires:       ros-melodic-robot
-Requires:       ros-melodic-ros_tutorials
-Requires:       ros-melodic-roslint
-Requires:       ros-melodic-urdf_tutorial
-Requires:       ros-melodic-visualization_tutorials
-Requires:       ros-melodic-viz
+Requires:       ros-noetic-angles
+Requires:       ros-noetic-common_tutorials
+Requires:       ros-noetic-geometry_tutorials
+Requires:       ros-noetic-joint_state_publisher_gui
+Requires:       ros-noetic-robot
+Requires:       ros-noetic-ros_tutorials
+Requires:       ros-noetic-roslint
+Requires:       ros-noetic-urdf_tutorial
+Requires:       ros-noetic-visualization_tutorials
+Requires:       ros-noetic-viz
 
-Provides:  ros-melodic-desktop = 1.4.1-3
-Obsoletes: ros-melodic-desktop < 1.4.1-3
-Obsoletes: ros-kinetic-desktop < 1.4.1-3
+Provides:  ros-noetic-desktop = 1.5.0-1
+Obsoletes: ros-noetic-desktop < 1.5.0-1
+Obsoletes: ros-kinetic-desktop < 1.5.0-1
 
 
 %description
@@ -41,20 +42,21 @@ A metapackage to aggregate several packages.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-angles-devel
-Requires:       ros-melodic-common_tutorials-devel
-Requires:       ros-melodic-geometry_tutorials-devel
-Requires:       ros-melodic-robot-devel
-Requires:       ros-melodic-ros_tutorials-devel
-Requires:       ros-melodic-roslint-devel
-Requires:       ros-melodic-urdf_tutorial-devel
-Requires:       ros-melodic-visualization_tutorials-devel
-Requires:       ros-melodic-viz-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-angles-devel
+Requires:       ros-noetic-common_tutorials-devel
+Requires:       ros-noetic-geometry_tutorials-devel
+Requires:       ros-noetic-joint_state_publisher_gui-devel
+Requires:       ros-noetic-robot-devel
+Requires:       ros-noetic-ros_tutorials-devel
+Requires:       ros-noetic-roslint-devel
+Requires:       ros-noetic-urdf_tutorial-devel
+Requires:       ros-noetic-visualization_tutorials-devel
+Requires:       ros-noetic-viz-devel
 
-Provides: ros-melodic-desktop-devel = 1.4.1-3
-Obsoletes: ros-melodic-desktop-devel < 1.4.1-3
-Obsoletes: ros-kinetic-desktop-devel < 1.4.1-3
+Provides: ros-noetic-desktop-devel = 1.5.0-1
+Obsoletes: ros-noetic-desktop-devel < 1.5.0-1
+Obsoletes: ros-kinetic-desktop-devel < 1.5.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -161,6 +163,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.5.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.4.1-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.4.1-2

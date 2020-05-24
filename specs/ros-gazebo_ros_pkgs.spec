@@ -1,12 +1,12 @@
 Name:           ros-gazebo_ros_pkgs
-Version:        melodic.2.8.6
+Version:        noetic.2.9.1
 Release:        1%{?dist}
 Summary:        ROS package gazebo_ros_pkgs
 
 License:        BSD,LGPL,Apache 2.0
 URL:            http://gazebosim.org/tutorials?cat=connect_ros
 
-Source0:        https://github.com/ros-gbp/gazebo_ros_pkgs-release/archive/release/melodic/gazebo_ros_pkgs/2.8.6-1.tar.gz#/ros-melodic-gazebo_ros_pkgs-2.8.6-source0.tar.gz
+Source0:        https://github.com/ros-gbp/gazebo_ros_pkgs-release/archive/release/noetic/gazebo_ros_pkgs/2.9.1-1.tar.gz#/ros-noetic-gazebo_ros_pkgs-2.9.1-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,16 +18,16 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
-Requires:       ros-melodic-gazebo_dev
-Requires:       ros-melodic-gazebo_msgs
-Requires:       ros-melodic-gazebo_plugins
-Requires:       ros-melodic-gazebo_ros
+Requires:       ros-noetic-gazebo_dev
+Requires:       ros-noetic-gazebo_msgs
+Requires:       ros-noetic-gazebo_plugins
+Requires:       ros-noetic-gazebo_ros
 
-Provides:  ros-melodic-gazebo_ros_pkgs = 2.8.6-1
-Obsoletes: ros-melodic-gazebo_ros_pkgs < 2.8.6-1
-Obsoletes: ros-kinetic-gazebo_ros_pkgs < 2.8.6-1
+Provides:  ros-noetic-gazebo_ros_pkgs = 2.9.1-1
+Obsoletes: ros-noetic-gazebo_ros_pkgs < 2.9.1-1
+Obsoletes: ros-kinetic-gazebo_ros_pkgs < 2.9.1-1
 
 
 %description
@@ -36,15 +36,15 @@ Interface for using ROS with the
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-gazebo_dev-devel
-Requires:       ros-melodic-gazebo_msgs-devel
-Requires:       ros-melodic-gazebo_plugins-devel
-Requires:       ros-melodic-gazebo_ros-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-gazebo_dev-devel
+Requires:       ros-noetic-gazebo_msgs-devel
+Requires:       ros-noetic-gazebo_plugins-devel
+Requires:       ros-noetic-gazebo_ros-devel
 
-Provides: ros-melodic-gazebo_ros_pkgs-devel = 2.8.6-1
-Obsoletes: ros-melodic-gazebo_ros_pkgs-devel < 2.8.6-1
-Obsoletes: ros-kinetic-gazebo_ros_pkgs-devel < 2.8.6-1
+Provides: ros-noetic-gazebo_ros_pkgs-devel = 2.9.1-1
+Obsoletes: ros-noetic-gazebo_ros_pkgs-devel < 2.9.1-1
+Obsoletes: ros-kinetic-gazebo_ros_pkgs-devel < 2.9.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -151,6 +151,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.2.9.1-1
+- Upgrade to noetic
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.2.8.6-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.2.8.4-3

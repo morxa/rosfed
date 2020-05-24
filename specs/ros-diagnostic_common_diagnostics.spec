@@ -1,12 +1,12 @@
 Name:           ros-diagnostic_common_diagnostics
-Version:        melodic.1.9.3
-Release:        3%{?dist}
+Version:        noetic.1.9.4
+Release:        1%{?dist}
 Summary:        ROS package diagnostic_common_diagnostics
 
 License:        BSD
 URL:            http://ros.org/wiki/diagnostic_common_diagnostics
 
-Source0:        https://github.com/ros-gbp/diagnostics-release/archive/release/melodic/diagnostic_common_diagnostics/1.9.3-0.tar.gz#/ros-melodic-diagnostic_common_diagnostics-1.9.3-source0.tar.gz
+Source0:        https://github.com/ros-gbp/diagnostics-release/archive/release/noetic/diagnostic_common_diagnostics/1.9.4-1.tar.gz#/ros-noetic-diagnostic_common_diagnostics-1.9.4-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,20 +18,20 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-diagnostic_updater-devel
-BuildRequires:  ros-melodic-rospy-devel
-BuildRequires:  ros-melodic-rostest-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-diagnostic_updater-devel
+BuildRequires:  ros-noetic-rospy-devel
+BuildRequires:  ros-noetic-rostest-devel
 
 Requires:       hddtemp
 Requires:       python3-psutil
-Requires:       ros-melodic-diagnostic_updater
-Requires:       ros-melodic-rospy
-Requires:       ros-melodic-tf
+Requires:       ros-noetic-diagnostic_updater
+Requires:       ros-noetic-rospy
+Requires:       ros-noetic-tf
 
-Provides:  ros-melodic-diagnostic_common_diagnostics = 1.9.3-3
-Obsoletes: ros-melodic-diagnostic_common_diagnostics < 1.9.3-3
-Obsoletes: ros-kinetic-diagnostic_common_diagnostics < 1.9.3-3
+Provides:  ros-noetic-diagnostic_common_diagnostics = 1.9.4-1
+Obsoletes: ros-noetic-diagnostic_common_diagnostics < 1.9.4-1
+Obsoletes: ros-kinetic-diagnostic_common_diagnostics < 1.9.4-1
 
 
 %description
@@ -40,15 +40,15 @@ diagnostic_common_diagnostics
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-diagnostic_updater-devel
-Requires:       ros-melodic-rospy-devel
-Requires:       ros-melodic-rostest-devel
-Requires:       ros-melodic-tf-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-diagnostic_updater-devel
+Requires:       ros-noetic-rospy-devel
+Requires:       ros-noetic-rostest-devel
+Requires:       ros-noetic-tf-devel
 
-Provides: ros-melodic-diagnostic_common_diagnostics-devel = 1.9.3-3
-Obsoletes: ros-melodic-diagnostic_common_diagnostics-devel < 1.9.3-3
-Obsoletes: ros-kinetic-diagnostic_common_diagnostics-devel < 1.9.3-3
+Provides: ros-noetic-diagnostic_common_diagnostics-devel = 1.9.4-1
+Obsoletes: ros-noetic-diagnostic_common_diagnostics-devel < 1.9.4-1
+Obsoletes: ros-kinetic-diagnostic_common_diagnostics-devel < 1.9.4-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -155,6 +155,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.9.4-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.9.3-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.9.3-2

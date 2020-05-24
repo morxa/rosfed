@@ -1,12 +1,12 @@
 Name:           ros-controller_manager_msgs
-Version:        melodic.0.18.0
+Version:        noetic.0.19.1
 Release:        1%{?dist}
 Summary:        ROS package controller_manager_msgs
 
 License:        BSD
 URL:            https://github.com/ros-controls/ros_control/wiki
 
-Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/melodic/controller_manager_msgs/0.18.0-1.tar.gz#/ros-melodic-controller_manager_msgs-0.18.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/noetic/controller_manager_msgs/0.19.1-1.tar.gz#/ros-noetic-controller_manager_msgs-0.19.1-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,18 +18,19 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-message_generation-devel
-BuildRequires:  ros-melodic-std_msgs-devel
+BuildRequires:  python3-setuptools
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-message_generation-devel
+BuildRequires:  ros-noetic-std_msgs-devel
 
-Requires:       ros-melodic-message_runtime
-Requires:       ros-melodic-rospy
-Requires:       ros-melodic-rosservice
-Requires:       ros-melodic-std_msgs
+Requires:       ros-noetic-message_runtime
+Requires:       ros-noetic-rospy
+Requires:       ros-noetic-rosservice
+Requires:       ros-noetic-std_msgs
 
-Provides:  ros-melodic-controller_manager_msgs = 0.18.0-1
-Obsoletes: ros-melodic-controller_manager_msgs < 0.18.0-1
-Obsoletes: ros-kinetic-controller_manager_msgs < 0.18.0-1
+Provides:  ros-noetic-controller_manager_msgs = 0.19.1-1
+Obsoletes: ros-noetic-controller_manager_msgs < 0.19.1-1
+Obsoletes: ros-kinetic-controller_manager_msgs < 0.19.1-1
 
 
 %description
@@ -38,16 +39,17 @@ Messages and services for the controller manager.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-message_generation-devel
-Requires:       ros-melodic-std_msgs-devel
-Requires:       ros-melodic-message_runtime-devel
-Requires:       ros-melodic-rospy-devel
-Requires:       ros-melodic-rosservice-devel
+Requires:       python3-setuptools
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-message_generation-devel
+Requires:       ros-noetic-std_msgs-devel
+Requires:       ros-noetic-message_runtime-devel
+Requires:       ros-noetic-rospy-devel
+Requires:       ros-noetic-rosservice-devel
 
-Provides: ros-melodic-controller_manager_msgs-devel = 0.18.0-1
-Obsoletes: ros-melodic-controller_manager_msgs-devel < 0.18.0-1
-Obsoletes: ros-kinetic-controller_manager_msgs-devel < 0.18.0-1
+Provides: ros-noetic-controller_manager_msgs-devel = 0.19.1-1
+Obsoletes: ros-noetic-controller_manager_msgs-devel < 0.19.1-1
+Obsoletes: ros-kinetic-controller_manager_msgs-devel < 0.19.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -154,6 +156,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.19.1-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.18.0-1
 - Update to latest release
 * Mon Mar 02 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.17.0-1

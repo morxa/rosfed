@@ -1,12 +1,12 @@
 Name:           ros-python_qt_binding
-Version:        melodic.0.4.0
+Version:        noetic.0.4.1
 Release:        1%{?dist}
 Summary:        ROS package python_qt_binding
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/python_qt_binding-release/archive/release/melodic/python_qt_binding/0.4.0-1.tar.gz#/ros-melodic-python_qt_binding-0.4.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/python_qt_binding-release/archive/release/noetic/python_qt_binding/0.4.1-1.tar.gz#/ros-noetic-python_qt_binding-0.4.1-source0.tar.gz
 
 
 BuildArch: noarch
@@ -21,14 +21,14 @@ BuildRequires:  python3-devel
 BuildRequires:  python3-pyside2
 BuildRequires:  python3-qt5-devel sip
 BuildRequires:  qt5-qtbase-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-rosbuild-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-rosbuild-devel
 
 Requires:       python3-pyside2
 
-Provides:  ros-melodic-python_qt_binding = 0.4.0-1
-Obsoletes: ros-melodic-python_qt_binding < 0.4.0-1
-Obsoletes: ros-kinetic-python_qt_binding < 0.4.0-1
+Provides:  ros-noetic-python_qt_binding = 0.4.1-1
+Obsoletes: ros-noetic-python_qt_binding < 0.4.1-1
+Obsoletes: ros-kinetic-python_qt_binding < 0.4.1-1
 
 
 %description
@@ -44,15 +44,15 @@ these.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       python3-pyside2
 Requires:       python3-qt5-devel sip
 Requires:       qt5-qtbase-devel
-Requires:       ros-melodic-rosbuild-devel
+Requires:       ros-noetic-rosbuild-devel
 
-Provides: ros-melodic-python_qt_binding-devel = 0.4.0-1
-Obsoletes: ros-melodic-python_qt_binding-devel < 0.4.0-1
-Obsoletes: ros-kinetic-python_qt_binding-devel < 0.4.0-1
+Provides: ros-noetic-python_qt_binding-devel = 0.4.1-1
+Obsoletes: ros-noetic-python_qt_binding-devel < 0.4.1-1
+Obsoletes: ros-kinetic-python_qt_binding-devel < 0.4.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -159,6 +159,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.1-1
+- Upgrade to noetic
 * Mon Mar 02 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.0-1
 - Update to latest release
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.3.6-1

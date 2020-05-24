@@ -1,12 +1,12 @@
 Name:           ros-forward_command_controller
-Version:        melodic.0.16.1
+Version:        noetic.0.17.0
 Release:        1%{?dist}
 Summary:        ROS package forward_command_controller
 
 License:        BSD
 URL:            https://github.com/ros-controls/ros_controllers/wiki
 
-Source0:        https://github.com/ros-gbp/ros_controllers-release/archive/release/melodic/forward_command_controller/0.16.1-1.tar.gz#/ros-melodic-forward_command_controller-0.16.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_controllers-release/archive/release/noetic/forward_command_controller/0.17.0-1.tar.gz#/ros-noetic-forward_command_controller-0.17.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,20 +18,20 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-controller_interface-devel
-BuildRequires:  ros-melodic-hardware_interface-devel
-BuildRequires:  ros-melodic-realtime_tools-devel
-BuildRequires:  ros-melodic-std_msgs-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-controller_interface-devel
+BuildRequires:  ros-noetic-hardware_interface-devel
+BuildRequires:  ros-noetic-realtime_tools-devel
+BuildRequires:  ros-noetic-std_msgs-devel
 
-Requires:       ros-melodic-controller_interface
-Requires:       ros-melodic-hardware_interface
-Requires:       ros-melodic-realtime_tools
-Requires:       ros-melodic-std_msgs
+Requires:       ros-noetic-controller_interface
+Requires:       ros-noetic-hardware_interface
+Requires:       ros-noetic-realtime_tools
+Requires:       ros-noetic-std_msgs
 
-Provides:  ros-melodic-forward_command_controller = 0.16.1-1
-Obsoletes: ros-melodic-forward_command_controller < 0.16.1-1
-Obsoletes: ros-kinetic-forward_command_controller < 0.16.1-1
+Provides:  ros-noetic-forward_command_controller = 0.17.0-1
+Obsoletes: ros-noetic-forward_command_controller < 0.17.0-1
+Obsoletes: ros-kinetic-forward_command_controller < 0.17.0-1
 
 
 %description
@@ -40,15 +40,15 @@ forward_command_controller
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-controller_interface-devel
-Requires:       ros-melodic-hardware_interface-devel
-Requires:       ros-melodic-realtime_tools-devel
-Requires:       ros-melodic-std_msgs-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-controller_interface-devel
+Requires:       ros-noetic-hardware_interface-devel
+Requires:       ros-noetic-realtime_tools-devel
+Requires:       ros-noetic-std_msgs-devel
 
-Provides: ros-melodic-forward_command_controller-devel = 0.16.1-1
-Obsoletes: ros-melodic-forward_command_controller-devel < 0.16.1-1
-Obsoletes: ros-kinetic-forward_command_controller-devel < 0.16.1-1
+Provides: ros-noetic-forward_command_controller-devel = 0.17.0-1
+Obsoletes: ros-noetic-forward_command_controller-devel < 0.17.0-1
+Obsoletes: ros-kinetic-forward_command_controller-devel < 0.17.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -155,6 +155,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.17.0-1
+- Upgrade to noetic
 * Wed Apr 29 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.16.1-1
 - Update to latest release
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.15.1-1

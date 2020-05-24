@@ -1,12 +1,12 @@
 Name:           ros-laser_pipeline
-Version:        melodic.1.6.3
-Release:        3%{?dist}
+Version:        noetic.1.6.4
+Release:        1%{?dist}
 Summary:        ROS package laser_pipeline
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/laser_pipeline-release/archive/release/melodic/laser_pipeline/1.6.3-0.tar.gz#/ros-melodic-laser_pipeline-1.6.3-source0.tar.gz
+Source0:        https://github.com/ros-gbp/laser_pipeline-release/archive/release/noetic/laser_pipeline/1.6.4-1.tar.gz#/ros-noetic-laser_pipeline-1.6.4-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,15 +18,15 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
-Requires:       ros-melodic-laser_assembler
-Requires:       ros-melodic-laser_filters
-Requires:       ros-melodic-laser_geometry
+Requires:       ros-noetic-laser_assembler
+Requires:       ros-noetic-laser_filters
+Requires:       ros-noetic-laser_geometry
 
-Provides:  ros-melodic-laser_pipeline = 1.6.3-3
-Obsoletes: ros-melodic-laser_pipeline < 1.6.3-3
-Obsoletes: ros-kinetic-laser_pipeline < 1.6.3-3
+Provides:  ros-noetic-laser_pipeline = 1.6.4-1
+Obsoletes: ros-noetic-laser_pipeline < 1.6.4-1
+Obsoletes: ros-kinetic-laser_pipeline < 1.6.4-1
 
 
 %description
@@ -36,14 +36,14 @@ converting laser data into 3D representations.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-laser_assembler-devel
-Requires:       ros-melodic-laser_filters-devel
-Requires:       ros-melodic-laser_geometry-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-laser_assembler-devel
+Requires:       ros-noetic-laser_filters-devel
+Requires:       ros-noetic-laser_geometry-devel
 
-Provides: ros-melodic-laser_pipeline-devel = 1.6.3-3
-Obsoletes: ros-melodic-laser_pipeline-devel < 1.6.3-3
-Obsoletes: ros-kinetic-laser_pipeline-devel < 1.6.3-3
+Provides: ros-noetic-laser_pipeline-devel = 1.6.4-1
+Obsoletes: ros-noetic-laser_pipeline-devel < 1.6.4-1
+Obsoletes: ros-kinetic-laser_pipeline-devel < 1.6.4-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -150,6 +150,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.6.4-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.6.3-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.6.3-2

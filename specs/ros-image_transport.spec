@@ -1,12 +1,12 @@
 Name:           ros-image_transport
-Version:        melodic.1.11.13
-Release:        3%{?dist}
+Version:        noetic.1.12.0
+Release:        1%{?dist}
 Summary:        ROS package image_transport
 
 License:        BSD
 URL:            http://ros.org/wiki/image_transport
 
-Source0:        https://github.com/ros-gbp/image_common-release/archive/release/melodic/image_transport/1.11.13-0.tar.gz#/ros-melodic-image_transport-1.11.13-source0.tar.gz
+Source0:        https://github.com/ros-gbp/image_common-release/archive/release/noetic/image_transport/1.12.0-1.tar.gz#/ros-noetic-image_transport-1.12.0-source0.tar.gz
 
 
 
@@ -20,24 +20,24 @@ BuildRequires:  python3-devel
 BuildRequires:  poco-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-message_filters-devel
-BuildRequires:  ros-melodic-pluginlib-devel
-BuildRequires:  ros-melodic-rosconsole-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-roslib-devel
-BuildRequires:  ros-melodic-sensor_msgs-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-message_filters-devel
+BuildRequires:  ros-noetic-pluginlib-devel
+BuildRequires:  ros-noetic-rosconsole-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-roslib-devel
+BuildRequires:  ros-noetic-sensor_msgs-devel
 
-Requires:       ros-melodic-message_filters
-Requires:       ros-melodic-pluginlib
-Requires:       ros-melodic-rosconsole
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-roslib
-Requires:       ros-melodic-sensor_msgs
+Requires:       ros-noetic-message_filters
+Requires:       ros-noetic-pluginlib
+Requires:       ros-noetic-rosconsole
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-roslib
+Requires:       ros-noetic-sensor_msgs
 
-Provides:  ros-melodic-image_transport = 1.11.13-3
-Obsoletes: ros-melodic-image_transport < 1.11.13-3
-Obsoletes: ros-kinetic-image_transport < 1.11.13-3
+Provides:  ros-noetic-image_transport = 1.12.0-1
+Obsoletes: ros-noetic-image_transport < 1.12.0-1
+Obsoletes: ros-kinetic-image_transport < 1.12.0-1
 
 
 %description
@@ -50,20 +50,20 @@ video.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       poco-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
-Requires:       ros-melodic-message_filters-devel
-Requires:       ros-melodic-pluginlib-devel
-Requires:       ros-melodic-rosconsole-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-roslib-devel
-Requires:       ros-melodic-sensor_msgs-devel
+Requires:       ros-noetic-message_filters-devel
+Requires:       ros-noetic-pluginlib-devel
+Requires:       ros-noetic-rosconsole-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-roslib-devel
+Requires:       ros-noetic-sensor_msgs-devel
 
-Provides: ros-melodic-image_transport-devel = 1.11.13-3
-Obsoletes: ros-melodic-image_transport-devel < 1.11.13-3
-Obsoletes: ros-kinetic-image_transport-devel < 1.11.13-3
+Provides: ros-noetic-image_transport-devel = 1.12.0-1
+Obsoletes: ros-noetic-image_transport-devel < 1.12.0-1
+Obsoletes: ros-kinetic-image_transport-devel < 1.12.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -170,6 +170,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.12.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.11.13-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.11.13-2

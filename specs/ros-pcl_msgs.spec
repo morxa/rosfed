@@ -1,12 +1,12 @@
 Name:           ros-pcl_msgs
-Version:        melodic.0.2.0
-Release:        14%{?dist}
+Version:        noetic.0.3.0
+Release:        1%{?dist}
 Summary:        ROS package pcl_msgs
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/pcl_msgs-release/archive/release/melodic/pcl_msgs/0.2.0-0.tar.gz#/ros-melodic-pcl_msgs-0.2.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/pcl_msgs-release/archive/release/noetic/pcl_msgs/0.3.0-1.tar.gz#/ros-noetic-pcl_msgs-0.3.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,18 +18,18 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-message_generation-devel
-BuildRequires:  ros-melodic-sensor_msgs-devel
-BuildRequires:  ros-melodic-std_msgs-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-message_generation-devel
+BuildRequires:  ros-noetic-sensor_msgs-devel
+BuildRequires:  ros-noetic-std_msgs-devel
 
-Requires:       ros-melodic-message_runtime
-Requires:       ros-melodic-sensor_msgs
-Requires:       ros-melodic-std_msgs
+Requires:       ros-noetic-message_runtime
+Requires:       ros-noetic-sensor_msgs
+Requires:       ros-noetic-std_msgs
 
-Provides:  ros-melodic-pcl_msgs = 0.2.0-14
-Obsoletes: ros-melodic-pcl_msgs < 0.2.0-14
-Obsoletes: ros-kinetic-pcl_msgs < 0.2.0-14
+Provides:  ros-noetic-pcl_msgs = 0.3.0-1
+Obsoletes: ros-noetic-pcl_msgs < 0.3.0-1
+Obsoletes: ros-kinetic-pcl_msgs < 0.3.0-1
 
 
 %description
@@ -38,15 +38,15 @@ Package containing PCL (Point Cloud Library)-related ROS messages.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-message_generation-devel
-Requires:       ros-melodic-sensor_msgs-devel
-Requires:       ros-melodic-std_msgs-devel
-Requires:       ros-melodic-message_runtime-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-message_generation-devel
+Requires:       ros-noetic-sensor_msgs-devel
+Requires:       ros-noetic-std_msgs-devel
+Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-melodic-pcl_msgs-devel = 0.2.0-14
-Obsoletes: ros-melodic-pcl_msgs-devel < 0.2.0-14
-Obsoletes: ros-kinetic-pcl_msgs-devel < 0.2.0-14
+Provides: ros-noetic-pcl_msgs-devel = 0.3.0-1
+Obsoletes: ros-noetic-pcl_msgs-devel < 0.3.0-1
+Obsoletes: ros-kinetic-pcl_msgs-devel < 0.3.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -153,6 +153,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.3.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.2.0-14
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.2.0-13

@@ -1,12 +1,12 @@
 Name:           ros-controller_manager
-Version:        melodic.0.18.0
+Version:        noetic.0.19.1
 Release:        1%{?dist}
 Summary:        ROS package controller_manager
 
 License:        BSD
 URL:            https://github.com/ros-controls/ros_control/wiki
 
-Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/melodic/controller_manager/0.18.0-1.tar.gz#/ros-melodic-controller_manager-0.18.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/noetic/controller_manager/0.19.1-1.tar.gz#/ros-noetic-controller_manager-0.19.1-source0.tar.gz
 
 
 
@@ -18,24 +18,25 @@ BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
 BuildRequires:  poco-devel
+BuildRequires:  python3-setuptools
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-controller_interface-devel
-BuildRequires:  ros-melodic-controller_manager_msgs-devel
-BuildRequires:  ros-melodic-hardware_interface-devel
-BuildRequires:  ros-melodic-pluginlib-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-rostest-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-controller_interface-devel
+BuildRequires:  ros-noetic-controller_manager_msgs-devel
+BuildRequires:  ros-noetic-hardware_interface-devel
+BuildRequires:  ros-noetic-pluginlib-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-rostest-devel
 
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-rosparam
-Requires:       ros-melodic-rospy
-Requires:       ros-melodic-std_msgs
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-rosparam
+Requires:       ros-noetic-rospy
+Requires:       ros-noetic-std_msgs
 
-Provides:  ros-melodic-controller_manager = 0.18.0-1
-Obsoletes: ros-melodic-controller_manager < 0.18.0-1
-Obsoletes: ros-kinetic-controller_manager < 0.18.0-1
+Provides:  ros-noetic-controller_manager = 0.19.1-1
+Obsoletes: ros-noetic-controller_manager < 0.19.1-1
+Obsoletes: ros-kinetic-controller_manager < 0.19.1-1
 
 
 %description
@@ -44,23 +45,24 @@ The controller manager.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-controller_interface-devel
-Requires:       ros-melodic-controller_manager_msgs-devel
-Requires:       ros-melodic-hardware_interface-devel
-Requires:       ros-melodic-pluginlib-devel
+Requires:       python3-setuptools
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-controller_interface-devel
+Requires:       ros-noetic-controller_manager_msgs-devel
+Requires:       ros-noetic-hardware_interface-devel
+Requires:       ros-noetic-pluginlib-devel
 Requires:       poco-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-rostest-devel
-Requires:       ros-melodic-rosparam-devel
-Requires:       ros-melodic-rospy-devel
-Requires:       ros-melodic-std_msgs-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-rostest-devel
+Requires:       ros-noetic-rosparam-devel
+Requires:       ros-noetic-rospy-devel
+Requires:       ros-noetic-std_msgs-devel
 
-Provides: ros-melodic-controller_manager-devel = 0.18.0-1
-Obsoletes: ros-melodic-controller_manager-devel < 0.18.0-1
-Obsoletes: ros-kinetic-controller_manager-devel < 0.18.0-1
+Provides: ros-noetic-controller_manager-devel = 0.19.1-1
+Obsoletes: ros-noetic-controller_manager-devel < 0.19.1-1
+Obsoletes: ros-kinetic-controller_manager-devel < 0.19.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -167,6 +169,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.19.1-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.18.0-1
 - Update to latest release
 * Mon Mar 02 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.17.0-1
