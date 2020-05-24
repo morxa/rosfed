@@ -1,6 +1,6 @@
 Name:           ros-laser_geometry
 Version:        noetic.1.6.5
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package laser_geometry
 
 License:        BSD
@@ -8,6 +8,7 @@ URL:            http://www.ros.org/
 
 Source0:        https://github.com/ros-gbp/laser_geometry-release/archive/release/noetic/laser_geometry/1.6.5-1.tar.gz#/ros-noetic-laser_geometry-1.6.5-source0.tar.gz
 
+Patch0: patches/ros-laser_geometry.add-eigen-export_depend.patch
 
 
 # common BRs
@@ -35,9 +36,9 @@ Requires:       ros-noetic-sensor_msgs
 Requires:       ros-noetic-tf
 Requires:       ros-noetic-tf2
 
-Provides:  ros-noetic-laser_geometry = 1.6.5-1
-Obsoletes: ros-noetic-laser_geometry < 1.6.5-1
-Obsoletes: ros-kinetic-laser_geometry < 1.6.5-1
+Provides:  ros-noetic-laser_geometry = 1.6.5-2
+Obsoletes: ros-noetic-laser_geometry < 1.6.5-2
+Obsoletes: ros-kinetic-laser_geometry < 1.6.5-2
 
 
 %description
@@ -60,9 +61,9 @@ Requires:       ros-noetic-sensor_msgs-devel
 Requires:       ros-noetic-tf-devel
 Requires:       ros-noetic-tf2-devel
 
-Provides: ros-noetic-laser_geometry-devel = 1.6.5-1
-Obsoletes: ros-noetic-laser_geometry-devel < 1.6.5-1
-Obsoletes: ros-kinetic-laser_geometry-devel < 1.6.5-1
+Provides: ros-noetic-laser_geometry-devel = 1.6.5-2
+Obsoletes: ros-noetic-laser_geometry-devel < 1.6.5-2
+Obsoletes: ros-kinetic-laser_geometry-devel < 1.6.5-2
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -74,6 +75,7 @@ applications that use %{name}.
 
 %setup -c -T
 tar --strip-components=1 -xf %{SOURCE0}
+%patch0 -p1
 
 %build
 # nothing to do here
@@ -169,6 +171,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.6.5-2
+- Add patch to export eigen includedir
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.6.5-1
 - Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.6.5-1
