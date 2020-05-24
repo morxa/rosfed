@@ -90,10 +90,13 @@ common:
             pkg: python3-sip-devel
     distro_names:
       gazebo9: gazebo
+      gazebo11: gazebo
       libgazebo7-dev: gazebo-devel
       libgazebo7: gazebo-libs
       libgazebo9-dev: gazebo-devel
       libgazebo9: gazebo-libs
+      libgazebo11: gazebo-libs
+      libgazebo11-dev: gazebo-devel
       libgpgme-dev: gpgme-devel
       libgpgme-dev: gpgme-devel
       python-gnupg: python2-gnupg
