@@ -6,4 +6,4 @@ dependencies:
       - console-bridge-devel
       - boost-python3-devel
 patches:
-  - ros-camera_calibration_parsers.python.patch
+  - ros-camera_calibration_parsers.boost-python3.patch

@@ -1,6 +1,6 @@
 Name:           ros-camera_calibration_parsers
 Version:        noetic.1.12.0
-Release:        1%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package camera_calibration_parsers
 
 License:        BSD
@@ -8,7 +8,7 @@ URL:            http://ros.org/wiki/camera_calibration_parsers
 
 Source0:        https://github.com/ros-gbp/image_common-release/archive/release/noetic/camera_calibration_parsers/1.12.0-1.tar.gz#/ros-noetic-camera_calibration_parsers-1.12.0-source0.tar.gz
 
-Patch0: ros-camera_calibration_parsers.python.patch
+Patch0: ros-camera_calibration_parsers.boost-python3.patch
 
 
 # common BRs
@@ -37,9 +37,9 @@ Requires:       ros-noetic-roscpp
 Requires:       ros-noetic-roscpp_serialization
 Requires:       ros-noetic-sensor_msgs
 
-Provides:  ros-noetic-camera_calibration_parsers = 1.12.0-1
-Obsoletes: ros-noetic-camera_calibration_parsers < 1.12.0-1
-Obsoletes: ros-kinetic-camera_calibration_parsers < 1.12.0-1
+Provides:  ros-noetic-camera_calibration_parsers = 1.12.0-3
+Obsoletes: ros-noetic-camera_calibration_parsers < 1.12.0-3
+Obsoletes: ros-kinetic-camera_calibration_parsers < 1.12.0-3
 
 
 %description
@@ -64,9 +64,9 @@ Requires:       ros-noetic-roscpp_serialization-devel
 Requires:       ros-noetic-rosunit-devel
 Requires:       ros-noetic-sensor_msgs-devel
 
-Provides: ros-noetic-camera_calibration_parsers-devel = 1.12.0-1
-Obsoletes: ros-noetic-camera_calibration_parsers-devel < 1.12.0-1
-Obsoletes: ros-kinetic-camera_calibration_parsers-devel < 1.12.0-1
+Provides: ros-noetic-camera_calibration_parsers-devel = 1.12.0-3
+Obsoletes: ros-noetic-camera_calibration_parsers-devel < 1.12.0-3
+Obsoletes: ros-kinetic-camera_calibration_parsers-devel < 1.12.0-3
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -174,6 +174,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.12.0-3
+- Update patch to properly detect boost-python
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.12.0-1
 - Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.11.13-13

@@ -1,0 +1,12 @@
+diff -ur ./image_common-release-release-noetic-camera_calibration_parsers-1.12.0-1.orig/CMakeLists.txt image_common-release-release-noetic-camera_calibration_parsers-1.12.0-1/CMakeLists.txt
+--- ./image_common-release-release-noetic-camera_calibration_parsers-1.12.0-1.orig/CMakeLists.txt	2020-04-03 19:47:56.000000000 +0200
++++ image_common-release-release-noetic-camera_calibration_parsers-1.12.0-1/CMakeLists.txt	2020-05-24 16:19:50.146520303 +0200
+@@ -4,7 +4,7 @@
+ find_package(catkin REQUIRED sensor_msgs rosconsole roscpp roscpp_serialization)
+ 
+ find_package(PythonLibs REQUIRED)
+-find_package(Boost REQUIRED COMPONENTS filesystem python)
++find_package(Boost REQUIRED COMPONENTS filesystem python${PYTHON_VERSION_NODOTS})
+ include_directories(include ${catkin_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS} ${PYTHON_INCLUDE_DIRS})
+ 
+ catkin_python_setup()
