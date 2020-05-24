@@ -1,6 +1,6 @@
 Name:           ros-tf2
 Version:        noetic.0.7.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package tf2
 
 License:        BSD
@@ -8,7 +8,6 @@ URL:            http://www.ros.org/wiki/tf2
 
 Source0:        https://github.com/ros-gbp/geometry2-release/archive/release/noetic/tf2/0.7.1-1.tar.gz#/ros-noetic-tf2-0.7.1-source0.tar.gz
 
-Patch0: ros-melodic-tf2.signals2.patch
 
 
 # common BRs
@@ -33,9 +32,9 @@ Requires:       ros-noetic-geometry_msgs
 Requires:       ros-noetic-rostime
 Requires:       ros-noetic-tf2_msgs
 
-Provides:  ros-noetic-tf2 = 0.7.1-1
-Obsoletes: ros-noetic-tf2 < 0.7.1-1
-Obsoletes: ros-kinetic-tf2 < 0.7.1-1
+Provides:  ros-noetic-tf2 = 0.7.1-2
+Obsoletes: ros-noetic-tf2 < 0.7.1-2
+Obsoletes: ros-kinetic-tf2 < 0.7.1-2
 
 
 %description
@@ -59,9 +58,9 @@ Requires:       ros-noetic-roscpp_traits-devel
 Requires:       ros-noetic-rostime-devel
 Requires:       ros-noetic-tf2_msgs-devel
 
-Provides: ros-noetic-tf2-devel = 0.7.1-1
-Obsoletes: ros-noetic-tf2-devel < 0.7.1-1
-Obsoletes: ros-kinetic-tf2-devel < 0.7.1-1
+Provides: ros-noetic-tf2-devel = 0.7.1-2
+Obsoletes: ros-noetic-tf2-devel < 0.7.1-2
+Obsoletes: ros-kinetic-tf2-devel < 0.7.1-2
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -73,7 +72,6 @@ applications that use %{name}.
 
 %setup -c -T
 tar --strip-components=1 -xf %{SOURCE0}
-%patch0 -p1
 
 %build
 # nothing to do here
@@ -169,6 +167,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.7.1-2
+- Remove upstreamed patch
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.7.1-1
 - Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.6.5-3
