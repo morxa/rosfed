@@ -4,3 +4,5 @@ dependencies:
       - boost-python3-devel
     ros:
       - roscpp_serialization
+patches:
+  - ros-cv_bridge.boost-python3.patch
