@@ -1,12 +1,12 @@
 Name:           ros-clear_costmap_recovery
-Version:        melodic.1.16.6
+Version:        noetic.1.17.0
 Release:        1%{?dist}
 Summary:        ROS package clear_costmap_recovery
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/navigation-release/archive/release/melodic/clear_costmap_recovery/1.16.6-1.tar.gz#/ros-melodic-clear_costmap_recovery-1.16.6-source0.tar.gz
+Source0:        https://github.com/ros-gbp/navigation-release/archive/release/noetic/clear_costmap_recovery/1.17.0-1.tar.gz#/ros-noetic-clear_costmap_recovery-1.17.0-source0.tar.gz
 
 
 
@@ -24,24 +24,24 @@ BuildRequires:  pcl-devel
 BuildRequires:  poco-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-cmake_modules-devel
-BuildRequires:  ros-melodic-costmap_2d-devel
-BuildRequires:  ros-melodic-nav_core-devel
-BuildRequires:  ros-melodic-pluginlib-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-rostest-devel
-BuildRequires:  ros-melodic-tf2_ros-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-cmake_modules-devel
+BuildRequires:  ros-noetic-costmap_2d-devel
+BuildRequires:  ros-noetic-nav_core-devel
+BuildRequires:  ros-noetic-pluginlib-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-rostest-devel
+BuildRequires:  ros-noetic-tf2_ros-devel
 
-Requires:       ros-melodic-costmap_2d
-Requires:       ros-melodic-nav_core
-Requires:       ros-melodic-pluginlib
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-tf2_ros
+Requires:       ros-noetic-costmap_2d
+Requires:       ros-noetic-nav_core
+Requires:       ros-noetic-pluginlib
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-tf2_ros
 
-Provides:  ros-melodic-clear_costmap_recovery = 1.16.6-1
-Obsoletes: ros-melodic-clear_costmap_recovery < 1.16.6-1
-Obsoletes: ros-kinetic-clear_costmap_recovery < 1.16.6-1
+Provides:  ros-noetic-clear_costmap_recovery = 1.17.0-1
+Obsoletes: ros-noetic-clear_costmap_recovery < 1.17.0-1
+Obsoletes: ros-kinetic-clear_costmap_recovery < 1.17.0-1
 
 
 %description
@@ -52,7 +52,7 @@ navigation stack to the static map outside of a given area.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       eigen3-devel
 Requires:       libuuid-devel
 Requires:       lz4-devel
@@ -60,17 +60,17 @@ Requires:       pcl-devel
 Requires:       poco-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
-Requires:       ros-melodic-cmake_modules-devel
-Requires:       ros-melodic-costmap_2d-devel
-Requires:       ros-melodic-nav_core-devel
-Requires:       ros-melodic-pluginlib-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-rostest-devel
-Requires:       ros-melodic-tf2_ros-devel
+Requires:       ros-noetic-cmake_modules-devel
+Requires:       ros-noetic-costmap_2d-devel
+Requires:       ros-noetic-nav_core-devel
+Requires:       ros-noetic-pluginlib-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-rostest-devel
+Requires:       ros-noetic-tf2_ros-devel
 
-Provides: ros-melodic-clear_costmap_recovery-devel = 1.16.6-1
-Obsoletes: ros-melodic-clear_costmap_recovery-devel < 1.16.6-1
-Obsoletes: ros-kinetic-clear_costmap_recovery-devel < 1.16.6-1
+Provides: ros-noetic-clear_costmap_recovery-devel = 1.17.0-1
+Obsoletes: ros-noetic-clear_costmap_recovery-devel < 1.17.0-1
+Obsoletes: ros-kinetic-clear_costmap_recovery-devel < 1.17.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -177,6 +177,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.17.0-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.16.6-1
 - Update to latest release
 * Thu Mar 05 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.16.4-1

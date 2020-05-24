@@ -1,12 +1,12 @@
 Name:           ros-costmap_2d
-Version:        melodic.1.16.6
+Version:        noetic.1.17.0
 Release:        1%{?dist}
 Summary:        ROS package costmap_2d
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/navigation-release/archive/release/melodic/costmap_2d/1.16.6-1.tar.gz#/ros-melodic-costmap_2d-1.16.6-source0.tar.gz
+Source0:        https://github.com/ros-gbp/navigation-release/archive/release/noetic/costmap_2d/1.17.0-1.tar.gz#/ros-noetic-costmap_2d-1.17.0-source0.tar.gz
 
 
 
@@ -24,51 +24,51 @@ BuildRequires:  pcl-devel
 BuildRequires:  poco-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-cmake_modules-devel
-BuildRequires:  ros-melodic-dynamic_reconfigure-devel
-BuildRequires:  ros-melodic-geometry_msgs-devel
-BuildRequires:  ros-melodic-laser_geometry-devel
-BuildRequires:  ros-melodic-map_msgs-devel
-BuildRequires:  ros-melodic-map_server-devel
-BuildRequires:  ros-melodic-message_filters-devel
-BuildRequires:  ros-melodic-message_generation-devel
-BuildRequires:  ros-melodic-nav_msgs-devel
-BuildRequires:  ros-melodic-pluginlib-devel
-BuildRequires:  ros-melodic-rosbag-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-rostest-devel
-BuildRequires:  ros-melodic-rosunit-devel
-BuildRequires:  ros-melodic-sensor_msgs-devel
-BuildRequires:  ros-melodic-std_msgs-devel
-BuildRequires:  ros-melodic-tf2-devel
-BuildRequires:  ros-melodic-tf2_geometry_msgs-devel
-BuildRequires:  ros-melodic-tf2_ros-devel
-BuildRequires:  ros-melodic-tf2_sensor_msgs-devel
-BuildRequires:  ros-melodic-visualization_msgs-devel
-BuildRequires:  ros-melodic-voxel_grid-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-cmake_modules-devel
+BuildRequires:  ros-noetic-dynamic_reconfigure-devel
+BuildRequires:  ros-noetic-geometry_msgs-devel
+BuildRequires:  ros-noetic-laser_geometry-devel
+BuildRequires:  ros-noetic-map_msgs-devel
+BuildRequires:  ros-noetic-map_server-devel
+BuildRequires:  ros-noetic-message_filters-devel
+BuildRequires:  ros-noetic-message_generation-devel
+BuildRequires:  ros-noetic-nav_msgs-devel
+BuildRequires:  ros-noetic-pluginlib-devel
+BuildRequires:  ros-noetic-rosbag-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-rostest-devel
+BuildRequires:  ros-noetic-rosunit-devel
+BuildRequires:  ros-noetic-sensor_msgs-devel
+BuildRequires:  ros-noetic-std_msgs-devel
+BuildRequires:  ros-noetic-tf2-devel
+BuildRequires:  ros-noetic-tf2_geometry_msgs-devel
+BuildRequires:  ros-noetic-tf2_ros-devel
+BuildRequires:  ros-noetic-tf2_sensor_msgs-devel
+BuildRequires:  ros-noetic-visualization_msgs-devel
+BuildRequires:  ros-noetic-voxel_grid-devel
 
-Requires:       ros-melodic-dynamic_reconfigure
-Requires:       ros-melodic-geometry_msgs
-Requires:       ros-melodic-laser_geometry
-Requires:       ros-melodic-map_msgs
-Requires:       ros-melodic-message_filters
-Requires:       ros-melodic-message_runtime
-Requires:       ros-melodic-nav_msgs
-Requires:       ros-melodic-pluginlib
-Requires:       ros-melodic-rosconsole
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-rostest
-Requires:       ros-melodic-sensor_msgs
-Requires:       ros-melodic-std_msgs
-Requires:       ros-melodic-tf2
-Requires:       ros-melodic-tf2_ros
-Requires:       ros-melodic-visualization_msgs
-Requires:       ros-melodic-voxel_grid
+Requires:       ros-noetic-dynamic_reconfigure
+Requires:       ros-noetic-geometry_msgs
+Requires:       ros-noetic-laser_geometry
+Requires:       ros-noetic-map_msgs
+Requires:       ros-noetic-message_filters
+Requires:       ros-noetic-message_runtime
+Requires:       ros-noetic-nav_msgs
+Requires:       ros-noetic-pluginlib
+Requires:       ros-noetic-rosconsole
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-rostest
+Requires:       ros-noetic-sensor_msgs
+Requires:       ros-noetic-std_msgs
+Requires:       ros-noetic-tf2
+Requires:       ros-noetic-tf2_ros
+Requires:       ros-noetic-visualization_msgs
+Requires:       ros-noetic-voxel_grid
 
-Provides:  ros-melodic-costmap_2d = 1.16.6-1
-Obsoletes: ros-melodic-costmap_2d < 1.16.6-1
-Obsoletes: ros-kinetic-costmap_2d < 1.16.6-1
+Provides:  ros-noetic-costmap_2d = 1.17.0-1
+Obsoletes: ros-noetic-costmap_2d < 1.17.0-1
+Obsoletes: ros-kinetic-costmap_2d < 1.17.0-1
 
 
 %description
@@ -84,7 +84,7 @@ sensor topics.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       eigen3-devel
 Requires:       libuuid-devel
 Requires:       lz4-devel
@@ -92,34 +92,34 @@ Requires:       pcl-devel
 Requires:       poco-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
-Requires:       ros-melodic-cmake_modules-devel
-Requires:       ros-melodic-dynamic_reconfigure-devel
-Requires:       ros-melodic-geometry_msgs-devel
-Requires:       ros-melodic-laser_geometry-devel
-Requires:       ros-melodic-map_msgs-devel
-Requires:       ros-melodic-map_server-devel
-Requires:       ros-melodic-message_filters-devel
-Requires:       ros-melodic-message_generation-devel
-Requires:       ros-melodic-nav_msgs-devel
-Requires:       ros-melodic-pluginlib-devel
-Requires:       ros-melodic-rosbag-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-rostest-devel
-Requires:       ros-melodic-rosunit-devel
-Requires:       ros-melodic-sensor_msgs-devel
-Requires:       ros-melodic-std_msgs-devel
-Requires:       ros-melodic-tf2-devel
-Requires:       ros-melodic-tf2_geometry_msgs-devel
-Requires:       ros-melodic-tf2_ros-devel
-Requires:       ros-melodic-tf2_sensor_msgs-devel
-Requires:       ros-melodic-visualization_msgs-devel
-Requires:       ros-melodic-voxel_grid-devel
-Requires:       ros-melodic-message_runtime-devel
-Requires:       ros-melodic-rosconsole-devel
+Requires:       ros-noetic-cmake_modules-devel
+Requires:       ros-noetic-dynamic_reconfigure-devel
+Requires:       ros-noetic-geometry_msgs-devel
+Requires:       ros-noetic-laser_geometry-devel
+Requires:       ros-noetic-map_msgs-devel
+Requires:       ros-noetic-map_server-devel
+Requires:       ros-noetic-message_filters-devel
+Requires:       ros-noetic-message_generation-devel
+Requires:       ros-noetic-nav_msgs-devel
+Requires:       ros-noetic-pluginlib-devel
+Requires:       ros-noetic-rosbag-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-rostest-devel
+Requires:       ros-noetic-rosunit-devel
+Requires:       ros-noetic-sensor_msgs-devel
+Requires:       ros-noetic-std_msgs-devel
+Requires:       ros-noetic-tf2-devel
+Requires:       ros-noetic-tf2_geometry_msgs-devel
+Requires:       ros-noetic-tf2_ros-devel
+Requires:       ros-noetic-tf2_sensor_msgs-devel
+Requires:       ros-noetic-visualization_msgs-devel
+Requires:       ros-noetic-voxel_grid-devel
+Requires:       ros-noetic-message_runtime-devel
+Requires:       ros-noetic-rosconsole-devel
 
-Provides: ros-melodic-costmap_2d-devel = 1.16.6-1
-Obsoletes: ros-melodic-costmap_2d-devel < 1.16.6-1
-Obsoletes: ros-kinetic-costmap_2d-devel < 1.16.6-1
+Provides: ros-noetic-costmap_2d-devel = 1.17.0-1
+Obsoletes: ros-noetic-costmap_2d-devel < 1.17.0-1
+Obsoletes: ros-kinetic-costmap_2d-devel < 1.17.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -226,6 +226,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.17.0-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.16.6-1
 - Update to latest release
 * Wed Mar 18 2020 Nicolas Limpert - melodic.1.16.5-1

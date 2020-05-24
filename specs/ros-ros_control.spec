@@ -1,12 +1,12 @@
 Name:           ros-ros_control
-Version:        melodic.0.18.0
+Version:        noetic.0.19.1
 Release:        1%{?dist}
 Summary:        ROS package ros_control
 
 License:        BSD
 URL:            http://ros.org/wiki/ros_control
 
-Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/melodic/ros_control/0.18.0-1.tar.gz#/ros-melodic-ros_control-0.18.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/noetic/ros_control/0.19.1-1.tar.gz#/ros-noetic-ros_control-0.19.1-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,20 +18,20 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
-Requires:       ros-melodic-combined_robot_hw
-Requires:       ros-melodic-controller_interface
-Requires:       ros-melodic-controller_manager
-Requires:       ros-melodic-controller_manager_msgs
-Requires:       ros-melodic-hardware_interface
-Requires:       ros-melodic-joint_limits_interface
-Requires:       ros-melodic-realtime_tools
-Requires:       ros-melodic-transmission_interface
+Requires:       ros-noetic-combined_robot_hw
+Requires:       ros-noetic-controller_interface
+Requires:       ros-noetic-controller_manager
+Requires:       ros-noetic-controller_manager_msgs
+Requires:       ros-noetic-hardware_interface
+Requires:       ros-noetic-joint_limits_interface
+Requires:       ros-noetic-realtime_tools
+Requires:       ros-noetic-transmission_interface
 
-Provides:  ros-melodic-ros_control = 0.18.0-1
-Obsoletes: ros-melodic-ros_control < 0.18.0-1
-Obsoletes: ros-kinetic-ros_control < 0.18.0-1
+Provides:  ros-noetic-ros_control = 0.19.1-1
+Obsoletes: ros-noetic-ros_control < 0.19.1-1
+Obsoletes: ros-kinetic-ros_control < 0.19.1-1
 
 
 %description
@@ -41,19 +41,19 @@ managers, transmissions and hardware_interfaces.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-combined_robot_hw-devel
-Requires:       ros-melodic-controller_interface-devel
-Requires:       ros-melodic-controller_manager-devel
-Requires:       ros-melodic-controller_manager_msgs-devel
-Requires:       ros-melodic-hardware_interface-devel
-Requires:       ros-melodic-joint_limits_interface-devel
-Requires:       ros-melodic-realtime_tools-devel
-Requires:       ros-melodic-transmission_interface-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-combined_robot_hw-devel
+Requires:       ros-noetic-controller_interface-devel
+Requires:       ros-noetic-controller_manager-devel
+Requires:       ros-noetic-controller_manager_msgs-devel
+Requires:       ros-noetic-hardware_interface-devel
+Requires:       ros-noetic-joint_limits_interface-devel
+Requires:       ros-noetic-realtime_tools-devel
+Requires:       ros-noetic-transmission_interface-devel
 
-Provides: ros-melodic-ros_control-devel = 0.18.0-1
-Obsoletes: ros-melodic-ros_control-devel < 0.18.0-1
-Obsoletes: ros-kinetic-ros_control-devel < 0.18.0-1
+Provides: ros-noetic-ros_control-devel = 0.19.1-1
+Obsoletes: ros-noetic-ros_control-devel < 0.19.1-1
+Obsoletes: ros-kinetic-ros_control-devel < 0.19.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -160,6 +160,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.19.1-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.18.0-1
 - Update to latest release
 * Mon Mar 02 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.17.0-1

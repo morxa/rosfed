@@ -1,12 +1,12 @@
 Name:           ros-tf2_bullet
-Version:        melodic.0.6.5
+Version:        noetic.0.7.1
 Release:        1%{?dist}
 Summary:        ROS package tf2_bullet
 
 License:        BSD
 URL:            http://www.ros.org/wiki/tf2_bullet
 
-Source0:        https://github.com/ros-gbp/geometry2-release/archive/release/melodic/tf2_bullet/0.6.5-0.tar.gz#/ros-melodic-tf2_bullet-0.6.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/geometry2-release/archive/release/noetic/tf2_bullet/0.7.1-1.tar.gz#/ros-noetic-tf2_bullet-0.7.1-source0.tar.gz
 
 
 BuildArch: noarch
@@ -20,16 +20,16 @@ BuildRequires:  python3-devel
 
 BuildRequires:  bullet-devel
 BuildRequires:  pkgconfig
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-geometry_msgs-devel
-BuildRequires:  ros-melodic-tf2-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-geometry_msgs-devel
+BuildRequires:  ros-noetic-tf2-devel
 
-Requires:       ros-melodic-geometry_msgs
-Requires:       ros-melodic-tf2
+Requires:       ros-noetic-geometry_msgs
+Requires:       ros-noetic-tf2
 
-Provides:  ros-melodic-tf2_bullet = 0.6.5-1
-Obsoletes: ros-melodic-tf2_bullet < 0.6.5-1
-Obsoletes: ros-kinetic-tf2_bullet < 0.6.5-1
+Provides:  ros-noetic-tf2_bullet = 0.7.1-1
+Obsoletes: ros-noetic-tf2_bullet < 0.7.1-1
+Obsoletes: ros-kinetic-tf2_bullet < 0.7.1-1
 
 
 %description
@@ -39,14 +39,14 @@ tf2_bullet
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       pkgconfig
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       bullet-devel
-Requires:       ros-melodic-geometry_msgs-devel
-Requires:       ros-melodic-tf2-devel
+Requires:       ros-noetic-geometry_msgs-devel
+Requires:       ros-noetic-tf2-devel
 
-Provides: ros-melodic-tf2_bullet-devel = 0.6.5-1
-Obsoletes: ros-melodic-tf2_bullet-devel < 0.6.5-1
-Obsoletes: ros-kinetic-tf2_bullet-devel < 0.6.5-1
+Provides: ros-noetic-tf2_bullet-devel = 0.7.1-1
+Obsoletes: ros-noetic-tf2_bullet-devel < 0.7.1-1
+Obsoletes: ros-kinetic-tf2_bullet-devel < 0.7.1-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -153,6 +153,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.7.1-1
+- Upgrade to noetic
 * Wed Jul 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.6.5-1
 - Update to latest release
 * Thu Mar 14 2019 Till Hofmann <thofmann@fedoraproject.org> - 0.5.20-1

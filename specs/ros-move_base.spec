@@ -1,12 +1,12 @@
 Name:           ros-move_base
-Version:        melodic.1.16.6
+Version:        noetic.1.17.0
 Release:        1%{?dist}
 Summary:        ROS package move_base
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/navigation-release/archive/release/melodic/move_base/1.16.6-1.tar.gz#/ros-melodic-move_base-1.16.6-source0.tar.gz
+Source0:        https://github.com/ros-gbp/navigation-release/archive/release/noetic/move_base/1.17.0-1.tar.gz#/ros-noetic-move_base-1.17.0-source0.tar.gz
 
 
 
@@ -23,50 +23,50 @@ BuildRequires:  pcl-devel
 BuildRequires:  poco-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
-BuildRequires:  ros-melodic-actionlib-devel
-BuildRequires:  ros-melodic-base_local_planner-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-clear_costmap_recovery-devel
-BuildRequires:  ros-melodic-cmake_modules-devel
-BuildRequires:  ros-melodic-costmap_2d-devel
-BuildRequires:  ros-melodic-dynamic_reconfigure-devel
-BuildRequires:  ros-melodic-geometry_msgs-devel
-BuildRequires:  ros-melodic-message_generation-devel
-BuildRequires:  ros-melodic-move_base_msgs-devel
-BuildRequires:  ros-melodic-nav_core-devel
-BuildRequires:  ros-melodic-nav_msgs-devel
-BuildRequires:  ros-melodic-navfn-devel
-BuildRequires:  ros-melodic-pluginlib-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-rospy-devel
-BuildRequires:  ros-melodic-rotate_recovery-devel
-BuildRequires:  ros-melodic-std_srvs-devel
-BuildRequires:  ros-melodic-tf2_geometry_msgs-devel
-BuildRequires:  ros-melodic-tf2_ros-devel
-BuildRequires:  ros-melodic-visualization_msgs-devel
+BuildRequires:  ros-noetic-actionlib-devel
+BuildRequires:  ros-noetic-base_local_planner-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-clear_costmap_recovery-devel
+BuildRequires:  ros-noetic-cmake_modules-devel
+BuildRequires:  ros-noetic-costmap_2d-devel
+BuildRequires:  ros-noetic-dynamic_reconfigure-devel
+BuildRequires:  ros-noetic-geometry_msgs-devel
+BuildRequires:  ros-noetic-message_generation-devel
+BuildRequires:  ros-noetic-move_base_msgs-devel
+BuildRequires:  ros-noetic-nav_core-devel
+BuildRequires:  ros-noetic-nav_msgs-devel
+BuildRequires:  ros-noetic-navfn-devel
+BuildRequires:  ros-noetic-pluginlib-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-rospy-devel
+BuildRequires:  ros-noetic-rotate_recovery-devel
+BuildRequires:  ros-noetic-std_srvs-devel
+BuildRequires:  ros-noetic-tf2_geometry_msgs-devel
+BuildRequires:  ros-noetic-tf2_ros-devel
+BuildRequires:  ros-noetic-visualization_msgs-devel
 
-Requires:       ros-melodic-actionlib
-Requires:       ros-melodic-base_local_planner
-Requires:       ros-melodic-clear_costmap_recovery
-Requires:       ros-melodic-costmap_2d
-Requires:       ros-melodic-dynamic_reconfigure
-Requires:       ros-melodic-geometry_msgs
-Requires:       ros-melodic-message_runtime
-Requires:       ros-melodic-move_base_msgs
-Requires:       ros-melodic-nav_core
-Requires:       ros-melodic-nav_msgs
-Requires:       ros-melodic-navfn
-Requires:       ros-melodic-pluginlib
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-rospy
-Requires:       ros-melodic-rotate_recovery
-Requires:       ros-melodic-std_srvs
-Requires:       ros-melodic-tf2_ros
-Requires:       ros-melodic-visualization_msgs
+Requires:       ros-noetic-actionlib
+Requires:       ros-noetic-base_local_planner
+Requires:       ros-noetic-clear_costmap_recovery
+Requires:       ros-noetic-costmap_2d
+Requires:       ros-noetic-dynamic_reconfigure
+Requires:       ros-noetic-geometry_msgs
+Requires:       ros-noetic-message_runtime
+Requires:       ros-noetic-move_base_msgs
+Requires:       ros-noetic-nav_core
+Requires:       ros-noetic-nav_msgs
+Requires:       ros-noetic-navfn
+Requires:       ros-noetic-pluginlib
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-rospy
+Requires:       ros-noetic-rotate_recovery
+Requires:       ros-noetic-std_srvs
+Requires:       ros-noetic-tf2_ros
+Requires:       ros-noetic-visualization_msgs
 
-Provides:  ros-melodic-move_base = 1.16.6-1
-Obsoletes: ros-melodic-move_base < 1.16.6-1
-Obsoletes: ros-kinetic-move_base < 1.16.6-1
+Provides:  ros-noetic-move_base = 1.17.0-1
+Obsoletes: ros-noetic-move_base < 1.17.0-1
+Obsoletes: ros-kinetic-move_base < 1.17.0-1
 
 
 %description
@@ -75,38 +75,38 @@ The move_base package provides an implementation of an action (see the
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       libuuid-devel
 Requires:       lz4-devel
 Requires:       pcl-devel
 Requires:       poco-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
-Requires:       ros-melodic-actionlib-devel
-Requires:       ros-melodic-base_local_planner-devel
-Requires:       ros-melodic-clear_costmap_recovery-devel
-Requires:       ros-melodic-cmake_modules-devel
-Requires:       ros-melodic-costmap_2d-devel
-Requires:       ros-melodic-dynamic_reconfigure-devel
-Requires:       ros-melodic-geometry_msgs-devel
-Requires:       ros-melodic-message_generation-devel
-Requires:       ros-melodic-move_base_msgs-devel
-Requires:       ros-melodic-nav_core-devel
-Requires:       ros-melodic-nav_msgs-devel
-Requires:       ros-melodic-navfn-devel
-Requires:       ros-melodic-pluginlib-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-rospy-devel
-Requires:       ros-melodic-rotate_recovery-devel
-Requires:       ros-melodic-std_srvs-devel
-Requires:       ros-melodic-tf2_geometry_msgs-devel
-Requires:       ros-melodic-tf2_ros-devel
-Requires:       ros-melodic-visualization_msgs-devel
-Requires:       ros-melodic-message_runtime-devel
+Requires:       ros-noetic-actionlib-devel
+Requires:       ros-noetic-base_local_planner-devel
+Requires:       ros-noetic-clear_costmap_recovery-devel
+Requires:       ros-noetic-cmake_modules-devel
+Requires:       ros-noetic-costmap_2d-devel
+Requires:       ros-noetic-dynamic_reconfigure-devel
+Requires:       ros-noetic-geometry_msgs-devel
+Requires:       ros-noetic-message_generation-devel
+Requires:       ros-noetic-move_base_msgs-devel
+Requires:       ros-noetic-nav_core-devel
+Requires:       ros-noetic-nav_msgs-devel
+Requires:       ros-noetic-navfn-devel
+Requires:       ros-noetic-pluginlib-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-rospy-devel
+Requires:       ros-noetic-rotate_recovery-devel
+Requires:       ros-noetic-std_srvs-devel
+Requires:       ros-noetic-tf2_geometry_msgs-devel
+Requires:       ros-noetic-tf2_ros-devel
+Requires:       ros-noetic-visualization_msgs-devel
+Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-melodic-move_base-devel = 1.16.6-1
-Obsoletes: ros-melodic-move_base-devel < 1.16.6-1
-Obsoletes: ros-kinetic-move_base-devel < 1.16.6-1
+Provides: ros-noetic-move_base-devel = 1.17.0-1
+Obsoletes: ros-noetic-move_base-devel < 1.17.0-1
+Obsoletes: ros-kinetic-move_base-devel < 1.17.0-1
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -213,6 +213,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.17.0-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.16.6-1
 - Update to latest release
 * Thu Mar 05 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.16.4-1
