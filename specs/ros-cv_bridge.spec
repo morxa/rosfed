@@ -1,6 +1,6 @@
 Name:           ros-cv_bridge
 Version:        noetic.1.15.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package cv_bridge
 
 License:        BSD
@@ -8,7 +8,6 @@ URL:            http://www.ros.org/wiki/cv_bridge
 
 Source0:        https://github.com/ros-gbp/vision_opencv-release/archive/release/noetic/cv_bridge/1.15.0-1.tar.gz#/ros-noetic-cv_bridge-1.15.0-source0.tar.gz
 
-Patch0: ros-cv_bridge.opencv4.patch
 
 
 # common BRs
@@ -33,9 +32,9 @@ BuildRequires:  ros-noetic-sensor_msgs-devel
 Requires:       python3-opencv
 Requires:       ros-noetic-rosconsole
 
-Provides:  ros-noetic-cv_bridge = 1.15.0-1
-Obsoletes: ros-noetic-cv_bridge < 1.15.0-1
-Obsoletes: ros-kinetic-cv_bridge < 1.15.0-1
+Provides:  ros-noetic-cv_bridge = 1.15.0-2
+Obsoletes: ros-noetic-cv_bridge < 1.15.0-2
+Obsoletes: ros-kinetic-cv_bridge < 1.15.0-2
 
 
 %description
@@ -57,9 +56,9 @@ Requires:       ros-noetic-rosconsole-devel
 Requires:       ros-noetic-roscpp_serialization-devel
 Requires:       ros-noetic-rostest-devel
 
-Provides: ros-noetic-cv_bridge-devel = 1.15.0-1
-Obsoletes: ros-noetic-cv_bridge-devel < 1.15.0-1
-Obsoletes: ros-kinetic-cv_bridge-devel < 1.15.0-1
+Provides: ros-noetic-cv_bridge-devel = 1.15.0-2
+Obsoletes: ros-noetic-cv_bridge-devel < 1.15.0-2
+Obsoletes: ros-kinetic-cv_bridge-devel < 1.15.0-2
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -71,7 +70,6 @@ applications that use %{name}.
 
 %setup -c -T
 tar --strip-components=1 -xf %{SOURCE0}
-%patch0 -p1
 
 %build
 # nothing to do here
@@ -167,6 +165,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.0-2
+- Remove upstreamed patch
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.0-1
 - Upgrade to noetic
 * Wed Apr 29 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.0-4
