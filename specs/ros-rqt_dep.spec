@@ -34,6 +34,7 @@ Obsoletes: ros-noetic-rqt_dep < 0.4.10-1
 Obsoletes: ros-kinetic-rqt_dep < 0.4.10-1
 
 
+
 %description
 rqt_dep provides a GUI plugin for visualizing the ROS dependency
 graph.
@@ -53,6 +54,7 @@ Requires:       ros-noetic-rqt_gui_py-devel
 Provides: ros-noetic-rqt_dep-devel = 0.4.10-1
 Obsoletes: ros-noetic-rqt_dep-devel < 0.4.10-1
 Obsoletes: ros-kinetic-rqt_dep-devel < 0.4.10-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

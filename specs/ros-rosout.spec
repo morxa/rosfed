@@ -32,6 +32,7 @@ Obsoletes: ros-noetic-rosout < 1.15.6-1
 Obsoletes: ros-kinetic-rosout < 1.15.6-1
 
 
+
 %description
 System-wide logging mechanism for messages sent to the /rosout topic.
 
@@ -48,6 +49,7 @@ Requires:       ros-noetic-rostime-devel
 Provides: ros-noetic-rosout-devel = 1.15.6-1
 Obsoletes: ros-noetic-rosout-devel < 1.15.6-1
 Obsoletes: ros-kinetic-rosout-devel < 1.15.6-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

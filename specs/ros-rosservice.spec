@@ -31,6 +31,7 @@ Obsoletes: ros-noetic-rosservice < 1.15.6-1
 Obsoletes: ros-kinetic-rosservice < 1.15.6-1
 
 
+
 %description
 rosservice contains the rosservice command-line tool for listing and
 querying ROS
@@ -48,6 +49,7 @@ Requires:       ros-noetic-rospy-devel
 Provides: ros-noetic-rosservice-devel = 1.15.6-1
 Obsoletes: ros-noetic-rosservice-devel < 1.15.6-1
 Obsoletes: ros-kinetic-rosservice-devel < 1.15.6-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

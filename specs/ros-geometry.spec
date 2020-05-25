@@ -31,6 +31,7 @@ Obsoletes: ros-noetic-geometry < 1.13.1-1
 Obsoletes: ros-kinetic-geometry < 1.13.1-1
 
 
+
 %description
 ROS noetic package geometry.
 
@@ -47,6 +48,7 @@ Requires:       ros-noetic-tf_conversions-devel
 Provides: ros-noetic-geometry-devel = 1.13.1-1
 Obsoletes: ros-noetic-geometry-devel < 1.13.1-1
 Obsoletes: ros-kinetic-geometry-devel < 1.13.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

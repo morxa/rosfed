@@ -38,6 +38,7 @@ Obsoletes: ros-noetic-robot < 1.5.0-1
 Obsoletes: ros-kinetic-robot < 1.5.0-1
 
 
+
 %description
 A metapackage which extends ros_base and includes ROS libaries for any
 robot hardware. It may not contain any GUI dependencies.
@@ -62,6 +63,7 @@ Requires:       ros-noetic-xacro-devel
 Provides: ros-noetic-robot-devel = 1.5.0-1
 Obsoletes: ros-noetic-robot-devel < 1.5.0-1
 Obsoletes: ros-kinetic-robot-devel < 1.5.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

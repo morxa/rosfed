@@ -44,6 +44,7 @@ Obsoletes: ros-noetic-diagnostic_aggregator < 1.9.4-1
 Obsoletes: ros-kinetic-diagnostic_aggregator < 1.9.4-1
 
 
+
 %description
 diagnostic_aggregator
 
@@ -67,6 +68,7 @@ Requires:       ros-noetic-xmlrpcpp-devel
 Provides: ros-noetic-diagnostic_aggregator-devel = 1.9.4-1
 Obsoletes: ros-noetic-diagnostic_aggregator-devel < 1.9.4-1
 Obsoletes: ros-kinetic-diagnostic_aggregator-devel < 1.9.4-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

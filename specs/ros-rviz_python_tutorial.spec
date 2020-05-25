@@ -30,6 +30,7 @@ Obsoletes: ros-noetic-rviz_python_tutorial < 0.11.0-1
 Obsoletes: ros-kinetic-rviz_python_tutorial < 0.11.0-1
 
 
+
 %description
 Tutorials showing how to call into rviz internals from python scripts.
 
@@ -44,6 +45,7 @@ Requires:       ros-noetic-rviz-devel
 Provides: ros-noetic-rviz_python_tutorial-devel = 0.11.0-1
 Obsoletes: ros-noetic-rviz_python_tutorial-devel < 0.11.0-1
 Obsoletes: ros-kinetic-rviz_python_tutorial-devel < 0.11.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -29,6 +29,7 @@ Obsoletes: ros-noetic-rosparam < 1.15.6-1
 Obsoletes: ros-kinetic-rosparam < 1.15.6-1
 
 
+
 %description
 rosparam contains the rosparam command-line tool for getting and
 setting ROS Parameters on the
@@ -42,6 +43,7 @@ Requires:       ros-noetic-rosgraph-devel
 Provides: ros-noetic-rosparam-devel = 1.15.6-1
 Obsoletes: ros-noetic-rosparam-devel < 1.15.6-1
 Obsoletes: ros-kinetic-rosparam-devel < 1.15.6-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

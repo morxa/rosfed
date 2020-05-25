@@ -36,6 +36,7 @@ Obsoletes: ros-noetic-rqt_py_common < 0.5.1-1
 Obsoletes: ros-kinetic-rqt_py_common < 0.5.1-1
 
 
+
 %description
 rqt_py_common provides common functionality for rqt plugins written in
 Python. Despite no plugin is provided, this package is part of the
@@ -63,6 +64,7 @@ Requires:       ros-noetic-rostopic-devel
 Provides: ros-noetic-rqt_py_common-devel = 0.5.1-1
 Obsoletes: ros-noetic-rqt_py_common-devel < 0.5.1-1
 Obsoletes: ros-kinetic-rqt_py_common-devel < 0.5.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

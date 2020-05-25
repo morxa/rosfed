@@ -40,6 +40,7 @@ Obsoletes: ros-noetic-control_toolbox < 1.18.0-1
 Obsoletes: ros-kinetic-control_toolbox < 1.18.0-1
 
 
+
 %description
 The control toolbox contains modules that are useful across all
 controllers.
@@ -62,6 +63,7 @@ Requires:       ros-noetic-message_runtime-devel
 Provides: ros-noetic-control_toolbox-devel = 1.18.0-1
 Obsoletes: ros-noetic-control_toolbox-devel < 1.18.0-1
 Obsoletes: ros-kinetic-control_toolbox-devel < 1.18.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

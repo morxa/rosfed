@@ -33,6 +33,7 @@ Obsoletes: ros-noetic-libg2o < 2020.5.3-1
 Obsoletes: ros-kinetic-libg2o < 2020.5.3-1
 
 
+
 %description
 The libg2o library from http://openslam.org/g2o.html
 
@@ -51,6 +52,7 @@ Requires:       ros-noetic-catkin-devel
 Provides: ros-noetic-libg2o-devel = 2020.5.3-1
 Obsoletes: ros-noetic-libg2o-devel < 2020.5.3-1
 Obsoletes: ros-kinetic-libg2o-devel < 2020.5.3-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

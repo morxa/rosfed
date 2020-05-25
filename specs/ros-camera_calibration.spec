@@ -33,6 +33,7 @@ Obsoletes: ros-noetic-camera_calibration < 1.15.2-1
 Obsoletes: ros-kinetic-camera_calibration < 1.15.2-1
 
 
+
 %description
 camera_calibration allows easy calibration of monocular or stereo
 cameras using a checkerboard calibration target.
@@ -52,6 +53,7 @@ Requires:       ros-noetic-std_srvs-devel
 Provides: ros-noetic-camera_calibration-devel = 1.15.2-1
 Obsoletes: ros-noetic-camera_calibration-devel < 1.15.2-1
 Obsoletes: ros-kinetic-camera_calibration-devel < 1.15.2-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

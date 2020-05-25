@@ -32,6 +32,7 @@ Obsoletes: ros-noetic-rqt_shell < 0.4.10-1
 Obsoletes: ros-kinetic-rqt_shell < 0.4.10-1
 
 
+
 %description
 rqt_shell is a Python GUI plugin providing an interactive shell.
 
@@ -48,6 +49,7 @@ Requires:       ros-noetic-rqt_gui_py-devel
 Provides: ros-noetic-rqt_shell-devel = 0.4.10-1
 Obsoletes: ros-noetic-rqt_shell-devel < 0.4.10-1
 Obsoletes: ros-kinetic-rqt_shell-devel < 0.4.10-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

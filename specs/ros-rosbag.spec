@@ -51,6 +51,7 @@ Obsoletes: ros-noetic-rosbag < 1.15.6-1
 Obsoletes: ros-kinetic-rosbag < 1.15.6-1
 
 
+
 %description
 This is a set of tools for recording from and playing back to ROS
 topics. It is intended to be high performance and avoids
@@ -81,6 +82,7 @@ Requires:       ros-noetic-rospy-devel
 Provides: ros-noetic-rosbag-devel = 1.15.6-1
 Obsoletes: ros-noetic-rosbag-devel < 1.15.6-1
 Obsoletes: ros-kinetic-rosbag-devel < 1.15.6-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

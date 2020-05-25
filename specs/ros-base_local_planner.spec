@@ -69,6 +69,7 @@ Obsoletes: ros-noetic-base_local_planner < 1.17.0-1
 Obsoletes: ros-kinetic-base_local_planner < 1.17.0-1
 
 
+
 %description
 This package provides implementations of the Trajectory Rollout and
 Dynamic Window approaches to local robot navigation on a plane. Given
@@ -116,6 +117,7 @@ Requires:       ros-noetic-message_runtime-devel
 Provides: ros-noetic-base_local_planner-devel = 1.17.0-1
 Obsoletes: ros-noetic-base_local_planner-devel < 1.17.0-1
 Obsoletes: ros-kinetic-base_local_planner-devel < 1.17.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

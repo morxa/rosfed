@@ -47,6 +47,7 @@ Obsoletes: ros-noetic-tf < 1.13.1-1
 Obsoletes: ros-kinetic-tf < 1.13.1-1
 
 
+
 %description
 tf is a package that lets the user keep track of multiple coordinate
 frames over time. tf maintains the relationship between coordinate
@@ -76,6 +77,7 @@ Requires:       ros-noetic-roswtf-devel
 Provides: ros-noetic-tf-devel = 1.13.1-1
 Obsoletes: ros-noetic-tf-devel < 1.13.1-1
 Obsoletes: ros-kinetic-tf-devel < 1.13.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

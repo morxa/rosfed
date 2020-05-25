@@ -28,6 +28,7 @@ Obsoletes: ros-noetic-gazebo_dev < 2.9.1-1
 Obsoletes: ros-kinetic-gazebo_dev < 2.9.1-1
 
 
+
 %description
 Provides a cmake config for the default version of Gazebo for the ROS
 distribution.
@@ -41,6 +42,7 @@ Requires:       ros-noetic-catkin-devel
 Provides: ros-noetic-gazebo_dev-devel = 2.9.1-1
 Obsoletes: ros-noetic-gazebo_dev-devel < 2.9.1-1
 Obsoletes: ros-kinetic-gazebo_dev-devel < 2.9.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

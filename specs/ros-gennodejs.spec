@@ -29,6 +29,7 @@ Obsoletes: ros-noetic-gennodejs < 2.0.2-1
 Obsoletes: ros-kinetic-gennodejs < 2.0.2-1
 
 
+
 %description
 Javascript ROS message and service generators.
 
@@ -42,6 +43,7 @@ Requires:       ros-noetic-genmsg-devel
 Provides: ros-noetic-gennodejs-devel = 2.0.2-1
 Obsoletes: ros-noetic-gennodejs-devel < 2.0.2-1
 Obsoletes: ros-kinetic-gennodejs-devel < 2.0.2-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

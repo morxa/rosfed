@@ -27,6 +27,7 @@ Obsoletes: ros-noetic-cpp_common < 0.7.1-1
 Obsoletes: ros-kinetic-cpp_common < 0.7.1-1
 
 
+
 %description
 cpp_common contains C++ code for doing things that are not necessarily
 ROS related, but are useful for multiple packages. This includes
@@ -43,6 +44,7 @@ Requires:       console-bridge-devel
 Provides: ros-noetic-cpp_common-devel = 0.7.1-1
 Obsoletes: ros-noetic-cpp_common-devel < 0.7.1-1
 Obsoletes: ros-kinetic-cpp_common-devel < 0.7.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -28,6 +28,7 @@ Obsoletes: ros-noetic-vision_opencv < 1.15.0-1
 Obsoletes: ros-kinetic-vision_opencv < 1.15.0-1
 
 
+
 %description
 Packages for interfacing ROS with OpenCV, a library of programming
 functions for real time computer vision.
@@ -42,6 +43,7 @@ Requires:       ros-noetic-image_geometry-devel
 Provides: ros-noetic-vision_opencv-devel = 1.15.0-1
 Obsoletes: ros-noetic-vision_opencv-devel < 1.15.0-1
 Obsoletes: ros-kinetic-vision_opencv-devel < 1.15.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

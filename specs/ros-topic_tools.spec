@@ -41,6 +41,7 @@ Obsoletes: ros-noetic-topic_tools < 1.15.6-1
 Obsoletes: ros-kinetic-topic_tools < 1.15.6-1
 
 
+
 %description
 Tools for directing, throttling, selecting, and otherwise messing with
 ROS topics at a meta level. None of the programs in this package
@@ -67,6 +68,7 @@ Requires:       ros-noetic-message_runtime-devel
 Provides: ros-noetic-topic_tools-devel = 1.15.6-1
 Obsoletes: ros-noetic-topic_tools-devel < 1.15.6-1
 Obsoletes: ros-kinetic-topic_tools-devel < 1.15.6-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

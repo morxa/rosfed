@@ -39,6 +39,7 @@ Obsoletes: ros-noetic-roswtf < 1.15.6-1
 Obsoletes: ros-kinetic-roswtf < 1.15.6-1
 
 
+
 %description
 roswtf is a tool for diagnosing issues with a running ROS system.
 Think of it as a FAQ implemented in code.
@@ -62,6 +63,7 @@ Requires:       ros-noetic-rosservice-devel
 Provides: ros-noetic-roswtf-devel = 1.15.6-1
 Obsoletes: ros-noetic-roswtf-devel < 1.15.6-1
 Obsoletes: ros-kinetic-roswtf-devel < 1.15.6-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

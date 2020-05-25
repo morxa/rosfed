@@ -28,6 +28,7 @@ Obsoletes: ros-noetic-qt_gui_py_common < 0.4.0-1
 Obsoletes: ros-kinetic-qt_gui_py_common < 0.4.0-1
 
 
+
 %description
 qt_gui_py_common provides common functionality for GUI plugins written
 in Python.
@@ -41,6 +42,7 @@ Requires:       ros-noetic-python_qt_binding-devel
 Provides: ros-noetic-qt_gui_py_common-devel = 0.4.0-1
 Obsoletes: ros-noetic-qt_gui_py_common-devel < 0.4.0-1
 Obsoletes: ros-kinetic-qt_gui_py_common-devel < 0.4.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -31,6 +31,7 @@ Obsoletes: ros-noetic-genpy < 0.6.11-1
 Obsoletes: ros-kinetic-genpy < 0.6.11-1
 
 
+
 %description
 Python ROS message and service generators.
 
@@ -44,6 +45,7 @@ Requires:       ros-noetic-genmsg-devel
 Provides: ros-noetic-genpy-devel = 0.6.11-1
 Obsoletes: ros-noetic-genpy-devel < 0.6.11-1
 Obsoletes: ros-kinetic-genpy-devel < 0.6.11-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

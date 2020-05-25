@@ -40,6 +40,7 @@ Obsoletes: ros-noetic-roscpp_tutorials < 0.10.1-1
 Obsoletes: ros-kinetic-roscpp_tutorials < 0.10.1-1
 
 
+
 %description
 This package attempts to show the features of ROS step-by-step,
 including using messages, servers, parameters, etc.
@@ -62,6 +63,7 @@ Requires:       ros-noetic-message_runtime-devel
 Provides: ros-noetic-roscpp_tutorials-devel = 0.10.1-1
 Obsoletes: ros-noetic-roscpp_tutorials-devel < 0.10.1-1
 Obsoletes: ros-kinetic-roscpp_tutorials-devel < 0.10.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

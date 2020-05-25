@@ -31,6 +31,7 @@ Obsoletes: ros-noetic-actionlib_msgs < 1.13.0-1
 Obsoletes: ros-kinetic-actionlib_msgs < 1.13.0-1
 
 
+
 %description
 actionlib_msgs defines the common messages to interact with an action
 server and an action client. For full documentation of the actionlib
@@ -47,6 +48,7 @@ Requires:       ros-noetic-message_runtime-devel
 Provides: ros-noetic-actionlib_msgs-devel = 1.13.0-1
 Obsoletes: ros-noetic-actionlib_msgs-devel < 1.13.0-1
 Obsoletes: ros-kinetic-actionlib_msgs-devel < 1.13.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

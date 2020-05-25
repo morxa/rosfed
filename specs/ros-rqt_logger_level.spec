@@ -33,6 +33,7 @@ Obsoletes: ros-noetic-rqt_logger_level < 0.4.11-1
 Obsoletes: ros-kinetic-rqt_logger_level < 0.4.11-1
 
 
+
 %description
 rqt_logger_level provides a GUI plugin for configuring the logger
 level of ROS nodes.
@@ -51,6 +52,7 @@ Requires:       ros-noetic-rqt_gui_py-devel
 Provides: ros-noetic-rqt_logger_level-devel = 0.4.11-1
 Obsoletes: ros-noetic-rqt_logger_level-devel < 0.4.11-1
 Obsoletes: ros-kinetic-rqt_logger_level-devel < 0.4.11-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

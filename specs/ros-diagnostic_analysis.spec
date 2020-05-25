@@ -33,6 +33,7 @@ Obsoletes: ros-noetic-diagnostic_analysis < 1.9.4-1
 Obsoletes: ros-kinetic-diagnostic_analysis < 1.9.4-1
 
 
+
 %description
 The diagnostic_analysis package can convert a log of diagnostics data
 into a series of CSV files. Robot logs are recorded with rosbag, and
@@ -50,6 +51,7 @@ Requires:       ros-noetic-rostest-devel
 Provides: ros-noetic-diagnostic_analysis-devel = 1.9.4-1
 Obsoletes: ros-noetic-diagnostic_analysis-devel < 1.9.4-1
 Obsoletes: ros-kinetic-diagnostic_analysis-devel < 1.9.4-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

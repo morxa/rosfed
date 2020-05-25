@@ -35,6 +35,7 @@ Obsoletes: ros-noetic-compressed_image_transport < 1.14.0-1
 Obsoletes: ros-kinetic-compressed_image_transport < 1.14.0-1
 
 
+
 %description
 Compressed_image_transport provides a plugin to image_transport for
 transparently sending images encoded as JPEG or PNG.
@@ -54,6 +55,7 @@ Requires:       ros-noetic-image_transport-devel
 Provides: ros-noetic-compressed_image_transport-devel = 1.14.0-1
 Obsoletes: ros-noetic-compressed_image_transport-devel < 1.14.0-1
 Obsoletes: ros-kinetic-compressed_image_transport-devel < 1.14.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -31,6 +31,7 @@ Obsoletes: ros-noetic-image_geometry < 1.15.0-1
 Obsoletes: ros-kinetic-image_geometry < 1.15.0-1
 
 
+
 %description
 `image_geometry` contains C++ and Python libraries for interpreting
 images geometrically. It interfaces the calibration parameters in
@@ -51,6 +52,7 @@ Requires:       ros-noetic-cpp_common-devel
 Provides: ros-noetic-image_geometry-devel = 1.15.0-1
 Obsoletes: ros-noetic-image_geometry-devel < 1.15.0-1
 Obsoletes: ros-kinetic-image_geometry-devel < 1.15.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

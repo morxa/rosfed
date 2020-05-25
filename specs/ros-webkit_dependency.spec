@@ -28,6 +28,7 @@ Obsoletes: ros-noetic-webkit_dependency < 1.1.2-1
 Obsoletes: ros-kinetic-webkit_dependency < 1.1.2-1
 
 
+
 %description
 This encapsulates the WebKit dependency for a specific ROS
 distribution and its Qt version
@@ -40,6 +41,7 @@ Requires:       ros-noetic-catkin-devel
 Provides: ros-noetic-webkit_dependency-devel = 1.1.2-1
 Obsoletes: ros-noetic-webkit_dependency-devel < 1.1.2-1
 Obsoletes: ros-kinetic-webkit_dependency-devel < 1.1.2-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

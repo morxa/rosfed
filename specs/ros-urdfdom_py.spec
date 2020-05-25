@@ -31,6 +31,7 @@ Obsoletes: ros-noetic-urdfdom_py < 0.4.3-1
 Obsoletes: ros-kinetic-urdfdom_py < 0.4.3-1
 
 
+
 %description
 Python implementation of the URDF parser.
 
@@ -45,6 +46,7 @@ Requires:       ros-noetic-rospy-devel
 Provides: ros-noetic-urdfdom_py-devel = 0.4.3-1
 Obsoletes: ros-noetic-urdfdom_py-devel < 0.4.3-1
 Obsoletes: ros-kinetic-urdfdom_py-devel < 0.4.3-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

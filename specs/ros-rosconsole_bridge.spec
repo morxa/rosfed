@@ -32,6 +32,7 @@ Obsoletes: ros-noetic-rosconsole_bridge < 0.5.4-1
 Obsoletes: ros-kinetic-rosconsole_bridge < 0.5.4-1
 
 
+
 %description
 rosconsole_bridge is a package used in conjunction with console_bridge
 and rosconsole for connecting console_bridge-based logging to
@@ -50,6 +51,7 @@ Requires:       ros-noetic-rosconsole-devel
 Provides: ros-noetic-rosconsole_bridge-devel = 0.5.4-1
 Obsoletes: ros-noetic-rosconsole_bridge-devel < 0.5.4-1
 Obsoletes: ros-kinetic-rosconsole_bridge-devel < 0.5.4-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -28,6 +28,7 @@ Obsoletes: ros-noetic-geometry_tutorials < 0.2.3-1
 Obsoletes: ros-kinetic-geometry_tutorials < 0.2.3-1
 
 
+
 %description
 Metapackage of geometry tutorials ROS.
 
@@ -41,6 +42,7 @@ Requires:       ros-noetic-turtle_tf2-devel
 Provides: ros-noetic-geometry_tutorials-devel = 0.2.3-1
 Obsoletes: ros-noetic-geometry_tutorials-devel < 0.2.3-1
 Obsoletes: ros-kinetic-geometry_tutorials-devel < 0.2.3-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

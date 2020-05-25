@@ -31,6 +31,7 @@ Obsoletes: ros-noetic-qt_dotgraph < 0.4.0-1
 Obsoletes: ros-kinetic-qt_dotgraph < 0.4.0-1
 
 
+
 %description
 qt_dotgraph provides helpers to work with dot graphs.
 
@@ -45,6 +46,7 @@ Requires:       ros-noetic-python_qt_binding-devel
 Provides: ros-noetic-qt_dotgraph-devel = 0.4.0-1
 Obsoletes: ros-noetic-qt_dotgraph-devel < 0.4.0-1
 Obsoletes: ros-kinetic-qt_dotgraph-devel < 0.4.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

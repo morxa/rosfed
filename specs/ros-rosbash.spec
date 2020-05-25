@@ -28,6 +28,7 @@ Obsoletes: ros-noetic-rosbash < 1.15.1-1
 Obsoletes: ros-kinetic-rosbash < 1.15.1-1
 
 
+
 %description
 Assorted shell commands for using ros with bash.
 
@@ -40,6 +41,7 @@ Requires:       ros-noetic-rospack-devel
 Provides: ros-noetic-rosbash-devel = 1.15.1-1
 Obsoletes: ros-noetic-rosbash-devel < 1.15.1-1
 Obsoletes: ros-kinetic-rosbash-devel < 1.15.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

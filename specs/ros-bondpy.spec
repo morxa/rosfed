@@ -32,6 +32,7 @@ Obsoletes: ros-noetic-bondpy < 1.8.5-1
 Obsoletes: ros-kinetic-bondpy < 1.8.5-1
 
 
+
 %description
 Python implementation of bond, a mechanism for checking when another
 process has terminated.
@@ -48,6 +49,7 @@ Requires:       ros-noetic-smclib-devel
 Provides: ros-noetic-bondpy-devel = 1.8.5-1
 Obsoletes: ros-noetic-bondpy-devel < 1.8.5-1
 Obsoletes: ros-kinetic-bondpy-devel < 1.8.5-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

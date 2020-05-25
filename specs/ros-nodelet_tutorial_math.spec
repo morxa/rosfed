@@ -35,6 +35,7 @@ Obsoletes: ros-noetic-nodelet_tutorial_math < 0.1.12-1
 Obsoletes: ros-kinetic-nodelet_tutorial_math < 0.1.12-1
 
 
+
 %description
 Package for Nodelet tutorial.
 
@@ -53,6 +54,7 @@ Requires:       ros-noetic-std_msgs-devel
 Provides: ros-noetic-nodelet_tutorial_math-devel = 0.1.12-1
 Obsoletes: ros-noetic-nodelet_tutorial_math-devel < 0.1.12-1
 Obsoletes: ros-kinetic-nodelet_tutorial_math-devel < 0.1.12-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

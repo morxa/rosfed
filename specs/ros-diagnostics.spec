@@ -31,6 +31,7 @@ Obsoletes: ros-noetic-diagnostics < 1.9.4-1
 Obsoletes: ros-kinetic-diagnostics < 1.9.4-1
 
 
+
 %description
 diagnostics
 
@@ -47,6 +48,7 @@ Requires:       ros-noetic-self_test-devel
 Provides: ros-noetic-diagnostics-devel = 1.9.4-1
 Obsoletes: ros-noetic-diagnostics-devel < 1.9.4-1
 Obsoletes: ros-kinetic-diagnostics-devel < 1.9.4-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

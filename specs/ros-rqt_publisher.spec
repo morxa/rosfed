@@ -34,6 +34,7 @@ Obsoletes: ros-noetic-rqt_publisher < 0.4.9-1
 Obsoletes: ros-kinetic-rqt_publisher < 0.4.9-1
 
 
+
 %description
 rqt_publisher provides a GUI plugin for publishing arbitrary messages
 with fixed or computed field values.
@@ -53,6 +54,7 @@ Requires:       ros-noetic-rqt_py_common-devel
 Provides: ros-noetic-rqt_publisher-devel = 0.4.9-1
 Obsoletes: ros-noetic-rqt_publisher-devel < 0.4.9-1
 Obsoletes: ros-kinetic-rqt_publisher-devel < 0.4.9-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

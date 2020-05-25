@@ -29,6 +29,7 @@ Obsoletes: ros-noetic-gencpp < 0.6.5-1
 Obsoletes: ros-kinetic-gencpp < 0.6.5-1
 
 
+
 %description
 C++ ROS message and service generators.
 
@@ -42,6 +43,7 @@ Requires:       ros-noetic-genmsg-devel
 Provides: ros-noetic-gencpp-devel = 0.6.5-1
 Obsoletes: ros-noetic-gencpp-devel < 0.6.5-1
 Obsoletes: ros-kinetic-gencpp-devel < 0.6.5-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

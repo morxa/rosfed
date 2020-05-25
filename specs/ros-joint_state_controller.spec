@@ -41,6 +41,7 @@ Obsoletes: ros-noetic-joint_state_controller < 0.17.0-1
 Obsoletes: ros-kinetic-joint_state_controller < 0.17.0-1
 
 
+
 %description
 Controller to publish joint state
 
@@ -62,6 +63,7 @@ Requires:       ros-noetic-sensor_msgs-devel
 Provides: ros-noetic-joint_state_controller-devel = 0.17.0-1
 Obsoletes: ros-noetic-joint_state_controller-devel < 0.17.0-1
 Obsoletes: ros-kinetic-joint_state_controller-devel < 0.17.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

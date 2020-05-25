@@ -41,6 +41,7 @@ Obsoletes: ros-noetic-qt_gui_cpp < 0.4.0-1
 Obsoletes: ros-kinetic-qt_gui_cpp < 0.4.0-1
 
 
+
 %description
 qt_gui_cpp provides the foundation for C++-bindings for qt_gui and
 creates bindings for every generator available. At least one specific
@@ -69,6 +70,7 @@ Requires:       ros-noetic-qt_gui-devel
 Provides: ros-noetic-qt_gui_cpp-devel = 0.4.0-1
 Obsoletes: ros-noetic-qt_gui_cpp-devel < 0.4.0-1
 Obsoletes: ros-kinetic-qt_gui_cpp-devel < 0.4.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

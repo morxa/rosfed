@@ -33,6 +33,7 @@ Obsoletes: ros-noetic-kdl_conversions < 1.13.1-1
 Obsoletes: ros-kinetic-kdl_conversions < 1.13.1-1
 
 
+
 %description
 Conversion functions between KDL and geometry_msgs types.
 
@@ -50,6 +51,7 @@ Requires:       ros-noetic-roscpp_serialization-devel
 Provides: ros-noetic-kdl_conversions-devel = 1.13.1-1
 Obsoletes: ros-noetic-kdl_conversions-devel < 1.13.1-1
 Obsoletes: ros-kinetic-kdl_conversions-devel < 1.13.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

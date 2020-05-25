@@ -50,6 +50,7 @@ Obsoletes: ros-noetic-image_rotate < 1.15.2-1
 Obsoletes: ros-kinetic-image_rotate < 1.15.2-1
 
 
+
 %description
 ROS noetic package image_rotate.
 
@@ -78,6 +79,7 @@ Requires:       ros-noetic-tf2_ros-devel
 Provides: ros-noetic-image_rotate-devel = 1.15.2-1
 Obsoletes: ros-noetic-image_rotate-devel < 1.15.2-1
 Obsoletes: ros-kinetic-image_rotate-devel < 1.15.2-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

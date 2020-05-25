@@ -33,6 +33,7 @@ Obsoletes: ros-noetic-interactive_marker_tutorials < 0.11.0-1
 Obsoletes: ros-kinetic-interactive_marker_tutorials < 0.11.0-1
 
 
+
 %description
 The interactive_marker_tutorials package
 
@@ -48,6 +49,7 @@ Requires:       ros-noetic-visualization_msgs-devel
 Provides: ros-noetic-interactive_marker_tutorials-devel = 0.11.0-1
 Obsoletes: ros-noetic-interactive_marker_tutorials-devel < 0.11.0-1
 Obsoletes: ros-kinetic-interactive_marker_tutorials-devel < 0.11.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

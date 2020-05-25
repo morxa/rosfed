@@ -29,6 +29,7 @@ Obsoletes: ros-noetic-voxel_grid < 1.17.0-1
 Obsoletes: ros-kinetic-voxel_grid < 1.17.0-1
 
 
+
 %description
 voxel_grid provides an implementation of an efficient 3D voxel grid.
 The occupancy grid can support 3 different representations for the
@@ -50,6 +51,7 @@ Requires:       ros-noetic-rosunit-devel
 Provides: ros-noetic-voxel_grid-devel = 1.17.0-1
 Obsoletes: ros-noetic-voxel_grid-devel < 1.17.0-1
 Obsoletes: ros-kinetic-voxel_grid-devel < 1.17.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -34,6 +34,7 @@ Obsoletes: ros-noetic-roslib < 1.15.1-1
 Obsoletes: ros-kinetic-roslib < 1.15.1-1
 
 
+
 %description
 Base dependencies and support libraries for ROS. roslib contains many
 of the common data structures and tools that are shared across ROS
@@ -53,6 +54,7 @@ Requires:       ros-noetic-ros_environment-devel
 Provides: ros-noetic-roslib-devel = 1.15.1-1
 Obsoletes: ros-noetic-roslib-devel < 1.15.1-1
 Obsoletes: ros-kinetic-roslib-devel < 1.15.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

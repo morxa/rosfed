@@ -27,6 +27,7 @@ Obsoletes: ros-noetic-gl_dependency < 1.1.2-1
 Obsoletes: ros-kinetic-gl_dependency < 1.1.2-1
 
 
+
 %description
 This encapsulates the GL dependency for a specific ROS distribution
 and its Qt version
@@ -39,6 +40,7 @@ Requires:       ros-noetic-catkin-devel
 Provides: ros-noetic-gl_dependency-devel = 1.1.2-1
 Obsoletes: ros-noetic-gl_dependency-devel < 1.1.2-1
 Obsoletes: ros-kinetic-gl_dependency-devel < 1.1.2-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

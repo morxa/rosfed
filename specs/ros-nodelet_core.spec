@@ -28,6 +28,7 @@ Obsoletes: ros-noetic-nodelet_core < 1.10.0-1
 Obsoletes: ros-kinetic-nodelet_core < 1.10.0-1
 
 
+
 %description
 Nodelet Core Metapackage
 
@@ -41,6 +42,7 @@ Requires:       ros-noetic-nodelet_topic_tools-devel
 Provides: ros-noetic-nodelet_core-devel = 1.10.0-1
 Obsoletes: ros-noetic-nodelet_core-devel < 1.10.0-1
 Obsoletes: ros-kinetic-nodelet_core-devel < 1.10.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

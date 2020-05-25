@@ -39,6 +39,7 @@ Obsoletes: ros-noetic-roslaunch < 1.15.6-1
 Obsoletes: ros-kinetic-roslaunch < 1.15.6-1
 
 
+
 %description
 roslaunch is a tool for easily launching multiple ROS
 
@@ -58,6 +59,7 @@ Requires:       ros-noetic-rosunit-devel
 Provides: ros-noetic-roslaunch-devel = 1.15.6-1
 Obsoletes: ros-noetic-roslaunch-devel < 1.15.6-1
 Obsoletes: ros-kinetic-roslaunch-devel < 1.15.6-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

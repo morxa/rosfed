@@ -26,6 +26,7 @@ Obsoletes: ros-noetic-roslint < 0.12.0-1
 Obsoletes: ros-kinetic-roslint < 0.12.0-1
 
 
+
 %description
 CMake lint commands for ROS packages. The lint commands perform static
 checking of Python or C++ source code for errors and standards
@@ -39,6 +40,7 @@ Requires:       ros-noetic-catkin-devel
 Provides: ros-noetic-roslint-devel = 0.12.0-1
 Obsoletes: ros-noetic-roslint-devel < 0.12.0-1
 Obsoletes: ros-kinetic-roslint-devel < 0.12.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -45,6 +45,7 @@ Obsoletes: ros-noetic-rqt_image_view < 0.4.15-1
 Obsoletes: ros-kinetic-rqt_image_view < 0.4.15-1
 
 
+
 %description
 rqt_image_view provides a GUI plugin for displaying images using
 image_transport.
@@ -71,6 +72,7 @@ Requires:       ros-noetic-sensor_msgs-devel
 Provides: ros-noetic-rqt_image_view-devel = 0.4.15-1
 Obsoletes: ros-noetic-rqt_image_view-devel < 0.4.15-1
 Obsoletes: ros-kinetic-rqt_image_view-devel < 0.4.15-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

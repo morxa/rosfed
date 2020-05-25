@@ -32,6 +32,7 @@ Obsoletes: ros-noetic-urdf_tutorial < 0.5.0-1
 Obsoletes: ros-kinetic-urdf_tutorial < 0.5.0-1
 
 
+
 %description
 This package contains a number of URDF tutorials.
 
@@ -49,6 +50,7 @@ Requires:       ros-noetic-xacro-devel
 Provides: ros-noetic-urdf_tutorial-devel = 0.5.0-1
 Obsoletes: ros-noetic-urdf_tutorial-devel < 0.5.0-1
 Obsoletes: ros-kinetic-urdf_tutorial-devel < 0.5.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

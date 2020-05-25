@@ -35,6 +35,7 @@ Obsoletes: ros-noetic-smach_ros < 2.5.0-1
 Obsoletes: ros-kinetic-smach_ros < 2.5.0-1
 
 
+
 %description
 The smach_ros package contains extensions for the SMACH library to
 integrate it tightly with ROS. For example, SMACH-ROS can call ROS
@@ -57,6 +58,7 @@ Requires:       ros-noetic-std_srvs-devel
 Provides: ros-noetic-smach_ros-devel = 2.5.0-1
 Obsoletes: ros-noetic-smach_ros-devel < 2.5.0-1
 Obsoletes: ros-kinetic-smach_ros-devel < 2.5.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

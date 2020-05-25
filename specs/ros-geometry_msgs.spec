@@ -30,6 +30,7 @@ Obsoletes: ros-noetic-geometry_msgs < 1.13.0-1
 Obsoletes: ros-kinetic-geometry_msgs < 1.13.0-1
 
 
+
 %description
 geometry_msgs provides messages for common geometric primitives such
 as points, vectors, and poses. These primitives are designed to
@@ -48,6 +49,7 @@ Requires:       ros-noetic-message_runtime-devel
 Provides: ros-noetic-geometry_msgs-devel = 1.13.0-1
 Obsoletes: ros-noetic-geometry_msgs-devel < 1.13.0-1
 Obsoletes: ros-kinetic-geometry_msgs-devel < 1.13.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -33,6 +33,7 @@ Obsoletes: ros-noetic-rospy_tutorials < 0.10.1-1
 Obsoletes: ros-kinetic-rospy_tutorials < 0.10.1-1
 
 
+
 %description
 This package attempts to show the features of ROS python API step-by-
 step, including using messages, servers, parameters, etc. These
@@ -52,6 +53,7 @@ Requires:       ros-noetic-rospy-devel
 Provides: ros-noetic-rospy_tutorials-devel = 0.10.1-1
 Obsoletes: ros-noetic-rospy_tutorials-devel < 0.10.1-1
 Obsoletes: ros-kinetic-rospy_tutorials-devel < 0.10.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

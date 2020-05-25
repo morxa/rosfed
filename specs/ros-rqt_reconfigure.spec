@@ -38,6 +38,7 @@ Obsoletes: ros-noetic-rqt_reconfigure < 0.5.2-1
 Obsoletes: ros-kinetic-rqt_reconfigure < 0.5.2-1
 
 
+
 %description
 This rqt plugin succeeds former dynamic_reconfigure's GUI
 (reconfigure_gui), and provides the way to view and edit the
@@ -61,6 +62,7 @@ Requires:       ros-noetic-rqt_py_common-devel
 Provides: ros-noetic-rqt_reconfigure-devel = 0.5.2-1
 Obsoletes: ros-noetic-rqt_reconfigure-devel < 0.5.2-1
 Obsoletes: ros-kinetic-rqt_reconfigure-devel < 0.5.2-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -30,6 +30,7 @@ Obsoletes: ros-noetic-xmlrpcpp < 1.15.6-1
 Obsoletes: ros-kinetic-xmlrpcpp < 1.15.6-1
 
 
+
 %description
 XmlRpc++ is a C++ implementation of the XML-RPC protocol. This version
 is heavily modified from the package available on SourceForge in order
@@ -47,6 +48,7 @@ Requires:       ros-noetic-rostime-devel
 Provides: ros-noetic-xmlrpcpp-devel = 1.15.6-1
 Obsoletes: ros-noetic-xmlrpcpp-devel < 1.15.6-1
 Obsoletes: ros-kinetic-xmlrpcpp-devel < 1.15.6-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -31,6 +31,7 @@ Obsoletes: ros-noetic-rosgraph < 1.15.6-1
 Obsoletes: ros-kinetic-rosgraph < 1.15.6-1
 
 
+
 %description
 rosgraph contains the rosgraph command-line tool, which prints
 information about the ROS Computation Graph. It also provides an
@@ -45,6 +46,7 @@ Requires:       python3-mock
 Provides: ros-noetic-rosgraph-devel = 1.15.6-1
 Obsoletes: ros-noetic-rosgraph-devel < 1.15.6-1
 Obsoletes: ros-kinetic-rosgraph-devel < 1.15.6-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

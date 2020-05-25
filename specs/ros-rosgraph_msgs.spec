@@ -30,6 +30,7 @@ Obsoletes: ros-noetic-rosgraph_msgs < 1.11.3-1
 Obsoletes: ros-kinetic-rosgraph_msgs < 1.11.3-1
 
 
+
 %description
 Messages relating to the ROS Computation Graph. These are generally
 considered to be low-level messages that end users do not interact
@@ -46,6 +47,7 @@ Requires:       ros-noetic-message_runtime-devel
 Provides: ros-noetic-rosgraph_msgs-devel = 1.11.3-1
 Obsoletes: ros-noetic-rosgraph_msgs-devel < 1.11.3-1
 Obsoletes: ros-kinetic-rosgraph_msgs-devel < 1.11.3-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

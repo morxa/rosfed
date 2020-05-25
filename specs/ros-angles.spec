@@ -27,6 +27,7 @@ Obsoletes: ros-noetic-angles < 1.9.13-1
 Obsoletes: ros-kinetic-angles < 1.9.13-1
 
 
+
 %description
 This package provides a set of simple math utilities to work with
 angles. The utilities cover simple things like normalizing an angle
@@ -46,6 +47,7 @@ Requires:       ros-noetic-rosunit-devel
 Provides: ros-noetic-angles-devel = 1.9.13-1
 Obsoletes: ros-noetic-angles-devel < 1.9.13-1
 Obsoletes: ros-kinetic-angles-devel < 1.9.13-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

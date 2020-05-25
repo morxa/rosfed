@@ -35,6 +35,7 @@ Obsoletes: ros-noetic-tf2_kdl < 0.7.1-1
 Obsoletes: ros-kinetic-tf2_kdl < 0.7.1-1
 
 
+
 %description
 KDL binding for tf2
 
@@ -53,6 +54,7 @@ Requires:       ros-noetic-tf2_ros-devel
 Provides: ros-noetic-tf2_kdl-devel = 0.7.1-1
 Obsoletes: ros-noetic-tf2_kdl-devel < 0.7.1-1
 Obsoletes: ros-kinetic-tf2_kdl-devel < 0.7.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

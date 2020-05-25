@@ -43,6 +43,7 @@ Obsoletes: ros-noetic-rqt_rviz < 0.6.1-1
 Obsoletes: ros-kinetic-rqt_rviz < 0.6.1-1
 
 
+
 %description
 rqt_rviz provides a GUI plugin embedding
 
@@ -68,6 +69,7 @@ Requires:       ros-noetic-rviz-devel
 Provides: ros-noetic-rqt_rviz-devel = 0.6.1-1
 Obsoletes: ros-noetic-rqt_rviz-devel < 0.6.1-1
 Obsoletes: ros-kinetic-rqt_rviz-devel < 0.6.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

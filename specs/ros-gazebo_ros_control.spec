@@ -55,6 +55,7 @@ Obsoletes: ros-noetic-gazebo_ros_control < 2.9.1-1
 Obsoletes: ros-kinetic-gazebo_ros_control < 2.9.1-1
 
 
+
 %description
 gazebo_ros_control
 
@@ -86,6 +87,7 @@ Requires:       ros-noetic-gazebo_ros-devel
 Provides: ros-noetic-gazebo_ros_control-devel = 2.9.1-1
 Obsoletes: ros-noetic-gazebo_ros_control-devel < 2.9.1-1
 Obsoletes: ros-kinetic-gazebo_ros_control-devel < 2.9.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

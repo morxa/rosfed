@@ -28,6 +28,7 @@ Obsoletes: ros-noetic-roscpp_traits < 0.7.1-1
 Obsoletes: ros-kinetic-roscpp_traits < 0.7.1-1
 
 
+
 %description
 roscpp_traits contains the message traits code as described in
 
@@ -41,6 +42,7 @@ Requires:       ros-noetic-rostime-devel
 Provides: ros-noetic-roscpp_traits-devel = 0.7.1-1
 Obsoletes: ros-noetic-roscpp_traits-devel < 0.7.1-1
 Obsoletes: ros-kinetic-roscpp_traits-devel < 0.7.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -39,6 +39,7 @@ Obsoletes: ros-noetic-controller_manager < 0.19.1-1
 Obsoletes: ros-kinetic-controller_manager < 0.19.1-1
 
 
+
 %description
 The controller manager.
 
@@ -63,6 +64,7 @@ Requires:       ros-noetic-std_msgs-devel
 Provides: ros-noetic-controller_manager-devel = 0.19.1-1
 Obsoletes: ros-noetic-controller_manager-devel < 0.19.1-1
 Obsoletes: ros-kinetic-controller_manager-devel < 0.19.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -33,6 +33,7 @@ Obsoletes: ros-noetic-rqt_web < 0.4.9-1
 Obsoletes: ros-kinetic-rqt_web < 0.4.9-1
 
 
+
 %description
 rqt_web is a simple web content viewer for rqt. Users can show web
 content in Qt-based window by specifying its URL.
@@ -51,6 +52,7 @@ Requires:       ros-noetic-webkit_dependency-devel
 Provides: ros-noetic-rqt_web-devel = 0.4.9-1
 Obsoletes: ros-noetic-rqt_web-devel < 0.4.9-1
 Obsoletes: ros-kinetic-rqt_web-devel < 0.4.9-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

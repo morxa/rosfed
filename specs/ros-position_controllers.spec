@@ -31,6 +31,7 @@ Obsoletes: ros-noetic-position_controllers < 0.17.0-1
 Obsoletes: ros-kinetic-position_controllers < 0.17.0-1
 
 
+
 %description
 position_controllers
 
@@ -45,6 +46,7 @@ Requires:       ros-noetic-pluginlib-devel
 Provides: ros-noetic-position_controllers-devel = 0.17.0-1
 Obsoletes: ros-noetic-position_controllers-devel < 0.17.0-1
 Obsoletes: ros-kinetic-position_controllers-devel < 0.17.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

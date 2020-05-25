@@ -35,6 +35,7 @@ Obsoletes: ros-noetic-common_msgs < 1.13.0-1
 Obsoletes: ros-kinetic-common_msgs < 1.13.0-1
 
 
+
 %description
 common_msgs contains messages that are widely used by other ROS
 packages. These includes messages for actions (
@@ -56,6 +57,7 @@ Requires:       ros-noetic-visualization_msgs-devel
 Provides: ros-noetic-common_msgs-devel = 1.13.0-1
 Obsoletes: ros-noetic-common_msgs-devel < 1.13.0-1
 Obsoletes: ros-kinetic-common_msgs-devel < 1.13.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

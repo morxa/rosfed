@@ -44,6 +44,7 @@ Obsoletes: ros-noetic-stage_ros < 1.8.0-1
 Obsoletes: ros-kinetic-stage_ros < 1.8.0-1
 
 
+
 %description
 This package provides ROS specific hooks for stage
 
@@ -66,6 +67,7 @@ Requires:       ros-noetic-tf-devel
 Provides: ros-noetic-stage_ros-devel = 1.8.0-1
 Obsoletes: ros-noetic-stage_ros-devel < 1.8.0-1
 Obsoletes: ros-kinetic-stage_ros-devel < 1.8.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

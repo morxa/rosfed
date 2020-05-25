@@ -40,6 +40,7 @@ Obsoletes: ros-noetic-image_transport < 1.12.0-1
 Obsoletes: ros-kinetic-image_transport < 1.12.0-1
 
 
+
 %description
 image_transport should always be used to subscribe to and publish
 images. It provides transparent support for transporting images in
@@ -64,6 +65,7 @@ Requires:       ros-noetic-sensor_msgs-devel
 Provides: ros-noetic-image_transport-devel = 1.12.0-1
 Obsoletes: ros-noetic-image_transport-devel < 1.12.0-1
 Obsoletes: ros-kinetic-image_transport-devel < 1.12.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

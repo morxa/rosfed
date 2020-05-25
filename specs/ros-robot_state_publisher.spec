@@ -49,6 +49,7 @@ Obsoletes: ros-noetic-robot_state_publisher < 1.15.0-1
 Obsoletes: ros-kinetic-robot_state_publisher < 1.15.0-1
 
 
+
 %description
 This package allows you to publish the state of a robot to
 
@@ -75,6 +76,7 @@ Requires:       ros-noetic-tf2_ros-devel
 Provides: ros-noetic-robot_state_publisher-devel = 1.15.0-1
 Obsoletes: ros-noetic-robot_state_publisher-devel < 1.15.0-1
 Obsoletes: ros-kinetic-robot_state_publisher-devel < 1.15.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

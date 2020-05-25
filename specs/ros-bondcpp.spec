@@ -37,6 +37,7 @@ Obsoletes: ros-noetic-bondcpp < 1.8.5-1
 Obsoletes: ros-kinetic-bondcpp < 1.8.5-1
 
 
+
 %description
 C++ implementation of bond, a mechanism for checking when another
 process has terminated.
@@ -58,6 +59,7 @@ Requires:       ros-noetic-smclib-devel
 Provides: ros-noetic-bondcpp-devel = 1.8.5-1
 Obsoletes: ros-noetic-bondcpp-devel < 1.8.5-1
 Obsoletes: ros-kinetic-bondcpp-devel < 1.8.5-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

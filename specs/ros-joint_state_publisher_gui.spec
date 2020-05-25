@@ -29,6 +29,7 @@ Obsoletes: ros-noetic-joint_state_publisher_gui < 1.15.0-2
 Obsoletes: ros-kinetic-joint_state_publisher_gui < 1.15.0-2
 
 
+
 %description
 This package contains a GUI tool for setting and publishing joint
 state values for a given URDF.
@@ -44,6 +45,7 @@ Requires:       ros-noetic-rospy-devel
 Provides: ros-noetic-joint_state_publisher_gui-devel = 1.15.0-2
 Obsoletes: ros-noetic-joint_state_publisher_gui-devel < 1.15.0-2
 Obsoletes: ros-kinetic-joint_state_publisher_gui-devel < 1.15.0-2
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

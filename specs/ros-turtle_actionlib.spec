@@ -43,6 +43,7 @@ Obsoletes: ros-noetic-turtle_actionlib < 0.1.12-1
 Obsoletes: ros-kinetic-turtle_actionlib < 0.1.12-1
 
 
+
 %description
 turtle_actionlib demonstrates how to write an action server and client
 with the turtlesim. The shape_server provides and action interface for
@@ -66,6 +67,7 @@ Requires:       ros-noetic-message_runtime-devel
 Provides: ros-noetic-turtle_actionlib-devel = 0.1.12-1
 Obsoletes: ros-noetic-turtle_actionlib-devel < 0.1.12-1
 Obsoletes: ros-kinetic-turtle_actionlib-devel < 0.1.12-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -53,6 +53,7 @@ Obsoletes: ros-noetic-image_view < 1.15.2-1
 Obsoletes: ros-kinetic-image_view < 1.15.2-1
 
 
+
 %description
 A simple viewer for ROS image topics. Includes a specialized viewer
 for stereo + disparity images.
@@ -84,6 +85,7 @@ Requires:       ros-noetic-stereo_msgs-devel
 Provides: ros-noetic-image_view-devel = 1.15.2-1
 Obsoletes: ros-noetic-image_view-devel < 1.15.2-1
 Obsoletes: ros-kinetic-image_view-devel < 1.15.2-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -46,6 +46,7 @@ Obsoletes: ros-noetic-laser_assembler < 1.7.8-1
 Obsoletes: ros-kinetic-laser_assembler < 1.7.8-1
 
 
+
 %description
 Provides nodes to assemble point clouds from either LaserScan or
 PointCloud messages
@@ -72,6 +73,7 @@ Requires:       ros-noetic-message_runtime-devel
 Provides: ros-noetic-laser_assembler-devel = 1.7.8-1
 Obsoletes: ros-noetic-laser_assembler-devel < 1.7.8-1
 Obsoletes: ros-kinetic-laser_assembler-devel < 1.7.8-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

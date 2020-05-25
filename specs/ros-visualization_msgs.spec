@@ -32,6 +32,7 @@ Obsoletes: ros-noetic-visualization_msgs < 1.13.0-1
 Obsoletes: ros-kinetic-visualization_msgs < 1.13.0-1
 
 
+
 %description
 visualization_msgs is a set of messages used by higher level packages,
 such as
@@ -48,6 +49,7 @@ Requires:       ros-noetic-message_runtime-devel
 Provides: ros-noetic-visualization_msgs-devel = 1.13.0-1
 Obsoletes: ros-noetic-visualization_msgs-devel < 1.13.0-1
 Obsoletes: ros-kinetic-visualization_msgs-devel < 1.13.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

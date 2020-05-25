@@ -29,6 +29,7 @@ Obsoletes: ros-noetic-roscreate < 1.15.1-1
 Obsoletes: ros-kinetic-roscreate < 1.15.1-1
 
 
+
 %description
 roscreate contains a tool that assists in the creation of ROS
 filesystem resources. It provides:
@@ -43,6 +44,7 @@ Requires:       ros-noetic-roslib-devel
 Provides: ros-noetic-roscreate-devel = 1.15.1-1
 Obsoletes: ros-noetic-roscreate-devel < 1.15.1-1
 Obsoletes: ros-kinetic-roscreate-devel < 1.15.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

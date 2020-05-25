@@ -30,6 +30,7 @@ Obsoletes: ros-noetic-rostopic < 1.15.6-1
 Obsoletes: ros-kinetic-rostopic < 1.15.6-1
 
 
+
 %description
 rostopic contains the rostopic command-line tool for displaying debug
 information about ROS
@@ -46,6 +47,7 @@ Requires:       ros-noetic-rospy-devel
 Provides: ros-noetic-rostopic-devel = 1.15.6-1
 Obsoletes: ros-noetic-rostopic-devel < 1.15.6-1
 Obsoletes: ros-kinetic-rostopic-devel < 1.15.6-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

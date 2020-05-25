@@ -69,6 +69,7 @@ Obsoletes: ros-noetic-pcl_ros < 1.7.1-1
 Obsoletes: ros-kinetic-pcl_ros < 1.7.1-1
 
 
+
 %description
 PCL (Point Cloud Library) ROS interface stack. PCL-ROS is the
 preferred bridge for 3D applications involving n-D Point Clouds and 3D
@@ -110,6 +111,7 @@ Requires:       ros-noetic-tf2_ros-devel
 Provides: ros-noetic-pcl_ros-devel = 1.7.1-1
 Obsoletes: ros-noetic-pcl_ros-devel < 1.7.1-1
 Obsoletes: ros-kinetic-pcl_ros-devel < 1.7.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

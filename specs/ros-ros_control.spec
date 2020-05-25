@@ -34,6 +34,7 @@ Obsoletes: ros-noetic-ros_control < 0.19.1-1
 Obsoletes: ros-kinetic-ros_control < 0.19.1-1
 
 
+
 %description
 A set of packages that include controller interfaces, controller
 managers, transmissions and hardware_interfaces.
@@ -54,6 +55,7 @@ Requires:       ros-noetic-transmission_interface-devel
 Provides: ros-noetic-ros_control-devel = 0.19.1-1
 Obsoletes: ros-noetic-ros_control-devel < 0.19.1-1
 Obsoletes: ros-kinetic-ros_control-devel < 0.19.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

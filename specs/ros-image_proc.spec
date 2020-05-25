@@ -49,6 +49,7 @@ Obsoletes: ros-noetic-image_proc < 1.15.2-1
 Obsoletes: ros-kinetic-image_proc < 1.15.2-1
 
 
+
 %description
 Single image rectification and color processing.
 
@@ -76,6 +77,7 @@ Requires:       ros-noetic-sensor_msgs-devel
 Provides: ros-noetic-image_proc-devel = 1.15.2-1
 Obsoletes: ros-noetic-image_proc-devel < 1.15.2-1
 Obsoletes: ros-kinetic-image_proc-devel < 1.15.2-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

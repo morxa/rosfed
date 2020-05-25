@@ -41,6 +41,7 @@ Obsoletes: ros-noetic-turtle_tf2 < 0.2.3-1
 Obsoletes: ros-kinetic-turtle_tf2 < 0.2.3-1
 
 
+
 %description
 turtle_tf2 demonstrates how to write a tf2 broadcaster and listener
 with the turtlesim. The tutle_tf2_listener commands turtle2 to follow
@@ -62,6 +63,7 @@ Requires:       ros-noetic-turtlesim-devel
 Provides: ros-noetic-turtle_tf2-devel = 0.2.3-1
 Obsoletes: ros-noetic-turtle_tf2-devel < 0.2.3-1
 Obsoletes: ros-kinetic-turtle_tf2-devel < 0.2.3-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

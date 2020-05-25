@@ -29,6 +29,7 @@ Obsoletes: ros-noetic-class_loader < 0.5.0-1
 Obsoletes: ros-kinetic-class_loader < 0.5.0-1
 
 
+
 %description
 The class_loader package is a ROS-independent package for loading
 plugins during runtime and the foundation of the higher level ROS
@@ -50,6 +51,7 @@ Requires:       ros-noetic-cmake_modules-devel
 Provides: ros-noetic-class_loader-devel = 0.5.0-1
 Obsoletes: ros-noetic-class_loader-devel < 0.5.0-1
 Obsoletes: ros-kinetic-class_loader-devel < 0.5.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

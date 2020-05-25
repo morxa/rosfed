@@ -33,6 +33,7 @@ Obsoletes: ros-noetic-actionlib_tutorials < 0.1.12-1
 Obsoletes: ros-kinetic-actionlib_tutorials < 0.1.12-1
 
 
+
 %description
 The actionlib_tutorials package
 
@@ -50,6 +51,7 @@ Requires:       ros-noetic-message_runtime-devel
 Provides: ros-noetic-actionlib_tutorials-devel = 0.1.12-1
 Obsoletes: ros-noetic-actionlib_tutorials-devel < 0.1.12-1
 Obsoletes: ros-kinetic-actionlib_tutorials-devel < 0.1.12-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

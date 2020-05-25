@@ -29,6 +29,7 @@ Obsoletes: ros-noetic-rosnode < 1.15.6-1
 Obsoletes: ros-kinetic-rosnode < 1.15.6-1
 
 
+
 %description
 rosnode is a command-line tool for displaying debug information about
 ROS
@@ -44,6 +45,7 @@ Requires:       ros-noetic-rostopic-devel
 Provides: ros-noetic-rosnode-devel = 1.15.6-1
 Obsoletes: ros-noetic-rosnode-devel < 1.15.6-1
 Obsoletes: ros-kinetic-rosnode-devel < 1.15.6-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

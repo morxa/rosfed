@@ -29,6 +29,7 @@ Obsoletes: ros-noetic-executive_smach < 2.5.0-1
 Obsoletes: ros-kinetic-executive_smach < 2.5.0-1
 
 
+
 %description
 This metapackage depends on the SMACH library and ROS SMACH
 integration packages.
@@ -44,6 +45,7 @@ Requires:       ros-noetic-smach_ros-devel
 Provides: ros-noetic-executive_smach-devel = 2.5.0-1
 Obsoletes: ros-noetic-executive_smach-devel < 2.5.0-1
 Obsoletes: ros-kinetic-executive_smach-devel < 2.5.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

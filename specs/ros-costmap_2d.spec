@@ -71,6 +71,7 @@ Obsoletes: ros-noetic-costmap_2d < 1.17.0-1
 Obsoletes: ros-kinetic-costmap_2d < 1.17.0-1
 
 
+
 %description
 This package provides an implementation of a 2D costmap that takes in
 sensor data from the world, builds a 2D or 3D occupancy grid of the
@@ -120,6 +121,7 @@ Requires:       ros-noetic-rosconsole-devel
 Provides: ros-noetic-costmap_2d-devel = 1.17.0-1
 Obsoletes: ros-noetic-costmap_2d-devel < 1.17.0-1
 Obsoletes: ros-kinetic-costmap_2d-devel < 1.17.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

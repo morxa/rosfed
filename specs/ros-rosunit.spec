@@ -29,6 +29,7 @@ Obsoletes: ros-noetic-rosunit < 1.15.1-1
 Obsoletes: ros-kinetic-rosunit < 1.15.1-1
 
 
+
 %description
 Unit-testing package for ROS. This is a lower-level library for
 rostest and handles unit tests, whereas rostest handles integration
@@ -44,6 +45,7 @@ Requires:       ros-noetic-roslib-devel
 Provides: ros-noetic-rosunit-devel = 1.15.1-1
 Obsoletes: ros-noetic-rosunit-devel < 1.15.1-1
 Obsoletes: ros-kinetic-rosunit-devel < 1.15.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

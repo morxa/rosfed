@@ -37,6 +37,7 @@ Obsoletes: ros-noetic-ros < 1.15.1-1
 Obsoletes: ros-kinetic-ros < 1.15.1-1
 
 
+
 %description
 ROS packaging system
 
@@ -58,6 +59,7 @@ Requires:       ros-noetic-rosunit-devel
 Provides: ros-noetic-ros-devel = 1.15.1-1
 Obsoletes: ros-noetic-ros-devel < 1.15.1-1
 Obsoletes: ros-kinetic-ros-devel < 1.15.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

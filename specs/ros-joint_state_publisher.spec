@@ -29,6 +29,7 @@ Obsoletes: ros-noetic-joint_state_publisher < 1.15.0-1
 Obsoletes: ros-kinetic-joint_state_publisher < 1.15.0-1
 
 
+
 %description
 This package contains a tool for setting and publishing joint state
 values for a given URDF.
@@ -44,6 +45,7 @@ Requires:       ros-noetic-sensor_msgs-devel
 Provides: ros-noetic-joint_state_publisher-devel = 1.15.0-1
 Obsoletes: ros-noetic-joint_state_publisher-devel < 1.15.0-1
 Obsoletes: ros-kinetic-joint_state_publisher-devel < 1.15.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

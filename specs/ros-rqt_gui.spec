@@ -29,6 +29,7 @@ Obsoletes: ros-noetic-rqt_gui < 0.5.1-1
 Obsoletes: ros-kinetic-rqt_gui < 0.5.1-1
 
 
+
 %description
 rqt_gui provides the main to start an instance of the ROS integrated
 graphical user interface provided by qt_gui.
@@ -42,6 +43,7 @@ Requires:       ros-noetic-qt_gui-devel
 Provides: ros-noetic-rqt_gui-devel = 0.5.1-1
 Obsoletes: ros-noetic-rqt_gui-devel < 0.5.1-1
 Obsoletes: ros-kinetic-rqt_gui-devel < 0.5.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

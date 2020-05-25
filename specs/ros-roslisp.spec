@@ -32,6 +32,7 @@ Obsoletes: ros-noetic-roslisp < 1.9.24-1
 Obsoletes: ros-kinetic-roslisp < 1.9.24-1
 
 
+
 %description
 Lisp client library for ROS, the Robot Operating System.
 
@@ -48,6 +49,7 @@ Requires:       ros-noetic-std_srvs-devel
 Provides: ros-noetic-roslisp-devel = 1.9.24-1
 Obsoletes: ros-noetic-roslisp-devel < 1.9.24-1
 Obsoletes: ros-kinetic-roslisp-devel < 1.9.24-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

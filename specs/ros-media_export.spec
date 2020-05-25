@@ -26,6 +26,7 @@ Obsoletes: ros-noetic-media_export < 0.3.0-1
 Obsoletes: ros-kinetic-media_export < 0.3.0-1
 
 
+
 %description
 Placeholder package enabling generic export of media paths.
 
@@ -37,6 +38,7 @@ Requires:       ros-noetic-catkin-devel
 Provides: ros-noetic-media_export-devel = 0.3.0-1
 Obsoletes: ros-noetic-media_export-devel < 0.3.0-1
 Obsoletes: ros-kinetic-media_export-devel < 0.3.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

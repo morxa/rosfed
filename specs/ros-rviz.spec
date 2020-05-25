@@ -91,6 +91,7 @@ Obsoletes: ros-noetic-rviz < 1.14.0-1
 Obsoletes: ros-kinetic-rviz < 1.14.0-1
 
 
+
 %description
 3D visualization tool for ROS.
 
@@ -144,6 +145,7 @@ Requires:       ros-noetic-message_runtime-devel
 Provides: ros-noetic-rviz-devel = 1.14.0-1
 Obsoletes: ros-noetic-rviz-devel < 1.14.0-1
 Obsoletes: ros-kinetic-rviz-devel < 1.14.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

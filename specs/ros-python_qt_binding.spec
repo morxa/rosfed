@@ -31,6 +31,7 @@ Obsoletes: ros-noetic-python_qt_binding < 0.4.1-1
 Obsoletes: ros-kinetic-python_qt_binding < 0.4.1-1
 
 
+
 %description
 This stack provides Python bindings for Qt. There are two providers:
 pyside and pyqt. PySide is released under the LGPL. PyQt is released
@@ -53,6 +54,7 @@ Requires:       ros-noetic-rosbuild-devel
 Provides: ros-noetic-python_qt_binding-devel = 0.4.1-1
 Obsoletes: ros-noetic-python_qt_binding-devel < 0.4.1-1
 Obsoletes: ros-kinetic-python_qt_binding-devel < 0.4.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

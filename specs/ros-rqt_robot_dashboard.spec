@@ -36,6 +36,7 @@ Obsoletes: ros-noetic-rqt_robot_dashboard < 0.5.8-1
 Obsoletes: ros-kinetic-rqt_robot_dashboard < 0.5.8-1
 
 
+
 %description
 rqt_robot_dashboard provides an infrastructure for building robot
 dashboard plugins in rqt.
@@ -58,6 +59,7 @@ Requires:       ros-noetic-rqt_robot_monitor-devel
 Provides: ros-noetic-rqt_robot_dashboard-devel = 0.5.8-1
 Obsoletes: ros-noetic-rqt_robot_dashboard-devel < 0.5.8-1
 Obsoletes: ros-kinetic-rqt_robot_dashboard-devel < 0.5.8-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

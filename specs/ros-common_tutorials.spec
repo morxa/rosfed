@@ -30,6 +30,7 @@ Obsoletes: ros-noetic-common_tutorials < 0.1.12-1
 Obsoletes: ros-kinetic-common_tutorials < 0.1.12-1
 
 
+
 %description
 Metapackage that contains common tutorials
 
@@ -45,6 +46,7 @@ Requires:       ros-noetic-turtle_actionlib-devel
 Provides: ros-noetic-common_tutorials-devel = 0.1.12-1
 Obsoletes: ros-noetic-common_tutorials-devel < 0.1.12-1
 Obsoletes: ros-kinetic-common_tutorials-devel < 0.1.12-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -86,6 +86,7 @@ Obsoletes: ros-noetic-gazebo_plugins < 2.9.1-1
 Obsoletes: ros-kinetic-gazebo_plugins < 2.9.1-1
 
 
+
 %description
 Robot-independent Gazebo plugins for sensors, motors and dynamic
 reconfigurable components.
@@ -134,6 +135,7 @@ Requires:       ros-noetic-message_runtime-devel
 Provides: ros-noetic-gazebo_plugins-devel = 2.9.1-1
 Obsoletes: ros-noetic-gazebo_plugins-devel < 2.9.1-1
 Obsoletes: ros-kinetic-gazebo_plugins-devel < 2.9.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

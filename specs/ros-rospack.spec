@@ -36,6 +36,7 @@ Obsoletes: ros-noetic-rospack < 2.6.2-1
 Obsoletes: ros-kinetic-rospack < 2.6.2-1
 
 
+
 %description
 ROS Package Tool
 
@@ -55,6 +56,7 @@ Requires:       ros-noetic-ros_environment-devel
 Provides: ros-noetic-rospack-devel = 2.6.2-1
 Obsoletes: ros-noetic-rospack-devel < 2.6.2-1
 Obsoletes: ros-kinetic-rospack-devel < 2.6.2-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

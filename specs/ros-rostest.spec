@@ -33,6 +33,7 @@ Obsoletes: ros-noetic-rostest < 1.15.6-1
 Obsoletes: ros-kinetic-rostest < 1.15.6-1
 
 
+
 %description
 Integration test suite based on roslaunch that is compatible with
 xUnit frameworks.
@@ -51,6 +52,7 @@ Requires:       ros-noetic-rospy-devel
 Provides: ros-noetic-rostest-devel = 1.15.6-1
 Obsoletes: ros-noetic-rostest-devel < 1.15.6-1
 Obsoletes: ros-kinetic-rostest-devel < 1.15.6-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

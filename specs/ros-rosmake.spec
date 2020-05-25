@@ -29,6 +29,7 @@ Obsoletes: ros-noetic-rosmake < 1.15.1-1
 Obsoletes: ros-kinetic-rosmake < 1.15.1-1
 
 
+
 %description
 rosmake is a ros dependency aware build tool which can be used to
 build all dependencies in the correct order.
@@ -42,6 +43,7 @@ Requires:       ros-noetic-catkin-devel
 Provides: ros-noetic-rosmake-devel = 1.15.1-1
 Obsoletes: ros-noetic-rosmake-devel < 1.15.1-1
 Obsoletes: ros-kinetic-rosmake-devel < 1.15.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

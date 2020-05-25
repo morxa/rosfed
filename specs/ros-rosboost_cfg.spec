@@ -27,6 +27,7 @@ Obsoletes: ros-noetic-rosboost_cfg < 1.15.1-1
 Obsoletes: ros-kinetic-rosboost_cfg < 1.15.1-1
 
 
+
 %description
 Contains scripts used by the rosboost-cfg tool for determining
 cflags/lflags/etc. of boost on your system
@@ -40,6 +41,7 @@ Requires:       ros-noetic-catkin-devel
 Provides: ros-noetic-rosboost_cfg-devel = 1.15.1-1
 Obsoletes: ros-noetic-rosboost_cfg-devel < 1.15.1-1
 Obsoletes: ros-kinetic-rosboost_cfg-devel < 1.15.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

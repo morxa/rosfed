@@ -35,6 +35,7 @@ Obsoletes: ros-noetic-compressed_depth_image_transport < 1.14.0-1
 Obsoletes: ros-kinetic-compressed_depth_image_transport < 1.14.0-1
 
 
+
 %description
 Compressed_depth_image_transport provides a plugin to image_transport
 for transparently sending depth images (raw, floating-point) using PNG
@@ -55,6 +56,7 @@ Requires:       ros-noetic-image_transport-devel
 Provides: ros-noetic-compressed_depth_image_transport-devel = 1.14.0-1
 Obsoletes: ros-noetic-compressed_depth_image_transport-devel < 1.14.0-1
 Obsoletes: ros-kinetic-compressed_depth_image_transport-devel < 1.14.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

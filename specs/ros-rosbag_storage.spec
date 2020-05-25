@@ -45,6 +45,7 @@ Obsoletes: ros-noetic-rosbag_storage < 1.15.6-1
 Obsoletes: ros-kinetic-rosbag_storage < 1.15.6-1
 
 
+
 %description
 This is a set of tools for recording from and playing back ROS message
 without relying on the ROS client library.
@@ -71,6 +72,7 @@ Requires:       ros-noetic-std_msgs-devel
 Provides: ros-noetic-rosbag_storage-devel = 1.15.6-1
 Obsoletes: ros-noetic-rosbag_storage-devel < 1.15.6-1
 Obsoletes: ros-kinetic-rosbag_storage-devel < 1.15.6-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -28,6 +28,7 @@ Obsoletes: ros-noetic-mk < 1.15.1-1
 Obsoletes: ros-kinetic-mk < 1.15.1-1
 
 
+
 %description
 A collection of .mk include files for building ROS architectural
 elements. Most package authors should use cmake .mk, which calls CMake
@@ -45,6 +46,7 @@ Requires:       ros-noetic-rospack-devel
 Provides: ros-noetic-mk-devel = 1.15.1-1
 Obsoletes: ros-noetic-mk-devel < 1.15.1-1
 Obsoletes: ros-kinetic-mk-devel < 1.15.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

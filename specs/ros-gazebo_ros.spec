@@ -52,6 +52,7 @@ Obsoletes: ros-noetic-gazebo_ros < 2.9.1-1
 Obsoletes: ros-kinetic-gazebo_ros < 2.9.1-1
 
 
+
 %description
 Provides ROS plugins that offer message and service publishers for
 interfacing with
@@ -80,6 +81,7 @@ Requires:       ros-noetic-trajectory_msgs-devel
 Provides: ros-noetic-gazebo_ros-devel = 2.9.1-1
 Obsoletes: ros-noetic-gazebo_ros-devel < 2.9.1-1
 Obsoletes: ros-kinetic-gazebo_ros-devel < 2.9.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

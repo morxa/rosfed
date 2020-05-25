@@ -37,6 +37,7 @@ Obsoletes: ros-noetic-tf2_geometry_msgs < 0.7.1-1
 Obsoletes: ros-kinetic-tf2_geometry_msgs < 0.7.1-1
 
 
+
 %description
 tf2_geometry_msgs
 
@@ -55,6 +56,7 @@ Requires:       ros-noetic-tf2_ros-devel
 Provides: ros-noetic-tf2_geometry_msgs-devel = 0.7.1-1
 Obsoletes: ros-noetic-tf2_geometry_msgs-devel < 0.7.1-1
 Obsoletes: ros-kinetic-tf2_geometry_msgs-devel < 0.7.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

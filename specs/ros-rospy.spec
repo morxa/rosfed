@@ -37,6 +37,7 @@ Obsoletes: ros-noetic-rospy < 1.15.6-1
 Obsoletes: ros-kinetic-rospy < 1.15.6-1
 
 
+
 %description
 rospy is a pure Python client library for ROS. The rospy client API
 enables Python programmers to quickly interface with ROS
@@ -55,6 +56,7 @@ Requires:       ros-noetic-std_msgs-devel
 Provides: ros-noetic-rospy-devel = 1.15.6-1
 Obsoletes: ros-noetic-rospy-devel < 1.15.6-1
 Obsoletes: ros-kinetic-rospy-devel < 1.15.6-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

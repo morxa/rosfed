@@ -34,6 +34,7 @@ Obsoletes: ros-noetic-diagnostic_common_diagnostics < 1.9.4-1
 Obsoletes: ros-kinetic-diagnostic_common_diagnostics < 1.9.4-1
 
 
+
 %description
 diagnostic_common_diagnostics
 
@@ -49,6 +50,7 @@ Requires:       ros-noetic-tf-devel
 Provides: ros-noetic-diagnostic_common_diagnostics-devel = 1.9.4-1
 Obsoletes: ros-noetic-diagnostic_common_diagnostics-devel < 1.9.4-1
 Obsoletes: ros-kinetic-diagnostic_common_diagnostics-devel < 1.9.4-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

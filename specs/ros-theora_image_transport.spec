@@ -46,6 +46,7 @@ Obsoletes: ros-noetic-theora_image_transport < 1.14.0-1
 Obsoletes: ros-kinetic-theora_image_transport < 1.14.0-1
 
 
+
 %description
 Theora_image_transport provides a plugin to image_transport for
 transparently sending an image stream encoded with the Theora codec.
@@ -73,6 +74,7 @@ Requires:       ros-noetic-message_runtime-devel
 Provides: ros-noetic-theora_image_transport-devel = 1.14.0-1
 Obsoletes: ros-noetic-theora_image_transport-devel < 1.14.0-1
 Obsoletes: ros-kinetic-theora_image_transport-devel < 1.14.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -30,6 +30,7 @@ Obsoletes: ros-noetic-rosbuild < 1.15.1-1
 Obsoletes: ros-kinetic-rosbuild < 1.15.1-1
 
 
+
 %description
 rosbuild contains scripts for managing the CMake-based build system
 for ROS.
@@ -45,6 +46,7 @@ Requires:       ros-noetic-message_runtime-devel
 Provides: ros-noetic-rosbuild-devel = 1.15.1-1
 Obsoletes: ros-noetic-rosbuild-devel < 1.15.1-1
 Obsoletes: ros-kinetic-rosbuild-devel < 1.15.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

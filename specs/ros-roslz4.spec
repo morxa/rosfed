@@ -28,6 +28,7 @@ Obsoletes: ros-noetic-roslz4 < 1.15.6-1
 Obsoletes: ros-kinetic-roslz4 < 1.15.6-1
 
 
+
 %description
 A Python and C++ implementation of the LZ4 streaming format. Large
 data streams are split into blocks which are compressed using the very
@@ -44,6 +45,7 @@ Requires:       ros-noetic-rosunit-devel
 Provides: ros-noetic-roslz4-devel = 1.15.6-1
 Obsoletes: ros-noetic-roslz4-devel < 1.15.6-1
 Obsoletes: ros-kinetic-roslz4-devel < 1.15.6-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

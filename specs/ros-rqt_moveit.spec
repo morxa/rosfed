@@ -36,6 +36,7 @@ Obsoletes: ros-noetic-rqt_moveit < 0.5.8-1
 Obsoletes: ros-kinetic-rqt_moveit < 0.5.8-1
 
 
+
 %description
 An rqt-based tool that assists monitoring tasks for
 
@@ -57,6 +58,7 @@ Requires:       ros-noetic-sensor_msgs-devel
 Provides: ros-noetic-rqt_moveit-devel = 0.5.8-1
 Obsoletes: ros-noetic-rqt_moveit-devel < 0.5.8-1
 Obsoletes: ros-kinetic-rqt_moveit-devel < 0.5.8-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

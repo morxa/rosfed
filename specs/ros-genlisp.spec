@@ -29,6 +29,7 @@ Obsoletes: ros-noetic-genlisp < 0.4.18-1
 Obsoletes: ros-kinetic-genlisp < 0.4.18-1
 
 
+
 %description
 Common-Lisp ROS message and service generators.
 
@@ -42,6 +43,7 @@ Requires:       ros-noetic-genmsg-devel
 Provides: ros-noetic-genlisp-devel = 0.4.18-1
 Obsoletes: ros-noetic-genlisp-devel < 0.4.18-1
 Obsoletes: ros-kinetic-genlisp-devel < 0.4.18-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

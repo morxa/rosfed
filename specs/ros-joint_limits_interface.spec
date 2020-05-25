@@ -32,6 +32,7 @@ Obsoletes: ros-noetic-joint_limits_interface < 0.19.1-1
 Obsoletes: ros-kinetic-joint_limits_interface < 0.19.1-1
 
 
+
 %description
 Interface for enforcing joint limits.
 
@@ -47,6 +48,7 @@ Requires:       ros-noetic-urdf-devel
 Provides: ros-noetic-joint_limits_interface-devel = 0.19.1-1
 Obsoletes: ros-noetic-joint_limits_interface-devel < 0.19.1-1
 Obsoletes: ros-kinetic-joint_limits_interface-devel < 0.19.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

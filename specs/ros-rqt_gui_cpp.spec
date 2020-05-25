@@ -38,6 +38,7 @@ Obsoletes: ros-noetic-rqt_gui_cpp < 0.5.1-1
 Obsoletes: ros-kinetic-rqt_gui_cpp < 0.5.1-1
 
 
+
 %description
 rqt_gui_cpp enables GUI plugins to use the C++ client library for ROS.
 
@@ -58,6 +59,7 @@ Requires:       ros-noetic-roscpp-devel
 Provides: ros-noetic-rqt_gui_cpp-devel = 0.5.1-1
 Obsoletes: ros-noetic-rqt_gui_cpp-devel < 0.5.1-1
 Obsoletes: ros-kinetic-rqt_gui_cpp-devel < 0.5.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

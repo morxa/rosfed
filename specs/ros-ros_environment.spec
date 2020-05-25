@@ -26,6 +26,7 @@ Obsoletes: ros-noetic-ros_environment < 1.3.1-1
 Obsoletes: ros-kinetic-ros_environment < 1.3.1-1
 
 
+
 %description
 The package provides the environment variables `ROS_VERSION`,
 `ROS_DISTRO`, `ROS_PACKAGE_PATH`, and `ROS_ETC_DIR`.
@@ -38,6 +39,7 @@ Requires:       ros-noetic-catkin-devel
 Provides: ros-noetic-ros_environment-devel = 1.3.1-1
 Obsoletes: ros-noetic-ros_environment-devel < 1.3.1-1
 Obsoletes: ros-kinetic-ros_environment-devel < 1.3.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

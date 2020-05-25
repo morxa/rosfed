@@ -29,6 +29,7 @@ Obsoletes: ros-noetic-ros_tutorials < 0.10.1-1
 Obsoletes: ros-kinetic-ros_tutorials < 0.10.1-1
 
 
+
 %description
 ros_tutorials contains packages that demonstrate various features of
 ROS, as well as support packages which help demonstrate those
@@ -45,6 +46,7 @@ Requires:       ros-noetic-turtlesim-devel
 Provides: ros-noetic-ros_tutorials-devel = 0.10.1-1
 Obsoletes: ros-noetic-ros_tutorials-devel < 0.10.1-1
 Obsoletes: ros-kinetic-ros_tutorials-devel < 0.10.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -29,6 +29,7 @@ Obsoletes: ros-noetic-genmsg < 0.5.16-1
 Obsoletes: ros-kinetic-genmsg < 0.5.16-1
 
 
+
 %description
 Standalone Python library for generating ROS message and service data
 structures for various languages.
@@ -42,6 +43,7 @@ Requires:       ros-noetic-catkin-devel
 Provides: ros-noetic-genmsg-devel = 0.5.16-1
 Obsoletes: ros-noetic-genmsg-devel < 0.5.16-1
 Obsoletes: ros-kinetic-genmsg-devel < 0.5.16-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -50,6 +50,7 @@ Obsoletes: ros-noetic-tf2_ros < 0.7.1-1
 Obsoletes: ros-kinetic-tf2_ros < 0.7.1-1
 
 
+
 %description
 This package contains the ROS bindings for the tf2 library, for both
 Python and C++.
@@ -75,6 +76,7 @@ Requires:       ros-noetic-xmlrpcpp-devel
 Provides: ros-noetic-tf2_ros-devel = 0.7.1-1
 Obsoletes: ros-noetic-tf2_ros-devel < 0.7.1-1
 Obsoletes: ros-kinetic-tf2_ros-devel < 0.7.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

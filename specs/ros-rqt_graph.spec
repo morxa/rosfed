@@ -38,6 +38,7 @@ Obsoletes: ros-noetic-rqt_graph < 0.4.14-1
 Obsoletes: ros-kinetic-rqt_graph < 0.4.14-1
 
 
+
 %description
 rqt_graph provides a GUI plugin for visualizing the ROS computation
 graph.
@@ -61,6 +62,7 @@ Requires:       ros-noetic-rqt_gui_py-devel
 Provides: ros-noetic-rqt_graph-devel = 0.4.14-1
 Obsoletes: ros-noetic-rqt_graph-devel < 0.4.14-1
 Obsoletes: ros-kinetic-rqt_graph-devel < 0.4.14-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

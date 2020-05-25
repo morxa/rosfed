@@ -48,6 +48,7 @@ Obsoletes: ros-noetic-ros_comm < 1.15.6-1
 Obsoletes: ros-kinetic-ros_comm < 1.15.6-1
 
 
+
 %description
 ROS communications-related packages, including core client libraries
 (roscpp, rospy) and graph introspection tools (rostopic, rosnode,
@@ -83,6 +84,7 @@ Requires:       ros-noetic-xmlrpcpp-devel
 Provides: ros-noetic-ros_comm-devel = 1.15.6-1
 Obsoletes: ros-noetic-ros_comm-devel < 1.15.6-1
 Obsoletes: ros-kinetic-ros_comm-devel < 1.15.6-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

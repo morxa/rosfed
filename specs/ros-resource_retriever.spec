@@ -37,6 +37,7 @@ Obsoletes: ros-noetic-resource_retriever < 1.12.6-1
 Obsoletes: ros-kinetic-resource_retriever < 1.12.6-1
 
 
+
 %description
 This package retrieves data from url-format files such as http://,
 ftp://, package:// file://, etc., and loads the data into memory. The
@@ -62,6 +63,7 @@ Requires:       ros-noetic-roslib-devel
 Provides: ros-noetic-resource_retriever-devel = 1.12.6-1
 Obsoletes: ros-noetic-resource_retriever-devel < 1.12.6-1
 Obsoletes: ros-kinetic-resource_retriever-devel < 1.12.6-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

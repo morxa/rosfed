@@ -42,6 +42,7 @@ Obsoletes: ros-noetic-camera_calibration_parsers < 1.12.0-3
 Obsoletes: ros-kinetic-camera_calibration_parsers < 1.12.0-3
 
 
+
 %description
 camera_calibration_parsers contains routines for reading and writing
 camera calibration parameters.
@@ -67,6 +68,7 @@ Requires:       ros-noetic-sensor_msgs-devel
 Provides: ros-noetic-camera_calibration_parsers-devel = 1.12.0-3
 Obsoletes: ros-noetic-camera_calibration_parsers-devel < 1.12.0-3
 Obsoletes: ros-kinetic-camera_calibration_parsers-devel < 1.12.0-3
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

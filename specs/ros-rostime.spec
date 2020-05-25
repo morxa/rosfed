@@ -28,6 +28,7 @@ Obsoletes: ros-noetic-rostime < 0.7.1-1
 Obsoletes: ros-kinetic-rostime < 0.7.1-1
 
 
+
 %description
 Time and Duration implementations for C++ libraries, including roscpp.
 
@@ -41,6 +42,7 @@ Requires:       boost-devel
 Provides: ros-noetic-rostime-devel = 0.7.1-1
 Obsoletes: ros-noetic-rostime-devel < 0.7.1-1
 Obsoletes: ros-kinetic-rostime-devel < 0.7.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

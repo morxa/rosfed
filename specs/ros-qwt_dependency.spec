@@ -26,6 +26,7 @@ Obsoletes: ros-noetic-qwt_dependency < 1.1.1-1
 Obsoletes: ros-kinetic-qwt_dependency < 1.1.1-1
 
 
+
 %description
 This encapsulates the Qwt dependency for a specific ROS distribution
 and its Qt version
@@ -38,6 +39,7 @@ Requires:       ros-noetic-catkin-devel
 Provides: ros-noetic-qwt_dependency-devel = 1.1.1-1
 Obsoletes: ros-noetic-qwt_dependency-devel < 1.1.1-1
 Obsoletes: ros-kinetic-qwt_dependency-devel < 1.1.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

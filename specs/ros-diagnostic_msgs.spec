@@ -30,6 +30,7 @@ Obsoletes: ros-noetic-diagnostic_msgs < 1.13.0-1
 Obsoletes: ros-kinetic-diagnostic_msgs < 1.13.0-1
 
 
+
 %description
 This package holds the diagnostic messages which provide the
 standardized interface for the diagnostic and runtime monitoring
@@ -46,6 +47,7 @@ Requires:       ros-noetic-message_runtime-devel
 Provides: ros-noetic-diagnostic_msgs-devel = 1.13.0-1
 Obsoletes: ros-noetic-diagnostic_msgs-devel < 1.13.0-1
 Obsoletes: ros-kinetic-diagnostic_msgs-devel < 1.13.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

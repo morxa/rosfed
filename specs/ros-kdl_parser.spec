@@ -38,6 +38,7 @@ Obsoletes: ros-noetic-kdl_parser < 1.14.0-1
 Obsoletes: ros-kinetic-kdl_parser < 1.14.0-1
 
 
+
 %description
 The Kinematics and Dynamics Library (KDL) defines a tree structure to
 represent the kinematic and dynamic parameters of a robot mechanism.
@@ -61,6 +62,7 @@ Requires:       ros-noetic-urdf-devel
 Provides: ros-noetic-kdl_parser-devel = 1.14.0-1
 Obsoletes: ros-noetic-kdl_parser-devel < 1.14.0-1
 Obsoletes: ros-kinetic-kdl_parser-devel < 1.14.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

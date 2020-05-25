@@ -27,6 +27,7 @@ Obsoletes: ros-noetic-urdf_parser_plugin < 1.13.2-1
 Obsoletes: ros-kinetic-urdf_parser_plugin < 1.13.2-1
 
 
+
 %description
 This package contains a C++ base class for URDF parsers.
 
@@ -39,6 +40,7 @@ Requires:       urdfdom-headers-devel
 Provides: ros-noetic-urdf_parser_plugin-devel = 1.13.2-1
 Obsoletes: ros-noetic-urdf_parser_plugin-devel < 1.13.2-1
 Obsoletes: ros-kinetic-urdf_parser_plugin-devel < 1.13.2-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

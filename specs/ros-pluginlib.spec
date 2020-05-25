@@ -37,6 +37,7 @@ Obsoletes: ros-noetic-pluginlib < 1.13.0-1
 Obsoletes: ros-kinetic-pluginlib < 1.13.0-1
 
 
+
 %description
 The pluginlib package provides tools for writing and dynamically
 loading plugins using the ROS build infrastructure. To work, these
@@ -62,6 +63,7 @@ Requires:       ros-noetic-rostime-devel
 Provides: ros-noetic-pluginlib-devel = 1.13.0-1
 Obsoletes: ros-noetic-pluginlib-devel < 1.13.0-1
 Obsoletes: ros-kinetic-pluginlib-devel < 1.13.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -35,6 +35,7 @@ Obsoletes: ros-noetic-nav_core < 1.17.0-1
 Obsoletes: ros-kinetic-nav_core < 1.17.0-1
 
 
+
 %description
 This package provides common interfaces for navigation specific robot
 actions. Currently, this package provides the BaseGlobalPlanner,
@@ -55,6 +56,7 @@ Requires:       ros-noetic-tf2_ros-devel
 Provides: ros-noetic-nav_core-devel = 1.17.0-1
 Obsoletes: ros-noetic-nav_core-devel < 1.17.0-1
 Obsoletes: ros-kinetic-nav_core-devel < 1.17.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

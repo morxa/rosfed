@@ -27,6 +27,7 @@ Obsoletes: ros-noetic-smclib < 1.8.5-1
 Obsoletes: ros-kinetic-smclib < 1.8.5-1
 
 
+
 %description
 The State Machine Compiler (SMC) from http://smc.sourceforge.net/
 converts a language-independent description of a state machine into
@@ -43,6 +44,7 @@ Requires:       ros-noetic-catkin-devel
 Provides: ros-noetic-smclib-devel = 1.8.5-1
 Obsoletes: ros-noetic-smclib-devel < 1.8.5-1
 Obsoletes: ros-kinetic-smclib-devel < 1.8.5-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

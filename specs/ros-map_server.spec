@@ -38,6 +38,7 @@ Obsoletes: ros-noetic-map_server < 1.17.0-1
 Obsoletes: ros-kinetic-map_server < 1.17.0-1
 
 
+
 %description
 map_server provides the
 
@@ -59,6 +60,7 @@ Requires:       ros-noetic-tf2-devel
 Provides: ros-noetic-map_server-devel = 1.17.0-1
 Obsoletes: ros-noetic-map_server-devel < 1.17.0-1
 Obsoletes: ros-kinetic-map_server-devel < 1.17.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

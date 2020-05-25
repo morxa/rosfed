@@ -44,6 +44,7 @@ Obsoletes: ros-noetic-clear_costmap_recovery < 1.17.0-1
 Obsoletes: ros-kinetic-clear_costmap_recovery < 1.17.0-1
 
 
+
 %description
 This package provides a recovery behavior for the navigation stack
 that attempts to clear space by reverting the costmaps used by the
@@ -71,6 +72,7 @@ Requires:       ros-noetic-tf2_ros-devel
 Provides: ros-noetic-clear_costmap_recovery-devel = 1.17.0-1
 Obsoletes: ros-noetic-clear_costmap_recovery-devel < 1.17.0-1
 Obsoletes: ros-kinetic-clear_costmap_recovery-devel < 1.17.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

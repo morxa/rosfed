@@ -33,6 +33,7 @@ Obsoletes: ros-noetic-rosmsg < 1.15.6-1
 Obsoletes: ros-kinetic-rosmsg < 1.15.6-1
 
 
+
 %description
 rosmsg contains two command-line tools:
 
@@ -49,6 +50,7 @@ Requires:       ros-noetic-roslib-devel
 Provides: ros-noetic-rosmsg-devel = 1.15.6-1
 Obsoletes: ros-noetic-rosmsg-devel < 1.15.6-1
 Obsoletes: ros-kinetic-rosmsg-devel < 1.15.6-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

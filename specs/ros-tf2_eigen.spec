@@ -32,6 +32,7 @@ Obsoletes: ros-noetic-tf2_eigen < 0.7.1-1
 Obsoletes: ros-kinetic-tf2_eigen < 0.7.1-1
 
 
+
 %description
 tf2_eigen
 
@@ -47,6 +48,7 @@ Requires:       ros-noetic-tf2-devel
 Provides: ros-noetic-tf2_eigen-devel = 0.7.1-1
 Obsoletes: ros-noetic-tf2_eigen-devel < 0.7.1-1
 Obsoletes: ros-kinetic-tf2_eigen-devel < 0.7.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

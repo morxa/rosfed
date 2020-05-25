@@ -35,6 +35,7 @@ Obsoletes: ros-noetic-rqt_robot_plugins < 0.5.8-1
 Obsoletes: ros-kinetic-rqt_robot_plugins < 0.5.8-1
 
 
+
 %description
 Metapackage of rqt plugins that are particularly used with robots
 during its operation.
@@ -56,6 +57,7 @@ Requires:       ros-noetic-rqt_tf_tree-devel
 Provides: ros-noetic-rqt_robot_plugins-devel = 0.5.8-1
 Obsoletes: ros-noetic-rqt_robot_plugins-devel < 0.5.8-1
 Obsoletes: ros-kinetic-rqt_robot_plugins-devel < 0.5.8-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

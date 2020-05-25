@@ -31,6 +31,7 @@ Obsoletes: ros-noetic-visualization_tutorials < 0.11.0-1
 Obsoletes: ros-kinetic-visualization_tutorials < 0.11.0-1
 
 
+
 %description
 Metapackage referencing tutorials related to rviz and visualization.
 
@@ -47,6 +48,7 @@ Requires:       ros-noetic-visualization_marker_tutorials-devel
 Provides: ros-noetic-visualization_tutorials-devel = 0.11.0-1
 Obsoletes: ros-noetic-visualization_tutorials-devel < 0.11.0-1
 Obsoletes: ros-kinetic-visualization_tutorials-devel < 0.11.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

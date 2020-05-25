@@ -37,6 +37,7 @@ Obsoletes: ros-noetic-tf2 < 0.7.1-2
 Obsoletes: ros-kinetic-tf2 < 0.7.1-2
 
 
+
 %description
 tf2 is the second generation of the transform library, which lets the
 user keep track of multiple coordinate frames over time. tf2 maintains
@@ -61,6 +62,7 @@ Requires:       ros-noetic-tf2_msgs-devel
 Provides: ros-noetic-tf2-devel = 0.7.1-2
 Obsoletes: ros-noetic-tf2-devel < 0.7.1-2
 Obsoletes: ros-kinetic-tf2-devel < 0.7.1-2
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

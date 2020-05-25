@@ -46,6 +46,7 @@ Obsoletes: ros-noetic-diff_drive_controller < 0.17.0-1
 Obsoletes: ros-kinetic-diff_drive_controller < 0.17.0-1
 
 
+
 %description
 Controller for a differential drive mobile base.
 
@@ -70,6 +71,7 @@ Requires:       ros-noetic-xacro-devel
 Provides: ros-noetic-diff_drive_controller-devel = 0.17.0-1
 Obsoletes: ros-noetic-diff_drive_controller-devel < 0.17.0-1
 Obsoletes: ros-kinetic-diff_drive_controller-devel < 0.17.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

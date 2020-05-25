@@ -38,6 +38,7 @@ Obsoletes: ros-noetic-polled_camera < 1.12.0-1
 Obsoletes: ros-kinetic-polled_camera < 1.12.0-1
 
 
+
 %description
 polled_camera contains a service and C++ helper classes for
 implementing a polled camera driver node and requesting images from
@@ -61,6 +62,7 @@ Requires:       ros-noetic-message_runtime-devel
 Provides: ros-noetic-polled_camera-devel = 1.12.0-1
 Obsoletes: ros-noetic-polled_camera-devel < 1.12.0-1
 Obsoletes: ros-kinetic-polled_camera-devel < 1.12.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

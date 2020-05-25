@@ -28,6 +28,7 @@ Obsoletes: ros-noetic-rosmaster < 1.15.6-1
 Obsoletes: ros-kinetic-rosmaster < 1.15.6-1
 
 
+
 %description
 ROS
 
@@ -40,6 +41,7 @@ Requires:       ros-noetic-rosgraph-devel
 Provides: ros-noetic-rosmaster-devel = 1.15.6-1
 Obsoletes: ros-noetic-rosmaster-devel < 1.15.6-1
 Obsoletes: ros-kinetic-rosmaster-devel < 1.15.6-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

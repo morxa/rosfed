@@ -33,6 +33,7 @@ Obsoletes: ros-noetic-rqt_py_console < 0.4.9-1
 Obsoletes: ros-kinetic-rqt_py_console < 0.4.9-1
 
 
+
 %description
 rqt_py_console is a Python GUI plugin providing an interactive Python
 console.
@@ -51,6 +52,7 @@ Requires:       ros-noetic-rqt_gui_py-devel
 Provides: ros-noetic-rqt_py_console-devel = 0.4.9-1
 Obsoletes: ros-noetic-rqt_py_console-devel < 0.4.9-1
 Obsoletes: ros-kinetic-rqt_py_console-devel < 0.4.9-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

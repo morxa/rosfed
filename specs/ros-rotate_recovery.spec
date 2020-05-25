@@ -51,6 +51,7 @@ Obsoletes: ros-noetic-rotate_recovery < 1.17.0-1
 Obsoletes: ros-kinetic-rotate_recovery < 1.17.0-1
 
 
+
 %description
 This package provides a recovery behavior for the navigation stack
 that attempts to clear space by performing a 360 degree rotation of
@@ -82,6 +83,7 @@ Requires:       ros-noetic-tf2_ros-devel
 Provides: ros-noetic-rotate_recovery-devel = 1.17.0-1
 Obsoletes: ros-noetic-rotate_recovery-devel < 1.17.0-1
 Obsoletes: ros-kinetic-rotate_recovery-devel < 1.17.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -32,6 +32,7 @@ Obsoletes: ros-noetic-stereo_msgs < 1.13.0-1
 Obsoletes: ros-kinetic-stereo_msgs < 1.13.0-1
 
 
+
 %description
 stereo_msgs contains messages specific to stereo processing, such as
 disparity images.
@@ -48,6 +49,7 @@ Requires:       ros-noetic-message_runtime-devel
 Provides: ros-noetic-stereo_msgs-devel = 1.13.0-1
 Obsoletes: ros-noetic-stereo_msgs-devel < 1.13.0-1
 Obsoletes: ros-kinetic-stereo_msgs-devel < 1.13.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

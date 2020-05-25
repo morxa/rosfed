@@ -47,6 +47,7 @@ Obsoletes: ros-noetic-rqt_common_plugins < 0.4.9-1
 Obsoletes: ros-kinetic-rqt_common_plugins < 0.4.9-1
 
 
+
 %description
 rqt_common_plugins metapackage provides ROS backend graphical tools
 suite that can be used on/off of robot runtime.
@@ -80,6 +81,7 @@ Requires:       ros-noetic-rqt_web-devel
 Provides: ros-noetic-rqt_common_plugins-devel = 0.4.9-1
 Obsoletes: ros-noetic-rqt_common_plugins-devel < 0.4.9-1
 Obsoletes: ros-kinetic-rqt_common_plugins-devel < 0.4.9-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

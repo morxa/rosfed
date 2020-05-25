@@ -32,6 +32,7 @@ Obsoletes: ros-noetic-message_generation < 0.4.1-1
 Obsoletes: ros-kinetic-message_generation < 0.4.1-1
 
 
+
 %description
 Package modeling the build-time dependencies for generating language
 bindings of messages.
@@ -50,6 +51,7 @@ Requires:       ros-noetic-genpy-devel
 Provides: ros-noetic-message_generation-devel = 0.4.1-1
 Obsoletes: ros-noetic-message_generation-devel < 0.4.1-1
 Obsoletes: ros-kinetic-message_generation-devel < 0.4.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

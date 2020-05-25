@@ -32,6 +32,7 @@ Obsoletes: ros-noetic-move_base_msgs < 1.14.0-1
 Obsoletes: ros-kinetic-move_base_msgs < 1.14.0-1
 
 
+
 %description
 Holds the action description and relevant messages for the move_base
 package.
@@ -48,6 +49,7 @@ Requires:       ros-noetic-message_runtime-devel
 Provides: ros-noetic-move_base_msgs-devel = 1.14.0-1
 Obsoletes: ros-noetic-move_base_msgs-devel < 1.14.0-1
 Obsoletes: ros-kinetic-move_base_msgs-devel < 1.14.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

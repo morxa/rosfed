@@ -37,6 +37,7 @@ Obsoletes: ros-noetic-urdf_sim_tutorial < 0.5.0-1
 Obsoletes: ros-kinetic-urdf_sim_tutorial < 0.5.0-1
 
 
+
 %description
 The urdf_sim_tutorial package
 
@@ -59,6 +60,7 @@ Requires:       ros-noetic-xacro-devel
 Provides: ros-noetic-urdf_sim_tutorial-devel = 0.5.0-1
 Obsoletes: ros-noetic-urdf_sim_tutorial-devel < 0.5.0-1
 Obsoletes: ros-kinetic-urdf_sim_tutorial-devel < 0.5.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

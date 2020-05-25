@@ -37,6 +37,7 @@ Obsoletes: ros-noetic-rqt_robot_monitor < 0.5.11-1
 Obsoletes: ros-kinetic-rqt_robot_monitor < 0.5.11-1
 
 
+
 %description
 rqt_robot_monitor displays diagnostics_agg topics messages that are
 published by
@@ -59,6 +60,7 @@ Requires:       ros-noetic-rqt_py_common-devel
 Provides: ros-noetic-rqt_robot_monitor-devel = 0.5.11-1
 Obsoletes: ros-noetic-rqt_robot_monitor-devel < 0.5.11-1
 Obsoletes: ros-kinetic-rqt_robot_monitor-devel < 0.5.11-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

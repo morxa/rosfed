@@ -49,6 +49,7 @@ Obsoletes: ros-noetic-stereo_image_proc < 1.15.2-1
 Obsoletes: ros-kinetic-stereo_image_proc < 1.15.2-1
 
 
+
 %description
 Stereo and single image rectification and disparity processing.
 
@@ -75,6 +76,7 @@ Requires:       ros-noetic-stereo_msgs-devel
 Provides: ros-noetic-stereo_image_proc-devel = 1.15.2-1
 Obsoletes: ros-noetic-stereo_image_proc-devel < 1.15.2-1
 Obsoletes: ros-kinetic-stereo_image_proc-devel < 1.15.2-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

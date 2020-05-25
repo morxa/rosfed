@@ -35,6 +35,7 @@ Obsoletes: ros-noetic-rosconsole < 1.14.0-1
 Obsoletes: ros-kinetic-rosconsole < 1.14.0-1
 
 
+
 %description
 ROS console output library.
 
@@ -54,6 +55,7 @@ Requires:       ros-noetic-rosbuild-devel
 Provides: ros-noetic-rosconsole-devel = 1.14.0-1
 Obsoletes: ros-noetic-rosconsole-devel < 1.14.0-1
 Obsoletes: ros-kinetic-rosconsole-devel < 1.14.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

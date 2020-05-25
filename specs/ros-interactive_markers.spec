@@ -41,6 +41,7 @@ Obsoletes: ros-noetic-interactive_markers < 1.12.0-1
 Obsoletes: ros-kinetic-interactive_markers < 1.12.0-1
 
 
+
 %description
 3D interactive marker communication library for RViz and similar
 tools.
@@ -61,6 +62,7 @@ Requires:       ros-noetic-visualization_msgs-devel
 Provides: ros-noetic-interactive_markers-devel = 1.12.0-1
 Obsoletes: ros-noetic-interactive_markers-devel < 1.12.0-1
 Obsoletes: ros-kinetic-interactive_markers-devel < 1.12.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

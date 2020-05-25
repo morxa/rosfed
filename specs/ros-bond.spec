@@ -30,6 +30,7 @@ Obsoletes: ros-noetic-bond < 1.8.5-1
 Obsoletes: ros-kinetic-bond < 1.8.5-1
 
 
+
 %description
 A bond allows two processes, A and B, to know when the other has
 terminated, either cleanly or by crashing. The bond remains connected
@@ -46,6 +47,7 @@ Requires:       ros-noetic-message_runtime-devel
 Provides: ros-noetic-bond-devel = 1.8.5-1
 Obsoletes: ros-noetic-bond-devel < 1.8.5-1
 Obsoletes: ros-kinetic-bond-devel < 1.8.5-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

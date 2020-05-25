@@ -33,6 +33,7 @@ Obsoletes: ros-noetic-tf2_msgs < 0.7.1-1
 Obsoletes: ros-kinetic-tf2_msgs < 0.7.1-1
 
 
+
 %description
 tf2_msgs
 
@@ -48,6 +49,7 @@ Requires:       ros-noetic-message_generation-devel
 Provides: ros-noetic-tf2_msgs-devel = 0.7.1-1
 Obsoletes: ros-noetic-tf2_msgs-devel < 0.7.1-1
 Obsoletes: ros-kinetic-tf2_msgs-devel < 0.7.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

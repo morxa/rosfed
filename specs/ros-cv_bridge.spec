@@ -38,6 +38,7 @@ Obsoletes: ros-noetic-cv_bridge < 1.15.0-3
 Obsoletes: ros-kinetic-cv_bridge < 1.15.0-3
 
 
+
 %description
 This contains CvBridge, which converts between ROS Image messages and
 OpenCV images.
@@ -60,6 +61,7 @@ Requires:       ros-noetic-rostest-devel
 Provides: ros-noetic-cv_bridge-devel = 1.15.0-3
 Obsoletes: ros-noetic-cv_bridge-devel < 1.15.0-3
 Obsoletes: ros-kinetic-cv_bridge-devel < 1.15.0-3
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -41,6 +41,7 @@ Obsoletes: ros-noetic-camera_info_manager < 1.12.0-1
 Obsoletes: ros-kinetic-camera_info_manager < 1.12.0-1
 
 
+
 %description
 This package provides a C++ interface for camera calibration
 information. It provides CameraInfo, and handles SetCameraInfo service
@@ -65,6 +66,7 @@ Requires:       ros-noetic-sensor_msgs-devel
 Provides: ros-noetic-camera_info_manager-devel = 1.12.0-1
 Obsoletes: ros-noetic-camera_info_manager-devel < 1.12.0-1
 Obsoletes: ros-kinetic-camera_info_manager-devel < 1.12.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

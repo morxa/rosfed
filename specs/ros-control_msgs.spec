@@ -36,6 +36,7 @@ Obsoletes: ros-noetic-control_msgs < 1.5.2-1
 Obsoletes: ros-kinetic-control_msgs < 1.5.2-1
 
 
+
 %description
 control_msgs contains base messages and actions useful for controlling
 robots. It provides representations for controller setpoints and joint
@@ -55,6 +56,7 @@ Requires:       ros-noetic-message_runtime-devel
 Provides: ros-noetic-control_msgs-devel = 1.5.2-1
 Obsoletes: ros-noetic-control_msgs-devel < 1.5.2-1
 Obsoletes: ros-kinetic-control_msgs-devel < 1.5.2-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

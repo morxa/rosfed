@@ -29,6 +29,7 @@ Obsoletes: ros-noetic-rqt_action < 0.4.9-1
 Obsoletes: ros-kinetic-rqt_action < 0.4.9-1
 
 
+
 %description
 rqt_action provides a feature to introspect all available ROS action
 (from actionlib) types. By utilizing rqt_msg, the output format is
@@ -47,6 +48,7 @@ Requires:       ros-noetic-rqt_py_common-devel
 Provides: ros-noetic-rqt_action-devel = 0.4.9-1
 Obsoletes: ros-noetic-rqt_action-devel < 0.4.9-1
 Obsoletes: ros-kinetic-rqt_action-devel < 0.4.9-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

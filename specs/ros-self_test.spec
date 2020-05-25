@@ -32,6 +32,7 @@ Obsoletes: ros-noetic-self_test < 1.9.4-1
 Obsoletes: ros-kinetic-self_test < 1.9.4-1
 
 
+
 %description
 self_test
 
@@ -47,6 +48,7 @@ Requires:       ros-noetic-rostest-devel
 Provides: ros-noetic-self_test-devel = 1.9.4-1
 Obsoletes: ros-noetic-self_test-devel < 1.9.4-1
 Obsoletes: ros-kinetic-self_test-devel < 1.9.4-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

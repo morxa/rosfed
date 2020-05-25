@@ -28,6 +28,7 @@ Obsoletes: ros-noetic-hardware_interface < 0.19.1-1
 Obsoletes: ros-kinetic-hardware_interface < 0.19.1-1
 
 
+
 %description
 Hardware Interface base class.
 
@@ -40,6 +41,7 @@ Requires:       ros-noetic-roscpp-devel
 Provides: ros-noetic-hardware_interface-devel = 0.19.1-1
 Obsoletes: ros-noetic-hardware_interface-devel < 0.19.1-1
 Obsoletes: ros-kinetic-hardware_interface-devel < 0.19.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

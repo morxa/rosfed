@@ -29,6 +29,7 @@ Obsoletes: ros-noetic-xacro < 1.14.2-1
 Obsoletes: ros-kinetic-xacro < 1.14.2-1
 
 
+
 %description
 Xacro (XML Macros) Xacro is an XML macro language. With xacro, you can
 construct shorter and more readable XML files by using macros that
@@ -45,6 +46,7 @@ Requires:       ros-noetic-roslaunch-devel
 Provides: ros-noetic-xacro-devel = 1.14.2-1
 Obsoletes: ros-noetic-xacro-devel < 1.14.2-1
 Obsoletes: ros-kinetic-xacro-devel < 1.14.2-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

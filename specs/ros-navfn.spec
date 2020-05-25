@@ -56,6 +56,7 @@ Obsoletes: ros-noetic-navfn < 1.17.0-1
 Obsoletes: ros-kinetic-navfn < 1.17.0-1
 
 
+
 %description
 navfn provides a fast interpolated navigation function that can be
 used to create plans for a mobile base. The planner assumes a circular
@@ -95,6 +96,7 @@ Requires:       ros-noetic-message_runtime-devel
 Provides: ros-noetic-navfn-devel = 1.17.0-1
 Obsoletes: ros-noetic-navfn-devel < 1.17.0-1
 Obsoletes: ros-kinetic-navfn-devel < 1.17.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

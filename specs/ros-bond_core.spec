@@ -30,6 +30,7 @@ Obsoletes: ros-noetic-bond_core < 1.8.5-1
 Obsoletes: ros-kinetic-bond_core < 1.8.5-1
 
 
+
 %description
 A bond allows two processes, A and B, to know when the other has
 terminated, either cleanly or by crashing. The bond remains connected
@@ -47,6 +48,7 @@ Requires:       ros-noetic-smclib-devel
 Provides: ros-noetic-bond_core-devel = 1.8.5-1
 Obsoletes: ros-noetic-bond_core-devel < 1.8.5-1
 Obsoletes: ros-kinetic-bond_core-devel < 1.8.5-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

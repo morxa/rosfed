@@ -29,6 +29,7 @@ Obsoletes: ros-noetic-image_transport_plugins < 1.14.0-1
 Obsoletes: ros-kinetic-image_transport_plugins < 1.14.0-1
 
 
+
 %description
 A set of plugins for publishing and subscribing to sensor_msgs/Image
 topics in representations other than raw pixel data. For example, for
@@ -48,6 +49,7 @@ Requires:       ros-noetic-theora_image_transport-devel
 Provides: ros-noetic-image_transport_plugins-devel = 1.14.0-1
 Obsoletes: ros-noetic-image_transport_plugins-devel < 1.14.0-1
 Obsoletes: ros-kinetic-image_transport_plugins-devel < 1.14.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -31,6 +31,7 @@ Obsoletes: ros-noetic-rqt_service_caller < 0.4.9-1
 Obsoletes: ros-kinetic-rqt_service_caller < 0.4.9-1
 
 
+
 %description
 rqt_service_caller provides a GUI plugin for calling arbitrary
 services.
@@ -47,6 +48,7 @@ Requires:       ros-noetic-rqt_py_common-devel
 Provides: ros-noetic-rqt_service_caller-devel = 0.4.9-1
 Obsoletes: ros-noetic-rqt_service_caller-devel < 0.4.9-1
 Obsoletes: ros-kinetic-rqt_service_caller-devel < 0.4.9-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

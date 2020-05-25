@@ -30,6 +30,7 @@ Obsoletes: ros-noetic-std_srvs < 1.11.3-1
 Obsoletes: ros-kinetic-std_srvs < 1.11.3-1
 
 
+
 %description
 Common service definitions.
 
@@ -44,6 +45,7 @@ Requires:       ros-noetic-message_runtime-devel
 Provides: ros-noetic-std_srvs-devel = 1.11.3-1
 Obsoletes: ros-noetic-std_srvs-devel < 1.11.3-1
 Obsoletes: ros-kinetic-std_srvs-devel < 1.11.3-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

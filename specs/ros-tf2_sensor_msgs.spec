@@ -38,6 +38,7 @@ Obsoletes: ros-noetic-tf2_sensor_msgs < 0.7.1-1
 Obsoletes: ros-kinetic-tf2_sensor_msgs < 0.7.1-1
 
 
+
 %description
 Small lib to transform sensor_msgs with tf. Most notably, PointCloud2
 
@@ -57,6 +58,7 @@ Requires:       ros-noetic-rospy-devel
 Provides: ros-noetic-tf2_sensor_msgs-devel = 0.7.1-1
 Obsoletes: ros-noetic-tf2_sensor_msgs-devel < 0.7.1-1
 Obsoletes: ros-kinetic-tf2_sensor_msgs-devel < 0.7.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -32,6 +32,7 @@ Obsoletes: ros-noetic-rqt_topic < 0.4.12-1
 Obsoletes: ros-kinetic-rqt_topic < 0.4.12-1
 
 
+
 %description
 rqt_topic provides a GUI plugin for displaying debug information about
 ROS topics including publishers, subscribers, publishing rate, and ROS
@@ -50,6 +51,7 @@ Requires:       ros-noetic-std_msgs-devel
 Provides: ros-noetic-rqt_topic-devel = 0.4.12-1
 Obsoletes: ros-noetic-rqt_topic-devel < 0.4.12-1
 Obsoletes: ros-kinetic-rqt_topic-devel < 0.4.12-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -34,6 +34,7 @@ Obsoletes: ros-noetic-map_msgs < 1.14.0-1
 Obsoletes: ros-kinetic-map_msgs < 1.14.0-1
 
 
+
 %description
 This package defines messages commonly used in mapping packages.
 
@@ -50,6 +51,7 @@ Requires:       ros-noetic-message_runtime-devel
 Provides: ros-noetic-map_msgs-devel = 1.14.0-1
 Obsoletes: ros-noetic-map_msgs-devel < 1.14.0-1
 Obsoletes: ros-kinetic-map_msgs-devel < 1.14.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

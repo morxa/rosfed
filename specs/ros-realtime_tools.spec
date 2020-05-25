@@ -30,6 +30,7 @@ Obsoletes: ros-noetic-realtime_tools < 1.16.0-1
 Obsoletes: ros-kinetic-realtime_tools < 1.16.0-1
 
 
+
 %description
 Contains a set of tools that can be used from a hard realtime thread,
 without breaking the realtime behavior.
@@ -46,6 +47,7 @@ Requires:       ros-noetic-rosunit-devel
 Provides: ros-noetic-realtime_tools-devel = 1.16.0-1
 Obsoletes: ros-noetic-realtime_tools-devel < 1.16.0-1
 Obsoletes: ros-kinetic-realtime_tools-devel < 1.16.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

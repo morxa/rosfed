@@ -31,6 +31,7 @@ Obsoletes: ros-noetic-message_runtime < 0.4.13-1
 Obsoletes: ros-kinetic-message_runtime < 0.4.13-1
 
 
+
 %description
 Package modeling the run-time dependencies for language bindings of
 messages.
@@ -48,6 +49,7 @@ Requires:       ros-noetic-rostime-devel
 Provides: ros-noetic-message_runtime-devel = 0.4.13-1
 Obsoletes: ros-noetic-message_runtime-devel < 0.4.13-1
 Obsoletes: ros-kinetic-message_runtime-devel < 0.4.13-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

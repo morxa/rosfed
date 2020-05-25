@@ -28,6 +28,7 @@ Obsoletes: ros-noetic-rosclean < 1.15.1-1
 Obsoletes: ros-kinetic-rosclean < 1.15.1-1
 
 
+
 %description
 rosclean: cleanup filesystem resources (e.g. log files).
 
@@ -40,6 +41,7 @@ Requires:       ros-noetic-catkin-devel
 Provides: ros-noetic-rosclean-devel = 1.15.1-1
 Obsoletes: ros-noetic-rosclean-devel < 1.15.1-1
 Obsoletes: ros-kinetic-rosclean-devel < 1.15.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

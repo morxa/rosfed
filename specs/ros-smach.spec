@@ -26,6 +26,7 @@ Obsoletes: ros-noetic-smach < 2.5.0-1
 Obsoletes: ros-kinetic-smach < 2.5.0-1
 
 
+
 %description
 SMACH is a task-level architecture for rapidly creating complex robot
 behavior. At its core, SMACH is a ROS-independent Python library to
@@ -41,6 +42,7 @@ Requires:       ros-noetic-catkin-devel
 Provides: ros-noetic-smach-devel = 2.5.0-1
 Obsoletes: ros-noetic-smach-devel < 2.5.0-1
 Obsoletes: ros-kinetic-smach-devel < 2.5.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

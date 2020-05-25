@@ -32,6 +32,7 @@ Obsoletes: ros-noetic-rqt_robot_steering < 0.5.11-1
 Obsoletes: ros-kinetic-rqt_robot_steering < 0.5.11-1
 
 
+
 %description
 rqt_robot_steering provides a GUI plugin for steering a robot using
 Twist messages.
@@ -49,6 +50,7 @@ Requires:       ros-noetic-rqt_gui_py-devel
 Provides: ros-noetic-rqt_robot_steering-devel = 0.5.11-1
 Obsoletes: ros-noetic-rqt_robot_steering-devel < 0.5.11-1
 Obsoletes: ros-kinetic-rqt_robot_steering-devel < 0.5.11-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

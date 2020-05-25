@@ -34,6 +34,7 @@ Obsoletes: ros-noetic-nav_msgs < 1.13.0-1
 Obsoletes: ros-kinetic-nav_msgs < 1.13.0-1
 
 
+
 %description
 nav_msgs defines the common messages used to interact with the
 
@@ -50,6 +51,7 @@ Requires:       ros-noetic-message_runtime-devel
 Provides: ros-noetic-nav_msgs-devel = 1.13.0-1
 Obsoletes: ros-noetic-nav_msgs-devel < 1.13.0-1
 Obsoletes: ros-kinetic-nav_msgs-devel < 1.13.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

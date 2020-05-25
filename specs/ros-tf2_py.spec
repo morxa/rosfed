@@ -29,6 +29,7 @@ Obsoletes: ros-noetic-tf2_py < 0.7.1-1
 Obsoletes: ros-kinetic-tf2_py < 0.7.1-1
 
 
+
 %description
 The tf2_py package
 
@@ -42,6 +43,7 @@ Requires:       ros-noetic-tf2-devel
 Provides: ros-noetic-tf2_py-devel = 0.7.1-1
 Obsoletes: ros-noetic-tf2_py-devel < 0.7.1-1
 Obsoletes: ros-kinetic-tf2_py-devel < 0.7.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -41,6 +41,7 @@ Obsoletes: ros-noetic-laser_geometry < 1.6.5-2
 Obsoletes: ros-kinetic-laser_geometry < 1.6.5-2
 
 
+
 %description
 This package contains a class for converting from a 2D laser scan as
 defined by sensor_msgs/LaserScan into a point cloud as defined by
@@ -64,6 +65,7 @@ Requires:       ros-noetic-tf2-devel
 Provides: ros-noetic-laser_geometry-devel = 1.6.5-2
 Obsoletes: ros-noetic-laser_geometry-devel < 1.6.5-2
 Obsoletes: ros-kinetic-laser_geometry-devel < 1.6.5-2
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -48,6 +48,7 @@ Obsoletes: ros-noetic-laser_filters < 1.8.9-1
 Obsoletes: ros-kinetic-laser_filters < 1.8.9-1
 
 
+
 %description
 Assorted filters designed to operate on 2D planar laser scanners,
 which use the sensor_msgs/LaserScan type.
@@ -74,6 +75,7 @@ Requires:       ros-noetic-tf-devel
 Provides: ros-noetic-laser_filters-devel = 1.8.9-1
 Obsoletes: ros-noetic-laser_filters-devel < 1.8.9-1
 Obsoletes: ros-kinetic-laser_filters-devel < 1.8.9-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

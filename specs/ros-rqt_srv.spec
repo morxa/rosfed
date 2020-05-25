@@ -31,6 +31,7 @@ Obsoletes: ros-noetic-rqt_srv < 0.4.8-1
 Obsoletes: ros-kinetic-rqt_srv < 0.4.8-1
 
 
+
 %description
 A Python GUI plugin for introspecting available ROS message types.
 Note that the srvs available through this plugin is the ones that are
@@ -50,6 +51,7 @@ Requires:       ros-noetic-rqt_msg-devel
 Provides: ros-noetic-rqt_srv-devel = 0.4.8-1
 Obsoletes: ros-noetic-rqt_srv-devel < 0.4.8-1
 Obsoletes: ros-kinetic-rqt_srv-devel < 0.4.8-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

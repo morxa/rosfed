@@ -35,6 +35,7 @@ Obsoletes: ros-noetic-tf_conversions < 1.13.1-1
 Obsoletes: ros-kinetic-tf_conversions < 1.13.1-1
 
 
+
 %description
 This package contains a set of conversion functions to convert common
 tf datatypes (point, vector, pose, etc) into semantically identical
@@ -58,6 +59,7 @@ Requires:       ros-noetic-tf-devel
 Provides: ros-noetic-tf_conversions-devel = 1.13.1-1
 Obsoletes: ros-noetic-tf_conversions-devel < 1.13.1-1
 Obsoletes: ros-kinetic-tf_conversions-devel < 1.13.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

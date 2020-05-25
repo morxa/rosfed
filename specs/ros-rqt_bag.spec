@@ -35,6 +35,7 @@ Obsoletes: ros-noetic-rqt_bag < 0.4.13-1
 Obsoletes: ros-kinetic-rqt_bag < 0.4.13-1
 
 
+
 %description
 rqt_bag provides a GUI plugin for displaying and replaying ROS bag
 files.
@@ -55,6 +56,7 @@ Requires:       ros-noetic-rqt_gui_py-devel
 Provides: ros-noetic-rqt_bag-devel = 0.4.13-1
 Obsoletes: ros-noetic-rqt_bag-devel < 0.4.13-1
 Obsoletes: ros-kinetic-rqt_bag-devel < 0.4.13-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

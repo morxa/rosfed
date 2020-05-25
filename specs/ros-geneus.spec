@@ -29,6 +29,7 @@ Obsoletes: ros-noetic-geneus < 3.0.0-1
 Obsoletes: ros-kinetic-geneus < 3.0.0-1
 
 
+
 %description
 EusLisp ROS message and service generators.
 
@@ -42,6 +43,7 @@ Requires:       ros-noetic-genmsg-devel
 Provides: ros-noetic-geneus-devel = 3.0.0-1
 Obsoletes: ros-noetic-geneus-devel < 3.0.0-1
 Obsoletes: ros-kinetic-geneus-devel < 3.0.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

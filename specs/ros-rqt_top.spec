@@ -31,6 +31,7 @@ Obsoletes: ros-noetic-rqt_top < 0.4.9-1
 Obsoletes: ros-kinetic-rqt_top < 0.4.9-1
 
 
+
 %description
 RQT plugin for monitoring ROS processes.
 
@@ -46,6 +47,7 @@ Requires:       ros-noetic-rqt_gui_py-devel
 Provides: ros-noetic-rqt_top-devel = 0.4.9-1
 Obsoletes: ros-noetic-rqt_top-devel < 0.4.9-1
 Obsoletes: ros-kinetic-rqt_top-devel < 0.4.9-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

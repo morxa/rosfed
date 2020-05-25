@@ -34,6 +34,7 @@ Obsoletes: ros-noetic-rqt_launch < 0.4.8-1
 Obsoletes: ros-kinetic-rqt_launch < 0.4.8-1
 
 
+
 %description
 This rqt plugin ROS package provides easy view of .launch files. User
 can also start and end node by node that are defined in those files.
@@ -53,6 +54,7 @@ Requires:       ros-noetic-rqt_gui_py-devel
 Provides: ros-noetic-rqt_launch-devel = 0.4.8-1
 Obsoletes: ros-noetic-rqt_launch-devel < 0.4.8-1
 Obsoletes: ros-kinetic-rqt_launch-devel < 0.4.8-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

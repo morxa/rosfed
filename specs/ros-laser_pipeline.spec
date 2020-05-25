@@ -29,6 +29,7 @@ Obsoletes: ros-noetic-laser_pipeline < 1.6.4-1
 Obsoletes: ros-kinetic-laser_pipeline < 1.6.4-1
 
 
+
 %description
 Meta-package of libraries for processing laser data, including
 converting laser data into 3D representations.
@@ -44,6 +45,7 @@ Requires:       ros-noetic-laser_geometry-devel
 Provides: ros-noetic-laser_pipeline-devel = 1.6.4-1
 Obsoletes: ros-noetic-laser_pipeline-devel < 1.6.4-1
 Obsoletes: ros-kinetic-laser_pipeline-devel < 1.6.4-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

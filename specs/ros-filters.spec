@@ -38,6 +38,7 @@ Obsoletes: ros-noetic-filters < 1.9.0-1
 Obsoletes: ros-kinetic-filters < 1.9.0-1
 
 
+
 %description
 This library provides a standardized interface for processing data as
 a sequence of filters. This package contains a base class upon which
@@ -61,6 +62,7 @@ Requires:       ros-noetic-rostest-devel
 Provides: ros-noetic-filters-devel = 1.9.0-1
 Obsoletes: ros-noetic-filters-devel < 1.9.0-1
 Obsoletes: ros-kinetic-filters-devel < 1.9.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -39,6 +39,7 @@ Obsoletes: ros-noetic-urdf < 1.13.2-1
 Obsoletes: ros-kinetic-urdf < 1.13.2-1
 
 
+
 %description
 This package contains a C++ parser for the Unified Robot Description
 Format (URDF), which is an XML format for representing a robot model.
@@ -64,6 +65,7 @@ Requires:       ros-noetic-urdf_parser_plugin-devel
 Provides: ros-noetic-urdf-devel = 1.13.2-1
 Obsoletes: ros-noetic-urdf-devel < 1.13.2-1
 Obsoletes: ros-kinetic-urdf-devel < 1.13.2-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

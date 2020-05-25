@@ -37,6 +37,7 @@ Obsoletes: ros-noetic-rqt_pose_view < 0.5.10-1
 Obsoletes: ros-kinetic-rqt_pose_view < 0.5.10-1
 
 
+
 %description
 rqt_pose_view provides a GUI plugin for visualizing 3D poses.
 
@@ -57,6 +58,7 @@ Requires:       ros-noetic-tf-devel
 Provides: ros-noetic-rqt_pose_view-devel = 0.5.10-1
 Obsoletes: ros-noetic-rqt_pose_view-devel < 0.5.10-1
 Obsoletes: ros-kinetic-rqt_pose_view-devel < 0.5.10-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

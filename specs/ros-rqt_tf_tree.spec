@@ -36,6 +36,7 @@ Obsoletes: ros-noetic-rqt_tf_tree < 0.6.1-1
 Obsoletes: ros-kinetic-rqt_tf_tree < 0.6.1-1
 
 
+
 %description
 rqt_tf_tree provides a GUI plugin for visualizing the ROS TF frame
 tree.
@@ -57,6 +58,7 @@ Requires:       ros-noetic-tf2_ros-devel
 Provides: ros-noetic-rqt_tf_tree-devel = 0.6.1-1
 Obsoletes: ros-noetic-rqt_tf_tree-devel < 0.6.1-1
 Obsoletes: ros-kinetic-rqt_tf_tree-devel < 0.6.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

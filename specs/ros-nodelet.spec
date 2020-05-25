@@ -44,6 +44,7 @@ Obsoletes: ros-noetic-nodelet < 1.10.0-1
 Obsoletes: ros-kinetic-nodelet < 1.10.0-1
 
 
+
 %description
 The nodelet package is designed to provide a way to run multiple
 algorithms in the same process with zero copy transport between
@@ -73,6 +74,7 @@ Requires:       ros-noetic-rospy-devel
 Provides: ros-noetic-nodelet-devel = 1.10.0-1
 Obsoletes: ros-noetic-nodelet-devel < 1.10.0-1
 Obsoletes: ros-kinetic-nodelet-devel < 1.10.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

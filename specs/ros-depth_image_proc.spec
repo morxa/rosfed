@@ -51,6 +51,7 @@ Obsoletes: ros-noetic-depth_image_proc < 1.15.2-1
 Obsoletes: ros-kinetic-depth_image_proc < 1.15.2-1
 
 
+
 %description
 Contains nodelets for processing depth images such as those produced
 by OpenNI camera. Functions include creating disparity images and
@@ -84,6 +85,7 @@ Requires:       ros-noetic-tf2_ros-devel
 Provides: ros-noetic-depth_image_proc-devel = 1.15.2-1
 Obsoletes: ros-noetic-depth_image_proc-devel < 1.15.2-1
 Obsoletes: ros-kinetic-depth_image_proc-devel < 1.15.2-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

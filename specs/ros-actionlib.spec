@@ -40,6 +40,7 @@ Obsoletes: ros-noetic-actionlib < 1.13.1-1
 Obsoletes: ros-kinetic-actionlib < 1.13.1-1
 
 
+
 %description
 The actionlib stack provides a standardized interface for interfacing
 with preemptable tasks. Examples of this include moving the base to a
@@ -64,6 +65,7 @@ Requires:       ros-noetic-message_runtime-devel
 Provides: ros-noetic-actionlib-devel = 1.13.1-1
 Obsoletes: ros-noetic-actionlib-devel < 1.13.1-1
 Obsoletes: ros-kinetic-actionlib-devel < 1.13.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

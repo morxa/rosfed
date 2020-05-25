@@ -39,6 +39,7 @@ Obsoletes: ros-noetic-rqt_plot < 0.4.12-1
 Obsoletes: ros-kinetic-rqt_plot < 0.4.12-1
 
 
+
 %description
 rqt_plot provides a GUI plugin visualizing numeric values in a 2D plot
 using different plotting backends.
@@ -60,6 +61,7 @@ Requires:       ros-noetic-std_msgs-devel
 Provides: ros-noetic-rqt_plot-devel = 0.4.12-1
 Obsoletes: ros-noetic-rqt_plot-devel < 0.4.12-1
 Obsoletes: ros-kinetic-rqt_plot-devel < 0.4.12-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

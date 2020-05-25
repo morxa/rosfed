@@ -31,6 +31,7 @@ Obsoletes: ros-noetic-ros_base < 1.5.0-1
 Obsoletes: ros-kinetic-ros_base < 1.5.0-1
 
 
+
 %description
 A metapackage which extends ros_core and includes other basic non-
 robot tools like actionlib, dynamic reconfigure, nodelets, and
@@ -49,6 +50,7 @@ Requires:       ros-noetic-ros_core-devel
 Provides: ros-noetic-ros_base-devel = 1.5.0-1
 Obsoletes: ros-noetic-ros_base-devel < 1.5.0-1
 Obsoletes: ros-kinetic-ros_base-devel < 1.5.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

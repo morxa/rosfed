@@ -33,6 +33,7 @@ Obsoletes: ros-noetic-image_pipeline < 1.15.2-1
 Obsoletes: ros-kinetic-image_pipeline < 1.15.2-1
 
 
+
 %description
 image_pipeline fills the gap between getting raw images from a camera
 driver and higher-level vision processing.
@@ -52,6 +53,7 @@ Requires:       ros-noetic-stereo_image_proc-devel
 Provides: ros-noetic-image_pipeline-devel = 1.15.2-1
 Obsoletes: ros-noetic-image_pipeline-devel < 1.15.2-1
 Obsoletes: ros-kinetic-image_pipeline-devel < 1.15.2-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

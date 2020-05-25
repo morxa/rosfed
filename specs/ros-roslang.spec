@@ -28,6 +28,7 @@ Obsoletes: ros-noetic-roslang < 1.15.1-1
 Obsoletes: ros-kinetic-roslang < 1.15.1-1
 
 
+
 %description
 roslang is a common package that all
 
@@ -40,6 +41,7 @@ Requires:       ros-noetic-genmsg-devel
 Provides: ros-noetic-roslang-devel = 1.15.1-1
 Obsoletes: ros-noetic-roslang-devel < 1.15.1-1
 Obsoletes: ros-kinetic-roslang-devel < 1.15.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

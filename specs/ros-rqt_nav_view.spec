@@ -35,6 +35,7 @@ Obsoletes: ros-noetic-rqt_nav_view < 0.5.7-1
 Obsoletes: ros-kinetic-rqt_nav_view < 0.5.7-1
 
 
+
 %description
 rqt_nav_view provides a gui for viewing navigation maps and paths.
 
@@ -55,6 +56,7 @@ Requires:       ros-noetic-tf-devel
 Provides: ros-noetic-rqt_nav_view-devel = 0.5.7-1
 Obsoletes: ros-noetic-rqt_nav_view-devel < 0.5.7-1
 Obsoletes: ros-kinetic-rqt_nav_view-devel < 0.5.7-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

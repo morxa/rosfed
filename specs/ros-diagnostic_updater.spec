@@ -33,6 +33,7 @@ Obsoletes: ros-noetic-diagnostic_updater < 1.9.4-1
 Obsoletes: ros-kinetic-diagnostic_updater < 1.9.4-1
 
 
+
 %description
 diagnostic_updater contains tools for easily updating diagnostics. it
 is commonly used in device drivers to keep track of the status of
@@ -50,6 +51,7 @@ Requires:       ros-noetic-std_msgs-devel
 Provides: ros-noetic-diagnostic_updater-devel = 1.9.4-1
 Obsoletes: ros-noetic-diagnostic_updater-devel < 1.9.4-1
 Obsoletes: ros-kinetic-diagnostic_updater-devel < 1.9.4-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

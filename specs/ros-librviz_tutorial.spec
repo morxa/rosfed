@@ -38,6 +38,7 @@ Obsoletes: ros-noetic-librviz_tutorial < 0.11.0-1
 Obsoletes: ros-kinetic-librviz_tutorial < 0.11.0-1
 
 
+
 %description
 Tutorial showing how to compile your own C++ program with RViz
 displays and features.
@@ -59,6 +60,7 @@ Requires:       ros-noetic-rviz-devel
 Provides: ros-noetic-librviz_tutorial-devel = 0.11.0-1
 Obsoletes: ros-noetic-librviz_tutorial-devel < 0.11.0-1
 Obsoletes: ros-kinetic-librviz_tutorial-devel < 0.11.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

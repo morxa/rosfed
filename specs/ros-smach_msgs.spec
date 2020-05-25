@@ -31,6 +31,7 @@ Obsoletes: ros-noetic-smach_msgs < 2.5.0-1
 Obsoletes: ros-kinetic-smach_msgs < 2.5.0-1
 
 
+
 %description
 this package contains a set of messages that are used by the
 introspection interfaces for smach.
@@ -46,6 +47,7 @@ Requires:       ros-noetic-std_msgs-devel
 Provides: ros-noetic-smach_msgs-devel = 2.5.0-1
 Obsoletes: ros-noetic-smach_msgs-devel < 2.5.0-1
 Obsoletes: ros-kinetic-smach_msgs-devel < 2.5.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

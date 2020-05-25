@@ -34,6 +34,7 @@ Obsoletes: ros-noetic-transmission_interface < 0.19.1-1
 Obsoletes: ros-kinetic-transmission_interface < 0.19.1-1
 
 
+
 %description
 Transmission Interface.
 
@@ -53,6 +54,7 @@ Requires:       ros-noetic-roscpp-devel
 Provides: ros-noetic-transmission_interface-devel = 0.19.1-1
 Obsoletes: ros-noetic-transmission_interface-devel < 0.19.1-1
 Obsoletes: ros-kinetic-transmission_interface-devel < 0.19.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

@@ -48,6 +48,7 @@ Obsoletes: ros-noetic-roscpp < 1.15.6-1
 Obsoletes: ros-kinetic-roscpp < 1.15.6-1
 
 
+
 %description
 roscpp is a C++ implementation of ROS. It provides a
 
@@ -74,6 +75,7 @@ Requires:       ros-noetic-message_runtime-devel
 Provides: ros-noetic-roscpp-devel = 1.15.6-1
 Obsoletes: ros-noetic-roscpp-devel < 1.15.6-1
 Obsoletes: ros-kinetic-roscpp-devel < 1.15.6-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

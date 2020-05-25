@@ -34,6 +34,7 @@ Obsoletes: ros-noetic-forward_command_controller < 0.17.0-1
 Obsoletes: ros-kinetic-forward_command_controller < 0.17.0-1
 
 
+
 %description
 forward_command_controller
 
@@ -49,6 +50,7 @@ Requires:       ros-noetic-std_msgs-devel
 Provides: ros-noetic-forward_command_controller-devel = 0.17.0-1
 Obsoletes: ros-noetic-forward_command_controller-devel < 0.17.0-1
 Obsoletes: ros-kinetic-forward_command_controller-devel < 0.17.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

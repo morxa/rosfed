@@ -33,6 +33,7 @@ Obsoletes: ros-noetic-nodelet_topic_tools < 1.10.0-1
 Obsoletes: ros-kinetic-nodelet_topic_tools < 1.10.0-1
 
 
+
 %description
 This package contains common nodelet tools such as a mux, demux and
 throttle.
@@ -51,6 +52,7 @@ Requires:       ros-noetic-dynamic_reconfigure-devel
 Provides: ros-noetic-nodelet_topic_tools-devel = 1.10.0-1
 Obsoletes: ros-noetic-nodelet_topic_tools-devel < 1.10.0-1
 Obsoletes: ros-kinetic-nodelet_topic_tools-devel < 1.10.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

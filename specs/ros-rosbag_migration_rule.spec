@@ -26,6 +26,7 @@ Obsoletes: ros-noetic-rosbag_migration_rule < 1.0.1-1
 Obsoletes: ros-kinetic-rosbag_migration_rule < 1.0.1-1
 
 
+
 %description
 This empty package allows to export rosbag migration rule files
 without depending on rosbag.
@@ -38,6 +39,7 @@ Requires:       ros-noetic-catkin-devel
 Provides: ros-noetic-rosbag_migration_rule-devel = 1.0.1-1
 Obsoletes: ros-noetic-rosbag_migration_rule-devel < 1.0.1-1
 Obsoletes: ros-kinetic-rosbag_migration_rule-devel < 1.0.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

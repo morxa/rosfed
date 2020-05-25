@@ -30,6 +30,7 @@ Obsoletes: ros-noetic-desktop_full < 1.5.0-1
 Obsoletes: ros-kinetic-desktop_full < 1.5.0-1
 
 
+
 %description
 A metapackage to aggregate several packages.
 
@@ -45,6 +46,7 @@ Requires:       ros-noetic-urdf_sim_tutorial-devel
 Provides: ros-noetic-desktop_full-devel = 1.5.0-1
 Obsoletes: ros-noetic-desktop_full-devel < 1.5.0-1
 Obsoletes: ros-kinetic-desktop_full-devel < 1.5.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

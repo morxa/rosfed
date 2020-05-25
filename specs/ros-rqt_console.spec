@@ -34,6 +34,7 @@ Obsoletes: ros-noetic-rqt_console < 0.4.11-1
 Obsoletes: ros-kinetic-rqt_console < 0.4.11-1
 
 
+
 %description
 rqt_console provides a GUI plugin for displaying and filtering ROS
 messages.
@@ -53,6 +54,7 @@ Requires:       ros-noetic-rqt_py_common-devel
 Provides: ros-noetic-rqt_console-devel = 0.4.11-1
 Obsoletes: ros-noetic-rqt_console-devel < 0.4.11-1
 Obsoletes: ros-kinetic-rqt_console-devel < 0.4.11-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

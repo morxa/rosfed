@@ -32,6 +32,7 @@ Obsoletes: ros-noetic-message_filters < 1.15.6-1
 Obsoletes: ros-kinetic-message_filters < 1.15.6-1
 
 
+
 %description
 A set of message filters which take in messages and may output those
 messages at a later time, based on the conditions that filter needs
@@ -50,6 +51,7 @@ Requires:       ros-noetic-rosunit-devel
 Provides: ros-noetic-message_filters-devel = 1.15.6-1
 Obsoletes: ros-noetic-message_filters-devel < 1.15.6-1
 Obsoletes: ros-kinetic-message_filters-devel < 1.15.6-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

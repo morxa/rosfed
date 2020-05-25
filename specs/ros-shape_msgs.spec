@@ -32,6 +32,7 @@ Obsoletes: ros-noetic-shape_msgs < 1.13.0-1
 Obsoletes: ros-kinetic-shape_msgs < 1.13.0-1
 
 
+
 %description
 This package contains messages for defining shapes, such as simple
 solid object primitives (cube, sphere, etc), planes, and meshes.
@@ -48,6 +49,7 @@ Requires:       ros-noetic-message_runtime-devel
 Provides: ros-noetic-shape_msgs-devel = 1.13.0-1
 Obsoletes: ros-noetic-shape_msgs-devel < 1.13.0-1
 Obsoletes: ros-kinetic-shape_msgs-devel < 1.13.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

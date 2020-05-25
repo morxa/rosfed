@@ -30,6 +30,7 @@ Obsoletes: ros-noetic-std_msgs < 0.5.13-1
 Obsoletes: ros-kinetic-std_msgs < 0.5.13-1
 
 
+
 %description
 Standard ROS Messages including common message types representing
 primitive data types and other basic message constructs, such as
@@ -47,6 +48,7 @@ Requires:       ros-noetic-message_runtime-devel
 Provides: ros-noetic-std_msgs-devel = 0.5.13-1
 Obsoletes: ros-noetic-std_msgs-devel < 0.5.13-1
 Obsoletes: ros-kinetic-std_msgs-devel < 0.5.13-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

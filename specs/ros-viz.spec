@@ -30,6 +30,7 @@ Obsoletes: ros-noetic-viz < 1.5.0-1
 Obsoletes: ros-kinetic-viz < 1.5.0-1
 
 
+
 %description
 A metapackage to aggregate several packages.
 
@@ -45,6 +46,7 @@ Requires:       ros-noetic-rviz-devel
 Provides: ros-noetic-viz-devel = 1.5.0-1
 Obsoletes: ros-noetic-viz-devel < 1.5.0-1
 Obsoletes: ros-kinetic-viz-devel < 1.5.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

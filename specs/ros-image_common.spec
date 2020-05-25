@@ -30,6 +30,7 @@ Obsoletes: ros-noetic-image_common < 1.12.0-1
 Obsoletes: ros-kinetic-image_common < 1.12.0-1
 
 
+
 %description
 Common code for working with images in ROS.
 
@@ -45,6 +46,7 @@ Requires:       ros-noetic-polled_camera-devel
 Provides: ros-noetic-image_common-devel = 1.12.0-1
 Obsoletes: ros-noetic-image_common-devel < 1.12.0-1
 Obsoletes: ros-kinetic-image_common-devel < 1.12.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

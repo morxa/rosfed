@@ -69,6 +69,7 @@ Obsoletes: ros-noetic-move_base < 1.17.0-1
 Obsoletes: ros-kinetic-move_base < 1.17.0-1
 
 
+
 %description
 The move_base package provides an implementation of an action (see the
 
@@ -107,6 +108,7 @@ Requires:       ros-noetic-message_runtime-devel
 Provides: ros-noetic-move_base-devel = 1.17.0-1
 Obsoletes: ros-noetic-move_base-devel < 1.17.0-1
 Obsoletes: ros-kinetic-move_base-devel < 1.17.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

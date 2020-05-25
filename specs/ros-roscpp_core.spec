@@ -30,6 +30,7 @@ Obsoletes: ros-noetic-roscpp_core < 0.7.1-1
 Obsoletes: ros-kinetic-roscpp_core < 0.7.1-1
 
 
+
 %description
 Underlying data libraries for roscpp messages.
 
@@ -45,6 +46,7 @@ Requires:       ros-noetic-roscpp_traits-devel
 Provides: ros-noetic-roscpp_core-devel = 0.7.1-1
 Obsoletes: ros-noetic-roscpp_core-devel < 0.7.1-1
 Obsoletes: ros-kinetic-roscpp_core-devel < 0.7.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

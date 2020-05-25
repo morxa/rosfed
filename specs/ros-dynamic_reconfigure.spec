@@ -38,6 +38,7 @@ Obsoletes: ros-noetic-dynamic_reconfigure < 1.7.0-1
 Obsoletes: ros-kinetic-dynamic_reconfigure < 1.7.0-1
 
 
+
 %description
 The dynamic_reconfigure package provides a means to update parameters
 at runtime without having to restart the node.
@@ -61,6 +62,7 @@ Requires:       ros-noetic-rosservice-devel
 Provides: ros-noetic-dynamic_reconfigure-devel = 1.7.0-1
 Obsoletes: ros-noetic-dynamic_reconfigure-devel < 1.7.0-1
 Obsoletes: ros-kinetic-dynamic_reconfigure-devel < 1.7.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing

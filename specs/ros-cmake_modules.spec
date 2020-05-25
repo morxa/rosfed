@@ -26,6 +26,7 @@ Obsoletes: ros-noetic-cmake_modules < 0.5.0-1
 Obsoletes: ros-kinetic-cmake_modules < 0.5.0-1
 
 
+
 %description
 A common repository for CMake Modules which are not distributed with
 CMake but are commonly used by ROS packages.
@@ -38,6 +39,7 @@ Requires:       ros-noetic-catkin-devel
 Provides: ros-noetic-cmake_modules-devel = 0.5.0-1
 Obsoletes: ros-noetic-cmake_modules-devel < 0.5.0-1
 Obsoletes: ros-kinetic-cmake_modules-devel < 0.5.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
