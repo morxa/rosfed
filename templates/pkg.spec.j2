@@ -60,6 +60,9 @@ Provides:       %{name}-devel{% if not noarch %}%{?_isa}{% endif %} = %{version}
 Provides:       ros-{{ distro }}-{{ pkg_name }}-devel = {{ pkg_version }}-{{ pkg_release }}
 {% endif %}
 
+{% block meta %}
+{% endblock %}
+
 %description
 {% block description %}
 {{ pkg_description }}
@@ -98,6 +101,9 @@ Provides: ros-{{ distro }}-{{ pkg_name }}-devel = {{ pkg_version }}-{{ pkg_relea
 Obsoletes: ros-{{ distro }}-{{ pkg_name }}-devel < {{ pkg_version }}-{{ pkg_release }}
 Obsoletes: ros-kinetic-{{ pkg_name }}-devel < {{ pkg_version }}-{{ pkg_release }}
 {% endif %}
+
+{% block meta_devel %}
+{% endblock %}
 
 %description devel
 {% block description_devel %}
