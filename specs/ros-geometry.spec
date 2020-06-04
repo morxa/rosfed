@@ -1,12 +1,12 @@
 Name:           ros-geometry
-Version:        melodic.1.12.1
+Version:        noetic.1.13.1
 Release:        1%{?dist}
 Summary:        ROS package geometry
 
 License:        BSD
 URL:            http://www.ros.org/wiki/geometry
 
-Source0:        https://github.com/ros-gbp/geometry-release/archive/release/melodic/geometry/1.12.1-1.tar.gz#/ros-melodic-geometry-1.12.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/geometry-release/archive/release/noetic/geometry/1.13.1-1.tar.gz#/ros-noetic-geometry-1.13.1-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,35 +18,37 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
-Requires:       ros-melodic-angles
-Requires:       ros-melodic-eigen_conversions
-Requires:       ros-melodic-kdl_conversions
-Requires:       ros-melodic-tf
-Requires:       ros-melodic-tf_conversions
+Requires:       ros-noetic-angles
+Requires:       ros-noetic-eigen_conversions
+Requires:       ros-noetic-kdl_conversions
+Requires:       ros-noetic-tf
+Requires:       ros-noetic-tf_conversions
 
-Provides:  ros-melodic-geometry = 1.12.1-1
-Obsoletes: ros-melodic-geometry < 1.12.1-1
-Obsoletes: ros-kinetic-geometry < 1.12.1-1
+Provides:  ros-noetic-geometry = 1.13.1-1
+Obsoletes: ros-noetic-geometry < 1.13.1-1
+Obsoletes: ros-kinetic-geometry < 1.13.1-1
+
 
 
 %description
-ROS melodic package geometry.
+ROS noetic package geometry.
 
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-angles-devel
-Requires:       ros-melodic-eigen_conversions-devel
-Requires:       ros-melodic-kdl_conversions-devel
-Requires:       ros-melodic-tf-devel
-Requires:       ros-melodic-tf_conversions-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-angles-devel
+Requires:       ros-noetic-eigen_conversions-devel
+Requires:       ros-noetic-kdl_conversions-devel
+Requires:       ros-noetic-tf-devel
+Requires:       ros-noetic-tf_conversions-devel
 
-Provides: ros-melodic-geometry-devel = 1.12.1-1
-Obsoletes: ros-melodic-geometry-devel < 1.12.1-1
-Obsoletes: ros-kinetic-geometry-devel < 1.12.1-1
+Provides: ros-noetic-geometry-devel = 1.13.1-1
+Obsoletes: ros-noetic-geometry-devel < 1.13.1-1
+Obsoletes: ros-kinetic-geometry-devel < 1.13.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -153,6 +155,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.1-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.12.1-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.12.0-3

@@ -1,12 +1,12 @@
 Name:           ros-stage
-Version:        melodic.4.3.0
-Release:        3%{?dist}
+Version:        noetic.4.3.0
+Release:        1%{?dist}
 Summary:        ROS package stage
 
 License:        GPL
 URL:            http://rtv.github.com/Stage
 
-Source0:        https://github.com/ros-gbp/stage-release/archive/release/melodic/stage/4.3.0-0.tar.gz#/ros-melodic-stage-4.3.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/stage-release/archive/release/noetic/stage/4.3.0-1.tar.gz#/ros-noetic-stage-4.3.0-source0.tar.gz
 
 
 
@@ -25,13 +25,14 @@ BuildRequires:  libtool libtool-ltdl-devel
 BuildRequires:  mesa-libGL-devel mesa-libGLU-devel
 BuildRequires:  pkgconfig
 BuildRequires:  player-devel
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
-Requires:       ros-melodic-catkin
+Requires:       ros-noetic-catkin
 
-Provides:  ros-melodic-stage = 4.3.0-3
-Obsoletes: ros-melodic-stage < 4.3.0-3
-Obsoletes: ros-kinetic-stage < 4.3.0-3
+Provides:  ros-noetic-stage = 4.3.0-1
+Obsoletes: ros-noetic-stage < 4.3.0-1
+Obsoletes: ros-kinetic-stage < 4.3.0-1
+
 
 
 %description
@@ -48,11 +49,12 @@ Requires:       libjpeg-turbo-devel
 Requires:       libtool libtool-ltdl-devel
 Requires:       mesa-libGL-devel mesa-libGLU-devel
 Requires:       player-devel
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 
-Provides: ros-melodic-stage-devel = 4.3.0-3
-Obsoletes: ros-melodic-stage-devel < 4.3.0-3
-Obsoletes: ros-kinetic-stage-devel < 4.3.0-3
+Provides: ros-noetic-stage-devel = 4.3.0-1
+Obsoletes: ros-noetic-stage-devel < 4.3.0-1
+Obsoletes: ros-kinetic-stage-devel < 4.3.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -159,6 +161,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.4.3.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.4.3.0-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.4.3.0-2

@@ -1,12 +1,12 @@
 Name:           ros-rqt_action
-Version:        melodic.0.4.9
-Release:        3%{?dist}
+Version:        noetic.0.4.9
+Release:        1%{?dist}
 Summary:        ROS package rqt_action
 
 License:        BSD
 URL:            http://wiki.ros.org/rqt_action
 
-Source0:        https://github.com/ros-gbp/rqt_action-release/archive/release/melodic/rqt_action/0.4.9-0.tar.gz#/ros-melodic-rqt_action-0.4.9-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt_action-release/archive/release/noetic/rqt_action/0.4.9-1.tar.gz#/ros-noetic-rqt_action-0.4.9-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,15 +18,16 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
-Requires:       ros-melodic-rospy
-Requires:       ros-melodic-rqt_msg
-Requires:       ros-melodic-rqt_py_common
+Requires:       ros-noetic-rospy
+Requires:       ros-noetic-rqt_msg
+Requires:       ros-noetic-rqt_py_common
 
-Provides:  ros-melodic-rqt_action = 0.4.9-3
-Obsoletes: ros-melodic-rqt_action < 0.4.9-3
-Obsoletes: ros-kinetic-rqt_action < 0.4.9-3
+Provides:  ros-noetic-rqt_action = 0.4.9-1
+Obsoletes: ros-noetic-rqt_action < 0.4.9-1
+Obsoletes: ros-kinetic-rqt_action < 0.4.9-1
+
 
 
 %description
@@ -39,14 +40,15 @@ core your rqt instance connects to.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-rospy-devel
-Requires:       ros-melodic-rqt_msg-devel
-Requires:       ros-melodic-rqt_py_common-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-rospy-devel
+Requires:       ros-noetic-rqt_msg-devel
+Requires:       ros-noetic-rqt_py_common-devel
 
-Provides: ros-melodic-rqt_action-devel = 0.4.9-3
-Obsoletes: ros-melodic-rqt_action-devel < 0.4.9-3
-Obsoletes: ros-kinetic-rqt_action-devel < 0.4.9-3
+Provides: ros-noetic-rqt_action-devel = 0.4.9-1
+Obsoletes: ros-noetic-rqt_action-devel < 0.4.9-1
+Obsoletes: ros-kinetic-rqt_action-devel < 0.4.9-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -153,6 +155,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.9-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.9-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.9-2

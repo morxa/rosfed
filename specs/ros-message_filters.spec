@@ -1,12 +1,12 @@
 Name:           ros-message_filters
-Version:        melodic.1.14.5
+Version:        noetic.1.15.6
 Release:        1%{?dist}
 Summary:        ROS package message_filters
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/melodic/message_filters/1.14.5-1.tar.gz#/ros-melodic-message_filters-1.14.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/message_filters/1.15.6-1.tar.gz#/ros-noetic-message_filters-1.15.6-source0.tar.gz
 
 
 
@@ -17,19 +17,20 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  boost-devel boost-python3-devel boost-python3-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-rosconsole-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-rostest-devel
-BuildRequires:  ros-melodic-rosunit-devel
+BuildRequires:  boost-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-rosconsole-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-rostest-devel
+BuildRequires:  ros-noetic-rosunit-devel
 
-Requires:       ros-melodic-rosconsole
-Requires:       ros-melodic-roscpp
+Requires:       ros-noetic-rosconsole
+Requires:       ros-noetic-roscpp
 
-Provides:  ros-melodic-message_filters = 1.14.5-1
-Obsoletes: ros-melodic-message_filters < 1.14.5-1
-Obsoletes: ros-kinetic-message_filters < 1.14.5-1
+Provides:  ros-noetic-message_filters = 1.15.6-1
+Obsoletes: ros-noetic-message_filters < 1.15.6-1
+Obsoletes: ros-kinetic-message_filters < 1.15.6-1
+
 
 
 %description
@@ -40,16 +41,17 @@ met.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       boost-devel boost-python3-devel boost-python3-devel
-Requires:       ros-melodic-rosconsole-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-rostest-devel
-Requires:       ros-melodic-rosunit-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       boost-devel
+Requires:       ros-noetic-rosconsole-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-rostest-devel
+Requires:       ros-noetic-rosunit-devel
 
-Provides: ros-melodic-message_filters-devel = 1.14.5-1
-Obsoletes: ros-melodic-message_filters-devel < 1.14.5-1
-Obsoletes: ros-kinetic-message_filters-devel < 1.14.5-1
+Provides: ros-noetic-message_filters-devel = 1.15.6-1
+Obsoletes: ros-noetic-message_filters-devel < 1.15.6-1
+Obsoletes: ros-kinetic-message_filters-devel < 1.15.6-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -156,6 +158,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.6-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.5-1
 - Update to latest release
 * Thu Mar 05 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.4-2

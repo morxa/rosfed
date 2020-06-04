@@ -1,12 +1,12 @@
 Name:           ros-image_pipeline
-Version:        melodic.1.14.0
+Version:        noetic.1.15.2
 Release:        1%{?dist}
 Summary:        ROS package image_pipeline
 
 License:        BSD
 URL:            http://www.ros.org/wiki/image_pipeline
 
-Source0:        https://github.com/ros-gbp/image_pipeline-release/archive/release/melodic/image_pipeline/1.14.0-1.tar.gz#/ros-melodic-image_pipeline-1.14.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/image_pipeline-release/archive/release/noetic/image_pipeline/1.15.2-1.tar.gz#/ros-noetic-image_pipeline-1.15.2-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,19 +18,20 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
-Requires:       ros-melodic-camera_calibration
-Requires:       ros-melodic-depth_image_proc
-Requires:       ros-melodic-image_proc
-Requires:       ros-melodic-image_publisher
-Requires:       ros-melodic-image_rotate
-Requires:       ros-melodic-image_view
-Requires:       ros-melodic-stereo_image_proc
+Requires:       ros-noetic-camera_calibration
+Requires:       ros-noetic-depth_image_proc
+Requires:       ros-noetic-image_proc
+Requires:       ros-noetic-image_publisher
+Requires:       ros-noetic-image_rotate
+Requires:       ros-noetic-image_view
+Requires:       ros-noetic-stereo_image_proc
 
-Provides:  ros-melodic-image_pipeline = 1.14.0-1
-Obsoletes: ros-melodic-image_pipeline < 1.14.0-1
-Obsoletes: ros-kinetic-image_pipeline < 1.14.0-1
+Provides:  ros-noetic-image_pipeline = 1.15.2-1
+Obsoletes: ros-noetic-image_pipeline < 1.15.2-1
+Obsoletes: ros-kinetic-image_pipeline < 1.15.2-1
+
 
 
 %description
@@ -40,18 +41,19 @@ driver and higher-level vision processing.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-camera_calibration-devel
-Requires:       ros-melodic-depth_image_proc-devel
-Requires:       ros-melodic-image_proc-devel
-Requires:       ros-melodic-image_publisher-devel
-Requires:       ros-melodic-image_rotate-devel
-Requires:       ros-melodic-image_view-devel
-Requires:       ros-melodic-stereo_image_proc-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-camera_calibration-devel
+Requires:       ros-noetic-depth_image_proc-devel
+Requires:       ros-noetic-image_proc-devel
+Requires:       ros-noetic-image_publisher-devel
+Requires:       ros-noetic-image_rotate-devel
+Requires:       ros-noetic-image_view-devel
+Requires:       ros-noetic-stereo_image_proc-devel
 
-Provides: ros-melodic-image_pipeline-devel = 1.14.0-1
-Obsoletes: ros-melodic-image_pipeline-devel < 1.14.0-1
-Obsoletes: ros-kinetic-image_pipeline-devel < 1.14.0-1
+Provides: ros-noetic-image_pipeline-devel = 1.15.2-1
+Obsoletes: ros-noetic-image_pipeline-devel < 1.15.2-1
+Obsoletes: ros-kinetic-image_pipeline-devel < 1.15.2-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -158,6 +160,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.2-1
+- Upgrade to noetic
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.0-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.0-3

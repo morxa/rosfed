@@ -1,12 +1,12 @@
 Name:           ros-theora_image_transport
-Version:        melodic.1.9.5
-Release:        13%{?dist}
+Version:        noetic.1.14.0
+Release:        1%{?dist}
 Summary:        ROS package theora_image_transport
 
 License:        BSD
 URL:            http://www.ros.org/wiki/image_transport_plugins
 
-Source0:        https://github.com/ros-gbp/image_transport_plugins-release/archive/release/melodic/theora_image_transport/1.9.5-0.tar.gz#/ros-melodic-theora_image_transport-1.9.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/image_transport_plugins-release/archive/release/noetic/theora_image_transport/1.14.0-1.tar.gz#/ros-noetic-theora_image_transport-1.14.0-source0.tar.gz
 
 
 
@@ -24,26 +24,27 @@ BuildRequires:  opencv-devel
 BuildRequires:  poco-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-cv_bridge-devel
-BuildRequires:  ros-melodic-dynamic_reconfigure-devel
-BuildRequires:  ros-melodic-image_transport-devel
-BuildRequires:  ros-melodic-message_generation-devel
-BuildRequires:  ros-melodic-pluginlib-devel
-BuildRequires:  ros-melodic-rosbag-devel
-BuildRequires:  ros-melodic-std_msgs-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-cv_bridge-devel
+BuildRequires:  ros-noetic-dynamic_reconfigure-devel
+BuildRequires:  ros-noetic-image_transport-devel
+BuildRequires:  ros-noetic-message_generation-devel
+BuildRequires:  ros-noetic-pluginlib-devel
+BuildRequires:  ros-noetic-rosbag-devel
+BuildRequires:  ros-noetic-std_msgs-devel
 
-Requires:       ros-melodic-cv_bridge
-Requires:       ros-melodic-dynamic_reconfigure
-Requires:       ros-melodic-image_transport
-Requires:       ros-melodic-message_runtime
-Requires:       ros-melodic-pluginlib
-Requires:       ros-melodic-rosbag
-Requires:       ros-melodic-std_msgs
+Requires:       ros-noetic-cv_bridge
+Requires:       ros-noetic-dynamic_reconfigure
+Requires:       ros-noetic-image_transport
+Requires:       ros-noetic-message_runtime
+Requires:       ros-noetic-pluginlib
+Requires:       ros-noetic-rosbag
+Requires:       ros-noetic-std_msgs
 
-Provides:  ros-melodic-theora_image_transport = 1.9.5-13
-Obsoletes: ros-melodic-theora_image_transport < 1.9.5-13
-Obsoletes: ros-kinetic-theora_image_transport < 1.9.5-13
+Provides:  ros-noetic-theora_image_transport = 1.14.0-1
+Obsoletes: ros-noetic-theora_image_transport < 1.14.0-1
+Obsoletes: ros-kinetic-theora_image_transport < 1.14.0-1
+
 
 
 %description
@@ -53,7 +54,7 @@ transparently sending an image stream encoded with the Theora codec.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       libogg-devel
 Requires:       libtheora-devel
 Requires:       lz4-devel
@@ -61,18 +62,19 @@ Requires:       opencv-devel
 Requires:       poco-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
-Requires:       ros-melodic-cv_bridge-devel
-Requires:       ros-melodic-dynamic_reconfigure-devel
-Requires:       ros-melodic-image_transport-devel
-Requires:       ros-melodic-message_generation-devel
-Requires:       ros-melodic-pluginlib-devel
-Requires:       ros-melodic-rosbag-devel
-Requires:       ros-melodic-std_msgs-devel
-Requires:       ros-melodic-message_runtime-devel
+Requires:       ros-noetic-cv_bridge-devel
+Requires:       ros-noetic-dynamic_reconfigure-devel
+Requires:       ros-noetic-image_transport-devel
+Requires:       ros-noetic-message_generation-devel
+Requires:       ros-noetic-pluginlib-devel
+Requires:       ros-noetic-rosbag-devel
+Requires:       ros-noetic-std_msgs-devel
+Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-melodic-theora_image_transport-devel = 1.9.5-13
-Obsoletes: ros-melodic-theora_image_transport-devel < 1.9.5-13
-Obsoletes: ros-kinetic-theora_image_transport-devel < 1.9.5-13
+Provides: ros-noetic-theora_image_transport-devel = 1.14.0-1
+Obsoletes: ros-noetic-theora_image_transport-devel < 1.14.0-1
+Obsoletes: ros-kinetic-theora_image_transport-devel < 1.14.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -179,6 +181,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.9.5-13
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.9.5-12

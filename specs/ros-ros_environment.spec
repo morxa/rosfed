@@ -1,12 +1,12 @@
 Name:           ros-ros_environment
-Version:        melodic.1.2.2
+Version:        noetic.1.3.1
 Release:        1%{?dist}
 Summary:        ROS package ros_environment
 
 License:        Apache License 2.0
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/ros_environment-release/archive/release/melodic/ros_environment/1.2.2-1.tar.gz#/ros-melodic-ros_environment-1.2.2-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_environment-release/archive/release/noetic/ros_environment/1.3.1-1.tar.gz#/ros-noetic-ros_environment-1.3.1-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,12 +18,13 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
 
-Provides:  ros-melodic-ros_environment = 1.2.2-1
-Obsoletes: ros-melodic-ros_environment < 1.2.2-1
-Obsoletes: ros-kinetic-ros_environment < 1.2.2-1
+Provides:  ros-noetic-ros_environment = 1.3.1-1
+Obsoletes: ros-noetic-ros_environment < 1.3.1-1
+Obsoletes: ros-kinetic-ros_environment < 1.3.1-1
+
 
 
 %description
@@ -33,11 +34,12 @@ The package provides the environment variables `ROS_VERSION`,
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 
-Provides: ros-melodic-ros_environment-devel = 1.2.2-1
-Obsoletes: ros-melodic-ros_environment-devel < 1.2.2-1
-Obsoletes: ros-kinetic-ros_environment-devel < 1.2.2-1
+Provides: ros-noetic-ros_environment-devel = 1.3.1-1
+Obsoletes: ros-noetic-ros_environment-devel < 1.3.1-1
+Obsoletes: ros-kinetic-ros_environment-devel < 1.3.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -144,6 +146,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.3.1-1
+- Upgrade to noetic
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.2.2-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.2.1-3

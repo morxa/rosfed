@@ -1,12 +1,12 @@
 Name:           ros-rqt_bag_plugins
-Version:        melodic.0.4.12
-Release:        3%{?dist}
+Version:        noetic.0.4.13
+Release:        1%{?dist}
 Summary:        ROS package rqt_bag_plugins
 
 License:        BSD
 URL:            http://wiki.ros.org/rqt_bag
 
-Source0:        https://github.com/ros-gbp/rqt_bag-release/archive/release/melodic/rqt_bag_plugins/0.4.12-0.tar.gz#/ros-melodic-rqt_bag_plugins-0.4.12-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt_bag-release/archive/release/noetic/rqt_bag_plugins/0.4.13-1.tar.gz#/ros-noetic-rqt_bag_plugins-0.4.13-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,24 +18,27 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
 Requires:       pycairo
+Requires:       python3-cairo
 Requires:       python3-pillow
-Requires:       ros-melodic-geometry_msgs
-Requires:       ros-melodic-rosbag
-Requires:       ros-melodic-roslib
-Requires:       ros-melodic-rospy
-Requires:       ros-melodic-rqt_bag
-Requires:       ros-melodic-rqt_gui
-Requires:       ros-melodic-rqt_gui_py
-Requires:       ros-melodic-rqt_plot
-Requires:       ros-melodic-sensor_msgs
-Requires:       ros-melodic-std_msgs
+Requires:       python3-pillow python3-pillow-qt
+Requires:       ros-noetic-geometry_msgs
+Requires:       ros-noetic-rosbag
+Requires:       ros-noetic-roslib
+Requires:       ros-noetic-rospy
+Requires:       ros-noetic-rqt_bag
+Requires:       ros-noetic-rqt_gui
+Requires:       ros-noetic-rqt_gui_py
+Requires:       ros-noetic-rqt_plot
+Requires:       ros-noetic-sensor_msgs
+Requires:       ros-noetic-std_msgs
 
-Provides:  ros-melodic-rqt_bag_plugins = 0.4.12-3
-Obsoletes: ros-melodic-rqt_bag_plugins < 0.4.12-3
-Obsoletes: ros-kinetic-rqt_bag_plugins < 0.4.12-3
+Provides:  ros-noetic-rqt_bag_plugins = 0.4.13-1
+Obsoletes: ros-noetic-rqt_bag_plugins < 0.4.13-1
+Obsoletes: ros-kinetic-rqt_bag_plugins < 0.4.13-1
+
 
 
 %description
@@ -45,21 +48,22 @@ files.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-geometry_msgs-devel
-Requires:       ros-melodic-rosbag-devel
-Requires:       ros-melodic-roslib-devel
-Requires:       ros-melodic-rospy-devel
-Requires:       ros-melodic-rqt_bag-devel
-Requires:       ros-melodic-rqt_gui-devel
-Requires:       ros-melodic-rqt_gui_py-devel
-Requires:       ros-melodic-rqt_plot-devel
-Requires:       ros-melodic-sensor_msgs-devel
-Requires:       ros-melodic-std_msgs-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-geometry_msgs-devel
+Requires:       ros-noetic-rosbag-devel
+Requires:       ros-noetic-roslib-devel
+Requires:       ros-noetic-rospy-devel
+Requires:       ros-noetic-rqt_bag-devel
+Requires:       ros-noetic-rqt_gui-devel
+Requires:       ros-noetic-rqt_gui_py-devel
+Requires:       ros-noetic-rqt_plot-devel
+Requires:       ros-noetic-sensor_msgs-devel
+Requires:       ros-noetic-std_msgs-devel
 
-Provides: ros-melodic-rqt_bag_plugins-devel = 0.4.12-3
-Obsoletes: ros-melodic-rqt_bag_plugins-devel < 0.4.12-3
-Obsoletes: ros-kinetic-rqt_bag_plugins-devel < 0.4.12-3
+Provides: ros-noetic-rqt_bag_plugins-devel = 0.4.13-1
+Obsoletes: ros-noetic-rqt_bag_plugins-devel < 0.4.13-1
+Obsoletes: ros-kinetic-rqt_bag_plugins-devel < 0.4.13-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -166,6 +170,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.13-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.12-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.12-2

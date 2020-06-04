@@ -1,12 +1,12 @@
 Name:           ros-roslisp
-Version:        melodic.1.9.24
+Version:        noetic.1.9.24
 Release:        1%{?dist}
 Summary:        ROS package roslisp
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/roslisp-release/archive/release/melodic/roslisp/1.9.24-1.tar.gz#/ros-melodic-roslisp-1.9.24-source0.tar.gz
+Source0:        https://github.com/ros-gbp/roslisp-release/archive/release/noetic/roslisp/1.9.24-1.tar.gz#/ros-noetic-roslisp-1.9.24-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,18 +18,19 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
 Requires:       sbcl
-Requires:       ros-melodic-ros_environment
-Requires:       ros-melodic-rosgraph_msgs
-Requires:       ros-melodic-roslang
-Requires:       ros-melodic-rospack
-Requires:       ros-melodic-std_srvs
+Requires:       ros-noetic-ros_environment
+Requires:       ros-noetic-rosgraph_msgs
+Requires:       ros-noetic-roslang
+Requires:       ros-noetic-rospack
+Requires:       ros-noetic-std_srvs
 
-Provides:  ros-melodic-roslisp = 1.9.24-1
-Obsoletes: ros-melodic-roslisp < 1.9.24-1
+Provides:  ros-noetic-roslisp = 1.9.24-1
+Obsoletes: ros-noetic-roslisp < 1.9.24-1
 Obsoletes: ros-kinetic-roslisp < 1.9.24-1
+
 
 
 %description
@@ -38,16 +39,17 @@ Lisp client library for ROS, the Robot Operating System.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-ros_environment-devel
-Requires:       ros-melodic-rosgraph_msgs-devel
-Requires:       ros-melodic-roslang-devel
-Requires:       ros-melodic-rospack-devel
-Requires:       ros-melodic-std_srvs-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-ros_environment-devel
+Requires:       ros-noetic-rosgraph_msgs-devel
+Requires:       ros-noetic-roslang-devel
+Requires:       ros-noetic-rospack-devel
+Requires:       ros-noetic-std_srvs-devel
 
-Provides: ros-melodic-roslisp-devel = 1.9.24-1
-Obsoletes: ros-melodic-roslisp-devel < 1.9.24-1
+Provides: ros-noetic-roslisp-devel = 1.9.24-1
+Obsoletes: ros-noetic-roslisp-devel < 1.9.24-1
 Obsoletes: ros-kinetic-roslisp-devel < 1.9.24-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -154,6 +156,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.9.24-1
+- Upgrade to noetic
 * Mon Mar 02 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.9.24-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.9.22-3

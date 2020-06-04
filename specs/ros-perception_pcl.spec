@@ -1,12 +1,12 @@
 Name:           ros-perception_pcl
-Version:        melodic.1.7.1
+Version:        noetic.1.7.1
 Release:        1%{?dist}
 Summary:        ROS package perception_pcl
 
 License:        BSD
 URL:            http://ros.org/wiki/perception_pcl
 
-Source0:        https://github.com/ros-gbp/perception_pcl-release/archive/release/melodic/perception_pcl/1.7.1-1.tar.gz#/ros-melodic-perception_pcl-1.7.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/perception_pcl-release/archive/release/noetic/perception_pcl/1.7.1-1.tar.gz#/ros-noetic-perception_pcl-1.7.1-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,15 +18,16 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
-Requires:       ros-melodic-pcl_conversions
-Requires:       ros-melodic-pcl_msgs
-Requires:       ros-melodic-pcl_ros
+Requires:       ros-noetic-pcl_conversions
+Requires:       ros-noetic-pcl_msgs
+Requires:       ros-noetic-pcl_ros
 
-Provides:  ros-melodic-perception_pcl = 1.7.1-1
-Obsoletes: ros-melodic-perception_pcl < 1.7.1-1
+Provides:  ros-noetic-perception_pcl = 1.7.1-1
+Obsoletes: ros-noetic-perception_pcl < 1.7.1-1
 Obsoletes: ros-kinetic-perception_pcl < 1.7.1-1
+
 
 
 %description
@@ -37,14 +38,15 @@ geometry processing in ROS.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-pcl_conversions-devel
-Requires:       ros-melodic-pcl_msgs-devel
-Requires:       ros-melodic-pcl_ros-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-pcl_conversions-devel
+Requires:       ros-noetic-pcl_msgs-devel
+Requires:       ros-noetic-pcl_ros-devel
 
-Provides: ros-melodic-perception_pcl-devel = 1.7.1-1
-Obsoletes: ros-melodic-perception_pcl-devel < 1.7.1-1
+Provides: ros-noetic-perception_pcl-devel = 1.7.1-1
+Obsoletes: ros-noetic-perception_pcl-devel < 1.7.1-1
 Obsoletes: ros-kinetic-perception_pcl-devel < 1.7.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -151,6 +153,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.1-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.7.1-1
 - Update to latest release
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.7.0-1

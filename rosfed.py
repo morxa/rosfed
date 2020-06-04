@@ -37,11 +37,14 @@ class PkgResolver:
         self.available_pkgs = q.available()
 
     def get_system_package_name(self, pkg_name, rosdistro):
+        env = os.environ.copy()
+        env["ROS_DISTRO"] = rosdistro
         cmd = subprocess.run([
             'rosdep', '--rosdistro={}'.format(rosdistro), 'resolve', pkg_name
         ],
                              stdout=subprocess.PIPE,
-                             stderr=subprocess.PIPE)
+                             stderr=subprocess.PIPE,
+                             env=env)
         deps = []
         if cmd.returncode == 0:
             lines = cmd.stdout.decode().split('\n')

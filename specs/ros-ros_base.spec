@@ -1,12 +1,12 @@
 Name:           ros-ros_base
-Version:        melodic.1.4.1
-Release:        3%{?dist}
+Version:        noetic.1.5.0
+Release:        1%{?dist}
 Summary:        ROS package ros_base
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/metapackages-release/archive/release/melodic/ros_base/1.4.1-0.tar.gz#/ros-melodic-ros_base-1.4.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/metapackages-release/archive/release/noetic/ros_base/1.5.0-1.tar.gz#/ros-noetic-ros_base-1.5.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,17 +18,18 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
-Requires:       ros-melodic-actionlib
-Requires:       ros-melodic-bond_core
-Requires:       ros-melodic-dynamic_reconfigure
-Requires:       ros-melodic-nodelet_core
-Requires:       ros-melodic-ros_core
+Requires:       ros-noetic-actionlib
+Requires:       ros-noetic-bond_core
+Requires:       ros-noetic-dynamic_reconfigure
+Requires:       ros-noetic-nodelet_core
+Requires:       ros-noetic-ros_core
 
-Provides:  ros-melodic-ros_base = 1.4.1-3
-Obsoletes: ros-melodic-ros_base < 1.4.1-3
-Obsoletes: ros-kinetic-ros_base < 1.4.1-3
+Provides:  ros-noetic-ros_base = 1.5.0-1
+Obsoletes: ros-noetic-ros_base < 1.5.0-1
+Obsoletes: ros-kinetic-ros_base < 1.5.0-1
+
 
 
 %description
@@ -39,16 +40,17 @@ pluginlib.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-actionlib-devel
-Requires:       ros-melodic-bond_core-devel
-Requires:       ros-melodic-dynamic_reconfigure-devel
-Requires:       ros-melodic-nodelet_core-devel
-Requires:       ros-melodic-ros_core-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-actionlib-devel
+Requires:       ros-noetic-bond_core-devel
+Requires:       ros-noetic-dynamic_reconfigure-devel
+Requires:       ros-noetic-nodelet_core-devel
+Requires:       ros-noetic-ros_core-devel
 
-Provides: ros-melodic-ros_base-devel = 1.4.1-3
-Obsoletes: ros-melodic-ros_base-devel < 1.4.1-3
-Obsoletes: ros-kinetic-ros_base-devel < 1.4.1-3
+Provides: ros-noetic-ros_base-devel = 1.5.0-1
+Obsoletes: ros-noetic-ros_base-devel < 1.5.0-1
+Obsoletes: ros-kinetic-ros_base-devel < 1.5.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -155,6 +157,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.5.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.4.1-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.4.1-2

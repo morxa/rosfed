@@ -1,14 +1,14 @@
 Name:           ros-camera_calibration_parsers
-Version:        melodic.1.11.13
-Release:        13%{?dist}
+Version:        noetic.1.12.0
+Release:        3%{?dist}
 Summary:        ROS package camera_calibration_parsers
 
 License:        BSD
 URL:            http://ros.org/wiki/camera_calibration_parsers
 
-Source0:        https://github.com/ros-gbp/image_common-release/archive/release/melodic/camera_calibration_parsers/1.11.13-0.tar.gz#/ros-melodic-camera_calibration_parsers-1.11.13-source0.tar.gz
+Source0:        https://github.com/ros-gbp/image_common-release/archive/release/noetic/camera_calibration_parsers/1.12.0-1.tar.gz#/ros-noetic-camera_calibration_parsers-1.12.0-source0.tar.gz
 
-Patch0: ros-camera_calibration_parsers.python.patch
+Patch0: ros-camera_calibration_parsers.boost-python3.patch
 
 
 # common BRs
@@ -18,28 +18,29 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  boost-devel boost-python3-devel boost-python3-devel
+BuildRequires:  boost-devel boost-python3-devel
 BuildRequires:  boost-python3-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  pkgconfig
 BuildRequires:  python3-devel
 BuildRequires:  yaml-cpp-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-rosbash-devel
-BuildRequires:  ros-melodic-rosconsole-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-roscpp_serialization-devel
-BuildRequires:  ros-melodic-rosunit-devel
-BuildRequires:  ros-melodic-sensor_msgs-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-rosbash-devel
+BuildRequires:  ros-noetic-rosconsole-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-roscpp_serialization-devel
+BuildRequires:  ros-noetic-rosunit-devel
+BuildRequires:  ros-noetic-sensor_msgs-devel
 
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-roscpp_serialization
-Requires:       ros-melodic-sensor_msgs
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-roscpp_serialization
+Requires:       ros-noetic-sensor_msgs
 
-Provides:  ros-melodic-camera_calibration_parsers = 1.11.13-13
-Obsoletes: ros-melodic-camera_calibration_parsers < 1.11.13-13
-Obsoletes: ros-kinetic-camera_calibration_parsers < 1.11.13-13
+Provides:  ros-noetic-camera_calibration_parsers = 1.12.0-3
+Obsoletes: ros-noetic-camera_calibration_parsers < 1.12.0-3
+Obsoletes: ros-kinetic-camera_calibration_parsers < 1.12.0-3
+
 
 
 %description
@@ -49,24 +50,25 @@ camera calibration parameters.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       boost-devel boost-python3-devel boost-python3-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       boost-devel boost-python3-devel
 Requires:       boost-python3-devel
 Requires:       console-bridge-devel
 Requires:       log4cxx-devel
 Requires:       pkgconfig
 Requires:       python3-devel
 Requires:       yaml-cpp-devel
-Requires:       ros-melodic-rosbash-devel
-Requires:       ros-melodic-rosconsole-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-roscpp_serialization-devel
-Requires:       ros-melodic-rosunit-devel
-Requires:       ros-melodic-sensor_msgs-devel
+Requires:       ros-noetic-rosbash-devel
+Requires:       ros-noetic-rosconsole-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-roscpp_serialization-devel
+Requires:       ros-noetic-rosunit-devel
+Requires:       ros-noetic-sensor_msgs-devel
 
-Provides: ros-melodic-camera_calibration_parsers-devel = 1.11.13-13
-Obsoletes: ros-melodic-camera_calibration_parsers-devel < 1.11.13-13
-Obsoletes: ros-kinetic-camera_calibration_parsers-devel < 1.11.13-13
+Provides: ros-noetic-camera_calibration_parsers-devel = 1.12.0-3
+Obsoletes: ros-noetic-camera_calibration_parsers-devel < 1.12.0-3
+Obsoletes: ros-kinetic-camera_calibration_parsers-devel < 1.12.0-3
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -174,6 +176,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.12.0-3
+- Update patch to properly detect boost-python
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.12.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.11.13-13
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.11.13-12

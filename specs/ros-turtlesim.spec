@@ -1,12 +1,12 @@
 Name:           ros-turtlesim
-Version:        melodic.0.9.2
+Version:        noetic.0.10.1
 Release:        1%{?dist}
 Summary:        ROS package turtlesim
 
 License:        BSD
 URL:            http://www.ros.org/wiki/turtlesim
 
-Source0:        https://github.com/ros-gbp/ros_tutorials-release/archive/release/melodic/turtlesim/0.9.2-1.tar.gz#/ros-melodic-turtlesim-0.9.2-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_tutorials-release/archive/release/noetic/turtlesim/0.10.1-1.tar.gz#/ros-noetic-turtlesim-0.10.1-source0.tar.gz
 
 
 
@@ -22,32 +22,33 @@ BuildRequires:  console-bridge-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  qt5-qtbase-devel
 BuildRequires:  tinyxml-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-geometry_msgs-devel
-BuildRequires:  ros-melodic-message_generation-devel
-BuildRequires:  ros-melodic-rosconsole-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-roscpp_serialization-devel
-BuildRequires:  ros-melodic-roslib-devel
-BuildRequires:  ros-melodic-rostime-devel
-BuildRequires:  ros-melodic-std_msgs-devel
-BuildRequires:  ros-melodic-std_srvs-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-geometry_msgs-devel
+BuildRequires:  ros-noetic-message_generation-devel
+BuildRequires:  ros-noetic-rosconsole-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-roscpp_serialization-devel
+BuildRequires:  ros-noetic-roslib-devel
+BuildRequires:  ros-noetic-rostime-devel
+BuildRequires:  ros-noetic-std_msgs-devel
+BuildRequires:  ros-noetic-std_srvs-devel
 
 Requires:       qt5-qtbase
 Requires:       qt5-qtbase-gui
-Requires:       ros-melodic-geometry_msgs
-Requires:       ros-melodic-message_runtime
-Requires:       ros-melodic-rosconsole
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-roscpp_serialization
-Requires:       ros-melodic-roslib
-Requires:       ros-melodic-rostime
-Requires:       ros-melodic-std_msgs
-Requires:       ros-melodic-std_srvs
+Requires:       ros-noetic-geometry_msgs
+Requires:       ros-noetic-message_runtime
+Requires:       ros-noetic-rosconsole
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-roscpp_serialization
+Requires:       ros-noetic-roslib
+Requires:       ros-noetic-rostime
+Requires:       ros-noetic-std_msgs
+Requires:       ros-noetic-std_srvs
 
-Provides:  ros-melodic-turtlesim = 0.9.2-1
-Obsoletes: ros-melodic-turtlesim < 0.9.2-1
-Obsoletes: ros-kinetic-turtlesim < 0.9.2-1
+Provides:  ros-noetic-turtlesim = 0.10.1-1
+Obsoletes: ros-noetic-turtlesim < 0.10.1-1
+Obsoletes: ros-kinetic-turtlesim < 0.10.1-1
+
 
 
 %description
@@ -56,26 +57,27 @@ turtlesim is a tool made for teaching ROS and ROS packages.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       boost-devel
 Requires:       console-bridge-devel
 Requires:       log4cxx-devel
 Requires:       qt5-qtbase-devel
 Requires:       tinyxml-devel
-Requires:       ros-melodic-geometry_msgs-devel
-Requires:       ros-melodic-message_generation-devel
-Requires:       ros-melodic-rosconsole-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-roscpp_serialization-devel
-Requires:       ros-melodic-roslib-devel
-Requires:       ros-melodic-rostime-devel
-Requires:       ros-melodic-std_msgs-devel
-Requires:       ros-melodic-std_srvs-devel
-Requires:       ros-melodic-message_runtime-devel
+Requires:       ros-noetic-geometry_msgs-devel
+Requires:       ros-noetic-message_generation-devel
+Requires:       ros-noetic-rosconsole-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-roscpp_serialization-devel
+Requires:       ros-noetic-roslib-devel
+Requires:       ros-noetic-rostime-devel
+Requires:       ros-noetic-std_msgs-devel
+Requires:       ros-noetic-std_srvs-devel
+Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-melodic-turtlesim-devel = 0.9.2-1
-Obsoletes: ros-melodic-turtlesim-devel < 0.9.2-1
-Obsoletes: ros-kinetic-turtlesim-devel < 0.9.2-1
+Provides: ros-noetic-turtlesim-devel = 0.10.1-1
+Obsoletes: ros-noetic-turtlesim-devel < 0.10.1-1
+Obsoletes: ros-kinetic-turtlesim-devel < 0.10.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -182,6 +184,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.10.1-1
+- Upgrade to noetic
 * Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.9.2-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.9.1-3

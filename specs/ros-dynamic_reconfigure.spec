@@ -1,12 +1,12 @@
 Name:           ros-dynamic_reconfigure
-Version:        melodic.1.6.3
+Version:        noetic.1.7.0
 Release:        1%{?dist}
 Summary:        ROS package dynamic_reconfigure
 
 License:        BSD
 URL:            http://ros.org/wiki/dynamic_reconfigure
 
-Source0:        https://github.com/ros-gbp/dynamic_reconfigure-release/archive/release/melodic/dynamic_reconfigure/1.6.3-1.tar.gz#/ros-melodic-dynamic_reconfigure-1.6.3-source0.tar.gz
+Source0:        https://github.com/ros-gbp/dynamic_reconfigure-release/archive/release/noetic/dynamic_reconfigure/1.7.0-1.tar.gz#/ros-noetic-dynamic_reconfigure-1.7.0-source0.tar.gz
 
 
 
@@ -17,25 +17,26 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  boost-devel boost-python3-devel boost-python3-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-cpp_common-devel
-BuildRequires:  ros-melodic-message_generation-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-roscpp_serialization-devel
-BuildRequires:  ros-melodic-rostest-devel
-BuildRequires:  ros-melodic-std_msgs-devel
+BuildRequires:  boost-devel boost-python3-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-cpp_common-devel
+BuildRequires:  ros-noetic-message_generation-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-roscpp_serialization-devel
+BuildRequires:  ros-noetic-rostest-devel
+BuildRequires:  ros-noetic-std_msgs-devel
 
-Requires:       ros-melodic-message_runtime
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-roslib
-Requires:       ros-melodic-rospy
-Requires:       ros-melodic-rosservice
-Requires:       ros-melodic-std_msgs
+Requires:       ros-noetic-message_runtime
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-roslib
+Requires:       ros-noetic-rospy
+Requires:       ros-noetic-rosservice
+Requires:       ros-noetic-std_msgs
 
-Provides:  ros-melodic-dynamic_reconfigure = 1.6.3-1
-Obsoletes: ros-melodic-dynamic_reconfigure < 1.6.3-1
-Obsoletes: ros-kinetic-dynamic_reconfigure < 1.6.3-1
+Provides:  ros-noetic-dynamic_reconfigure = 1.7.0-1
+Obsoletes: ros-noetic-dynamic_reconfigure < 1.7.0-1
+Obsoletes: ros-kinetic-dynamic_reconfigure < 1.7.0-1
+
 
 
 %description
@@ -45,22 +46,23 @@ at runtime without having to restart the node.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       boost-devel boost-python3-devel boost-python3-devel
-Requires:       ros-melodic-cpp_common-devel
-Requires:       ros-melodic-message_generation-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-roscpp_serialization-devel
-Requires:       ros-melodic-rostest-devel
-Requires:       ros-melodic-std_msgs-devel
-Requires:       ros-melodic-message_runtime-devel
-Requires:       ros-melodic-roslib-devel
-Requires:       ros-melodic-rospy-devel
-Requires:       ros-melodic-rosservice-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       boost-devel boost-python3-devel
+Requires:       ros-noetic-cpp_common-devel
+Requires:       ros-noetic-message_generation-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-roscpp_serialization-devel
+Requires:       ros-noetic-rostest-devel
+Requires:       ros-noetic-std_msgs-devel
+Requires:       ros-noetic-message_runtime-devel
+Requires:       ros-noetic-roslib-devel
+Requires:       ros-noetic-rospy-devel
+Requires:       ros-noetic-rosservice-devel
 
-Provides: ros-melodic-dynamic_reconfigure-devel = 1.6.3-1
-Obsoletes: ros-melodic-dynamic_reconfigure-devel < 1.6.3-1
-Obsoletes: ros-kinetic-dynamic_reconfigure-devel < 1.6.3-1
+Provides: ros-noetic-dynamic_reconfigure-devel = 1.7.0-1
+Obsoletes: ros-noetic-dynamic_reconfigure-devel < 1.7.0-1
+Obsoletes: ros-kinetic-dynamic_reconfigure-devel < 1.7.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -167,6 +169,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.0-1
+- Upgrade to noetic
 * Thu Mar 19 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.6.3-1
 - Update to latest release
 * Wed Mar 18 2020 Nicolas Limpert - melodic.1.6.1-1

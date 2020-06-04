@@ -1,12 +1,12 @@
 Name:           ros-stage_ros
-Version:        melodic.1.8.0
-Release:        3%{?dist}
+Version:        noetic.1.8.0
+Release:        1%{?dist}
 Summary:        ROS package stage_ros
 
 License:        BSD
 URL:            http://ros.org/wiki/stage_ros
 
-Source0:        https://github.com/ros-gbp/stage_ros-release/archive/release/melodic/stage_ros/1.8.0-0.tar.gz#/ros-melodic-stage_ros-1.8.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/stage_ros-release/archive/release/noetic/stage_ros/1.8.0-1.tar.gz#/ros-noetic-stage_ros-1.8.0-source0.tar.gz
 
 
 
@@ -17,31 +17,32 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  boost-devel boost-python3-devel boost-python3-devel
+BuildRequires:  boost-devel boost-python3-devel
 BuildRequires:  fltk-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-geometry_msgs-devel
-BuildRequires:  ros-melodic-nav_msgs-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-rostest-devel
-BuildRequires:  ros-melodic-sensor_msgs-devel
-BuildRequires:  ros-melodic-stage-devel
-BuildRequires:  ros-melodic-std_msgs-devel
-BuildRequires:  ros-melodic-std_srvs-devel
-BuildRequires:  ros-melodic-tf-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-geometry_msgs-devel
+BuildRequires:  ros-noetic-nav_msgs-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-rostest-devel
+BuildRequires:  ros-noetic-sensor_msgs-devel
+BuildRequires:  ros-noetic-stage-devel
+BuildRequires:  ros-noetic-std_msgs-devel
+BuildRequires:  ros-noetic-std_srvs-devel
+BuildRequires:  ros-noetic-tf-devel
 
-Requires:       ros-melodic-geometry_msgs
-Requires:       ros-melodic-nav_msgs
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-sensor_msgs
-Requires:       ros-melodic-stage
-Requires:       ros-melodic-std_msgs
-Requires:       ros-melodic-std_srvs
-Requires:       ros-melodic-tf
+Requires:       ros-noetic-geometry_msgs
+Requires:       ros-noetic-nav_msgs
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-sensor_msgs
+Requires:       ros-noetic-stage
+Requires:       ros-noetic-std_msgs
+Requires:       ros-noetic-std_srvs
+Requires:       ros-noetic-tf
 
-Provides:  ros-melodic-stage_ros = 1.8.0-3
-Obsoletes: ros-melodic-stage_ros < 1.8.0-3
-Obsoletes: ros-kinetic-stage_ros < 1.8.0-3
+Provides:  ros-noetic-stage_ros = 1.8.0-1
+Obsoletes: ros-noetic-stage_ros < 1.8.0-1
+Obsoletes: ros-kinetic-stage_ros < 1.8.0-1
+
 
 
 %description
@@ -50,22 +51,23 @@ This package provides ROS specific hooks for stage
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       boost-devel boost-python3-devel boost-python3-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       boost-devel boost-python3-devel
 Requires:       fltk-devel
-Requires:       ros-melodic-geometry_msgs-devel
-Requires:       ros-melodic-nav_msgs-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-rostest-devel
-Requires:       ros-melodic-sensor_msgs-devel
-Requires:       ros-melodic-stage-devel
-Requires:       ros-melodic-std_msgs-devel
-Requires:       ros-melodic-std_srvs-devel
-Requires:       ros-melodic-tf-devel
+Requires:       ros-noetic-geometry_msgs-devel
+Requires:       ros-noetic-nav_msgs-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-rostest-devel
+Requires:       ros-noetic-sensor_msgs-devel
+Requires:       ros-noetic-stage-devel
+Requires:       ros-noetic-std_msgs-devel
+Requires:       ros-noetic-std_srvs-devel
+Requires:       ros-noetic-tf-devel
 
-Provides: ros-melodic-stage_ros-devel = 1.8.0-3
-Obsoletes: ros-melodic-stage_ros-devel < 1.8.0-3
-Obsoletes: ros-kinetic-stage_ros-devel < 1.8.0-3
+Provides: ros-noetic-stage_ros-devel = 1.8.0-1
+Obsoletes: ros-noetic-stage_ros-devel < 1.8.0-1
+Obsoletes: ros-kinetic-stage_ros-devel < 1.8.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -172,6 +174,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.8.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.8.0-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.8.0-2

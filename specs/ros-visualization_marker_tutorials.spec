@@ -1,12 +1,12 @@
 Name:           ros-visualization_marker_tutorials
-Version:        melodic.0.10.3
-Release:        3%{?dist}
+Version:        noetic.0.11.0
+Release:        1%{?dist}
 Summary:        ROS package visualization_marker_tutorials
 
 License:        BSD
 URL:            http://ros.org/wiki/visualization_marker_tutorials
 
-Source0:        https://github.com/ros-gbp/visualization_tutorials-release/archive/release/melodic/visualization_marker_tutorials/0.10.3-0.tar.gz#/ros-melodic-visualization_marker_tutorials-0.10.3-source0.tar.gz
+Source0:        https://github.com/ros-gbp/visualization_tutorials-release/archive/release/noetic/visualization_marker_tutorials/0.11.0-1.tar.gz#/ros-noetic-visualization_marker_tutorials-0.11.0-source0.tar.gz
 
 
 
@@ -20,16 +20,17 @@ BuildRequires:  python3-devel
 BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  log4cxx-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-visualization_msgs-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-visualization_msgs-devel
 
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-visualization_msgs
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-visualization_msgs
 
-Provides:  ros-melodic-visualization_marker_tutorials = 0.10.3-3
-Obsoletes: ros-melodic-visualization_marker_tutorials < 0.10.3-3
-Obsoletes: ros-kinetic-visualization_marker_tutorials < 0.10.3-3
+Provides:  ros-noetic-visualization_marker_tutorials = 0.11.0-1
+Obsoletes: ros-noetic-visualization_marker_tutorials < 0.11.0-1
+Obsoletes: ros-kinetic-visualization_marker_tutorials < 0.11.0-1
+
 
 
 %description
@@ -38,16 +39,17 @@ The visulalization_marker_tutorials package
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       boost-devel
 Requires:       console-bridge-devel
 Requires:       log4cxx-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-visualization_msgs-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-visualization_msgs-devel
 
-Provides: ros-melodic-visualization_marker_tutorials-devel = 0.10.3-3
-Obsoletes: ros-melodic-visualization_marker_tutorials-devel < 0.10.3-3
-Obsoletes: ros-kinetic-visualization_marker_tutorials-devel < 0.10.3-3
+Provides: ros-noetic-visualization_marker_tutorials-devel = 0.11.0-1
+Obsoletes: ros-noetic-visualization_marker_tutorials-devel < 0.11.0-1
+Obsoletes: ros-kinetic-visualization_marker_tutorials-devel < 0.11.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -154,6 +156,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.11.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.10.3-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.10.3-2

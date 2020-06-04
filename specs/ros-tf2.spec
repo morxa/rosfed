@@ -1,14 +1,13 @@
 Name:           ros-tf2
-Version:        melodic.0.6.5
-Release:        3%{?dist}
+Version:        noetic.0.7.1
+Release:        2%{?dist}
 Summary:        ROS package tf2
 
 License:        BSD
 URL:            http://www.ros.org/wiki/tf2
 
-Source0:        https://github.com/ros-gbp/geometry2-release/archive/release/melodic/tf2/0.6.5-0.tar.gz#/ros-melodic-tf2-0.6.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/geometry2-release/archive/release/noetic/tf2/0.7.1-1.tar.gz#/ros-noetic-tf2-0.7.1-source0.tar.gz
 
-Patch0: ros-melodic-tf2.signals2.patch
 
 
 # common BRs
@@ -21,21 +20,22 @@ BuildRequires:  python3-devel
 BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  gtest-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-cpp_common-devel
-BuildRequires:  ros-melodic-geometry_msgs-devel
-BuildRequires:  ros-melodic-roscpp_serialization-devel
-BuildRequires:  ros-melodic-roscpp_traits-devel
-BuildRequires:  ros-melodic-rostime-devel
-BuildRequires:  ros-melodic-tf2_msgs-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-cpp_common-devel
+BuildRequires:  ros-noetic-geometry_msgs-devel
+BuildRequires:  ros-noetic-roscpp_serialization-devel
+BuildRequires:  ros-noetic-roscpp_traits-devel
+BuildRequires:  ros-noetic-rostime-devel
+BuildRequires:  ros-noetic-tf2_msgs-devel
 
-Requires:       ros-melodic-geometry_msgs
-Requires:       ros-melodic-rostime
-Requires:       ros-melodic-tf2_msgs
+Requires:       ros-noetic-geometry_msgs
+Requires:       ros-noetic-rostime
+Requires:       ros-noetic-tf2_msgs
 
-Provides:  ros-melodic-tf2 = 0.6.5-3
-Obsoletes: ros-melodic-tf2 < 0.6.5-3
-Obsoletes: ros-kinetic-tf2 < 0.6.5-3
+Provides:  ros-noetic-tf2 = 0.7.1-2
+Obsoletes: ros-noetic-tf2 < 0.7.1-2
+Obsoletes: ros-kinetic-tf2 < 0.7.1-2
+
 
 
 %description
@@ -48,20 +48,21 @@ between any two coordinate frames at any desired point in time.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       boost-devel
 Requires:       console-bridge-devel
 Requires:       gtest-devel
-Requires:       ros-melodic-cpp_common-devel
-Requires:       ros-melodic-geometry_msgs-devel
-Requires:       ros-melodic-roscpp_serialization-devel
-Requires:       ros-melodic-roscpp_traits-devel
-Requires:       ros-melodic-rostime-devel
-Requires:       ros-melodic-tf2_msgs-devel
+Requires:       ros-noetic-cpp_common-devel
+Requires:       ros-noetic-geometry_msgs-devel
+Requires:       ros-noetic-roscpp_serialization-devel
+Requires:       ros-noetic-roscpp_traits-devel
+Requires:       ros-noetic-rostime-devel
+Requires:       ros-noetic-tf2_msgs-devel
 
-Provides: ros-melodic-tf2-devel = 0.6.5-3
-Obsoletes: ros-melodic-tf2-devel < 0.6.5-3
-Obsoletes: ros-kinetic-tf2-devel < 0.6.5-3
+Provides: ros-noetic-tf2-devel = 0.7.1-2
+Obsoletes: ros-noetic-tf2-devel < 0.7.1-2
+Obsoletes: ros-kinetic-tf2-devel < 0.7.1-2
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -73,7 +74,6 @@ applications that use %{name}.
 
 %setup -c -T
 tar --strip-components=1 -xf %{SOURCE0}
-%patch0 -p1
 
 %build
 # nothing to do here
@@ -169,6 +169,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.7.1-2
+- Remove upstreamed patch
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.7.1-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.6.5-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.6.5-2

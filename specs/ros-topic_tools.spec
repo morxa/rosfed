@@ -1,12 +1,12 @@
 Name:           ros-topic_tools
-Version:        melodic.1.14.5
+Version:        noetic.1.15.6
 Release:        1%{?dist}
 Summary:        ROS package topic_tools
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/melodic/topic_tools/1.14.5-1.tar.gz#/ros-melodic-topic_tools-1.14.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/topic_tools/1.15.6-1.tar.gz#/ros-noetic-topic_tools-1.15.6-source0.tar.gz
 
 
 
@@ -17,28 +17,29 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-cpp_common-devel
-BuildRequires:  ros-melodic-message_generation-devel
-BuildRequires:  ros-melodic-rosbash-devel
-BuildRequires:  ros-melodic-rosconsole-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-rostest-devel
-BuildRequires:  ros-melodic-rostime-devel
-BuildRequires:  ros-melodic-rosunit-devel
-BuildRequires:  ros-melodic-std_msgs-devel
-BuildRequires:  ros-melodic-xmlrpcpp-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-cpp_common-devel
+BuildRequires:  ros-noetic-message_generation-devel
+BuildRequires:  ros-noetic-rosbash-devel
+BuildRequires:  ros-noetic-rosconsole-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-rostest-devel
+BuildRequires:  ros-noetic-rostime-devel
+BuildRequires:  ros-noetic-rosunit-devel
+BuildRequires:  ros-noetic-std_msgs-devel
+BuildRequires:  ros-noetic-xmlrpcpp-devel
 
-Requires:       ros-melodic-message_runtime
-Requires:       ros-melodic-rosconsole
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-rostime
-Requires:       ros-melodic-std_msgs
-Requires:       ros-melodic-xmlrpcpp
+Requires:       ros-noetic-message_runtime
+Requires:       ros-noetic-rosconsole
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-rostime
+Requires:       ros-noetic-std_msgs
+Requires:       ros-noetic-xmlrpcpp
 
-Provides:  ros-melodic-topic_tools = 1.14.5-1
-Obsoletes: ros-melodic-topic_tools < 1.14.5-1
-Obsoletes: ros-kinetic-topic_tools < 1.14.5-1
+Provides:  ros-noetic-topic_tools = 1.15.6-1
+Obsoletes: ros-noetic-topic_tools < 1.15.6-1
+Obsoletes: ros-kinetic-topic_tools < 1.15.6-1
+
 
 
 %description
@@ -51,22 +52,23 @@ means they can be applied to any ROS topic.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-cpp_common-devel
-Requires:       ros-melodic-message_generation-devel
-Requires:       ros-melodic-rosbash-devel
-Requires:       ros-melodic-rosconsole-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-rostest-devel
-Requires:       ros-melodic-rostime-devel
-Requires:       ros-melodic-rosunit-devel
-Requires:       ros-melodic-std_msgs-devel
-Requires:       ros-melodic-xmlrpcpp-devel
-Requires:       ros-melodic-message_runtime-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-cpp_common-devel
+Requires:       ros-noetic-message_generation-devel
+Requires:       ros-noetic-rosbash-devel
+Requires:       ros-noetic-rosconsole-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-rostest-devel
+Requires:       ros-noetic-rostime-devel
+Requires:       ros-noetic-rosunit-devel
+Requires:       ros-noetic-std_msgs-devel
+Requires:       ros-noetic-xmlrpcpp-devel
+Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-melodic-topic_tools-devel = 1.14.5-1
-Obsoletes: ros-melodic-topic_tools-devel < 1.14.5-1
-Obsoletes: ros-kinetic-topic_tools-devel < 1.14.5-1
+Provides: ros-noetic-topic_tools-devel = 1.15.6-1
+Obsoletes: ros-noetic-topic_tools-devel < 1.15.6-1
+Obsoletes: ros-kinetic-topic_tools-devel < 1.15.6-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -173,6 +175,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.6-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.5-1
 - Update to latest release
 * Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.4-1

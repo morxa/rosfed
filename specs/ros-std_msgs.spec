@@ -1,12 +1,12 @@
 Name:           ros-std_msgs
-Version:        melodic.0.5.12
-Release:        3%{?dist}
+Version:        noetic.0.5.13
+Release:        1%{?dist}
 Summary:        ROS package std_msgs
 
 License:        BSD
 URL:            http://www.ros.org/wiki/std_msgs
 
-Source0:        https://github.com/ros-gbp/std_msgs-release/archive/release/melodic/std_msgs/0.5.12-0.tar.gz#/ros-melodic-std_msgs-0.5.12-source0.tar.gz
+Source0:        https://github.com/ros-gbp/std_msgs-release/archive/release/noetic/std_msgs/0.5.13-1.tar.gz#/ros-noetic-std_msgs-0.5.13-source0.tar.gz
 
 
 BuildArch: noarch
@@ -19,15 +19,16 @@ BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
 BuildRequires:  python3-pyyaml
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-message_generation-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-message_generation-devel
 
 Requires:       python3-pyyaml
-Requires:       ros-melodic-message_runtime
+Requires:       ros-noetic-message_runtime
 
-Provides:  ros-melodic-std_msgs = 0.5.12-3
-Obsoletes: ros-melodic-std_msgs < 0.5.12-3
-Obsoletes: ros-kinetic-std_msgs < 0.5.12-3
+Provides:  ros-noetic-std_msgs = 0.5.13-1
+Obsoletes: ros-noetic-std_msgs < 0.5.13-1
+Obsoletes: ros-kinetic-std_msgs < 0.5.13-1
+
 
 
 %description
@@ -39,14 +40,15 @@ see
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       python3-pyyaml
-Requires:       ros-melodic-message_generation-devel
-Requires:       ros-melodic-message_runtime-devel
+Requires:       ros-noetic-message_generation-devel
+Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-melodic-std_msgs-devel = 0.5.12-3
-Obsoletes: ros-melodic-std_msgs-devel < 0.5.12-3
-Obsoletes: ros-kinetic-std_msgs-devel < 0.5.12-3
+Provides: ros-noetic-std_msgs-devel = 0.5.13-1
+Obsoletes: ros-noetic-std_msgs-devel < 0.5.13-1
+Obsoletes: ros-kinetic-std_msgs-devel < 0.5.13-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -153,6 +155,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.13-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.5.12-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.5.12-2

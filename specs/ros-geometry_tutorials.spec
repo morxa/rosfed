@@ -1,12 +1,12 @@
 Name:           ros-geometry_tutorials
-Version:        melodic.0.2.2
-Release:        3%{?dist}
+Version:        noetic.0.2.3
+Release:        1%{?dist}
 Summary:        ROS package geometry_tutorials
 
 License:        BSD
 URL:            http://www.ros.org/wiki/geometry_tutorials
 
-Source0:        https://github.com/ros-gbp/geometry_tutorials-release/archive/release/melodic/geometry_tutorials/0.2.2-0.tar.gz#/ros-melodic-geometry_tutorials-0.2.2-source0.tar.gz
+Source0:        https://github.com/ros-gbp/geometry_tutorials-release/archive/release/noetic/geometry_tutorials/0.2.3-1.tar.gz#/ros-noetic-geometry_tutorials-0.2.3-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,14 +18,15 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
-Requires:       ros-melodic-turtle_tf
-Requires:       ros-melodic-turtle_tf2
+Requires:       ros-noetic-turtle_tf
+Requires:       ros-noetic-turtle_tf2
 
-Provides:  ros-melodic-geometry_tutorials = 0.2.2-3
-Obsoletes: ros-melodic-geometry_tutorials < 0.2.2-3
-Obsoletes: ros-kinetic-geometry_tutorials < 0.2.2-3
+Provides:  ros-noetic-geometry_tutorials = 0.2.3-1
+Obsoletes: ros-noetic-geometry_tutorials < 0.2.3-1
+Obsoletes: ros-kinetic-geometry_tutorials < 0.2.3-1
+
 
 
 %description
@@ -34,13 +35,14 @@ Metapackage of geometry tutorials ROS.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-turtle_tf-devel
-Requires:       ros-melodic-turtle_tf2-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-turtle_tf-devel
+Requires:       ros-noetic-turtle_tf2-devel
 
-Provides: ros-melodic-geometry_tutorials-devel = 0.2.2-3
-Obsoletes: ros-melodic-geometry_tutorials-devel < 0.2.2-3
-Obsoletes: ros-kinetic-geometry_tutorials-devel < 0.2.2-3
+Provides: ros-noetic-geometry_tutorials-devel = 0.2.3-1
+Obsoletes: ros-noetic-geometry_tutorials-devel < 0.2.3-1
+Obsoletes: ros-kinetic-geometry_tutorials-devel < 0.2.3-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -147,6 +149,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.2.3-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.2.2-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.2.2-2

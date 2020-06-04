@@ -1,12 +1,12 @@
 Name:           ros-diagnostic_analysis
-Version:        melodic.1.9.3
-Release:        3%{?dist}
+Version:        noetic.1.9.4
+Release:        1%{?dist}
 Summary:        ROS package diagnostic_analysis
 
 License:        BSD
 URL:            http://www.ros.org/wiki/diagnostics_analysis
 
-Source0:        https://github.com/ros-gbp/diagnostics-release/archive/release/melodic/diagnostic_analysis/1.9.3-0.tar.gz#/ros-melodic-diagnostic_analysis-1.9.3-source0.tar.gz
+Source0:        https://github.com/ros-gbp/diagnostics-release/archive/release/noetic/diagnostic_analysis/1.9.4-1.tar.gz#/ros-noetic-diagnostic_analysis-1.9.4-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,19 +18,20 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-diagnostic_msgs-devel
-BuildRequires:  ros-melodic-rosbag-devel
-BuildRequires:  ros-melodic-roslib-devel
-BuildRequires:  ros-melodic-rostest-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-diagnostic_msgs-devel
+BuildRequires:  ros-noetic-rosbag-devel
+BuildRequires:  ros-noetic-roslib-devel
+BuildRequires:  ros-noetic-rostest-devel
 
-Requires:       ros-melodic-diagnostic_msgs
-Requires:       ros-melodic-rosbag
-Requires:       ros-melodic-roslib
+Requires:       ros-noetic-diagnostic_msgs
+Requires:       ros-noetic-rosbag
+Requires:       ros-noetic-roslib
 
-Provides:  ros-melodic-diagnostic_analysis = 1.9.3-3
-Obsoletes: ros-melodic-diagnostic_analysis < 1.9.3-3
-Obsoletes: ros-kinetic-diagnostic_analysis < 1.9.3-3
+Provides:  ros-noetic-diagnostic_analysis = 1.9.4-1
+Obsoletes: ros-noetic-diagnostic_analysis < 1.9.4-1
+Obsoletes: ros-kinetic-diagnostic_analysis < 1.9.4-1
+
 
 
 %description
@@ -41,15 +42,16 @@ can be processed offline using the scripts in this package.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-diagnostic_msgs-devel
-Requires:       ros-melodic-rosbag-devel
-Requires:       ros-melodic-roslib-devel
-Requires:       ros-melodic-rostest-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-diagnostic_msgs-devel
+Requires:       ros-noetic-rosbag-devel
+Requires:       ros-noetic-roslib-devel
+Requires:       ros-noetic-rostest-devel
 
-Provides: ros-melodic-diagnostic_analysis-devel = 1.9.3-3
-Obsoletes: ros-melodic-diagnostic_analysis-devel < 1.9.3-3
-Obsoletes: ros-kinetic-diagnostic_analysis-devel < 1.9.3-3
+Provides: ros-noetic-diagnostic_analysis-devel = 1.9.4-1
+Obsoletes: ros-noetic-diagnostic_analysis-devel < 1.9.4-1
+Obsoletes: ros-kinetic-diagnostic_analysis-devel < 1.9.4-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -156,6 +158,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.9.4-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.9.3-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.9.3-2

@@ -1,12 +1,12 @@
 Name:           ros-xacro
-Version:        melodic.1.13.5
+Version:        noetic.1.14.2
 Release:        1%{?dist}
 Summary:        ROS package xacro
 
 License:        BSD
 URL:            http://ros.org/wiki/xacro
 
-Source0:        https://github.com/ros-gbp/xacro-release/archive/release/melodic/xacro/1.13.5-1.tar.gz#/ros-melodic-xacro-1.13.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/xacro-release/archive/release/noetic/xacro/1.14.2-1.tar.gz#/ros-noetic-xacro-1.14.2-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,15 +18,16 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-roslint-devel
-BuildRequires:  ros-melodic-rostest-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-roslint-devel
+BuildRequires:  ros-noetic-rostest-devel
 
-Requires:       ros-melodic-roslaunch
+Requires:       ros-noetic-roslaunch
 
-Provides:  ros-melodic-xacro = 1.13.5-1
-Obsoletes: ros-melodic-xacro < 1.13.5-1
-Obsoletes: ros-kinetic-xacro < 1.13.5-1
+Provides:  ros-noetic-xacro = 1.14.2-1
+Obsoletes: ros-noetic-xacro < 1.14.2-1
+Obsoletes: ros-kinetic-xacro < 1.14.2-1
+
 
 
 %description
@@ -37,14 +38,15 @@ expand to larger XML expressions.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-roslint-devel
-Requires:       ros-melodic-rostest-devel
-Requires:       ros-melodic-roslaunch-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-roslint-devel
+Requires:       ros-noetic-rostest-devel
+Requires:       ros-noetic-roslaunch-devel
 
-Provides: ros-melodic-xacro-devel = 1.13.5-1
-Obsoletes: ros-melodic-xacro-devel < 1.13.5-1
-Obsoletes: ros-kinetic-xacro-devel < 1.13.5-1
+Provides: ros-noetic-xacro-devel = 1.14.2-1
+Obsoletes: ros-noetic-xacro-devel < 1.14.2-1
+Obsoletes: ros-kinetic-xacro-devel < 1.14.2-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -151,6 +153,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.2-1
+- Upgrade to noetic
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.5-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.3-3

@@ -1,12 +1,12 @@
 Name:           ros-laser_assembler
-Version:        melodic.1.7.7
-Release:        3%{?dist}
+Version:        noetic.1.7.8
+Release:        1%{?dist}
 Summary:        ROS package laser_assembler
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/laser_assembler-release/archive/release/melodic/laser_assembler/1.7.7-2.tar.gz#/ros-melodic-laser_assembler-1.7.7-source0.tar.gz
+Source0:        https://github.com/ros-gbp/laser_assembler-release/archive/release/noetic/laser_assembler/1.7.8-1.tar.gz#/ros-noetic-laser_assembler-1.7.8-source0.tar.gz
 
 
 
@@ -21,29 +21,30 @@ BuildRequires:  eigen3-devel
 BuildRequires:  poco-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-filters-devel
-BuildRequires:  ros-melodic-laser_geometry-devel
-BuildRequires:  ros-melodic-message_filters-devel
-BuildRequires:  ros-melodic-message_generation-devel
-BuildRequires:  ros-melodic-pluginlib-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-rostest-devel
-BuildRequires:  ros-melodic-sensor_msgs-devel
-BuildRequires:  ros-melodic-tf-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-filters-devel
+BuildRequires:  ros-noetic-laser_geometry-devel
+BuildRequires:  ros-noetic-message_filters-devel
+BuildRequires:  ros-noetic-message_generation-devel
+BuildRequires:  ros-noetic-pluginlib-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-rostest-devel
+BuildRequires:  ros-noetic-sensor_msgs-devel
+BuildRequires:  ros-noetic-tf-devel
 
-Requires:       ros-melodic-filters
-Requires:       ros-melodic-laser_geometry
-Requires:       ros-melodic-message_filters
-Requires:       ros-melodic-message_runtime
-Requires:       ros-melodic-pluginlib
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-sensor_msgs
-Requires:       ros-melodic-tf
+Requires:       ros-noetic-filters
+Requires:       ros-noetic-laser_geometry
+Requires:       ros-noetic-message_filters
+Requires:       ros-noetic-message_runtime
+Requires:       ros-noetic-pluginlib
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-sensor_msgs
+Requires:       ros-noetic-tf
 
-Provides:  ros-melodic-laser_assembler = 1.7.7-3
-Obsoletes: ros-melodic-laser_assembler < 1.7.7-3
-Obsoletes: ros-kinetic-laser_assembler < 1.7.7-3
+Provides:  ros-noetic-laser_assembler = 1.7.8-1
+Obsoletes: ros-noetic-laser_assembler < 1.7.8-1
+Obsoletes: ros-kinetic-laser_assembler < 1.7.8-1
+
 
 
 %description
@@ -53,25 +54,26 @@ PointCloud messages
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       eigen3-devel
 Requires:       poco-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
-Requires:       ros-melodic-filters-devel
-Requires:       ros-melodic-laser_geometry-devel
-Requires:       ros-melodic-message_filters-devel
-Requires:       ros-melodic-message_generation-devel
-Requires:       ros-melodic-pluginlib-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-rostest-devel
-Requires:       ros-melodic-sensor_msgs-devel
-Requires:       ros-melodic-tf-devel
-Requires:       ros-melodic-message_runtime-devel
+Requires:       ros-noetic-filters-devel
+Requires:       ros-noetic-laser_geometry-devel
+Requires:       ros-noetic-message_filters-devel
+Requires:       ros-noetic-message_generation-devel
+Requires:       ros-noetic-pluginlib-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-rostest-devel
+Requires:       ros-noetic-sensor_msgs-devel
+Requires:       ros-noetic-tf-devel
+Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-melodic-laser_assembler-devel = 1.7.7-3
-Obsoletes: ros-melodic-laser_assembler-devel < 1.7.7-3
-Obsoletes: ros-kinetic-laser_assembler-devel < 1.7.7-3
+Provides: ros-noetic-laser_assembler-devel = 1.7.8-1
+Obsoletes: ros-noetic-laser_assembler-devel < 1.7.8-1
+Obsoletes: ros-kinetic-laser_assembler-devel < 1.7.8-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -178,6 +180,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.8-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.7.7-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.7.7-2

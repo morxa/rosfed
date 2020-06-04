@@ -1,12 +1,12 @@
 Name:           ros-catkin
-Version:        melodic.0.7.23
-Release:        1%{?dist}
+Version:        noetic.0.8.5
+Release:        2%{?dist}
 Summary:        ROS package catkin
 
 License:        BSD
 URL:            http://wiki.ros.org/catkin
 
-Source0:        https://github.com/ros-gbp/catkin-release/archive/release/melodic/catkin/0.7.23-1.tar.gz#/ros-melodic-catkin-0.7.23-source0.tar.gz
+Source0:        https://github.com/ros-gbp/catkin-release/archive/release/noetic/catkin/0.8.5-1.tar.gz#/ros-noetic-catkin-0.8.5-source0.tar.gz
 
 Patch0: ros-kinetic-catkin.python-path-in-templates.patch
 Patch1: ros-catkin.python3.patch
@@ -37,10 +37,14 @@ Requires:       python3-catkin_pkg
 Requires:       python3-empy
 Requires:       python3-pyparsing
 
-Provides:  ros-melodic-catkin = 0.7.23-1
-Obsoletes: ros-melodic-catkin < 0.7.23-1
-Obsoletes: ros-kinetic-catkin < 0.7.23-1
+Provides:  ros-noetic-catkin = 0.8.5-2
+Obsoletes: ros-noetic-catkin < 0.8.5-2
+Obsoletes: ros-kinetic-catkin < 0.8.5-2
 
+
+Obsoletes: ros-kdl_parser_py < melodic.1.13.1-4
+Obsoletes: ros-orocos_kdl < melodic.1.4.0-4
+Obsoletes: ros-python_orocos_kdl < melodic.1.4.0-6
 
 %description
 Low-level build system macros and infrastructure for ROS.
@@ -60,9 +64,13 @@ Requires:       python3-empy
 Requires:       python3-mock
 Requires:       python3-pyparsing
 
-Provides: ros-melodic-catkin-devel = 0.7.23-1
-Obsoletes: ros-melodic-catkin-devel < 0.7.23-1
-Obsoletes: ros-kinetic-catkin-devel < 0.7.23-1
+Provides: ros-noetic-catkin-devel = 0.8.5-2
+Obsoletes: ros-noetic-catkin-devel < 0.8.5-2
+Obsoletes: ros-kinetic-catkin-devel < 0.8.5-2
+
+Obsoletes: ros-kdl_parser_py-devel < melodic.1.13.1-4
+Obsoletes: ros-orocos_kdl-devel < melodic.1.4.0-4
+Obsoletes: ros-python_orocos_kdl-devel < melodic.1.4.0-6
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -168,6 +176,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.8.5-2
+- Obsolete old packages
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.8.5-1
+- Upgrade to noetic
 * Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.7.23-1
 - Update to latest release
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.7.20-1

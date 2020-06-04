@@ -1,12 +1,12 @@
 Name:           ros-rqt_image_view
-Version:        melodic.0.4.14
+Version:        noetic.0.4.15
 Release:        1%{?dist}
 Summary:        ROS package rqt_image_view
 
 License:        BSD
 URL:            http://wiki.ros.org/rqt_image_view
 
-Source0:        https://github.com/ros-gbp/rqt_image_view-release/archive/release/melodic/rqt_image_view/0.4.14-1.tar.gz#/ros-melodic-rqt_image_view-0.4.14-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt_image_view-release/archive/release/noetic/rqt_image_view/0.4.15-1.tar.gz#/ros-noetic-rqt_image_view-0.4.15-source0.tar.gz
 
 
 
@@ -25,24 +25,25 @@ BuildRequires:  qt5-qtbase-devel
 BuildRequires:  qtermwidget-qt5-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-cv_bridge-devel
-BuildRequires:  ros-melodic-geometry_msgs-devel
-BuildRequires:  ros-melodic-image_transport-devel
-BuildRequires:  ros-melodic-rqt_gui-devel
-BuildRequires:  ros-melodic-rqt_gui_cpp-devel
-BuildRequires:  ros-melodic-sensor_msgs-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-cv_bridge-devel
+BuildRequires:  ros-noetic-geometry_msgs-devel
+BuildRequires:  ros-noetic-image_transport-devel
+BuildRequires:  ros-noetic-rqt_gui-devel
+BuildRequires:  ros-noetic-rqt_gui_cpp-devel
+BuildRequires:  ros-noetic-sensor_msgs-devel
 
-Requires:       ros-melodic-cv_bridge
-Requires:       ros-melodic-geometry_msgs
-Requires:       ros-melodic-image_transport
-Requires:       ros-melodic-rqt_gui
-Requires:       ros-melodic-rqt_gui_cpp
-Requires:       ros-melodic-sensor_msgs
+Requires:       ros-noetic-cv_bridge
+Requires:       ros-noetic-geometry_msgs
+Requires:       ros-noetic-image_transport
+Requires:       ros-noetic-rqt_gui
+Requires:       ros-noetic-rqt_gui_cpp
+Requires:       ros-noetic-sensor_msgs
 
-Provides:  ros-melodic-rqt_image_view = 0.4.14-1
-Obsoletes: ros-melodic-rqt_image_view < 0.4.14-1
-Obsoletes: ros-kinetic-rqt_image_view < 0.4.14-1
+Provides:  ros-noetic-rqt_image_view = 0.4.15-1
+Obsoletes: ros-noetic-rqt_image_view < 0.4.15-1
+Obsoletes: ros-kinetic-rqt_image_view < 0.4.15-1
+
 
 
 %description
@@ -52,7 +53,7 @@ image_transport.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       libuuid-devel
 Requires:       opencv-devel
 Requires:       poco-devel
@@ -61,16 +62,17 @@ Requires:       qt5-qtbase-devel
 Requires:       qtermwidget-qt5-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
-Requires:       ros-melodic-cv_bridge-devel
-Requires:       ros-melodic-geometry_msgs-devel
-Requires:       ros-melodic-image_transport-devel
-Requires:       ros-melodic-rqt_gui-devel
-Requires:       ros-melodic-rqt_gui_cpp-devel
-Requires:       ros-melodic-sensor_msgs-devel
+Requires:       ros-noetic-cv_bridge-devel
+Requires:       ros-noetic-geometry_msgs-devel
+Requires:       ros-noetic-image_transport-devel
+Requires:       ros-noetic-rqt_gui-devel
+Requires:       ros-noetic-rqt_gui_cpp-devel
+Requires:       ros-noetic-sensor_msgs-devel
 
-Provides: ros-melodic-rqt_image_view-devel = 0.4.14-1
-Obsoletes: ros-melodic-rqt_image_view-devel < 0.4.14-1
-Obsoletes: ros-kinetic-rqt_image_view-devel < 0.4.14-1
+Provides: ros-noetic-rqt_image_view-devel = 0.4.15-1
+Obsoletes: ros-noetic-rqt_image_view-devel < 0.4.15-1
+Obsoletes: ros-kinetic-rqt_image_view-devel < 0.4.15-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -177,6 +179,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.15-1
+- Upgrade to noetic
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.14-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.13-3

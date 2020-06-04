@@ -1,12 +1,12 @@
 Name:           ros-depth_image_proc
-Version:        melodic.1.14.0
+Version:        noetic.1.15.2
 Release:        1%{?dist}
 Summary:        ROS package depth_image_proc
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/image_pipeline-release/archive/release/melodic/depth_image_proc/1.14.0-1.tar.gz#/ros-melodic-depth_image_proc-1.14.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/image_pipeline-release/archive/release/noetic/depth_image_proc/1.15.2-1.tar.gz#/ros-noetic-depth_image_proc-1.15.2-source0.tar.gz
 
 
 
@@ -17,38 +17,39 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  boost-devel boost-python3-devel boost-python3-devel
+BuildRequires:  boost-devel boost-python3-devel
 BuildRequires:  eigen3-devel
 BuildRequires:  libuuid-devel
 BuildRequires:  opencv-devel
 BuildRequires:  poco-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-cmake_modules-devel
-BuildRequires:  ros-melodic-cv_bridge-devel
-BuildRequires:  ros-melodic-eigen_conversions-devel
-BuildRequires:  ros-melodic-image_geometry-devel
-BuildRequires:  ros-melodic-image_transport-devel
-BuildRequires:  ros-melodic-message_filters-devel
-BuildRequires:  ros-melodic-nodelet-devel
-BuildRequires:  ros-melodic-rostest-devel
-BuildRequires:  ros-melodic-sensor_msgs-devel
-BuildRequires:  ros-melodic-stereo_msgs-devel
-BuildRequires:  ros-melodic-tf2-devel
-BuildRequires:  ros-melodic-tf2_ros-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-cmake_modules-devel
+BuildRequires:  ros-noetic-cv_bridge-devel
+BuildRequires:  ros-noetic-eigen_conversions-devel
+BuildRequires:  ros-noetic-image_geometry-devel
+BuildRequires:  ros-noetic-image_transport-devel
+BuildRequires:  ros-noetic-message_filters-devel
+BuildRequires:  ros-noetic-nodelet-devel
+BuildRequires:  ros-noetic-rostest-devel
+BuildRequires:  ros-noetic-sensor_msgs-devel
+BuildRequires:  ros-noetic-stereo_msgs-devel
+BuildRequires:  ros-noetic-tf2-devel
+BuildRequires:  ros-noetic-tf2_ros-devel
 
-Requires:       ros-melodic-cv_bridge
-Requires:       ros-melodic-eigen_conversions
-Requires:       ros-melodic-image_geometry
-Requires:       ros-melodic-image_transport
-Requires:       ros-melodic-nodelet
-Requires:       ros-melodic-tf2
-Requires:       ros-melodic-tf2_ros
+Requires:       ros-noetic-cv_bridge
+Requires:       ros-noetic-eigen_conversions
+Requires:       ros-noetic-image_geometry
+Requires:       ros-noetic-image_transport
+Requires:       ros-noetic-nodelet
+Requires:       ros-noetic-tf2
+Requires:       ros-noetic-tf2_ros
 
-Provides:  ros-melodic-depth_image_proc = 1.14.0-1
-Obsoletes: ros-melodic-depth_image_proc < 1.14.0-1
-Obsoletes: ros-kinetic-depth_image_proc < 1.14.0-1
+Provides:  ros-noetic-depth_image_proc = 1.15.2-1
+Obsoletes: ros-noetic-depth_image_proc < 1.15.2-1
+Obsoletes: ros-kinetic-depth_image_proc < 1.15.2-1
+
 
 
 %description
@@ -60,30 +61,31 @@ another camera frame.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       boost-devel boost-python3-devel boost-python3-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       boost-devel boost-python3-devel
 Requires:       eigen3-devel
 Requires:       libuuid-devel
 Requires:       opencv-devel
 Requires:       poco-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
-Requires:       ros-melodic-cmake_modules-devel
-Requires:       ros-melodic-cv_bridge-devel
-Requires:       ros-melodic-eigen_conversions-devel
-Requires:       ros-melodic-image_geometry-devel
-Requires:       ros-melodic-image_transport-devel
-Requires:       ros-melodic-message_filters-devel
-Requires:       ros-melodic-nodelet-devel
-Requires:       ros-melodic-rostest-devel
-Requires:       ros-melodic-sensor_msgs-devel
-Requires:       ros-melodic-stereo_msgs-devel
-Requires:       ros-melodic-tf2-devel
-Requires:       ros-melodic-tf2_ros-devel
+Requires:       ros-noetic-cmake_modules-devel
+Requires:       ros-noetic-cv_bridge-devel
+Requires:       ros-noetic-eigen_conversions-devel
+Requires:       ros-noetic-image_geometry-devel
+Requires:       ros-noetic-image_transport-devel
+Requires:       ros-noetic-message_filters-devel
+Requires:       ros-noetic-nodelet-devel
+Requires:       ros-noetic-rostest-devel
+Requires:       ros-noetic-sensor_msgs-devel
+Requires:       ros-noetic-stereo_msgs-devel
+Requires:       ros-noetic-tf2-devel
+Requires:       ros-noetic-tf2_ros-devel
 
-Provides: ros-melodic-depth_image_proc-devel = 1.14.0-1
-Obsoletes: ros-melodic-depth_image_proc-devel < 1.14.0-1
-Obsoletes: ros-kinetic-depth_image_proc-devel < 1.14.0-1
+Provides: ros-noetic-depth_image_proc-devel = 1.15.2-1
+Obsoletes: ros-noetic-depth_image_proc-devel < 1.15.2-1
+Obsoletes: ros-kinetic-depth_image_proc-devel < 1.15.2-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -190,6 +192,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.2-1
+- Upgrade to noetic
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.0-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.0-3

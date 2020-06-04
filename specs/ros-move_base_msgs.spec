@@ -1,12 +1,12 @@
 Name:           ros-move_base_msgs
-Version:        melodic.1.13.0
+Version:        noetic.1.14.0
 Release:        1%{?dist}
 Summary:        ROS package move_base_msgs
 
 License:        BSD
 URL:            http://wiki.ros.org/move_base_msgs
 
-Source0:        https://github.com/ros-gbp/navigation_msgs-release/archive/release/melodic/move_base_msgs/1.13.0-0.tar.gz#/ros-melodic-move_base_msgs-1.13.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/navigation_msgs-release/archive/release/noetic/move_base_msgs/1.14.0-1.tar.gz#/ros-noetic-move_base_msgs-1.14.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,36 +18,38 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-actionlib_msgs-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-geometry_msgs-devel
-BuildRequires:  ros-melodic-message_generation-devel
+BuildRequires:  ros-noetic-actionlib_msgs-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-geometry_msgs-devel
+BuildRequires:  ros-noetic-message_generation-devel
 
-Requires:       ros-melodic-actionlib_msgs
-Requires:       ros-melodic-geometry_msgs
-Requires:       ros-melodic-message_runtime
+Requires:       ros-noetic-actionlib_msgs
+Requires:       ros-noetic-geometry_msgs
+Requires:       ros-noetic-message_runtime
 
-Provides:  ros-melodic-move_base_msgs = 1.13.0-1
-Obsoletes: ros-melodic-move_base_msgs < 1.13.0-1
-Obsoletes: ros-kinetic-move_base_msgs < 1.13.0-1
+Provides:  ros-noetic-move_base_msgs = 1.14.0-1
+Obsoletes: ros-noetic-move_base_msgs < 1.14.0-1
+Obsoletes: ros-kinetic-move_base_msgs < 1.14.0-1
+
 
 
 %description
 Holds the action description and relevant messages for the move_base
-package
+package.
 
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-actionlib_msgs-devel
-Requires:       ros-melodic-geometry_msgs-devel
-Requires:       ros-melodic-message_generation-devel
-Requires:       ros-melodic-message_runtime-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-actionlib_msgs-devel
+Requires:       ros-noetic-geometry_msgs-devel
+Requires:       ros-noetic-message_generation-devel
+Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-melodic-move_base_msgs-devel = 1.13.0-1
-Obsoletes: ros-melodic-move_base_msgs-devel < 1.13.0-1
-Obsoletes: ros-kinetic-move_base_msgs-devel < 1.13.0-1
+Provides: ros-noetic-move_base_msgs-devel = 1.14.0-1
+Obsoletes: ros-noetic-move_base_msgs-devel < 1.14.0-1
+Obsoletes: ros-kinetic-move_base_msgs-devel < 1.14.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -154,6 +156,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.0-1
+- Upgrade to noetic
 * Wed Jul 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.0-1
 - Update to latest release
 * Tue May 22 2018 Till Hofmann <thofmann@fedoraproject.org> - 1.13.0-10

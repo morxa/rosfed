@@ -1,12 +1,12 @@
 Name:           ros-nav_core
-Version:        melodic.1.16.6
+Version:        noetic.1.17.0
 Release:        1%{?dist}
 Summary:        ROS package nav_core
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/navigation-release/archive/release/melodic/nav_core/1.16.6-1.tar.gz#/ros-melodic-nav_core-1.16.6-source0.tar.gz
+Source0:        https://github.com/ros-gbp/navigation-release/archive/release/noetic/nav_core/1.17.0-1.tar.gz#/ros-noetic-nav_core-1.17.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -19,20 +19,21 @@ BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
 BuildRequires:  pcl-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-costmap_2d-devel
-BuildRequires:  ros-melodic-geometry_msgs-devel
-BuildRequires:  ros-melodic-std_msgs-devel
-BuildRequires:  ros-melodic-tf2_ros-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-costmap_2d-devel
+BuildRequires:  ros-noetic-geometry_msgs-devel
+BuildRequires:  ros-noetic-std_msgs-devel
+BuildRequires:  ros-noetic-tf2_ros-devel
 
-Requires:       ros-melodic-costmap_2d
-Requires:       ros-melodic-geometry_msgs
-Requires:       ros-melodic-std_msgs
-Requires:       ros-melodic-tf2_ros
+Requires:       ros-noetic-costmap_2d
+Requires:       ros-noetic-geometry_msgs
+Requires:       ros-noetic-std_msgs
+Requires:       ros-noetic-tf2_ros
 
-Provides:  ros-melodic-nav_core = 1.16.6-1
-Obsoletes: ros-melodic-nav_core < 1.16.6-1
-Obsoletes: ros-kinetic-nav_core < 1.16.6-1
+Provides:  ros-noetic-nav_core = 1.17.0-1
+Obsoletes: ros-noetic-nav_core < 1.17.0-1
+Obsoletes: ros-kinetic-nav_core < 1.17.0-1
+
 
 
 %description
@@ -45,16 +46,17 @@ or recovery behavior for new versions adhering to the same interface.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       pcl-devel
-Requires:       ros-melodic-costmap_2d-devel
-Requires:       ros-melodic-geometry_msgs-devel
-Requires:       ros-melodic-std_msgs-devel
-Requires:       ros-melodic-tf2_ros-devel
+Requires:       ros-noetic-costmap_2d-devel
+Requires:       ros-noetic-geometry_msgs-devel
+Requires:       ros-noetic-std_msgs-devel
+Requires:       ros-noetic-tf2_ros-devel
 
-Provides: ros-melodic-nav_core-devel = 1.16.6-1
-Obsoletes: ros-melodic-nav_core-devel < 1.16.6-1
-Obsoletes: ros-kinetic-nav_core-devel < 1.16.6-1
+Provides: ros-noetic-nav_core-devel = 1.17.0-1
+Obsoletes: ros-noetic-nav_core-devel < 1.17.0-1
+Obsoletes: ros-kinetic-nav_core-devel < 1.17.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -161,6 +163,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.17.0-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.16.6-1
 - Update to latest release
 * Wed Mar 18 2020 Nicolas Limpert - melodic.1.16.5-1

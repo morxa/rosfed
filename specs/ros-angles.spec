@@ -1,12 +1,12 @@
 Name:           ros-angles
-Version:        melodic.1.9.12
+Version:        noetic.1.9.13
 Release:        1%{?dist}
 Summary:        ROS package angles
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/geometry_angles_utils-release/archive/release/melodic/angles/1.9.12-1.tar.gz#/ros-melodic-angles-1.9.12-source0.tar.gz
+Source0:        https://github.com/ros-gbp/geometry_angles_utils-release/archive/release/noetic/angles/1.9.13-1.tar.gz#/ros-noetic-angles-1.9.13-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,13 +18,14 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-rosunit-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-rosunit-devel
 
 
-Provides:  ros-melodic-angles = 1.9.12-1
-Obsoletes: ros-melodic-angles < 1.9.12-1
-Obsoletes: ros-kinetic-angles < 1.9.12-1
+Provides:  ros-noetic-angles = 1.9.13-1
+Obsoletes: ros-noetic-angles < 1.9.13-1
+Obsoletes: ros-kinetic-angles < 1.9.13-1
+
 
 
 %description
@@ -40,12 +41,13 @@ major changes in the near future.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-rosunit-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-rosunit-devel
 
-Provides: ros-melodic-angles-devel = 1.9.12-1
-Obsoletes: ros-melodic-angles-devel < 1.9.12-1
-Obsoletes: ros-kinetic-angles-devel < 1.9.12-1
+Provides: ros-noetic-angles-devel = 1.9.13-1
+Obsoletes: ros-noetic-angles-devel < 1.9.13-1
+Obsoletes: ros-kinetic-angles-devel < 1.9.13-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -152,6 +154,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.9.13-1
+- Upgrade to noetic
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.9.12-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.9.11-3

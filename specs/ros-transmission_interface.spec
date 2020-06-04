@@ -1,12 +1,12 @@
 Name:           ros-transmission_interface
-Version:        melodic.0.18.0
+Version:        noetic.0.19.1
 Release:        1%{?dist}
 Summary:        ROS package transmission_interface
 
 License:        BSD
 URL:            https://github.com/ros-controls/ros_control/wiki
 
-Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/melodic/transmission_interface/0.18.0-1.tar.gz#/ros-melodic-transmission_interface-0.18.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/noetic/transmission_interface/0.19.1-1.tar.gz#/ros-noetic-transmission_interface-0.19.1-source0.tar.gz
 
 
 
@@ -20,18 +20,19 @@ BuildRequires:  python3-devel
 BuildRequires:  poco-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-cmake_modules-devel
-BuildRequires:  ros-melodic-hardware_interface-devel
-BuildRequires:  ros-melodic-pluginlib-devel
-BuildRequires:  ros-melodic-resource_retriever-devel
-BuildRequires:  ros-melodic-roscpp-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-cmake_modules-devel
+BuildRequires:  ros-noetic-hardware_interface-devel
+BuildRequires:  ros-noetic-pluginlib-devel
+BuildRequires:  ros-noetic-resource_retriever-devel
+BuildRequires:  ros-noetic-roscpp-devel
 
-Requires:       ros-melodic-roscpp
+Requires:       ros-noetic-roscpp
 
-Provides:  ros-melodic-transmission_interface = 0.18.0-1
-Obsoletes: ros-melodic-transmission_interface < 0.18.0-1
-Obsoletes: ros-kinetic-transmission_interface < 0.18.0-1
+Provides:  ros-noetic-transmission_interface = 0.19.1-1
+Obsoletes: ros-noetic-transmission_interface < 0.19.1-1
+Obsoletes: ros-kinetic-transmission_interface < 0.19.1-1
+
 
 
 %description
@@ -40,19 +41,20 @@ Transmission Interface.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-hardware_interface-devel
-Requires:       ros-melodic-pluginlib-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-hardware_interface-devel
+Requires:       ros-noetic-pluginlib-devel
 Requires:       poco-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
-Requires:       ros-melodic-cmake_modules-devel
-Requires:       ros-melodic-resource_retriever-devel
-Requires:       ros-melodic-roscpp-devel
+Requires:       ros-noetic-cmake_modules-devel
+Requires:       ros-noetic-resource_retriever-devel
+Requires:       ros-noetic-roscpp-devel
 
-Provides: ros-melodic-transmission_interface-devel = 0.18.0-1
-Obsoletes: ros-melodic-transmission_interface-devel < 0.18.0-1
-Obsoletes: ros-kinetic-transmission_interface-devel < 0.18.0-1
+Provides: ros-noetic-transmission_interface-devel = 0.19.1-1
+Obsoletes: ros-noetic-transmission_interface-devel < 0.19.1-1
+Obsoletes: ros-kinetic-transmission_interface-devel < 0.19.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -159,6 +161,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.19.1-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.18.0-1
 - Update to latest release
 * Mon Mar 02 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.17.0-1

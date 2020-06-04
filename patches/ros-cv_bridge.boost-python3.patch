@@ -1,0 +1,19 @@
+diff -ur vision_opencv-release-release-noetic-cv_bridge-1.15.0-1.orig/CMakeLists.txt vision_opencv-release-release-noetic-cv_bridge-1.15.0-1/CMakeLists.txt
+--- vision_opencv-release-release-noetic-cv_bridge-1.15.0-1.orig/CMakeLists.txt	2020-05-19 18:28:29.000000000 +0200
++++ vision_opencv-release-release-noetic-cv_bridge-1.15.0-1/CMakeLists.txt	2020-05-24 16:41:29.140616265 +0200
+@@ -5,14 +5,7 @@
+ 
+ if(NOT ANDROID)
+   find_package(PythonLibs)
+-
+-  if(PYTHONLIBS_VERSION_STRING VERSION_LESS "3.8")
+-    # Debian Buster
+-    find_package(Boost REQUIRED python37)
+-  else()
+-    # Ubuntu Focal
+-    find_package(Boost REQUIRED python)
+-  endif()
++  find_package(Boost REQUIRED python${PYTHON_VERSION_NODOTS})
+ else()
+ find_package(Boost REQUIRED)
+ endif()

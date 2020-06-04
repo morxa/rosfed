@@ -1,12 +1,12 @@
 Name:           ros-ros_core
-Version:        melodic.1.4.1
-Release:        3%{?dist}
+Version:        noetic.1.5.0
+Release:        1%{?dist}
 Summary:        ROS package ros_core
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/metapackages-release/archive/release/melodic/ros_core/1.4.1-0.tar.gz#/ros-melodic-ros_core-1.4.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/metapackages-release/archive/release/noetic/ros_core/1.5.0-1.tar.gz#/ros-noetic-ros_core-1.5.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,36 +18,37 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
-Requires:       ros-melodic-catkin
-Requires:       ros-melodic-class_loader
-Requires:       ros-melodic-cmake_modules
-Requires:       ros-melodic-common_msgs
-Requires:       ros-melodic-gencpp
-Requires:       ros-melodic-geneus
-Requires:       ros-melodic-genlisp
-Requires:       ros-melodic-genmsg
-Requires:       ros-melodic-gennodejs
-Requires:       ros-melodic-genpy
-Requires:       ros-melodic-message_generation
-Requires:       ros-melodic-message_runtime
-Requires:       ros-melodic-pluginlib
-Requires:       ros-melodic-ros
-Requires:       ros-melodic-ros_comm
-Requires:       ros-melodic-rosbag_migration_rule
-Requires:       ros-melodic-rosconsole
-Requires:       ros-melodic-rosconsole_bridge
-Requires:       ros-melodic-roscpp_core
-Requires:       ros-melodic-rosgraph_msgs
-Requires:       ros-melodic-roslisp
-Requires:       ros-melodic-rospack
-Requires:       ros-melodic-std_msgs
-Requires:       ros-melodic-std_srvs
+Requires:       ros-noetic-catkin
+Requires:       ros-noetic-class_loader
+Requires:       ros-noetic-cmake_modules
+Requires:       ros-noetic-common_msgs
+Requires:       ros-noetic-gencpp
+Requires:       ros-noetic-geneus
+Requires:       ros-noetic-genlisp
+Requires:       ros-noetic-genmsg
+Requires:       ros-noetic-gennodejs
+Requires:       ros-noetic-genpy
+Requires:       ros-noetic-message_generation
+Requires:       ros-noetic-message_runtime
+Requires:       ros-noetic-pluginlib
+Requires:       ros-noetic-ros
+Requires:       ros-noetic-ros_comm
+Requires:       ros-noetic-rosbag_migration_rule
+Requires:       ros-noetic-rosconsole
+Requires:       ros-noetic-rosconsole_bridge
+Requires:       ros-noetic-roscpp_core
+Requires:       ros-noetic-rosgraph_msgs
+Requires:       ros-noetic-roslisp
+Requires:       ros-noetic-rospack
+Requires:       ros-noetic-std_msgs
+Requires:       ros-noetic-std_srvs
 
-Provides:  ros-melodic-ros_core = 1.4.1-3
-Obsoletes: ros-melodic-ros_core < 1.4.1-3
-Obsoletes: ros-kinetic-ros_core < 1.4.1-3
+Provides:  ros-noetic-ros_core = 1.5.0-1
+Obsoletes: ros-noetic-ros_core < 1.5.0-1
+Obsoletes: ros-kinetic-ros_core < 1.5.0-1
+
 
 
 %description
@@ -57,34 +58,35 @@ subscribe, services, launch files, and other core ROS concepts.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-class_loader-devel
-Requires:       ros-melodic-cmake_modules-devel
-Requires:       ros-melodic-common_msgs-devel
-Requires:       ros-melodic-gencpp-devel
-Requires:       ros-melodic-geneus-devel
-Requires:       ros-melodic-genlisp-devel
-Requires:       ros-melodic-genmsg-devel
-Requires:       ros-melodic-gennodejs-devel
-Requires:       ros-melodic-genpy-devel
-Requires:       ros-melodic-message_generation-devel
-Requires:       ros-melodic-message_runtime-devel
-Requires:       ros-melodic-pluginlib-devel
-Requires:       ros-melodic-ros-devel
-Requires:       ros-melodic-ros_comm-devel
-Requires:       ros-melodic-rosbag_migration_rule-devel
-Requires:       ros-melodic-rosconsole-devel
-Requires:       ros-melodic-rosconsole_bridge-devel
-Requires:       ros-melodic-roscpp_core-devel
-Requires:       ros-melodic-rosgraph_msgs-devel
-Requires:       ros-melodic-roslisp-devel
-Requires:       ros-melodic-rospack-devel
-Requires:       ros-melodic-std_msgs-devel
-Requires:       ros-melodic-std_srvs-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-class_loader-devel
+Requires:       ros-noetic-cmake_modules-devel
+Requires:       ros-noetic-common_msgs-devel
+Requires:       ros-noetic-gencpp-devel
+Requires:       ros-noetic-geneus-devel
+Requires:       ros-noetic-genlisp-devel
+Requires:       ros-noetic-genmsg-devel
+Requires:       ros-noetic-gennodejs-devel
+Requires:       ros-noetic-genpy-devel
+Requires:       ros-noetic-message_generation-devel
+Requires:       ros-noetic-message_runtime-devel
+Requires:       ros-noetic-pluginlib-devel
+Requires:       ros-noetic-ros-devel
+Requires:       ros-noetic-ros_comm-devel
+Requires:       ros-noetic-rosbag_migration_rule-devel
+Requires:       ros-noetic-rosconsole-devel
+Requires:       ros-noetic-rosconsole_bridge-devel
+Requires:       ros-noetic-roscpp_core-devel
+Requires:       ros-noetic-rosgraph_msgs-devel
+Requires:       ros-noetic-roslisp-devel
+Requires:       ros-noetic-rospack-devel
+Requires:       ros-noetic-std_msgs-devel
+Requires:       ros-noetic-std_srvs-devel
 
-Provides: ros-melodic-ros_core-devel = 1.4.1-3
-Obsoletes: ros-melodic-ros_core-devel < 1.4.1-3
-Obsoletes: ros-kinetic-ros_core-devel < 1.4.1-3
+Provides: ros-noetic-ros_core-devel = 1.5.0-1
+Obsoletes: ros-noetic-ros_core-devel < 1.5.0-1
+Obsoletes: ros-kinetic-ros_core-devel < 1.5.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -191,6 +193,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.5.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.4.1-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.4.1-2

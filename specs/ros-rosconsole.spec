@@ -1,12 +1,12 @@
 Name:           ros-rosconsole
-Version:        melodic.1.13.11
+Version:        noetic.1.14.0
 Release:        1%{?dist}
 Summary:        ROS package rosconsole
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/rosconsole-release/archive/release/melodic/rosconsole/1.13.11-1.tar.gz#/ros-melodic-rosconsole-1.13.11-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rosconsole-release/archive/release/noetic/rosconsole/1.14.0-1.tar.gz#/ros-noetic-rosconsole-1.14.0-source0.tar.gz
 
 
 
@@ -18,21 +18,22 @@ BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
 BuildRequires:  apr-devel apr-util
-BuildRequires:  boost-devel boost-python3-devel boost-python3-devel
+BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  log4cxx-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-cpp_common-devel
-BuildRequires:  ros-melodic-rostime-devel
-BuildRequires:  ros-melodic-rosunit-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-cpp_common-devel
+BuildRequires:  ros-noetic-rostime-devel
+BuildRequires:  ros-noetic-rosunit-devel
 
-Requires:       ros-melodic-cpp_common
-Requires:       ros-melodic-rosbuild
-Requires:       ros-melodic-rostime
+Requires:       ros-noetic-cpp_common
+Requires:       ros-noetic-rosbuild
+Requires:       ros-noetic-rostime
 
-Provides:  ros-melodic-rosconsole = 1.13.11-1
-Obsoletes: ros-melodic-rosconsole < 1.13.11-1
-Obsoletes: ros-kinetic-rosconsole < 1.13.11-1
+Provides:  ros-noetic-rosconsole = 1.14.0-1
+Obsoletes: ros-noetic-rosconsole < 1.14.0-1
+Obsoletes: ros-kinetic-rosconsole < 1.14.0-1
+
 
 
 %description
@@ -41,19 +42,20 @@ ROS console output library.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       apr-devel apr-util
-Requires:       boost-devel boost-python3-devel boost-python3-devel
+Requires:       boost-devel
 Requires:       console-bridge-devel
 Requires:       log4cxx-devel
-Requires:       ros-melodic-cpp_common-devel
-Requires:       ros-melodic-rostime-devel
-Requires:       ros-melodic-rosunit-devel
-Requires:       ros-melodic-rosbuild-devel
+Requires:       ros-noetic-cpp_common-devel
+Requires:       ros-noetic-rostime-devel
+Requires:       ros-noetic-rosunit-devel
+Requires:       ros-noetic-rosbuild-devel
 
-Provides: ros-melodic-rosconsole-devel = 1.13.11-1
-Obsoletes: ros-melodic-rosconsole-devel < 1.13.11-1
-Obsoletes: ros-kinetic-rosconsole-devel < 1.13.11-1
+Provides: ros-noetic-rosconsole-devel = 1.14.0-1
+Obsoletes: ros-noetic-rosconsole-devel < 1.14.0-1
+Obsoletes: ros-kinetic-rosconsole-devel < 1.14.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -160,6 +162,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.0-1
+- Upgrade to noetic
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.11-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.10-3

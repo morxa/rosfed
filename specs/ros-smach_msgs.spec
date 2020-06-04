@@ -1,12 +1,12 @@
 Name:           ros-smach_msgs
-Version:        melodic.2.0.1
-Release:        3%{?dist}
+Version:        noetic.2.5.0
+Release:        1%{?dist}
 Summary:        ROS package smach_msgs
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/executive_smach-release/archive/release/melodic/smach_msgs/2.0.1-0.tar.gz#/ros-melodic-smach_msgs-2.0.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/executive_smach-release/archive/release/noetic/smach_msgs/2.5.0-1.tar.gz#/ros-noetic-smach_msgs-2.5.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,17 +18,18 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-message_generation-devel
-BuildRequires:  ros-melodic-message_runtime-devel
-BuildRequires:  ros-melodic-std_msgs-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-message_generation-devel
+BuildRequires:  ros-noetic-message_runtime-devel
+BuildRequires:  ros-noetic-std_msgs-devel
 
-Requires:       ros-melodic-message_runtime
-Requires:       ros-melodic-std_msgs
+Requires:       ros-noetic-message_runtime
+Requires:       ros-noetic-std_msgs
 
-Provides:  ros-melodic-smach_msgs = 2.0.1-3
-Obsoletes: ros-melodic-smach_msgs < 2.0.1-3
-Obsoletes: ros-kinetic-smach_msgs < 2.0.1-3
+Provides:  ros-noetic-smach_msgs = 2.5.0-1
+Obsoletes: ros-noetic-smach_msgs < 2.5.0-1
+Obsoletes: ros-kinetic-smach_msgs < 2.5.0-1
+
 
 
 %description
@@ -38,14 +39,15 @@ introspection interfaces for smach.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-message_runtime-devel
-Requires:       ros-melodic-message_generation-devel
-Requires:       ros-melodic-std_msgs-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-message_runtime-devel
+Requires:       ros-noetic-message_generation-devel
+Requires:       ros-noetic-std_msgs-devel
 
-Provides: ros-melodic-smach_msgs-devel = 2.0.1-3
-Obsoletes: ros-melodic-smach_msgs-devel < 2.0.1-3
-Obsoletes: ros-kinetic-smach_msgs-devel < 2.0.1-3
+Provides: ros-noetic-smach_msgs-devel = 2.5.0-1
+Obsoletes: ros-noetic-smach_msgs-devel < 2.5.0-1
+Obsoletes: ros-kinetic-smach_msgs-devel < 2.5.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -152,6 +154,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.2.5.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.2.0.1-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.2.0.1-2

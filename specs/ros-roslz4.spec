@@ -1,12 +1,12 @@
 Name:           ros-roslz4
-Version:        melodic.1.14.5
+Version:        noetic.1.15.6
 Release:        1%{?dist}
 Summary:        ROS package roslz4
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/melodic/roslz4/1.14.5-1.tar.gz#/ros-melodic-roslz4-1.14.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/roslz4/1.15.6-1.tar.gz#/ros-noetic-roslz4-1.15.6-source0.tar.gz
 
 
 
@@ -18,14 +18,15 @@ BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
 BuildRequires:  lz4-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-cpp_common-devel
-BuildRequires:  ros-melodic-rosunit-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-cpp_common-devel
+BuildRequires:  ros-noetic-rosunit-devel
 
 
-Provides:  ros-melodic-roslz4 = 1.14.5-1
-Obsoletes: ros-melodic-roslz4 < 1.14.5-1
-Obsoletes: ros-kinetic-roslz4 < 1.14.5-1
+Provides:  ros-noetic-roslz4 = 1.15.6-1
+Obsoletes: ros-noetic-roslz4 < 1.15.6-1
+Obsoletes: ros-kinetic-roslz4 < 1.15.6-1
+
 
 
 %description
@@ -36,14 +37,15 @@ fast LZ4 compression algorithm.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       lz4-devel
-Requires:       ros-melodic-cpp_common-devel
-Requires:       ros-melodic-rosunit-devel
+Requires:       ros-noetic-cpp_common-devel
+Requires:       ros-noetic-rosunit-devel
 
-Provides: ros-melodic-roslz4-devel = 1.14.5-1
-Obsoletes: ros-melodic-roslz4-devel < 1.14.5-1
-Obsoletes: ros-kinetic-roslz4-devel < 1.14.5-1
+Provides: ros-noetic-roslz4-devel = 1.15.6-1
+Obsoletes: ros-noetic-roslz4-devel < 1.15.6-1
+Obsoletes: ros-kinetic-roslz4-devel < 1.15.6-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -150,6 +152,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.6-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.5-1
 - Update to latest release
 * Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.4-1

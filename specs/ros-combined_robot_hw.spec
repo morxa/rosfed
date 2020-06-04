@@ -1,12 +1,12 @@
 Name:           ros-combined_robot_hw
-Version:        melodic.0.18.0
+Version:        noetic.0.19.1
 Release:        1%{?dist}
 Summary:        ROS package combined_robot_hw
 
 License:        BSD
 URL:            https://github.com/ros-controls/ros_control/wiki
 
-Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/melodic/combined_robot_hw/0.18.0-1.tar.gz#/ros-melodic-combined_robot_hw-0.18.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/noetic/combined_robot_hw/0.19.1-1.tar.gz#/ros-noetic-combined_robot_hw-0.19.1-source0.tar.gz
 
 
 
@@ -17,16 +17,17 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-hardware_interface-devel
-BuildRequires:  ros-melodic-pluginlib-devel
-BuildRequires:  ros-melodic-roscpp-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-hardware_interface-devel
+BuildRequires:  ros-noetic-pluginlib-devel
+BuildRequires:  ros-noetic-roscpp-devel
 
-Requires:       ros-melodic-roscpp
+Requires:       ros-noetic-roscpp
 
-Provides:  ros-melodic-combined_robot_hw = 0.18.0-1
-Obsoletes: ros-melodic-combined_robot_hw < 0.18.0-1
-Obsoletes: ros-kinetic-combined_robot_hw < 0.18.0-1
+Provides:  ros-noetic-combined_robot_hw = 0.19.1-1
+Obsoletes: ros-noetic-combined_robot_hw < 0.19.1-1
+Obsoletes: ros-kinetic-combined_robot_hw < 0.19.1-1
+
 
 
 %description
@@ -35,14 +36,15 @@ Combined Robot HW class.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-hardware_interface-devel
-Requires:       ros-melodic-pluginlib-devel
-Requires:       ros-melodic-roscpp-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-hardware_interface-devel
+Requires:       ros-noetic-pluginlib-devel
+Requires:       ros-noetic-roscpp-devel
 
-Provides: ros-melodic-combined_robot_hw-devel = 0.18.0-1
-Obsoletes: ros-melodic-combined_robot_hw-devel < 0.18.0-1
-Obsoletes: ros-kinetic-combined_robot_hw-devel < 0.18.0-1
+Provides: ros-noetic-combined_robot_hw-devel = 0.19.1-1
+Obsoletes: ros-noetic-combined_robot_hw-devel < 0.19.1-1
+Obsoletes: ros-kinetic-combined_robot_hw-devel < 0.19.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -149,6 +151,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.19.1-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.18.0-1
 - Update to latest release
 * Mon Mar 02 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.17.0-1

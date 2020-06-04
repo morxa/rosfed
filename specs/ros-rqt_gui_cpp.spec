@@ -1,12 +1,12 @@
 Name:           ros-rqt_gui_cpp
-Version:        melodic.0.5.1
+Version:        noetic.0.5.1
 Release:        1%{?dist}
 Summary:        ROS package rqt_gui_cpp
 
 License:        BSD
 URL:            http://ros.org/wiki/rqt_gui_cpp
 
-Source0:        https://github.com/ros-gbp/rqt-release/archive/release/melodic/rqt_gui_cpp/0.5.1-1.tar.gz#/ros-melodic-rqt_gui_cpp-0.5.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt-release/archive/release/noetic/rqt_gui_cpp/0.5.1-1.tar.gz#/ros-noetic-rqt_gui_cpp-0.5.1-source0.tar.gz
 
 
 
@@ -22,20 +22,21 @@ BuildRequires:  poco-devel
 BuildRequires:  qt5-qtbase-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-nodelet-devel
-BuildRequires:  ros-melodic-qt_gui-devel
-BuildRequires:  ros-melodic-qt_gui_cpp-devel
-BuildRequires:  ros-melodic-roscpp-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-nodelet-devel
+BuildRequires:  ros-noetic-qt_gui-devel
+BuildRequires:  ros-noetic-qt_gui_cpp-devel
+BuildRequires:  ros-noetic-roscpp-devel
 
-Requires:       ros-melodic-nodelet
-Requires:       ros-melodic-qt_gui
-Requires:       ros-melodic-qt_gui_cpp
-Requires:       ros-melodic-roscpp
+Requires:       ros-noetic-nodelet
+Requires:       ros-noetic-qt_gui
+Requires:       ros-noetic-qt_gui_cpp
+Requires:       ros-noetic-roscpp
 
-Provides:  ros-melodic-rqt_gui_cpp = 0.5.1-1
-Obsoletes: ros-melodic-rqt_gui_cpp < 0.5.1-1
+Provides:  ros-noetic-rqt_gui_cpp = 0.5.1-1
+Obsoletes: ros-noetic-rqt_gui_cpp < 0.5.1-1
 Obsoletes: ros-kinetic-rqt_gui_cpp < 0.5.1-1
+
 
 
 %description
@@ -44,20 +45,21 @@ rqt_gui_cpp enables GUI plugins to use the C++ client library for ROS.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       libuuid-devel
 Requires:       poco-devel
 Requires:       qt5-qtbase-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
-Requires:       ros-melodic-nodelet-devel
-Requires:       ros-melodic-qt_gui-devel
-Requires:       ros-melodic-qt_gui_cpp-devel
-Requires:       ros-melodic-roscpp-devel
+Requires:       ros-noetic-nodelet-devel
+Requires:       ros-noetic-qt_gui-devel
+Requires:       ros-noetic-qt_gui_cpp-devel
+Requires:       ros-noetic-roscpp-devel
 
-Provides: ros-melodic-rqt_gui_cpp-devel = 0.5.1-1
-Obsoletes: ros-melodic-rqt_gui_cpp-devel < 0.5.1-1
+Provides: ros-noetic-rqt_gui_cpp-devel = 0.5.1-1
+Obsoletes: ros-noetic-rqt_gui_cpp-devel < 0.5.1-1
 Obsoletes: ros-kinetic-rqt_gui_cpp-devel < 0.5.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -164,6 +166,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.1-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.5.1-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.5.0-3

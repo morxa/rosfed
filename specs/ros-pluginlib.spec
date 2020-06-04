@@ -1,12 +1,12 @@
 Name:           ros-pluginlib
-Version:        melodic.1.12.1
-Release:        3%{?dist}
+Version:        noetic.1.13.0
+Release:        1%{?dist}
 Summary:        ROS package pluginlib
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/pluginlib-release/archive/release/melodic/pluginlib/1.12.1-0.tar.gz#/ros-melodic-pluginlib-1.12.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/pluginlib-release/archive/release/noetic/pluginlib/1.13.0-1.tar.gz#/ros-noetic-pluginlib-1.13.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,26 +18,24 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  boost-devel boost-python3-devel boost-python3-devel
+BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  poco-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-class_loader-devel
-BuildRequires:  ros-melodic-cmake_modules-devel
-BuildRequires:  ros-melodic-rosconsole-devel
-BuildRequires:  ros-melodic-roslib-devel
-BuildRequires:  ros-melodic-rostime-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-class_loader-devel
+BuildRequires:  ros-noetic-cmake_modules-devel
+BuildRequires:  ros-noetic-rosconsole-devel
+BuildRequires:  ros-noetic-roslib-devel
+BuildRequires:  ros-noetic-rostime-devel
 
-Requires:       ros-melodic-class_loader
-Requires:       ros-melodic-rosconsole
-Requires:       ros-melodic-roslib
 
-Provides:  ros-melodic-pluginlib = 1.12.1-3
-Obsoletes: ros-melodic-pluginlib < 1.12.1-3
-Obsoletes: ros-kinetic-pluginlib < 1.12.1-3
+Provides:  ros-noetic-pluginlib = 1.13.0-1
+Obsoletes: ros-noetic-pluginlib < 1.13.0-1
+Obsoletes: ros-kinetic-pluginlib < 1.13.0-1
+
 
 
 %description
@@ -49,22 +47,23 @@ package.xml of their package.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       boost-devel boost-python3-devel boost-python3-devel
+Requires:       boost-devel
+Requires:       tinyxml2-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-class_loader-devel
+Requires:       ros-noetic-rosconsole-devel
+Requires:       ros-noetic-roslib-devel
 Requires:       console-bridge-devel
 Requires:       log4cxx-devel
 Requires:       poco-devel
 Requires:       tinyxml-devel
-Requires:       tinyxml2-devel
-Requires:       ros-melodic-class_loader-devel
-Requires:       ros-melodic-cmake_modules-devel
-Requires:       ros-melodic-rosconsole-devel
-Requires:       ros-melodic-roslib-devel
-Requires:       ros-melodic-rostime-devel
+Requires:       ros-noetic-cmake_modules-devel
+Requires:       ros-noetic-rostime-devel
 
-Provides: ros-melodic-pluginlib-devel = 1.12.1-3
-Obsoletes: ros-melodic-pluginlib-devel < 1.12.1-3
-Obsoletes: ros-kinetic-pluginlib-devel < 1.12.1-3
+Provides: ros-noetic-pluginlib-devel = 1.13.0-1
+Obsoletes: ros-noetic-pluginlib-devel < 1.13.0-1
+Obsoletes: ros-kinetic-pluginlib-devel < 1.13.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -171,6 +170,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.12.1-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.12.1-2

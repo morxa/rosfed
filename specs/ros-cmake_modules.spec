@@ -1,12 +1,12 @@
 Name:           ros-cmake_modules
-Version:        melodic.0.4.2
-Release:        3%{?dist}
+Version:        noetic.0.5.0
+Release:        1%{?dist}
 Summary:        ROS package cmake_modules
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/cmake_modules-release/archive/release/melodic/cmake_modules/0.4.2-0.tar.gz#/ros-melodic-cmake_modules-0.4.2-source0.tar.gz
+Source0:        https://github.com/ros-gbp/cmake_modules-release/archive/release/noetic/cmake_modules/0.5.0-1.tar.gz#/ros-noetic-cmake_modules-0.5.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,12 +18,13 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
 
-Provides:  ros-melodic-cmake_modules = 0.4.2-3
-Obsoletes: ros-melodic-cmake_modules < 0.4.2-3
-Obsoletes: ros-kinetic-cmake_modules < 0.4.2-3
+Provides:  ros-noetic-cmake_modules = 0.5.0-1
+Obsoletes: ros-noetic-cmake_modules < 0.5.0-1
+Obsoletes: ros-kinetic-cmake_modules < 0.5.0-1
+
 
 
 %description
@@ -33,11 +34,12 @@ CMake but are commonly used by ROS packages.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 
-Provides: ros-melodic-cmake_modules-devel = 0.4.2-3
-Obsoletes: ros-melodic-cmake_modules-devel < 0.4.2-3
-Obsoletes: ros-kinetic-cmake_modules-devel < 0.4.2-3
+Provides: ros-noetic-cmake_modules-devel = 0.5.0-1
+Obsoletes: ros-noetic-cmake_modules-devel < 0.5.0-1
+Obsoletes: ros-kinetic-cmake_modules-devel < 0.5.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -144,6 +146,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.2-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.2-2

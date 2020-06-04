@@ -1,12 +1,12 @@
 Name:           ros-qt_gui_cpp
-Version:        melodic.0.4.0
-Release:        3%{?dist}
+Version:        noetic.0.4.0
+Release:        1%{?dist}
 Summary:        ROS package qt_gui_cpp
 
 License:        BSD
 URL:            http://ros.org/wiki/qt_gui_cpp
 
-Source0:        https://github.com/ros-gbp/qt_gui_core-release/archive/release/melodic/qt_gui_cpp/0.4.0-1.tar.gz#/ros-melodic-qt_gui_cpp-0.4.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/qt_gui_core-release/archive/release/noetic/qt_gui_cpp/0.4.0-1.tar.gz#/ros-noetic-qt_gui_cpp-0.4.0-source0.tar.gz
 
 
 
@@ -28,17 +28,18 @@ BuildRequires:  qt5-qtbase-devel
 BuildRequires:  qtermwidget-qt5-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-cmake_modules-devel
-BuildRequires:  ros-melodic-pluginlib-devel
-BuildRequires:  ros-melodic-python_qt_binding-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-cmake_modules-devel
+BuildRequires:  ros-noetic-pluginlib-devel
+BuildRequires:  ros-noetic-python_qt_binding-devel
 
-Requires:       ros-melodic-pluginlib
-Requires:       ros-melodic-qt_gui
+Requires:       ros-noetic-pluginlib
+Requires:       ros-noetic-qt_gui
 
-Provides:  ros-melodic-qt_gui_cpp = 0.4.0-3
-Obsoletes: ros-melodic-qt_gui_cpp < 0.4.0-3
-Obsoletes: ros-kinetic-qt_gui_cpp < 0.4.0-3
+Provides:  ros-noetic-qt_gui_cpp = 0.4.0-1
+Obsoletes: ros-noetic-qt_gui_cpp < 0.4.0-1
+Obsoletes: ros-kinetic-qt_gui_cpp < 0.4.0-1
+
 
 
 %description
@@ -49,7 +50,7 @@ binding must be available in order to use C++-plugins.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       boost-devel
 Requires:       console-bridge-devel
 Requires:       libXext-devel
@@ -61,14 +62,15 @@ Requires:       qt5-qtbase-devel
 Requires:       qtermwidget-qt5-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
-Requires:       ros-melodic-cmake_modules-devel
-Requires:       ros-melodic-pluginlib-devel
-Requires:       ros-melodic-python_qt_binding-devel
-Requires:       ros-melodic-qt_gui-devel
+Requires:       ros-noetic-cmake_modules-devel
+Requires:       ros-noetic-pluginlib-devel
+Requires:       ros-noetic-python_qt_binding-devel
+Requires:       ros-noetic-qt_gui-devel
 
-Provides: ros-melodic-qt_gui_cpp-devel = 0.4.0-3
-Obsoletes: ros-melodic-qt_gui_cpp-devel < 0.4.0-3
-Obsoletes: ros-kinetic-qt_gui_cpp-devel < 0.4.0-3
+Provides: ros-noetic-qt_gui_cpp-devel = 0.4.0-1
+Obsoletes: ros-noetic-qt_gui_cpp-devel < 0.4.0-1
+Obsoletes: ros-kinetic-qt_gui_cpp-devel < 0.4.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -176,6 +178,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.0-1
+- Upgrade to noetic
 * Wed Apr 29 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.0-3
 - Add BR on libXext
 * Wed Apr 29 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.0-2

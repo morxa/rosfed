@@ -1,12 +1,12 @@
 Name:           ros-rqt_common_plugins
-Version:        melodic.0.4.8
-Release:        3%{?dist}
+Version:        noetic.0.4.9
+Release:        1%{?dist}
 Summary:        ROS package rqt_common_plugins
 
 License:        BSD
 URL:            http://ros.org/wiki/rqt_common_plugins
 
-Source0:        https://github.com/ros-gbp/rqt_common_plugins-release/archive/release/melodic/rqt_common_plugins/0.4.8-0.tar.gz#/ros-melodic-rqt_common_plugins-0.4.8-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt_common_plugins-release/archive/release/noetic/rqt_common_plugins/0.4.9-1.tar.gz#/ros-noetic-rqt_common_plugins-0.4.9-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,33 +18,34 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
-Requires:       ros-melodic-rqt_action
-Requires:       ros-melodic-rqt_bag
-Requires:       ros-melodic-rqt_bag_plugins
-Requires:       ros-melodic-rqt_console
-Requires:       ros-melodic-rqt_dep
-Requires:       ros-melodic-rqt_graph
-Requires:       ros-melodic-rqt_image_view
-Requires:       ros-melodic-rqt_launch
-Requires:       ros-melodic-rqt_logger_level
-Requires:       ros-melodic-rqt_msg
-Requires:       ros-melodic-rqt_plot
-Requires:       ros-melodic-rqt_publisher
-Requires:       ros-melodic-rqt_py_common
-Requires:       ros-melodic-rqt_py_console
-Requires:       ros-melodic-rqt_reconfigure
-Requires:       ros-melodic-rqt_service_caller
-Requires:       ros-melodic-rqt_shell
-Requires:       ros-melodic-rqt_srv
-Requires:       ros-melodic-rqt_top
-Requires:       ros-melodic-rqt_topic
-Requires:       ros-melodic-rqt_web
+Requires:       ros-noetic-rqt_action
+Requires:       ros-noetic-rqt_bag
+Requires:       ros-noetic-rqt_bag_plugins
+Requires:       ros-noetic-rqt_console
+Requires:       ros-noetic-rqt_dep
+Requires:       ros-noetic-rqt_graph
+Requires:       ros-noetic-rqt_image_view
+Requires:       ros-noetic-rqt_launch
+Requires:       ros-noetic-rqt_logger_level
+Requires:       ros-noetic-rqt_msg
+Requires:       ros-noetic-rqt_plot
+Requires:       ros-noetic-rqt_publisher
+Requires:       ros-noetic-rqt_py_common
+Requires:       ros-noetic-rqt_py_console
+Requires:       ros-noetic-rqt_reconfigure
+Requires:       ros-noetic-rqt_service_caller
+Requires:       ros-noetic-rqt_shell
+Requires:       ros-noetic-rqt_srv
+Requires:       ros-noetic-rqt_top
+Requires:       ros-noetic-rqt_topic
+Requires:       ros-noetic-rqt_web
 
-Provides:  ros-melodic-rqt_common_plugins = 0.4.8-3
-Obsoletes: ros-melodic-rqt_common_plugins < 0.4.8-3
-Obsoletes: ros-kinetic-rqt_common_plugins < 0.4.8-3
+Provides:  ros-noetic-rqt_common_plugins = 0.4.9-1
+Obsoletes: ros-noetic-rqt_common_plugins < 0.4.9-1
+Obsoletes: ros-kinetic-rqt_common_plugins < 0.4.9-1
+
 
 
 %description
@@ -54,32 +55,33 @@ suite that can be used on/off of robot runtime.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-rqt_action-devel
-Requires:       ros-melodic-rqt_bag-devel
-Requires:       ros-melodic-rqt_bag_plugins-devel
-Requires:       ros-melodic-rqt_console-devel
-Requires:       ros-melodic-rqt_dep-devel
-Requires:       ros-melodic-rqt_graph-devel
-Requires:       ros-melodic-rqt_image_view-devel
-Requires:       ros-melodic-rqt_launch-devel
-Requires:       ros-melodic-rqt_logger_level-devel
-Requires:       ros-melodic-rqt_msg-devel
-Requires:       ros-melodic-rqt_plot-devel
-Requires:       ros-melodic-rqt_publisher-devel
-Requires:       ros-melodic-rqt_py_common-devel
-Requires:       ros-melodic-rqt_py_console-devel
-Requires:       ros-melodic-rqt_reconfigure-devel
-Requires:       ros-melodic-rqt_service_caller-devel
-Requires:       ros-melodic-rqt_shell-devel
-Requires:       ros-melodic-rqt_srv-devel
-Requires:       ros-melodic-rqt_top-devel
-Requires:       ros-melodic-rqt_topic-devel
-Requires:       ros-melodic-rqt_web-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-rqt_action-devel
+Requires:       ros-noetic-rqt_bag-devel
+Requires:       ros-noetic-rqt_bag_plugins-devel
+Requires:       ros-noetic-rqt_console-devel
+Requires:       ros-noetic-rqt_dep-devel
+Requires:       ros-noetic-rqt_graph-devel
+Requires:       ros-noetic-rqt_image_view-devel
+Requires:       ros-noetic-rqt_launch-devel
+Requires:       ros-noetic-rqt_logger_level-devel
+Requires:       ros-noetic-rqt_msg-devel
+Requires:       ros-noetic-rqt_plot-devel
+Requires:       ros-noetic-rqt_publisher-devel
+Requires:       ros-noetic-rqt_py_common-devel
+Requires:       ros-noetic-rqt_py_console-devel
+Requires:       ros-noetic-rqt_reconfigure-devel
+Requires:       ros-noetic-rqt_service_caller-devel
+Requires:       ros-noetic-rqt_shell-devel
+Requires:       ros-noetic-rqt_srv-devel
+Requires:       ros-noetic-rqt_top-devel
+Requires:       ros-noetic-rqt_topic-devel
+Requires:       ros-noetic-rqt_web-devel
 
-Provides: ros-melodic-rqt_common_plugins-devel = 0.4.8-3
-Obsoletes: ros-melodic-rqt_common_plugins-devel < 0.4.8-3
-Obsoletes: ros-kinetic-rqt_common_plugins-devel < 0.4.8-3
+Provides: ros-noetic-rqt_common_plugins-devel = 0.4.9-1
+Obsoletes: ros-noetic-rqt_common_plugins-devel < 0.4.9-1
+Obsoletes: ros-kinetic-rqt_common_plugins-devel < 0.4.9-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -186,6 +188,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.9-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.8-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.8-2

@@ -1,12 +1,12 @@
 Name:           ros-rosbag_storage
-Version:        melodic.1.14.5
+Version:        noetic.1.15.6
 Release:        1%{?dist}
 Summary:        ROS package rosbag_storage
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/melodic/rosbag_storage/1.14.5-1.tar.gz#/ros-melodic-rosbag_storage-1.14.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/rosbag_storage/1.15.6-1.tar.gz#/ros-noetic-rosbag_storage-1.15.6-source0.tar.gz
 
 
 
@@ -17,32 +17,33 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  boost-devel boost-python3-devel boost-python3-devel
+BuildRequires:  boost-devel
 BuildRequires:  bzip2-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  gpgme-devel
 BuildRequires:  lz4-devel
 BuildRequires:  openssl-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-cpp_common-devel
-BuildRequires:  ros-melodic-pluginlib-devel
-BuildRequires:  ros-melodic-roscpp_serialization-devel
-BuildRequires:  ros-melodic-roscpp_traits-devel
-BuildRequires:  ros-melodic-roslz4-devel
-BuildRequires:  ros-melodic-rostest-devel
-BuildRequires:  ros-melodic-rostime-devel
-BuildRequires:  ros-melodic-std_msgs-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-cpp_common-devel
+BuildRequires:  ros-noetic-pluginlib-devel
+BuildRequires:  ros-noetic-roscpp_serialization-devel
+BuildRequires:  ros-noetic-roscpp_traits-devel
+BuildRequires:  ros-noetic-roslz4-devel
+BuildRequires:  ros-noetic-rostest-devel
+BuildRequires:  ros-noetic-rostime-devel
+BuildRequires:  ros-noetic-std_msgs-devel
 
-Requires:       ros-melodic-cpp_common
-Requires:       ros-melodic-pluginlib
-Requires:       ros-melodic-roscpp_serialization
-Requires:       ros-melodic-roscpp_traits
-Requires:       ros-melodic-roslz4
-Requires:       ros-melodic-rostime
+Requires:       ros-noetic-cpp_common
+Requires:       ros-noetic-pluginlib
+Requires:       ros-noetic-roscpp_serialization
+Requires:       ros-noetic-roscpp_traits
+Requires:       ros-noetic-roslz4
+Requires:       ros-noetic-rostime
 
-Provides:  ros-melodic-rosbag_storage = 1.14.5-1
-Obsoletes: ros-melodic-rosbag_storage < 1.14.5-1
-Obsoletes: ros-kinetic-rosbag_storage < 1.14.5-1
+Provides:  ros-noetic-rosbag_storage = 1.15.6-1
+Obsoletes: ros-noetic-rosbag_storage < 1.15.6-1
+Obsoletes: ros-kinetic-rosbag_storage < 1.15.6-1
+
 
 
 %description
@@ -52,25 +53,26 @@ without relying on the ROS client library.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       boost-devel boost-python3-devel boost-python3-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       boost-devel
 Requires:       bzip2-devel
 Requires:       console-bridge-devel
 Requires:       gpgme-devel
 Requires:       lz4-devel
 Requires:       openssl-devel
-Requires:       ros-melodic-cpp_common-devel
-Requires:       ros-melodic-pluginlib-devel
-Requires:       ros-melodic-roscpp_serialization-devel
-Requires:       ros-melodic-roscpp_traits-devel
-Requires:       ros-melodic-roslz4-devel
-Requires:       ros-melodic-rostest-devel
-Requires:       ros-melodic-rostime-devel
-Requires:       ros-melodic-std_msgs-devel
+Requires:       ros-noetic-cpp_common-devel
+Requires:       ros-noetic-pluginlib-devel
+Requires:       ros-noetic-roscpp_serialization-devel
+Requires:       ros-noetic-roscpp_traits-devel
+Requires:       ros-noetic-roslz4-devel
+Requires:       ros-noetic-rostest-devel
+Requires:       ros-noetic-rostime-devel
+Requires:       ros-noetic-std_msgs-devel
 
-Provides: ros-melodic-rosbag_storage-devel = 1.14.5-1
-Obsoletes: ros-melodic-rosbag_storage-devel < 1.14.5-1
-Obsoletes: ros-kinetic-rosbag_storage-devel < 1.14.5-1
+Provides: ros-noetic-rosbag_storage-devel = 1.15.6-1
+Obsoletes: ros-noetic-rosbag_storage-devel < 1.15.6-1
+Obsoletes: ros-kinetic-rosbag_storage-devel < 1.15.6-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -177,6 +179,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.6-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.5-1
 - Update to latest release
 * Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.4-1

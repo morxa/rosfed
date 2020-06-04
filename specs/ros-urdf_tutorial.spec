@@ -1,12 +1,12 @@
 Name:           ros-urdf_tutorial
-Version:        melodic.0.4.0
-Release:        3%{?dist}
+Version:        noetic.0.5.0
+Release:        1%{?dist}
 Summary:        ROS package urdf_tutorial
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/urdf_tutorial-release/archive/release/melodic/urdf_tutorial/0.4.0-0.tar.gz#/ros-melodic-urdf_tutorial-0.4.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/urdf_tutorial-release/archive/release/noetic/urdf_tutorial/0.5.0-1.tar.gz#/ros-noetic-urdf_tutorial-0.5.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,17 +18,19 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-roslaunch-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-roslaunch-devel
 
-Requires:       ros-melodic-joint_state_publisher
-Requires:       ros-melodic-robot_state_publisher
-Requires:       ros-melodic-rviz
-Requires:       ros-melodic-xacro
+Requires:       ros-noetic-joint_state_publisher
+Requires:       ros-noetic-joint_state_publisher_gui
+Requires:       ros-noetic-robot_state_publisher
+Requires:       ros-noetic-rviz
+Requires:       ros-noetic-xacro
 
-Provides:  ros-melodic-urdf_tutorial = 0.4.0-3
-Obsoletes: ros-melodic-urdf_tutorial < 0.4.0-3
-Obsoletes: ros-kinetic-urdf_tutorial < 0.4.0-3
+Provides:  ros-noetic-urdf_tutorial = 0.5.0-1
+Obsoletes: ros-noetic-urdf_tutorial < 0.5.0-1
+Obsoletes: ros-kinetic-urdf_tutorial < 0.5.0-1
+
 
 
 %description
@@ -37,16 +39,18 @@ This package contains a number of URDF tutorials.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-roslaunch-devel
-Requires:       ros-melodic-joint_state_publisher-devel
-Requires:       ros-melodic-robot_state_publisher-devel
-Requires:       ros-melodic-rviz-devel
-Requires:       ros-melodic-xacro-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-roslaunch-devel
+Requires:       ros-noetic-joint_state_publisher-devel
+Requires:       ros-noetic-joint_state_publisher_gui-devel
+Requires:       ros-noetic-robot_state_publisher-devel
+Requires:       ros-noetic-rviz-devel
+Requires:       ros-noetic-xacro-devel
 
-Provides: ros-melodic-urdf_tutorial-devel = 0.4.0-3
-Obsoletes: ros-melodic-urdf_tutorial-devel < 0.4.0-3
-Obsoletes: ros-kinetic-urdf_tutorial-devel < 0.4.0-3
+Provides: ros-noetic-urdf_tutorial-devel = 0.5.0-1
+Obsoletes: ros-noetic-urdf_tutorial-devel < 0.5.0-1
+Obsoletes: ros-kinetic-urdf_tutorial-devel < 0.5.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -153,6 +157,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.0-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.0-2

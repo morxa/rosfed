@@ -1,12 +1,12 @@
 Name:           ros-tf2_eigen
-Version:        melodic.0.6.5
-Release:        3%{?dist}
+Version:        noetic.0.7.1
+Release:        1%{?dist}
 Summary:        ROS package tf2_eigen
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/geometry2-release/archive/release/melodic/tf2_eigen/0.6.5-0.tar.gz#/ros-melodic-tf2_eigen-0.6.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/geometry2-release/archive/release/noetic/tf2_eigen/0.7.1-1.tar.gz#/ros-noetic-tf2_eigen-0.7.1-source0.tar.gz
 
 
 BuildArch: noarch
@@ -19,17 +19,18 @@ BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
 BuildRequires:  eigen3-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-cmake_modules-devel
-BuildRequires:  ros-melodic-geometry_msgs-devel
-BuildRequires:  ros-melodic-tf2-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-cmake_modules-devel
+BuildRequires:  ros-noetic-geometry_msgs-devel
+BuildRequires:  ros-noetic-tf2-devel
 
-Requires:       ros-melodic-geometry_msgs
-Requires:       ros-melodic-tf2
+Requires:       ros-noetic-geometry_msgs
+Requires:       ros-noetic-tf2
 
-Provides:  ros-melodic-tf2_eigen = 0.6.5-3
-Obsoletes: ros-melodic-tf2_eigen < 0.6.5-3
-Obsoletes: ros-kinetic-tf2_eigen < 0.6.5-3
+Provides:  ros-noetic-tf2_eigen = 0.7.1-1
+Obsoletes: ros-noetic-tf2_eigen < 0.7.1-1
+Obsoletes: ros-kinetic-tf2_eigen < 0.7.1-1
+
 
 
 %description
@@ -39,14 +40,15 @@ tf2_eigen
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       eigen3-devel
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-cmake_modules-devel
-Requires:       ros-melodic-geometry_msgs-devel
-Requires:       ros-melodic-tf2-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-cmake_modules-devel
+Requires:       ros-noetic-geometry_msgs-devel
+Requires:       ros-noetic-tf2-devel
 
-Provides: ros-melodic-tf2_eigen-devel = 0.6.5-3
-Obsoletes: ros-melodic-tf2_eigen-devel < 0.6.5-3
-Obsoletes: ros-kinetic-tf2_eigen-devel < 0.6.5-3
+Provides: ros-noetic-tf2_eigen-devel = 0.7.1-1
+Obsoletes: ros-noetic-tf2_eigen-devel < 0.7.1-1
+Obsoletes: ros-kinetic-tf2_eigen-devel < 0.7.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -153,6 +155,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.7.1-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.6.5-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.6.5-2

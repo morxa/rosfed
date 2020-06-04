@@ -1,12 +1,12 @@
 Name:           ros-libg2o
-Version:        melodic.2018.3.25
+Version:        noetic.2020.5.3
 Release:        1%{?dist}
 Summary:        ROS package libg2o
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/libg2o-release/archive/release/melodic/libg2o/2018.3.25-0.tar.gz#/ros-melodic-libg2o-2018.3.25-source0.tar.gz
+Source0:        https://github.com/ros-gbp/libg2o-release/archive/release/noetic/libg2o/2020.5.3-1.tar.gz#/ros-noetic-libg2o-2020.5.3-source0.tar.gz
 
 
 
@@ -17,20 +17,21 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  boost-devel boost-python3-devel boost-python3-devel
+BuildRequires:  boost-devel boost-python3-devel
 BuildRequires:  cmake
 BuildRequires:  eigen3-devel
 BuildRequires:  lapack-devel
 BuildRequires:  mesa-libGL-devel mesa-libGLU-devel
 BuildRequires:  openblas-devel
 BuildRequires:  suitesparse-devel
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
-Requires:       ros-melodic-catkin
+Requires:       ros-noetic-catkin
 
-Provides:  ros-melodic-libg2o = 2018.3.25-1
-Obsoletes: ros-melodic-libg2o < 2018.3.25-1
-Obsoletes: ros-kinetic-libg2o < 2018.3.25-1
+Provides:  ros-noetic-libg2o = 2020.5.3-1
+Obsoletes: ros-noetic-libg2o < 2020.5.3-1
+Obsoletes: ros-kinetic-libg2o < 2020.5.3-1
+
 
 
 %description
@@ -40,17 +41,18 @@ The libg2o library from http://openslam.org/g2o.html
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       cmake
-Requires:       boost-devel boost-python3-devel boost-python3-devel
+Requires:       boost-devel boost-python3-devel
 Requires:       eigen3-devel
 Requires:       lapack-devel
 Requires:       mesa-libGL-devel mesa-libGLU-devel
 Requires:       openblas-devel
 Requires:       suitesparse-devel
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 
-Provides: ros-melodic-libg2o-devel = 2018.3.25-1
-Obsoletes: ros-melodic-libg2o-devel < 2018.3.25-1
-Obsoletes: ros-kinetic-libg2o-devel < 2018.3.25-1
+Provides: ros-noetic-libg2o-devel = 2020.5.3-1
+Obsoletes: ros-noetic-libg2o-devel < 2020.5.3-1
+Obsoletes: ros-kinetic-libg2o-devel < 2020.5.3-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -157,5 +159,7 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.2020.5.3-1
+- Upgrade to noetic
 * Tue Feb 25 2020 Nicolas Limpert <limpert@fh-aachen.de> - melodic.2018.3.25-1
 - Initial package

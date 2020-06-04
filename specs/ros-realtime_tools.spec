@@ -1,12 +1,12 @@
 Name:           ros-realtime_tools
-Version:        melodic.1.15.1
+Version:        noetic.1.16.0
 Release:        1%{?dist}
 Summary:        ROS package realtime_tools
 
 License:        BSD
 URL:            http://ros.org/wiki/realtime_tools
 
-Source0:        https://github.com/ros-gbp/realtime_tools-release/archive/release/melodic/realtime_tools/1.15.1-1.tar.gz#/ros-melodic-realtime_tools-1.15.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/realtime_tools-release/archive/release/noetic/realtime_tools/1.16.0-1.tar.gz#/ros-noetic-realtime_tools-1.16.0-source0.tar.gz
 
 
 
@@ -17,17 +17,18 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-actionlib-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-rostest-devel
-BuildRequires:  ros-melodic-rosunit-devel
+BuildRequires:  ros-noetic-actionlib-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-rostest-devel
+BuildRequires:  ros-noetic-rosunit-devel
 
-Requires:       ros-melodic-roscpp
+Requires:       ros-noetic-roscpp
 
-Provides:  ros-melodic-realtime_tools = 1.15.1-1
-Obsoletes: ros-melodic-realtime_tools < 1.15.1-1
-Obsoletes: ros-kinetic-realtime_tools < 1.15.1-1
+Provides:  ros-noetic-realtime_tools = 1.16.0-1
+Obsoletes: ros-noetic-realtime_tools < 1.16.0-1
+Obsoletes: ros-kinetic-realtime_tools < 1.16.0-1
+
 
 
 %description
@@ -37,15 +38,16 @@ without breaking the realtime behavior.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-actionlib-devel
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-rostest-devel
-Requires:       ros-melodic-rosunit-devel
+Requires:       ros-noetic-actionlib-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-rostest-devel
+Requires:       ros-noetic-rosunit-devel
 
-Provides: ros-melodic-realtime_tools-devel = 1.15.1-1
-Obsoletes: ros-melodic-realtime_tools-devel < 1.15.1-1
-Obsoletes: ros-kinetic-realtime_tools-devel < 1.15.1-1
+Provides: ros-noetic-realtime_tools-devel = 1.16.0-1
+Obsoletes: ros-noetic-realtime_tools-devel < 1.16.0-1
+Obsoletes: ros-kinetic-realtime_tools-devel < 1.16.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -152,6 +154,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.16.0-1
+- Upgrade to noetic
 * Fri Feb 14 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.15.1-1
 - Update to latest release
 * Thu Sep 12 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.15.0-1

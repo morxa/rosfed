@@ -1,12 +1,12 @@
 Name:           ros-rqt_service_caller
-Version:        melodic.0.4.8
-Release:        3%{?dist}
+Version:        noetic.0.4.9
+Release:        1%{?dist}
 Summary:        ROS package rqt_service_caller
 
 License:        BSD
 URL:            http://wiki.ros.org/rqt_service_caller
 
-Source0:        https://github.com/ros-gbp/rqt_service_caller-release/archive/release/melodic/rqt_service_caller/0.4.8-0.tar.gz#/ros-melodic-rqt_service_caller-0.4.8-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt_service_caller-release/archive/release/noetic/rqt_service_caller/0.4.9-1.tar.gz#/ros-noetic-rqt_service_caller-0.4.9-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,17 +18,18 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
 Requires:       python3-rospkg
-Requires:       ros-melodic-rosservice
-Requires:       ros-melodic-rqt_gui
-Requires:       ros-melodic-rqt_gui_py
-Requires:       ros-melodic-rqt_py_common
+Requires:       ros-noetic-rosservice
+Requires:       ros-noetic-rqt_gui
+Requires:       ros-noetic-rqt_gui_py
+Requires:       ros-noetic-rqt_py_common
 
-Provides:  ros-melodic-rqt_service_caller = 0.4.8-3
-Obsoletes: ros-melodic-rqt_service_caller < 0.4.8-3
-Obsoletes: ros-kinetic-rqt_service_caller < 0.4.8-3
+Provides:  ros-noetic-rqt_service_caller = 0.4.9-1
+Obsoletes: ros-noetic-rqt_service_caller < 0.4.9-1
+Obsoletes: ros-kinetic-rqt_service_caller < 0.4.9-1
+
 
 
 %description
@@ -38,15 +39,16 @@ services.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-rosservice-devel
-Requires:       ros-melodic-rqt_gui-devel
-Requires:       ros-melodic-rqt_gui_py-devel
-Requires:       ros-melodic-rqt_py_common-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-rosservice-devel
+Requires:       ros-noetic-rqt_gui-devel
+Requires:       ros-noetic-rqt_gui_py-devel
+Requires:       ros-noetic-rqt_py_common-devel
 
-Provides: ros-melodic-rqt_service_caller-devel = 0.4.8-3
-Obsoletes: ros-melodic-rqt_service_caller-devel < 0.4.8-3
-Obsoletes: ros-kinetic-rqt_service_caller-devel < 0.4.8-3
+Provides: ros-noetic-rqt_service_caller-devel = 0.4.9-1
+Obsoletes: ros-noetic-rqt_service_caller-devel < 0.4.9-1
+Obsoletes: ros-kinetic-rqt_service_caller-devel < 0.4.9-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -153,6 +155,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.9-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.8-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.8-2

@@ -1,12 +1,12 @@
 Name:           ros-compressed_image_transport
-Version:        melodic.1.9.5
-Release:        13%{?dist}
+Version:        noetic.1.14.0
+Release:        1%{?dist}
 Summary:        ROS package compressed_image_transport
 
 License:        BSD
 URL:            http://www.ros.org/wiki/image_transport_plugins
 
-Source0:        https://github.com/ros-gbp/image_transport_plugins-release/archive/release/melodic/compressed_image_transport/1.9.5-0.tar.gz#/ros-melodic-compressed_image_transport-1.9.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/image_transport_plugins-release/archive/release/noetic/compressed_image_transport/1.14.0-1.tar.gz#/ros-noetic-compressed_image_transport-1.14.0-source0.tar.gz
 
 
 
@@ -21,18 +21,19 @@ BuildRequires:  opencv-devel
 BuildRequires:  poco-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-cv_bridge-devel
-BuildRequires:  ros-melodic-dynamic_reconfigure-devel
-BuildRequires:  ros-melodic-image_transport-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-cv_bridge-devel
+BuildRequires:  ros-noetic-dynamic_reconfigure-devel
+BuildRequires:  ros-noetic-image_transport-devel
 
-Requires:       ros-melodic-cv_bridge
-Requires:       ros-melodic-dynamic_reconfigure
-Requires:       ros-melodic-image_transport
+Requires:       ros-noetic-cv_bridge
+Requires:       ros-noetic-dynamic_reconfigure
+Requires:       ros-noetic-image_transport
 
-Provides:  ros-melodic-compressed_image_transport = 1.9.5-13
-Obsoletes: ros-melodic-compressed_image_transport < 1.9.5-13
-Obsoletes: ros-kinetic-compressed_image_transport < 1.9.5-13
+Provides:  ros-noetic-compressed_image_transport = 1.14.0-1
+Obsoletes: ros-noetic-compressed_image_transport < 1.14.0-1
+Obsoletes: ros-kinetic-compressed_image_transport < 1.14.0-1
+
 
 
 %description
@@ -42,18 +43,19 @@ transparently sending images encoded as JPEG or PNG.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       opencv-devel
 Requires:       poco-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
-Requires:       ros-melodic-cv_bridge-devel
-Requires:       ros-melodic-dynamic_reconfigure-devel
-Requires:       ros-melodic-image_transport-devel
+Requires:       ros-noetic-cv_bridge-devel
+Requires:       ros-noetic-dynamic_reconfigure-devel
+Requires:       ros-noetic-image_transport-devel
 
-Provides: ros-melodic-compressed_image_transport-devel = 1.9.5-13
-Obsoletes: ros-melodic-compressed_image_transport-devel < 1.9.5-13
-Obsoletes: ros-kinetic-compressed_image_transport-devel < 1.9.5-13
+Provides: ros-noetic-compressed_image_transport-devel = 1.14.0-1
+Obsoletes: ros-noetic-compressed_image_transport-devel < 1.14.0-1
+Obsoletes: ros-kinetic-compressed_image_transport-devel < 1.14.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -160,6 +162,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.9.5-13
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.9.5-12

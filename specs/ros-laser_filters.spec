@@ -1,12 +1,12 @@
 Name:           ros-laser_filters
-Version:        melodic.1.8.10
+Version:        noetic.1.8.9
 Release:        1%{?dist}
 Summary:        ROS package laser_filters
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/laser_filters-release/archive/release/melodic/laser_filters/1.8.10-1.tar.gz#/ros-melodic-laser_filters-1.8.10-source0.tar.gz
+Source0:        https://github.com/ros-gbp/laser_filters-release/archive/release/noetic/laser_filters/1.8.9-1.tar.gz#/ros-noetic-laser_filters-1.8.9-source0.tar.gz
 
 
 
@@ -21,31 +21,32 @@ BuildRequires:  eigen3-devel
 BuildRequires:  poco-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
-BuildRequires:  ros-melodic-angles-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-dynamic_reconfigure-devel
-BuildRequires:  ros-melodic-filters-devel
-BuildRequires:  ros-melodic-laser_geometry-devel
-BuildRequires:  ros-melodic-message_filters-devel
-BuildRequires:  ros-melodic-pluginlib-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-rostest-devel
-BuildRequires:  ros-melodic-sensor_msgs-devel
-BuildRequires:  ros-melodic-tf-devel
+BuildRequires:  ros-noetic-angles-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-dynamic_reconfigure-devel
+BuildRequires:  ros-noetic-filters-devel
+BuildRequires:  ros-noetic-laser_geometry-devel
+BuildRequires:  ros-noetic-message_filters-devel
+BuildRequires:  ros-noetic-pluginlib-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-rostest-devel
+BuildRequires:  ros-noetic-sensor_msgs-devel
+BuildRequires:  ros-noetic-tf-devel
 
-Requires:       ros-melodic-angles
-Requires:       ros-melodic-dynamic_reconfigure
-Requires:       ros-melodic-filters
-Requires:       ros-melodic-laser_geometry
-Requires:       ros-melodic-message_filters
-Requires:       ros-melodic-pluginlib
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-sensor_msgs
-Requires:       ros-melodic-tf
+Requires:       ros-noetic-angles
+Requires:       ros-noetic-dynamic_reconfigure
+Requires:       ros-noetic-filters
+Requires:       ros-noetic-laser_geometry
+Requires:       ros-noetic-message_filters
+Requires:       ros-noetic-pluginlib
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-sensor_msgs
+Requires:       ros-noetic-tf
 
-Provides:  ros-melodic-laser_filters = 1.8.10-1
-Obsoletes: ros-melodic-laser_filters < 1.8.10-1
-Obsoletes: ros-kinetic-laser_filters < 1.8.10-1
+Provides:  ros-noetic-laser_filters = 1.8.9-1
+Obsoletes: ros-noetic-laser_filters < 1.8.9-1
+Obsoletes: ros-kinetic-laser_filters < 1.8.9-1
+
 
 
 %description
@@ -55,25 +56,26 @@ which use the sensor_msgs/LaserScan type.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       eigen3-devel
 Requires:       poco-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
-Requires:       ros-melodic-angles-devel
-Requires:       ros-melodic-dynamic_reconfigure-devel
-Requires:       ros-melodic-filters-devel
-Requires:       ros-melodic-laser_geometry-devel
-Requires:       ros-melodic-message_filters-devel
-Requires:       ros-melodic-pluginlib-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-rostest-devel
-Requires:       ros-melodic-sensor_msgs-devel
-Requires:       ros-melodic-tf-devel
+Requires:       ros-noetic-angles-devel
+Requires:       ros-noetic-dynamic_reconfigure-devel
+Requires:       ros-noetic-filters-devel
+Requires:       ros-noetic-laser_geometry-devel
+Requires:       ros-noetic-message_filters-devel
+Requires:       ros-noetic-pluginlib-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-rostest-devel
+Requires:       ros-noetic-sensor_msgs-devel
+Requires:       ros-noetic-tf-devel
 
-Provides: ros-melodic-laser_filters-devel = 1.8.10-1
-Obsoletes: ros-melodic-laser_filters-devel < 1.8.10-1
-Obsoletes: ros-kinetic-laser_filters-devel < 1.8.10-1
+Provides: ros-noetic-laser_filters-devel = 1.8.9-1
+Obsoletes: ros-noetic-laser_filters-devel < 1.8.9-1
+Obsoletes: ros-kinetic-laser_filters-devel < 1.8.9-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -180,6 +182,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.8.9-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.8.10-1
 - Update to latest release
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.8.8-1

@@ -1,12 +1,12 @@
 Name:           ros-rviz_python_tutorial
-Version:        melodic.0.10.3
-Release:        3%{?dist}
+Version:        noetic.0.11.0
+Release:        1%{?dist}
 Summary:        ROS package rviz_python_tutorial
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/visualization_tutorials-release/archive/release/melodic/rviz_python_tutorial/0.10.3-0.tar.gz#/ros-melodic-rviz_python_tutorial-0.10.3-source0.tar.gz
+Source0:        https://github.com/ros-gbp/visualization_tutorials-release/archive/release/noetic/rviz_python_tutorial/0.11.0-1.tar.gz#/ros-noetic-rviz_python_tutorial-0.11.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -20,14 +20,15 @@ BuildRequires:  python3-devel
 
 BuildRequires:  eigen3-devel
 BuildRequires:  ogre-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-rviz-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-rviz-devel
 
-Requires:       ros-melodic-rviz
+Requires:       ros-noetic-rviz
 
-Provides:  ros-melodic-rviz_python_tutorial = 0.10.3-3
-Obsoletes: ros-melodic-rviz_python_tutorial < 0.10.3-3
-Obsoletes: ros-kinetic-rviz_python_tutorial < 0.10.3-3
+Provides:  ros-noetic-rviz_python_tutorial = 0.11.0-1
+Obsoletes: ros-noetic-rviz_python_tutorial < 0.11.0-1
+Obsoletes: ros-kinetic-rviz_python_tutorial < 0.11.0-1
+
 
 
 %description
@@ -36,14 +37,15 @@ Tutorials showing how to call into rviz internals from python scripts.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       eigen3-devel
 Requires:       ogre-devel
-Requires:       ros-melodic-rviz-devel
+Requires:       ros-noetic-rviz-devel
 
-Provides: ros-melodic-rviz_python_tutorial-devel = 0.10.3-3
-Obsoletes: ros-melodic-rviz_python_tutorial-devel < 0.10.3-3
-Obsoletes: ros-kinetic-rviz_python_tutorial-devel < 0.10.3-3
+Provides: ros-noetic-rviz_python_tutorial-devel = 0.11.0-1
+Obsoletes: ros-noetic-rviz_python_tutorial-devel < 0.11.0-1
+Obsoletes: ros-kinetic-rviz_python_tutorial-devel < 0.11.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -150,6 +152,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.11.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.10.3-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.10.3-2

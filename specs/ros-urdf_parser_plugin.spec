@@ -1,12 +1,12 @@
 Name:           ros-urdf_parser_plugin
-Version:        melodic.1.13.2
+Version:        noetic.1.13.2
 Release:        1%{?dist}
 Summary:        ROS package urdf_parser_plugin
 
 License:        BSD
 URL:            http://ros.org/wiki/urdf
 
-Source0:        https://github.com/ros-gbp/urdf-release/archive/release/melodic/urdf_parser_plugin/1.13.2-1.tar.gz#/ros-melodic-urdf_parser_plugin-1.13.2-source0.tar.gz
+Source0:        https://github.com/ros-gbp/urdf-release/archive/release/noetic/urdf_parser_plugin/1.13.2-1.tar.gz#/ros-noetic-urdf_parser_plugin-1.13.2-source0.tar.gz
 
 
 BuildArch: noarch
@@ -19,12 +19,13 @@ BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
 BuildRequires:  urdfdom-headers-devel
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
 
-Provides:  ros-melodic-urdf_parser_plugin = 1.13.2-1
-Obsoletes: ros-melodic-urdf_parser_plugin < 1.13.2-1
+Provides:  ros-noetic-urdf_parser_plugin = 1.13.2-1
+Obsoletes: ros-noetic-urdf_parser_plugin < 1.13.2-1
 Obsoletes: ros-kinetic-urdf_parser_plugin < 1.13.2-1
+
 
 
 %description
@@ -33,12 +34,13 @@ This package contains a C++ base class for URDF parsers.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       urdfdom-headers-devel
 
-Provides: ros-melodic-urdf_parser_plugin-devel = 1.13.2-1
-Obsoletes: ros-melodic-urdf_parser_plugin-devel < 1.13.2-1
+Provides: ros-noetic-urdf_parser_plugin-devel = 1.13.2-1
+Obsoletes: ros-noetic-urdf_parser_plugin-devel < 1.13.2-1
 Obsoletes: ros-kinetic-urdf_parser_plugin-devel < 1.13.2-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -145,6 +147,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.2-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.2-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.1-3

@@ -1,12 +1,12 @@
 Name:           ros-interactive_markers
-Version:        melodic.1.11.5
+Version:        noetic.1.12.0
 Release:        1%{?dist}
 Summary:        ROS package interactive_markers
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/interactive_markers-release/archive/release/melodic/interactive_markers/1.11.5-1.tar.gz#/ros-melodic-interactive_markers-1.11.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/interactive_markers-release/archive/release/noetic/interactive_markers/1.12.0-1.tar.gz#/ros-noetic-interactive_markers-1.12.0-source0.tar.gz
 
 
 
@@ -17,26 +17,29 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-rosconsole-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-rospy-devel
-BuildRequires:  ros-melodic-rostest-devel
-BuildRequires:  ros-melodic-std_msgs-devel
-BuildRequires:  ros-melodic-tf-devel
-BuildRequires:  ros-melodic-visualization_msgs-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-rosconsole-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-rospy-devel
+BuildRequires:  ros-noetic-rostest-devel
+BuildRequires:  ros-noetic-std_msgs-devel
+BuildRequires:  ros-noetic-tf2_geometry_msgs-devel
+BuildRequires:  ros-noetic-tf2_ros-devel
+BuildRequires:  ros-noetic-visualization_msgs-devel
 
-Requires:       ros-melodic-rosconsole
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-rospy
-Requires:       ros-melodic-rostest
-Requires:       ros-melodic-std_msgs
-Requires:       ros-melodic-tf
-Requires:       ros-melodic-visualization_msgs
+Requires:       ros-noetic-rosconsole
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-rospy
+Requires:       ros-noetic-rostest
+Requires:       ros-noetic-std_msgs
+Requires:       ros-noetic-tf2_geometry_msgs
+Requires:       ros-noetic-tf2_ros
+Requires:       ros-noetic-visualization_msgs
 
-Provides:  ros-melodic-interactive_markers = 1.11.5-1
-Obsoletes: ros-melodic-interactive_markers < 1.11.5-1
-Obsoletes: ros-kinetic-interactive_markers < 1.11.5-1
+Provides:  ros-noetic-interactive_markers = 1.12.0-1
+Obsoletes: ros-noetic-interactive_markers < 1.12.0-1
+Obsoletes: ros-kinetic-interactive_markers < 1.12.0-1
+
 
 
 %description
@@ -46,18 +49,20 @@ tools.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-rosconsole-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-rospy-devel
-Requires:       ros-melodic-rostest-devel
-Requires:       ros-melodic-std_msgs-devel
-Requires:       ros-melodic-tf-devel
-Requires:       ros-melodic-visualization_msgs-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-rosconsole-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-rospy-devel
+Requires:       ros-noetic-rostest-devel
+Requires:       ros-noetic-std_msgs-devel
+Requires:       ros-noetic-tf2_geometry_msgs-devel
+Requires:       ros-noetic-tf2_ros-devel
+Requires:       ros-noetic-visualization_msgs-devel
 
-Provides: ros-melodic-interactive_markers-devel = 1.11.5-1
-Obsoletes: ros-melodic-interactive_markers-devel < 1.11.5-1
-Obsoletes: ros-kinetic-interactive_markers-devel < 1.11.5-1
+Provides: ros-noetic-interactive_markers-devel = 1.12.0-1
+Obsoletes: ros-noetic-interactive_markers-devel < 1.12.0-1
+Obsoletes: ros-kinetic-interactive_markers-devel < 1.12.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -164,6 +169,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.12.0-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.11.5-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.11.4-3

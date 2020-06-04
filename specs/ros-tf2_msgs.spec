@@ -1,12 +1,12 @@
 Name:           ros-tf2_msgs
-Version:        melodic.0.6.5
-Release:        3%{?dist}
+Version:        noetic.0.7.1
+Release:        1%{?dist}
 Summary:        ROS package tf2_msgs
 
 License:        BSD
 URL:            http://www.ros.org/wiki/tf2_msgs
 
-Source0:        https://github.com/ros-gbp/geometry2-release/archive/release/melodic/tf2_msgs/0.6.5-0.tar.gz#/ros-melodic-tf2_msgs-0.6.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/geometry2-release/archive/release/noetic/tf2_msgs/0.7.1-1.tar.gz#/ros-noetic-tf2_msgs-0.7.1-source0.tar.gz
 
 
 BuildArch: noarch
@@ -19,18 +19,19 @@ BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
 BuildRequires:  boost-devel
-BuildRequires:  ros-melodic-actionlib_msgs-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-geometry_msgs-devel
-BuildRequires:  ros-melodic-message_generation-devel
+BuildRequires:  ros-noetic-actionlib_msgs-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-geometry_msgs-devel
+BuildRequires:  ros-noetic-message_generation-devel
 
-Requires:       ros-melodic-actionlib_msgs
-Requires:       ros-melodic-geometry_msgs
-Requires:       ros-melodic-message_generation
+Requires:       ros-noetic-actionlib_msgs
+Requires:       ros-noetic-geometry_msgs
+Requires:       ros-noetic-message_generation
 
-Provides:  ros-melodic-tf2_msgs = 0.6.5-3
-Obsoletes: ros-melodic-tf2_msgs < 0.6.5-3
-Obsoletes: ros-kinetic-tf2_msgs < 0.6.5-3
+Provides:  ros-noetic-tf2_msgs = 0.7.1-1
+Obsoletes: ros-noetic-tf2_msgs < 0.7.1-1
+Obsoletes: ros-kinetic-tf2_msgs < 0.7.1-1
+
 
 
 %description
@@ -39,15 +40,16 @@ tf2_msgs
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       boost-devel
-Requires:       ros-melodic-actionlib_msgs-devel
-Requires:       ros-melodic-geometry_msgs-devel
-Requires:       ros-melodic-message_generation-devel
+Requires:       ros-noetic-actionlib_msgs-devel
+Requires:       ros-noetic-geometry_msgs-devel
+Requires:       ros-noetic-message_generation-devel
 
-Provides: ros-melodic-tf2_msgs-devel = 0.6.5-3
-Obsoletes: ros-melodic-tf2_msgs-devel < 0.6.5-3
-Obsoletes: ros-kinetic-tf2_msgs-devel < 0.6.5-3
+Provides: ros-noetic-tf2_msgs-devel = 0.7.1-1
+Obsoletes: ros-noetic-tf2_msgs-devel < 0.7.1-1
+Obsoletes: ros-kinetic-tf2_msgs-devel < 0.7.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -154,6 +156,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.7.1-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.6.5-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.6.5-2

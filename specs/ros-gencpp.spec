@@ -1,12 +1,12 @@
 Name:           ros-gencpp
-Version:        melodic.0.6.5
+Version:        noetic.0.6.5
 Release:        1%{?dist}
 Summary:        ROS package gencpp
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/gencpp-release/archive/release/melodic/gencpp/0.6.5-1.tar.gz#/ros-melodic-gencpp-0.6.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/gencpp-release/archive/release/noetic/gencpp/0.6.5-1.tar.gz#/ros-noetic-gencpp-0.6.5-source0.tar.gz
 
 
 BuildArch: noarch
@@ -19,14 +19,15 @@ BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
 BuildRequires:  python3-setuptools
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-genmsg-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-genmsg-devel
 
-Requires:       ros-melodic-genmsg
+Requires:       ros-noetic-genmsg
 
-Provides:  ros-melodic-gencpp = 0.6.5-1
-Obsoletes: ros-melodic-gencpp < 0.6.5-1
+Provides:  ros-noetic-gencpp = 0.6.5-1
+Obsoletes: ros-noetic-gencpp < 0.6.5-1
 Obsoletes: ros-kinetic-gencpp < 0.6.5-1
+
 
 
 %description
@@ -36,12 +37,13 @@ C++ ROS message and service generators.
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       python3-setuptools
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-genmsg-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-genmsg-devel
 
-Provides: ros-melodic-gencpp-devel = 0.6.5-1
-Obsoletes: ros-melodic-gencpp-devel < 0.6.5-1
+Provides: ros-noetic-gencpp-devel = 0.6.5-1
+Obsoletes: ros-noetic-gencpp-devel < 0.6.5-1
 Obsoletes: ros-kinetic-gencpp-devel < 0.6.5-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -148,6 +150,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.6.5-1
+- Upgrade to noetic
 * Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.6.5-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.6.2-3

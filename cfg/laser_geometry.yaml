@@ -1,0 +1,2 @@
+patches:
+  - patches/ros-laser_geometry.add-eigen-export_depend.patch

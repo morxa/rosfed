@@ -1,12 +1,12 @@
 Name:           ros-gazebo_ros_control
-Version:        melodic.2.8.6
+Version:        noetic.2.9.1
 Release:        1%{?dist}
 Summary:        ROS package gazebo_ros_control
 
 License:        BSD
 URL:            http://ros.org/wiki/gazebo_ros_control
 
-Source0:        https://github.com/ros-gbp/gazebo_ros_pkgs-release/archive/release/melodic/gazebo_ros_control/2.8.6-1.tar.gz#/ros-melodic-gazebo_ros_control-2.8.6-source0.tar.gz
+Source0:        https://github.com/ros-gbp/gazebo_ros_pkgs-release/archive/release/noetic/gazebo_ros_control/2.9.1-1.tar.gz#/ros-noetic-gazebo_ros_control-2.9.1-source0.tar.gz
 
 
 
@@ -25,34 +25,35 @@ BuildRequires:  poco-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
 BuildRequires:  urdfdom-devel
-BuildRequires:  ros-melodic-angles-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-control_toolbox-devel
-BuildRequires:  ros-melodic-controller_manager-devel
-BuildRequires:  ros-melodic-gazebo_dev-devel
-BuildRequires:  ros-melodic-hardware_interface-devel
-BuildRequires:  ros-melodic-joint_limits_interface-devel
-BuildRequires:  ros-melodic-pluginlib-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-std_msgs-devel
-BuildRequires:  ros-melodic-transmission_interface-devel
-BuildRequires:  ros-melodic-urdf-devel
+BuildRequires:  ros-noetic-angles-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-control_toolbox-devel
+BuildRequires:  ros-noetic-controller_manager-devel
+BuildRequires:  ros-noetic-gazebo_dev-devel
+BuildRequires:  ros-noetic-hardware_interface-devel
+BuildRequires:  ros-noetic-joint_limits_interface-devel
+BuildRequires:  ros-noetic-pluginlib-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-std_msgs-devel
+BuildRequires:  ros-noetic-transmission_interface-devel
+BuildRequires:  ros-noetic-urdf-devel
 
-Requires:       ros-melodic-angles
-Requires:       ros-melodic-control_toolbox
-Requires:       ros-melodic-controller_manager
-Requires:       ros-melodic-gazebo_ros
-Requires:       ros-melodic-hardware_interface
-Requires:       ros-melodic-joint_limits_interface
-Requires:       ros-melodic-pluginlib
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-std_msgs
-Requires:       ros-melodic-transmission_interface
-Requires:       ros-melodic-urdf
+Requires:       ros-noetic-angles
+Requires:       ros-noetic-control_toolbox
+Requires:       ros-noetic-controller_manager
+Requires:       ros-noetic-gazebo_ros
+Requires:       ros-noetic-hardware_interface
+Requires:       ros-noetic-joint_limits_interface
+Requires:       ros-noetic-pluginlib
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-std_msgs
+Requires:       ros-noetic-transmission_interface
+Requires:       ros-noetic-urdf
 
-Provides:  ros-melodic-gazebo_ros_control = 2.8.6-1
-Obsoletes: ros-melodic-gazebo_ros_control < 2.8.6-1
-Obsoletes: ros-kinetic-gazebo_ros_control < 2.8.6-1
+Provides:  ros-noetic-gazebo_ros_control = 2.9.1-1
+Obsoletes: ros-noetic-gazebo_ros_control < 2.9.1-1
+Obsoletes: ros-kinetic-gazebo_ros_control < 2.9.1-1
+
 
 
 %description
@@ -61,7 +62,7 @@ gazebo_ros_control
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       bullet-devel
 Requires:       gazebo-devel
 Requires:       libuuid-devel
@@ -70,22 +71,23 @@ Requires:       poco-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
 Requires:       urdfdom-devel
-Requires:       ros-melodic-angles-devel
-Requires:       ros-melodic-control_toolbox-devel
-Requires:       ros-melodic-controller_manager-devel
-Requires:       ros-melodic-gazebo_dev-devel
-Requires:       ros-melodic-hardware_interface-devel
-Requires:       ros-melodic-joint_limits_interface-devel
-Requires:       ros-melodic-pluginlib-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-std_msgs-devel
-Requires:       ros-melodic-transmission_interface-devel
-Requires:       ros-melodic-urdf-devel
-Requires:       ros-melodic-gazebo_ros-devel
+Requires:       ros-noetic-angles-devel
+Requires:       ros-noetic-control_toolbox-devel
+Requires:       ros-noetic-controller_manager-devel
+Requires:       ros-noetic-gazebo_dev-devel
+Requires:       ros-noetic-hardware_interface-devel
+Requires:       ros-noetic-joint_limits_interface-devel
+Requires:       ros-noetic-pluginlib-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-std_msgs-devel
+Requires:       ros-noetic-transmission_interface-devel
+Requires:       ros-noetic-urdf-devel
+Requires:       ros-noetic-gazebo_ros-devel
 
-Provides: ros-melodic-gazebo_ros_control-devel = 2.8.6-1
-Obsoletes: ros-melodic-gazebo_ros_control-devel < 2.8.6-1
-Obsoletes: ros-kinetic-gazebo_ros_control-devel < 2.8.6-1
+Provides: ros-noetic-gazebo_ros_control-devel = 2.9.1-1
+Obsoletes: ros-noetic-gazebo_ros_control-devel < 2.9.1-1
+Obsoletes: ros-kinetic-gazebo_ros_control-devel < 2.9.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -192,6 +194,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.2.9.1-1
+- Upgrade to noetic
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.2.8.6-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.2.8.4-3

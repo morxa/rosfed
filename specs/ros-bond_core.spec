@@ -1,12 +1,12 @@
 Name:           ros-bond_core
-Version:        melodic.1.8.3
-Release:        3%{?dist}
+Version:        noetic.1.8.5
+Release:        1%{?dist}
 Summary:        ROS package bond_core
 
 License:        BSD
 URL:            http://www.ros.org/wiki/bond_core
 
-Source0:        https://github.com/ros-gbp/bond_core-release/archive/release/melodic/bond_core/1.8.3-0.tar.gz#/ros-melodic-bond_core-1.8.3-source0.tar.gz
+Source0:        https://github.com/ros-gbp/bond_core-release/archive/release/noetic/bond_core/1.8.5-1.tar.gz#/ros-noetic-bond_core-1.8.5-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,16 +18,17 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
-Requires:       ros-melodic-bond
-Requires:       ros-melodic-bondcpp
-Requires:       ros-melodic-bondpy
-Requires:       ros-melodic-smclib
+Requires:       ros-noetic-bond
+Requires:       ros-noetic-bondcpp
+Requires:       ros-noetic-bondpy
+Requires:       ros-noetic-smclib
 
-Provides:  ros-melodic-bond_core = 1.8.3-3
-Obsoletes: ros-melodic-bond_core < 1.8.3-3
-Obsoletes: ros-kinetic-bond_core < 1.8.3-3
+Provides:  ros-noetic-bond_core = 1.8.5-1
+Obsoletes: ros-noetic-bond_core < 1.8.5-1
+Obsoletes: ros-kinetic-bond_core < 1.8.5-1
+
 
 
 %description
@@ -38,15 +39,16 @@ until it is either broken explicitly or until a heartbeat times out.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-bond-devel
-Requires:       ros-melodic-bondcpp-devel
-Requires:       ros-melodic-bondpy-devel
-Requires:       ros-melodic-smclib-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-bond-devel
+Requires:       ros-noetic-bondcpp-devel
+Requires:       ros-noetic-bondpy-devel
+Requires:       ros-noetic-smclib-devel
 
-Provides: ros-melodic-bond_core-devel = 1.8.3-3
-Obsoletes: ros-melodic-bond_core-devel < 1.8.3-3
-Obsoletes: ros-kinetic-bond_core-devel < 1.8.3-3
+Provides: ros-noetic-bond_core-devel = 1.8.5-1
+Obsoletes: ros-noetic-bond_core-devel < 1.8.5-1
+Obsoletes: ros-kinetic-bond_core-devel < 1.8.5-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -153,6 +155,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.8.5-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.8.3-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.8.3-2

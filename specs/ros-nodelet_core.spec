@@ -1,12 +1,12 @@
 Name:           ros-nodelet_core
-Version:        melodic.1.9.16
-Release:        3%{?dist}
+Version:        noetic.1.10.0
+Release:        1%{?dist}
 Summary:        ROS package nodelet_core
 
 License:        BSD
 URL:            http://www.ros.org/wiki/nodelet_core
 
-Source0:        https://github.com/ros-gbp/nodelet_core-release/archive/release/melodic/nodelet_core/1.9.16-0.tar.gz#/ros-melodic-nodelet_core-1.9.16-source0.tar.gz
+Source0:        https://github.com/ros-gbp/nodelet_core-release/archive/release/noetic/nodelet_core/1.10.0-1.tar.gz#/ros-noetic-nodelet_core-1.10.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,14 +18,15 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
-Requires:       ros-melodic-nodelet
-Requires:       ros-melodic-nodelet_topic_tools
+Requires:       ros-noetic-nodelet
+Requires:       ros-noetic-nodelet_topic_tools
 
-Provides:  ros-melodic-nodelet_core = 1.9.16-3
-Obsoletes: ros-melodic-nodelet_core < 1.9.16-3
-Obsoletes: ros-kinetic-nodelet_core < 1.9.16-3
+Provides:  ros-noetic-nodelet_core = 1.10.0-1
+Obsoletes: ros-noetic-nodelet_core < 1.10.0-1
+Obsoletes: ros-kinetic-nodelet_core < 1.10.0-1
+
 
 
 %description
@@ -34,13 +35,14 @@ Nodelet Core Metapackage
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-nodelet-devel
-Requires:       ros-melodic-nodelet_topic_tools-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-nodelet-devel
+Requires:       ros-noetic-nodelet_topic_tools-devel
 
-Provides: ros-melodic-nodelet_core-devel = 1.9.16-3
-Obsoletes: ros-melodic-nodelet_core-devel < 1.9.16-3
-Obsoletes: ros-kinetic-nodelet_core-devel < 1.9.16-3
+Provides: ros-noetic-nodelet_core-devel = 1.10.0-1
+Obsoletes: ros-noetic-nodelet_core-devel < 1.10.0-1
+Obsoletes: ros-kinetic-nodelet_core-devel < 1.10.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -147,6 +149,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.10.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.9.16-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.9.16-2

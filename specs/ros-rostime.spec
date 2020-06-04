@@ -1,12 +1,12 @@
 Name:           ros-rostime
-Version:        melodic.0.6.13
+Version:        noetic.0.7.1
 Release:        1%{?dist}
 Summary:        ROS package rostime
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/roscpp_core-release/archive/release/melodic/rostime/0.6.13-1.tar.gz#/ros-melodic-rostime-0.6.13-source0.tar.gz
+Source0:        https://github.com/ros-gbp/roscpp_core-release/archive/release/noetic/rostime/0.7.1-1.tar.gz#/ros-noetic-rostime-0.7.1-source0.tar.gz
 
 
 
@@ -17,15 +17,16 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  boost-devel boost-python3-devel boost-python3-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-cpp_common-devel
+BuildRequires:  boost-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-cpp_common-devel
 
-Requires:       ros-melodic-cpp_common
+Requires:       ros-noetic-cpp_common
 
-Provides:  ros-melodic-rostime = 0.6.13-1
-Obsoletes: ros-melodic-rostime < 0.6.13-1
-Obsoletes: ros-kinetic-rostime < 0.6.13-1
+Provides:  ros-noetic-rostime = 0.7.1-1
+Obsoletes: ros-noetic-rostime < 0.7.1-1
+Obsoletes: ros-kinetic-rostime < 0.7.1-1
+
 
 
 %description
@@ -34,13 +35,14 @@ Time and Duration implementations for C++ libraries, including roscpp.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-cpp_common-devel
-Requires:       boost-devel boost-python3-devel boost-python3-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-cpp_common-devel
+Requires:       boost-devel
 
-Provides: ros-melodic-rostime-devel = 0.6.13-1
-Obsoletes: ros-melodic-rostime-devel < 0.6.13-1
-Obsoletes: ros-kinetic-rostime-devel < 0.6.13-1
+Provides: ros-noetic-rostime-devel = 0.7.1-1
+Obsoletes: ros-noetic-rostime-devel < 0.7.1-1
+Obsoletes: ros-kinetic-rostime-devel < 0.7.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -147,6 +149,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.7.1-1
+- Upgrade to noetic
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.6.13-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.6.12-3

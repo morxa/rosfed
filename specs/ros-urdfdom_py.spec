@@ -1,12 +1,12 @@
 Name:           ros-urdfdom_py
-Version:        melodic.0.4.3
+Version:        noetic.0.4.3
 Release:        1%{?dist}
 Summary:        ROS package urdfdom_py
 
 License:        BSD
 URL:            http://wiki.ros.org/urdfdom_py
 
-Source0:        https://github.com/ros-gbp/urdfdom_py-release/archive/release/melodic/urdfdom_py/0.4.3-1.tar.gz#/ros-melodic-urdfdom_py-0.4.3-source0.tar.gz
+Source0:        https://github.com/ros-gbp/urdfdom_py-release/archive/release/noetic/urdfdom_py/0.4.3-1.tar.gz#/ros-noetic-urdfdom_py-0.4.3-source0.tar.gz
 
 
 BuildArch: noarch
@@ -20,15 +20,16 @@ BuildRequires:  python3-devel
 
 BuildRequires:  python3-mock
 BuildRequires:  python3-setuptools
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
 Requires:       python3-pyyaml
 Requires:       python3dist(pyyaml)
-Requires:       ros-melodic-rospy
+Requires:       ros-noetic-rospy
 
-Provides:  ros-melodic-urdfdom_py = 0.4.3-1
-Obsoletes: ros-melodic-urdfdom_py < 0.4.3-1
+Provides:  ros-noetic-urdfdom_py = 0.4.3-1
+Obsoletes: ros-noetic-urdfdom_py < 0.4.3-1
 Obsoletes: ros-kinetic-urdfdom_py < 0.4.3-1
+
 
 
 %description
@@ -38,13 +39,14 @@ Python implementation of the URDF parser.
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       python3-setuptools
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       python3-mock
-Requires:       ros-melodic-rospy-devel
+Requires:       ros-noetic-rospy-devel
 
-Provides: ros-melodic-urdfdom_py-devel = 0.4.3-1
-Obsoletes: ros-melodic-urdfdom_py-devel < 0.4.3-1
+Provides: ros-noetic-urdfdom_py-devel = 0.4.3-1
+Obsoletes: ros-noetic-urdfdom_py-devel < 0.4.3-1
 Obsoletes: ros-kinetic-urdfdom_py-devel < 0.4.3-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -151,6 +153,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.3-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.3-1
 - Update to latest release
 * Thu Mar 05 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.2-2

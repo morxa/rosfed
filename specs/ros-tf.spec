@@ -1,12 +1,12 @@
 Name:           ros-tf
-Version:        melodic.1.12.1
+Version:        noetic.1.13.1
 Release:        1%{?dist}
 Summary:        ROS package tf
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/geometry-release/archive/release/melodic/tf/1.12.1-1.tar.gz#/ros-melodic-tf-1.12.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/geometry-release/archive/release/noetic/tf/1.13.1-1.tar.gz#/ros-noetic-tf-1.13.1-source0.tar.gz
 
 
 
@@ -17,34 +17,35 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-angles-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-geometry_msgs-devel
-BuildRequires:  ros-melodic-message_filters-devel
-BuildRequires:  ros-melodic-message_generation-devel
-BuildRequires:  ros-melodic-rosconsole-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-rostest-devel
-BuildRequires:  ros-melodic-rostime-devel
-BuildRequires:  ros-melodic-rosunit-devel
-BuildRequires:  ros-melodic-sensor_msgs-devel
-BuildRequires:  ros-melodic-std_msgs-devel
-BuildRequires:  ros-melodic-tf2_ros-devel
+BuildRequires:  ros-noetic-angles-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-geometry_msgs-devel
+BuildRequires:  ros-noetic-message_filters-devel
+BuildRequires:  ros-noetic-message_generation-devel
+BuildRequires:  ros-noetic-rosconsole-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-rostest-devel
+BuildRequires:  ros-noetic-rostime-devel
+BuildRequires:  ros-noetic-rosunit-devel
+BuildRequires:  ros-noetic-sensor_msgs-devel
+BuildRequires:  ros-noetic-std_msgs-devel
+BuildRequires:  ros-noetic-tf2_ros-devel
 
 Requires:       graphviz
-Requires:       ros-melodic-geometry_msgs
-Requires:       ros-melodic-message_filters
-Requires:       ros-melodic-message_runtime
-Requires:       ros-melodic-rosconsole
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-roswtf
-Requires:       ros-melodic-sensor_msgs
-Requires:       ros-melodic-std_msgs
-Requires:       ros-melodic-tf2_ros
+Requires:       ros-noetic-geometry_msgs
+Requires:       ros-noetic-message_filters
+Requires:       ros-noetic-message_runtime
+Requires:       ros-noetic-rosconsole
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-roswtf
+Requires:       ros-noetic-sensor_msgs
+Requires:       ros-noetic-std_msgs
+Requires:       ros-noetic-tf2_ros
 
-Provides:  ros-melodic-tf = 1.12.1-1
-Obsoletes: ros-melodic-tf < 1.12.1-1
-Obsoletes: ros-kinetic-tf < 1.12.1-1
+Provides:  ros-noetic-tf = 1.13.1-1
+Obsoletes: ros-noetic-tf < 1.13.1-1
+Obsoletes: ros-kinetic-tf < 1.13.1-1
+
 
 
 %description
@@ -57,25 +58,26 @@ any desired point in time.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-angles-devel
-Requires:       ros-melodic-geometry_msgs-devel
-Requires:       ros-melodic-message_filters-devel
-Requires:       ros-melodic-message_generation-devel
-Requires:       ros-melodic-rosconsole-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-rostest-devel
-Requires:       ros-melodic-rostime-devel
-Requires:       ros-melodic-rosunit-devel
-Requires:       ros-melodic-sensor_msgs-devel
-Requires:       ros-melodic-std_msgs-devel
-Requires:       ros-melodic-tf2_ros-devel
-Requires:       ros-melodic-message_runtime-devel
-Requires:       ros-melodic-roswtf-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-angles-devel
+Requires:       ros-noetic-geometry_msgs-devel
+Requires:       ros-noetic-message_filters-devel
+Requires:       ros-noetic-message_generation-devel
+Requires:       ros-noetic-rosconsole-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-rostest-devel
+Requires:       ros-noetic-rostime-devel
+Requires:       ros-noetic-rosunit-devel
+Requires:       ros-noetic-sensor_msgs-devel
+Requires:       ros-noetic-std_msgs-devel
+Requires:       ros-noetic-tf2_ros-devel
+Requires:       ros-noetic-message_runtime-devel
+Requires:       ros-noetic-roswtf-devel
 
-Provides: ros-melodic-tf-devel = 1.12.1-1
-Obsoletes: ros-melodic-tf-devel < 1.12.1-1
-Obsoletes: ros-kinetic-tf-devel < 1.12.1-1
+Provides: ros-noetic-tf-devel = 1.13.1-1
+Obsoletes: ros-noetic-tf-devel < 1.13.1-1
+Obsoletes: ros-kinetic-tf-devel < 1.13.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -182,6 +184,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.1-1
+- Upgrade to noetic
 * Wed Mar 18 2020 Nicolas Limpert - melodic.1.12.1-1
 - Update to latest release
 * Tue Jul 23 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.12.0-4

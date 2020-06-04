@@ -1,12 +1,12 @@
 Name:           ros-xmlrpcpp
-Version:        melodic.1.14.5
+Version:        noetic.1.15.6
 Release:        1%{?dist}
 Summary:        ROS package xmlrpcpp
 
 License:        LGPL-2.1
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/melodic/xmlrpcpp/1.14.5-1.tar.gz#/ros-melodic-xmlrpcpp-1.14.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/xmlrpcpp/1.15.6-1.tar.gz#/ros-noetic-xmlrpcpp-1.15.6-source0.tar.gz
 
 
 
@@ -17,17 +17,18 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  boost-devel boost-python3-devel boost-python3-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-cpp_common-devel
-BuildRequires:  ros-melodic-rostime-devel
+BuildRequires:  boost-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-cpp_common-devel
+BuildRequires:  ros-noetic-rostime-devel
 
-Requires:       ros-melodic-cpp_common
-Requires:       ros-melodic-rostime
+Requires:       ros-noetic-cpp_common
+Requires:       ros-noetic-rostime
 
-Provides:  ros-melodic-xmlrpcpp = 1.14.5-1
-Obsoletes: ros-melodic-xmlrpcpp < 1.14.5-1
-Obsoletes: ros-kinetic-xmlrpcpp < 1.14.5-1
+Provides:  ros-noetic-xmlrpcpp = 1.15.6-1
+Obsoletes: ros-noetic-xmlrpcpp < 1.15.6-1
+Obsoletes: ros-kinetic-xmlrpcpp < 1.15.6-1
+
 
 
 %description
@@ -39,14 +40,15 @@ own fork.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       boost-devel boost-python3-devel boost-python3-devel
-Requires:       ros-melodic-cpp_common-devel
-Requires:       ros-melodic-rostime-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       boost-devel
+Requires:       ros-noetic-cpp_common-devel
+Requires:       ros-noetic-rostime-devel
 
-Provides: ros-melodic-xmlrpcpp-devel = 1.14.5-1
-Obsoletes: ros-melodic-xmlrpcpp-devel < 1.14.5-1
-Obsoletes: ros-kinetic-xmlrpcpp-devel < 1.14.5-1
+Provides: ros-noetic-xmlrpcpp-devel = 1.15.6-1
+Obsoletes: ros-noetic-xmlrpcpp-devel < 1.15.6-1
+Obsoletes: ros-kinetic-xmlrpcpp-devel < 1.15.6-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -153,6 +155,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.6-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.5-1
 - Update to latest release
 * Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.4-1

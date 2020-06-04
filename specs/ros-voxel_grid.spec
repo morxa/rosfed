@@ -1,12 +1,12 @@
 Name:           ros-voxel_grid
-Version:        melodic.1.16.6
+Version:        noetic.1.17.0
 Release:        1%{?dist}
 Summary:        ROS package voxel_grid
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/navigation-release/archive/release/melodic/voxel_grid/1.16.6-1.tar.gz#/ros-melodic-voxel_grid-1.16.6-source0.tar.gz
+Source0:        https://github.com/ros-gbp/navigation-release/archive/release/noetic/voxel_grid/1.17.0-1.tar.gz#/ros-noetic-voxel_grid-1.17.0-source0.tar.gz
 
 
 
@@ -17,16 +17,17 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-rosconsole-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-rosunit-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-rosconsole-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-rosunit-devel
 
-Requires:       ros-melodic-roscpp
+Requires:       ros-noetic-roscpp
 
-Provides:  ros-melodic-voxel_grid = 1.16.6-1
-Obsoletes: ros-melodic-voxel_grid < 1.16.6-1
-Obsoletes: ros-kinetic-voxel_grid < 1.16.6-1
+Provides:  ros-noetic-voxel_grid = 1.17.0-1
+Obsoletes: ros-noetic-voxel_grid < 1.17.0-1
+Obsoletes: ros-kinetic-voxel_grid < 1.17.0-1
+
 
 
 %description
@@ -42,14 +43,15 @@ quite fast compared to most 3D structures.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-rosconsole-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-rosunit-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-rosconsole-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-rosunit-devel
 
-Provides: ros-melodic-voxel_grid-devel = 1.16.6-1
-Obsoletes: ros-melodic-voxel_grid-devel < 1.16.6-1
-Obsoletes: ros-kinetic-voxel_grid-devel < 1.16.6-1
+Provides: ros-noetic-voxel_grid-devel = 1.17.0-1
+Obsoletes: ros-noetic-voxel_grid-devel < 1.17.0-1
+Obsoletes: ros-kinetic-voxel_grid-devel < 1.17.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -156,6 +158,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.17.0-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.16.6-1
 - Update to latest release
 * Wed Mar 18 2020 Nicolas Limpert - melodic.1.16.5-1

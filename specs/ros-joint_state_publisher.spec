@@ -1,12 +1,12 @@
 Name:           ros-joint_state_publisher
-Version:        melodic.1.12.15
+Version:        noetic.1.15.0
 Release:        1%{?dist}
 Summary:        ROS package joint_state_publisher
 
 License:        BSD
 URL:            http://www.ros.org/wiki/joint_state_publisher
 
-Source0:        https://github.com/ros-gbp/joint_state_publisher-release/archive/release/melodic/joint_state_publisher/1.12.15-1.tar.gz#/ros-melodic-joint_state_publisher-1.12.15-source0.tar.gz
+Source0:        https://github.com/ros-gbp/joint_state_publisher-release/archive/release/noetic/joint_state_publisher/1.15.0-1.tar.gz#/ros-noetic-joint_state_publisher-1.15.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,15 +18,16 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-rostest-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-rostest-devel
 
-Requires:       ros-melodic-rospy
-Requires:       ros-melodic-sensor_msgs
+Requires:       ros-noetic-rospy
+Requires:       ros-noetic-sensor_msgs
 
-Provides:  ros-melodic-joint_state_publisher = 1.12.15-1
-Obsoletes: ros-melodic-joint_state_publisher < 1.12.15-1
-Obsoletes: ros-kinetic-joint_state_publisher < 1.12.15-1
+Provides:  ros-noetic-joint_state_publisher = 1.15.0-1
+Obsoletes: ros-noetic-joint_state_publisher < 1.15.0-1
+Obsoletes: ros-kinetic-joint_state_publisher < 1.15.0-1
+
 
 
 %description
@@ -36,14 +37,15 @@ values for a given URDF.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-rostest-devel
-Requires:       ros-melodic-rospy-devel
-Requires:       ros-melodic-sensor_msgs-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-rostest-devel
+Requires:       ros-noetic-rospy-devel
+Requires:       ros-noetic-sensor_msgs-devel
 
-Provides: ros-melodic-joint_state_publisher-devel = 1.12.15-1
-Obsoletes: ros-melodic-joint_state_publisher-devel < 1.12.15-1
-Obsoletes: ros-kinetic-joint_state_publisher-devel < 1.12.15-1
+Provides: ros-noetic-joint_state_publisher-devel = 1.15.0-1
+Obsoletes: ros-noetic-joint_state_publisher-devel < 1.15.0-1
+Obsoletes: ros-kinetic-joint_state_publisher-devel < 1.15.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -150,6 +152,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.0-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.12.15-1
 - Update to latest release
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.12.14-1

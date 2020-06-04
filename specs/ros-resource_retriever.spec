@@ -1,12 +1,12 @@
 Name:           ros-resource_retriever
-Version:        melodic.1.12.6
+Version:        noetic.1.12.6
 Release:        1%{?dist}
 Summary:        ROS package resource_retriever
 
 License:        BSD
 URL:            http://ros.org/wiki/resource_retriever
 
-Source0:        https://github.com/ros-gbp/resource_retriever-release/archive/release/melodic/resource_retriever/1.12.6-1.tar.gz#/ros-melodic-resource_retriever-1.12.6-source0.tar.gz
+Source0:        https://github.com/ros-gbp/resource_retriever-release/archive/release/noetic/resource_retriever/1.12.6-1.tar.gz#/ros-noetic-resource_retriever-1.12.6-source0.tar.gz
 
 
 
@@ -18,23 +18,24 @@ BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
 BuildRequires:  boost-devel
-BuildRequires:  boost-devel boost-python3-devel boost-python3-devel
+BuildRequires:  boost-devel boost-python3-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  gtest-devel
 BuildRequires:  libcurl-devel curl
 BuildRequires:  log4cxx-devel
 BuildRequires:  tinyxml-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-rosconsole-devel
-BuildRequires:  ros-melodic-roslib-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-rosconsole-devel
+BuildRequires:  ros-noetic-roslib-devel
 
 Requires:       python3-rospkg
-Requires:       ros-melodic-rosconsole
-Requires:       ros-melodic-roslib
+Requires:       ros-noetic-rosconsole
+Requires:       ros-noetic-roslib
 
-Provides:  ros-melodic-resource_retriever = 1.12.6-1
-Obsoletes: ros-melodic-resource_retriever < 1.12.6-1
+Provides:  ros-noetic-resource_retriever = 1.12.6-1
+Obsoletes: ros-noetic-resource_retriever < 1.12.6-1
 Obsoletes: ros-kinetic-resource_retriever < 1.12.6-1
+
 
 
 %description
@@ -48,20 +49,21 @@ retriever is based on the the libcurl library.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       boost-devel
-Requires:       boost-devel boost-python3-devel boost-python3-devel
+Requires:       boost-devel boost-python3-devel
 Requires:       console-bridge-devel
 Requires:       gtest-devel
 Requires:       libcurl-devel curl
 Requires:       log4cxx-devel
 Requires:       tinyxml-devel
-Requires:       ros-melodic-rosconsole-devel
-Requires:       ros-melodic-roslib-devel
+Requires:       ros-noetic-rosconsole-devel
+Requires:       ros-noetic-roslib-devel
 
-Provides: ros-melodic-resource_retriever-devel = 1.12.6-1
-Obsoletes: ros-melodic-resource_retriever-devel < 1.12.6-1
+Provides: ros-noetic-resource_retriever-devel = 1.12.6-1
+Obsoletes: ros-noetic-resource_retriever-devel < 1.12.6-1
 Obsoletes: ros-kinetic-resource_retriever-devel < 1.12.6-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -168,6 +170,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.12.6-1
+- Upgrade to noetic
 * Mon Mar 02 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.12.6-1
 - Update to latest release
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.12.5-1

@@ -1,12 +1,12 @@
 Name:           ros-control_toolbox
-Version:        melodic.1.18.0
+Version:        noetic.1.18.0
 Release:        1%{?dist}
 Summary:        ROS package control_toolbox
 
 License:        BSD
 URL:            http://ros.org/wiki/control_toolbox
 
-Source0:        https://github.com/ros-gbp/control_toolbox-release/archive/release/melodic/control_toolbox/1.18.0-1.tar.gz#/ros-melodic-control_toolbox-1.18.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/control_toolbox-release/archive/release/noetic/control_toolbox/1.18.0-1.tar.gz#/ros-noetic-control_toolbox-1.18.0-source0.tar.gz
 
 
 
@@ -18,26 +18,27 @@ BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
 BuildRequires:  tinyxml-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-cmake_modules-devel
-BuildRequires:  ros-melodic-control_msgs-devel
-BuildRequires:  ros-melodic-dynamic_reconfigure-devel
-BuildRequires:  ros-melodic-message_generation-devel
-BuildRequires:  ros-melodic-realtime_tools-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-rosunit-devel
-BuildRequires:  ros-melodic-std_msgs-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-cmake_modules-devel
+BuildRequires:  ros-noetic-control_msgs-devel
+BuildRequires:  ros-noetic-dynamic_reconfigure-devel
+BuildRequires:  ros-noetic-message_generation-devel
+BuildRequires:  ros-noetic-realtime_tools-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-rosunit-devel
+BuildRequires:  ros-noetic-std_msgs-devel
 
-Requires:       ros-melodic-control_msgs
-Requires:       ros-melodic-dynamic_reconfigure
-Requires:       ros-melodic-message_runtime
-Requires:       ros-melodic-realtime_tools
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-std_msgs
+Requires:       ros-noetic-control_msgs
+Requires:       ros-noetic-dynamic_reconfigure
+Requires:       ros-noetic-message_runtime
+Requires:       ros-noetic-realtime_tools
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-std_msgs
 
-Provides:  ros-melodic-control_toolbox = 1.18.0-1
-Obsoletes: ros-melodic-control_toolbox < 1.18.0-1
+Provides:  ros-noetic-control_toolbox = 1.18.0-1
+Obsoletes: ros-noetic-control_toolbox < 1.18.0-1
 Obsoletes: ros-kinetic-control_toolbox < 1.18.0-1
+
 
 
 %description
@@ -47,21 +48,22 @@ controllers.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       tinyxml-devel
-Requires:       ros-melodic-cmake_modules-devel
-Requires:       ros-melodic-control_msgs-devel
-Requires:       ros-melodic-dynamic_reconfigure-devel
-Requires:       ros-melodic-message_generation-devel
-Requires:       ros-melodic-realtime_tools-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-rosunit-devel
-Requires:       ros-melodic-std_msgs-devel
-Requires:       ros-melodic-message_runtime-devel
+Requires:       ros-noetic-cmake_modules-devel
+Requires:       ros-noetic-control_msgs-devel
+Requires:       ros-noetic-dynamic_reconfigure-devel
+Requires:       ros-noetic-message_generation-devel
+Requires:       ros-noetic-realtime_tools-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-rosunit-devel
+Requires:       ros-noetic-std_msgs-devel
+Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-melodic-control_toolbox-devel = 1.18.0-1
-Obsoletes: ros-melodic-control_toolbox-devel < 1.18.0-1
+Provides: ros-noetic-control_toolbox-devel = 1.18.0-1
+Obsoletes: ros-noetic-control_toolbox-devel < 1.18.0-1
 Obsoletes: ros-kinetic-control_toolbox-devel < 1.18.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -168,6 +170,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.18.0-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.18.0-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.17.0-3

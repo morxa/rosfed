@@ -1,12 +1,12 @@
 Name:           ros-map_server
-Version:        melodic.1.16.6
+Version:        noetic.1.17.0
 Release:        1%{?dist}
 Summary:        ROS package map_server
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/navigation-release/archive/release/melodic/map_server/1.16.6-1.tar.gz#/ros-melodic-map_server-1.16.6-source0.tar.gz
+Source0:        https://github.com/ros-gbp/navigation-release/archive/release/noetic/map_server/1.17.0-1.tar.gz#/ros-noetic-map_server-1.17.0-source0.tar.gz
 
 
 
@@ -21,21 +21,22 @@ BuildRequires:  bullet-devel
 BuildRequires:  SDL-devel
 BuildRequires:  SDL_image-devel
 BuildRequires:  yaml-cpp-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-nav_msgs-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-rospy-devel
-BuildRequires:  ros-melodic-rostest-devel
-BuildRequires:  ros-melodic-rosunit-devel
-BuildRequires:  ros-melodic-tf2-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-nav_msgs-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-rospy-devel
+BuildRequires:  ros-noetic-rostest-devel
+BuildRequires:  ros-noetic-rosunit-devel
+BuildRequires:  ros-noetic-tf2-devel
 
-Requires:       ros-melodic-nav_msgs
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-tf2
+Requires:       ros-noetic-nav_msgs
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-tf2
 
-Provides:  ros-melodic-map_server = 1.16.6-1
-Obsoletes: ros-melodic-map_server < 1.16.6-1
-Obsoletes: ros-kinetic-map_server < 1.16.6-1
+Provides:  ros-noetic-map_server = 1.17.0-1
+Obsoletes: ros-noetic-map_server < 1.17.0-1
+Obsoletes: ros-kinetic-map_server < 1.17.0-1
+
 
 
 %description
@@ -44,21 +45,22 @@ map_server provides the
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       bullet-devel
 Requires:       SDL-devel
 Requires:       SDL_image-devel
 Requires:       yaml-cpp-devel
-Requires:       ros-melodic-nav_msgs-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-rospy-devel
-Requires:       ros-melodic-rostest-devel
-Requires:       ros-melodic-rosunit-devel
-Requires:       ros-melodic-tf2-devel
+Requires:       ros-noetic-nav_msgs-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-rospy-devel
+Requires:       ros-noetic-rostest-devel
+Requires:       ros-noetic-rosunit-devel
+Requires:       ros-noetic-tf2-devel
 
-Provides: ros-melodic-map_server-devel = 1.16.6-1
-Obsoletes: ros-melodic-map_server-devel < 1.16.6-1
-Obsoletes: ros-kinetic-map_server-devel < 1.16.6-1
+Provides: ros-noetic-map_server-devel = 1.17.0-1
+Obsoletes: ros-noetic-map_server-devel < 1.17.0-1
+Obsoletes: ros-kinetic-map_server-devel < 1.17.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -165,6 +167,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.17.0-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.16.6-1
 - Update to latest release
 * Wed Mar 18 2020 Nicolas Limpert - melodic.1.16.5-1

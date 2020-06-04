@@ -1,12 +1,12 @@
 Name:           ros-robot_state_publisher
-Version:        melodic.1.14.1
+Version:        noetic.1.15.0
 Release:        1%{?dist}
 Summary:        ROS package robot_state_publisher
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/robot_state_publisher-release/archive/release/melodic/robot_state_publisher/1.14.1-1.tar.gz#/ros-melodic-robot_state_publisher-1.14.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/robot_state_publisher-release/archive/release/noetic/robot_state_publisher/1.15.0-1.tar.gz#/ros-noetic-robot_state_publisher-1.15.0-source0.tar.gz
 
 
 
@@ -18,35 +18,36 @@ BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
 BuildRequires:  eigen3-devel
+BuildRequires:  orocos-kdl-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  urdfdom-devel
 BuildRequires:  urdfdom-headers-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-kdl_parser-devel
-BuildRequires:  ros-melodic-orocos_kdl-devel
-BuildRequires:  ros-melodic-rosconsole-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-rostest-devel
-BuildRequires:  ros-melodic-rostime-devel
-BuildRequires:  ros-melodic-sensor_msgs-devel
-BuildRequires:  ros-melodic-tf-devel
-BuildRequires:  ros-melodic-tf2_kdl-devel
-BuildRequires:  ros-melodic-tf2_ros-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-kdl_parser-devel
+BuildRequires:  ros-noetic-rosbag-devel
+BuildRequires:  ros-noetic-rosconsole-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-rostest-devel
+BuildRequires:  ros-noetic-rostime-devel
+BuildRequires:  ros-noetic-sensor_msgs-devel
+BuildRequires:  ros-noetic-tf-devel
+BuildRequires:  ros-noetic-tf2_kdl-devel
+BuildRequires:  ros-noetic-tf2_ros-devel
 
-Requires:       ros-melodic-catkin
-Requires:       ros-melodic-kdl_parser
-Requires:       ros-melodic-orocos_kdl
-Requires:       ros-melodic-rosconsole
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-rostime
-Requires:       ros-melodic-sensor_msgs
-Requires:       ros-melodic-tf
-Requires:       ros-melodic-tf2_kdl
-Requires:       ros-melodic-tf2_ros
+Requires:       orocos-kdl
+Requires:       ros-noetic-kdl_parser
+Requires:       ros-noetic-rosconsole
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-rostime
+Requires:       ros-noetic-sensor_msgs
+Requires:       ros-noetic-tf
+Requires:       ros-noetic-tf2_kdl
+Requires:       ros-noetic-tf2_ros
 
-Provides:  ros-melodic-robot_state_publisher = 1.14.1-1
-Obsoletes: ros-melodic-robot_state_publisher < 1.14.1-1
-Obsoletes: ros-kinetic-robot_state_publisher < 1.14.1-1
+Provides:  ros-noetic-robot_state_publisher = 1.15.0-1
+Obsoletes: ros-noetic-robot_state_publisher < 1.15.0-1
+Obsoletes: ros-kinetic-robot_state_publisher < 1.15.0-1
+
 
 
 %description
@@ -55,25 +56,27 @@ This package allows you to publish the state of a robot to
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       orocos-kdl-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       eigen3-devel
 Requires:       tinyxml-devel
 Requires:       urdfdom-devel
 Requires:       urdfdom-headers-devel
-Requires:       ros-melodic-kdl_parser-devel
-Requires:       ros-melodic-orocos_kdl-devel
-Requires:       ros-melodic-rosconsole-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-rostest-devel
-Requires:       ros-melodic-rostime-devel
-Requires:       ros-melodic-sensor_msgs-devel
-Requires:       ros-melodic-tf-devel
-Requires:       ros-melodic-tf2_kdl-devel
-Requires:       ros-melodic-tf2_ros-devel
+Requires:       ros-noetic-kdl_parser-devel
+Requires:       ros-noetic-rosbag-devel
+Requires:       ros-noetic-rosconsole-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-rostest-devel
+Requires:       ros-noetic-rostime-devel
+Requires:       ros-noetic-sensor_msgs-devel
+Requires:       ros-noetic-tf-devel
+Requires:       ros-noetic-tf2_kdl-devel
+Requires:       ros-noetic-tf2_ros-devel
 
-Provides: ros-melodic-robot_state_publisher-devel = 1.14.1-1
-Obsoletes: ros-melodic-robot_state_publisher-devel < 1.14.1-1
-Obsoletes: ros-kinetic-robot_state_publisher-devel < 1.14.1-1
+Provides: ros-noetic-robot_state_publisher-devel = 1.15.0-1
+Obsoletes: ros-noetic-robot_state_publisher-devel < 1.15.0-1
+Obsoletes: ros-kinetic-robot_state_publisher-devel < 1.15.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -180,6 +183,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.0-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.1-1
 - Update to latest release
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.0-1

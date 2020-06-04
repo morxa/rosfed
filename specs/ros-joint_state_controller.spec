@@ -1,12 +1,12 @@
 Name:           ros-joint_state_controller
-Version:        melodic.0.16.1
+Version:        noetic.0.17.0
 Release:        1%{?dist}
 Summary:        ROS package joint_state_controller
 
 License:        BSD
 URL:            https://github.com/ros-controls/ros_controllers/wiki
 
-Source0:        https://github.com/ros-gbp/ros_controllers-release/archive/release/melodic/joint_state_controller/0.16.1-1.tar.gz#/ros-melodic-joint_state_controller-0.16.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_controllers-release/archive/release/noetic/joint_state_controller/0.17.0-1.tar.gz#/ros-noetic-joint_state_controller-0.17.0-source0.tar.gz
 
 
 
@@ -20,25 +20,26 @@ BuildRequires:  python3-devel
 BuildRequires:  poco-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-controller_interface-devel
-BuildRequires:  ros-melodic-hardware_interface-devel
-BuildRequires:  ros-melodic-pluginlib-devel
-BuildRequires:  ros-melodic-realtime_tools-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-rostest-devel
-BuildRequires:  ros-melodic-sensor_msgs-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-controller_interface-devel
+BuildRequires:  ros-noetic-hardware_interface-devel
+BuildRequires:  ros-noetic-pluginlib-devel
+BuildRequires:  ros-noetic-realtime_tools-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-rostest-devel
+BuildRequires:  ros-noetic-sensor_msgs-devel
 
-Requires:       ros-melodic-controller_interface
-Requires:       ros-melodic-hardware_interface
-Requires:       ros-melodic-pluginlib
-Requires:       ros-melodic-realtime_tools
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-sensor_msgs
+Requires:       ros-noetic-controller_interface
+Requires:       ros-noetic-hardware_interface
+Requires:       ros-noetic-pluginlib
+Requires:       ros-noetic-realtime_tools
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-sensor_msgs
 
-Provides:  ros-melodic-joint_state_controller = 0.16.1-1
-Obsoletes: ros-melodic-joint_state_controller < 0.16.1-1
-Obsoletes: ros-kinetic-joint_state_controller < 0.16.1-1
+Provides:  ros-noetic-joint_state_controller = 0.17.0-1
+Obsoletes: ros-noetic-joint_state_controller < 0.17.0-1
+Obsoletes: ros-kinetic-joint_state_controller < 0.17.0-1
+
 
 
 %description
@@ -47,21 +48,22 @@ Controller to publish joint state
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       poco-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
-Requires:       ros-melodic-controller_interface-devel
-Requires:       ros-melodic-hardware_interface-devel
-Requires:       ros-melodic-pluginlib-devel
-Requires:       ros-melodic-realtime_tools-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-rostest-devel
-Requires:       ros-melodic-sensor_msgs-devel
+Requires:       ros-noetic-controller_interface-devel
+Requires:       ros-noetic-hardware_interface-devel
+Requires:       ros-noetic-pluginlib-devel
+Requires:       ros-noetic-realtime_tools-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-rostest-devel
+Requires:       ros-noetic-sensor_msgs-devel
 
-Provides: ros-melodic-joint_state_controller-devel = 0.16.1-1
-Obsoletes: ros-melodic-joint_state_controller-devel < 0.16.1-1
-Obsoletes: ros-kinetic-joint_state_controller-devel < 0.16.1-1
+Provides: ros-noetic-joint_state_controller-devel = 0.17.0-1
+Obsoletes: ros-noetic-joint_state_controller-devel < 0.17.0-1
+Obsoletes: ros-kinetic-joint_state_controller-devel < 0.17.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -168,6 +170,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.17.0-1
+- Upgrade to noetic
 * Wed Apr 29 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.16.1-1
 - Update to latest release
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.15.1-1

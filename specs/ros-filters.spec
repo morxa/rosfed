@@ -1,12 +1,12 @@
 Name:           ros-filters
-Version:        melodic.1.8.1
-Release:        3%{?dist}
+Version:        noetic.1.9.0
+Release:        1%{?dist}
 Summary:        ROS package filters
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/filters-release/archive/release/melodic/filters/1.8.1-0.tar.gz#/ros-melodic-filters-1.8.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/filters-release/archive/release/noetic/filters/1.9.0-1.tar.gz#/ros-noetic-filters-1.9.0-source0.tar.gz
 
 
 
@@ -17,24 +17,26 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
+BuildRequires:  boost-devel boost-python3-devel
 BuildRequires:  poco-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-pluginlib-devel
-BuildRequires:  ros-melodic-rosconsole-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-roslib-devel
-BuildRequires:  ros-melodic-rostest-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-pluginlib-devel
+BuildRequires:  ros-noetic-rosconsole-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-roslib-devel
+BuildRequires:  ros-noetic-rostest-devel
 
-Requires:       ros-melodic-pluginlib
-Requires:       ros-melodic-rosconsole
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-roslib
+Requires:       ros-noetic-pluginlib
+Requires:       ros-noetic-rosconsole
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-roslib
 
-Provides:  ros-melodic-filters = 1.8.1-3
-Obsoletes: ros-melodic-filters < 1.8.1-3
-Obsoletes: ros-kinetic-filters < 1.8.1-3
+Provides:  ros-noetic-filters = 1.9.0-1
+Obsoletes: ros-noetic-filters < 1.9.0-1
+Obsoletes: ros-kinetic-filters < 1.9.0-1
+
 
 
 %description
@@ -46,19 +48,21 @@ dynamically loads filters based on runtime parameters.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       boost-devel boost-python3-devel
 Requires:       poco-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
-Requires:       ros-melodic-pluginlib-devel
-Requires:       ros-melodic-rosconsole-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-roslib-devel
-Requires:       ros-melodic-rostest-devel
+Requires:       ros-noetic-pluginlib-devel
+Requires:       ros-noetic-rosconsole-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-roslib-devel
+Requires:       ros-noetic-rostest-devel
 
-Provides: ros-melodic-filters-devel = 1.8.1-3
-Obsoletes: ros-melodic-filters-devel < 1.8.1-3
-Obsoletes: ros-kinetic-filters-devel < 1.8.1-3
+Provides: ros-noetic-filters-devel = 1.9.0-1
+Obsoletes: ros-noetic-filters-devel < 1.9.0-1
+Obsoletes: ros-kinetic-filters-devel < 1.9.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -165,6 +169,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.9.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.8.1-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.8.1-2

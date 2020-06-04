@@ -1,12 +1,12 @@
 Name:           ros-rosbag
-Version:        melodic.1.14.5
+Version:        noetic.1.15.6
 Release:        1%{?dist}
 Summary:        ROS package rosbag
 
 License:        BSD
 URL:            http://wiki.ros.org/rosbag
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/melodic/rosbag/1.14.5-1.tar.gz#/ros-melodic-rosbag-1.14.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/rosbag/1.15.6-1.tar.gz#/ros-noetic-rosbag-1.15.6-source0.tar.gz
 
 
 
@@ -17,38 +17,39 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  boost-devel boost-python3-devel boost-python3-devel
+BuildRequires:  boost-devel
 BuildRequires:  bzip2-devel
 BuildRequires:  lz4-devel
 BuildRequires:  python3-pillow
 BuildRequires:  python3-pillow python3-pillow-qt
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-cpp_common-devel
-BuildRequires:  ros-melodic-rosbag_storage-devel
-BuildRequires:  ros-melodic-rosconsole-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-roscpp_serialization-devel
-BuildRequires:  ros-melodic-std_srvs-devel
-BuildRequires:  ros-melodic-topic_tools-devel
-BuildRequires:  ros-melodic-xmlrpcpp-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-cpp_common-devel
+BuildRequires:  ros-noetic-rosbag_storage-devel
+BuildRequires:  ros-noetic-rosconsole-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-roscpp_serialization-devel
+BuildRequires:  ros-noetic-std_srvs-devel
+BuildRequires:  ros-noetic-topic_tools-devel
+BuildRequires:  ros-noetic-xmlrpcpp-devel
 
 Requires:       python3-gnupg
 Requires:       python3-pycryptodomex
 Requires:       python3-rospkg
-Requires:       ros-melodic-genmsg
-Requires:       ros-melodic-genpy
-Requires:       ros-melodic-rosbag_storage
-Requires:       ros-melodic-rosconsole
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-roslib
-Requires:       ros-melodic-rospy
-Requires:       ros-melodic-std_srvs
-Requires:       ros-melodic-topic_tools
-Requires:       ros-melodic-xmlrpcpp
+Requires:       ros-noetic-genmsg
+Requires:       ros-noetic-genpy
+Requires:       ros-noetic-rosbag_storage
+Requires:       ros-noetic-rosconsole
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-roslib
+Requires:       ros-noetic-rospy
+Requires:       ros-noetic-std_srvs
+Requires:       ros-noetic-topic_tools
+Requires:       ros-noetic-xmlrpcpp
 
-Provides:  ros-melodic-rosbag = 1.14.5-1
-Obsoletes: ros-melodic-rosbag < 1.14.5-1
-Obsoletes: ros-kinetic-rosbag < 1.14.5-1
+Provides:  ros-noetic-rosbag = 1.15.6-1
+Obsoletes: ros-noetic-rosbag < 1.15.6-1
+Obsoletes: ros-kinetic-rosbag < 1.15.6-1
+
 
 
 %description
@@ -59,28 +60,29 @@ deserialization and reserialization of the messages.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       boost-devel boost-python3-devel boost-python3-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       boost-devel
 Requires:       bzip2-devel
 Requires:       lz4-devel
 Requires:       python3-pillow
 Requires:       python3-pillow python3-pillow-qt
-Requires:       ros-melodic-cpp_common-devel
-Requires:       ros-melodic-rosbag_storage-devel
-Requires:       ros-melodic-rosconsole-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-roscpp_serialization-devel
-Requires:       ros-melodic-std_srvs-devel
-Requires:       ros-melodic-topic_tools-devel
-Requires:       ros-melodic-xmlrpcpp-devel
-Requires:       ros-melodic-genmsg-devel
-Requires:       ros-melodic-genpy-devel
-Requires:       ros-melodic-roslib-devel
-Requires:       ros-melodic-rospy-devel
+Requires:       ros-noetic-cpp_common-devel
+Requires:       ros-noetic-rosbag_storage-devel
+Requires:       ros-noetic-rosconsole-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-roscpp_serialization-devel
+Requires:       ros-noetic-std_srvs-devel
+Requires:       ros-noetic-topic_tools-devel
+Requires:       ros-noetic-xmlrpcpp-devel
+Requires:       ros-noetic-genmsg-devel
+Requires:       ros-noetic-genpy-devel
+Requires:       ros-noetic-roslib-devel
+Requires:       ros-noetic-rospy-devel
 
-Provides: ros-melodic-rosbag-devel = 1.14.5-1
-Obsoletes: ros-melodic-rosbag-devel < 1.14.5-1
-Obsoletes: ros-kinetic-rosbag-devel < 1.14.5-1
+Provides: ros-noetic-rosbag-devel = 1.15.6-1
+Obsoletes: ros-noetic-rosbag-devel < 1.15.6-1
+Obsoletes: ros-kinetic-rosbag-devel < 1.15.6-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -187,6 +189,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.6-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.5-1
 - Update to latest release
 * Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.4-1

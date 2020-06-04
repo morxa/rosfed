@@ -1,12 +1,12 @@
 Name:           ros-roslang
-Version:        melodic.1.14.8
+Version:        noetic.1.15.1
 Release:        1%{?dist}
 Summary:        ROS package roslang
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/ros-release/archive/release/melodic/roslang/1.14.8-1.tar.gz#/ros-melodic-roslang-1.14.8-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros-release/archive/release/noetic/roslang/1.15.1-1.tar.gz#/ros-noetic-roslang-1.15.1-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,14 +18,15 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
-Requires:       ros-melodic-catkin
-Requires:       ros-melodic-genmsg
+Requires:       ros-noetic-catkin
+Requires:       ros-noetic-genmsg
 
-Provides:  ros-melodic-roslang = 1.14.8-1
-Obsoletes: ros-melodic-roslang < 1.14.8-1
-Obsoletes: ros-kinetic-roslang < 1.14.8-1
+Provides:  ros-noetic-roslang = 1.15.1-1
+Obsoletes: ros-noetic-roslang < 1.15.1-1
+Obsoletes: ros-kinetic-roslang < 1.15.1-1
+
 
 
 %description
@@ -34,12 +35,13 @@ roslang is a common package that all
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-genmsg-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-genmsg-devel
 
-Provides: ros-melodic-roslang-devel = 1.14.8-1
-Obsoletes: ros-melodic-roslang-devel < 1.14.8-1
-Obsoletes: ros-kinetic-roslang-devel < 1.14.8-1
+Provides: ros-noetic-roslang-devel = 1.15.1-1
+Obsoletes: ros-noetic-roslang-devel < 1.15.1-1
+Obsoletes: ros-kinetic-roslang-devel < 1.15.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -146,6 +148,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.1-1
+- Upgrade to noetic
 * Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.8-1
 - Update to latest release
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.7-1

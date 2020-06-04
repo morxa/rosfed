@@ -1,12 +1,12 @@
 Name:           ros-urdf
-Version:        melodic.1.13.2
+Version:        noetic.1.13.2
 Release:        1%{?dist}
 Summary:        ROS package urdf
 
 License:        BSD
 URL:            http://ros.org/wiki/urdf
 
-Source0:        https://github.com/ros-gbp/urdf-release/archive/release/melodic/urdf/1.13.2-1.tar.gz#/ros-melodic-urdf-1.13.2-source0.tar.gz
+Source0:        https://github.com/ros-gbp/urdf-release/archive/release/noetic/urdf/1.13.2-1.tar.gz#/ros-noetic-urdf-1.13.2-source0.tar.gz
 
 
 
@@ -22,21 +22,22 @@ BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
 BuildRequires:  urdfdom-devel
 BuildRequires:  urdfdom-headers-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-cmake_modules-devel
-BuildRequires:  ros-melodic-pluginlib-devel
-BuildRequires:  ros-melodic-rosconsole_bridge-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-rostest-devel
-BuildRequires:  ros-melodic-urdf_parser_plugin-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-cmake_modules-devel
+BuildRequires:  ros-noetic-pluginlib-devel
+BuildRequires:  ros-noetic-rosconsole_bridge-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-rostest-devel
+BuildRequires:  ros-noetic-urdf_parser_plugin-devel
 
-Requires:       ros-melodic-pluginlib
-Requires:       ros-melodic-rosconsole_bridge
-Requires:       ros-melodic-roscpp
+Requires:       ros-noetic-pluginlib
+Requires:       ros-noetic-rosconsole_bridge
+Requires:       ros-noetic-roscpp
 
-Provides:  ros-melodic-urdf = 1.13.2-1
-Obsoletes: ros-melodic-urdf < 1.13.2-1
+Provides:  ros-noetic-urdf = 1.13.2-1
+Obsoletes: ros-noetic-urdf < 1.13.2-1
 Obsoletes: ros-kinetic-urdf < 1.13.2-1
+
 
 
 %description
@@ -51,19 +52,20 @@ Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
 Requires:       urdfdom-headers-devel
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       poco-devel
 Requires:       urdfdom-devel
-Requires:       ros-melodic-cmake_modules-devel
-Requires:       ros-melodic-pluginlib-devel
-Requires:       ros-melodic-rosconsole_bridge-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-rostest-devel
-Requires:       ros-melodic-urdf_parser_plugin-devel
+Requires:       ros-noetic-cmake_modules-devel
+Requires:       ros-noetic-pluginlib-devel
+Requires:       ros-noetic-rosconsole_bridge-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-rostest-devel
+Requires:       ros-noetic-urdf_parser_plugin-devel
 
-Provides: ros-melodic-urdf-devel = 1.13.2-1
-Obsoletes: ros-melodic-urdf-devel < 1.13.2-1
+Provides: ros-noetic-urdf-devel = 1.13.2-1
+Obsoletes: ros-noetic-urdf-devel < 1.13.2-1
 Obsoletes: ros-kinetic-urdf-devel < 1.13.2-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -170,6 +172,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.2-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.2-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.1-3

@@ -1,12 +1,12 @@
 Name:           ros-ros_comm
-Version:        melodic.1.14.5
+Version:        noetic.1.15.6
 Release:        1%{?dist}
 Summary:        ROS package ros_comm
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/melodic/ros_comm/1.14.5-1.tar.gz#/ros-melodic-ros_comm-1.14.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/ros_comm/1.15.6-1.tar.gz#/ros-noetic-ros_comm-1.15.6-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,34 +18,35 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
-Requires:       ros-melodic-message_filters
-Requires:       ros-melodic-ros
-Requires:       ros-melodic-rosbag
-Requires:       ros-melodic-rosconsole
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-rosgraph
-Requires:       ros-melodic-rosgraph_msgs
-Requires:       ros-melodic-roslaunch
-Requires:       ros-melodic-roslisp
-Requires:       ros-melodic-rosmaster
-Requires:       ros-melodic-rosmsg
-Requires:       ros-melodic-rosnode
-Requires:       ros-melodic-rosout
-Requires:       ros-melodic-rosparam
-Requires:       ros-melodic-rospy
-Requires:       ros-melodic-rosservice
-Requires:       ros-melodic-rostest
-Requires:       ros-melodic-rostopic
-Requires:       ros-melodic-roswtf
-Requires:       ros-melodic-std_srvs
-Requires:       ros-melodic-topic_tools
-Requires:       ros-melodic-xmlrpcpp
+Requires:       ros-noetic-message_filters
+Requires:       ros-noetic-ros
+Requires:       ros-noetic-rosbag
+Requires:       ros-noetic-rosconsole
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-rosgraph
+Requires:       ros-noetic-rosgraph_msgs
+Requires:       ros-noetic-roslaunch
+Requires:       ros-noetic-roslisp
+Requires:       ros-noetic-rosmaster
+Requires:       ros-noetic-rosmsg
+Requires:       ros-noetic-rosnode
+Requires:       ros-noetic-rosout
+Requires:       ros-noetic-rosparam
+Requires:       ros-noetic-rospy
+Requires:       ros-noetic-rosservice
+Requires:       ros-noetic-rostest
+Requires:       ros-noetic-rostopic
+Requires:       ros-noetic-roswtf
+Requires:       ros-noetic-std_srvs
+Requires:       ros-noetic-topic_tools
+Requires:       ros-noetic-xmlrpcpp
 
-Provides:  ros-melodic-ros_comm = 1.14.5-1
-Obsoletes: ros-melodic-ros_comm < 1.14.5-1
-Obsoletes: ros-kinetic-ros_comm < 1.14.5-1
+Provides:  ros-noetic-ros_comm = 1.15.6-1
+Obsoletes: ros-noetic-ros_comm < 1.15.6-1
+Obsoletes: ros-kinetic-ros_comm < 1.15.6-1
+
 
 
 %description
@@ -56,33 +57,34 @@ rosservice, rosparam).
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-message_filters-devel
-Requires:       ros-melodic-ros-devel
-Requires:       ros-melodic-rosbag-devel
-Requires:       ros-melodic-rosconsole-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-rosgraph-devel
-Requires:       ros-melodic-rosgraph_msgs-devel
-Requires:       ros-melodic-roslaunch-devel
-Requires:       ros-melodic-roslisp-devel
-Requires:       ros-melodic-rosmaster-devel
-Requires:       ros-melodic-rosmsg-devel
-Requires:       ros-melodic-rosnode-devel
-Requires:       ros-melodic-rosout-devel
-Requires:       ros-melodic-rosparam-devel
-Requires:       ros-melodic-rospy-devel
-Requires:       ros-melodic-rosservice-devel
-Requires:       ros-melodic-rostest-devel
-Requires:       ros-melodic-rostopic-devel
-Requires:       ros-melodic-roswtf-devel
-Requires:       ros-melodic-std_srvs-devel
-Requires:       ros-melodic-topic_tools-devel
-Requires:       ros-melodic-xmlrpcpp-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-message_filters-devel
+Requires:       ros-noetic-ros-devel
+Requires:       ros-noetic-rosbag-devel
+Requires:       ros-noetic-rosconsole-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-rosgraph-devel
+Requires:       ros-noetic-rosgraph_msgs-devel
+Requires:       ros-noetic-roslaunch-devel
+Requires:       ros-noetic-roslisp-devel
+Requires:       ros-noetic-rosmaster-devel
+Requires:       ros-noetic-rosmsg-devel
+Requires:       ros-noetic-rosnode-devel
+Requires:       ros-noetic-rosout-devel
+Requires:       ros-noetic-rosparam-devel
+Requires:       ros-noetic-rospy-devel
+Requires:       ros-noetic-rosservice-devel
+Requires:       ros-noetic-rostest-devel
+Requires:       ros-noetic-rostopic-devel
+Requires:       ros-noetic-roswtf-devel
+Requires:       ros-noetic-std_srvs-devel
+Requires:       ros-noetic-topic_tools-devel
+Requires:       ros-noetic-xmlrpcpp-devel
 
-Provides: ros-melodic-ros_comm-devel = 1.14.5-1
-Obsoletes: ros-melodic-ros_comm-devel < 1.14.5-1
-Obsoletes: ros-kinetic-ros_comm-devel < 1.14.5-1
+Provides: ros-noetic-ros_comm-devel = 1.15.6-1
+Obsoletes: ros-noetic-ros_comm-devel < 1.15.6-1
+Obsoletes: ros-kinetic-ros_comm-devel < 1.15.6-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -189,6 +191,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.6-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.5-1
 - Update to latest release
 * Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.4-1

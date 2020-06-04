@@ -1,12 +1,12 @@
 Name:           ros-rqt_gui_py
-Version:        melodic.0.5.1
+Version:        noetic.0.5.1
 Release:        1%{?dist}
 Summary:        ROS package rqt_gui_py
 
 License:        BSD
 URL:            http://ros.org/wiki/rqt_gui_py
 
-Source0:        https://github.com/ros-gbp/rqt-release/archive/release/melodic/rqt_gui_py/0.5.1-1.tar.gz#/ros-melodic-rqt_gui_py-0.5.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt-release/archive/release/noetic/rqt_gui_py/0.5.1-1.tar.gz#/ros-noetic-rqt_gui_py-0.5.1-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,18 +18,19 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-qt_gui-devel
-BuildRequires:  ros-melodic-rospy-devel
-BuildRequires:  ros-melodic-rqt_gui-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-qt_gui-devel
+BuildRequires:  ros-noetic-rospy-devel
+BuildRequires:  ros-noetic-rqt_gui-devel
 
-Requires:       ros-melodic-qt_gui
-Requires:       ros-melodic-rospy
-Requires:       ros-melodic-rqt_gui
+Requires:       ros-noetic-qt_gui
+Requires:       ros-noetic-rospy
+Requires:       ros-noetic-rqt_gui
 
-Provides:  ros-melodic-rqt_gui_py = 0.5.1-1
-Obsoletes: ros-melodic-rqt_gui_py < 0.5.1-1
+Provides:  ros-noetic-rqt_gui_py = 0.5.1-1
+Obsoletes: ros-noetic-rqt_gui_py < 0.5.1-1
 Obsoletes: ros-kinetic-rqt_gui_py < 0.5.1-1
+
 
 
 %description
@@ -39,14 +40,15 @@ ROS.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-qt_gui-devel
-Requires:       ros-melodic-rospy-devel
-Requires:       ros-melodic-rqt_gui-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-qt_gui-devel
+Requires:       ros-noetic-rospy-devel
+Requires:       ros-noetic-rqt_gui-devel
 
-Provides: ros-melodic-rqt_gui_py-devel = 0.5.1-1
-Obsoletes: ros-melodic-rqt_gui_py-devel < 0.5.1-1
+Provides: ros-noetic-rqt_gui_py-devel = 0.5.1-1
+Obsoletes: ros-noetic-rqt_gui_py-devel < 0.5.1-1
 Obsoletes: ros-kinetic-rqt_gui_py-devel < 0.5.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -153,6 +155,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.1-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.5.1-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.5.0-3

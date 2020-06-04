@@ -1,12 +1,12 @@
 Name:           ros-genpy
-Version:        melodic.0.6.9
-Release:        2%{?dist}
+Version:        noetic.0.6.11
+Release:        1%{?dist}
 Summary:        ROS package genpy
 
 License:        BSD
 URL:            http://wiki.ros.org/genpy
 
-Source0:        https://github.com/ros-gbp/genpy-release/archive/release/melodic/genpy/0.6.9-1.tar.gz#/ros-melodic-genpy-0.6.9-source0.tar.gz
+Source0:        https://github.com/ros-gbp/genpy-release/archive/release/noetic/genpy/0.6.11-1.tar.gz#/ros-noetic-genpy-0.6.11-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,16 +18,18 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-genmsg-devel
+BuildRequires:  python3-setuptools
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-genmsg-devel
 
 Requires:       python3-pyyaml
 Requires:       python3dist(pyyaml)
-Requires:       ros-melodic-genmsg
+Requires:       ros-noetic-genmsg
 
-Provides:  ros-melodic-genpy = 0.6.9-2
-Obsoletes: ros-melodic-genpy < 0.6.9-2
-Obsoletes: ros-kinetic-genpy < 0.6.9-2
+Provides:  ros-noetic-genpy = 0.6.11-1
+Obsoletes: ros-noetic-genpy < 0.6.11-1
+Obsoletes: ros-kinetic-genpy < 0.6.11-1
+
 
 
 %description
@@ -36,12 +38,14 @@ Python ROS message and service generators.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-genmsg-devel
+Requires:       python3-setuptools
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-genmsg-devel
 
-Provides: ros-melodic-genpy-devel = 0.6.9-2
-Obsoletes: ros-melodic-genpy-devel < 0.6.9-2
-Obsoletes: ros-kinetic-genpy-devel < 0.6.9-2
+Provides: ros-noetic-genpy-devel = 0.6.11-1
+Obsoletes: ros-noetic-genpy-devel < 0.6.11-1
+Obsoletes: ros-kinetic-genpy-devel < 0.6.11-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -148,6 +152,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.6.11-1
+- Upgrade to noetic
 * Thu Mar 05 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.6.9-2
 - Fix dependency on python3-pyyaml
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.6.9-1

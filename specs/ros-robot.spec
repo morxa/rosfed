@@ -1,12 +1,12 @@
 Name:           ros-robot
-Version:        melodic.1.4.1
-Release:        3%{?dist}
+Version:        noetic.1.5.0
+Release:        1%{?dist}
 Summary:        ROS package robot
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/metapackages-release/archive/release/melodic/robot/1.4.1-0.tar.gz#/ros-melodic-robot-1.4.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/metapackages-release/archive/release/noetic/robot/1.5.0-1.tar.gz#/ros-noetic-robot-1.5.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,25 +18,25 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
-Requires:       ros-melodic-control_msgs
-Requires:       ros-melodic-diagnostics
-Requires:       ros-melodic-executive_smach
-Requires:       ros-melodic-filters
-Requires:       ros-melodic-geometry
-Requires:       ros-melodic-joint_state_publisher
-Requires:       ros-melodic-kdl_parser
-Requires:       ros-melodic-kdl_parser_py
-Requires:       ros-melodic-robot_state_publisher
-Requires:       ros-melodic-ros_base
-Requires:       ros-melodic-urdf
-Requires:       ros-melodic-urdf_parser_plugin
-Requires:       ros-melodic-xacro
+Requires:       ros-noetic-control_msgs
+Requires:       ros-noetic-diagnostics
+Requires:       ros-noetic-executive_smach
+Requires:       ros-noetic-filters
+Requires:       ros-noetic-geometry
+Requires:       ros-noetic-joint_state_publisher
+Requires:       ros-noetic-kdl_parser
+Requires:       ros-noetic-robot_state_publisher
+Requires:       ros-noetic-ros_base
+Requires:       ros-noetic-urdf
+Requires:       ros-noetic-urdf_parser_plugin
+Requires:       ros-noetic-xacro
 
-Provides:  ros-melodic-robot = 1.4.1-3
-Obsoletes: ros-melodic-robot < 1.4.1-3
-Obsoletes: ros-kinetic-robot < 1.4.1-3
+Provides:  ros-noetic-robot = 1.5.0-1
+Obsoletes: ros-noetic-robot < 1.5.0-1
+Obsoletes: ros-kinetic-robot < 1.5.0-1
+
 
 
 %description
@@ -46,24 +46,24 @@ robot hardware. It may not contain any GUI dependencies.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-control_msgs-devel
-Requires:       ros-melodic-diagnostics-devel
-Requires:       ros-melodic-executive_smach-devel
-Requires:       ros-melodic-filters-devel
-Requires:       ros-melodic-geometry-devel
-Requires:       ros-melodic-joint_state_publisher-devel
-Requires:       ros-melodic-kdl_parser-devel
-Requires:       ros-melodic-kdl_parser_py-devel
-Requires:       ros-melodic-robot_state_publisher-devel
-Requires:       ros-melodic-ros_base-devel
-Requires:       ros-melodic-urdf-devel
-Requires:       ros-melodic-urdf_parser_plugin-devel
-Requires:       ros-melodic-xacro-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-control_msgs-devel
+Requires:       ros-noetic-diagnostics-devel
+Requires:       ros-noetic-executive_smach-devel
+Requires:       ros-noetic-filters-devel
+Requires:       ros-noetic-geometry-devel
+Requires:       ros-noetic-joint_state_publisher-devel
+Requires:       ros-noetic-kdl_parser-devel
+Requires:       ros-noetic-robot_state_publisher-devel
+Requires:       ros-noetic-ros_base-devel
+Requires:       ros-noetic-urdf-devel
+Requires:       ros-noetic-urdf_parser_plugin-devel
+Requires:       ros-noetic-xacro-devel
 
-Provides: ros-melodic-robot-devel = 1.4.1-3
-Obsoletes: ros-melodic-robot-devel < 1.4.1-3
-Obsoletes: ros-kinetic-robot-devel < 1.4.1-3
+Provides: ros-noetic-robot-devel = 1.5.0-1
+Obsoletes: ros-noetic-robot-devel < 1.5.0-1
+Obsoletes: ros-kinetic-robot-devel < 1.5.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -170,6 +170,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.5.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.4.1-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.4.1-2

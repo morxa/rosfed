@@ -1,12 +1,12 @@
 Name:           ros-common_msgs
-Version:        melodic.1.12.7
-Release:        3%{?dist}
+Version:        noetic.1.13.0
+Release:        1%{?dist}
 Summary:        ROS package common_msgs
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/common_msgs-release/archive/release/melodic/common_msgs/1.12.7-0.tar.gz#/ros-melodic-common_msgs-1.12.7-source0.tar.gz
+Source0:        https://github.com/ros-gbp/common_msgs-release/archive/release/noetic/common_msgs/1.13.0-1.tar.gz#/ros-noetic-common_msgs-1.13.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,21 +18,22 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
-Requires:       ros-melodic-actionlib_msgs
-Requires:       ros-melodic-diagnostic_msgs
-Requires:       ros-melodic-geometry_msgs
-Requires:       ros-melodic-nav_msgs
-Requires:       ros-melodic-sensor_msgs
-Requires:       ros-melodic-shape_msgs
-Requires:       ros-melodic-stereo_msgs
-Requires:       ros-melodic-trajectory_msgs
-Requires:       ros-melodic-visualization_msgs
+Requires:       ros-noetic-actionlib_msgs
+Requires:       ros-noetic-diagnostic_msgs
+Requires:       ros-noetic-geometry_msgs
+Requires:       ros-noetic-nav_msgs
+Requires:       ros-noetic-sensor_msgs
+Requires:       ros-noetic-shape_msgs
+Requires:       ros-noetic-stereo_msgs
+Requires:       ros-noetic-trajectory_msgs
+Requires:       ros-noetic-visualization_msgs
 
-Provides:  ros-melodic-common_msgs = 1.12.7-3
-Obsoletes: ros-melodic-common_msgs < 1.12.7-3
-Obsoletes: ros-kinetic-common_msgs < 1.12.7-3
+Provides:  ros-noetic-common_msgs = 1.13.0-1
+Obsoletes: ros-noetic-common_msgs < 1.13.0-1
+Obsoletes: ros-kinetic-common_msgs < 1.13.0-1
+
 
 
 %description
@@ -42,20 +43,21 @@ packages. These includes messages for actions (
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-actionlib_msgs-devel
-Requires:       ros-melodic-diagnostic_msgs-devel
-Requires:       ros-melodic-geometry_msgs-devel
-Requires:       ros-melodic-nav_msgs-devel
-Requires:       ros-melodic-sensor_msgs-devel
-Requires:       ros-melodic-shape_msgs-devel
-Requires:       ros-melodic-stereo_msgs-devel
-Requires:       ros-melodic-trajectory_msgs-devel
-Requires:       ros-melodic-visualization_msgs-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-actionlib_msgs-devel
+Requires:       ros-noetic-diagnostic_msgs-devel
+Requires:       ros-noetic-geometry_msgs-devel
+Requires:       ros-noetic-nav_msgs-devel
+Requires:       ros-noetic-sensor_msgs-devel
+Requires:       ros-noetic-shape_msgs-devel
+Requires:       ros-noetic-stereo_msgs-devel
+Requires:       ros-noetic-trajectory_msgs-devel
+Requires:       ros-noetic-visualization_msgs-devel
 
-Provides: ros-melodic-common_msgs-devel = 1.12.7-3
-Obsoletes: ros-melodic-common_msgs-devel < 1.12.7-3
-Obsoletes: ros-kinetic-common_msgs-devel < 1.12.7-3
+Provides: ros-noetic-common_msgs-devel = 1.13.0-1
+Obsoletes: ros-noetic-common_msgs-devel < 1.13.0-1
+Obsoletes: ros-kinetic-common_msgs-devel < 1.13.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -162,6 +164,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.12.7-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.12.7-2

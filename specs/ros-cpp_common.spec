@@ -1,12 +1,12 @@
 Name:           ros-cpp_common
-Version:        melodic.0.6.13
+Version:        noetic.0.7.1
 Release:        1%{?dist}
 Summary:        ROS package cpp_common
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/roscpp_core-release/archive/release/melodic/cpp_common/0.6.13-1.tar.gz#/ros-melodic-cpp_common-0.6.13-source0.tar.gz
+Source0:        https://github.com/ros-gbp/roscpp_core-release/archive/release/noetic/cpp_common/0.7.1-1.tar.gz#/ros-noetic-cpp_common-0.7.1-source0.tar.gz
 
 
 
@@ -17,14 +17,15 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  boost-devel boost-python3-devel boost-python3-devel
+BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
 
-Provides:  ros-melodic-cpp_common = 0.6.13-1
-Obsoletes: ros-melodic-cpp_common < 0.6.13-1
-Obsoletes: ros-kinetic-cpp_common < 0.6.13-1
+Provides:  ros-noetic-cpp_common = 0.7.1-1
+Obsoletes: ros-noetic-cpp_common < 0.7.1-1
+Obsoletes: ros-kinetic-cpp_common < 0.7.1-1
+
 
 
 %description
@@ -36,13 +37,14 @@ code for getting backtraces. This package is a component of
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       boost-devel boost-python3-devel boost-python3-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       boost-devel
 Requires:       console-bridge-devel
 
-Provides: ros-melodic-cpp_common-devel = 0.6.13-1
-Obsoletes: ros-melodic-cpp_common-devel < 0.6.13-1
-Obsoletes: ros-kinetic-cpp_common-devel < 0.6.13-1
+Provides: ros-noetic-cpp_common-devel = 0.7.1-1
+Obsoletes: ros-noetic-cpp_common-devel < 0.7.1-1
+Obsoletes: ros-kinetic-cpp_common-devel < 0.7.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -149,6 +151,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.7.1-1
+- Upgrade to noetic
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.6.13-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.6.12-3

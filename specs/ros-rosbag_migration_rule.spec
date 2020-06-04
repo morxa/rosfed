@@ -1,12 +1,12 @@
 Name:           ros-rosbag_migration_rule
-Version:        melodic.1.0.0
-Release:        3%{?dist}
+Version:        noetic.1.0.1
+Release:        1%{?dist}
 Summary:        ROS package rosbag_migration_rule
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/rosbag_migration_rule-release/archive/release/melodic/rosbag_migration_rule/1.0.0-0.tar.gz#/ros-melodic-rosbag_migration_rule-1.0.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rosbag_migration_rule-release/archive/release/noetic/rosbag_migration_rule/1.0.1-1.tar.gz#/ros-noetic-rosbag_migration_rule-1.0.1-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,12 +18,13 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
 
-Provides:  ros-melodic-rosbag_migration_rule = 1.0.0-3
-Obsoletes: ros-melodic-rosbag_migration_rule < 1.0.0-3
-Obsoletes: ros-kinetic-rosbag_migration_rule < 1.0.0-3
+Provides:  ros-noetic-rosbag_migration_rule = 1.0.1-1
+Obsoletes: ros-noetic-rosbag_migration_rule < 1.0.1-1
+Obsoletes: ros-kinetic-rosbag_migration_rule < 1.0.1-1
+
 
 
 %description
@@ -33,11 +34,12 @@ without depending on rosbag.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 
-Provides: ros-melodic-rosbag_migration_rule-devel = 1.0.0-3
-Obsoletes: ros-melodic-rosbag_migration_rule-devel < 1.0.0-3
-Obsoletes: ros-kinetic-rosbag_migration_rule-devel < 1.0.0-3
+Provides: ros-noetic-rosbag_migration_rule-devel = 1.0.1-1
+Obsoletes: ros-noetic-rosbag_migration_rule-devel < 1.0.1-1
+Obsoletes: ros-kinetic-rosbag_migration_rule-devel < 1.0.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -144,6 +146,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.0.1-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.0.0-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.0.0-2

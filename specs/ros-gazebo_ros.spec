@@ -1,12 +1,12 @@
 Name:           ros-gazebo_ros
-Version:        melodic.2.8.6
+Version:        noetic.2.9.1
 Release:        1%{?dist}
 Summary:        ROS package gazebo_ros
 
 License:        Apache 2.0
 URL:            http://gazebosim.org/tutorials?cat=connect_ros
 
-Source0:        https://github.com/ros-gbp/gazebo_ros_pkgs-release/archive/release/melodic/gazebo_ros/2.8.6-1.tar.gz#/ros-melodic-gazebo_ros-2.8.6-source0.tar.gz
+Source0:        https://github.com/ros-gbp/gazebo_ros_pkgs-release/archive/release/noetic/gazebo_ros/2.9.1-1.tar.gz#/ros-noetic-gazebo_ros-2.9.1-source0.tar.gz
 
 
 
@@ -21,35 +21,36 @@ BuildRequires:  bullet-devel
 BuildRequires:  gazebo-devel
 BuildRequires:  libuuid-devel
 BuildRequires:  tinyxml-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-cmake_modules-devel
-BuildRequires:  ros-melodic-dynamic_reconfigure-devel
-BuildRequires:  ros-melodic-gazebo_dev-devel
-BuildRequires:  ros-melodic-gazebo_msgs-devel
-BuildRequires:  ros-melodic-geometry_msgs-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-rosgraph_msgs-devel
-BuildRequires:  ros-melodic-roslib-devel
-BuildRequires:  ros-melodic-std_msgs-devel
-BuildRequires:  ros-melodic-std_srvs-devel
-BuildRequires:  ros-melodic-tf-devel
-BuildRequires:  ros-melodic-trajectory_msgs-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-cmake_modules-devel
+BuildRequires:  ros-noetic-dynamic_reconfigure-devel
+BuildRequires:  ros-noetic-gazebo_dev-devel
+BuildRequires:  ros-noetic-gazebo_msgs-devel
+BuildRequires:  ros-noetic-geometry_msgs-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-rosgraph_msgs-devel
+BuildRequires:  ros-noetic-roslib-devel
+BuildRequires:  ros-noetic-std_msgs-devel
+BuildRequires:  ros-noetic-std_srvs-devel
+BuildRequires:  ros-noetic-tf-devel
+BuildRequires:  ros-noetic-trajectory_msgs-devel
 
 Requires:       python3
-Requires:       ros-melodic-dynamic_reconfigure
-Requires:       ros-melodic-gazebo_dev
-Requires:       ros-melodic-gazebo_msgs
-Requires:       ros-melodic-geometry_msgs
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-rosgraph_msgs
-Requires:       ros-melodic-roslib
-Requires:       ros-melodic-std_msgs
-Requires:       ros-melodic-std_srvs
-Requires:       ros-melodic-tf
+Requires:       ros-noetic-dynamic_reconfigure
+Requires:       ros-noetic-gazebo_dev
+Requires:       ros-noetic-gazebo_msgs
+Requires:       ros-noetic-geometry_msgs
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-rosgraph_msgs
+Requires:       ros-noetic-roslib
+Requires:       ros-noetic-std_msgs
+Requires:       ros-noetic-std_srvs
+Requires:       ros-noetic-tf
 
-Provides:  ros-melodic-gazebo_ros = 2.8.6-1
-Obsoletes: ros-melodic-gazebo_ros < 2.8.6-1
-Obsoletes: ros-kinetic-gazebo_ros < 2.8.6-1
+Provides:  ros-noetic-gazebo_ros = 2.9.1-1
+Obsoletes: ros-noetic-gazebo_ros < 2.9.1-1
+Obsoletes: ros-kinetic-gazebo_ros < 2.9.1-1
+
 
 
 %description
@@ -59,27 +60,28 @@ interfacing with
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       bullet-devel
 Requires:       gazebo-devel
 Requires:       libuuid-devel
 Requires:       tinyxml-devel
-Requires:       ros-melodic-cmake_modules-devel
-Requires:       ros-melodic-dynamic_reconfigure-devel
-Requires:       ros-melodic-gazebo_dev-devel
-Requires:       ros-melodic-gazebo_msgs-devel
-Requires:       ros-melodic-geometry_msgs-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-rosgraph_msgs-devel
-Requires:       ros-melodic-roslib-devel
-Requires:       ros-melodic-std_msgs-devel
-Requires:       ros-melodic-std_srvs-devel
-Requires:       ros-melodic-tf-devel
-Requires:       ros-melodic-trajectory_msgs-devel
+Requires:       ros-noetic-cmake_modules-devel
+Requires:       ros-noetic-dynamic_reconfigure-devel
+Requires:       ros-noetic-gazebo_dev-devel
+Requires:       ros-noetic-gazebo_msgs-devel
+Requires:       ros-noetic-geometry_msgs-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-rosgraph_msgs-devel
+Requires:       ros-noetic-roslib-devel
+Requires:       ros-noetic-std_msgs-devel
+Requires:       ros-noetic-std_srvs-devel
+Requires:       ros-noetic-tf-devel
+Requires:       ros-noetic-trajectory_msgs-devel
 
-Provides: ros-melodic-gazebo_ros-devel = 2.8.6-1
-Obsoletes: ros-melodic-gazebo_ros-devel < 2.8.6-1
-Obsoletes: ros-kinetic-gazebo_ros-devel < 2.8.6-1
+Provides: ros-noetic-gazebo_ros-devel = 2.9.1-1
+Obsoletes: ros-noetic-gazebo_ros-devel < 2.9.1-1
+Obsoletes: ros-kinetic-gazebo_ros-devel < 2.9.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -186,6 +188,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.2.9.1-1
+- Upgrade to noetic
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.2.8.6-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.2.8.4-3

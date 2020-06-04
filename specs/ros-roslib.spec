@@ -1,12 +1,12 @@
 Name:           ros-roslib
-Version:        melodic.1.14.8
+Version:        noetic.1.15.1
 Release:        1%{?dist}
 Summary:        ROS package roslib
 
 License:        BSD
 URL:            http://wiki.ros.org/roslib
 
-Source0:        https://github.com/ros-gbp/ros-release/archive/release/melodic/roslib/1.14.8-1.tar.gz#/ros-melodic-roslib-1.14.8-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros-release/archive/release/noetic/roslib/1.15.1-1.tar.gz#/ros-noetic-roslib-1.15.1-source0.tar.gz
 
 
 
@@ -20,18 +20,19 @@ BuildRequires:  python3-devel
 BuildRequires:  boost-devel
 BuildRequires:  python3-setuptools
 BuildRequires:  tinyxml-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-rosmake-devel
-BuildRequires:  ros-melodic-rospack-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-rosmake-devel
+BuildRequires:  ros-noetic-rospack-devel
 
 Requires:       python3-rospkg
-Requires:       ros-melodic-catkin
-Requires:       ros-melodic-ros_environment
-Requires:       ros-melodic-rospack
+Requires:       ros-noetic-catkin
+Requires:       ros-noetic-ros_environment
+Requires:       ros-noetic-rospack
 
-Provides:  ros-melodic-roslib = 1.14.8-1
-Obsoletes: ros-melodic-roslib < 1.14.8-1
-Obsoletes: ros-kinetic-roslib < 1.14.8-1
+Provides:  ros-noetic-roslib = 1.15.1-1
+Obsoletes: ros-noetic-roslib < 1.15.1-1
+Obsoletes: ros-kinetic-roslib < 1.15.1-1
+
 
 
 %description
@@ -43,16 +44,17 @@ client library implementations.
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       python3-setuptools
-Requires:       ros-melodic-catkin-devel
+Requires:       ros-noetic-catkin-devel
 Requires:       boost-devel
 Requires:       tinyxml-devel
-Requires:       ros-melodic-rosmake-devel
-Requires:       ros-melodic-rospack-devel
-Requires:       ros-melodic-ros_environment-devel
+Requires:       ros-noetic-rosmake-devel
+Requires:       ros-noetic-rospack-devel
+Requires:       ros-noetic-ros_environment-devel
 
-Provides: ros-melodic-roslib-devel = 1.14.8-1
-Obsoletes: ros-melodic-roslib-devel < 1.14.8-1
-Obsoletes: ros-kinetic-roslib-devel < 1.14.8-1
+Provides: ros-noetic-roslib-devel = 1.15.1-1
+Obsoletes: ros-noetic-roslib-devel < 1.15.1-1
+Obsoletes: ros-kinetic-roslib-devel < 1.15.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -159,6 +161,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.1-1
+- Upgrade to noetic
 * Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.8-1
 - Update to latest release
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.7-1

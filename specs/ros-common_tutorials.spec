@@ -1,12 +1,12 @@
 Name:           ros-common_tutorials
-Version:        melodic.0.1.11
-Release:        3%{?dist}
+Version:        noetic.0.1.12
+Release:        1%{?dist}
 Summary:        ROS package common_tutorials
 
 License:        BSD
 URL:            http://ros.org/wiki/common_tutorials
 
-Source0:        https://github.com/ros-gbp/common_tutorials-release/archive/release/melodic/common_tutorials/0.1.11-0.tar.gz#/ros-melodic-common_tutorials-0.1.11-source0.tar.gz
+Source0:        https://github.com/ros-gbp/common_tutorials-release/archive/release/noetic/common_tutorials/0.1.12-1.tar.gz#/ros-noetic-common_tutorials-0.1.12-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,16 +18,17 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
-Requires:       ros-melodic-actionlib_tutorials
-Requires:       ros-melodic-nodelet_tutorial_math
-Requires:       ros-melodic-pluginlib_tutorials
-Requires:       ros-melodic-turtle_actionlib
+Requires:       ros-noetic-actionlib_tutorials
+Requires:       ros-noetic-nodelet_tutorial_math
+Requires:       ros-noetic-pluginlib_tutorials
+Requires:       ros-noetic-turtle_actionlib
 
-Provides:  ros-melodic-common_tutorials = 0.1.11-3
-Obsoletes: ros-melodic-common_tutorials < 0.1.11-3
-Obsoletes: ros-kinetic-common_tutorials < 0.1.11-3
+Provides:  ros-noetic-common_tutorials = 0.1.12-1
+Obsoletes: ros-noetic-common_tutorials < 0.1.12-1
+Obsoletes: ros-kinetic-common_tutorials < 0.1.12-1
+
 
 
 %description
@@ -36,15 +37,16 @@ Metapackage that contains common tutorials
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-actionlib_tutorials-devel
-Requires:       ros-melodic-nodelet_tutorial_math-devel
-Requires:       ros-melodic-pluginlib_tutorials-devel
-Requires:       ros-melodic-turtle_actionlib-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-actionlib_tutorials-devel
+Requires:       ros-noetic-nodelet_tutorial_math-devel
+Requires:       ros-noetic-pluginlib_tutorials-devel
+Requires:       ros-noetic-turtle_actionlib-devel
 
-Provides: ros-melodic-common_tutorials-devel = 0.1.11-3
-Obsoletes: ros-melodic-common_tutorials-devel < 0.1.11-3
-Obsoletes: ros-kinetic-common_tutorials-devel < 0.1.11-3
+Provides: ros-noetic-common_tutorials-devel = 0.1.12-1
+Obsoletes: ros-noetic-common_tutorials-devel < 0.1.12-1
+Obsoletes: ros-kinetic-common_tutorials-devel < 0.1.12-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -151,6 +153,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.1.12-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.1.11-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.1.11-2

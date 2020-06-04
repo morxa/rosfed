@@ -1,12 +1,12 @@
 Name:           ros-rqt_py_common
-Version:        melodic.0.5.1
+Version:        noetic.0.5.1
 Release:        1%{?dist}
 Summary:        ROS package rqt_py_common
 
 License:        BSD
 URL:            http://ros.org/wiki/rqt_py_common
 
-Source0:        https://github.com/ros-gbp/rqt-release/archive/release/melodic/rqt_py_common/0.5.1-1.tar.gz#/ros-melodic-rqt_py_common-0.5.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt-release/archive/release/noetic/rqt_py_common/0.5.1-1.tar.gz#/ros-noetic-rqt_py_common-0.5.1-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,22 +18,23 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-genmsg-devel
-BuildRequires:  ros-melodic-std_msgs-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-genmsg-devel
+BuildRequires:  ros-noetic-std_msgs-devel
 
-Requires:       ros-melodic-actionlib
-Requires:       ros-melodic-genpy
-Requires:       ros-melodic-python_qt_binding
-Requires:       ros-melodic-qt_gui
-Requires:       ros-melodic-rosbag
-Requires:       ros-melodic-roslib
-Requires:       ros-melodic-rospy
-Requires:       ros-melodic-rostopic
+Requires:       ros-noetic-actionlib
+Requires:       ros-noetic-genpy
+Requires:       ros-noetic-python_qt_binding
+Requires:       ros-noetic-qt_gui
+Requires:       ros-noetic-rosbag
+Requires:       ros-noetic-roslib
+Requires:       ros-noetic-rospy
+Requires:       ros-noetic-rostopic
 
-Provides:  ros-melodic-rqt_py_common = 0.5.1-1
-Obsoletes: ros-melodic-rqt_py_common < 0.5.1-1
+Provides:  ros-noetic-rqt_py_common = 0.5.1-1
+Obsoletes: ros-noetic-rqt_py_common < 0.5.1-1
 Obsoletes: ros-kinetic-rqt_py_common < 0.5.1-1
+
 
 
 %description
@@ -48,21 +49,22 @@ ROS concepts and should not introduce any special dependencies beside
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-genmsg-devel
-Requires:       ros-melodic-std_msgs-devel
-Requires:       ros-melodic-actionlib-devel
-Requires:       ros-melodic-genpy-devel
-Requires:       ros-melodic-python_qt_binding-devel
-Requires:       ros-melodic-qt_gui-devel
-Requires:       ros-melodic-rosbag-devel
-Requires:       ros-melodic-roslib-devel
-Requires:       ros-melodic-rospy-devel
-Requires:       ros-melodic-rostopic-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-genmsg-devel
+Requires:       ros-noetic-std_msgs-devel
+Requires:       ros-noetic-actionlib-devel
+Requires:       ros-noetic-genpy-devel
+Requires:       ros-noetic-python_qt_binding-devel
+Requires:       ros-noetic-qt_gui-devel
+Requires:       ros-noetic-rosbag-devel
+Requires:       ros-noetic-roslib-devel
+Requires:       ros-noetic-rospy-devel
+Requires:       ros-noetic-rostopic-devel
 
-Provides: ros-melodic-rqt_py_common-devel = 0.5.1-1
-Obsoletes: ros-melodic-rqt_py_common-devel < 0.5.1-1
+Provides: ros-noetic-rqt_py_common-devel = 0.5.1-1
+Obsoletes: ros-noetic-rqt_py_common-devel < 0.5.1-1
 Obsoletes: ros-kinetic-rqt_py_common-devel < 0.5.1-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -169,6 +171,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.1-1
+- Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.5.1-1
 - Update to latest release
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.5.0-3

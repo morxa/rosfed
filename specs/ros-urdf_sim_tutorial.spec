@@ -1,12 +1,12 @@
 Name:           ros-urdf_sim_tutorial
-Version:        melodic.0.4.0
-Release:        3%{?dist}
+Version:        noetic.0.5.0
+Release:        1%{?dist}
 Summary:        ROS package urdf_sim_tutorial
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/urdf_sim_tutorial-release/archive/release/melodic/urdf_sim_tutorial/0.4.0-0.tar.gz#/ros-melodic-urdf_sim_tutorial-0.4.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/urdf_sim_tutorial-release/archive/release/noetic/urdf_sim_tutorial/0.5.0-1.tar.gz#/ros-noetic-urdf_sim_tutorial-0.5.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,23 +18,24 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
+BuildRequires:  ros-noetic-catkin-devel
 
-Requires:       ros-melodic-controller_manager
-Requires:       ros-melodic-diff_drive_controller
-Requires:       ros-melodic-gazebo_ros
-Requires:       ros-melodic-gazebo_ros_control
-Requires:       ros-melodic-joint_state_controller
-Requires:       ros-melodic-position_controllers
-Requires:       ros-melodic-robot_state_publisher
-Requires:       ros-melodic-rqt_robot_steering
-Requires:       ros-melodic-rviz
-Requires:       ros-melodic-urdf_tutorial
-Requires:       ros-melodic-xacro
+Requires:       ros-noetic-controller_manager
+Requires:       ros-noetic-diff_drive_controller
+Requires:       ros-noetic-gazebo_ros
+Requires:       ros-noetic-gazebo_ros_control
+Requires:       ros-noetic-joint_state_controller
+Requires:       ros-noetic-position_controllers
+Requires:       ros-noetic-robot_state_publisher
+Requires:       ros-noetic-rqt_robot_steering
+Requires:       ros-noetic-rviz
+Requires:       ros-noetic-urdf_tutorial
+Requires:       ros-noetic-xacro
 
-Provides:  ros-melodic-urdf_sim_tutorial = 0.4.0-3
-Obsoletes: ros-melodic-urdf_sim_tutorial < 0.4.0-3
-Obsoletes: ros-kinetic-urdf_sim_tutorial < 0.4.0-3
+Provides:  ros-noetic-urdf_sim_tutorial = 0.5.0-1
+Obsoletes: ros-noetic-urdf_sim_tutorial < 0.5.0-1
+Obsoletes: ros-kinetic-urdf_sim_tutorial < 0.5.0-1
+
 
 
 %description
@@ -43,22 +44,23 @@ The urdf_sim_tutorial package
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-controller_manager-devel
-Requires:       ros-melodic-diff_drive_controller-devel
-Requires:       ros-melodic-gazebo_ros-devel
-Requires:       ros-melodic-gazebo_ros_control-devel
-Requires:       ros-melodic-joint_state_controller-devel
-Requires:       ros-melodic-position_controllers-devel
-Requires:       ros-melodic-robot_state_publisher-devel
-Requires:       ros-melodic-rqt_robot_steering-devel
-Requires:       ros-melodic-rviz-devel
-Requires:       ros-melodic-urdf_tutorial-devel
-Requires:       ros-melodic-xacro-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-controller_manager-devel
+Requires:       ros-noetic-diff_drive_controller-devel
+Requires:       ros-noetic-gazebo_ros-devel
+Requires:       ros-noetic-gazebo_ros_control-devel
+Requires:       ros-noetic-joint_state_controller-devel
+Requires:       ros-noetic-position_controllers-devel
+Requires:       ros-noetic-robot_state_publisher-devel
+Requires:       ros-noetic-rqt_robot_steering-devel
+Requires:       ros-noetic-rviz-devel
+Requires:       ros-noetic-urdf_tutorial-devel
+Requires:       ros-noetic-xacro-devel
 
-Provides: ros-melodic-urdf_sim_tutorial-devel = 0.4.0-3
-Obsoletes: ros-melodic-urdf_sim_tutorial-devel < 0.4.0-3
-Obsoletes: ros-kinetic-urdf_sim_tutorial-devel < 0.4.0-3
+Provides: ros-noetic-urdf_sim_tutorial-devel = 0.5.0-1
+Obsoletes: ros-noetic-urdf_sim_tutorial-devel < 0.5.0-1
+Obsoletes: ros-kinetic-urdf_sim_tutorial-devel < 0.5.0-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -165,6 +167,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.0-1
+- Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.0-3
 - Remove obsolete python2 dependencies
 * Sun Jul 21 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.0-2
