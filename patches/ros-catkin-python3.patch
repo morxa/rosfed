@@ -1,0 +1,12 @@
+diff -ur catkin-release-release-melodic-catkin-0.7.17-0/cmake/python.cmake catkin-release-release-melodic-catkin-0.7.17-0.python3/cmake/python.cmake
+--- catkin-release-release-melodic-catkin-0.7.17-0/cmake/python.cmake	2019-03-18 17:44:36.000000000 +0100
++++ catkin-release-release-melodic-catkin-0.7.17-0.python3/cmake/python.cmake	2019-08-16 10:45:22.282976706 +0200
+@@ -1,7 +1,7 @@
+ # the CMake variable PYTHON_INSTALL_DIR has the same value as the Python function catkin.builder.get_python_install_dir()
+ 
+ set(PYTHON_VERSION "$ENV{ROS_PYTHON_VERSION}" CACHE STRING "Specify specific Python version to use ('major.minor' or 'major')")
+-find_package(PythonInterp ${PYTHON_VERSION} REQUIRED)
++find_package(Python COMPONENTS Interpreter Development REQUIRED)
+ 
+ message(STATUS "Using PYTHON_EXECUTABLE: ${PYTHON_EXECUTABLE}")
+ 
