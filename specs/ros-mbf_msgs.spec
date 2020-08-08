@@ -1,12 +1,12 @@
 Name:           ros-mbf_msgs
-Version:        melodic.0.2.5
+Version:        noetic.0.3.2
 Release:        1%{?dist}
 Summary:        ROS package mbf_msgs
 
-License:        3-Clause BSD
+License:        BSD-3
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/uos-gbp/move_base_flex-release/archive/release/melodic/mbf_msgs/0.2.5-1.tar.gz#/ros-melodic-mbf_msgs-0.2.5-source0.tar.gz
+Source0:        https://github.com/uos-gbp/move_base_flex-release/archive/release/noetic/mbf_msgs/0.3.2-1.tar.gz#/ros-noetic-mbf_msgs-0.3.2-source0.tar.gz
 
 
 BuildArch: noarch
@@ -18,24 +18,25 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-actionlib_msgs-devel
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-genmsg-devel
-BuildRequires:  ros-melodic-geometry_msgs-devel
-BuildRequires:  ros-melodic-message_generation-devel
-BuildRequires:  ros-melodic-message_runtime-devel
-BuildRequires:  ros-melodic-nav_msgs-devel
-BuildRequires:  ros-melodic-std_msgs-devel
+BuildRequires:  ros-noetic-actionlib_msgs-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-genmsg-devel
+BuildRequires:  ros-noetic-geometry_msgs-devel
+BuildRequires:  ros-noetic-message_generation-devel
+BuildRequires:  ros-noetic-message_runtime-devel
+BuildRequires:  ros-noetic-nav_msgs-devel
+BuildRequires:  ros-noetic-std_msgs-devel
 
-Requires:       ros-melodic-actionlib_msgs
-Requires:       ros-melodic-geometry_msgs
-Requires:       ros-melodic-message_runtime
-Requires:       ros-melodic-nav_msgs
-Requires:       ros-melodic-std_msgs
+Requires:       ros-noetic-actionlib_msgs
+Requires:       ros-noetic-geometry_msgs
+Requires:       ros-noetic-message_runtime
+Requires:       ros-noetic-nav_msgs
+Requires:       ros-noetic-std_msgs
 
-Provides:  ros-melodic-mbf_msgs = 0.2.5-1
-Obsoletes: ros-melodic-mbf_msgs < 0.2.5-1
-Obsoletes: ros-kinetic-mbf_msgs < 0.2.5-1
+Provides:  ros-noetic-mbf_msgs = 0.3.2-1
+Obsoletes: ros-noetic-mbf_msgs < 0.3.2-1
+Obsoletes: ros-kinetic-mbf_msgs < 0.3.2-1
+
 
 
 %description
@@ -46,18 +47,19 @@ action servers providing these action are implemented in
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-actionlib_msgs-devel
-Requires:       ros-melodic-genmsg-devel
-Requires:       ros-melodic-geometry_msgs-devel
-Requires:       ros-melodic-message_generation-devel
-Requires:       ros-melodic-message_runtime-devel
-Requires:       ros-melodic-nav_msgs-devel
-Requires:       ros-melodic-std_msgs-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-actionlib_msgs-devel
+Requires:       ros-noetic-genmsg-devel
+Requires:       ros-noetic-geometry_msgs-devel
+Requires:       ros-noetic-message_generation-devel
+Requires:       ros-noetic-message_runtime-devel
+Requires:       ros-noetic-nav_msgs-devel
+Requires:       ros-noetic-std_msgs-devel
 
-Provides: ros-melodic-mbf_msgs-devel = 0.2.5-1
-Obsoletes: ros-melodic-mbf_msgs-devel < 0.2.5-1
-Obsoletes: ros-kinetic-mbf_msgs-devel < 0.2.5-1
+Provides: ros-noetic-mbf_msgs-devel = 0.3.2-1
+Obsoletes: ros-noetic-mbf_msgs-devel < 0.3.2-1
+Obsoletes: ros-kinetic-mbf_msgs-devel < 0.3.2-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -164,5 +166,7 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Thu Jun 11 2020 Nicolas Limpert - noetic.0.3.2-1
+- Update to noetic
 * Fri Mar 13 2020 Nicolas Limpert - melodic.0.2.5-1
 - Initial package

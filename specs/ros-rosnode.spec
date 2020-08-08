@@ -1,12 +1,12 @@
 Name:           ros-rosnode
-Version:        noetic.1.15.6
+Version:        noetic.1.15.8
 Release:        1%{?dist}
 Summary:        ROS package rosnode
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/rosnode/1.15.6-1.tar.gz#/ros-noetic-rosnode-1.15.6-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/rosnode/1.15.8-1.tar.gz#/ros-noetic-rosnode-1.15.8-source0.tar.gz
 
 
 BuildArch: noarch
@@ -24,9 +24,9 @@ BuildRequires:  ros-noetic-rostest-devel
 Requires:       ros-noetic-rosgraph
 Requires:       ros-noetic-rostopic
 
-Provides:  ros-noetic-rosnode = 1.15.6-1
-Obsoletes: ros-noetic-rosnode < 1.15.6-1
-Obsoletes: ros-kinetic-rosnode < 1.15.6-1
+Provides:  ros-noetic-rosnode = 1.15.8-1
+Obsoletes: ros-noetic-rosnode < 1.15.8-1
+Obsoletes: ros-kinetic-rosnode < 1.15.8-1
 
 
 
@@ -42,9 +42,9 @@ Requires:       ros-noetic-rostest-devel
 Requires:       ros-noetic-rosgraph-devel
 Requires:       ros-noetic-rostopic-devel
 
-Provides: ros-noetic-rosnode-devel = 1.15.6-1
-Obsoletes: ros-noetic-rosnode-devel < 1.15.6-1
-Obsoletes: ros-kinetic-rosnode-devel < 1.15.6-1
+Provides: ros-noetic-rosnode-devel = 1.15.8-1
+Obsoletes: ros-noetic-rosnode-devel < 1.15.8-1
+Obsoletes: ros-kinetic-rosnode-devel < 1.15.8-1
 
 
 %description devel
@@ -152,6 +152,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sat Aug 08 2020 Nicolas Limpert - noetic.1.15.8-1
+- Update to latest release
+* Thu Jun 11 2020 Nicolas Limpert - noetic.1.15.7-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.6-1
 - Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.5-1

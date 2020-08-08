@@ -1,12 +1,12 @@
 Name:           ros-mbf_utility
-Version:        melodic.0.2.5
+Version:        noetic.0.3.2
 Release:        1%{?dist}
 Summary:        ROS package mbf_utility
 
-License:        BSD
+License:        BSD-3
 URL:            http://wiki.ros.org/move_base_flex/mbf_utility
 
-Source0:        https://github.com/uos-gbp/move_base_flex-release/archive/release/melodic/mbf_utility/0.2.5-1.tar.gz#/ros-melodic-mbf_utility-0.2.5-source0.tar.gz
+Source0:        https://github.com/uos-gbp/move_base_flex-release/archive/release/noetic/mbf_utility/0.3.2-1.tar.gz#/ros-noetic-mbf_utility-0.3.2-source0.tar.gz
 
 
 
@@ -17,24 +17,25 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-geometry_msgs-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-tf-devel
-BuildRequires:  ros-melodic-tf2-devel
-BuildRequires:  ros-melodic-tf2_geometry_msgs-devel
-BuildRequires:  ros-melodic-tf2_ros-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-geometry_msgs-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-tf-devel
+BuildRequires:  ros-noetic-tf2-devel
+BuildRequires:  ros-noetic-tf2_geometry_msgs-devel
+BuildRequires:  ros-noetic-tf2_ros-devel
 
-Requires:       ros-melodic-geometry_msgs
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-tf
-Requires:       ros-melodic-tf2
-Requires:       ros-melodic-tf2_geometry_msgs
-Requires:       ros-melodic-tf2_ros
+Requires:       ros-noetic-geometry_msgs
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-tf
+Requires:       ros-noetic-tf2
+Requires:       ros-noetic-tf2_geometry_msgs
+Requires:       ros-noetic-tf2_ros
 
-Provides:  ros-melodic-mbf_utility = 0.2.5-1
-Obsoletes: ros-melodic-mbf_utility < 0.2.5-1
-Obsoletes: ros-kinetic-mbf_utility < 0.2.5-1
+Provides:  ros-noetic-mbf_utility = 0.3.2-1
+Obsoletes: ros-noetic-mbf_utility < 0.3.2-1
+Obsoletes: ros-kinetic-mbf_utility < 0.3.2-1
+
 
 
 %description
@@ -43,17 +44,18 @@ The mbf_utility package
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-geometry_msgs-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-tf-devel
-Requires:       ros-melodic-tf2-devel
-Requires:       ros-melodic-tf2_geometry_msgs-devel
-Requires:       ros-melodic-tf2_ros-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-geometry_msgs-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-tf-devel
+Requires:       ros-noetic-tf2-devel
+Requires:       ros-noetic-tf2_geometry_msgs-devel
+Requires:       ros-noetic-tf2_ros-devel
 
-Provides: ros-melodic-mbf_utility-devel = 0.2.5-1
-Obsoletes: ros-melodic-mbf_utility-devel < 0.2.5-1
-Obsoletes: ros-kinetic-mbf_utility-devel < 0.2.5-1
+Provides: ros-noetic-mbf_utility-devel = 0.3.2-1
+Obsoletes: ros-noetic-mbf_utility-devel < 0.3.2-1
+Obsoletes: ros-kinetic-mbf_utility-devel < 0.3.2-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -160,5 +162,7 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Thu Jun 11 2020 Nicolas Limpert - noetic.0.3.2-1
+- Update to noetic
 * Fri Mar 13 2020 Nicolas Limpert - melodic.0.2.5-1
 - Initial package

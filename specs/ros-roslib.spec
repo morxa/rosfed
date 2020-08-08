@@ -1,12 +1,12 @@
 Name:           ros-roslib
-Version:        noetic.1.15.1
+Version:        noetic.1.15.6
 Release:        1%{?dist}
 Summary:        ROS package roslib
 
 License:        BSD
 URL:            http://wiki.ros.org/roslib
 
-Source0:        https://github.com/ros-gbp/ros-release/archive/release/noetic/roslib/1.15.1-1.tar.gz#/ros-noetic-roslib-1.15.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros-release/archive/release/noetic/roslib/1.15.6-1.tar.gz#/ros-noetic-roslib-1.15.6-source0.tar.gz
 
 
 
@@ -29,9 +29,9 @@ Requires:       ros-noetic-catkin
 Requires:       ros-noetic-ros_environment
 Requires:       ros-noetic-rospack
 
-Provides:  ros-noetic-roslib = 1.15.1-1
-Obsoletes: ros-noetic-roslib < 1.15.1-1
-Obsoletes: ros-kinetic-roslib < 1.15.1-1
+Provides:  ros-noetic-roslib = 1.15.6-1
+Obsoletes: ros-noetic-roslib < 1.15.6-1
+Obsoletes: ros-kinetic-roslib < 1.15.6-1
 
 
 
@@ -51,9 +51,9 @@ Requires:       ros-noetic-rosmake-devel
 Requires:       ros-noetic-rospack-devel
 Requires:       ros-noetic-ros_environment-devel
 
-Provides: ros-noetic-roslib-devel = 1.15.1-1
-Obsoletes: ros-noetic-roslib-devel < 1.15.1-1
-Obsoletes: ros-kinetic-roslib-devel < 1.15.1-1
+Provides: ros-noetic-roslib-devel = 1.15.6-1
+Obsoletes: ros-noetic-roslib-devel < 1.15.6-1
+Obsoletes: ros-kinetic-roslib-devel < 1.15.6-1
 
 
 %description devel
@@ -161,6 +161,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Sat Aug 08 2020 Nicolas Limpert - noetic.1.15.6-1
+- Update to latest release
+* Thu Jun 11 2020 Nicolas Limpert - noetic.1.15.4-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.1-1
 - Upgrade to noetic
 * Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.8-1

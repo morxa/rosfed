@@ -1,12 +1,12 @@
 Name:           ros-costmap_converter
-Version:        melodic.0.0.12
+Version:        noetic.0.0.13
 Release:        1%{?dist}
 Summary:        ROS package costmap_converter
 
 License:        BSD
 URL:            http://wiki.ros.org/costmap_converter
 
-Source0:        https://github.com/rst-tu-dortmund/costmap_converter-release/archive/release/melodic/costmap_converter/0.0.12-1.tar.gz#/ros-melodic-costmap_converter-0.0.12-source0.tar.gz
+Source0:        https://github.com/rst-tu-dortmund/costmap_converter-release/archive/release/noetic/costmap_converter/0.0.13-1.tar.gz#/ros-noetic-costmap_converter-0.0.13-source0.tar.gz
 
 
 
@@ -17,30 +17,31 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-costmap_2d-devel
-BuildRequires:  ros-melodic-cv_bridge-devel
-BuildRequires:  ros-melodic-dynamic_reconfigure-devel
-BuildRequires:  ros-melodic-geometry_msgs-devel
-BuildRequires:  ros-melodic-message_generation-devel
-BuildRequires:  ros-melodic-message_runtime-devel
-BuildRequires:  ros-melodic-pluginlib-devel
-BuildRequires:  ros-melodic-roscpp-devel
-BuildRequires:  ros-melodic-rostest-devel
-BuildRequires:  ros-melodic-std_msgs-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-costmap_2d-devel
+BuildRequires:  ros-noetic-cv_bridge-devel
+BuildRequires:  ros-noetic-dynamic_reconfigure-devel
+BuildRequires:  ros-noetic-geometry_msgs-devel
+BuildRequires:  ros-noetic-message_generation-devel
+BuildRequires:  ros-noetic-message_runtime-devel
+BuildRequires:  ros-noetic-pluginlib-devel
+BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-rostest-devel
+BuildRequires:  ros-noetic-std_msgs-devel
 
-Requires:       ros-melodic-costmap_2d
-Requires:       ros-melodic-cv_bridge
-Requires:       ros-melodic-dynamic_reconfigure
-Requires:       ros-melodic-geometry_msgs
-Requires:       ros-melodic-message_runtime
-Requires:       ros-melodic-pluginlib
-Requires:       ros-melodic-roscpp
-Requires:       ros-melodic-std_msgs
+Requires:       ros-noetic-costmap_2d
+Requires:       ros-noetic-cv_bridge
+Requires:       ros-noetic-dynamic_reconfigure
+Requires:       ros-noetic-geometry_msgs
+Requires:       ros-noetic-message_runtime
+Requires:       ros-noetic-pluginlib
+Requires:       ros-noetic-roscpp
+Requires:       ros-noetic-std_msgs
 
-Provides:  ros-melodic-costmap_converter = 0.0.12-1
-Obsoletes: ros-melodic-costmap_converter < 0.0.12-1
-Obsoletes: ros-kinetic-costmap_converter < 0.0.12-1
+Provides:  ros-noetic-costmap_converter = 0.0.13-1
+Obsoletes: ros-noetic-costmap_converter < 0.0.13-1
+Obsoletes: ros-kinetic-costmap_converter < 0.0.13-1
+
 
 
 %description
@@ -50,21 +51,22 @@ costmap2d cells to primitive types.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-message_runtime-devel
-Requires:       ros-melodic-costmap_2d-devel
-Requires:       ros-melodic-cv_bridge-devel
-Requires:       ros-melodic-dynamic_reconfigure-devel
-Requires:       ros-melodic-geometry_msgs-devel
-Requires:       ros-melodic-message_generation-devel
-Requires:       ros-melodic-pluginlib-devel
-Requires:       ros-melodic-roscpp-devel
-Requires:       ros-melodic-rostest-devel
-Requires:       ros-melodic-std_msgs-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-message_runtime-devel
+Requires:       ros-noetic-costmap_2d-devel
+Requires:       ros-noetic-cv_bridge-devel
+Requires:       ros-noetic-dynamic_reconfigure-devel
+Requires:       ros-noetic-geometry_msgs-devel
+Requires:       ros-noetic-message_generation-devel
+Requires:       ros-noetic-pluginlib-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-rostest-devel
+Requires:       ros-noetic-std_msgs-devel
 
-Provides: ros-melodic-costmap_converter-devel = 0.0.12-1
-Obsoletes: ros-melodic-costmap_converter-devel < 0.0.12-1
-Obsoletes: ros-kinetic-costmap_converter-devel < 0.0.12-1
+Provides: ros-noetic-costmap_converter-devel = 0.0.13-1
+Obsoletes: ros-noetic-costmap_converter-devel < 0.0.13-1
+Obsoletes: ros-kinetic-costmap_converter-devel < 0.0.13-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -171,5 +173,7 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Thu Jun 11 2020 Nicolas Limpert - noetic.0.0.13-1
+- Update to latest release
 * Fri Mar 13 2020 Nicolas Limpert - melodic.0.0.12-1
 - Initial package

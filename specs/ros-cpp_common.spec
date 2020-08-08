@@ -1,12 +1,12 @@
 Name:           ros-cpp_common
-Version:        noetic.0.7.1
+Version:        noetic.0.7.2
 Release:        1%{?dist}
 Summary:        ROS package cpp_common
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/roscpp_core-release/archive/release/noetic/cpp_common/0.7.1-1.tar.gz#/ros-noetic-cpp_common-0.7.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/roscpp_core-release/archive/release/noetic/cpp_common/0.7.2-1.tar.gz#/ros-noetic-cpp_common-0.7.2-source0.tar.gz
 
 
 
@@ -22,9 +22,9 @@ BuildRequires:  console-bridge-devel
 BuildRequires:  ros-noetic-catkin-devel
 
 
-Provides:  ros-noetic-cpp_common = 0.7.1-1
-Obsoletes: ros-noetic-cpp_common < 0.7.1-1
-Obsoletes: ros-kinetic-cpp_common < 0.7.1-1
+Provides:  ros-noetic-cpp_common = 0.7.2-1
+Obsoletes: ros-noetic-cpp_common < 0.7.2-1
+Obsoletes: ros-kinetic-cpp_common < 0.7.2-1
 
 
 
@@ -41,9 +41,9 @@ Requires:       ros-noetic-catkin-devel
 Requires:       boost-devel
 Requires:       console-bridge-devel
 
-Provides: ros-noetic-cpp_common-devel = 0.7.1-1
-Obsoletes: ros-noetic-cpp_common-devel < 0.7.1-1
-Obsoletes: ros-kinetic-cpp_common-devel < 0.7.1-1
+Provides: ros-noetic-cpp_common-devel = 0.7.2-1
+Obsoletes: ros-noetic-cpp_common-devel < 0.7.2-1
+Obsoletes: ros-kinetic-cpp_common-devel < 0.7.2-1
 
 
 %description devel
@@ -151,6 +151,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Thu Jun 11 2020 Nicolas Limpert - noetic.0.7.2-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.7.1-1
 - Upgrade to noetic
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.6.13-1

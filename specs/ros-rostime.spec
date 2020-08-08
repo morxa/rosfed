@@ -1,12 +1,12 @@
 Name:           ros-rostime
-Version:        noetic.0.7.1
+Version:        noetic.0.7.2
 Release:        1%{?dist}
 Summary:        ROS package rostime
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/roscpp_core-release/archive/release/noetic/rostime/0.7.1-1.tar.gz#/ros-noetic-rostime-0.7.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/roscpp_core-release/archive/release/noetic/rostime/0.7.2-1.tar.gz#/ros-noetic-rostime-0.7.2-source0.tar.gz
 
 
 
@@ -23,9 +23,9 @@ BuildRequires:  ros-noetic-cpp_common-devel
 
 Requires:       ros-noetic-cpp_common
 
-Provides:  ros-noetic-rostime = 0.7.1-1
-Obsoletes: ros-noetic-rostime < 0.7.1-1
-Obsoletes: ros-kinetic-rostime < 0.7.1-1
+Provides:  ros-noetic-rostime = 0.7.2-1
+Obsoletes: ros-noetic-rostime < 0.7.2-1
+Obsoletes: ros-kinetic-rostime < 0.7.2-1
 
 
 
@@ -39,9 +39,9 @@ Requires:       ros-noetic-catkin-devel
 Requires:       ros-noetic-cpp_common-devel
 Requires:       boost-devel
 
-Provides: ros-noetic-rostime-devel = 0.7.1-1
-Obsoletes: ros-noetic-rostime-devel < 0.7.1-1
-Obsoletes: ros-kinetic-rostime-devel < 0.7.1-1
+Provides: ros-noetic-rostime-devel = 0.7.2-1
+Obsoletes: ros-noetic-rostime-devel < 0.7.2-1
+Obsoletes: ros-kinetic-rostime-devel < 0.7.2-1
 
 
 %description devel
@@ -149,6 +149,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Thu Jun 11 2020 Nicolas Limpert - noetic.0.7.2-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.7.1-1
 - Upgrade to noetic
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.6.13-1

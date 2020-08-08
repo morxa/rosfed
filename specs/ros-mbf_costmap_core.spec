@@ -1,12 +1,12 @@
 Name:           ros-mbf_costmap_core
-Version:        melodic.0.2.5
+Version:        noetic.0.3.2
 Release:        1%{?dist}
 Summary:        ROS package mbf_costmap_core
 
-License:        BSD
+License:        BSD-3
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/uos-gbp/move_base_flex-release/archive/release/melodic/mbf_costmap_core/0.2.5-1.tar.gz#/ros-melodic-mbf_costmap_core-0.2.5-source0.tar.gz
+Source0:        https://github.com/uos-gbp/move_base_flex-release/archive/release/noetic/mbf_costmap_core/0.3.2-1.tar.gz#/ros-noetic-mbf_costmap_core-0.3.2-source0.tar.gz
 
 
 
@@ -17,26 +17,27 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  ros-melodic-catkin-devel
-BuildRequires:  ros-melodic-costmap_2d-devel
-BuildRequires:  ros-melodic-geometry_msgs-devel
-BuildRequires:  ros-melodic-mbf_abstract_core-devel
-BuildRequires:  ros-melodic-mbf_utility-devel
-BuildRequires:  ros-melodic-nav_core-devel
-BuildRequires:  ros-melodic-std_msgs-devel
-BuildRequires:  ros-melodic-tf-devel
+BuildRequires:  ros-noetic-catkin-devel
+BuildRequires:  ros-noetic-costmap_2d-devel
+BuildRequires:  ros-noetic-geometry_msgs-devel
+BuildRequires:  ros-noetic-mbf_abstract_core-devel
+BuildRequires:  ros-noetic-mbf_utility-devel
+BuildRequires:  ros-noetic-nav_core-devel
+BuildRequires:  ros-noetic-std_msgs-devel
+BuildRequires:  ros-noetic-tf-devel
 
-Requires:       ros-melodic-costmap_2d
-Requires:       ros-melodic-geometry_msgs
-Requires:       ros-melodic-mbf_abstract_core
-Requires:       ros-melodic-mbf_utility
-Requires:       ros-melodic-nav_core
-Requires:       ros-melodic-std_msgs
-Requires:       ros-melodic-tf
+Requires:       ros-noetic-costmap_2d
+Requires:       ros-noetic-geometry_msgs
+Requires:       ros-noetic-mbf_abstract_core
+Requires:       ros-noetic-mbf_utility
+Requires:       ros-noetic-nav_core
+Requires:       ros-noetic-std_msgs
+Requires:       ros-noetic-tf
 
-Provides:  ros-melodic-mbf_costmap_core = 0.2.5-1
-Obsoletes: ros-melodic-mbf_costmap_core < 0.2.5-1
-Obsoletes: ros-kinetic-mbf_costmap_core < 0.2.5-1
+Provides:  ros-noetic-mbf_costmap_core = 0.3.2-1
+Obsoletes: ros-noetic-mbf_costmap_core < 0.3.2-1
+Obsoletes: ros-kinetic-mbf_costmap_core < 0.3.2-1
+
 
 
 %description
@@ -51,18 +52,19 @@ local and a global costmap.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       ros-melodic-catkin-devel
-Requires:       ros-melodic-costmap_2d-devel
-Requires:       ros-melodic-geometry_msgs-devel
-Requires:       ros-melodic-mbf_abstract_core-devel
-Requires:       ros-melodic-mbf_utility-devel
-Requires:       ros-melodic-nav_core-devel
-Requires:       ros-melodic-std_msgs-devel
-Requires:       ros-melodic-tf-devel
+Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-costmap_2d-devel
+Requires:       ros-noetic-geometry_msgs-devel
+Requires:       ros-noetic-mbf_abstract_core-devel
+Requires:       ros-noetic-mbf_utility-devel
+Requires:       ros-noetic-nav_core-devel
+Requires:       ros-noetic-std_msgs-devel
+Requires:       ros-noetic-tf-devel
 
-Provides: ros-melodic-mbf_costmap_core-devel = 0.2.5-1
-Obsoletes: ros-melodic-mbf_costmap_core-devel < 0.2.5-1
-Obsoletes: ros-kinetic-mbf_costmap_core-devel < 0.2.5-1
+Provides: ros-noetic-mbf_costmap_core-devel = 0.3.2-1
+Obsoletes: ros-noetic-mbf_costmap_core-devel < 0.3.2-1
+Obsoletes: ros-kinetic-mbf_costmap_core-devel < 0.3.2-1
+
 
 %description devel
 The %{name}-devel package contains libraries and header files for developing
@@ -170,5 +172,7 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Thu Jun 11 2020 Nicolas Limpert - noetic.0.3.2-1
+- Update to latest release
 * Fri Mar 13 2020 Nicolas Limpert - melodic.0.2.5-1
 - Initial package

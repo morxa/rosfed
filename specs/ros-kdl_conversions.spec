@@ -1,12 +1,12 @@
 Name:           ros-kdl_conversions
-Version:        noetic.1.13.1
+Version:        noetic.1.13.2
 Release:        1%{?dist}
 Summary:        ROS package kdl_conversions
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/geometry-release/archive/release/noetic/kdl_conversions/1.13.1-1.tar.gz#/ros-noetic-kdl_conversions-1.13.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/geometry-release/archive/release/noetic/kdl_conversions/1.13.2-1.tar.gz#/ros-noetic-kdl_conversions-1.13.2-source0.tar.gz
 
 
 
@@ -28,9 +28,9 @@ BuildRequires:  ros-noetic-roscpp_serialization-devel
 Requires:       orocos-kdl
 Requires:       ros-noetic-geometry_msgs
 
-Provides:  ros-noetic-kdl_conversions = 1.13.1-1
-Obsoletes: ros-noetic-kdl_conversions < 1.13.1-1
-Obsoletes: ros-kinetic-kdl_conversions < 1.13.1-1
+Provides:  ros-noetic-kdl_conversions = 1.13.2-1
+Obsoletes: ros-noetic-kdl_conversions < 1.13.2-1
+Obsoletes: ros-kinetic-kdl_conversions < 1.13.2-1
 
 
 
@@ -48,9 +48,9 @@ Requires:       ros-noetic-cpp_common-devel
 Requires:       ros-noetic-geometry_msgs-devel
 Requires:       ros-noetic-roscpp_serialization-devel
 
-Provides: ros-noetic-kdl_conversions-devel = 1.13.1-1
-Obsoletes: ros-noetic-kdl_conversions-devel < 1.13.1-1
-Obsoletes: ros-kinetic-kdl_conversions-devel < 1.13.1-1
+Provides: ros-noetic-kdl_conversions-devel = 1.13.2-1
+Obsoletes: ros-noetic-kdl_conversions-devel < 1.13.2-1
+Obsoletes: ros-kinetic-kdl_conversions-devel < 1.13.2-1
 
 
 %description devel
@@ -158,6 +158,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Aug 10 2020 Nicolas Limpert <limpert@fh-aachen.de> - noetic.1.13.2-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.1-1
 - Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.12.1-1
