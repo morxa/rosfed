@@ -1,12 +1,12 @@
 Name:           ros-actionlib
-Version:        noetic.1.13.1
+Version:        noetic.1.13.2
 Release:        1%{?dist}
 Summary:        ROS package actionlib
 
 License:        BSD
 URL:            http://www.ros.org/wiki/actionlib
 
-Source0:        https://github.com/ros-gbp/actionlib-release/archive/release/noetic/actionlib/1.13.1-1.tar.gz#/ros-noetic-actionlib-1.13.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/actionlib-release/archive/release/noetic/actionlib/1.13.2-1.tar.gz#/ros-noetic-actionlib-1.13.2-source0.tar.gz
 
 
 
@@ -17,7 +17,7 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  boost-devel boost-python3-devel
+BuildRequires:  boost-devel
 BuildRequires:  ros-noetic-actionlib_msgs-devel
 BuildRequires:  ros-noetic-catkin-devel
 BuildRequires:  ros-noetic-message_generation-devel
@@ -35,9 +35,9 @@ Requires:       ros-noetic-rospy
 Requires:       ros-noetic-rostest
 Requires:       ros-noetic-std_msgs
 
-Provides:  ros-noetic-actionlib = 1.13.1-1
-Obsoletes: ros-noetic-actionlib < 1.13.1-1
-Obsoletes: ros-kinetic-actionlib < 1.13.1-1
+Provides:  ros-noetic-actionlib = 1.13.2-1
+Obsoletes: ros-noetic-actionlib < 1.13.2-1
+Obsoletes: ros-kinetic-actionlib < 1.13.2-1
 
 
 
@@ -51,7 +51,7 @@ point cloud, detecting the handle of a door, etc.
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       ros-noetic-catkin-devel
-Requires:       boost-devel boost-python3-devel
+Requires:       boost-devel
 Requires:       ros-noetic-actionlib_msgs-devel
 Requires:       ros-noetic-message_generation-devel
 Requires:       ros-noetic-roscpp-devel
@@ -62,9 +62,9 @@ Requires:       ros-noetic-rosunit-devel
 Requires:       ros-noetic-std_msgs-devel
 Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-noetic-actionlib-devel = 1.13.1-1
-Obsoletes: ros-noetic-actionlib-devel < 1.13.1-1
-Obsoletes: ros-kinetic-actionlib-devel < 1.13.1-1
+Provides: ros-noetic-actionlib-devel = 1.13.2-1
+Obsoletes: ros-noetic-actionlib-devel < 1.13.2-1
+Obsoletes: ros-kinetic-actionlib-devel < 1.13.2-1
 
 
 %description devel
@@ -172,6 +172,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Thu Sep 10 2020 Nicolas Limpert <limpert@fh-aachen.de> - noetic.1.13.2-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.1-1
 - Upgrade to noetic
 * Thu Sep 12 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.12.0-1

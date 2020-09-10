@@ -1,12 +1,12 @@
 Name:           ros-genpy
-Version:        noetic.0.6.13
+Version:        noetic.0.6.14
 Release:        1%{?dist}
 Summary:        ROS package genpy
 
 License:        BSD
 URL:            http://wiki.ros.org/genpy
 
-Source0:        https://github.com/ros-gbp/genpy-release/archive/release/noetic/genpy/0.6.13-1.tar.gz#/ros-noetic-genpy-0.6.13-source0.tar.gz
+Source0:        https://github.com/ros-gbp/genpy-release/archive/release/noetic/genpy/0.6.14-1.tar.gz#/ros-noetic-genpy-0.6.14-source0.tar.gz
 
 
 BuildArch: noarch
@@ -26,9 +26,9 @@ Requires:       python3-pyyaml
 Requires:       python3dist(pyyaml)
 Requires:       ros-noetic-genmsg
 
-Provides:  ros-noetic-genpy = 0.6.13-1
-Obsoletes: ros-noetic-genpy < 0.6.13-1
-Obsoletes: ros-kinetic-genpy < 0.6.13-1
+Provides:  ros-noetic-genpy = 0.6.14-1
+Obsoletes: ros-noetic-genpy < 0.6.14-1
+Obsoletes: ros-kinetic-genpy < 0.6.14-1
 
 
 
@@ -42,9 +42,9 @@ Requires:       python3-setuptools
 Requires:       ros-noetic-catkin-devel
 Requires:       ros-noetic-genmsg-devel
 
-Provides: ros-noetic-genpy-devel = 0.6.13-1
-Obsoletes: ros-noetic-genpy-devel < 0.6.13-1
-Obsoletes: ros-kinetic-genpy-devel < 0.6.13-1
+Provides: ros-noetic-genpy-devel = 0.6.14-1
+Obsoletes: ros-noetic-genpy-devel < 0.6.14-1
+Obsoletes: ros-kinetic-genpy-devel < 0.6.14-1
 
 
 %description devel
@@ -152,6 +152,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Thu Sep 10 2020 Nicolas Limpert <limpert@fh-aachen.de> - noetic.0.6.14-1
+- Update to latest release
 * Sat Aug 08 2020 Nicolas Limpert - noetic.0.6.13-1
 - Update to latest release
 * Thu Jun 11 2020 Nicolas Limpert - noetic.0.6.12-1

@@ -1,12 +1,12 @@
 Name:           ros-python_qt_binding
-Version:        noetic.0.4.1
+Version:        noetic.0.4.3
 Release:        1%{?dist}
 Summary:        ROS package python_qt_binding
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/python_qt_binding-release/archive/release/noetic/python_qt_binding/0.4.1-1.tar.gz#/ros-noetic-python_qt_binding-0.4.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/python_qt_binding-release/archive/release/noetic/python_qt_binding/0.4.3-1.tar.gz#/ros-noetic-python_qt_binding-0.4.3-source0.tar.gz
 
 
 BuildArch: noarch
@@ -26,9 +26,9 @@ BuildRequires:  ros-noetic-rosbuild-devel
 
 Requires:       python3-pyside2
 
-Provides:  ros-noetic-python_qt_binding = 0.4.1-1
-Obsoletes: ros-noetic-python_qt_binding < 0.4.1-1
-Obsoletes: ros-kinetic-python_qt_binding < 0.4.1-1
+Provides:  ros-noetic-python_qt_binding = 0.4.3-1
+Obsoletes: ros-noetic-python_qt_binding < 0.4.3-1
+Obsoletes: ros-kinetic-python_qt_binding < 0.4.3-1
 
 
 
@@ -51,9 +51,9 @@ Requires:       python3-qt5-devel sip
 Requires:       qt5-qtbase-devel
 Requires:       ros-noetic-rosbuild-devel
 
-Provides: ros-noetic-python_qt_binding-devel = 0.4.1-1
-Obsoletes: ros-noetic-python_qt_binding-devel < 0.4.1-1
-Obsoletes: ros-kinetic-python_qt_binding-devel < 0.4.1-1
+Provides: ros-noetic-python_qt_binding-devel = 0.4.3-1
+Obsoletes: ros-noetic-python_qt_binding-devel < 0.4.3-1
+Obsoletes: ros-kinetic-python_qt_binding-devel < 0.4.3-1
 
 
 %description devel
@@ -161,6 +161,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Thu Sep 10 2020 Nicolas Limpert <limpert@fh-aachen.de> - noetic.0.4.3-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.1-1
 - Upgrade to noetic
 * Mon Mar 02 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.0-1

@@ -1,12 +1,12 @@
 Name:           ros-tf2
-Version:        noetic.0.7.2
+Version:        noetic.0.7.5
 Release:        1%{?dist}
 Summary:        ROS package tf2
 
 License:        BSD
 URL:            http://www.ros.org/wiki/tf2
 
-Source0:        https://github.com/ros-gbp/geometry2-release/archive/release/noetic/tf2/0.7.2-1.tar.gz#/ros-noetic-tf2-0.7.2-source0.tar.gz
+Source0:        https://github.com/ros-gbp/geometry2-release/archive/release/noetic/tf2/0.7.5-1.tar.gz#/ros-noetic-tf2-0.7.5-source0.tar.gz
 
 
 
@@ -32,9 +32,9 @@ Requires:       ros-noetic-geometry_msgs
 Requires:       ros-noetic-rostime
 Requires:       ros-noetic-tf2_msgs
 
-Provides:  ros-noetic-tf2 = 0.7.2-1
-Obsoletes: ros-noetic-tf2 < 0.7.2-1
-Obsoletes: ros-kinetic-tf2 < 0.7.2-1
+Provides:  ros-noetic-tf2 = 0.7.5-1
+Obsoletes: ros-noetic-tf2 < 0.7.5-1
+Obsoletes: ros-kinetic-tf2 < 0.7.5-1
 
 
 
@@ -59,9 +59,9 @@ Requires:       ros-noetic-roscpp_traits-devel
 Requires:       ros-noetic-rostime-devel
 Requires:       ros-noetic-tf2_msgs-devel
 
-Provides: ros-noetic-tf2-devel = 0.7.2-1
-Obsoletes: ros-noetic-tf2-devel < 0.7.2-1
-Obsoletes: ros-kinetic-tf2-devel < 0.7.2-1
+Provides: ros-noetic-tf2-devel = 0.7.5-1
+Obsoletes: ros-noetic-tf2-devel < 0.7.5-1
+Obsoletes: ros-kinetic-tf2-devel < 0.7.5-1
 
 
 %description devel
@@ -169,6 +169,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Thu Sep 10 2020 Nicolas Limpert <limpert@fh-aachen.de> - noetic.0.7.5-1
+- Update to latest release
 * Sat Aug 08 2020 Nicolas Limpert - noetic.0.7.2-1
 - Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.7.1-2
