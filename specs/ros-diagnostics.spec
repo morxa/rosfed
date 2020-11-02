@@ -1,12 +1,12 @@
 Name:           ros-diagnostics
-Version:        noetic.1.9.4
+Version:        noetic.1.10.2
 Release:        1%{?dist}
 Summary:        ROS package diagnostics
 
 License:        BSD
 URL:            http://www.ros.org/wiki/diagnostics
 
-Source0:        https://github.com/ros-gbp/diagnostics-release/archive/release/noetic/diagnostics/1.9.4-1.tar.gz#/ros-noetic-diagnostics-1.9.4-source0.tar.gz
+Source0:        https://github.com/ros-gbp/diagnostics-release/archive/release/noetic/diagnostics/1.10.2-3.tar.gz#/ros-noetic-diagnostics-1.10.2-source0.tar.gz
 
 
 BuildArch: noarch
@@ -26,9 +26,9 @@ Requires:       ros-noetic-diagnostic_common_diagnostics
 Requires:       ros-noetic-diagnostic_updater
 Requires:       ros-noetic-self_test
 
-Provides:  ros-noetic-diagnostics = 1.9.4-1
-Obsoletes: ros-noetic-diagnostics < 1.9.4-1
-Obsoletes: ros-kinetic-diagnostics < 1.9.4-1
+Provides:  ros-noetic-diagnostics = 1.10.2-1
+Obsoletes: ros-noetic-diagnostics < 1.10.2-1
+Obsoletes: ros-kinetic-diagnostics < 1.10.2-1
 
 
 
@@ -45,9 +45,9 @@ Requires:       ros-noetic-diagnostic_common_diagnostics-devel
 Requires:       ros-noetic-diagnostic_updater-devel
 Requires:       ros-noetic-self_test-devel
 
-Provides: ros-noetic-diagnostics-devel = 1.9.4-1
-Obsoletes: ros-noetic-diagnostics-devel < 1.9.4-1
-Obsoletes: ros-kinetic-diagnostics-devel < 1.9.4-1
+Provides: ros-noetic-diagnostics-devel = 1.10.2-1
+Obsoletes: ros-noetic-diagnostics-devel < 1.10.2-1
+Obsoletes: ros-kinetic-diagnostics-devel < 1.10.2-1
 
 
 %description devel
@@ -155,6 +155,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.10.2-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.9.4-1
 - Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.9.3-3

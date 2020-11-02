@@ -1,12 +1,12 @@
 Name:           ros-rqt_gui
-Version:        noetic.0.5.1
+Version:        noetic.0.5.2
 Release:        1%{?dist}
 Summary:        ROS package rqt_gui
 
 License:        BSD
 URL:            http://ros.org/wiki/rqt_gui
 
-Source0:        https://github.com/ros-gbp/rqt-release/archive/release/noetic/rqt_gui/0.5.1-1.tar.gz#/ros-noetic-rqt_gui-0.5.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt-release/archive/release/noetic/rqt_gui/0.5.2-1.tar.gz#/ros-noetic-rqt_gui-0.5.2-source0.tar.gz
 
 
 BuildArch: noarch
@@ -21,12 +21,14 @@ BuildRequires:  python3-devel
 BuildRequires:  ros-noetic-catkin-devel
 BuildRequires:  ros-noetic-qt_gui-devel
 
-Requires:       ros-noetic-catkin
+Requires:       python3-rospkg
+Requires:       ros-noetic-python_qt_binding
 Requires:       ros-noetic-qt_gui
+Requires:       ros-noetic-rospy
 
-Provides:  ros-noetic-rqt_gui = 0.5.1-1
-Obsoletes: ros-noetic-rqt_gui < 0.5.1-1
-Obsoletes: ros-kinetic-rqt_gui < 0.5.1-1
+Provides:  ros-noetic-rqt_gui = 0.5.2-1
+Obsoletes: ros-noetic-rqt_gui < 0.5.2-1
+Obsoletes: ros-kinetic-rqt_gui < 0.5.2-1
 
 
 
@@ -39,10 +41,12 @@ Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-noetic-catkin-devel
 Requires:       ros-noetic-qt_gui-devel
+Requires:       ros-noetic-python_qt_binding-devel
+Requires:       ros-noetic-rospy-devel
 
-Provides: ros-noetic-rqt_gui-devel = 0.5.1-1
-Obsoletes: ros-noetic-rqt_gui-devel < 0.5.1-1
-Obsoletes: ros-kinetic-rqt_gui-devel < 0.5.1-1
+Provides: ros-noetic-rqt_gui-devel = 0.5.2-1
+Obsoletes: ros-noetic-rqt_gui-devel < 0.5.2-1
+Obsoletes: ros-kinetic-rqt_gui-devel < 0.5.2-1
 
 
 %description devel
@@ -150,6 +154,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.2-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.1-1
 - Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.5.1-1

@@ -1,12 +1,12 @@
 Name:           ros-rqt_robot_steering
-Version:        noetic.0.5.11
+Version:        noetic.0.5.12
 Release:        1%{?dist}
 Summary:        ROS package rqt_robot_steering
 
 License:        BSD
 URL:            http://wiki.ros.org/rqt_robot_steering
 
-Source0:        https://github.com/ros-gbp/rqt_robot_steering-release/archive/release/noetic/rqt_robot_steering/0.5.11-1.tar.gz#/ros-noetic-rqt_robot_steering-0.5.11-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt_robot_steering-release/archive/release/noetic/rqt_robot_steering/0.5.12-1.tar.gz#/ros-noetic-rqt_robot_steering-0.5.12-source0.tar.gz
 
 
 BuildArch: noarch
@@ -27,9 +27,9 @@ Requires:       ros-noetic-rostopic
 Requires:       ros-noetic-rqt_gui
 Requires:       ros-noetic-rqt_gui_py
 
-Provides:  ros-noetic-rqt_robot_steering = 0.5.11-1
-Obsoletes: ros-noetic-rqt_robot_steering < 0.5.11-1
-Obsoletes: ros-kinetic-rqt_robot_steering < 0.5.11-1
+Provides:  ros-noetic-rqt_robot_steering = 0.5.12-1
+Obsoletes: ros-noetic-rqt_robot_steering < 0.5.12-1
+Obsoletes: ros-kinetic-rqt_robot_steering < 0.5.12-1
 
 
 
@@ -47,9 +47,9 @@ Requires:       ros-noetic-rostopic-devel
 Requires:       ros-noetic-rqt_gui-devel
 Requires:       ros-noetic-rqt_gui_py-devel
 
-Provides: ros-noetic-rqt_robot_steering-devel = 0.5.11-1
-Obsoletes: ros-noetic-rqt_robot_steering-devel < 0.5.11-1
-Obsoletes: ros-kinetic-rqt_robot_steering-devel < 0.5.11-1
+Provides: ros-noetic-rqt_robot_steering-devel = 0.5.12-1
+Obsoletes: ros-noetic-rqt_robot_steering-devel < 0.5.12-1
+Obsoletes: ros-kinetic-rqt_robot_steering-devel < 0.5.12-1
 
 
 %description devel
@@ -157,6 +157,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.12-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.11-1
 - Upgrade to noetic
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.5.10-1

@@ -1,12 +1,12 @@
 Name:           ros-rqt_tf_tree
-Version:        noetic.0.6.1
+Version:        noetic.0.6.2
 Release:        1%{?dist}
 Summary:        ROS package rqt_tf_tree
 
 License:        BSD
 URL:            http://wiki.ros.org/rqt_tf_tree
 
-Source0:        https://github.com/ros-gbp/rqt_tf_tree-release/archive/release/noetic/rqt_tf_tree/0.6.1-1.tar.gz#/ros-noetic-rqt_tf_tree-0.6.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt_tf_tree-release/archive/release/noetic/rqt_tf_tree/0.6.2-1.tar.gz#/ros-noetic-rqt_tf_tree-0.6.2-source0.tar.gz
 
 
 BuildArch: noarch
@@ -31,9 +31,9 @@ Requires:       ros-noetic-rqt_gui_py
 Requires:       ros-noetic-tf2_msgs
 Requires:       ros-noetic-tf2_ros
 
-Provides:  ros-noetic-rqt_tf_tree = 0.6.1-1
-Obsoletes: ros-noetic-rqt_tf_tree < 0.6.1-1
-Obsoletes: ros-kinetic-rqt_tf_tree < 0.6.1-1
+Provides:  ros-noetic-rqt_tf_tree = 0.6.2-1
+Obsoletes: ros-noetic-rqt_tf_tree < 0.6.2-1
+Obsoletes: ros-kinetic-rqt_tf_tree < 0.6.2-1
 
 
 
@@ -55,9 +55,9 @@ Requires:       ros-noetic-rqt_gui_py-devel
 Requires:       ros-noetic-tf2_msgs-devel
 Requires:       ros-noetic-tf2_ros-devel
 
-Provides: ros-noetic-rqt_tf_tree-devel = 0.6.1-1
-Obsoletes: ros-noetic-rqt_tf_tree-devel < 0.6.1-1
-Obsoletes: ros-kinetic-rqt_tf_tree-devel < 0.6.1-1
+Provides: ros-noetic-rqt_tf_tree-devel = 0.6.2-1
+Obsoletes: ros-noetic-rqt_tf_tree-devel < 0.6.2-1
+Obsoletes: ros-kinetic-rqt_tf_tree-devel < 0.6.2-1
 
 
 %description devel
@@ -165,6 +165,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.6.2-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.6.1-1
 - Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.6.0-3

@@ -1,12 +1,12 @@
 Name:           ros-navfn
-Version:        noetic.1.17.0
+Version:        noetic.1.17.1
 Release:        1%{?dist}
 Summary:        ROS package navfn
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/navigation-release/archive/release/noetic/navfn/1.17.0-1.tar.gz#/ros-noetic-navfn-1.17.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/navigation-release/archive/release/noetic/navfn/1.17.1-1.tar.gz#/ros-noetic-navfn-1.17.1-source0.tar.gz
 
 
 
@@ -51,9 +51,9 @@ Requires:       ros-noetic-sensor_msgs
 Requires:       ros-noetic-tf2_ros
 Requires:       ros-noetic-visualization_msgs
 
-Provides:  ros-noetic-navfn = 1.17.0-1
-Obsoletes: ros-noetic-navfn < 1.17.0-1
-Obsoletes: ros-kinetic-navfn < 1.17.0-1
+Provides:  ros-noetic-navfn = 1.17.1-1
+Obsoletes: ros-noetic-navfn < 1.17.1-1
+Obsoletes: ros-kinetic-navfn < 1.17.1-1
 
 
 
@@ -93,9 +93,9 @@ Requires:       ros-noetic-tf2_ros-devel
 Requires:       ros-noetic-visualization_msgs-devel
 Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-noetic-navfn-devel = 1.17.0-1
-Obsoletes: ros-noetic-navfn-devel < 1.17.0-1
-Obsoletes: ros-kinetic-navfn-devel < 1.17.0-1
+Provides: ros-noetic-navfn-devel = 1.17.1-1
+Obsoletes: ros-noetic-navfn-devel < 1.17.1-1
+Obsoletes: ros-kinetic-navfn-devel < 1.17.1-1
 
 
 %description devel
@@ -203,6 +203,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.17.1-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.17.0-1
 - Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.16.6-1

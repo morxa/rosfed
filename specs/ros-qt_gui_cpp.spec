@@ -1,12 +1,12 @@
 Name:           ros-qt_gui_cpp
-Version:        noetic.0.4.0
+Version:        noetic.0.4.2
 Release:        1%{?dist}
 Summary:        ROS package qt_gui_cpp
 
 License:        BSD
 URL:            http://ros.org/wiki/qt_gui_cpp
 
-Source0:        https://github.com/ros-gbp/qt_gui_core-release/archive/release/noetic/qt_gui_cpp/0.4.0-1.tar.gz#/ros-noetic-qt_gui_cpp-0.4.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/qt_gui_core-release/archive/release/noetic/qt_gui_cpp/0.4.2-1.tar.gz#/ros-noetic-qt_gui_cpp-0.4.2-source0.tar.gz
 
 
 
@@ -23,6 +23,7 @@ BuildRequires:  libXext-devel
 BuildRequires:  pkgconfig
 BuildRequires:  poco-devel
 BuildRequires:  python3-qt5-devel
+BuildRequires:  python3-setuptools
 BuildRequires:  python3-sip-devel
 BuildRequires:  qt5-qtbase-devel
 BuildRequires:  qtermwidget-qt5-devel
@@ -36,9 +37,9 @@ BuildRequires:  ros-noetic-python_qt_binding-devel
 Requires:       ros-noetic-pluginlib
 Requires:       ros-noetic-qt_gui
 
-Provides:  ros-noetic-qt_gui_cpp = 0.4.0-1
-Obsoletes: ros-noetic-qt_gui_cpp < 0.4.0-1
-Obsoletes: ros-kinetic-qt_gui_cpp < 0.4.0-1
+Provides:  ros-noetic-qt_gui_cpp = 0.4.2-1
+Obsoletes: ros-noetic-qt_gui_cpp < 0.4.2-1
+Obsoletes: ros-kinetic-qt_gui_cpp < 0.4.2-1
 
 
 
@@ -50,6 +51,7 @@ binding must be available in order to use C++-plugins.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
+Requires:       python3-setuptools
 Requires:       ros-noetic-catkin-devel
 Requires:       boost-devel
 Requires:       console-bridge-devel
@@ -67,9 +69,9 @@ Requires:       ros-noetic-pluginlib-devel
 Requires:       ros-noetic-python_qt_binding-devel
 Requires:       ros-noetic-qt_gui-devel
 
-Provides: ros-noetic-qt_gui_cpp-devel = 0.4.0-1
-Obsoletes: ros-noetic-qt_gui_cpp-devel < 0.4.0-1
-Obsoletes: ros-kinetic-qt_gui_cpp-devel < 0.4.0-1
+Provides: ros-noetic-qt_gui_cpp-devel = 0.4.2-1
+Obsoletes: ros-noetic-qt_gui_cpp-devel < 0.4.2-1
+Obsoletes: ros-kinetic-qt_gui_cpp-devel < 0.4.2-1
 
 
 %description devel
@@ -178,6 +180,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.2-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.0-1
 - Upgrade to noetic
 * Wed Apr 29 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.0-3

@@ -1,12 +1,12 @@
 Name:           ros-rosbash
-Version:        noetic.1.15.6
+Version:        noetic.1.15.7
 Release:        1%{?dist}
 Summary:        ROS package rosbash
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/ros-release/archive/release/noetic/rosbash/1.15.6-1.tar.gz#/ros-noetic-rosbash-1.15.6-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros-release/archive/release/noetic/rosbash/1.15.7-1.tar.gz#/ros-noetic-rosbash-1.15.7-source0.tar.gz
 
 
 BuildArch: noarch
@@ -23,9 +23,9 @@ BuildRequires:  ros-noetic-catkin-devel
 Requires:       ros-noetic-catkin
 Requires:       ros-noetic-rospack
 
-Provides:  ros-noetic-rosbash = 1.15.6-1
-Obsoletes: ros-noetic-rosbash < 1.15.6-1
-Obsoletes: ros-kinetic-rosbash < 1.15.6-1
+Provides:  ros-noetic-rosbash = 1.15.7-1
+Obsoletes: ros-noetic-rosbash < 1.15.7-1
+Obsoletes: ros-kinetic-rosbash < 1.15.7-1
 
 
 
@@ -38,9 +38,9 @@ Requires:       %{name} = %{version}-%{release}
 Requires:       ros-noetic-catkin-devel
 Requires:       ros-noetic-rospack-devel
 
-Provides: ros-noetic-rosbash-devel = 1.15.6-1
-Obsoletes: ros-noetic-rosbash-devel < 1.15.6-1
-Obsoletes: ros-kinetic-rosbash-devel < 1.15.6-1
+Provides: ros-noetic-rosbash-devel = 1.15.7-1
+Obsoletes: ros-noetic-rosbash-devel < 1.15.7-1
+Obsoletes: ros-kinetic-rosbash-devel < 1.15.7-1
 
 
 %description devel
@@ -148,6 +148,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.7-1
+- Update to latest release
 * Sat Aug 08 2020 Nicolas Limpert - noetic.1.15.6-1
 - Update to latest release
 * Thu Jun 11 2020 Nicolas Limpert - noetic.1.15.4-1

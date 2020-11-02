@@ -1,12 +1,12 @@
 Name:           ros-filters
-Version:        noetic.1.9.0
+Version:        noetic.1.9.1
 Release:        1%{?dist}
 Summary:        ROS package filters
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/filters-release/archive/release/noetic/filters/1.9.0-1.tar.gz#/ros-noetic-filters-1.9.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/filters-release/archive/release/noetic/filters/1.9.1-1.tar.gz#/ros-noetic-filters-1.9.1-source0.tar.gz
 
 
 
@@ -17,7 +17,7 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  boost-devel boost-python3-devel
+BuildRequires:  boost-devel
 BuildRequires:  poco-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
@@ -33,9 +33,9 @@ Requires:       ros-noetic-rosconsole
 Requires:       ros-noetic-roscpp
 Requires:       ros-noetic-roslib
 
-Provides:  ros-noetic-filters = 1.9.0-1
-Obsoletes: ros-noetic-filters < 1.9.0-1
-Obsoletes: ros-kinetic-filters < 1.9.0-1
+Provides:  ros-noetic-filters = 1.9.1-1
+Obsoletes: ros-noetic-filters < 1.9.1-1
+Obsoletes: ros-kinetic-filters < 1.9.1-1
 
 
 
@@ -49,7 +49,7 @@ dynamically loads filters based on runtime parameters.
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       ros-noetic-catkin-devel
-Requires:       boost-devel boost-python3-devel
+Requires:       boost-devel
 Requires:       poco-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
@@ -59,9 +59,9 @@ Requires:       ros-noetic-roscpp-devel
 Requires:       ros-noetic-roslib-devel
 Requires:       ros-noetic-rostest-devel
 
-Provides: ros-noetic-filters-devel = 1.9.0-1
-Obsoletes: ros-noetic-filters-devel < 1.9.0-1
-Obsoletes: ros-kinetic-filters-devel < 1.9.0-1
+Provides: ros-noetic-filters-devel = 1.9.1-1
+Obsoletes: ros-noetic-filters-devel < 1.9.1-1
+Obsoletes: ros-kinetic-filters-devel < 1.9.1-1
 
 
 %description devel
@@ -169,6 +169,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.9.1-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.9.0-1
 - Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.8.1-3

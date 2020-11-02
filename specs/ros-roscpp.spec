@@ -1,12 +1,12 @@
 Name:           ros-roscpp
-Version:        noetic.1.15.8
+Version:        noetic.1.15.9
 Release:        1%{?dist}
 Summary:        ROS package roscpp
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/roscpp/1.15.8-1.tar.gz#/ros-noetic-roscpp-1.15.8-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/roscpp/1.15.9-1.tar.gz#/ros-noetic-roscpp-1.15.9-source0.tar.gz
 
 
 
@@ -43,9 +43,9 @@ Requires:       ros-noetic-rostime
 Requires:       ros-noetic-std_msgs
 Requires:       ros-noetic-xmlrpcpp
 
-Provides:  ros-noetic-roscpp = 1.15.8-1
-Obsoletes: ros-noetic-roscpp < 1.15.8-1
-Obsoletes: ros-kinetic-roscpp < 1.15.8-1
+Provides:  ros-noetic-roscpp = 1.15.9-1
+Obsoletes: ros-noetic-roscpp < 1.15.9-1
+Obsoletes: ros-kinetic-roscpp < 1.15.9-1
 
 
 
@@ -72,9 +72,9 @@ Requires:       ros-noetic-std_msgs-devel
 Requires:       ros-noetic-xmlrpcpp-devel
 Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-noetic-roscpp-devel = 1.15.8-1
-Obsoletes: ros-noetic-roscpp-devel < 1.15.8-1
-Obsoletes: ros-kinetic-roscpp-devel < 1.15.8-1
+Provides: ros-noetic-roscpp-devel = 1.15.9-1
+Obsoletes: ros-noetic-roscpp-devel < 1.15.9-1
+Obsoletes: ros-kinetic-roscpp-devel < 1.15.9-1
 
 
 %description devel
@@ -182,6 +182,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.9-1
+- Update to latest release
 * Mon Aug 10 2020 Nicolas Limpert <limpert@fh-aachen.de> - noetic.1.15.8-1
 - Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.6-1

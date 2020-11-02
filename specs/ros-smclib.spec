@@ -1,12 +1,12 @@
 Name:           ros-smclib
-Version:        noetic.1.8.5
+Version:        noetic.1.8.6
 Release:        1%{?dist}
 Summary:        ROS package smclib
 
 License:        Mozilla Public License Version 1.1
 URL:            http://smc.sourceforge.net/
 
-Source0:        https://github.com/ros-gbp/bond_core-release/archive/release/noetic/smclib/1.8.5-1.tar.gz#/ros-noetic-smclib-1.8.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/bond_core-release/archive/release/noetic/smclib/1.8.6-1.tar.gz#/ros-noetic-smclib-1.8.6-source0.tar.gz
 
 
 BuildArch: noarch
@@ -22,9 +22,9 @@ BuildRequires:  python3-setuptools
 BuildRequires:  ros-noetic-catkin-devel
 
 
-Provides:  ros-noetic-smclib = 1.8.5-1
-Obsoletes: ros-noetic-smclib < 1.8.5-1
-Obsoletes: ros-kinetic-smclib < 1.8.5-1
+Provides:  ros-noetic-smclib = 1.8.6-1
+Obsoletes: ros-noetic-smclib < 1.8.6-1
+Obsoletes: ros-kinetic-smclib < 1.8.6-1
 
 
 
@@ -41,9 +41,9 @@ Requires:       %{name} = %{version}-%{release}
 Requires:       python3-setuptools
 Requires:       ros-noetic-catkin-devel
 
-Provides: ros-noetic-smclib-devel = 1.8.5-1
-Obsoletes: ros-noetic-smclib-devel < 1.8.5-1
-Obsoletes: ros-kinetic-smclib-devel < 1.8.5-1
+Provides: ros-noetic-smclib-devel = 1.8.6-1
+Obsoletes: ros-noetic-smclib-devel < 1.8.6-1
+Obsoletes: ros-kinetic-smclib-devel < 1.8.6-1
 
 
 %description devel
@@ -151,6 +151,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.8.6-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.8.5-1
 - Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.8.3-3

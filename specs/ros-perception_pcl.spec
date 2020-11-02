@@ -1,12 +1,12 @@
 Name:           ros-perception_pcl
-Version:        noetic.1.7.1
+Version:        noetic.1.7.2
 Release:        1%{?dist}
 Summary:        ROS package perception_pcl
 
 License:        BSD
 URL:            http://ros.org/wiki/perception_pcl
 
-Source0:        https://github.com/ros-gbp/perception_pcl-release/archive/release/noetic/perception_pcl/1.7.1-1.tar.gz#/ros-noetic-perception_pcl-1.7.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/perception_pcl-release/archive/release/noetic/perception_pcl/1.7.2-1.tar.gz#/ros-noetic-perception_pcl-1.7.2-source0.tar.gz
 
 
 BuildArch: noarch
@@ -24,9 +24,9 @@ Requires:       ros-noetic-pcl_conversions
 Requires:       ros-noetic-pcl_msgs
 Requires:       ros-noetic-pcl_ros
 
-Provides:  ros-noetic-perception_pcl = 1.7.1-1
-Obsoletes: ros-noetic-perception_pcl < 1.7.1-1
-Obsoletes: ros-kinetic-perception_pcl < 1.7.1-1
+Provides:  ros-noetic-perception_pcl = 1.7.2-1
+Obsoletes: ros-noetic-perception_pcl < 1.7.2-1
+Obsoletes: ros-kinetic-perception_pcl < 1.7.2-1
 
 
 
@@ -43,9 +43,9 @@ Requires:       ros-noetic-pcl_conversions-devel
 Requires:       ros-noetic-pcl_msgs-devel
 Requires:       ros-noetic-pcl_ros-devel
 
-Provides: ros-noetic-perception_pcl-devel = 1.7.1-1
-Obsoletes: ros-noetic-perception_pcl-devel < 1.7.1-1
-Obsoletes: ros-kinetic-perception_pcl-devel < 1.7.1-1
+Provides: ros-noetic-perception_pcl-devel = 1.7.2-1
+Obsoletes: ros-noetic-perception_pcl-devel < 1.7.2-1
+Obsoletes: ros-kinetic-perception_pcl-devel < 1.7.2-1
 
 
 %description devel
@@ -153,6 +153,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.2-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.1-1
 - Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.7.1-1

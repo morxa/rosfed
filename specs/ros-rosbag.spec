@@ -1,12 +1,12 @@
 Name:           ros-rosbag
-Version:        noetic.1.15.8
+Version:        noetic.1.15.9
 Release:        1%{?dist}
 Summary:        ROS package rosbag
 
 License:        BSD
 URL:            http://wiki.ros.org/rosbag
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/rosbag/1.15.8-1.tar.gz#/ros-noetic-rosbag-1.15.8-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/rosbag/1.15.9-1.tar.gz#/ros-noetic-rosbag-1.15.9-source0.tar.gz
 
 
 
@@ -46,9 +46,9 @@ Requires:       ros-noetic-std_srvs
 Requires:       ros-noetic-topic_tools
 Requires:       ros-noetic-xmlrpcpp
 
-Provides:  ros-noetic-rosbag = 1.15.8-1
-Obsoletes: ros-noetic-rosbag < 1.15.8-1
-Obsoletes: ros-kinetic-rosbag < 1.15.8-1
+Provides:  ros-noetic-rosbag = 1.15.9-1
+Obsoletes: ros-noetic-rosbag < 1.15.9-1
+Obsoletes: ros-kinetic-rosbag < 1.15.9-1
 
 
 
@@ -79,9 +79,9 @@ Requires:       ros-noetic-genpy-devel
 Requires:       ros-noetic-roslib-devel
 Requires:       ros-noetic-rospy-devel
 
-Provides: ros-noetic-rosbag-devel = 1.15.8-1
-Obsoletes: ros-noetic-rosbag-devel < 1.15.8-1
-Obsoletes: ros-kinetic-rosbag-devel < 1.15.8-1
+Provides: ros-noetic-rosbag-devel = 1.15.9-1
+Obsoletes: ros-noetic-rosbag-devel < 1.15.9-1
+Obsoletes: ros-kinetic-rosbag-devel < 1.15.9-1
 
 
 %description devel
@@ -189,6 +189,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.9-1
+- Update to latest release
 * Sat Aug 08 2020 Nicolas Limpert - noetic.1.15.8-1
 - Update to latest release
 * Thu Jun 11 2020 Nicolas Limpert - noetic.1.15.7-1

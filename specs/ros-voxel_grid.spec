@@ -1,12 +1,12 @@
 Name:           ros-voxel_grid
-Version:        noetic.1.17.0
+Version:        noetic.1.17.1
 Release:        1%{?dist}
 Summary:        ROS package voxel_grid
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/navigation-release/archive/release/noetic/voxel_grid/1.17.0-1.tar.gz#/ros-noetic-voxel_grid-1.17.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/navigation-release/archive/release/noetic/voxel_grid/1.17.1-1.tar.gz#/ros-noetic-voxel_grid-1.17.1-source0.tar.gz
 
 
 
@@ -24,9 +24,9 @@ BuildRequires:  ros-noetic-rosunit-devel
 
 Requires:       ros-noetic-roscpp
 
-Provides:  ros-noetic-voxel_grid = 1.17.0-1
-Obsoletes: ros-noetic-voxel_grid < 1.17.0-1
-Obsoletes: ros-kinetic-voxel_grid < 1.17.0-1
+Provides:  ros-noetic-voxel_grid = 1.17.1-1
+Obsoletes: ros-noetic-voxel_grid < 1.17.1-1
+Obsoletes: ros-kinetic-voxel_grid < 1.17.1-1
 
 
 
@@ -48,9 +48,9 @@ Requires:       ros-noetic-rosconsole-devel
 Requires:       ros-noetic-roscpp-devel
 Requires:       ros-noetic-rosunit-devel
 
-Provides: ros-noetic-voxel_grid-devel = 1.17.0-1
-Obsoletes: ros-noetic-voxel_grid-devel < 1.17.0-1
-Obsoletes: ros-kinetic-voxel_grid-devel < 1.17.0-1
+Provides: ros-noetic-voxel_grid-devel = 1.17.1-1
+Obsoletes: ros-noetic-voxel_grid-devel < 1.17.1-1
+Obsoletes: ros-kinetic-voxel_grid-devel < 1.17.1-1
 
 
 %description devel
@@ -158,6 +158,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.17.1-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.17.0-1
 - Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.16.6-1

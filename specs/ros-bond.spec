@@ -1,12 +1,12 @@
 Name:           ros-bond
-Version:        noetic.1.8.5
+Version:        noetic.1.8.6
 Release:        1%{?dist}
 Summary:        ROS package bond
 
 License:        BSD
 URL:            http://www.ros.org/wiki/bond
 
-Source0:        https://github.com/ros-gbp/bond_core-release/archive/release/noetic/bond/1.8.5-1.tar.gz#/ros-noetic-bond-1.8.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/bond_core-release/archive/release/noetic/bond/1.8.6-1.tar.gz#/ros-noetic-bond-1.8.6-source0.tar.gz
 
 
 BuildArch: noarch
@@ -25,9 +25,9 @@ BuildRequires:  ros-noetic-std_msgs-devel
 Requires:       ros-noetic-message_runtime
 Requires:       ros-noetic-std_msgs
 
-Provides:  ros-noetic-bond = 1.8.5-1
-Obsoletes: ros-noetic-bond < 1.8.5-1
-Obsoletes: ros-kinetic-bond < 1.8.5-1
+Provides:  ros-noetic-bond = 1.8.6-1
+Obsoletes: ros-noetic-bond < 1.8.6-1
+Obsoletes: ros-kinetic-bond < 1.8.6-1
 
 
 
@@ -44,9 +44,9 @@ Requires:       ros-noetic-message_generation-devel
 Requires:       ros-noetic-std_msgs-devel
 Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-noetic-bond-devel = 1.8.5-1
-Obsoletes: ros-noetic-bond-devel < 1.8.5-1
-Obsoletes: ros-kinetic-bond-devel < 1.8.5-1
+Provides: ros-noetic-bond-devel = 1.8.6-1
+Obsoletes: ros-noetic-bond-devel < 1.8.6-1
+Obsoletes: ros-kinetic-bond-devel < 1.8.6-1
 
 
 %description devel
@@ -154,6 +154,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.8.6-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.8.5-1
 - Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.8.3-3

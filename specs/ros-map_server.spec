@@ -1,12 +1,12 @@
 Name:           ros-map_server
-Version:        noetic.1.17.0
+Version:        noetic.1.17.1
 Release:        1%{?dist}
 Summary:        ROS package map_server
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/navigation-release/archive/release/noetic/map_server/1.17.0-1.tar.gz#/ros-noetic-map_server-1.17.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/navigation-release/archive/release/noetic/map_server/1.17.1-1.tar.gz#/ros-noetic-map_server-1.17.1-source0.tar.gz
 
 
 
@@ -33,9 +33,9 @@ Requires:       ros-noetic-nav_msgs
 Requires:       ros-noetic-roscpp
 Requires:       ros-noetic-tf2
 
-Provides:  ros-noetic-map_server = 1.17.0-1
-Obsoletes: ros-noetic-map_server < 1.17.0-1
-Obsoletes: ros-kinetic-map_server < 1.17.0-1
+Provides:  ros-noetic-map_server = 1.17.1-1
+Obsoletes: ros-noetic-map_server < 1.17.1-1
+Obsoletes: ros-kinetic-map_server < 1.17.1-1
 
 
 
@@ -57,9 +57,9 @@ Requires:       ros-noetic-rostest-devel
 Requires:       ros-noetic-rosunit-devel
 Requires:       ros-noetic-tf2-devel
 
-Provides: ros-noetic-map_server-devel = 1.17.0-1
-Obsoletes: ros-noetic-map_server-devel < 1.17.0-1
-Obsoletes: ros-kinetic-map_server-devel < 1.17.0-1
+Provides: ros-noetic-map_server-devel = 1.17.1-1
+Obsoletes: ros-noetic-map_server-devel < 1.17.1-1
+Obsoletes: ros-kinetic-map_server-devel < 1.17.1-1
 
 
 %description devel
@@ -167,6 +167,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.17.1-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.17.0-1
 - Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.16.6-1

@@ -1,12 +1,12 @@
 Name:           ros-rosunit
-Version:        noetic.1.15.6
+Version:        noetic.1.15.7
 Release:        1%{?dist}
 Summary:        ROS package rosunit
 
 License:        BSD
 URL:            http://wiki.ros.org/rosunit
 
-Source0:        https://github.com/ros-gbp/ros-release/archive/release/noetic/rosunit/1.15.6-1.tar.gz#/ros-noetic-rosunit-1.15.6-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros-release/archive/release/noetic/rosunit/1.15.7-1.tar.gz#/ros-noetic-rosunit-1.15.7-source0.tar.gz
 
 
 BuildArch: noarch
@@ -24,9 +24,9 @@ BuildRequires:  ros-noetic-catkin-devel
 Requires:       python3-rospkg
 Requires:       ros-noetic-roslib
 
-Provides:  ros-noetic-rosunit = 1.15.6-1
-Obsoletes: ros-noetic-rosunit < 1.15.6-1
-Obsoletes: ros-kinetic-rosunit < 1.15.6-1
+Provides:  ros-noetic-rosunit = 1.15.7-1
+Obsoletes: ros-noetic-rosunit < 1.15.7-1
+Obsoletes: ros-kinetic-rosunit < 1.15.7-1
 
 
 
@@ -42,9 +42,9 @@ Requires:       python3-setuptools
 Requires:       ros-noetic-catkin-devel
 Requires:       ros-noetic-roslib-devel
 
-Provides: ros-noetic-rosunit-devel = 1.15.6-1
-Obsoletes: ros-noetic-rosunit-devel < 1.15.6-1
-Obsoletes: ros-kinetic-rosunit-devel < 1.15.6-1
+Provides: ros-noetic-rosunit-devel = 1.15.7-1
+Obsoletes: ros-noetic-rosunit-devel < 1.15.7-1
+Obsoletes: ros-kinetic-rosunit-devel < 1.15.7-1
 
 
 %description devel
@@ -152,6 +152,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.7-1
+- Update to latest release
 * Sat Aug 08 2020 Nicolas Limpert - noetic.1.15.6-1
 - Update to latest release
 * Thu Jun 11 2020 Nicolas Limpert - noetic.1.15.4-1

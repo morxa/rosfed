@@ -1,12 +1,12 @@
 Name:           ros-joint_state_controller
-Version:        noetic.0.17.0
+Version:        noetic.0.18.0
 Release:        1%{?dist}
 Summary:        ROS package joint_state_controller
 
 License:        BSD
 URL:            https://github.com/ros-controls/ros_controllers/wiki
 
-Source0:        https://github.com/ros-gbp/ros_controllers-release/archive/release/noetic/joint_state_controller/0.17.0-1.tar.gz#/ros-noetic-joint_state_controller-0.17.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_controllers-release/archive/release/noetic/joint_state_controller/0.18.0-1.tar.gz#/ros-noetic-joint_state_controller-0.18.0-source0.tar.gz
 
 
 
@@ -30,15 +30,12 @@ BuildRequires:  ros-noetic-rostest-devel
 BuildRequires:  ros-noetic-sensor_msgs-devel
 
 Requires:       ros-noetic-controller_interface
-Requires:       ros-noetic-hardware_interface
-Requires:       ros-noetic-pluginlib
 Requires:       ros-noetic-realtime_tools
 Requires:       ros-noetic-roscpp
-Requires:       ros-noetic-sensor_msgs
 
-Provides:  ros-noetic-joint_state_controller = 0.17.0-1
-Obsoletes: ros-noetic-joint_state_controller < 0.17.0-1
-Obsoletes: ros-kinetic-joint_state_controller < 0.17.0-1
+Provides:  ros-noetic-joint_state_controller = 0.18.0-1
+Obsoletes: ros-noetic-joint_state_controller < 0.18.0-1
+Obsoletes: ros-kinetic-joint_state_controller < 0.18.0-1
 
 
 
@@ -49,20 +46,20 @@ Controller to publish joint state
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-hardware_interface-devel
+Requires:       ros-noetic-sensor_msgs-devel
 Requires:       poco-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
 Requires:       ros-noetic-controller_interface-devel
-Requires:       ros-noetic-hardware_interface-devel
 Requires:       ros-noetic-pluginlib-devel
 Requires:       ros-noetic-realtime_tools-devel
 Requires:       ros-noetic-roscpp-devel
 Requires:       ros-noetic-rostest-devel
-Requires:       ros-noetic-sensor_msgs-devel
 
-Provides: ros-noetic-joint_state_controller-devel = 0.17.0-1
-Obsoletes: ros-noetic-joint_state_controller-devel < 0.17.0-1
-Obsoletes: ros-kinetic-joint_state_controller-devel < 0.17.0-1
+Provides: ros-noetic-joint_state_controller-devel = 0.18.0-1
+Obsoletes: ros-noetic-joint_state_controller-devel < 0.18.0-1
+Obsoletes: ros-kinetic-joint_state_controller-devel < 0.18.0-1
 
 
 %description devel
@@ -170,6 +167,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.18.0-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.17.0-1
 - Upgrade to noetic
 * Wed Apr 29 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.16.1-1

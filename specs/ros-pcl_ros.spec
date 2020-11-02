@@ -1,12 +1,12 @@
 Name:           ros-pcl_ros
-Version:        noetic.1.7.1
+Version:        noetic.1.7.2
 Release:        1%{?dist}
 Summary:        ROS package pcl_ros
 
 License:        BSD
 URL:            http://ros.org/wiki/perception_pcl
 
-Source0:        https://github.com/ros-gbp/perception_pcl-release/archive/release/noetic/pcl_ros/1.7.1-1.tar.gz#/ros-noetic-pcl_ros-1.7.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/perception_pcl-release/archive/release/noetic/pcl_ros/1.7.2-1.tar.gz#/ros-noetic-pcl_ros-1.7.2-source0.tar.gz
 
 
 
@@ -64,9 +64,9 @@ Requires:       ros-noetic-tf2
 Requires:       ros-noetic-tf2_eigen
 Requires:       ros-noetic-tf2_ros
 
-Provides:  ros-noetic-pcl_ros = 1.7.1-1
-Obsoletes: ros-noetic-pcl_ros < 1.7.1-1
-Obsoletes: ros-kinetic-pcl_ros < 1.7.1-1
+Provides:  ros-noetic-pcl_ros = 1.7.2-1
+Obsoletes: ros-noetic-pcl_ros < 1.7.2-1
+Obsoletes: ros-kinetic-pcl_ros < 1.7.2-1
 
 
 
@@ -108,9 +108,9 @@ Requires:       ros-noetic-tf2-devel
 Requires:       ros-noetic-tf2_eigen-devel
 Requires:       ros-noetic-tf2_ros-devel
 
-Provides: ros-noetic-pcl_ros-devel = 1.7.1-1
-Obsoletes: ros-noetic-pcl_ros-devel < 1.7.1-1
-Obsoletes: ros-kinetic-pcl_ros-devel < 1.7.1-1
+Provides: ros-noetic-pcl_ros-devel = 1.7.2-1
+Obsoletes: ros-noetic-pcl_ros-devel < 1.7.2-1
+Obsoletes: ros-kinetic-pcl_ros-devel < 1.7.2-1
 
 
 %description devel
@@ -218,6 +218,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.2-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.1-1
 - Upgrade to noetic
 * Fri Apr 24 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.7.1-2

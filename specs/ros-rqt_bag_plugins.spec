@@ -1,12 +1,12 @@
 Name:           ros-rqt_bag_plugins
-Version:        noetic.0.4.13
+Version:        noetic.0.4.15
 Release:        1%{?dist}
 Summary:        ROS package rqt_bag_plugins
 
 License:        BSD
 URL:            http://wiki.ros.org/rqt_bag
 
-Source0:        https://github.com/ros-gbp/rqt_bag-release/archive/release/noetic/rqt_bag_plugins/0.4.13-1.tar.gz#/ros-noetic-rqt_bag_plugins-0.4.13-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt_bag-release/archive/release/noetic/rqt_bag_plugins/0.4.15-1.tar.gz#/ros-noetic-rqt_bag_plugins-0.4.15-source0.tar.gz
 
 
 BuildArch: noarch
@@ -35,9 +35,9 @@ Requires:       ros-noetic-rqt_plot
 Requires:       ros-noetic-sensor_msgs
 Requires:       ros-noetic-std_msgs
 
-Provides:  ros-noetic-rqt_bag_plugins = 0.4.13-1
-Obsoletes: ros-noetic-rqt_bag_plugins < 0.4.13-1
-Obsoletes: ros-kinetic-rqt_bag_plugins < 0.4.13-1
+Provides:  ros-noetic-rqt_bag_plugins = 0.4.15-1
+Obsoletes: ros-noetic-rqt_bag_plugins < 0.4.15-1
+Obsoletes: ros-kinetic-rqt_bag_plugins < 0.4.15-1
 
 
 
@@ -60,9 +60,9 @@ Requires:       ros-noetic-rqt_plot-devel
 Requires:       ros-noetic-sensor_msgs-devel
 Requires:       ros-noetic-std_msgs-devel
 
-Provides: ros-noetic-rqt_bag_plugins-devel = 0.4.13-1
-Obsoletes: ros-noetic-rqt_bag_plugins-devel < 0.4.13-1
-Obsoletes: ros-kinetic-rqt_bag_plugins-devel < 0.4.13-1
+Provides: ros-noetic-rqt_bag_plugins-devel = 0.4.15-1
+Obsoletes: ros-noetic-rqt_bag_plugins-devel < 0.4.15-1
+Obsoletes: ros-kinetic-rqt_bag_plugins-devel < 0.4.15-1
 
 
 %description devel
@@ -170,6 +170,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.15-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.13-1
 - Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.12-3

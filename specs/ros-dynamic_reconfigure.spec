@@ -1,12 +1,12 @@
 Name:           ros-dynamic_reconfigure
-Version:        noetic.1.7.0
+Version:        noetic.1.7.1
 Release:        1%{?dist}
 Summary:        ROS package dynamic_reconfigure
 
 License:        BSD
 URL:            http://ros.org/wiki/dynamic_reconfigure
 
-Source0:        https://github.com/ros-gbp/dynamic_reconfigure-release/archive/release/noetic/dynamic_reconfigure/1.7.0-1.tar.gz#/ros-noetic-dynamic_reconfigure-1.7.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/dynamic_reconfigure-release/archive/release/noetic/dynamic_reconfigure/1.7.1-1.tar.gz#/ros-noetic-dynamic_reconfigure-1.7.1-source0.tar.gz
 
 
 
@@ -17,7 +17,7 @@ BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
-BuildRequires:  boost-devel boost-python3-devel
+BuildRequires:  boost-devel
 BuildRequires:  ros-noetic-catkin-devel
 BuildRequires:  ros-noetic-cpp_common-devel
 BuildRequires:  ros-noetic-message_generation-devel
@@ -33,9 +33,9 @@ Requires:       ros-noetic-rospy
 Requires:       ros-noetic-rosservice
 Requires:       ros-noetic-std_msgs
 
-Provides:  ros-noetic-dynamic_reconfigure = 1.7.0-1
-Obsoletes: ros-noetic-dynamic_reconfigure < 1.7.0-1
-Obsoletes: ros-kinetic-dynamic_reconfigure < 1.7.0-1
+Provides:  ros-noetic-dynamic_reconfigure = 1.7.1-1
+Obsoletes: ros-noetic-dynamic_reconfigure < 1.7.1-1
+Obsoletes: ros-kinetic-dynamic_reconfigure < 1.7.1-1
 
 
 
@@ -46,8 +46,8 @@ at runtime without having to restart the node.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
+Requires:       boost-devel
 Requires:       ros-noetic-catkin-devel
-Requires:       boost-devel boost-python3-devel
 Requires:       ros-noetic-cpp_common-devel
 Requires:       ros-noetic-message_generation-devel
 Requires:       ros-noetic-roscpp-devel
@@ -59,9 +59,9 @@ Requires:       ros-noetic-roslib-devel
 Requires:       ros-noetic-rospy-devel
 Requires:       ros-noetic-rosservice-devel
 
-Provides: ros-noetic-dynamic_reconfigure-devel = 1.7.0-1
-Obsoletes: ros-noetic-dynamic_reconfigure-devel < 1.7.0-1
-Obsoletes: ros-kinetic-dynamic_reconfigure-devel < 1.7.0-1
+Provides: ros-noetic-dynamic_reconfigure-devel = 1.7.1-1
+Obsoletes: ros-noetic-dynamic_reconfigure-devel < 1.7.1-1
+Obsoletes: ros-kinetic-dynamic_reconfigure-devel < 1.7.1-1
 
 
 %description devel
@@ -169,6 +169,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.1-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.0-1
 - Upgrade to noetic
 * Thu Mar 19 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.6.3-1

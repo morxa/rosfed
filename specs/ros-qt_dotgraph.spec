@@ -1,12 +1,12 @@
 Name:           ros-qt_dotgraph
-Version:        noetic.0.4.0
+Version:        noetic.0.4.2
 Release:        1%{?dist}
 Summary:        ROS package qt_dotgraph
 
 License:        BSD
 URL:            http://ros.org/wiki/qt_dotgraph
 
-Source0:        https://github.com/ros-gbp/qt_gui_core-release/archive/release/noetic/qt_dotgraph/0.4.0-1.tar.gz#/ros-noetic-qt_dotgraph-0.4.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/qt_gui_core-release/archive/release/noetic/qt_dotgraph/0.4.2-1.tar.gz#/ros-noetic-qt_dotgraph-0.4.2-source0.tar.gz
 
 
 BuildArch: noarch
@@ -20,15 +20,16 @@ BuildRequires:  python3-devel
 
 BuildRequires:  graphviz-python3
 BuildRequires:  python3-pygraphviz
+BuildRequires:  python3-setuptools
 BuildRequires:  ros-noetic-catkin-devel
 
 Requires:       pydot
 Requires:       python3-pydot
 Requires:       ros-noetic-python_qt_binding
 
-Provides:  ros-noetic-qt_dotgraph = 0.4.0-1
-Obsoletes: ros-noetic-qt_dotgraph < 0.4.0-1
-Obsoletes: ros-kinetic-qt_dotgraph < 0.4.0-1
+Provides:  ros-noetic-qt_dotgraph = 0.4.2-1
+Obsoletes: ros-noetic-qt_dotgraph < 0.4.2-1
+Obsoletes: ros-kinetic-qt_dotgraph < 0.4.2-1
 
 
 
@@ -38,14 +39,15 @@ qt_dotgraph provides helpers to work with dot graphs.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
+Requires:       python3-setuptools
 Requires:       ros-noetic-catkin-devel
 Requires:       graphviz-python3
 Requires:       python3-pygraphviz
 Requires:       ros-noetic-python_qt_binding-devel
 
-Provides: ros-noetic-qt_dotgraph-devel = 0.4.0-1
-Obsoletes: ros-noetic-qt_dotgraph-devel < 0.4.0-1
-Obsoletes: ros-kinetic-qt_dotgraph-devel < 0.4.0-1
+Provides: ros-noetic-qt_dotgraph-devel = 0.4.2-1
+Obsoletes: ros-noetic-qt_dotgraph-devel < 0.4.2-1
+Obsoletes: ros-kinetic-qt_dotgraph-devel < 0.4.2-1
 
 
 %description devel
@@ -153,6 +155,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.2-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.0-1
 - Upgrade to noetic
 * Mon Mar 02 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.4.0-1

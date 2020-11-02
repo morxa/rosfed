@@ -1,12 +1,12 @@
 Name:           ros-mk
-Version:        noetic.1.15.1
+Version:        noetic.1.15.7
 Release:        1%{?dist}
 Summary:        ROS package mk
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/ros-release/archive/release/noetic/mk/1.15.1-1.tar.gz#/ros-noetic-mk-1.15.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros-release/archive/release/noetic/mk/1.15.7-1.tar.gz#/ros-noetic-mk-1.15.7-source0.tar.gz
 
 
 BuildArch: noarch
@@ -23,9 +23,9 @@ BuildRequires:  ros-noetic-catkin-devel
 Requires:       ros-noetic-rosbuild
 Requires:       ros-noetic-rospack
 
-Provides:  ros-noetic-mk = 1.15.1-1
-Obsoletes: ros-noetic-mk < 1.15.1-1
-Obsoletes: ros-kinetic-mk < 1.15.1-1
+Provides:  ros-noetic-mk = 1.15.7-1
+Obsoletes: ros-noetic-mk < 1.15.7-1
+Obsoletes: ros-kinetic-mk < 1.15.7-1
 
 
 
@@ -43,9 +43,9 @@ Requires:       ros-noetic-catkin-devel
 Requires:       ros-noetic-rosbuild-devel
 Requires:       ros-noetic-rospack-devel
 
-Provides: ros-noetic-mk-devel = 1.15.1-1
-Obsoletes: ros-noetic-mk-devel < 1.15.1-1
-Obsoletes: ros-kinetic-mk-devel < 1.15.1-1
+Provides: ros-noetic-mk-devel = 1.15.7-1
+Obsoletes: ros-noetic-mk-devel < 1.15.7-1
+Obsoletes: ros-kinetic-mk-devel < 1.15.7-1
 
 
 %description devel
@@ -153,6 +153,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.7-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.1-1
 - Upgrade to noetic
 * Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.8-1

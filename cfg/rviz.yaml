@@ -8,3 +8,5 @@ dependencies:
       - lz4-devel
       - urdfdom-devel
       - libXext-devel
+patches:
+  - rviz.ogre-include-path.patch

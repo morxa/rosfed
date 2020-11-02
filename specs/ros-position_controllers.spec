@@ -1,12 +1,12 @@
 Name:           ros-position_controllers
-Version:        noetic.0.17.0
+Version:        noetic.0.18.0
 Release:        1%{?dist}
 Summary:        ROS package position_controllers
 
 License:        BSD
 URL:            https://github.com/ros-controls/ros_controllers/wiki
 
-Source0:        https://github.com/ros-gbp/ros_controllers-release/archive/release/noetic/position_controllers/0.17.0-1.tar.gz#/ros-noetic-position_controllers-0.17.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_controllers-release/archive/release/noetic/position_controllers/0.18.0-1.tar.gz#/ros-noetic-position_controllers-0.18.0-source0.tar.gz
 
 
 
@@ -26,9 +26,9 @@ Requires:       ros-noetic-controller_interface
 Requires:       ros-noetic-forward_command_controller
 Requires:       ros-noetic-pluginlib
 
-Provides:  ros-noetic-position_controllers = 0.17.0-1
-Obsoletes: ros-noetic-position_controllers < 0.17.0-1
-Obsoletes: ros-kinetic-position_controllers < 0.17.0-1
+Provides:  ros-noetic-position_controllers = 0.18.0-1
+Obsoletes: ros-noetic-position_controllers < 0.18.0-1
+Obsoletes: ros-kinetic-position_controllers < 0.18.0-1
 
 
 
@@ -43,9 +43,9 @@ Requires:       ros-noetic-controller_interface-devel
 Requires:       ros-noetic-forward_command_controller-devel
 Requires:       ros-noetic-pluginlib-devel
 
-Provides: ros-noetic-position_controllers-devel = 0.17.0-1
-Obsoletes: ros-noetic-position_controllers-devel < 0.17.0-1
-Obsoletes: ros-kinetic-position_controllers-devel < 0.17.0-1
+Provides: ros-noetic-position_controllers-devel = 0.18.0-1
+Obsoletes: ros-noetic-position_controllers-devel < 0.18.0-1
+Obsoletes: ros-kinetic-position_controllers-devel < 0.18.0-1
 
 
 %description devel
@@ -153,6 +153,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.18.0-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.17.0-1
 - Upgrade to noetic
 * Wed Apr 29 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.16.1-1

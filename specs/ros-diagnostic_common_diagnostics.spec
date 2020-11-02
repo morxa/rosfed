@@ -1,12 +1,12 @@
 Name:           ros-diagnostic_common_diagnostics
-Version:        noetic.1.9.4
+Version:        noetic.1.10.2
 Release:        1%{?dist}
 Summary:        ROS package diagnostic_common_diagnostics
 
 License:        BSD
 URL:            http://ros.org/wiki/diagnostic_common_diagnostics
 
-Source0:        https://github.com/ros-gbp/diagnostics-release/archive/release/noetic/diagnostic_common_diagnostics/1.9.4-1.tar.gz#/ros-noetic-diagnostic_common_diagnostics-1.9.4-source0.tar.gz
+Source0:        https://github.com/ros-gbp/diagnostics-release/archive/release/noetic/diagnostic_common_diagnostics/1.10.2-3.tar.gz#/ros-noetic-diagnostic_common_diagnostics-1.10.2-source0.tar.gz
 
 
 BuildArch: noarch
@@ -29,9 +29,9 @@ Requires:       ros-noetic-diagnostic_updater
 Requires:       ros-noetic-rospy
 Requires:       ros-noetic-tf
 
-Provides:  ros-noetic-diagnostic_common_diagnostics = 1.9.4-1
-Obsoletes: ros-noetic-diagnostic_common_diagnostics < 1.9.4-1
-Obsoletes: ros-kinetic-diagnostic_common_diagnostics < 1.9.4-1
+Provides:  ros-noetic-diagnostic_common_diagnostics = 1.10.2-1
+Obsoletes: ros-noetic-diagnostic_common_diagnostics < 1.10.2-1
+Obsoletes: ros-kinetic-diagnostic_common_diagnostics < 1.10.2-1
 
 
 
@@ -47,9 +47,9 @@ Requires:       ros-noetic-rospy-devel
 Requires:       ros-noetic-rostest-devel
 Requires:       ros-noetic-tf-devel
 
-Provides: ros-noetic-diagnostic_common_diagnostics-devel = 1.9.4-1
-Obsoletes: ros-noetic-diagnostic_common_diagnostics-devel < 1.9.4-1
-Obsoletes: ros-kinetic-diagnostic_common_diagnostics-devel < 1.9.4-1
+Provides: ros-noetic-diagnostic_common_diagnostics-devel = 1.10.2-1
+Obsoletes: ros-noetic-diagnostic_common_diagnostics-devel < 1.10.2-1
+Obsoletes: ros-kinetic-diagnostic_common_diagnostics-devel < 1.10.2-1
 
 
 %description devel
@@ -157,6 +157,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.10.2-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.9.4-1
 - Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.9.3-3

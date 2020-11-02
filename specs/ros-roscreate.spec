@@ -1,12 +1,12 @@
 Name:           ros-roscreate
-Version:        noetic.1.15.1
+Version:        noetic.1.15.7
 Release:        1%{?dist}
 Summary:        ROS package roscreate
 
 License:        BSD
 URL:            http://wiki.ros.org/roscreate
 
-Source0:        https://github.com/ros-gbp/ros-release/archive/release/noetic/roscreate/1.15.1-1.tar.gz#/ros-noetic-roscreate-1.15.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros-release/archive/release/noetic/roscreate/1.15.7-1.tar.gz#/ros-noetic-roscreate-1.15.7-source0.tar.gz
 
 
 BuildArch: noarch
@@ -24,9 +24,9 @@ BuildRequires:  ros-noetic-catkin-devel
 Requires:       python3-rospkg
 Requires:       ros-noetic-roslib
 
-Provides:  ros-noetic-roscreate = 1.15.1-1
-Obsoletes: ros-noetic-roscreate < 1.15.1-1
-Obsoletes: ros-kinetic-roscreate < 1.15.1-1
+Provides:  ros-noetic-roscreate = 1.15.7-1
+Obsoletes: ros-noetic-roscreate < 1.15.7-1
+Obsoletes: ros-kinetic-roscreate < 1.15.7-1
 
 
 
@@ -41,9 +41,9 @@ Requires:       python3-setuptools
 Requires:       ros-noetic-catkin-devel
 Requires:       ros-noetic-roslib-devel
 
-Provides: ros-noetic-roscreate-devel = 1.15.1-1
-Obsoletes: ros-noetic-roscreate-devel < 1.15.1-1
-Obsoletes: ros-kinetic-roscreate-devel < 1.15.1-1
+Provides: ros-noetic-roscreate-devel = 1.15.7-1
+Obsoletes: ros-noetic-roscreate-devel < 1.15.7-1
+Obsoletes: ros-kinetic-roscreate-devel < 1.15.7-1
 
 
 %description devel
@@ -151,6 +151,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.7-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.1-1
 - Upgrade to noetic
 * Wed Mar 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.8-1

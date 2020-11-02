@@ -1,12 +1,12 @@
 Name:           ros-tf2_bullet
-Version:        noetic.0.7.1
+Version:        noetic.0.7.5
 Release:        1%{?dist}
 Summary:        ROS package tf2_bullet
 
 License:        BSD
 URL:            http://www.ros.org/wiki/tf2_bullet
 
-Source0:        https://github.com/ros-gbp/geometry2-release/archive/release/noetic/tf2_bullet/0.7.1-1.tar.gz#/ros-noetic-tf2_bullet-0.7.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/geometry2-release/archive/release/noetic/tf2_bullet/0.7.5-1.tar.gz#/ros-noetic-tf2_bullet-0.7.5-source0.tar.gz
 
 
 BuildArch: noarch
@@ -27,9 +27,9 @@ BuildRequires:  ros-noetic-tf2-devel
 Requires:       ros-noetic-geometry_msgs
 Requires:       ros-noetic-tf2
 
-Provides:  ros-noetic-tf2_bullet = 0.7.1-1
-Obsoletes: ros-noetic-tf2_bullet < 0.7.1-1
-Obsoletes: ros-kinetic-tf2_bullet < 0.7.1-1
+Provides:  ros-noetic-tf2_bullet = 0.7.5-1
+Obsoletes: ros-noetic-tf2_bullet < 0.7.5-1
+Obsoletes: ros-kinetic-tf2_bullet < 0.7.5-1
 
 
 
@@ -45,9 +45,9 @@ Requires:       bullet-devel
 Requires:       ros-noetic-geometry_msgs-devel
 Requires:       ros-noetic-tf2-devel
 
-Provides: ros-noetic-tf2_bullet-devel = 0.7.1-1
-Obsoletes: ros-noetic-tf2_bullet-devel < 0.7.1-1
-Obsoletes: ros-kinetic-tf2_bullet-devel < 0.7.1-1
+Provides: ros-noetic-tf2_bullet-devel = 0.7.5-1
+Obsoletes: ros-noetic-tf2_bullet-devel < 0.7.5-1
+Obsoletes: ros-kinetic-tf2_bullet-devel < 0.7.5-1
 
 
 %description devel
@@ -155,6 +155,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.7.5-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.7.1-1
 - Upgrade to noetic
 * Wed Jul 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.6.5-1

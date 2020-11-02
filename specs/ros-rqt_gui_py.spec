@@ -1,12 +1,12 @@
 Name:           ros-rqt_gui_py
-Version:        noetic.0.5.1
+Version:        noetic.0.5.2
 Release:        1%{?dist}
 Summary:        ROS package rqt_gui_py
 
 License:        BSD
 URL:            http://ros.org/wiki/rqt_gui_py
 
-Source0:        https://github.com/ros-gbp/rqt-release/archive/release/noetic/rqt_gui_py/0.5.1-1.tar.gz#/ros-noetic-rqt_gui_py-0.5.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt-release/archive/release/noetic/rqt_gui_py/0.5.2-1.tar.gz#/ros-noetic-rqt_gui_py-0.5.2-source0.tar.gz
 
 
 BuildArch: noarch
@@ -27,9 +27,9 @@ Requires:       ros-noetic-qt_gui
 Requires:       ros-noetic-rospy
 Requires:       ros-noetic-rqt_gui
 
-Provides:  ros-noetic-rqt_gui_py = 0.5.1-1
-Obsoletes: ros-noetic-rqt_gui_py < 0.5.1-1
-Obsoletes: ros-kinetic-rqt_gui_py < 0.5.1-1
+Provides:  ros-noetic-rqt_gui_py = 0.5.2-1
+Obsoletes: ros-noetic-rqt_gui_py < 0.5.2-1
+Obsoletes: ros-kinetic-rqt_gui_py < 0.5.2-1
 
 
 
@@ -45,9 +45,9 @@ Requires:       ros-noetic-qt_gui-devel
 Requires:       ros-noetic-rospy-devel
 Requires:       ros-noetic-rqt_gui-devel
 
-Provides: ros-noetic-rqt_gui_py-devel = 0.5.1-1
-Obsoletes: ros-noetic-rqt_gui_py-devel < 0.5.1-1
-Obsoletes: ros-kinetic-rqt_gui_py-devel < 0.5.1-1
+Provides: ros-noetic-rqt_gui_py-devel = 0.5.2-1
+Obsoletes: ros-noetic-rqt_gui_py-devel < 0.5.2-1
+Obsoletes: ros-kinetic-rqt_gui_py-devel < 0.5.2-1
 
 
 %description devel
@@ -155,6 +155,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.2-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.1-1
 - Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.5.1-1

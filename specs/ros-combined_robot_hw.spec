@@ -1,12 +1,12 @@
 Name:           ros-combined_robot_hw
-Version:        noetic.0.19.1
+Version:        noetic.0.19.3
 Release:        1%{?dist}
 Summary:        ROS package combined_robot_hw
 
 License:        BSD
 URL:            https://github.com/ros-controls/ros_control/wiki
 
-Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/noetic/combined_robot_hw/0.19.1-1.tar.gz#/ros-noetic-combined_robot_hw-0.19.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/noetic/combined_robot_hw/0.19.3-2.tar.gz#/ros-noetic-combined_robot_hw-0.19.3-source0.tar.gz
 
 
 
@@ -24,9 +24,9 @@ BuildRequires:  ros-noetic-roscpp-devel
 
 Requires:       ros-noetic-roscpp
 
-Provides:  ros-noetic-combined_robot_hw = 0.19.1-1
-Obsoletes: ros-noetic-combined_robot_hw < 0.19.1-1
-Obsoletes: ros-kinetic-combined_robot_hw < 0.19.1-1
+Provides:  ros-noetic-combined_robot_hw = 0.19.3-1
+Obsoletes: ros-noetic-combined_robot_hw < 0.19.3-1
+Obsoletes: ros-kinetic-combined_robot_hw < 0.19.3-1
 
 
 
@@ -41,9 +41,9 @@ Requires:       ros-noetic-hardware_interface-devel
 Requires:       ros-noetic-pluginlib-devel
 Requires:       ros-noetic-roscpp-devel
 
-Provides: ros-noetic-combined_robot_hw-devel = 0.19.1-1
-Obsoletes: ros-noetic-combined_robot_hw-devel < 0.19.1-1
-Obsoletes: ros-kinetic-combined_robot_hw-devel < 0.19.1-1
+Provides: ros-noetic-combined_robot_hw-devel = 0.19.3-1
+Obsoletes: ros-noetic-combined_robot_hw-devel < 0.19.3-1
+Obsoletes: ros-kinetic-combined_robot_hw-devel < 0.19.3-1
 
 
 %description devel
@@ -151,6 +151,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.19.3-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.19.1-1
 - Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.18.0-1

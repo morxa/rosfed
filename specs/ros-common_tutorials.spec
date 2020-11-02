@@ -1,12 +1,12 @@
 Name:           ros-common_tutorials
-Version:        noetic.0.1.12
+Version:        noetic.0.2.0
 Release:        1%{?dist}
 Summary:        ROS package common_tutorials
 
 License:        BSD
 URL:            http://ros.org/wiki/common_tutorials
 
-Source0:        https://github.com/ros-gbp/common_tutorials-release/archive/release/noetic/common_tutorials/0.1.12-1.tar.gz#/ros-noetic-common_tutorials-0.1.12-source0.tar.gz
+Source0:        https://github.com/ros-gbp/common_tutorials-release/archive/release/noetic/common_tutorials/0.2.0-1.tar.gz#/ros-noetic-common_tutorials-0.2.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -25,9 +25,9 @@ Requires:       ros-noetic-nodelet_tutorial_math
 Requires:       ros-noetic-pluginlib_tutorials
 Requires:       ros-noetic-turtle_actionlib
 
-Provides:  ros-noetic-common_tutorials = 0.1.12-1
-Obsoletes: ros-noetic-common_tutorials < 0.1.12-1
-Obsoletes: ros-kinetic-common_tutorials < 0.1.12-1
+Provides:  ros-noetic-common_tutorials = 0.2.0-1
+Obsoletes: ros-noetic-common_tutorials < 0.2.0-1
+Obsoletes: ros-kinetic-common_tutorials < 0.2.0-1
 
 
 
@@ -43,9 +43,9 @@ Requires:       ros-noetic-nodelet_tutorial_math-devel
 Requires:       ros-noetic-pluginlib_tutorials-devel
 Requires:       ros-noetic-turtle_actionlib-devel
 
-Provides: ros-noetic-common_tutorials-devel = 0.1.12-1
-Obsoletes: ros-noetic-common_tutorials-devel < 0.1.12-1
-Obsoletes: ros-kinetic-common_tutorials-devel < 0.1.12-1
+Provides: ros-noetic-common_tutorials-devel = 0.2.0-1
+Obsoletes: ros-noetic-common_tutorials-devel < 0.2.0-1
+Obsoletes: ros-kinetic-common_tutorials-devel < 0.2.0-1
 
 
 %description devel
@@ -153,6 +153,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.2.0-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.1.12-1
 - Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.1.11-3

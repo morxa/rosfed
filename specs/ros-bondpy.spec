@@ -1,12 +1,12 @@
 Name:           ros-bondpy
-Version:        noetic.1.8.5
+Version:        noetic.1.8.6
 Release:        1%{?dist}
 Summary:        ROS package bondpy
 
 License:        BSD
 URL:            http://www.ros.org/wiki/bondpy
 
-Source0:        https://github.com/ros-gbp/bond_core-release/archive/release/noetic/bondpy/1.8.5-1.tar.gz#/ros-noetic-bondpy-1.8.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/bond_core-release/archive/release/noetic/bondpy/1.8.6-1.tar.gz#/ros-noetic-bondpy-1.8.6-source0.tar.gz
 
 
 BuildArch: noarch
@@ -27,9 +27,9 @@ BuildRequires:  ros-noetic-smclib-devel
 Requires:       ros-noetic-rospy
 Requires:       ros-noetic-smclib
 
-Provides:  ros-noetic-bondpy = 1.8.5-1
-Obsoletes: ros-noetic-bondpy < 1.8.5-1
-Obsoletes: ros-kinetic-bondpy < 1.8.5-1
+Provides:  ros-noetic-bondpy = 1.8.6-1
+Obsoletes: ros-noetic-bondpy < 1.8.6-1
+Obsoletes: ros-kinetic-bondpy < 1.8.6-1
 
 
 
@@ -46,9 +46,9 @@ Requires:       ros-noetic-bond-devel
 Requires:       ros-noetic-rospy-devel
 Requires:       ros-noetic-smclib-devel
 
-Provides: ros-noetic-bondpy-devel = 1.8.5-1
-Obsoletes: ros-noetic-bondpy-devel < 1.8.5-1
-Obsoletes: ros-kinetic-bondpy-devel < 1.8.5-1
+Provides: ros-noetic-bondpy-devel = 1.8.6-1
+Obsoletes: ros-noetic-bondpy-devel < 1.8.6-1
+Obsoletes: ros-kinetic-bondpy-devel < 1.8.6-1
 
 
 %description devel
@@ -156,6 +156,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.8.6-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.8.5-1
 - Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.8.3-3

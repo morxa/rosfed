@@ -1,12 +1,12 @@
 Name:           ros-geometry
-Version:        noetic.1.13.1
+Version:        noetic.1.13.2
 Release:        1%{?dist}
 Summary:        ROS package geometry
 
 License:        BSD
 URL:            http://www.ros.org/wiki/geometry
 
-Source0:        https://github.com/ros-gbp/geometry-release/archive/release/noetic/geometry/1.13.1-1.tar.gz#/ros-noetic-geometry-1.13.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/geometry-release/archive/release/noetic/geometry/1.13.2-1.tar.gz#/ros-noetic-geometry-1.13.2-source0.tar.gz
 
 
 BuildArch: noarch
@@ -26,9 +26,9 @@ Requires:       ros-noetic-kdl_conversions
 Requires:       ros-noetic-tf
 Requires:       ros-noetic-tf_conversions
 
-Provides:  ros-noetic-geometry = 1.13.1-1
-Obsoletes: ros-noetic-geometry < 1.13.1-1
-Obsoletes: ros-kinetic-geometry < 1.13.1-1
+Provides:  ros-noetic-geometry = 1.13.2-1
+Obsoletes: ros-noetic-geometry < 1.13.2-1
+Obsoletes: ros-kinetic-geometry < 1.13.2-1
 
 
 
@@ -45,9 +45,9 @@ Requires:       ros-noetic-kdl_conversions-devel
 Requires:       ros-noetic-tf-devel
 Requires:       ros-noetic-tf_conversions-devel
 
-Provides: ros-noetic-geometry-devel = 1.13.1-1
-Obsoletes: ros-noetic-geometry-devel < 1.13.1-1
-Obsoletes: ros-kinetic-geometry-devel < 1.13.1-1
+Provides: ros-noetic-geometry-devel = 1.13.2-1
+Obsoletes: ros-noetic-geometry-devel < 1.13.2-1
+Obsoletes: ros-kinetic-geometry-devel < 1.13.2-1
 
 
 %description devel
@@ -155,6 +155,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.2-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.1-1
 - Upgrade to noetic
 * Fri Apr 17 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.12.1-1

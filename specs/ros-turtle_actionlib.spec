@@ -1,12 +1,12 @@
 Name:           ros-turtle_actionlib
-Version:        noetic.0.1.12
+Version:        noetic.0.2.0
 Release:        1%{?dist}
 Summary:        ROS package turtle_actionlib
 
 License:        BSD
 URL:            http://ros.org/wiki/turtle_actionlib
 
-Source0:        https://github.com/ros-gbp/common_tutorials-release/archive/release/noetic/turtle_actionlib/0.1.12-1.tar.gz#/ros-noetic-turtle_actionlib-0.1.12-source0.tar.gz
+Source0:        https://github.com/ros-gbp/common_tutorials-release/archive/release/noetic/turtle_actionlib/0.2.0-1.tar.gz#/ros-noetic-turtle_actionlib-0.2.0-source0.tar.gz
 
 
 
@@ -38,9 +38,9 @@ Requires:       ros-noetic-roscpp
 Requires:       ros-noetic-std_msgs
 Requires:       ros-noetic-turtlesim
 
-Provides:  ros-noetic-turtle_actionlib = 0.1.12-1
-Obsoletes: ros-noetic-turtle_actionlib < 0.1.12-1
-Obsoletes: ros-kinetic-turtle_actionlib < 0.1.12-1
+Provides:  ros-noetic-turtle_actionlib = 0.2.0-1
+Obsoletes: ros-noetic-turtle_actionlib < 0.2.0-1
+Obsoletes: ros-kinetic-turtle_actionlib < 0.2.0-1
 
 
 
@@ -64,9 +64,9 @@ Requires:       ros-noetic-std_msgs-devel
 Requires:       ros-noetic-turtlesim-devel
 Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-noetic-turtle_actionlib-devel = 0.1.12-1
-Obsoletes: ros-noetic-turtle_actionlib-devel < 0.1.12-1
-Obsoletes: ros-kinetic-turtle_actionlib-devel < 0.1.12-1
+Provides: ros-noetic-turtle_actionlib-devel = 0.2.0-1
+Obsoletes: ros-noetic-turtle_actionlib-devel < 0.2.0-1
+Obsoletes: ros-kinetic-turtle_actionlib-devel < 0.2.0-1
 
 
 %description devel
@@ -174,6 +174,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.2.0-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.1.12-1
 - Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.0.1.11-3
