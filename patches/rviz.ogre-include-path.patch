@@ -1,7 +1,7 @@
 diff --color -ur rviz-release-release-noetic-rviz-1.14.3-1/CMakeLists.txt rviz-release-release-noetic-rviz-1.14.3-1.ogre-include-path/CMakeLists.txt
 --- rviz-release-release-noetic-rviz-1.14.3-1/CMakeLists.txt	2020-10-20 11:19:41.000000000 +0200
-+++ rviz-release-release-noetic-rviz-1.14.3-1.ogre-include-path/CMakeLists.txt	2020-11-02 18:25:01.370883342 +0100
-@@ -32,53 +32,8 @@
++++ rviz-release-release-noetic-rviz-1.14.3-1.ogre-include-path/CMakeLists.txt	2020-11-12 20:35:36.929746149 +0100
+@@ -32,53 +32,17 @@
    set(ASSIMP_LIBRARIES assimp::assimp)
  endif()
  
@@ -54,10 +54,18 @@ diff --color -ur rviz-release-release-noetic-rviz-1.14.3-1/CMakeLists.txt rviz-r
 -endif()
 +find_package(OGRE REQUIRED COMPONENTS Overlay)
 +set(OGRE_LIBRARIES ${OGRE_LIBRARIES} ${OGRE_Overlay_LIBRARIES})
++## Fetch OGRE_PLUGIN_DIR variable from pkg-config
++if(NOT DEFINED OGRE_PLUGIN_DIR)
++  execute_process(COMMAND
++    ${PKG_CONFIG_EXECUTABLE} --variable=plugindir OGRE
++    OUTPUT_VARIABLE OGRE_PLUGIN_DIR
++    OUTPUT_STRIP_TRAILING_WHITESPACE
++    )
++endif(NOT DEFINED OGRE_PLUGIN_DIR)
++message(STATUS "OGRE_PLUGIN_DIR=${OGRE_PLUGIN_DIR}")
  
  # TODO: adapt version after upgrade to newer OGRE release
  # Disable deprecation warnings for OGRE >= 1.10
-Only in rviz-release-release-noetic-rviz-1.14.3-1.ogre-include-path: .CMakeLists.txt.swp
 diff --color -ur rviz-release-release-noetic-rviz-1.14.3-1/src/rviz/ogre_helpers/movable_text.cpp rviz-release-release-noetic-rviz-1.14.3-1.ogre-include-path/src/rviz/ogre_helpers/movable_text.cpp
 --- rviz-release-release-noetic-rviz-1.14.3-1/src/rviz/ogre_helpers/movable_text.cpp	2020-10-20 11:19:41.000000000 +0200
 +++ rviz-release-release-noetic-rviz-1.14.3-1.ogre-include-path/src/rviz/ogre_helpers/movable_text.cpp	2020-11-02 17:56:33.938300511 +0100
