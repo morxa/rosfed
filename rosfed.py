@@ -22,6 +22,8 @@ import sys
 import textwrap
 import time
 import yaml
+import threading
+import concurrent.futures
 
 from rosinstall_generator import generator
 from defusedxml import ElementTree
@@ -296,10 +298,9 @@ class RosPkg:
 
 
 class SpecFileGenerator:
-    def __init__(self, packages, distro, bump_release, release_version,
-                 user_string, changelog_entry, recursive, only_new,
-                 obsolete_distro_pkg, destination):
-        self.packages = packages
+    def __init__(self, distro, bump_release, release_version, user_string,
+                 changelog_entry, recursive, only_new, obsolete_distro_pkg,
+                 destination):
         self.distro = distro
         self.bump_release = bump_release
         self.release_version = release_version
@@ -316,10 +317,24 @@ class SpecFileGenerator:
             trim_blocks=True,
             lstrip_blocks=True,
         )
+        self.print_lock = threading.Lock()
+        self.executor = concurrent.futures.ThreadPoolExecutor(
+            max_workers=os.cpu_count())
+        self.futures = []
+        self.packages = []
+        self.packages_lock = threading.RLock()
+        self.finished_condition = threading.Condition(lock=self.packages_lock)
+        self.generated_packages = {}
+
+    def tprint(self, msg):
+        """Multi-threaded print. """
+        self.print_lock.acquire()
+        print(msg)
+        self.print_lock.release()
 
     def generate_spec_file(self, package):
         """ Generate a single spec file for the given package. """
-        print('Generating Spec file for {}.'.format(package))
+        self.tprint('Generating Spec file for {}.'.format(package))
         # TODO: skip if already in generated_packages
         ros_pkg = RosPkg(package,
                          distro=self.distro,
@@ -331,9 +346,10 @@ class SpecFileGenerator:
         if self.recursive:
             # Append all items that are not already in packages. We cannot use a
             # set, because we need to loop over it while we append items.
-            self.packages += [
-                dep for dep in ros_deps if not dep in self.packages
-            ]
+            self.packages_lock.acquire()
+            deps = [dep for dep in ros_deps if not dep in self.packages]
+            self.generate_spec_files(deps)
+            self.packages_lock.release()
         sources = ros_pkg.get_sources()
         version = ros_pkg.get_version()
         outfile = os.path.join(self.destination,
@@ -342,7 +358,8 @@ class SpecFileGenerator:
         pkg_changelog_entry = self.changelog_entry
         if os.path.isfile(outfile):
             if self.only_new:
-                print('Skipping {}, SPEC file exists.'.format(ros_pkg.name))
+                self.tprint('Skipping {}, SPEC file exists.'.format(
+                    ros_pkg.name))
                 return ros_pkg
             changelog = get_changelog_from_spec(outfile)
             if not self.release_version:
@@ -396,17 +413,29 @@ class SpecFileGenerator:
         )
         with open(outfile, 'w') as spec_file:
             spec_file.write(spec)
+        self.packages_lock.acquire()
+        self.generated_packages[ros_pkg.name] = ros_pkg
+        self.finished_condition.notify()
+        self.packages_lock.release()
         return ros_pkg
 
-    def generate_spec_files(self):
+    def generate_spec_files(self, packages):
         """ Generate Spec files for the given list of packages. """
-        i = 0
-        generated_packages = {}
-        while i < len(self.packages):
-            package = self.generate_spec_file(self.packages[i])
-            generated_packages[self.packages[i]] = package
-            i += 1
-        return generated_packages
+        self.packages_lock.acquire()
+        self.packages += packages
+        self.packages_lock.release()
+        for pkg in packages:
+            self.futures.append(
+                self.executor.submit(self.generate_spec_file, pkg))
+
+    def generate(self, packages):
+        self.generate_spec_files(packages)
+        self.packages_lock.acquire()
+        if len(self.packages) != len(self.generated_packages):
+            self.finished_condition.wait_for(
+                lambda: len(self.packages) == len(self.generated_packages))
+        self.packages_lock.release()
+        return self.generated_packages
 
 
 def main():
@@ -490,11 +519,13 @@ def main():
     # TODO: Improve design, we should not resolve dependencies and generate SPEC
     # files in one step, these are not really related.
 
-    spec_file_generator = SpecFileGenerator(
-        args.ros_pkg, args.distro, args.bump_release, args.release_version,
-        args.user_string, args.changelog, args.recursive, args.only_new,
-        args.obsolete_distro_pkg, args.destination)
-    packages = spec_file_generator.generate_spec_files()
+    spec_file_generator = SpecFileGenerator(args.distro, args.bump_release,
+                                            args.release_version,
+                                            args.user_string, args.changelog,
+                                            args.recursive, args.only_new,
+                                            args.obsolete_distro_pkg,
+                                            args.destination)
+    packages = spec_file_generator.generate(args.ros_pkg)
     if args.build_order_file:
         order = get_build_order(packages)
         for stage in order:
