@@ -295,6 +295,120 @@ class RosPkg:
         return self.pkg_config.get('no_debug', False)
 
 
+class SpecFileGenerator:
+    def __init__(self, packages, distro, bump_release, release_version,
+                 user_string, changelog_entry, recursive, only_new,
+                 obsolete_distro_pkg, destination):
+        self.packages = packages
+        self.distro = distro
+        self.bump_release = bump_release
+        self.release_version = release_version
+        self.user_string = user_string
+        self.changelog_entry = changelog_entry
+        self.recursive = recursive
+        self.only_new = only_new
+        self.obsolete_distro_pkg = obsolete_distro_pkg
+        self.destination = destination
+
+        self.pkg_resolver = PkgResolver()
+        self.jinja_env = jinja2.Environment(
+            loader=jinja2.FileSystemLoader('templates'),
+            trim_blocks=True,
+            lstrip_blocks=True,
+        )
+
+    def generate_spec_file(self, package):
+        """ Generate a single spec file for the given package. """
+        print('Generating Spec file for {}.'.format(package))
+        # TODO: skip if already in generated_packages
+        ros_pkg = RosPkg(package,
+                         distro=self.distro,
+                         pkg_resolver=self.pkg_resolver)
+        build_deps = ros_pkg.get_build_dependencies()
+        run_deps = ros_pkg.get_run_dependencies()
+        devel_deps = ros_pkg.get_devel_dependencies()
+        ros_deps = ros_pkg.get_ros_dependencies()
+        if self.recursive:
+            # Append all items that are not already in packages. We cannot use a
+            # set, because we need to loop over it while we append items.
+            self.packages += [
+                dep for dep in ros_deps if not dep in self.packages
+            ]
+        sources = ros_pkg.get_sources()
+        version = ros_pkg.get_version()
+        outfile = os.path.join(self.destination,
+                               'ros-{}.spec'.format(ros_pkg.name))
+        ros_pkg.spec = outfile
+        pkg_changelog_entry = self.changelog_entry
+        if os.path.isfile(outfile):
+            if self.only_new:
+                print('Skipping {}, SPEC file exists.'.format(ros_pkg.name))
+                return ros_pkg
+            changelog = get_changelog_from_spec(outfile)
+            if not self.release_version:
+                # Release is not specified and Spec file exists, use new version
+                # or bump release if it is the same version.
+                version_info = spec_utils.get_version_from_spec(outfile)
+                if version_info['version'] == '{}.{}'.format(
+                        self.distro, version):
+                    pkg_release_version = int(version_info['release'])
+                    if self.bump_release:
+                        assert pkg_changelog_entry, \
+                                'Please provide a changelog entry.'
+                        pkg_release_version += 1
+                    else:
+                        pkg_changelog_entry = ''
+                    ros_pkg.set_release(pkg_release_version)
+                else:
+                    assert pkg_changelog_entry, \
+                            'Please provide a changelog entry.'
+                    ros_pkg.set_release(1)
+        else:
+            changelog = ''
+            assert pkg_changelog_entry, 'Please provide a changelog entry.'
+        try:
+            spec_template = self.jinja_env.get_template('{}.spec.j2'.format(
+                ros_pkg.name))
+        except jinja2.exceptions.TemplateNotFound:
+            spec_template = self.jinja_env.get_template('pkg.spec.j2')
+        spec = spec_template.render(
+            pkg_name=ros_pkg.name,
+            distro=self.distro,
+            pkg_version=version,
+            license=ros_pkg.get_license(),
+            pkg_url=ros_pkg.get_website(),
+            source_urls=sources,
+            build_dependencies=build_deps,
+            run_dependencies=run_deps,
+            run_dependencies_devel=devel_deps,
+            pkg_description=ros_pkg.get_description(),
+            pkg_release=ros_pkg.get_release(),
+            user_string=self.user_string,
+            date=time.strftime("%a %b %d %Y", time.gmtime()),
+            changelog=changelog,
+            changelog_entry=pkg_changelog_entry,
+            noarch=ros_pkg.is_noarch(),
+            obsolete_distro_pkg=self.obsolete_distro_pkg,
+            has_devel=ros_pkg.has_devel(),
+            patches=ros_pkg.get_patches(),
+            build_flags=ros_pkg.get_build_flags(),
+            no_debug=ros_pkg.has_no_debug(),
+        )
+        with open(outfile, 'w') as spec_file:
+            spec_file.write(spec)
+        return ros_pkg
+
+    def generate_spec_files(self):
+        """ Generate Spec files for the given list of packages. """
+        i = 0
+        generated_packages = {}
+        while i < len(self.packages):
+            package = self.generate_spec_file(self.packages[i])
+            generated_packages[self.packages[i]] = package
+            i += 1
+        return generated_packages
+
+
 def main():
     parser = argparse.ArgumentParser(
         description='Generate Spec files for ROS packages with the '
@@ -375,11 +489,12 @@ def main():
         args.user_string = user_string.strip()
     # TODO: Improve design, we should not resolve dependencies and generate SPEC
     # files in one step, these are not really related.
-    packages = generate_spec_files(args.ros_pkg, args.distro,
-                                   args.bump_release, args.release_version,
-                                   args.user_string, args.changelog,
-                                   args.recursive, args.only_new,
-                                   args.obsolete_distro_pkg, args.destination)
+
+    spec_file_generator = SpecFileGenerator(
+        args.ros_pkg, args.distro, args.bump_release, args.release_version,
+        args.user_string, args.changelog, args.recursive, args.only_new,
+        args.obsolete_distro_pkg, args.destination)
+    packages = spec_file_generator.generate_spec_files()
     if args.build_order_file:
         order = get_build_order(packages)
         for stage in order:
@@ -414,97 +529,6 @@ def get_build_order(packages):
         order.append(leaves)
         resolved_pkgs |= leaves
     return order
-
-
-def generate_spec_files(packages, distro, bump_release, release_version,
-                        user_string, changelog_entry, recursive, only_new,
-                        obsolete_distro_pkg, destination):
-    """ Generate Spec files for the given list of packages. """
-    jinja_env = jinja2.Environment(
-        loader=jinja2.FileSystemLoader('templates'),
-        trim_blocks=True,
-        lstrip_blocks=True,
-    )
-    i = 0
-    pkg_resolver = PkgResolver()
-    generated_packages = {}
-    while i < len(packages):
-        print('Generating Spec file for {}.'.format(packages[i]))
-        # TODO: skip if already in generated_packages
-        ros_pkg = RosPkg(name=packages[i],
-                         distro=distro,
-                         pkg_resolver=pkg_resolver)
-        i += 1
-        build_deps = ros_pkg.get_build_dependencies()
-        run_deps = ros_pkg.get_run_dependencies()
-        devel_deps = ros_pkg.get_devel_dependencies()
-        ros_deps = ros_pkg.get_ros_dependencies()
-        generated_packages[ros_pkg.name] = ros_pkg
-        if recursive:
-            # Append all items that are not already in packages. We cannot use a
-            # set, because we need to loop over it while we append items.
-            packages += [dep for dep in ros_deps if not dep in packages]
-        sources = ros_pkg.get_sources()
-        version = ros_pkg.get_version()
-        outfile = os.path.join(destination, 'ros-{}.spec'.format(ros_pkg.name))
-        ros_pkg.spec = outfile
-        pkg_changelog_entry = changelog_entry
-        if os.path.isfile(outfile):
-            if only_new:
-                print('Skipping {}, SPEC file exists.'.format(ros_pkg.name))
-                continue
-            changelog = get_changelog_from_spec(outfile)
-            if not release_version:
-                # Release is not specified and Spec file exists, use new version
-                # or bump release if it is the same version.
-                version_info = spec_utils.get_version_from_spec(outfile)
-                if version_info['version'] == '{}.{}'.format(distro, version):
-                    pkg_release_version = int(version_info['release'])
-                    if bump_release:
-                        assert pkg_changelog_entry, \
-                                'Please provide a changelog entry.'
-                        pkg_release_version += 1
-                    else:
-                        pkg_changelog_entry = ''
-                    ros_pkg.set_release(pkg_release_version)
-                else:
-                    assert pkg_changelog_entry, \
-                            'Please provide a changelog entry.'
-                    ros_pkg.set_release(1)
-        else:
-            changelog = ''
-            assert pkg_changelog_entry, 'Please provide a changelog entry.'
-        try:
-            spec_template = jinja_env.get_template('{}.spec.j2'.format(
-                ros_pkg.name))
-        except jinja2.exceptions.TemplateNotFound:
-            spec_template = jinja_env.get_template('pkg.spec.j2')
-        spec = spec_template.render(
-            pkg_name=ros_pkg.name,
-            distro=distro,
-            pkg_version=version,
-            license=ros_pkg.get_license(),
-            pkg_url=ros_pkg.get_website(),
-            source_urls=sources,
-            build_dependencies=build_deps,
-            run_dependencies=run_deps,
-            run_dependencies_devel=devel_deps,
-            pkg_description=ros_pkg.get_description(),
-            pkg_release=ros_pkg.get_release(),
-            user_string=user_string,
-            date=time.strftime("%a %b %d %Y", time.gmtime()),
-            changelog=changelog,
-            changelog_entry=pkg_changelog_entry,
-            noarch=ros_pkg.is_noarch(),
-            obsolete_distro_pkg=obsolete_distro_pkg,
-            has_devel=ros_pkg.has_devel(),
-            patches=ros_pkg.get_patches(),
-            build_flags=ros_pkg.get_build_flags(),
-            no_debug=ros_pkg.has_no_debug(),
-        )
-        with open(outfile, 'w') as spec_file:
-            spec_file.write(spec)
-    return generated_packages
 
 
 if __name__ == '__main__':
