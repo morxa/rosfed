@@ -1,12 +1,12 @@
 Name:           ros-position_controllers
-Version:        noetic.0.18.0
+Version:        noetic.0.18.1
 Release:        1%{?dist}
 Summary:        ROS package position_controllers
 
 License:        BSD
 URL:            https://github.com/ros-controls/ros_controllers/wiki
 
-Source0:        https://github.com/ros-gbp/ros_controllers-release/archive/release/noetic/position_controllers/0.18.0-1.tar.gz#/ros-noetic-position_controllers-0.18.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_controllers-release/archive/release/noetic/position_controllers/0.18.1-1.tar.gz#/ros-noetic-position_controllers-0.18.1-source0.tar.gz
 
 
 
@@ -18,17 +18,17 @@ BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 
 BuildRequires:  ros-noetic-catkin-devel
-BuildRequires:  ros-noetic-controller_interface-devel
 BuildRequires:  ros-noetic-forward_command_controller-devel
+BuildRequires:  ros-noetic-hardware_interface-devel
 BuildRequires:  ros-noetic-pluginlib-devel
+BuildRequires:  ros-noetic-roscpp-devel
 
 Requires:       ros-noetic-controller_interface
-Requires:       ros-noetic-forward_command_controller
-Requires:       ros-noetic-pluginlib
+Requires:       ros-noetic-roscpp
 
-Provides:  ros-noetic-position_controllers = 0.18.0-1
-Obsoletes: ros-noetic-position_controllers < 0.18.0-1
-Obsoletes: ros-kinetic-position_controllers < 0.18.0-1
+Provides:  ros-noetic-position_controllers = 0.18.1-1
+Obsoletes: ros-noetic-position_controllers < 0.18.1-1
+Obsoletes: ros-kinetic-position_controllers < 0.18.1-1
 
 
 
@@ -39,13 +39,15 @@ position_controllers
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       ros-noetic-catkin-devel
-Requires:       ros-noetic-controller_interface-devel
 Requires:       ros-noetic-forward_command_controller-devel
+Requires:       ros-noetic-hardware_interface-devel
 Requires:       ros-noetic-pluginlib-devel
+Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-controller_interface-devel
 
-Provides: ros-noetic-position_controllers-devel = 0.18.0-1
-Obsoletes: ros-noetic-position_controllers-devel < 0.18.0-1
-Obsoletes: ros-kinetic-position_controllers-devel < 0.18.0-1
+Provides: ros-noetic-position_controllers-devel = 0.18.1-1
+Obsoletes: ros-noetic-position_controllers-devel < 0.18.1-1
+Obsoletes: ros-kinetic-position_controllers-devel < 0.18.1-1
 
 
 %description devel
@@ -153,6 +155,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Feb 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.18.1-1
+- Update to latest release
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.18.0-1
 - Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.17.0-1

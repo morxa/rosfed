@@ -1,12 +1,12 @@
 Name:           ros-rqt_bag
-Version:        noetic.0.4.15
+Version:        noetic.0.5.0
 Release:        1%{?dist}
 Summary:        ROS package rqt_bag
 
 License:        BSD
 URL:            http://wiki.ros.org/rqt_bag
 
-Source0:        https://github.com/ros-gbp/rqt_bag-release/archive/release/noetic/rqt_bag/0.4.15-1.tar.gz#/ros-noetic-rqt_bag-0.4.15-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt_bag-release/archive/release/noetic/rqt_bag/0.5.0-1.tar.gz#/ros-noetic-rqt_bag-0.5.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -30,9 +30,9 @@ Requires:       ros-noetic-rospy
 Requires:       ros-noetic-rqt_gui
 Requires:       ros-noetic-rqt_gui_py
 
-Provides:  ros-noetic-rqt_bag = 0.4.15-1
-Obsoletes: ros-noetic-rqt_bag < 0.4.15-1
-Obsoletes: ros-kinetic-rqt_bag < 0.4.15-1
+Provides:  ros-noetic-rqt_bag = 0.5.0-1
+Obsoletes: ros-noetic-rqt_bag < 0.5.0-1
+Obsoletes: ros-kinetic-rqt_bag < 0.5.0-1
 
 
 
@@ -53,9 +53,9 @@ Requires:       ros-noetic-rospy-devel
 Requires:       ros-noetic-rqt_gui-devel
 Requires:       ros-noetic-rqt_gui_py-devel
 
-Provides: ros-noetic-rqt_bag-devel = 0.4.15-1
-Obsoletes: ros-noetic-rqt_bag-devel < 0.4.15-1
-Obsoletes: ros-kinetic-rqt_bag-devel < 0.4.15-1
+Provides: ros-noetic-rqt_bag-devel = 0.5.0-1
+Obsoletes: ros-noetic-rqt_bag-devel < 0.5.0-1
+Obsoletes: ros-kinetic-rqt_bag-devel < 0.5.0-1
 
 
 %description devel
@@ -163,6 +163,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Nov 20 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.0-1
+- Update to latest release
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.15-1
 - Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.13-1

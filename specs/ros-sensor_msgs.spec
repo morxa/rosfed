@@ -1,12 +1,12 @@
 Name:           ros-sensor_msgs
-Version:        noetic.1.13.0
+Version:        noetic.1.13.1
 Release:        1%{?dist}
 Summary:        ROS package sensor_msgs
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/common_msgs-release/archive/release/noetic/sensor_msgs/1.13.0-1.tar.gz#/ros-noetic-sensor_msgs-1.13.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/common_msgs-release/archive/release/noetic/sensor_msgs/1.13.1-1.tar.gz#/ros-noetic-sensor_msgs-1.13.1-source0.tar.gz
 
 
 BuildArch: noarch
@@ -30,9 +30,9 @@ Requires:       ros-noetic-geometry_msgs
 Requires:       ros-noetic-message_runtime
 Requires:       ros-noetic-std_msgs
 
-Provides:  ros-noetic-sensor_msgs = 1.13.0-1
-Obsoletes: ros-noetic-sensor_msgs < 1.13.0-1
-Obsoletes: ros-kinetic-sensor_msgs < 1.13.0-1
+Provides:  ros-noetic-sensor_msgs = 1.13.1-1
+Obsoletes: ros-noetic-sensor_msgs < 1.13.1-1
+Obsoletes: ros-kinetic-sensor_msgs < 1.13.1-1
 
 
 
@@ -53,9 +53,9 @@ Requires:       ros-noetic-rosunit-devel
 Requires:       ros-noetic-std_msgs-devel
 Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-noetic-sensor_msgs-devel = 1.13.0-1
-Obsoletes: ros-noetic-sensor_msgs-devel < 1.13.0-1
-Obsoletes: ros-kinetic-sensor_msgs-devel < 1.13.0-1
+Provides: ros-noetic-sensor_msgs-devel = 1.13.1-1
+Obsoletes: ros-noetic-sensor_msgs-devel < 1.13.1-1
+Obsoletes: ros-kinetic-sensor_msgs-devel < 1.13.1-1
 
 
 %description devel
@@ -163,6 +163,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Feb 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.1-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.0-1
 - Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.12.7-3

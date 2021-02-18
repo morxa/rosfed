@@ -1,12 +1,12 @@
 Name:           ros-depth_image_proc
-Version:        noetic.1.15.2
+Version:        noetic.1.15.3
 Release:        1%{?dist}
 Summary:        ROS package depth_image_proc
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/image_pipeline-release/archive/release/noetic/depth_image_proc/1.15.2-1.tar.gz#/ros-noetic-depth_image_proc-1.15.2-source0.tar.gz
+Source0:        https://github.com/ros-gbp/image_pipeline-release/archive/release/noetic/depth_image_proc/1.15.3-1.tar.gz#/ros-noetic-depth_image_proc-1.15.3-source0.tar.gz
 
 
 
@@ -46,9 +46,9 @@ Requires:       ros-noetic-nodelet
 Requires:       ros-noetic-tf2
 Requires:       ros-noetic-tf2_ros
 
-Provides:  ros-noetic-depth_image_proc = 1.15.2-1
-Obsoletes: ros-noetic-depth_image_proc < 1.15.2-1
-Obsoletes: ros-kinetic-depth_image_proc < 1.15.2-1
+Provides:  ros-noetic-depth_image_proc = 1.15.3-1
+Obsoletes: ros-noetic-depth_image_proc < 1.15.3-1
+Obsoletes: ros-kinetic-depth_image_proc < 1.15.3-1
 
 
 
@@ -82,9 +82,9 @@ Requires:       ros-noetic-stereo_msgs-devel
 Requires:       ros-noetic-tf2-devel
 Requires:       ros-noetic-tf2_ros-devel
 
-Provides: ros-noetic-depth_image_proc-devel = 1.15.2-1
-Obsoletes: ros-noetic-depth_image_proc-devel < 1.15.2-1
-Obsoletes: ros-kinetic-depth_image_proc-devel < 1.15.2-1
+Provides: ros-noetic-depth_image_proc-devel = 1.15.3-1
+Obsoletes: ros-noetic-depth_image_proc-devel < 1.15.3-1
+Obsoletes: ros-kinetic-depth_image_proc-devel < 1.15.3-1
 
 
 %description devel
@@ -192,6 +192,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Feb 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.3-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.2-1
 - Upgrade to noetic
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.0-1

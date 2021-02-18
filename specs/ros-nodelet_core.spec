@@ -1,12 +1,12 @@
 Name:           ros-nodelet_core
-Version:        noetic.1.10.0
+Version:        noetic.1.10.1
 Release:        1%{?dist}
 Summary:        ROS package nodelet_core
 
 License:        BSD
 URL:            http://www.ros.org/wiki/nodelet_core
 
-Source0:        https://github.com/ros-gbp/nodelet_core-release/archive/release/noetic/nodelet_core/1.10.0-1.tar.gz#/ros-noetic-nodelet_core-1.10.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/nodelet_core-release/archive/release/noetic/nodelet_core/1.10.1-1.tar.gz#/ros-noetic-nodelet_core-1.10.1-source0.tar.gz
 
 
 BuildArch: noarch
@@ -23,9 +23,9 @@ BuildRequires:  ros-noetic-catkin-devel
 Requires:       ros-noetic-nodelet
 Requires:       ros-noetic-nodelet_topic_tools
 
-Provides:  ros-noetic-nodelet_core = 1.10.0-1
-Obsoletes: ros-noetic-nodelet_core < 1.10.0-1
-Obsoletes: ros-kinetic-nodelet_core < 1.10.0-1
+Provides:  ros-noetic-nodelet_core = 1.10.1-1
+Obsoletes: ros-noetic-nodelet_core < 1.10.1-1
+Obsoletes: ros-kinetic-nodelet_core < 1.10.1-1
 
 
 
@@ -39,9 +39,9 @@ Requires:       ros-noetic-catkin-devel
 Requires:       ros-noetic-nodelet-devel
 Requires:       ros-noetic-nodelet_topic_tools-devel
 
-Provides: ros-noetic-nodelet_core-devel = 1.10.0-1
-Obsoletes: ros-noetic-nodelet_core-devel < 1.10.0-1
-Obsoletes: ros-kinetic-nodelet_core-devel < 1.10.0-1
+Provides: ros-noetic-nodelet_core-devel = 1.10.1-1
+Obsoletes: ros-noetic-nodelet_core-devel < 1.10.1-1
+Obsoletes: ros-kinetic-nodelet_core-devel < 1.10.1-1
 
 
 %description devel
@@ -149,6 +149,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Feb 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.10.1-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.10.0-1
 - Upgrade to noetic
 * Mon Jul 22 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.9.16-3

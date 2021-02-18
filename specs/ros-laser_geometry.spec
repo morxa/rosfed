@@ -1,12 +1,12 @@
 Name:           ros-laser_geometry
-Version:        noetic.1.6.5
-Release:        2%{?dist}
+Version:        noetic.1.6.7
+Release:        1%{?dist}
 Summary:        ROS package laser_geometry
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/laser_geometry-release/archive/release/noetic/laser_geometry/1.6.5-1.tar.gz#/ros-noetic-laser_geometry-1.6.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/laser_geometry-release/archive/release/noetic/laser_geometry/1.6.7-1.tar.gz#/ros-noetic-laser_geometry-1.6.7-source0.tar.gz
 
 Patch0: patches/ros-laser_geometry.add-eigen-export_depend.patch
 
@@ -27,6 +27,7 @@ BuildRequires:  ros-noetic-rosunit-devel
 BuildRequires:  ros-noetic-sensor_msgs-devel
 BuildRequires:  ros-noetic-tf-devel
 BuildRequires:  ros-noetic-tf2-devel
+BuildRequires:  ros-noetic-tf2_geometry_msgs-devel
 
 Requires:       python3-numpy
 Requires:       python3dist(numpy)
@@ -36,9 +37,9 @@ Requires:       ros-noetic-sensor_msgs
 Requires:       ros-noetic-tf
 Requires:       ros-noetic-tf2
 
-Provides:  ros-noetic-laser_geometry = 1.6.5-2
-Obsoletes: ros-noetic-laser_geometry < 1.6.5-2
-Obsoletes: ros-kinetic-laser_geometry < 1.6.5-2
+Provides:  ros-noetic-laser_geometry = 1.6.7-1
+Obsoletes: ros-noetic-laser_geometry < 1.6.7-1
+Obsoletes: ros-kinetic-laser_geometry < 1.6.7-1
 
 
 
@@ -61,10 +62,11 @@ Requires:       ros-noetic-rosunit-devel
 Requires:       ros-noetic-sensor_msgs-devel
 Requires:       ros-noetic-tf-devel
 Requires:       ros-noetic-tf2-devel
+Requires:       ros-noetic-tf2_geometry_msgs-devel
 
-Provides: ros-noetic-laser_geometry-devel = 1.6.5-2
-Obsoletes: ros-noetic-laser_geometry-devel < 1.6.5-2
-Obsoletes: ros-kinetic-laser_geometry-devel < 1.6.5-2
+Provides: ros-noetic-laser_geometry-devel = 1.6.7-1
+Obsoletes: ros-noetic-laser_geometry-devel < 1.6.7-1
+Obsoletes: ros-kinetic-laser_geometry-devel < 1.6.7-1
 
 
 %description devel
@@ -173,6 +175,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Feb 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.6.7-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.6.5-2
 - Add patch to export eigen includedir
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.6.5-1

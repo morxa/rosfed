@@ -1,12 +1,12 @@
 Name:           ros-image_pipeline
-Version:        noetic.1.15.2
+Version:        noetic.1.15.3
 Release:        1%{?dist}
 Summary:        ROS package image_pipeline
 
 License:        BSD
 URL:            http://www.ros.org/wiki/image_pipeline
 
-Source0:        https://github.com/ros-gbp/image_pipeline-release/archive/release/noetic/image_pipeline/1.15.2-1.tar.gz#/ros-noetic-image_pipeline-1.15.2-source0.tar.gz
+Source0:        https://github.com/ros-gbp/image_pipeline-release/archive/release/noetic/image_pipeline/1.15.3-1.tar.gz#/ros-noetic-image_pipeline-1.15.3-source0.tar.gz
 
 
 BuildArch: noarch
@@ -28,9 +28,9 @@ Requires:       ros-noetic-image_rotate
 Requires:       ros-noetic-image_view
 Requires:       ros-noetic-stereo_image_proc
 
-Provides:  ros-noetic-image_pipeline = 1.15.2-1
-Obsoletes: ros-noetic-image_pipeline < 1.15.2-1
-Obsoletes: ros-kinetic-image_pipeline < 1.15.2-1
+Provides:  ros-noetic-image_pipeline = 1.15.3-1
+Obsoletes: ros-noetic-image_pipeline < 1.15.3-1
+Obsoletes: ros-kinetic-image_pipeline < 1.15.3-1
 
 
 
@@ -50,9 +50,9 @@ Requires:       ros-noetic-image_rotate-devel
 Requires:       ros-noetic-image_view-devel
 Requires:       ros-noetic-stereo_image_proc-devel
 
-Provides: ros-noetic-image_pipeline-devel = 1.15.2-1
-Obsoletes: ros-noetic-image_pipeline-devel < 1.15.2-1
-Obsoletes: ros-kinetic-image_pipeline-devel < 1.15.2-1
+Provides: ros-noetic-image_pipeline-devel = 1.15.3-1
+Obsoletes: ros-noetic-image_pipeline-devel < 1.15.3-1
+Obsoletes: ros-kinetic-image_pipeline-devel < 1.15.3-1
 
 
 %description devel
@@ -160,6 +160,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Feb 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.3-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.2-1
 - Upgrade to noetic
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.0-1

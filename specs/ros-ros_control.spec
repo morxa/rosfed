@@ -1,12 +1,12 @@
 Name:           ros-ros_control
-Version:        noetic.0.19.3
+Version:        noetic.0.19.4
 Release:        1%{?dist}
 Summary:        ROS package ros_control
 
 License:        BSD
 URL:            http://ros.org/wiki/ros_control
 
-Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/noetic/ros_control/0.19.3-2.tar.gz#/ros-noetic-ros_control-0.19.3-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/noetic/ros_control/0.19.4-1.tar.gz#/ros-noetic-ros_control-0.19.4-source0.tar.gz
 
 
 BuildArch: noarch
@@ -29,9 +29,9 @@ Requires:       ros-noetic-joint_limits_interface
 Requires:       ros-noetic-realtime_tools
 Requires:       ros-noetic-transmission_interface
 
-Provides:  ros-noetic-ros_control = 0.19.3-1
-Obsoletes: ros-noetic-ros_control < 0.19.3-1
-Obsoletes: ros-kinetic-ros_control < 0.19.3-1
+Provides:  ros-noetic-ros_control = 0.19.4-1
+Obsoletes: ros-noetic-ros_control < 0.19.4-1
+Obsoletes: ros-kinetic-ros_control < 0.19.4-1
 
 
 
@@ -52,9 +52,9 @@ Requires:       ros-noetic-joint_limits_interface-devel
 Requires:       ros-noetic-realtime_tools-devel
 Requires:       ros-noetic-transmission_interface-devel
 
-Provides: ros-noetic-ros_control-devel = 0.19.3-1
-Obsoletes: ros-noetic-ros_control-devel < 0.19.3-1
-Obsoletes: ros-kinetic-ros_control-devel < 0.19.3-1
+Provides: ros-noetic-ros_control-devel = 0.19.4-1
+Obsoletes: ros-noetic-ros_control-devel < 0.19.4-1
+Obsoletes: ros-kinetic-ros_control-devel < 0.19.4-1
 
 
 %description devel
@@ -162,6 +162,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Feb 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.19.4-1
+- Update to latest release
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.19.3-1
 - Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.19.1-1

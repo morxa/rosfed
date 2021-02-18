@@ -1,12 +1,12 @@
 Name:           ros-joint_state_controller
-Version:        noetic.0.18.0
+Version:        noetic.0.18.1
 Release:        1%{?dist}
 Summary:        ROS package joint_state_controller
 
 License:        BSD
 URL:            https://github.com/ros-controls/ros_controllers/wiki
 
-Source0:        https://github.com/ros-gbp/ros_controllers-release/archive/release/noetic/joint_state_controller/0.18.0-1.tar.gz#/ros-noetic-joint_state_controller-0.18.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_controllers-release/archive/release/noetic/joint_state_controller/0.18.1-1.tar.gz#/ros-noetic-joint_state_controller-0.18.1-source0.tar.gz
 
 
 
@@ -33,9 +33,9 @@ Requires:       ros-noetic-controller_interface
 Requires:       ros-noetic-realtime_tools
 Requires:       ros-noetic-roscpp
 
-Provides:  ros-noetic-joint_state_controller = 0.18.0-1
-Obsoletes: ros-noetic-joint_state_controller < 0.18.0-1
-Obsoletes: ros-kinetic-joint_state_controller < 0.18.0-1
+Provides:  ros-noetic-joint_state_controller = 0.18.1-1
+Obsoletes: ros-noetic-joint_state_controller < 0.18.1-1
+Obsoletes: ros-kinetic-joint_state_controller < 0.18.1-1
 
 
 
@@ -57,9 +57,9 @@ Requires:       ros-noetic-realtime_tools-devel
 Requires:       ros-noetic-roscpp-devel
 Requires:       ros-noetic-rostest-devel
 
-Provides: ros-noetic-joint_state_controller-devel = 0.18.0-1
-Obsoletes: ros-noetic-joint_state_controller-devel < 0.18.0-1
-Obsoletes: ros-kinetic-joint_state_controller-devel < 0.18.0-1
+Provides: ros-noetic-joint_state_controller-devel = 0.18.1-1
+Obsoletes: ros-noetic-joint_state_controller-devel < 0.18.1-1
+Obsoletes: ros-kinetic-joint_state_controller-devel < 0.18.1-1
 
 
 %description devel
@@ -167,6 +167,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Feb 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.18.1-1
+- Update to latest release
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.18.0-1
 - Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.17.0-1

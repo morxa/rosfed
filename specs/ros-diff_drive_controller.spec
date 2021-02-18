@@ -1,14 +1,13 @@
 Name:           ros-diff_drive_controller
-Version:        noetic.0.18.0
+Version:        noetic.0.18.1
 Release:        1%{?dist}
 Summary:        ROS package diff_drive_controller
 
 License:        BSD
 URL:            https://github.com/ros-controls/ros_controllers/wiki
 
-Source0:        https://github.com/ros-gbp/ros_controllers-release/archive/release/noetic/diff_drive_controller/0.18.0-1.tar.gz#/ros-noetic-diff_drive_controller-0.18.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_controllers-release/archive/release/noetic/diff_drive_controller/0.18.1-1.tar.gz#/ros-noetic-diff_drive_controller-0.18.1-source0.tar.gz
 
-Patch0: ros-diff_drive_controller.boost-headers.patch
 
 
 # common BRs
@@ -48,9 +47,9 @@ Requires:       ros-noetic-realtime_tools
 Requires:       ros-noetic-tf
 Requires:       ros-noetic-urdf
 
-Provides:  ros-noetic-diff_drive_controller = 0.18.0-1
-Obsoletes: ros-noetic-diff_drive_controller < 0.18.0-1
-Obsoletes: ros-kinetic-diff_drive_controller < 0.18.0-1
+Provides:  ros-noetic-diff_drive_controller = 0.18.1-1
+Obsoletes: ros-noetic-diff_drive_controller < 0.18.1-1
+Obsoletes: ros-kinetic-diff_drive_controller < 0.18.1-1
 
 
 
@@ -79,9 +78,9 @@ Requires:       ros-noetic-tf-devel
 Requires:       ros-noetic-urdf-devel
 Requires:       ros-noetic-xacro-devel
 
-Provides: ros-noetic-diff_drive_controller-devel = 0.18.0-1
-Obsoletes: ros-noetic-diff_drive_controller-devel < 0.18.0-1
-Obsoletes: ros-kinetic-diff_drive_controller-devel < 0.18.0-1
+Provides: ros-noetic-diff_drive_controller-devel = 0.18.1-1
+Obsoletes: ros-noetic-diff_drive_controller-devel < 0.18.1-1
+Obsoletes: ros-kinetic-diff_drive_controller-devel < 0.18.1-1
 
 
 %description devel
@@ -94,7 +93,6 @@ applications that use %{name}.
 
 %setup -c -T
 tar --strip-components=1 -xf %{SOURCE0}
-%patch0 -p1
 
 %build
 # nothing to do here
@@ -190,6 +188,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Feb 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.18.1-1
+- Update to latest release
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.18.0-1
 - Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.17.0-1

@@ -1,12 +1,12 @@
 Name:           ros-forward_command_controller
-Version:        noetic.0.18.0
+Version:        noetic.0.18.1
 Release:        1%{?dist}
 Summary:        ROS package forward_command_controller
 
 License:        BSD
 URL:            https://github.com/ros-controls/ros_controllers/wiki
 
-Source0:        https://github.com/ros-gbp/ros_controllers-release/archive/release/noetic/forward_command_controller/0.18.0-1.tar.gz#/ros-noetic-forward_command_controller-0.18.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_controllers-release/archive/release/noetic/forward_command_controller/0.18.1-1.tar.gz#/ros-noetic-forward_command_controller-0.18.1-source0.tar.gz
 
 
 BuildArch: noarch
@@ -26,9 +26,9 @@ BuildRequires:  ros-noetic-roscpp-devel
 BuildRequires:  ros-noetic-std_msgs-devel
 
 
-Provides:  ros-noetic-forward_command_controller = 0.18.0-1
-Obsoletes: ros-noetic-forward_command_controller < 0.18.0-1
-Obsoletes: ros-kinetic-forward_command_controller < 0.18.0-1
+Provides:  ros-noetic-forward_command_controller = 0.18.1-1
+Obsoletes: ros-noetic-forward_command_controller < 0.18.1-1
+Obsoletes: ros-kinetic-forward_command_controller < 0.18.1-1
 
 
 
@@ -45,9 +45,9 @@ Requires:       ros-noetic-realtime_tools-devel
 Requires:       ros-noetic-roscpp-devel
 Requires:       ros-noetic-std_msgs-devel
 
-Provides: ros-noetic-forward_command_controller-devel = 0.18.0-1
-Obsoletes: ros-noetic-forward_command_controller-devel < 0.18.0-1
-Obsoletes: ros-kinetic-forward_command_controller-devel < 0.18.0-1
+Provides: ros-noetic-forward_command_controller-devel = 0.18.1-1
+Obsoletes: ros-noetic-forward_command_controller-devel < 0.18.1-1
+Obsoletes: ros-kinetic-forward_command_controller-devel < 0.18.1-1
 
 
 %description devel
@@ -155,6 +155,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Feb 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.18.1-1
+- Update to latest release
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.18.0-1
 - Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.17.0-1

@@ -1,12 +1,12 @@
 Name:           ros-mbf_abstract_core
-Version:        noetic.0.3.2
+Version:        noetic.0.3.4
 Release:        1%{?dist}
 Summary:        ROS package mbf_abstract_core
 
 License:        BSD-3
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/uos-gbp/move_base_flex-release/archive/release/noetic/mbf_abstract_core/0.3.2-1.tar.gz#/ros-noetic-mbf_abstract_core-0.3.2-source0.tar.gz
+Source0:        https://github.com/uos-gbp/move_base_flex-release/archive/release/noetic/mbf_abstract_core/0.3.4-1.tar.gz#/ros-noetic-mbf_abstract_core-0.3.4-source0.tar.gz
 
 
 
@@ -24,9 +24,9 @@ BuildRequires:  ros-noetic-std_msgs-devel
 Requires:       ros-noetic-geometry_msgs
 Requires:       ros-noetic-std_msgs
 
-Provides:  ros-noetic-mbf_abstract_core = 0.3.2-1
-Obsoletes: ros-noetic-mbf_abstract_core < 0.3.2-1
-Obsoletes: ros-kinetic-mbf_abstract_core < 0.3.2-1
+Provides:  ros-noetic-mbf_abstract_core = 0.3.4-1
+Obsoletes: ros-noetic-mbf_abstract_core < 0.3.4-1
+Obsoletes: ros-kinetic-mbf_abstract_core < 0.3.4-1
 
 
 
@@ -49,9 +49,9 @@ Requires:       ros-noetic-catkin-devel
 Requires:       ros-noetic-geometry_msgs-devel
 Requires:       ros-noetic-std_msgs-devel
 
-Provides: ros-noetic-mbf_abstract_core-devel = 0.3.2-1
-Obsoletes: ros-noetic-mbf_abstract_core-devel < 0.3.2-1
-Obsoletes: ros-kinetic-mbf_abstract_core-devel < 0.3.2-1
+Provides: ros-noetic-mbf_abstract_core-devel = 0.3.4-1
+Obsoletes: ros-noetic-mbf_abstract_core-devel < 0.3.4-1
+Obsoletes: ros-kinetic-mbf_abstract_core-devel < 0.3.4-1
 
 
 %description devel
@@ -160,6 +160,10 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Feb 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.3.4-1
+- Update to latest release
+* Fri Nov 20 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.3.3-1
+- Update to latest release
 * Thu Jun 11 2020 Nicolas Limpert - noetic.0.3.2-1
 - Update to latest release
 * Fri Mar 13 2020 Nicolas Limpert - melodic.0.2.5-1

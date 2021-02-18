@@ -1,12 +1,12 @@
 Name:           ros-move_base_msgs
-Version:        noetic.1.14.0
+Version:        noetic.1.14.1
 Release:        1%{?dist}
 Summary:        ROS package move_base_msgs
 
 License:        BSD
 URL:            http://wiki.ros.org/move_base_msgs
 
-Source0:        https://github.com/ros-gbp/navigation_msgs-release/archive/release/noetic/move_base_msgs/1.14.0-1.tar.gz#/ros-noetic-move_base_msgs-1.14.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/navigation_msgs-release/archive/release/noetic/move_base_msgs/1.14.1-1.tar.gz#/ros-noetic-move_base_msgs-1.14.1-source0.tar.gz
 
 
 BuildArch: noarch
@@ -27,9 +27,9 @@ Requires:       ros-noetic-actionlib_msgs
 Requires:       ros-noetic-geometry_msgs
 Requires:       ros-noetic-message_runtime
 
-Provides:  ros-noetic-move_base_msgs = 1.14.0-1
-Obsoletes: ros-noetic-move_base_msgs < 1.14.0-1
-Obsoletes: ros-kinetic-move_base_msgs < 1.14.0-1
+Provides:  ros-noetic-move_base_msgs = 1.14.1-1
+Obsoletes: ros-noetic-move_base_msgs < 1.14.1-1
+Obsoletes: ros-kinetic-move_base_msgs < 1.14.1-1
 
 
 
@@ -46,9 +46,9 @@ Requires:       ros-noetic-geometry_msgs-devel
 Requires:       ros-noetic-message_generation-devel
 Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-noetic-move_base_msgs-devel = 1.14.0-1
-Obsoletes: ros-noetic-move_base_msgs-devel < 1.14.0-1
-Obsoletes: ros-kinetic-move_base_msgs-devel < 1.14.0-1
+Provides: ros-noetic-move_base_msgs-devel = 1.14.1-1
+Obsoletes: ros-noetic-move_base_msgs-devel < 1.14.1-1
+Obsoletes: ros-kinetic-move_base_msgs-devel < 1.14.1-1
 
 
 %description devel
@@ -156,6 +156,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Fri Nov 20 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.1-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.0-1
 - Upgrade to noetic
 * Wed Jul 24 2019 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.13.0-1

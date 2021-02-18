@@ -1,12 +1,12 @@
 Name:           ros-joint_limits_interface
-Version:        noetic.0.19.3
+Version:        noetic.0.19.4
 Release:        1%{?dist}
 Summary:        ROS package joint_limits_interface
 
 License:        BSD
 URL:            https://github.com/ros-controls/ros_control/wiki
 
-Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/noetic/joint_limits_interface/0.19.3-2.tar.gz#/ros-noetic-joint_limits_interface-0.19.3-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/noetic/joint_limits_interface/0.19.4-1.tar.gz#/ros-noetic-joint_limits_interface-0.19.4-source0.tar.gz
 
 
 BuildArch: noarch
@@ -27,9 +27,9 @@ BuildRequires:  ros-noetic-urdf-devel
 Requires:       ros-noetic-roscpp
 Requires:       ros-noetic-urdf
 
-Provides:  ros-noetic-joint_limits_interface = 0.19.3-1
-Obsoletes: ros-noetic-joint_limits_interface < 0.19.3-1
-Obsoletes: ros-kinetic-joint_limits_interface < 0.19.3-1
+Provides:  ros-noetic-joint_limits_interface = 0.19.4-1
+Obsoletes: ros-noetic-joint_limits_interface < 0.19.4-1
+Obsoletes: ros-kinetic-joint_limits_interface < 0.19.4-1
 
 
 
@@ -45,9 +45,9 @@ Requires:       ros-noetic-roscpp-devel
 Requires:       ros-noetic-rostest-devel
 Requires:       ros-noetic-urdf-devel
 
-Provides: ros-noetic-joint_limits_interface-devel = 0.19.3-1
-Obsoletes: ros-noetic-joint_limits_interface-devel < 0.19.3-1
-Obsoletes: ros-kinetic-joint_limits_interface-devel < 0.19.3-1
+Provides: ros-noetic-joint_limits_interface-devel = 0.19.4-1
+Obsoletes: ros-noetic-joint_limits_interface-devel < 0.19.4-1
+Obsoletes: ros-kinetic-joint_limits_interface-devel < 0.19.4-1
 
 
 %description devel
@@ -155,6 +155,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Feb 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.19.4-1
+- Update to latest release
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.19.3-1
 - Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.19.1-1

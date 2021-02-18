@@ -1,12 +1,12 @@
 Name:           ros-controller_manager
-Version:        noetic.0.19.3
+Version:        noetic.0.19.4
 Release:        1%{?dist}
 Summary:        ROS package controller_manager
 
 License:        BSD
 URL:            https://github.com/ros-controls/ros_control/wiki
 
-Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/noetic/controller_manager/0.19.3-2.tar.gz#/ros-noetic-controller_manager-0.19.3-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/noetic/controller_manager/0.19.4-1.tar.gz#/ros-noetic-controller_manager-0.19.4-source0.tar.gz
 
 
 
@@ -34,9 +34,9 @@ Requires:       ros-noetic-rosparam
 Requires:       ros-noetic-rospy
 Requires:       ros-noetic-std_msgs
 
-Provides:  ros-noetic-controller_manager = 0.19.3-1
-Obsoletes: ros-noetic-controller_manager < 0.19.3-1
-Obsoletes: ros-kinetic-controller_manager < 0.19.3-1
+Provides:  ros-noetic-controller_manager = 0.19.4-1
+Obsoletes: ros-noetic-controller_manager < 0.19.4-1
+Obsoletes: ros-kinetic-controller_manager < 0.19.4-1
 
 
 
@@ -61,9 +61,9 @@ Requires:       ros-noetic-rosparam-devel
 Requires:       ros-noetic-rospy-devel
 Requires:       ros-noetic-std_msgs-devel
 
-Provides: ros-noetic-controller_manager-devel = 0.19.3-1
-Obsoletes: ros-noetic-controller_manager-devel < 0.19.3-1
-Obsoletes: ros-kinetic-controller_manager-devel < 0.19.3-1
+Provides: ros-noetic-controller_manager-devel = 0.19.4-1
+Obsoletes: ros-noetic-controller_manager-devel < 0.19.4-1
+Obsoletes: ros-kinetic-controller_manager-devel < 0.19.4-1
 
 
 %description devel
@@ -171,6 +171,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Feb 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.19.4-1
+- Update to latest release
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.19.3-1
 - Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.19.1-1

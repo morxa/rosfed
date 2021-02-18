@@ -1,12 +1,12 @@
 Name:           ros-diagnostic_analysis
-Version:        noetic.1.10.2
+Version:        noetic.1.10.3
 Release:        1%{?dist}
 Summary:        ROS package diagnostic_analysis
 
 License:        BSD
 URL:            http://www.ros.org/wiki/diagnostics_analysis
 
-Source0:        https://github.com/ros-gbp/diagnostics-release/archive/release/noetic/diagnostic_analysis/1.10.2-3.tar.gz#/ros-noetic-diagnostic_analysis-1.10.2-source0.tar.gz
+Source0:        https://github.com/ros-gbp/diagnostics-release/archive/release/noetic/diagnostic_analysis/1.10.3-1.tar.gz#/ros-noetic-diagnostic_analysis-1.10.3-source0.tar.gz
 
 
 BuildArch: noarch
@@ -28,9 +28,9 @@ Requires:       ros-noetic-diagnostic_msgs
 Requires:       ros-noetic-rosbag
 Requires:       ros-noetic-roslib
 
-Provides:  ros-noetic-diagnostic_analysis = 1.10.2-1
-Obsoletes: ros-noetic-diagnostic_analysis < 1.10.2-1
-Obsoletes: ros-kinetic-diagnostic_analysis < 1.10.2-1
+Provides:  ros-noetic-diagnostic_analysis = 1.10.3-1
+Obsoletes: ros-noetic-diagnostic_analysis < 1.10.3-1
+Obsoletes: ros-kinetic-diagnostic_analysis < 1.10.3-1
 
 
 
@@ -48,9 +48,9 @@ Requires:       ros-noetic-rosbag-devel
 Requires:       ros-noetic-roslib-devel
 Requires:       ros-noetic-rostest-devel
 
-Provides: ros-noetic-diagnostic_analysis-devel = 1.10.2-1
-Obsoletes: ros-noetic-diagnostic_analysis-devel < 1.10.2-1
-Obsoletes: ros-kinetic-diagnostic_analysis-devel < 1.10.2-1
+Provides: ros-noetic-diagnostic_analysis-devel = 1.10.3-1
+Obsoletes: ros-noetic-diagnostic_analysis-devel < 1.10.3-1
+Obsoletes: ros-kinetic-diagnostic_analysis-devel < 1.10.3-1
 
 
 %description devel
@@ -158,6 +158,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Feb 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.10.3-1
+- Update to latest release
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.10.2-1
 - Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.9.4-1

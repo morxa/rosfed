@@ -1,5 +1,7 @@
 dependencies:
   build:
+    ros:
+      - dynamic_reconfigure
     system:
       - libuuid-devel
       - tinyxml-devel

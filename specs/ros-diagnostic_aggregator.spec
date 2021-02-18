@@ -1,12 +1,12 @@
 Name:           ros-diagnostic_aggregator
-Version:        noetic.1.10.2
+Version:        noetic.1.10.3
 Release:        1%{?dist}
 Summary:        ROS package diagnostic_aggregator
 
 License:        BSD
 URL:            http://www.ros.org/wiki/diagnostic_aggregator
 
-Source0:        https://github.com/ros-gbp/diagnostics-release/archive/release/noetic/diagnostic_aggregator/1.10.2-3.tar.gz#/ros-noetic-diagnostic_aggregator-1.10.2-source0.tar.gz
+Source0:        https://github.com/ros-gbp/diagnostics-release/archive/release/noetic/diagnostic_aggregator/1.10.3-1.tar.gz#/ros-noetic-diagnostic_aggregator-1.10.3-source0.tar.gz
 
 
 
@@ -39,9 +39,9 @@ Requires:       ros-noetic-roscpp
 Requires:       ros-noetic-rospy
 Requires:       ros-noetic-xmlrpcpp
 
-Provides:  ros-noetic-diagnostic_aggregator = 1.10.2-1
-Obsoletes: ros-noetic-diagnostic_aggregator < 1.10.2-1
-Obsoletes: ros-kinetic-diagnostic_aggregator < 1.10.2-1
+Provides:  ros-noetic-diagnostic_aggregator = 1.10.3-1
+Obsoletes: ros-noetic-diagnostic_aggregator < 1.10.3-1
+Obsoletes: ros-kinetic-diagnostic_aggregator < 1.10.3-1
 
 
 
@@ -65,9 +65,9 @@ Requires:       ros-noetic-rospy-devel
 Requires:       ros-noetic-rostest-devel
 Requires:       ros-noetic-xmlrpcpp-devel
 
-Provides: ros-noetic-diagnostic_aggregator-devel = 1.10.2-1
-Obsoletes: ros-noetic-diagnostic_aggregator-devel < 1.10.2-1
-Obsoletes: ros-kinetic-diagnostic_aggregator-devel < 1.10.2-1
+Provides: ros-noetic-diagnostic_aggregator-devel = 1.10.3-1
+Obsoletes: ros-noetic-diagnostic_aggregator-devel < 1.10.3-1
+Obsoletes: ros-kinetic-diagnostic_aggregator-devel < 1.10.3-1
 
 
 %description devel
@@ -175,6 +175,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Feb 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.10.3-1
+- Update to latest release
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.10.2-1
 - Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.9.4-1

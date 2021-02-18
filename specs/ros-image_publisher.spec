@@ -1,12 +1,12 @@
 Name:           ros-image_publisher
-Version:        noetic.1.15.2
+Version:        noetic.1.15.3
 Release:        1%{?dist}
 Summary:        ROS package image_publisher
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/image_pipeline-release/archive/release/noetic/image_publisher/1.15.2-1.tar.gz#/ros-noetic-image_publisher-1.15.2-source0.tar.gz
+Source0:        https://github.com/ros-gbp/image_pipeline-release/archive/release/noetic/image_publisher/1.15.3-1.tar.gz#/ros-noetic-image_publisher-1.15.3-source0.tar.gz
 
 
 
@@ -39,9 +39,9 @@ Requires:       ros-noetic-nodelet
 Requires:       ros-noetic-roscpp
 Requires:       ros-noetic-sensor_msgs
 
-Provides:  ros-noetic-image_publisher = 1.15.2-1
-Obsoletes: ros-noetic-image_publisher < 1.15.2-1
-Obsoletes: ros-kinetic-image_publisher < 1.15.2-1
+Provides:  ros-noetic-image_publisher = 1.15.3-1
+Obsoletes: ros-noetic-image_publisher < 1.15.3-1
+Obsoletes: ros-kinetic-image_publisher < 1.15.3-1
 
 
 
@@ -65,9 +65,9 @@ Requires:       ros-noetic-nodelet-devel
 Requires:       ros-noetic-roscpp-devel
 Requires:       ros-noetic-sensor_msgs-devel
 
-Provides: ros-noetic-image_publisher-devel = 1.15.2-1
-Obsoletes: ros-noetic-image_publisher-devel < 1.15.2-1
-Obsoletes: ros-kinetic-image_publisher-devel < 1.15.2-1
+Provides: ros-noetic-image_publisher-devel = 1.15.3-1
+Obsoletes: ros-noetic-image_publisher-devel < 1.15.3-1
+Obsoletes: ros-kinetic-image_publisher-devel < 1.15.3-1
 
 
 %description devel
@@ -175,6 +175,8 @@ echo %{_docdir}/%{name}-devel >> files_devel.list
 
 
 %changelog
+* Wed Feb 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.3-1
+- Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.2-1
 - Upgrade to noetic
 * Tue Feb 04 2020 Till Hofmann <thofmann@fedoraproject.org> - melodic.1.14.0-1
