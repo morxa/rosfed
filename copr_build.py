@@ -32,20 +32,9 @@ class CoprBuildError(Exception):
         return repr(self.error)
 
 
-class CoprBuilder:
-    def __init__(self, copr_owner, copr_project):
-        """ Initialize the CoprBuilder using the given project ID.
-
-        Args:
-            copr_owner: the owner of the COPR project
-            copr_project: the name of the COPR project
-        """
-        self.owner = copr_owner
-        self.project = copr_project
-        self.copr_client = copr.v3.Client.create_from_config_file()
-
-    def build_spec(self, chroot, spec, wait_for_completion=False):
-        """ Build a package in COPR from a SPEC file.
+class SrpmBuilder:
+    def build_spec(self, chroot, spec):
+        """ Build a SPEC file into a SRPM
 
         Args:
             chroot: The chroot to use for the build, e.g., fedora-26-x86_64
@@ -71,7 +60,34 @@ class CoprBuilder:
         assert match, 'Unexpected output from rpmbuild: "%s"'.format(
             res.stdout)
         srpm = match.group(1)
-        return self.build_srpm(chroot, srpm, wait_for_completion)
+        return srpm
+
+
+class CoprBuilder:
+    def __init__(self, copr_owner, copr_project):
+        """ Initialize the CoprBuilder using the given project ID.
+
+        Args:
+            copr_owner: the owner of the COPR project
+            copr_project: the name of the COPR project
+        """
+        self.owner = copr_owner
+        self.project = copr_project
+        self.copr_client = copr.v3.Client.create_from_config_file()
+        self.srpm_builder = SrpmBuilder()
+
+    def build_spec(self, chroot, spec, wait_for_completion=False):
+        """ Build a package in COPR from a SPEC.
+
+        Args:
+            chroot: The chroot to use for the build, e.g., fedora-26-x86_64
+            spec: The path to the SPEC file of the package.
+            wait_for_completion: If set to true, wait for the build to finish
+
+        Returns:
+            The build object created for this build.
+        """
+        self.build_srpm(self.srpm_builder.build_spec(chroot, spec))
 
     def build_srpm(self, chroot, srpm, wait_for_completion):
         """ Build a package in COPR from a SRPM.

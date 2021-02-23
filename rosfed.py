@@ -477,6 +477,10 @@ def main():
                             action='store_true',
                             default=False,
                             help='Build the generated SPEC file')
+    build_args.add_argument('--build-srpm',
+                            action='store_true',
+                            default=False,
+                            help='Generate a SRPM')
     build_args.add_argument(
         '--copr-owner',
         type=str,
@@ -530,6 +534,11 @@ def main():
         order = get_build_order(packages)
         for stage in order:
             args.build_order_file.write(" ".join(stage) + '\n')
+    if args.build_srpm:
+        srpm_builder = copr_build.SrpmBuilder()
+        for chroot in args.chroot:
+            for pkg in list(packages.values()):
+                srpm_builder.build_spec(chroot, pkg.spec)
     if args.build:
         assert args.copr_owner, 'You need to provide a COPR owner'
         assert args.copr_project, 'You need to provide a COPR user'
