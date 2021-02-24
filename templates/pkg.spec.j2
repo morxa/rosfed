@@ -192,7 +192,7 @@ find %{buildroot}/%{_libdir}/ros/lib*/ -mindepth 1 -maxdepth 1 \
 
 {% if has_devel %}
 touch files_devel.list
-find %{buildroot}/%{_libdir}/ros/{include,lib*/pkgconfig} \
+find %{buildroot}/%{_libdir}/ros/{include,lib*/pkgconfig,share/{{ pkg_name }}/cmake} \
   -mindepth 1 -maxdepth 1 | sed "s:%{buildroot}/::" > files_devel.list
 {% endif %}
 
