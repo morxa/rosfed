@@ -1,0 +1,11 @@
+diff --color -ur dynamic_reconfigure-release-release-noetic-dynamic_reconfigure-1.7.1-1/CMakeLists.txt dynamic_reconfigure-release-release-noetic-dynamic_reconfigure-1.7.1-1.fix-permissions/CMakeLists.txt
+--- dynamic_reconfigure-release-release-noetic-dynamic_reconfigure-1.7.1-1/CMakeLists.txt	2020-08-28 18:18:38.000000000 +0200
++++ dynamic_reconfigure-release-release-noetic-dynamic_reconfigure-1.7.1-1.fix-permissions/CMakeLists.txt	2021-02-24 09:36:24.888473258 +0100
+@@ -50,7 +50,6 @@
+ 
+ install(DIRECTORY cmake
+   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+-  USE_SOURCE_PERMISSIONS
+ )
+ install(DIRECTORY msg
+   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
