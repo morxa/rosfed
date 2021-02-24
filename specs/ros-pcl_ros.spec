@@ -1,6 +1,6 @@
 Name:           ros-pcl_ros
 Version:        noetic.1.7.2
-Release:        1%{?dist}
+Release:        4%{?dist}
 Summary:        ROS package pcl_ros
 
 License:        BSD
@@ -8,6 +8,7 @@ URL:            http://ros.org/wiki/perception_pcl
 
 Source0:        https://github.com/ros-gbp/perception_pcl-release/archive/release/noetic/pcl_ros/1.7.2-1.tar.gz#/ros-noetic-pcl_ros-1.7.2-source0.tar.gz
 
+Patch0: ros-pcl_ros.dynamic_reconfigure.patch
 
 
 # common BRs
@@ -16,6 +17,7 @@ BuildRequires:  console-bridge-devel
 BuildRequires:  gtest-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
+BuildRequires:  python-unversioned-command
 
 BuildRequires:  eigen3-devel
 BuildRequires:  libuuid-devel
@@ -64,9 +66,9 @@ Requires:       ros-noetic-tf2
 Requires:       ros-noetic-tf2_eigen
 Requires:       ros-noetic-tf2_ros
 
-Provides:  ros-noetic-pcl_ros = 1.7.2-1
-Obsoletes: ros-noetic-pcl_ros < 1.7.2-1
-Obsoletes: ros-kinetic-pcl_ros < 1.7.2-1
+Provides:  ros-noetic-pcl_ros = 1.7.2-4
+Obsoletes: ros-noetic-pcl_ros < 1.7.2-4
+Obsoletes: ros-kinetic-pcl_ros < 1.7.2-4
 
 
 
@@ -79,6 +81,7 @@ geometry processing in ROS.
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       ros-noetic-catkin-devel
+Requires:       ros-noetic-dynamic_reconfigure-devel
 Requires:       eigen3-devel
 Requires:       libuuid-devel
 Requires:       libXext-devel
@@ -88,7 +91,6 @@ Requires:       poco-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
 Requires:       ros-noetic-cmake_modules-devel
-Requires:       ros-noetic-dynamic_reconfigure-devel
 Requires:       ros-noetic-geometry_msgs-devel
 Requires:       ros-noetic-message_filters-devel
 Requires:       ros-noetic-nodelet-devel
@@ -108,9 +110,9 @@ Requires:       ros-noetic-tf2-devel
 Requires:       ros-noetic-tf2_eigen-devel
 Requires:       ros-noetic-tf2_ros-devel
 
-Provides: ros-noetic-pcl_ros-devel = 1.7.2-1
-Obsoletes: ros-noetic-pcl_ros-devel < 1.7.2-1
-Obsoletes: ros-kinetic-pcl_ros-devel < 1.7.2-1
+Provides: ros-noetic-pcl_ros-devel = 1.7.2-4
+Obsoletes: ros-noetic-pcl_ros-devel < 1.7.2-4
+Obsoletes: ros-kinetic-pcl_ros-devel < 1.7.2-4
 
 
 %description devel
@@ -123,6 +125,7 @@ applications that use %{name}.
 
 %setup -c -T
 tar --strip-components=1 -xf %{SOURCE0}
+%patch0 -p1
 
 %build
 # nothing to do here
@@ -141,11 +144,7 @@ FCFLAGS="${FCFLAGS:-%optflags%{?_fmoddir: -I%_fmoddir}}" ; export FCFLAGS ; \
 source %{_libdir}/ros/setup.bash
 
 # substitute shebang before install block because we run the local catkin script
-for f in $(grep -rl python .) ; do
-  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $f
-  touch -r $f.orig $f
-  rm $f.orig
-done
+%py3_shebang_fix .
 
 DESTDIR=%{buildroot} ; export DESTDIR
 
@@ -173,7 +172,7 @@ find %{buildroot}/%{_libdir}/ros/lib*/ -mindepth 1 -maxdepth 1 \
   | sed "s:%{buildroot}/::" >> files.list
 
 touch files_devel.list
-find %{buildroot}/%{_libdir}/ros/{include,lib*/pkgconfig} \
+find %{buildroot}/%{_libdir}/ros/{include,lib*/pkgconfig,share/pcl_ros/cmake} \
   -mindepth 1 -maxdepth 1 | sed "s:%{buildroot}/::" > files_devel.list
 
 find . -maxdepth 1 -type f -iname "*readme*" | sed "s:^:%%doc :" >> files.list
@@ -182,26 +181,10 @@ find . -maxdepth 1 -type f -iname "*license*" | sed "s:^:%%license :" >> files.l
 
 
 # replace cmake python macro in shebang
-for file in $(grep -rIl '^#!.*@PYTHON_EXECUTABLE@*$' %{buildroot}) ; do
+for file in $(grep -rIl '^#!.*@PYTHON_EXECUTABLE@.*$' %{buildroot}) ; do
   sed -i.orig 's:^#!\s*@PYTHON_EXECUTABLE@\s*:%{__python3}:' $file
   touch -r $file.orig $file
   rm $file.orig
-done
-
-# replace unversioned python shebang
-for file in $(grep -rIl '^#!.*python\s*$' %{buildroot}) ; do
-  sed -i.orig '/^#!.*python\s*$/ { s/python/python3/ }' $file
-  touch -r $file.orig $file
-  rm $file.orig
-done
-
-# replace "/usr/bin/env $interpreter" with "/usr/bin/$interpreter"
-for interpreter in bash sh python2 python3 ; do
-  for file in $(grep -rIl "^#\!.*${interpreter}" %{buildroot}) ; do
-    sed -i.orig "s:^#\!\s*/usr/bin/env\s\+${interpreter}.*:#!/usr/bin/${interpreter}:" $file
-    touch -r $file.orig $file
-    rm $file.orig
-  done
 done
 
 
@@ -212,12 +195,25 @@ echo %{_docdir}/%{name} >> files.list
 install -m 0644 -p -D -t %{buildroot}/%{_docdir}/%{name}-devel README_FEDORA
 echo %{_docdir}/%{name}-devel >> files_devel.list
 
+%py3_shebang_fix %{buildroot}
+
+# Also fix .py.in files
+for pyfile in $(grep -rIl '^#!.*python.*$' %{buildroot}) ; do
+  %py3_shebang_fix $pyfile
+done
+
 
 %files -f files.list
 %files devel -f files_devel.list
 
 
 %changelog
+* Wed Feb 24 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.2-4
+- Patch missing VTK into CMakeLists
+* Wed Feb 24 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.2-3
+- Add patch to fix issues with CMAKE_PREFIX_PATH
+* Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.2-2
+- Modernize python shebang replacement
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.2-1
 - Update to latest release
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.1-1
