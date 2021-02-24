@@ -1,7 +1,8 @@
 dependencies:
-  build:
+  devel:
     ros:
       - dynamic_reconfigure
+  build:
     system:
       - libuuid-devel
       - tinyxml-devel
@@ -9,3 +10,5 @@ dependencies:
       - poco-devel
       - lz4-devel
       - libXext-devel
+patches:
+  - ros-pcl_ros.dynamic_reconfigure.patch
