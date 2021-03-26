@@ -2,6 +2,8 @@
 This repository contains scripts and configurations to generate ROS packages
 for Fedora.
 
+If you just want to install ROS, please go to the [ROS COPR](https://copr.fedorainfracloud.org/coprs/thofmann/ros/).
+
 ## The Generator
 
 The `rosfed.py` script works as follows:
