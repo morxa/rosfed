@@ -87,8 +87,9 @@ class CoprBuilder:
         Returns:
             The build object created for this build.
         """
-        self.build_srpm(chroot, self.srpm_builder.build_spec(chroot, spec),
-                        wait_for_completion)
+        return self.build_srpm(chroot,
+                               self.srpm_builder.build_spec(chroot, spec),
+                               wait_for_completion)
 
     def build_srpm(self, chroot, srpm, wait_for_completion):
         """ Build a package in COPR from a SRPM.
