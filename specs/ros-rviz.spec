@@ -1,12 +1,12 @@
 Name:           ros-rviz
-Version:        noetic.1.14.4
-Release:        2%{?dist}
+Version:        noetic.1.14.7
+Release:        1%{?dist}
 Summary:        ROS package rviz
 
 License:        BSD
 URL:            http://wiki.ros.org/rviz
 
-Source0:        https://github.com/ros-gbp/rviz-release/archive/release/noetic/rviz/1.14.4-1.tar.gz#/ros-noetic-rviz-1.14.4-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rviz-release/archive/release/noetic/rviz/1.14.7-1.tar.gz#/ros-noetic-rviz-1.14.7-source0.tar.gz
 
 Patch0: rviz.ogre-include-path.patch
 
@@ -88,9 +88,9 @@ Requires:       ros-noetic-tf2_ros
 Requires:       ros-noetic-urdf
 Requires:       ros-noetic-visualization_msgs
 
-Provides:  ros-noetic-rviz = 1.14.4-2
-Obsoletes: ros-noetic-rviz < 1.14.4-2
-Obsoletes: ros-kinetic-rviz < 1.14.4-2
+Provides:  ros-noetic-rviz = 1.14.7-1
+Obsoletes: ros-noetic-rviz < 1.14.7-1
+Obsoletes: ros-kinetic-rviz < 1.14.7-1
 
 
 
@@ -144,9 +144,9 @@ Requires:       ros-noetic-visualization_msgs-devel
 Requires:       ros-noetic-media_export-devel
 Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-noetic-rviz-devel = 1.14.4-2
-Obsoletes: ros-noetic-rviz-devel < 1.14.4-2
-Obsoletes: ros-kinetic-rviz-devel < 1.14.4-2
+Provides: ros-noetic-rviz-devel = 1.14.7-1
+Obsoletes: ros-noetic-rviz-devel < 1.14.7-1
+Obsoletes: ros-kinetic-rviz-devel < 1.14.7-1
 
 
 %description devel
@@ -243,6 +243,10 @@ done
 
 
 %changelog
+* Mon May 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.7-1
+- Update to latest release
+* Thu Apr 08 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.6-1
+- Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.4-2
 - Modernize python shebang replacement
 * Fri Nov 20 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.4-1

@@ -1,12 +1,12 @@
 Name:           ros-catkin
-Version:        noetic.0.8.9
-Release:        2%{?dist}
+Version:        noetic.0.8.10
+Release:        1%{?dist}
 Summary:        ROS package catkin
 
 License:        BSD
 URL:            http://wiki.ros.org/catkin
 
-Source0:        https://github.com/ros-gbp/catkin-release/archive/release/noetic/catkin/0.8.9-1.tar.gz#/ros-noetic-catkin-0.8.9-source0.tar.gz
+Source0:        https://github.com/ros-gbp/catkin-release/archive/release/noetic/catkin/0.8.10-1.tar.gz#/ros-noetic-catkin-0.8.10-source0.tar.gz
 
 Patch0: ros-kinetic-catkin.python-path-in-templates.patch
 Patch1: ros-catkin.python3.patch
@@ -38,9 +38,9 @@ Requires:       python3-catkin_pkg
 Requires:       python3-empy
 Requires:       python3-pyparsing
 
-Provides:  ros-noetic-catkin = 0.8.9-2
-Obsoletes: ros-noetic-catkin < 0.8.9-2
-Obsoletes: ros-kinetic-catkin < 0.8.9-2
+Provides:  ros-noetic-catkin = 0.8.10-1
+Obsoletes: ros-noetic-catkin < 0.8.10-1
+Obsoletes: ros-kinetic-catkin < 0.8.10-1
 
 
 Obsoletes: ros-kdl_parser_py < melodic.1.13.1-4
@@ -65,9 +65,9 @@ Requires:       python3-empy
 Requires:       python3-mock
 Requires:       python3-pyparsing
 
-Provides: ros-noetic-catkin-devel = 0.8.9-2
-Obsoletes: ros-noetic-catkin-devel < 0.8.9-2
-Obsoletes: ros-kinetic-catkin-devel < 0.8.9-2
+Provides: ros-noetic-catkin-devel = 0.8.10-1
+Obsoletes: ros-noetic-catkin-devel < 0.8.10-1
+Obsoletes: ros-kinetic-catkin-devel < 0.8.10-1
 
 Obsoletes: ros-kdl_parser_py-devel < melodic.1.13.1-4
 Obsoletes: ros-orocos_kdl-devel < melodic.1.4.0-4
@@ -164,6 +164,8 @@ done
 
 
 %changelog
+* Mon May 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.8.10-1
+- Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.8.9-2
 - Modernize python shebang replacement
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.8.9-1

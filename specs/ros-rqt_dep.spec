@@ -1,12 +1,12 @@
 Name:           ros-rqt_dep
-Version:        noetic.0.4.10
-Release:        2%{?dist}
+Version:        noetic.0.4.12
+Release:        1%{?dist}
 Summary:        ROS package rqt_dep
 
 License:        BSD
 URL:            http://wiki.ros.org/rqt_dep
 
-Source0:        https://github.com/ros-gbp/rqt_dep-release/archive/release/noetic/rqt_dep/0.4.10-1.tar.gz#/ros-noetic-rqt_dep-0.4.10-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt_dep-release/archive/release/noetic/rqt_dep/0.4.12-1.tar.gz#/ros-noetic-rqt_dep-0.4.12-source0.tar.gz
 
 
 BuildArch: noarch
@@ -30,9 +30,9 @@ Requires:       ros-noetic-qt_gui_py_common
 Requires:       ros-noetic-rqt_graph
 Requires:       ros-noetic-rqt_gui_py
 
-Provides:  ros-noetic-rqt_dep = 0.4.10-2
-Obsoletes: ros-noetic-rqt_dep < 0.4.10-2
-Obsoletes: ros-kinetic-rqt_dep < 0.4.10-2
+Provides:  ros-noetic-rqt_dep = 0.4.12-1
+Obsoletes: ros-noetic-rqt_dep < 0.4.12-1
+Obsoletes: ros-kinetic-rqt_dep < 0.4.12-1
 
 
 
@@ -52,9 +52,9 @@ Requires:       ros-noetic-qt_gui_py_common-devel
 Requires:       ros-noetic-rqt_graph-devel
 Requires:       ros-noetic-rqt_gui_py-devel
 
-Provides: ros-noetic-rqt_dep-devel = 0.4.10-2
-Obsoletes: ros-noetic-rqt_dep-devel < 0.4.10-2
-Obsoletes: ros-kinetic-rqt_dep-devel < 0.4.10-2
+Provides: ros-noetic-rqt_dep-devel = 0.4.12-1
+Obsoletes: ros-noetic-rqt_dep-devel < 0.4.12-1
+Obsoletes: ros-kinetic-rqt_dep-devel < 0.4.12-1
 
 
 %description devel
@@ -149,6 +149,8 @@ done
 
 
 %changelog
+* Mon May 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.12-1
+- Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.10-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.10-1

@@ -1,12 +1,12 @@
 Name:           ros-rqt_shell
-Version:        noetic.0.4.10
-Release:        2%{?dist}
+Version:        noetic.0.4.11
+Release:        1%{?dist}
 Summary:        ROS package rqt_shell
 
 License:        BSD
 URL:            http://wiki.ros.org/rqt_shell
 
-Source0:        https://github.com/ros-gbp/rqt_shell-release/archive/release/noetic/rqt_shell/0.4.10-1.tar.gz#/ros-noetic-rqt_shell-0.4.10-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt_shell-release/archive/release/noetic/rqt_shell/0.4.11-1.tar.gz#/ros-noetic-rqt_shell-0.4.11-source0.tar.gz
 
 
 BuildArch: noarch
@@ -28,9 +28,9 @@ Requires:       ros-noetic-qt_gui_py_common
 Requires:       ros-noetic-rqt_gui
 Requires:       ros-noetic-rqt_gui_py
 
-Provides:  ros-noetic-rqt_shell = 0.4.10-2
-Obsoletes: ros-noetic-rqt_shell < 0.4.10-2
-Obsoletes: ros-kinetic-rqt_shell < 0.4.10-2
+Provides:  ros-noetic-rqt_shell = 0.4.11-1
+Obsoletes: ros-noetic-rqt_shell < 0.4.11-1
+Obsoletes: ros-kinetic-rqt_shell < 0.4.11-1
 
 
 
@@ -47,9 +47,9 @@ Requires:       ros-noetic-qt_gui_py_common-devel
 Requires:       ros-noetic-rqt_gui-devel
 Requires:       ros-noetic-rqt_gui_py-devel
 
-Provides: ros-noetic-rqt_shell-devel = 0.4.10-2
-Obsoletes: ros-noetic-rqt_shell-devel < 0.4.10-2
-Obsoletes: ros-kinetic-rqt_shell-devel < 0.4.10-2
+Provides: ros-noetic-rqt_shell-devel = 0.4.11-1
+Obsoletes: ros-noetic-rqt_shell-devel < 0.4.11-1
+Obsoletes: ros-kinetic-rqt_shell-devel < 0.4.11-1
 
 
 %description devel
@@ -144,6 +144,8 @@ done
 
 
 %changelog
+* Mon May 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.11-1
+- Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.10-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.10-1

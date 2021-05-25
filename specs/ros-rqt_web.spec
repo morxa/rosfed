@@ -1,12 +1,12 @@
 Name:           ros-rqt_web
-Version:        noetic.0.4.9
-Release:        2%{?dist}
+Version:        noetic.0.4.10
+Release:        1%{?dist}
 Summary:        ROS package rqt_web
 
 License:        BSD
 URL:            http://wiki.ros.org/rqt_web
 
-Source0:        https://github.com/ros-gbp/rqt_web-release/archive/release/noetic/rqt_web/0.4.9-1.tar.gz#/ros-noetic-rqt_web-0.4.9-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt_web-release/archive/release/noetic/rqt_web/0.4.10-1.tar.gz#/ros-noetic-rqt_web-0.4.10-source0.tar.gz
 
 
 BuildArch: noarch
@@ -29,9 +29,9 @@ Requires:       ros-noetic-rqt_gui
 Requires:       ros-noetic-rqt_gui_py
 Requires:       ros-noetic-webkit_dependency
 
-Provides:  ros-noetic-rqt_web = 0.4.9-2
-Obsoletes: ros-noetic-rqt_web < 0.4.9-2
-Obsoletes: ros-kinetic-rqt_web < 0.4.9-2
+Provides:  ros-noetic-rqt_web = 0.4.10-1
+Obsoletes: ros-noetic-rqt_web < 0.4.10-1
+Obsoletes: ros-kinetic-rqt_web < 0.4.10-1
 
 
 
@@ -50,9 +50,9 @@ Requires:       ros-noetic-rqt_gui-devel
 Requires:       ros-noetic-rqt_gui_py-devel
 Requires:       ros-noetic-webkit_dependency-devel
 
-Provides: ros-noetic-rqt_web-devel = 0.4.9-2
-Obsoletes: ros-noetic-rqt_web-devel < 0.4.9-2
-Obsoletes: ros-kinetic-rqt_web-devel < 0.4.9-2
+Provides: ros-noetic-rqt_web-devel = 0.4.10-1
+Obsoletes: ros-noetic-rqt_web-devel < 0.4.10-1
+Obsoletes: ros-kinetic-rqt_web-devel < 0.4.10-1
 
 
 %description devel
@@ -147,6 +147,8 @@ done
 
 
 %changelog
+* Mon May 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.10-1
+- Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.9-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.9-1

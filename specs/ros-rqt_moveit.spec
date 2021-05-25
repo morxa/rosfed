@@ -1,12 +1,12 @@
 Name:           ros-rqt_moveit
-Version:        noetic.0.5.9
-Release:        2%{?dist}
+Version:        noetic.0.5.10
+Release:        1%{?dist}
 Summary:        ROS package rqt_moveit
 
 License:        BSD
 URL:            http://wiki.ros.org/rqt_moveit
 
-Source0:        https://github.com/ros-gbp/rqt_moveit-release/archive/release/noetic/rqt_moveit/0.5.9-3.tar.gz#/ros-noetic-rqt_moveit-0.5.9-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt_moveit-release/archive/release/noetic/rqt_moveit/0.5.10-1.tar.gz#/ros-noetic-rqt_moveit-0.5.10-source0.tar.gz
 
 
 BuildArch: noarch
@@ -32,9 +32,9 @@ Requires:       ros-noetic-rqt_py_common
 Requires:       ros-noetic-rqt_topic
 Requires:       ros-noetic-sensor_msgs
 
-Provides:  ros-noetic-rqt_moveit = 0.5.9-2
-Obsoletes: ros-noetic-rqt_moveit < 0.5.9-2
-Obsoletes: ros-kinetic-rqt_moveit < 0.5.9-2
+Provides:  ros-noetic-rqt_moveit = 0.5.10-1
+Obsoletes: ros-noetic-rqt_moveit < 0.5.10-1
+Obsoletes: ros-kinetic-rqt_moveit < 0.5.10-1
 
 
 
@@ -56,9 +56,9 @@ Requires:       ros-noetic-rqt_py_common-devel
 Requires:       ros-noetic-rqt_topic-devel
 Requires:       ros-noetic-sensor_msgs-devel
 
-Provides: ros-noetic-rqt_moveit-devel = 0.5.9-2
-Obsoletes: ros-noetic-rqt_moveit-devel < 0.5.9-2
-Obsoletes: ros-kinetic-rqt_moveit-devel < 0.5.9-2
+Provides: ros-noetic-rqt_moveit-devel = 0.5.10-1
+Obsoletes: ros-noetic-rqt_moveit-devel < 0.5.10-1
+Obsoletes: ros-kinetic-rqt_moveit-devel < 0.5.10-1
 
 
 %description devel
@@ -153,6 +153,8 @@ done
 
 
 %changelog
+* Mon May 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.10-1
+- Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.9-2
 - Modernize python shebang replacement
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.9-1

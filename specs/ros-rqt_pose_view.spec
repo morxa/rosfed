@@ -1,12 +1,12 @@
 Name:           ros-rqt_pose_view
-Version:        noetic.0.5.10
-Release:        2%{?dist}
+Version:        noetic.0.5.11
+Release:        1%{?dist}
 Summary:        ROS package rqt_pose_view
 
 License:        BSD
 URL:            http://wiki.ros.org/rqt_pose_view
 
-Source0:        https://github.com/ros-gbp/rqt_pose_view-release/archive/release/noetic/rqt_pose_view/0.5.10-1.tar.gz#/ros-noetic-rqt_pose_view-0.5.10-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt_pose_view-release/archive/release/noetic/rqt_pose_view/0.5.11-1.tar.gz#/ros-noetic-rqt_pose_view-0.5.11-source0.tar.gz
 
 
 BuildArch: noarch
@@ -33,9 +33,9 @@ Requires:       ros-noetic-rqt_gui_py
 Requires:       ros-noetic-rqt_py_common
 Requires:       ros-noetic-tf
 
-Provides:  ros-noetic-rqt_pose_view = 0.5.10-2
-Obsoletes: ros-noetic-rqt_pose_view < 0.5.10-2
-Obsoletes: ros-kinetic-rqt_pose_view < 0.5.10-2
+Provides:  ros-noetic-rqt_pose_view = 0.5.11-1
+Obsoletes: ros-noetic-rqt_pose_view < 0.5.11-1
+Obsoletes: ros-kinetic-rqt_pose_view < 0.5.11-1
 
 
 
@@ -56,9 +56,9 @@ Requires:       ros-noetic-rqt_gui_py-devel
 Requires:       ros-noetic-rqt_py_common-devel
 Requires:       ros-noetic-tf-devel
 
-Provides: ros-noetic-rqt_pose_view-devel = 0.5.10-2
-Obsoletes: ros-noetic-rqt_pose_view-devel < 0.5.10-2
-Obsoletes: ros-kinetic-rqt_pose_view-devel < 0.5.10-2
+Provides: ros-noetic-rqt_pose_view-devel = 0.5.11-1
+Obsoletes: ros-noetic-rqt_pose_view-devel < 0.5.11-1
+Obsoletes: ros-kinetic-rqt_pose_view-devel < 0.5.11-1
 
 
 %description devel
@@ -153,6 +153,8 @@ done
 
 
 %changelog
+* Mon May 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.11-1
+- Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.10-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.10-1

@@ -1,12 +1,12 @@
 Name:           ros-rqt_srv
-Version:        noetic.0.4.8
-Release:        2%{?dist}
+Version:        noetic.0.4.9
+Release:        1%{?dist}
 Summary:        ROS package rqt_srv
 
 License:        BSD
 URL:            http://wiki.ros.org/rqt_srv
 
-Source0:        https://github.com/ros-gbp/rqt_srv-release/archive/release/noetic/rqt_srv/0.4.8-1.tar.gz#/ros-noetic-rqt_srv-0.4.8-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt_srv-release/archive/release/noetic/rqt_srv/0.4.9-1.tar.gz#/ros-noetic-rqt_srv-0.4.9-source0.tar.gz
 
 
 BuildArch: noarch
@@ -27,9 +27,9 @@ Requires:       ros-noetic-rqt_gui
 Requires:       ros-noetic-rqt_gui_py
 Requires:       ros-noetic-rqt_msg
 
-Provides:  ros-noetic-rqt_srv = 0.4.8-2
-Obsoletes: ros-noetic-rqt_srv < 0.4.8-2
-Obsoletes: ros-kinetic-rqt_srv < 0.4.8-2
+Provides:  ros-noetic-rqt_srv = 0.4.9-1
+Obsoletes: ros-noetic-rqt_srv < 0.4.9-1
+Obsoletes: ros-kinetic-rqt_srv < 0.4.9-1
 
 
 
@@ -49,9 +49,9 @@ Requires:       ros-noetic-rqt_gui-devel
 Requires:       ros-noetic-rqt_gui_py-devel
 Requires:       ros-noetic-rqt_msg-devel
 
-Provides: ros-noetic-rqt_srv-devel = 0.4.8-2
-Obsoletes: ros-noetic-rqt_srv-devel < 0.4.8-2
-Obsoletes: ros-kinetic-rqt_srv-devel < 0.4.8-2
+Provides: ros-noetic-rqt_srv-devel = 0.4.9-1
+Obsoletes: ros-noetic-rqt_srv-devel < 0.4.9-1
+Obsoletes: ros-kinetic-rqt_srv-devel < 0.4.9-1
 
 
 %description devel
@@ -146,6 +146,8 @@ done
 
 
 %changelog
+* Mon May 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.9-1
+- Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.8-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.8-1

@@ -1,12 +1,17 @@
-diff --color -ur rviz-release-release-noetic-rviz-1.14.3-1/CMakeLists.txt rviz-release-release-noetic-rviz-1.14.3-1.ogre-include-path/CMakeLists.txt
---- rviz-release-release-noetic-rviz-1.14.3-1/CMakeLists.txt	2020-10-20 11:19:41.000000000 +0200
-+++ rviz-release-release-noetic-rviz-1.14.3-1.ogre-include-path/CMakeLists.txt	2020-11-12 20:35:36.929746149 +0100
-@@ -32,53 +32,17 @@
+diff --color -ur rviz-release-release-noetic-rviz-1.14.7-1/CMakeLists.txt rviz-release-release-noetic-rviz-1.14.7-1.ogre-include-path/CMakeLists.txt
+--- rviz-release-release-noetic-rviz-1.14.7-1/CMakeLists.txt	2021-04-11 15:30:33.000000000 +0200
++++ rviz-release-release-noetic-rviz-1.14.7-1.ogre-include-path/CMakeLists.txt	2021-05-17 11:35:14.561342719 +0200
+@@ -32,58 +32,17 @@
    set(ASSIMP_LIBRARIES assimp::assimp)
  endif()
  
 -find_package(OGRE QUIET COMPONENTS Overlay)
--if(NOT OGRE_FOUND)
+-if(OGRE_FOUND)
+-  if(${OGRE_VERSION} VERSION_LESS 1.11)
+-    set(OGRE_INCLUDE_DIRS ${OGRE_INCLUDE_DIRS} ${OGRE_Overlay_INCLUDE_DIRS})
+-    set(OGRE_LIBRARIES ${OGRE_LIBRARIES} ${OGRE_Overlay_LIBRARIES})
+-  endif()
+-else()
 -  # OGRE doesn't come with correctly installed cmake files on Linux. Use pkg-config instead.
 -  # We need both, OGRE and OGRE-Overlay. Look for both simulatenously and use prefix X_
 -  find_package(PkgConfig REQUIRED)
@@ -66,9 +71,9 @@ diff --color -ur rviz-release-release-noetic-rviz-1.14.3-1/CMakeLists.txt rviz-r
  
  # TODO: adapt version after upgrade to newer OGRE release
  # Disable deprecation warnings for OGRE >= 1.10
-diff --color -ur rviz-release-release-noetic-rviz-1.14.3-1/src/rviz/ogre_helpers/movable_text.cpp rviz-release-release-noetic-rviz-1.14.3-1.ogre-include-path/src/rviz/ogre_helpers/movable_text.cpp
---- rviz-release-release-noetic-rviz-1.14.3-1/src/rviz/ogre_helpers/movable_text.cpp	2020-10-20 11:19:41.000000000 +0200
-+++ rviz-release-release-noetic-rviz-1.14.3-1.ogre-include-path/src/rviz/ogre_helpers/movable_text.cpp	2020-11-02 17:56:33.938300511 +0100
+diff --color -ur rviz-release-release-noetic-rviz-1.14.7-1/src/rviz/ogre_helpers/movable_text.cpp rviz-release-release-noetic-rviz-1.14.7-1.ogre-include-path/src/rviz/ogre_helpers/movable_text.cpp
+--- rviz-release-release-noetic-rviz-1.14.7-1/src/rviz/ogre_helpers/movable_text.cpp	2021-04-11 15:30:33.000000000 +0200
++++ rviz-release-release-noetic-rviz-1.14.7-1.ogre-include-path/src/rviz/ogre_helpers/movable_text.cpp	2021-05-17 11:32:05.624642114 +0200
 @@ -48,8 +48,8 @@
  #include <OgreSceneNode.h>
  #include <OgreMaterialManager.h>
@@ -80,9 +85,9 @@ diff --color -ur rviz-release-release-noetic-rviz-1.14.3-1/src/rviz/ogre_helpers
  #include <OgreUTFString.h>
  
  #include <sstream>
-diff --color -ur rviz-release-release-noetic-rviz-1.14.3-1/src/rviz/ogre_helpers/render_system.cpp rviz-release-release-noetic-rviz-1.14.3-1.ogre-include-path/src/rviz/ogre_helpers/render_system.cpp
---- rviz-release-release-noetic-rviz-1.14.3-1/src/rviz/ogre_helpers/render_system.cpp	2020-10-20 11:19:41.000000000 +0200
-+++ rviz-release-release-noetic-rviz-1.14.3-1.ogre-include-path/src/rviz/ogre_helpers/render_system.cpp	2020-11-02 18:07:33.612950012 +0100
+diff --color -ur rviz-release-release-noetic-rviz-1.14.7-1/src/rviz/ogre_helpers/render_system.cpp rviz-release-release-noetic-rviz-1.14.7-1.ogre-include-path/src/rviz/ogre_helpers/render_system.cpp
+--- rviz-release-release-noetic-rviz-1.14.7-1/src/rviz/ogre_helpers/render_system.cpp	2021-04-11 15:30:33.000000000 +0200
++++ rviz-release-release-noetic-rviz-1.14.7-1.ogre-include-path/src/rviz/ogre_helpers/render_system.cpp	2021-05-17 11:32:05.627642157 +0200
 @@ -53,7 +53,7 @@
  #include <rviz/ogre_helpers/version_check.h>
  #include <OgreRenderWindow.h>

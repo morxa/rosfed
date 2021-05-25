@@ -1,12 +1,12 @@
 Name:           ros-genpy
-Version:        noetic.0.6.14
-Release:        2%{?dist}
+Version:        noetic.0.6.15
+Release:        1%{?dist}
 Summary:        ROS package genpy
 
 License:        BSD
 URL:            http://wiki.ros.org/genpy
 
-Source0:        https://github.com/ros-gbp/genpy-release/archive/release/noetic/genpy/0.6.14-1.tar.gz#/ros-noetic-genpy-0.6.14-source0.tar.gz
+Source0:        https://github.com/ros-gbp/genpy-release/archive/release/noetic/genpy/0.6.15-1.tar.gz#/ros-noetic-genpy-0.6.15-source0.tar.gz
 
 
 BuildArch: noarch
@@ -19,7 +19,9 @@ BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 BuildRequires:  python-unversioned-command
 
+BuildRequires:  python3-numpy
 BuildRequires:  python3-setuptools
+BuildRequires:  python3dist(numpy)
 BuildRequires:  ros-noetic-catkin-devel
 BuildRequires:  ros-noetic-genmsg-devel
 
@@ -27,9 +29,9 @@ Requires:       python3-pyyaml
 Requires:       python3dist(pyyaml)
 Requires:       ros-noetic-genmsg
 
-Provides:  ros-noetic-genpy = 0.6.14-2
-Obsoletes: ros-noetic-genpy < 0.6.14-2
-Obsoletes: ros-kinetic-genpy < 0.6.14-2
+Provides:  ros-noetic-genpy = 0.6.15-1
+Obsoletes: ros-noetic-genpy < 0.6.15-1
+Obsoletes: ros-kinetic-genpy < 0.6.15-1
 
 
 
@@ -41,11 +43,13 @@ Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       python3-setuptools
 Requires:       ros-noetic-catkin-devel
+Requires:       python3-numpy
+Requires:       python3dist(numpy)
 Requires:       ros-noetic-genmsg-devel
 
-Provides: ros-noetic-genpy-devel = 0.6.14-2
-Obsoletes: ros-noetic-genpy-devel < 0.6.14-2
-Obsoletes: ros-kinetic-genpy-devel < 0.6.14-2
+Provides: ros-noetic-genpy-devel = 0.6.15-1
+Obsoletes: ros-noetic-genpy-devel < 0.6.15-1
+Obsoletes: ros-kinetic-genpy-devel < 0.6.15-1
 
 
 %description devel
@@ -140,6 +144,8 @@ done
 
 
 %changelog
+* Mon May 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.6.15-1
+- Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.6.14-2
 - Modernize python shebang replacement
 * Thu Sep 10 2020 Nicolas Limpert <limpert@fh-aachen.de> - noetic.0.6.14-1

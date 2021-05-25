@@ -1,12 +1,12 @@
 Name:           ros-topic_tools
-Version:        noetic.1.15.9
-Release:        2%{?dist}
+Version:        noetic.1.15.11
+Release:        1%{?dist}
 Summary:        ROS package topic_tools
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/topic_tools/1.15.9-1.tar.gz#/ros-noetic-topic_tools-1.15.9-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/topic_tools/1.15.11-1.tar.gz#/ros-noetic-topic_tools-1.15.11-source0.tar.gz
 
 
 
@@ -37,9 +37,9 @@ Requires:       ros-noetic-rostime
 Requires:       ros-noetic-std_msgs
 Requires:       ros-noetic-xmlrpcpp
 
-Provides:  ros-noetic-topic_tools = 1.15.9-2
-Obsoletes: ros-noetic-topic_tools < 1.15.9-2
-Obsoletes: ros-kinetic-topic_tools < 1.15.9-2
+Provides:  ros-noetic-topic_tools = 1.15.11-1
+Obsoletes: ros-noetic-topic_tools < 1.15.11-1
+Obsoletes: ros-kinetic-topic_tools < 1.15.11-1
 
 
 
@@ -66,9 +66,9 @@ Requires:       ros-noetic-std_msgs-devel
 Requires:       ros-noetic-xmlrpcpp-devel
 Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-noetic-topic_tools-devel = 1.15.9-2
-Obsoletes: ros-noetic-topic_tools-devel < 1.15.9-2
-Obsoletes: ros-kinetic-topic_tools-devel < 1.15.9-2
+Provides: ros-noetic-topic_tools-devel = 1.15.11-1
+Obsoletes: ros-noetic-topic_tools-devel < 1.15.11-1
+Obsoletes: ros-kinetic-topic_tools-devel < 1.15.11-1
 
 
 %description devel
@@ -163,6 +163,10 @@ done
 
 
 %changelog
+* Mon May 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.11-1
+- Update to latest release
+* Thu Apr 08 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.10-1
+- Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.9-2
 - Modernize python shebang replacement
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.9-1

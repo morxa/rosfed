@@ -1,12 +1,12 @@
 Name:           ros-gazebo_dev
-Version:        noetic.2.9.1
-Release:        2%{?dist}
+Version:        noetic.2.9.2
+Release:        1%{?dist}
 Summary:        ROS package gazebo_dev
 
 License:        Apache 2.0
 URL:            http://gazebosim.org/tutorials?cat=connect_ros
 
-Source0:        https://github.com/ros-gbp/gazebo_ros_pkgs-release/archive/release/noetic/gazebo_dev/2.9.1-1.tar.gz#/ros-noetic-gazebo_dev-2.9.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/gazebo_ros_pkgs-release/archive/release/noetic/gazebo_dev/2.9.2-1.tar.gz#/ros-noetic-gazebo_dev-2.9.2-source0.tar.gz
 
 
 BuildArch: noarch
@@ -24,9 +24,9 @@ BuildRequires:  ros-noetic-catkin-devel
 
 Requires:       gazebo
 
-Provides:  ros-noetic-gazebo_dev = 2.9.1-2
-Obsoletes: ros-noetic-gazebo_dev < 2.9.1-2
-Obsoletes: ros-kinetic-gazebo_dev < 2.9.1-2
+Provides:  ros-noetic-gazebo_dev = 2.9.2-1
+Obsoletes: ros-noetic-gazebo_dev < 2.9.2-1
+Obsoletes: ros-kinetic-gazebo_dev < 2.9.2-1
 
 
 
@@ -40,9 +40,9 @@ Requires:       %{name} = %{version}-%{release}
 Requires:       gazebo-devel
 Requires:       ros-noetic-catkin-devel
 
-Provides: ros-noetic-gazebo_dev-devel = 2.9.1-2
-Obsoletes: ros-noetic-gazebo_dev-devel < 2.9.1-2
-Obsoletes: ros-kinetic-gazebo_dev-devel < 2.9.1-2
+Provides: ros-noetic-gazebo_dev-devel = 2.9.2-1
+Obsoletes: ros-noetic-gazebo_dev-devel < 2.9.2-1
+Obsoletes: ros-kinetic-gazebo_dev-devel < 2.9.2-1
 
 
 %description devel
@@ -137,6 +137,8 @@ done
 
 
 %changelog
+* Mon May 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.2.9.2-1
+- Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.2.9.1-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.2.9.1-1
