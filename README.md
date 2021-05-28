@@ -60,11 +60,11 @@ You may need to do the following modifications to the config in
 * To build a package with all its missing dependencies (i.e., the package is not
   updated if it already exists), run:
 
-      $ ./rosfed.py -b --copr-owner thofmann --copr-project ros --chroot fedora-27-x86_64 -c Initial package --only-new -r moveit
+      $ ./rosfed.py -b --copr-owner thofmann --copr-project ros --chroot fedora-rawhide-x86_64 -c Initial package --only-new -r moveit
 
 * To build a single package, run:
 
-      $ ./rosfed.py -b --copr-owner thofmann --copr-project ros --chroot fedora-27-x86_64 moveit_ros_manipulation
+      $ ./rosfed.py -b --copr-owner thofmann --copr-project ros --chroot fedora-rawhide-x86_64 moveit_ros_manipulation
 
 Additionally, you may need to modify the template by providing a
 package-specific template in `./templates/$pkgname.spec.j2`. Have a look at the
