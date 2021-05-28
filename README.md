@@ -27,6 +27,12 @@ The `rosfed.py` script works as follows:
 4. Optionally, the package is built in a COPR. The module `copr_build` supports
    building dependency chains.
 
+The `rosfed.py` script uses a default ROS distro, which usually is the latest
+one but it may be falling behind in some cases. To know the default ROS distro
+the `./rosfed.py --help` command can be used.
+
+A `--distro` option allows to choose a different ROS distro than the default.
+
 ### How to add a new package
 
 In the simplest case, run `./rosfed.py $pkgname`, or
@@ -60,11 +66,15 @@ You may need to do the following modifications to the config in
 * To build a package with all its missing dependencies (i.e., the package is not
   updated if it already exists), run:
 
-      $ ./rosfed.py -b --copr-owner thofmann --copr-project ros --chroot fedora-27-x86_64 -c Initial package --only-new -r moveit
+      $ ./rosfed.py -b --copr-owner thofmann --copr-project ros --chroot fedora-rawhide-x86_64 -c Initial package --only-new -r moveit
 
 * To build a single package, run:
 
-      $ ./rosfed.py -b --copr-owner thofmann --copr-project ros --chroot fedora-27-x86_64 moveit_ros_manipulation
+      $ ./rosfed.py -b --copr-owner thofmann --copr-project ros --chroot fedora-rawhide-x86_64 moveit_ros_manipulation
+
+* To build the desktop_full stack, run:
+
+      $ ./rosfed.py -b --copr-owner thofmann --copr-project ros --chroot fedora-rawhide-x86_64 -r desktop_full
 
 Additionally, you may need to modify the template by providing a
 package-specific template in `./templates/$pkgname.spec.j2`. Have a look at the
