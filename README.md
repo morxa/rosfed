@@ -66,6 +66,10 @@ You may need to do the following modifications to the config in
 
       $ ./rosfed.py -b --copr-owner thofmann --copr-project ros --chroot fedora-rawhide-x86_64 moveit_ros_manipulation
 
+* To build the desktop_full stack, run:
+
+      $ ./rosfed.py -b --copr-owner thofmann --copr-project ros --chroot fedora-rawhide-x86_64 -r desktop_full
+
 Additionally, you may need to modify the template by providing a
 package-specific template in `./templates/$pkgname.spec.j2`. Have a look at the
 existing templates for examples.
