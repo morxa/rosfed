@@ -447,7 +447,8 @@ def main():
                         action='store_true',
                         default=False,
                         help='Also generate Spec files for dependencies')
-    parser.add_argument('--distro', default='kinetic', help='The ROS distro')
+    parser.add_argument('--distro', default='noetic',
+                        help='The ROS distro (default: %(default)s)')
     parser.add_argument('-t',
                         '--template',
                         default='templates/pkg.spec.j2',

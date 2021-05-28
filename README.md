@@ -27,6 +27,12 @@ The `rosfed.py` script works as follows:
 4. Optionally, the package is built in a COPR. The module `copr_build` supports
    building dependency chains.
 
+The `rosfed.py` script uses a default ROS distro, which usually is the latest
+one but it may be falling behind in some cases. To know the default ROS distro
+the `./rosfed.py --help` command can be used.
+
+A `--distro` option allows to choose a different ROS distro than the default.
+
 ### How to add a new package
 
 In the simplest case, run `./rosfed.py $pkgname`, or
