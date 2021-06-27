@@ -18,7 +18,7 @@ BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 BuildRequires:  python-unversioned-command
 
-BuildRequires:  boost-devel boost-python3-devel
+BuildRequires:  boost-devel
 BuildRequires:  eigen3-devel
 BuildRequires:  libuuid-devel
 BuildRequires:  ogre-devel
@@ -52,7 +52,7 @@ rqt_rviz provides a GUI plugin embedding
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       ros-noetic-catkin-devel
-Requires:       boost-devel boost-python3-devel
+Requires:       boost-devel
 Requires:       eigen3-devel
 Requires:       libuuid-devel
 Requires:       ogre-devel

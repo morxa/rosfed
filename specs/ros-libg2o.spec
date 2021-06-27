@@ -18,7 +18,7 @@ BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 BuildRequires:  python-unversioned-command
 
-BuildRequires:  boost-devel boost-python3-devel
+BuildRequires:  boost-devel
 BuildRequires:  cmake
 BuildRequires:  eigen3-devel
 BuildRequires:  lapack-devel
@@ -42,7 +42,7 @@ The libg2o library from http://openslam.org/g2o.html
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       cmake
-Requires:       boost-devel boost-python3-devel
+Requires:       boost-devel
 Requires:       eigen3-devel
 Requires:       lapack-devel
 Requires:       mesa-libGL-devel mesa-libGLU-devel

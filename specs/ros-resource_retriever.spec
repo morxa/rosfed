@@ -19,7 +19,6 @@ BuildRequires:  python3-devel
 BuildRequires:  python-unversioned-command
 
 BuildRequires:  boost-devel
-BuildRequires:  boost-devel boost-python3-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  gtest-devel
 BuildRequires:  libcurl-devel curl
@@ -52,7 +51,6 @@ Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       ros-noetic-catkin-devel
 Requires:       boost-devel
-Requires:       boost-devel boost-python3-devel
 Requires:       console-bridge-devel
 Requires:       gtest-devel
 Requires:       libcurl-devel curl

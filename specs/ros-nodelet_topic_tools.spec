@@ -19,7 +19,7 @@ BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 BuildRequires:  python-unversioned-command
 
-BuildRequires:  boost-devel boost-python3-devel
+BuildRequires:  boost-devel
 BuildRequires:  ros-noetic-catkin-devel
 BuildRequires:  ros-noetic-dynamic_reconfigure-devel
 BuildRequires:  ros-noetic-message_filters-devel
@@ -47,7 +47,7 @@ Requires:       ros-noetic-message_filters-devel
 Requires:       ros-noetic-nodelet-devel
 Requires:       ros-noetic-pluginlib-devel
 Requires:       ros-noetic-roscpp-devel
-Requires:       boost-devel boost-python3-devel
+Requires:       boost-devel
 Requires:       ros-noetic-dynamic_reconfigure-devel
 
 Provides: ros-noetic-nodelet_topic_tools-devel = 1.10.1-2

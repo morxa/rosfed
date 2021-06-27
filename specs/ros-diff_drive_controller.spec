@@ -18,7 +18,7 @@ BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 BuildRequires:  python-unversioned-command
 
-BuildRequires:  boost-devel boost-python3-devel
+BuildRequires:  boost-devel
 BuildRequires:  ros-noetic-catkin-devel
 BuildRequires:  ros-noetic-control_msgs-devel
 BuildRequires:  ros-noetic-controller_interface-devel
@@ -60,7 +60,7 @@ Controller for a differential drive mobile base.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       boost-devel boost-python3-devel
+Requires:       boost-devel
 Requires:       ros-noetic-catkin-devel
 Requires:       ros-noetic-control_msgs-devel
 Requires:       ros-noetic-controller_interface-devel

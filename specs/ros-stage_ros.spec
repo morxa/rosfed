@@ -18,7 +18,7 @@ BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 BuildRequires:  python-unversioned-command
 
-BuildRequires:  boost-devel boost-python3-devel
+BuildRequires:  boost-devel
 BuildRequires:  fltk-devel
 BuildRequires:  ros-noetic-catkin-devel
 BuildRequires:  ros-noetic-geometry_msgs-devel
@@ -53,7 +53,7 @@ This package provides ROS specific hooks for stage
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       ros-noetic-catkin-devel
-Requires:       boost-devel boost-python3-devel
+Requires:       boost-devel
 Requires:       fltk-devel
 Requires:       ros-noetic-geometry_msgs-devel
 Requires:       ros-noetic-nav_msgs-devel

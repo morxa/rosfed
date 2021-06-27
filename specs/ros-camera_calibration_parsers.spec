@@ -19,7 +19,7 @@ BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 BuildRequires:  python-unversioned-command
 
-BuildRequires:  boost-devel boost-python3-devel
+BuildRequires:  boost-devel
 BuildRequires:  boost-python3-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  log4cxx-devel
@@ -52,7 +52,7 @@ camera calibration parameters.
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       ros-noetic-catkin-devel
-Requires:       boost-devel boost-python3-devel
+Requires:       boost-devel
 Requires:       boost-python3-devel
 Requires:       console-bridge-devel
 Requires:       log4cxx-devel

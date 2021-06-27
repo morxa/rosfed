@@ -18,7 +18,7 @@ BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 BuildRequires:  python-unversioned-command
 
-BuildRequires:  boost-devel boost-python3-devel
+BuildRequires:  boost-devel
 BuildRequires:  gtest-devel
 BuildRequires:  poco-devel
 BuildRequires:  tinyxml-devel
@@ -52,7 +52,7 @@ requests, saving and restoring the camera calibration data.
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       ros-noetic-catkin-devel
-Requires:       boost-devel boost-python3-devel
+Requires:       boost-devel
 Requires:       gtest-devel
 Requires:       poco-devel
 Requires:       tinyxml-devel

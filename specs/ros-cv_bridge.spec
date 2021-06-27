@@ -19,7 +19,7 @@ BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 BuildRequires:  python-unversioned-command
 
-BuildRequires:  boost-devel boost-python3-devel
+BuildRequires:  boost-devel
 BuildRequires:  boost-python3-devel
 BuildRequires:  opencv-devel
 BuildRequires:  python3-devel
@@ -50,7 +50,7 @@ Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       opencv-devel
 Requires:       ros-noetic-catkin-devel
 Requires:       ros-noetic-sensor_msgs-devel
-Requires:       boost-devel boost-python3-devel
+Requires:       boost-devel
 Requires:       boost-python3-devel
 Requires:       python3-devel
 Requires:       python3-numpy
