@@ -1,12 +1,12 @@
 Name:           ros-rqt_rviz
-Version:        noetic.0.6.1
-Release:        2%{?dist}
+Version:        noetic.0.7.0
+Release:        1%{?dist}
 Summary:        ROS package rqt_rviz
 
 License:        BSD
 URL:            http://wiki.ros.org/rqt_rviz
 
-Source0:        https://github.com/ros-gbp/rqt_rviz-release/archive/release/noetic/rqt_rviz/0.6.1-1.tar.gz#/ros-noetic-rqt_rviz-0.6.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt_rviz-release/archive/release/noetic/rqt_rviz/0.7.0-1.tar.gz#/ros-noetic-rqt_rviz-0.7.0-source0.tar.gz
 
 
 
@@ -29,7 +29,7 @@ BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
 BuildRequires:  urdfdom-devel
 BuildRequires:  ros-noetic-catkin-devel
-BuildRequires:  ros-noetic-pluginlib-devel
+BuildRequires:  ros-noetic-class_loader-devel
 BuildRequires:  ros-noetic-rqt_gui-devel
 BuildRequires:  ros-noetic-rqt_gui_cpp-devel
 BuildRequires:  ros-noetic-rviz-devel
@@ -39,9 +39,9 @@ Requires:       ros-noetic-rqt_gui
 Requires:       ros-noetic-rqt_gui_cpp
 Requires:       ros-noetic-rviz
 
-Provides:  ros-noetic-rqt_rviz = 0.6.1-2
-Obsoletes: ros-noetic-rqt_rviz < 0.6.1-2
-Obsoletes: ros-kinetic-rqt_rviz < 0.6.1-2
+Provides:  ros-noetic-rqt_rviz = 0.7.0-1
+Obsoletes: ros-noetic-rqt_rviz < 0.7.0-1
+Obsoletes: ros-kinetic-rqt_rviz < 0.7.0-1
 
 
 
@@ -62,14 +62,15 @@ Requires:       qtermwidget-qt5-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
 Requires:       urdfdom-devel
-Requires:       ros-noetic-pluginlib-devel
+Requires:       ros-noetic-class_loader-devel
 Requires:       ros-noetic-rqt_gui-devel
 Requires:       ros-noetic-rqt_gui_cpp-devel
 Requires:       ros-noetic-rviz-devel
+Requires:       ros-noetic-pluginlib-devel
 
-Provides: ros-noetic-rqt_rviz-devel = 0.6.1-2
-Obsoletes: ros-noetic-rqt_rviz-devel < 0.6.1-2
-Obsoletes: ros-kinetic-rqt_rviz-devel < 0.6.1-2
+Provides: ros-noetic-rqt_rviz-devel = 0.7.0-1
+Obsoletes: ros-noetic-rqt_rviz-devel < 0.7.0-1
+Obsoletes: ros-kinetic-rqt_rviz-devel < 0.7.0-1
 
 
 %description devel
@@ -164,6 +165,8 @@ done
 
 
 %changelog
+* Sun Jun 27 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.7.0-1
+- Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.6.1-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.6.1-1

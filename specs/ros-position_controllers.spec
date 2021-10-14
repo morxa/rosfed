@@ -1,12 +1,12 @@
 Name:           ros-position_controllers
-Version:        noetic.0.18.1
-Release:        2%{?dist}
+Version:        noetic.0.19.0
+Release:        1%{?dist}
 Summary:        ROS package position_controllers
 
 License:        BSD
 URL:            https://github.com/ros-controls/ros_controllers/wiki
 
-Source0:        https://github.com/ros-gbp/ros_controllers-release/archive/release/noetic/position_controllers/0.18.1-1.tar.gz#/ros-noetic-position_controllers-0.18.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_controllers-release/archive/release/noetic/position_controllers/0.19.0-1.tar.gz#/ros-noetic-position_controllers-0.19.0-source0.tar.gz
 
 
 
@@ -27,9 +27,9 @@ BuildRequires:  ros-noetic-roscpp-devel
 Requires:       ros-noetic-controller_interface
 Requires:       ros-noetic-roscpp
 
-Provides:  ros-noetic-position_controllers = 0.18.1-2
-Obsoletes: ros-noetic-position_controllers < 0.18.1-2
-Obsoletes: ros-kinetic-position_controllers < 0.18.1-2
+Provides:  ros-noetic-position_controllers = 0.19.0-1
+Obsoletes: ros-noetic-position_controllers < 0.19.0-1
+Obsoletes: ros-kinetic-position_controllers < 0.19.0-1
 
 
 
@@ -46,9 +46,9 @@ Requires:       ros-noetic-pluginlib-devel
 Requires:       ros-noetic-roscpp-devel
 Requires:       ros-noetic-controller_interface-devel
 
-Provides: ros-noetic-position_controllers-devel = 0.18.1-2
-Obsoletes: ros-noetic-position_controllers-devel < 0.18.1-2
-Obsoletes: ros-kinetic-position_controllers-devel < 0.18.1-2
+Provides: ros-noetic-position_controllers-devel = 0.19.0-1
+Obsoletes: ros-noetic-position_controllers-devel < 0.19.0-1
+Obsoletes: ros-kinetic-position_controllers-devel < 0.19.0-1
 
 
 %description devel
@@ -143,6 +143,8 @@ done
 
 
 %changelog
+* Sun Jun 27 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.19.0-1
+- Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.18.1-2
 - Modernize python shebang replacement
 * Wed Feb 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.18.1-1

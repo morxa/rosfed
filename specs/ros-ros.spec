@@ -1,12 +1,12 @@
 Name:           ros-ros
-Version:        noetic.1.15.7
-Release:        2%{?dist}
+Version:        noetic.1.15.8
+Release:        1%{?dist}
 Summary:        ROS package ros
 
 License:        BSD
 URL:            http://www.ros.org/wiki/ROS
 
-Source0:        https://github.com/ros-gbp/ros-release/archive/release/noetic/ros/1.15.7-1.tar.gz#/ros-noetic-ros-1.15.7-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros-release/archive/release/noetic/ros/1.15.8-1.tar.gz#/ros-noetic-ros-1.15.8-source0.tar.gz
 
 
 BuildArch: noarch
@@ -33,9 +33,9 @@ Requires:       ros-noetic-roslib
 Requires:       ros-noetic-rosmake
 Requires:       ros-noetic-rosunit
 
-Provides:  ros-noetic-ros = 1.15.7-2
-Obsoletes: ros-noetic-ros < 1.15.7-2
-Obsoletes: ros-kinetic-ros < 1.15.7-2
+Provides:  ros-noetic-ros = 1.15.8-1
+Obsoletes: ros-noetic-ros < 1.15.8-1
+Obsoletes: ros-kinetic-ros < 1.15.8-1
 
 
 
@@ -57,9 +57,9 @@ Requires:       ros-noetic-roslib-devel
 Requires:       ros-noetic-rosmake-devel
 Requires:       ros-noetic-rosunit-devel
 
-Provides: ros-noetic-ros-devel = 1.15.7-2
-Obsoletes: ros-noetic-ros-devel < 1.15.7-2
-Obsoletes: ros-kinetic-ros-devel < 1.15.7-2
+Provides: ros-noetic-ros-devel = 1.15.8-1
+Obsoletes: ros-noetic-ros-devel < 1.15.8-1
+Obsoletes: ros-kinetic-ros-devel < 1.15.8-1
 
 
 %description devel
@@ -154,6 +154,8 @@ done
 
 
 %changelog
+* Thu Sep 16 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.8-1
+- Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.7-2
 - Modernize python shebang replacement
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.7-1
