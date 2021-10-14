@@ -1,12 +1,12 @@
 Name:           ros-urdfdom_py
-Version:        noetic.0.4.5
-Release:        2%{?dist}
+Version:        noetic.0.4.6
+Release:        1%{?dist}
 Summary:        ROS package urdfdom_py
 
 License:        BSD
 URL:            http://wiki.ros.org/urdfdom_py
 
-Source0:        https://github.com/ros-gbp/urdfdom_py-release/archive/release/noetic/urdfdom_py/0.4.5-1.tar.gz#/ros-noetic-urdfdom_py-0.4.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/urdfdom_py-release/archive/release/noetic/urdfdom_py/0.4.6-1.tar.gz#/ros-noetic-urdfdom_py-0.4.6-source0.tar.gz
 
 
 BuildArch: noarch
@@ -27,9 +27,9 @@ Requires:       python3-pyyaml
 Requires:       python3dist(pyyaml)
 Requires:       ros-noetic-rospy
 
-Provides:  ros-noetic-urdfdom_py = 0.4.5-2
-Obsoletes: ros-noetic-urdfdom_py < 0.4.5-2
-Obsoletes: ros-kinetic-urdfdom_py < 0.4.5-2
+Provides:  ros-noetic-urdfdom_py = 0.4.6-1
+Obsoletes: ros-noetic-urdfdom_py < 0.4.6-1
+Obsoletes: ros-kinetic-urdfdom_py < 0.4.6-1
 
 
 
@@ -44,9 +44,9 @@ Requires:       ros-noetic-catkin-devel
 Requires:       python3-mock
 Requires:       ros-noetic-rospy-devel
 
-Provides: ros-noetic-urdfdom_py-devel = 0.4.5-2
-Obsoletes: ros-noetic-urdfdom_py-devel < 0.4.5-2
-Obsoletes: ros-kinetic-urdfdom_py-devel < 0.4.5-2
+Provides: ros-noetic-urdfdom_py-devel = 0.4.6-1
+Obsoletes: ros-noetic-urdfdom_py-devel < 0.4.6-1
+Obsoletes: ros-kinetic-urdfdom_py-devel < 0.4.6-1
 
 
 %description devel
@@ -141,6 +141,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.6-1
+- Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.5-2
 - Modernize python shebang replacement
 * Wed Feb 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.5-1

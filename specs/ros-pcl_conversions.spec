@@ -1,12 +1,12 @@
 Name:           ros-pcl_conversions
-Version:        noetic.1.7.2
-Release:        2%{?dist}
+Version:        noetic.1.7.3
+Release:        1%{?dist}
 Summary:        ROS package pcl_conversions
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/perception_pcl-release/archive/release/noetic/pcl_conversions/1.7.2-1.tar.gz#/ros-noetic-pcl_conversions-1.7.2-source0.tar.gz
+Source0:        https://github.com/ros-gbp/perception_pcl-release/archive/release/noetic/pcl_conversions/1.7.3-1.tar.gz#/ros-noetic-pcl_conversions-1.7.3-source0.tar.gz
 
 
 BuildArch: noarch
@@ -28,9 +28,9 @@ BuildRequires:  ros-noetic-sensor_msgs-devel
 BuildRequires:  ros-noetic-std_msgs-devel
 
 
-Provides:  ros-noetic-pcl_conversions = 1.7.2-2
-Obsoletes: ros-noetic-pcl_conversions < 1.7.2-2
-Obsoletes: ros-kinetic-pcl_conversions < 1.7.2-2
+Provides:  ros-noetic-pcl_conversions = 1.7.3-1
+Obsoletes: ros-noetic-pcl_conversions < 1.7.3-1
+Obsoletes: ros-kinetic-pcl_conversions < 1.7.3-1
 
 
 
@@ -48,9 +48,9 @@ Requires:       ros-noetic-roscpp-devel
 Requires:       ros-noetic-sensor_msgs-devel
 Requires:       ros-noetic-std_msgs-devel
 
-Provides: ros-noetic-pcl_conversions-devel = 1.7.2-2
-Obsoletes: ros-noetic-pcl_conversions-devel < 1.7.2-2
-Obsoletes: ros-kinetic-pcl_conversions-devel < 1.7.2-2
+Provides: ros-noetic-pcl_conversions-devel = 1.7.3-1
+Obsoletes: ros-noetic-pcl_conversions-devel < 1.7.3-1
+Obsoletes: ros-kinetic-pcl_conversions-devel < 1.7.3-1
 
 
 %description devel
@@ -145,6 +145,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.3-1
+- Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.2-2
 - Modernize python shebang replacement
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.2-1

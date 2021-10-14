@@ -1,12 +1,12 @@
 Name:           ros-ros_comm
-Version:        noetic.1.15.11
+Version:        noetic.1.15.13
 Release:        1%{?dist}
 Summary:        ROS package ros_comm
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/ros_comm/1.15.11-1.tar.gz#/ros-noetic-ros_comm-1.15.11-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/ros_comm/1.15.13-1.tar.gz#/ros-noetic-ros_comm-1.15.13-source0.tar.gz
 
 
 BuildArch: noarch
@@ -44,9 +44,9 @@ Requires:       ros-noetic-std_srvs
 Requires:       ros-noetic-topic_tools
 Requires:       ros-noetic-xmlrpcpp
 
-Provides:  ros-noetic-ros_comm = 1.15.11-1
-Obsoletes: ros-noetic-ros_comm < 1.15.11-1
-Obsoletes: ros-kinetic-ros_comm < 1.15.11-1
+Provides:  ros-noetic-ros_comm = 1.15.13-1
+Obsoletes: ros-noetic-ros_comm < 1.15.13-1
+Obsoletes: ros-kinetic-ros_comm < 1.15.13-1
 
 
 
@@ -82,9 +82,9 @@ Requires:       ros-noetic-std_srvs-devel
 Requires:       ros-noetic-topic_tools-devel
 Requires:       ros-noetic-xmlrpcpp-devel
 
-Provides: ros-noetic-ros_comm-devel = 1.15.11-1
-Obsoletes: ros-noetic-ros_comm-devel < 1.15.11-1
-Obsoletes: ros-kinetic-ros_comm-devel < 1.15.11-1
+Provides: ros-noetic-ros_comm-devel = 1.15.13-1
+Obsoletes: ros-noetic-ros_comm-devel < 1.15.13-1
+Obsoletes: ros-kinetic-ros_comm-devel < 1.15.13-1
 
 
 %description devel
@@ -179,6 +179,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.13-1
+- Update to latest release
 * Mon May 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.11-1
 - Update to latest release
 * Thu Apr 08 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.10-1

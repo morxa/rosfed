@@ -1,12 +1,12 @@
 Name:           ros-rosmaster
-Version:        noetic.1.15.11
+Version:        noetic.1.15.13
 Release:        1%{?dist}
 Summary:        ROS package rosmaster
 
 License:        BSD
 URL:            http://wiki.ros.org/rosmaster
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/rosmaster/1.15.11-1.tar.gz#/ros-noetic-rosmaster-1.15.11-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/rosmaster/1.15.13-1.tar.gz#/ros-noetic-rosmaster-1.15.13-source0.tar.gz
 
 
 BuildArch: noarch
@@ -24,9 +24,9 @@ BuildRequires:  ros-noetic-catkin-devel
 Requires:       python3-defusedxml
 Requires:       ros-noetic-rosgraph
 
-Provides:  ros-noetic-rosmaster = 1.15.11-1
-Obsoletes: ros-noetic-rosmaster < 1.15.11-1
-Obsoletes: ros-kinetic-rosmaster < 1.15.11-1
+Provides:  ros-noetic-rosmaster = 1.15.13-1
+Obsoletes: ros-noetic-rosmaster < 1.15.13-1
+Obsoletes: ros-kinetic-rosmaster < 1.15.13-1
 
 
 
@@ -39,9 +39,9 @@ Requires:       %{name} = %{version}-%{release}
 Requires:       ros-noetic-catkin-devel
 Requires:       ros-noetic-rosgraph-devel
 
-Provides: ros-noetic-rosmaster-devel = 1.15.11-1
-Obsoletes: ros-noetic-rosmaster-devel < 1.15.11-1
-Obsoletes: ros-kinetic-rosmaster-devel < 1.15.11-1
+Provides: ros-noetic-rosmaster-devel = 1.15.13-1
+Obsoletes: ros-noetic-rosmaster-devel < 1.15.13-1
+Obsoletes: ros-kinetic-rosmaster-devel < 1.15.13-1
 
 
 %description devel
@@ -136,6 +136,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.13-1
+- Update to latest release
 * Mon May 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.11-1
 - Update to latest release
 * Thu Apr 08 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.10-1

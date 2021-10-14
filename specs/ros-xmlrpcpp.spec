@@ -1,12 +1,12 @@
 Name:           ros-xmlrpcpp
-Version:        noetic.1.15.11
+Version:        noetic.1.15.13
 Release:        1%{?dist}
 Summary:        ROS package xmlrpcpp
 
 License:        LGPL-2.1
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/xmlrpcpp/1.15.11-1.tar.gz#/ros-noetic-xmlrpcpp-1.15.11-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/xmlrpcpp/1.15.13-1.tar.gz#/ros-noetic-xmlrpcpp-1.15.13-source0.tar.gz
 
 
 
@@ -26,9 +26,9 @@ BuildRequires:  ros-noetic-rostime-devel
 Requires:       ros-noetic-cpp_common
 Requires:       ros-noetic-rostime
 
-Provides:  ros-noetic-xmlrpcpp = 1.15.11-1
-Obsoletes: ros-noetic-xmlrpcpp < 1.15.11-1
-Obsoletes: ros-kinetic-xmlrpcpp < 1.15.11-1
+Provides:  ros-noetic-xmlrpcpp = 1.15.13-1
+Obsoletes: ros-noetic-xmlrpcpp < 1.15.13-1
+Obsoletes: ros-kinetic-xmlrpcpp < 1.15.13-1
 
 
 
@@ -46,9 +46,9 @@ Requires:       boost-devel
 Requires:       ros-noetic-cpp_common-devel
 Requires:       ros-noetic-rostime-devel
 
-Provides: ros-noetic-xmlrpcpp-devel = 1.15.11-1
-Obsoletes: ros-noetic-xmlrpcpp-devel < 1.15.11-1
-Obsoletes: ros-kinetic-xmlrpcpp-devel < 1.15.11-1
+Provides: ros-noetic-xmlrpcpp-devel = 1.15.13-1
+Obsoletes: ros-noetic-xmlrpcpp-devel < 1.15.13-1
+Obsoletes: ros-kinetic-xmlrpcpp-devel < 1.15.13-1
 
 
 %description devel
@@ -143,6 +143,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.13-1
+- Update to latest release
 * Mon May 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.11-1
 - Update to latest release
 * Thu Apr 08 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.10-1

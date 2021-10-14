@@ -1,12 +1,12 @@
 Name:           ros-nodelet_topic_tools
-Version:        noetic.1.10.1
-Release:        2%{?dist}
+Version:        noetic.1.10.2
+Release:        1%{?dist}
 Summary:        ROS package nodelet_topic_tools
 
 License:        BSD
 URL:            http://ros.org/wiki/nodelet_topic_tools
 
-Source0:        https://github.com/ros-gbp/nodelet_core-release/archive/release/noetic/nodelet_topic_tools/1.10.1-1.tar.gz#/ros-noetic-nodelet_topic_tools-1.10.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/nodelet_core-release/archive/release/noetic/nodelet_topic_tools/1.10.2-1.tar.gz#/ros-noetic-nodelet_topic_tools-1.10.2-source0.tar.gz
 
 
 BuildArch: noarch
@@ -29,9 +29,9 @@ BuildRequires:  ros-noetic-roscpp-devel
 
 Requires:       ros-noetic-dynamic_reconfigure
 
-Provides:  ros-noetic-nodelet_topic_tools = 1.10.1-2
-Obsoletes: ros-noetic-nodelet_topic_tools < 1.10.1-2
-Obsoletes: ros-kinetic-nodelet_topic_tools < 1.10.1-2
+Provides:  ros-noetic-nodelet_topic_tools = 1.10.2-1
+Obsoletes: ros-noetic-nodelet_topic_tools < 1.10.2-1
+Obsoletes: ros-kinetic-nodelet_topic_tools < 1.10.2-1
 
 
 
@@ -50,9 +50,9 @@ Requires:       ros-noetic-roscpp-devel
 Requires:       boost-devel
 Requires:       ros-noetic-dynamic_reconfigure-devel
 
-Provides: ros-noetic-nodelet_topic_tools-devel = 1.10.1-2
-Obsoletes: ros-noetic-nodelet_topic_tools-devel < 1.10.1-2
-Obsoletes: ros-kinetic-nodelet_topic_tools-devel < 1.10.1-2
+Provides: ros-noetic-nodelet_topic_tools-devel = 1.10.2-1
+Obsoletes: ros-noetic-nodelet_topic_tools-devel < 1.10.2-1
+Obsoletes: ros-kinetic-nodelet_topic_tools-devel < 1.10.2-1
 
 
 %description devel
@@ -147,6 +147,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.10.2-1
+- Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.10.1-2
 - Modernize python shebang replacement
 * Wed Feb 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.10.1-1

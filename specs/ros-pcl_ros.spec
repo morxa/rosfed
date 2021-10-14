@@ -1,12 +1,12 @@
 Name:           ros-pcl_ros
-Version:        noetic.1.7.2
-Release:        4%{?dist}
+Version:        noetic.1.7.3
+Release:        1%{?dist}
 Summary:        ROS package pcl_ros
 
 License:        BSD
 URL:            http://ros.org/wiki/perception_pcl
 
-Source0:        https://github.com/ros-gbp/perception_pcl-release/archive/release/noetic/pcl_ros/1.7.2-1.tar.gz#/ros-noetic-pcl_ros-1.7.2-source0.tar.gz
+Source0:        https://github.com/ros-gbp/perception_pcl-release/archive/release/noetic/pcl_ros/1.7.3-1.tar.gz#/ros-noetic-pcl_ros-1.7.3-source0.tar.gz
 
 Patch0: ros-pcl_ros.dynamic_reconfigure.patch
 
@@ -66,9 +66,9 @@ Requires:       ros-noetic-tf2
 Requires:       ros-noetic-tf2_eigen
 Requires:       ros-noetic-tf2_ros
 
-Provides:  ros-noetic-pcl_ros = 1.7.2-4
-Obsoletes: ros-noetic-pcl_ros < 1.7.2-4
-Obsoletes: ros-kinetic-pcl_ros < 1.7.2-4
+Provides:  ros-noetic-pcl_ros = 1.7.3-1
+Obsoletes: ros-noetic-pcl_ros < 1.7.3-1
+Obsoletes: ros-kinetic-pcl_ros < 1.7.3-1
 
 
 
@@ -110,9 +110,9 @@ Requires:       ros-noetic-tf2-devel
 Requires:       ros-noetic-tf2_eigen-devel
 Requires:       ros-noetic-tf2_ros-devel
 
-Provides: ros-noetic-pcl_ros-devel = 1.7.2-4
-Obsoletes: ros-noetic-pcl_ros-devel < 1.7.2-4
-Obsoletes: ros-kinetic-pcl_ros-devel < 1.7.2-4
+Provides: ros-noetic-pcl_ros-devel = 1.7.3-1
+Obsoletes: ros-noetic-pcl_ros-devel < 1.7.3-1
+Obsoletes: ros-kinetic-pcl_ros-devel < 1.7.3-1
 
 
 %description devel
@@ -208,6 +208,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.3-1
+- Update to latest release
 * Wed Feb 24 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.2-4
 - Patch missing VTK into CMakeLists
 * Wed Feb 24 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.2-3

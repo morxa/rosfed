@@ -1,12 +1,12 @@
 Name:           ros-rviz
-Version:        noetic.1.14.9
+Version:        noetic.1.14.10
 Release:        1%{?dist}
 Summary:        ROS package rviz
 
 License:        BSD
 URL:            http://wiki.ros.org/rviz
 
-Source0:        https://github.com/ros-gbp/rviz-release/archive/release/noetic/rviz/1.14.9-2.tar.gz#/ros-noetic-rviz-1.14.9-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rviz-release/archive/release/noetic/rviz/1.14.10-1.tar.gz#/ros-noetic-rviz-1.14.10-source0.tar.gz
 
 Patch0: rviz.ogre-include-path.patch
 
@@ -56,7 +56,6 @@ BuildRequires:  ros-noetic-rosunit-devel
 BuildRequires:  ros-noetic-sensor_msgs-devel
 BuildRequires:  ros-noetic-std_msgs-devel
 BuildRequires:  ros-noetic-std_srvs-devel
-BuildRequires:  ros-noetic-tf2_eigen-devel
 BuildRequires:  ros-noetic-tf2_geometry_msgs-devel
 BuildRequires:  ros-noetic-tf2_ros-devel
 BuildRequires:  ros-noetic-urdf-devel
@@ -84,15 +83,14 @@ Requires:       ros-noetic-rospy
 Requires:       ros-noetic-sensor_msgs
 Requires:       ros-noetic-std_msgs
 Requires:       ros-noetic-std_srvs
-Requires:       ros-noetic-tf2_eigen
 Requires:       ros-noetic-tf2_geometry_msgs
 Requires:       ros-noetic-tf2_ros
 Requires:       ros-noetic-urdf
 Requires:       ros-noetic-visualization_msgs
 
-Provides:  ros-noetic-rviz = 1.14.9-1
-Obsoletes: ros-noetic-rviz < 1.14.9-1
-Obsoletes: ros-kinetic-rviz < 1.14.9-1
+Provides:  ros-noetic-rviz = 1.14.10-1
+Obsoletes: ros-noetic-rviz < 1.14.10-1
+Obsoletes: ros-kinetic-rviz < 1.14.10-1
 
 
 
@@ -139,7 +137,6 @@ Requires:       ros-noetic-rosunit-devel
 Requires:       ros-noetic-sensor_msgs-devel
 Requires:       ros-noetic-std_msgs-devel
 Requires:       ros-noetic-std_srvs-devel
-Requires:       ros-noetic-tf2_eigen-devel
 Requires:       ros-noetic-tf2_geometry_msgs-devel
 Requires:       ros-noetic-tf2_ros-devel
 Requires:       ros-noetic-urdf-devel
@@ -147,9 +144,9 @@ Requires:       ros-noetic-visualization_msgs-devel
 Requires:       ros-noetic-media_export-devel
 Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-noetic-rviz-devel = 1.14.9-1
-Obsoletes: ros-noetic-rviz-devel < 1.14.9-1
-Obsoletes: ros-kinetic-rviz-devel < 1.14.9-1
+Provides: ros-noetic-rviz-devel = 1.14.10-1
+Obsoletes: ros-noetic-rviz-devel < 1.14.10-1
+Obsoletes: ros-kinetic-rviz-devel < 1.14.10-1
 
 
 %description devel
@@ -246,6 +243,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.10-1
+- Update to latest release
 * Thu Sep 16 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.9-1
 - Update to latest release
 * Sun Jun 27 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.8-1

@@ -1,12 +1,12 @@
 Name:           ros-rosmsg
-Version:        noetic.1.15.11
+Version:        noetic.1.15.13
 Release:        1%{?dist}
 Summary:        ROS package rosmsg
 
 License:        BSD
 URL:            http://wiki.ros.org/rosmsg
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/rosmsg/1.15.11-1.tar.gz#/ros-noetic-rosmsg-1.15.11-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/rosmsg/1.15.13-1.tar.gz#/ros-noetic-rosmsg-1.15.13-source0.tar.gz
 
 
 BuildArch: noarch
@@ -32,9 +32,9 @@ Requires:       ros-noetic-genpy
 Requires:       ros-noetic-rosbag
 Requires:       ros-noetic-roslib
 
-Provides:  ros-noetic-rosmsg = 1.15.11-1
-Obsoletes: ros-noetic-rosmsg < 1.15.11-1
-Obsoletes: ros-kinetic-rosmsg < 1.15.11-1
+Provides:  ros-noetic-rosmsg = 1.15.13-1
+Obsoletes: ros-noetic-rosmsg < 1.15.13-1
+Obsoletes: ros-kinetic-rosmsg < 1.15.13-1
 
 
 
@@ -54,9 +54,9 @@ Requires:       ros-noetic-genpy-devel
 Requires:       ros-noetic-rosbag-devel
 Requires:       ros-noetic-roslib-devel
 
-Provides: ros-noetic-rosmsg-devel = 1.15.11-1
-Obsoletes: ros-noetic-rosmsg-devel < 1.15.11-1
-Obsoletes: ros-kinetic-rosmsg-devel < 1.15.11-1
+Provides: ros-noetic-rosmsg-devel = 1.15.13-1
+Obsoletes: ros-noetic-rosmsg-devel < 1.15.13-1
+Obsoletes: ros-kinetic-rosmsg-devel < 1.15.13-1
 
 
 %description devel
@@ -151,6 +151,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.13-1
+- Update to latest release
 * Mon May 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.11-1
 - Update to latest release
 * Thu Apr 08 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.10-1

@@ -1,12 +1,12 @@
 Name:           ros-rosservice
-Version:        noetic.1.15.11
+Version:        noetic.1.15.13
 Release:        1%{?dist}
 Summary:        ROS package rosservice
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/rosservice/1.15.11-1.tar.gz#/ros-noetic-rosservice-1.15.11-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/rosservice/1.15.13-1.tar.gz#/ros-noetic-rosservice-1.15.13-source0.tar.gz
 
 
 BuildArch: noarch
@@ -27,9 +27,9 @@ Requires:       ros-noetic-roslib
 Requires:       ros-noetic-rosmsg
 Requires:       ros-noetic-rospy
 
-Provides:  ros-noetic-rosservice = 1.15.11-1
-Obsoletes: ros-noetic-rosservice < 1.15.11-1
-Obsoletes: ros-kinetic-rosservice < 1.15.11-1
+Provides:  ros-noetic-rosservice = 1.15.13-1
+Obsoletes: ros-noetic-rosservice < 1.15.13-1
+Obsoletes: ros-kinetic-rosservice < 1.15.13-1
 
 
 
@@ -47,9 +47,9 @@ Requires:       ros-noetic-roslib-devel
 Requires:       ros-noetic-rosmsg-devel
 Requires:       ros-noetic-rospy-devel
 
-Provides: ros-noetic-rosservice-devel = 1.15.11-1
-Obsoletes: ros-noetic-rosservice-devel < 1.15.11-1
-Obsoletes: ros-kinetic-rosservice-devel < 1.15.11-1
+Provides: ros-noetic-rosservice-devel = 1.15.13-1
+Obsoletes: ros-noetic-rosservice-devel < 1.15.13-1
+Obsoletes: ros-kinetic-rosservice-devel < 1.15.13-1
 
 
 %description devel
@@ -144,6 +144,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.13-1
+- Update to latest release
 * Mon May 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.11-1
 - Update to latest release
 * Thu Apr 08 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.10-1

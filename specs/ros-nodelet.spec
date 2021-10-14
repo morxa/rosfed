@@ -1,12 +1,12 @@
 Name:           ros-nodelet
-Version:        noetic.1.10.1
-Release:        2%{?dist}
+Version:        noetic.1.10.2
+Release:        1%{?dist}
 Summary:        ROS package nodelet
 
 License:        BSD
 URL:            http://ros.org/wiki/nodelet
 
-Source0:        https://github.com/ros-gbp/nodelet_core-release/archive/release/noetic/nodelet/1.10.1-1.tar.gz#/ros-noetic-nodelet-1.10.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/nodelet_core-release/archive/release/noetic/nodelet/1.10.2-1.tar.gz#/ros-noetic-nodelet-1.10.2-source0.tar.gz
 
 
 
@@ -40,9 +40,9 @@ Requires:       ros-noetic-roscpp
 Requires:       ros-noetic-rospy
 Requires:       ros-noetic-std_msgs
 
-Provides:  ros-noetic-nodelet = 1.10.1-2
-Obsoletes: ros-noetic-nodelet < 1.10.1-2
-Obsoletes: ros-kinetic-nodelet < 1.10.1-2
+Provides:  ros-noetic-nodelet = 1.10.2-1
+Obsoletes: ros-noetic-nodelet < 1.10.2-1
+Obsoletes: ros-kinetic-nodelet < 1.10.2-1
 
 
 
@@ -72,9 +72,9 @@ Requires:       ros-noetic-std_msgs-devel
 Requires:       ros-noetic-message_runtime-devel
 Requires:       ros-noetic-rospy-devel
 
-Provides: ros-noetic-nodelet-devel = 1.10.1-2
-Obsoletes: ros-noetic-nodelet-devel < 1.10.1-2
-Obsoletes: ros-kinetic-nodelet-devel < 1.10.1-2
+Provides: ros-noetic-nodelet-devel = 1.10.2-1
+Obsoletes: ros-noetic-nodelet-devel < 1.10.2-1
+Obsoletes: ros-kinetic-nodelet-devel < 1.10.2-1
 
 
 %description devel
@@ -169,6 +169,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.10.2-1
+- Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.10.1-2
 - Modernize python shebang replacement
 * Wed Feb 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.10.1-1
