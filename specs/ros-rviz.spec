@@ -8,7 +8,6 @@ URL:            http://wiki.ros.org/rviz
 
 Source0:        https://github.com/ros-gbp/rviz-release/archive/release/noetic/rviz/1.14.10-1.tar.gz#/ros-noetic-rviz-1.14.10-source0.tar.gz
 
-Patch0: rviz.ogre-include-path.patch
 
 
 # common BRs
@@ -159,7 +158,6 @@ applications that use %{name}.
 
 %setup -c -T
 tar --strip-components=1 -xf %{SOURCE0}
-%patch0 -p1
 
 %build
 # nothing to do here
