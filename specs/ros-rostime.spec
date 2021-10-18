@@ -1,6 +1,6 @@
 Name:           ros-rostime
 Version:        noetic.0.7.2
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package rostime
 
 License:        BSD
@@ -24,9 +24,9 @@ BuildRequires:  ros-noetic-cpp_common-devel
 
 Requires:       ros-noetic-cpp_common
 
-Provides:  ros-noetic-rostime = 0.7.2-2
-Obsoletes: ros-noetic-rostime < 0.7.2-2
-Obsoletes: ros-kinetic-rostime < 0.7.2-2
+Provides:  ros-noetic-rostime = 0.7.2-3
+Obsoletes: ros-noetic-rostime < 0.7.2-3
+Obsoletes: ros-kinetic-rostime < 0.7.2-3
 
 
 
@@ -40,9 +40,9 @@ Requires:       ros-noetic-catkin-devel
 Requires:       ros-noetic-cpp_common-devel
 Requires:       boost-devel
 
-Provides: ros-noetic-rostime-devel = 0.7.2-2
-Obsoletes: ros-noetic-rostime-devel < 0.7.2-2
-Obsoletes: ros-kinetic-rostime-devel < 0.7.2-2
+Provides: ros-noetic-rostime-devel = 0.7.2-3
+Obsoletes: ros-noetic-rostime-devel < 0.7.2-3
+Obsoletes: ros-kinetic-rostime-devel < 0.7.2-3
 
 
 %description devel
@@ -137,6 +137,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.7.2-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.7.2-2
 - Modernize python shebang replacement
 * Thu Jun 11 2020 Nicolas Limpert - noetic.0.7.2-1

@@ -1,6 +1,6 @@
 Name:           ros-camera_calibration
 Version:        noetic.1.15.3
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package camera_calibration
 
 License:        BSD
@@ -29,9 +29,9 @@ Requires:       ros-noetic-rospy
 Requires:       ros-noetic-sensor_msgs
 Requires:       ros-noetic-std_srvs
 
-Provides:  ros-noetic-camera_calibration = 1.15.3-2
-Obsoletes: ros-noetic-camera_calibration < 1.15.3-2
-Obsoletes: ros-kinetic-camera_calibration < 1.15.3-2
+Provides:  ros-noetic-camera_calibration = 1.15.3-3
+Obsoletes: ros-noetic-camera_calibration < 1.15.3-3
+Obsoletes: ros-kinetic-camera_calibration < 1.15.3-3
 
 
 
@@ -51,9 +51,9 @@ Requires:       ros-noetic-rospy-devel
 Requires:       ros-noetic-sensor_msgs-devel
 Requires:       ros-noetic-std_srvs-devel
 
-Provides: ros-noetic-camera_calibration-devel = 1.15.3-2
-Obsoletes: ros-noetic-camera_calibration-devel < 1.15.3-2
-Obsoletes: ros-kinetic-camera_calibration-devel < 1.15.3-2
+Provides: ros-noetic-camera_calibration-devel = 1.15.3-3
+Obsoletes: ros-noetic-camera_calibration-devel < 1.15.3-3
+Obsoletes: ros-kinetic-camera_calibration-devel < 1.15.3-3
 
 
 %description devel
@@ -148,6 +148,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.3-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.3-2
 - Modernize python shebang replacement
 * Wed Feb 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.3-1

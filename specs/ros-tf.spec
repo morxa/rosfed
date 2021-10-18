@@ -1,6 +1,6 @@
 Name:           ros-tf
 Version:        noetic.1.13.2
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package tf
 
 License:        BSD
@@ -43,9 +43,9 @@ Requires:       ros-noetic-sensor_msgs
 Requires:       ros-noetic-std_msgs
 Requires:       ros-noetic-tf2_ros
 
-Provides:  ros-noetic-tf = 1.13.2-2
-Obsoletes: ros-noetic-tf < 1.13.2-2
-Obsoletes: ros-kinetic-tf < 1.13.2-2
+Provides:  ros-noetic-tf = 1.13.2-3
+Obsoletes: ros-noetic-tf < 1.13.2-3
+Obsoletes: ros-kinetic-tf < 1.13.2-3
 
 
 
@@ -75,9 +75,9 @@ Requires:       ros-noetic-tf2_ros-devel
 Requires:       ros-noetic-message_runtime-devel
 Requires:       ros-noetic-roswtf-devel
 
-Provides: ros-noetic-tf-devel = 1.13.2-2
-Obsoletes: ros-noetic-tf-devel < 1.13.2-2
-Obsoletes: ros-kinetic-tf-devel < 1.13.2-2
+Provides: ros-noetic-tf-devel = 1.13.2-3
+Obsoletes: ros-noetic-tf-devel < 1.13.2-3
+Obsoletes: ros-kinetic-tf-devel < 1.13.2-3
 
 
 %description devel
@@ -172,6 +172,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.2-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.2-2
 - Modernize python shebang replacement
 * Sat Aug 08 2020 Nicolas Limpert - noetic.1.13.2-1

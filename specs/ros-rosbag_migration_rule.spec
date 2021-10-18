@@ -1,6 +1,6 @@
 Name:           ros-rosbag_migration_rule
 Version:        noetic.1.0.1
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package rosbag_migration_rule
 
 License:        BSD
@@ -22,9 +22,9 @@ BuildRequires:  python-unversioned-command
 BuildRequires:  ros-noetic-catkin-devel
 
 
-Provides:  ros-noetic-rosbag_migration_rule = 1.0.1-2
-Obsoletes: ros-noetic-rosbag_migration_rule < 1.0.1-2
-Obsoletes: ros-kinetic-rosbag_migration_rule < 1.0.1-2
+Provides:  ros-noetic-rosbag_migration_rule = 1.0.1-3
+Obsoletes: ros-noetic-rosbag_migration_rule < 1.0.1-3
+Obsoletes: ros-kinetic-rosbag_migration_rule < 1.0.1-3
 
 
 
@@ -37,9 +37,9 @@ Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-noetic-catkin-devel
 
-Provides: ros-noetic-rosbag_migration_rule-devel = 1.0.1-2
-Obsoletes: ros-noetic-rosbag_migration_rule-devel < 1.0.1-2
-Obsoletes: ros-kinetic-rosbag_migration_rule-devel < 1.0.1-2
+Provides: ros-noetic-rosbag_migration_rule-devel = 1.0.1-3
+Obsoletes: ros-noetic-rosbag_migration_rule-devel < 1.0.1-3
+Obsoletes: ros-kinetic-rosbag_migration_rule-devel < 1.0.1-3
 
 
 %description devel
@@ -134,6 +134,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.0.1-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.0.1-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.0.1-1

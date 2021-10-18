@@ -1,6 +1,6 @@
 Name:           ros-media_export
 Version:        noetic.0.3.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package media_export
 
 License:        BSD
@@ -22,9 +22,9 @@ BuildRequires:  python-unversioned-command
 BuildRequires:  ros-noetic-catkin-devel
 
 
-Provides:  ros-noetic-media_export = 0.3.0-2
-Obsoletes: ros-noetic-media_export < 0.3.0-2
-Obsoletes: ros-kinetic-media_export < 0.3.0-2
+Provides:  ros-noetic-media_export = 0.3.0-3
+Obsoletes: ros-noetic-media_export < 0.3.0-3
+Obsoletes: ros-kinetic-media_export < 0.3.0-3
 
 
 
@@ -36,9 +36,9 @@ Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-noetic-catkin-devel
 
-Provides: ros-noetic-media_export-devel = 0.3.0-2
-Obsoletes: ros-noetic-media_export-devel < 0.3.0-2
-Obsoletes: ros-kinetic-media_export-devel < 0.3.0-2
+Provides: ros-noetic-media_export-devel = 0.3.0-3
+Obsoletes: ros-noetic-media_export-devel < 0.3.0-3
+Obsoletes: ros-kinetic-media_export-devel < 0.3.0-3
 
 
 %description devel
@@ -133,6 +133,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.3.0-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.3.0-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.3.0-1

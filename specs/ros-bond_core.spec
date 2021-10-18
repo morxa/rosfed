@@ -1,6 +1,6 @@
 Name:           ros-bond_core
 Version:        noetic.1.8.6
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package bond_core
 
 License:        BSD
@@ -26,9 +26,9 @@ Requires:       ros-noetic-bondcpp
 Requires:       ros-noetic-bondpy
 Requires:       ros-noetic-smclib
 
-Provides:  ros-noetic-bond_core = 1.8.6-2
-Obsoletes: ros-noetic-bond_core < 1.8.6-2
-Obsoletes: ros-kinetic-bond_core < 1.8.6-2
+Provides:  ros-noetic-bond_core = 1.8.6-3
+Obsoletes: ros-noetic-bond_core < 1.8.6-3
+Obsoletes: ros-kinetic-bond_core < 1.8.6-3
 
 
 
@@ -46,9 +46,9 @@ Requires:       ros-noetic-bondcpp-devel
 Requires:       ros-noetic-bondpy-devel
 Requires:       ros-noetic-smclib-devel
 
-Provides: ros-noetic-bond_core-devel = 1.8.6-2
-Obsoletes: ros-noetic-bond_core-devel < 1.8.6-2
-Obsoletes: ros-kinetic-bond_core-devel < 1.8.6-2
+Provides: ros-noetic-bond_core-devel = 1.8.6-3
+Obsoletes: ros-noetic-bond_core-devel < 1.8.6-3
+Obsoletes: ros-kinetic-bond_core-devel < 1.8.6-3
 
 
 %description devel
@@ -143,6 +143,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.8.6-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.8.6-2
 - Modernize python shebang replacement
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.8.6-1

@@ -1,6 +1,6 @@
 Name:           ros-camera_calibration_parsers
 Version:        noetic.1.12.0
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        ROS package camera_calibration_parsers
 
 License:        BSD
@@ -38,9 +38,9 @@ Requires:       ros-noetic-roscpp
 Requires:       ros-noetic-roscpp_serialization
 Requires:       ros-noetic-sensor_msgs
 
-Provides:  ros-noetic-camera_calibration_parsers = 1.12.0-4
-Obsoletes: ros-noetic-camera_calibration_parsers < 1.12.0-4
-Obsoletes: ros-kinetic-camera_calibration_parsers < 1.12.0-4
+Provides:  ros-noetic-camera_calibration_parsers = 1.12.0-5
+Obsoletes: ros-noetic-camera_calibration_parsers < 1.12.0-5
+Obsoletes: ros-kinetic-camera_calibration_parsers < 1.12.0-5
 
 
 
@@ -66,9 +66,9 @@ Requires:       ros-noetic-roscpp_serialization-devel
 Requires:       ros-noetic-rosunit-devel
 Requires:       ros-noetic-sensor_msgs-devel
 
-Provides: ros-noetic-camera_calibration_parsers-devel = 1.12.0-4
-Obsoletes: ros-noetic-camera_calibration_parsers-devel < 1.12.0-4
-Obsoletes: ros-kinetic-camera_calibration_parsers-devel < 1.12.0-4
+Provides: ros-noetic-camera_calibration_parsers-devel = 1.12.0-5
+Obsoletes: ros-noetic-camera_calibration_parsers-devel < 1.12.0-5
+Obsoletes: ros-kinetic-camera_calibration_parsers-devel < 1.12.0-5
 
 
 %description devel
@@ -164,6 +164,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.12.0-5
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.12.0-4
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.12.0-3

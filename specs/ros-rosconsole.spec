@@ -1,6 +1,6 @@
 Name:           ros-rosconsole
 Version:        noetic.1.14.3
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package rosconsole
 
 License:        BSD
@@ -31,9 +31,9 @@ Requires:       ros-noetic-cpp_common
 Requires:       ros-noetic-rosbuild
 Requires:       ros-noetic-rostime
 
-Provides:  ros-noetic-rosconsole = 1.14.3-2
-Obsoletes: ros-noetic-rosconsole < 1.14.3-2
-Obsoletes: ros-kinetic-rosconsole < 1.14.3-2
+Provides:  ros-noetic-rosconsole = 1.14.3-3
+Obsoletes: ros-noetic-rosconsole < 1.14.3-3
+Obsoletes: ros-kinetic-rosconsole < 1.14.3-3
 
 
 
@@ -53,9 +53,9 @@ Requires:       ros-noetic-rostime-devel
 Requires:       ros-noetic-rosunit-devel
 Requires:       ros-noetic-rosbuild-devel
 
-Provides: ros-noetic-rosconsole-devel = 1.14.3-2
-Obsoletes: ros-noetic-rosconsole-devel < 1.14.3-2
-Obsoletes: ros-kinetic-rosconsole-devel < 1.14.3-2
+Provides: ros-noetic-rosconsole-devel = 1.14.3-3
+Obsoletes: ros-noetic-rosconsole-devel < 1.14.3-3
+Obsoletes: ros-kinetic-rosconsole-devel < 1.14.3-3
 
 
 %description devel
@@ -150,6 +150,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.3-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.3-2
 - Modernize python shebang replacement
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.3-1

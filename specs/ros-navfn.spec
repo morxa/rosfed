@@ -1,6 +1,6 @@
 Name:           ros-navfn
 Version:        noetic.1.17.1
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package navfn
 
 License:        BSD
@@ -52,9 +52,9 @@ Requires:       ros-noetic-sensor_msgs
 Requires:       ros-noetic-tf2_ros
 Requires:       ros-noetic-visualization_msgs
 
-Provides:  ros-noetic-navfn = 1.17.1-2
-Obsoletes: ros-noetic-navfn < 1.17.1-2
-Obsoletes: ros-kinetic-navfn < 1.17.1-2
+Provides:  ros-noetic-navfn = 1.17.1-3
+Obsoletes: ros-noetic-navfn < 1.17.1-3
+Obsoletes: ros-kinetic-navfn < 1.17.1-3
 
 
 
@@ -94,9 +94,9 @@ Requires:       ros-noetic-tf2_ros-devel
 Requires:       ros-noetic-visualization_msgs-devel
 Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-noetic-navfn-devel = 1.17.1-2
-Obsoletes: ros-noetic-navfn-devel < 1.17.1-2
-Obsoletes: ros-kinetic-navfn-devel < 1.17.1-2
+Provides: ros-noetic-navfn-devel = 1.17.1-3
+Obsoletes: ros-noetic-navfn-devel < 1.17.1-3
+Obsoletes: ros-kinetic-navfn-devel < 1.17.1-3
 
 
 %description devel
@@ -191,6 +191,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.17.1-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.17.1-2
 - Modernize python shebang replacement
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.17.1-1

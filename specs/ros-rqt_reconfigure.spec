@@ -1,6 +1,6 @@
 Name:           ros-rqt_reconfigure
 Version:        noetic.0.5.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package rqt_reconfigure
 
 License:        BSD
@@ -34,9 +34,9 @@ Requires:       ros-noetic-rqt_gui
 Requires:       ros-noetic-rqt_gui_py
 Requires:       ros-noetic-rqt_py_common
 
-Provides:  ros-noetic-rqt_reconfigure = 0.5.4-1
-Obsoletes: ros-noetic-rqt_reconfigure < 0.5.4-1
-Obsoletes: ros-kinetic-rqt_reconfigure < 0.5.4-1
+Provides:  ros-noetic-rqt_reconfigure = 0.5.4-2
+Obsoletes: ros-noetic-rqt_reconfigure < 0.5.4-2
+Obsoletes: ros-kinetic-rqt_reconfigure < 0.5.4-2
 
 
 
@@ -60,9 +60,9 @@ Requires:       ros-noetic-rqt_gui-devel
 Requires:       ros-noetic-rqt_gui_py-devel
 Requires:       ros-noetic-rqt_py_common-devel
 
-Provides: ros-noetic-rqt_reconfigure-devel = 0.5.4-1
-Obsoletes: ros-noetic-rqt_reconfigure-devel < 0.5.4-1
-Obsoletes: ros-kinetic-rqt_reconfigure-devel < 0.5.4-1
+Provides: ros-noetic-rqt_reconfigure-devel = 0.5.4-2
+Obsoletes: ros-noetic-rqt_reconfigure-devel < 0.5.4-2
+Obsoletes: ros-kinetic-rqt_reconfigure-devel < 0.5.4-2
 
 
 %description devel
@@ -157,6 +157,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.4-2
+- Rebuild to pull in updated dependencies
 * Thu Apr 08 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.4-1
 - Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.3-2

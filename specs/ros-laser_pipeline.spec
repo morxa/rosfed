@@ -1,6 +1,6 @@
 Name:           ros-laser_pipeline
 Version:        noetic.1.6.4
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package laser_pipeline
 
 License:        BSD
@@ -25,9 +25,9 @@ Requires:       ros-noetic-laser_assembler
 Requires:       ros-noetic-laser_filters
 Requires:       ros-noetic-laser_geometry
 
-Provides:  ros-noetic-laser_pipeline = 1.6.4-2
-Obsoletes: ros-noetic-laser_pipeline < 1.6.4-2
-Obsoletes: ros-kinetic-laser_pipeline < 1.6.4-2
+Provides:  ros-noetic-laser_pipeline = 1.6.4-3
+Obsoletes: ros-noetic-laser_pipeline < 1.6.4-3
+Obsoletes: ros-kinetic-laser_pipeline < 1.6.4-3
 
 
 
@@ -43,9 +43,9 @@ Requires:       ros-noetic-laser_assembler-devel
 Requires:       ros-noetic-laser_filters-devel
 Requires:       ros-noetic-laser_geometry-devel
 
-Provides: ros-noetic-laser_pipeline-devel = 1.6.4-2
-Obsoletes: ros-noetic-laser_pipeline-devel < 1.6.4-2
-Obsoletes: ros-kinetic-laser_pipeline-devel < 1.6.4-2
+Provides: ros-noetic-laser_pipeline-devel = 1.6.4-3
+Obsoletes: ros-noetic-laser_pipeline-devel < 1.6.4-3
+Obsoletes: ros-kinetic-laser_pipeline-devel < 1.6.4-3
 
 
 %description devel
@@ -140,6 +140,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.6.4-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.6.4-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.6.4-1

@@ -1,6 +1,6 @@
 Name:           ros-gazebo_ros
 Version:        noetic.2.9.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package gazebo_ros
 
 License:        Apache 2.0
@@ -48,9 +48,9 @@ Requires:       ros-noetic-std_msgs
 Requires:       ros-noetic-std_srvs
 Requires:       ros-noetic-tf
 
-Provides:  ros-noetic-gazebo_ros = 2.9.2-1
-Obsoletes: ros-noetic-gazebo_ros < 2.9.2-1
-Obsoletes: ros-kinetic-gazebo_ros < 2.9.2-1
+Provides:  ros-noetic-gazebo_ros = 2.9.2-2
+Obsoletes: ros-noetic-gazebo_ros < 2.9.2-2
+Obsoletes: ros-kinetic-gazebo_ros < 2.9.2-2
 
 
 
@@ -79,9 +79,9 @@ Requires:       ros-noetic-std_srvs-devel
 Requires:       ros-noetic-tf-devel
 Requires:       ros-noetic-trajectory_msgs-devel
 
-Provides: ros-noetic-gazebo_ros-devel = 2.9.2-1
-Obsoletes: ros-noetic-gazebo_ros-devel < 2.9.2-1
-Obsoletes: ros-kinetic-gazebo_ros-devel < 2.9.2-1
+Provides: ros-noetic-gazebo_ros-devel = 2.9.2-2
+Obsoletes: ros-noetic-gazebo_ros-devel < 2.9.2-2
+Obsoletes: ros-kinetic-gazebo_ros-devel < 2.9.2-2
 
 
 %description devel
@@ -176,6 +176,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.2.9.2-2
+- Rebuild to pull in updated dependencies
 * Mon May 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.2.9.2-1
 - Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.2.9.1-2

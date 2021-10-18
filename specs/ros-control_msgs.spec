@@ -1,6 +1,6 @@
 Name:           ros-control_msgs
 Version:        noetic.1.5.2
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package control_msgs
 
 License:        BSD
@@ -32,9 +32,9 @@ Requires:       ros-noetic-message_runtime
 Requires:       ros-noetic-std_msgs
 Requires:       ros-noetic-trajectory_msgs
 
-Provides:  ros-noetic-control_msgs = 1.5.2-2
-Obsoletes: ros-noetic-control_msgs < 1.5.2-2
-Obsoletes: ros-kinetic-control_msgs < 1.5.2-2
+Provides:  ros-noetic-control_msgs = 1.5.2-3
+Obsoletes: ros-noetic-control_msgs < 1.5.2-3
+Obsoletes: ros-kinetic-control_msgs < 1.5.2-3
 
 
 
@@ -54,9 +54,9 @@ Requires:       ros-noetic-std_msgs-devel
 Requires:       ros-noetic-trajectory_msgs-devel
 Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-noetic-control_msgs-devel = 1.5.2-2
-Obsoletes: ros-noetic-control_msgs-devel < 1.5.2-2
-Obsoletes: ros-kinetic-control_msgs-devel < 1.5.2-2
+Provides: ros-noetic-control_msgs-devel = 1.5.2-3
+Obsoletes: ros-noetic-control_msgs-devel < 1.5.2-3
+Obsoletes: ros-kinetic-control_msgs-devel < 1.5.2-3
 
 
 %description devel
@@ -151,6 +151,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.5.2-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.5.2-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.5.2-1

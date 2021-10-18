@@ -1,6 +1,6 @@
 Name:           ros-tf2_bullet
 Version:        noetic.0.7.5
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package tf2_bullet
 
 License:        BSD
@@ -28,9 +28,9 @@ BuildRequires:  ros-noetic-tf2-devel
 Requires:       ros-noetic-geometry_msgs
 Requires:       ros-noetic-tf2
 
-Provides:  ros-noetic-tf2_bullet = 0.7.5-2
-Obsoletes: ros-noetic-tf2_bullet < 0.7.5-2
-Obsoletes: ros-kinetic-tf2_bullet < 0.7.5-2
+Provides:  ros-noetic-tf2_bullet = 0.7.5-3
+Obsoletes: ros-noetic-tf2_bullet < 0.7.5-3
+Obsoletes: ros-kinetic-tf2_bullet < 0.7.5-3
 
 
 
@@ -46,9 +46,9 @@ Requires:       bullet-devel
 Requires:       ros-noetic-geometry_msgs-devel
 Requires:       ros-noetic-tf2-devel
 
-Provides: ros-noetic-tf2_bullet-devel = 0.7.5-2
-Obsoletes: ros-noetic-tf2_bullet-devel < 0.7.5-2
-Obsoletes: ros-kinetic-tf2_bullet-devel < 0.7.5-2
+Provides: ros-noetic-tf2_bullet-devel = 0.7.5-3
+Obsoletes: ros-noetic-tf2_bullet-devel < 0.7.5-3
+Obsoletes: ros-kinetic-tf2_bullet-devel < 0.7.5-3
 
 
 %description devel
@@ -143,6 +143,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.7.5-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.7.5-2
 - Modernize python shebang replacement
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.7.5-1

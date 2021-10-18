@@ -1,6 +1,6 @@
 Name:           ros-rostopic
 Version:        noetic.1.15.13
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package rostopic
 
 License:        BSD
@@ -26,9 +26,9 @@ Requires:       ros-noetic-genpy
 Requires:       ros-noetic-rosbag
 Requires:       ros-noetic-rospy
 
-Provides:  ros-noetic-rostopic = 1.15.13-1
-Obsoletes: ros-noetic-rostopic < 1.15.13-1
-Obsoletes: ros-kinetic-rostopic < 1.15.13-1
+Provides:  ros-noetic-rostopic = 1.15.13-2
+Obsoletes: ros-noetic-rostopic < 1.15.13-2
+Obsoletes: ros-kinetic-rostopic < 1.15.13-2
 
 
 
@@ -45,9 +45,9 @@ Requires:       ros-noetic-genpy-devel
 Requires:       ros-noetic-rosbag-devel
 Requires:       ros-noetic-rospy-devel
 
-Provides: ros-noetic-rostopic-devel = 1.15.13-1
-Obsoletes: ros-noetic-rostopic-devel < 1.15.13-1
-Obsoletes: ros-kinetic-rostopic-devel < 1.15.13-1
+Provides: ros-noetic-rostopic-devel = 1.15.13-2
+Obsoletes: ros-noetic-rostopic-devel < 1.15.13-2
+Obsoletes: ros-kinetic-rostopic-devel < 1.15.13-2
 
 
 %description devel
@@ -142,6 +142,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.13-2
+- Rebuild to pull in updated dependencies
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.13-1
 - Update to latest release
 * Mon May 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.11-1

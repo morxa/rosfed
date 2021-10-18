@@ -1,6 +1,6 @@
 Name:           ros-tf2_sensor_msgs
 Version:        noetic.0.7.5
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package tf2_sensor_msgs
 
 License:        BSD
@@ -34,9 +34,9 @@ Requires:       ros-noetic-sensor_msgs
 Requires:       ros-noetic-tf2
 Requires:       ros-noetic-tf2_ros
 
-Provides:  ros-noetic-tf2_sensor_msgs = 0.7.5-2
-Obsoletes: ros-noetic-tf2_sensor_msgs < 0.7.5-2
-Obsoletes: ros-kinetic-tf2_sensor_msgs < 0.7.5-2
+Provides:  ros-noetic-tf2_sensor_msgs = 0.7.5-3
+Obsoletes: ros-noetic-tf2_sensor_msgs < 0.7.5-3
+Obsoletes: ros-kinetic-tf2_sensor_msgs < 0.7.5-3
 
 
 
@@ -56,9 +56,9 @@ Requires:       ros-noetic-tf2-devel
 Requires:       ros-noetic-tf2_ros-devel
 Requires:       ros-noetic-rospy-devel
 
-Provides: ros-noetic-tf2_sensor_msgs-devel = 0.7.5-2
-Obsoletes: ros-noetic-tf2_sensor_msgs-devel < 0.7.5-2
-Obsoletes: ros-kinetic-tf2_sensor_msgs-devel < 0.7.5-2
+Provides: ros-noetic-tf2_sensor_msgs-devel = 0.7.5-3
+Obsoletes: ros-noetic-tf2_sensor_msgs-devel < 0.7.5-3
+Obsoletes: ros-kinetic-tf2_sensor_msgs-devel < 0.7.5-3
 
 
 %description devel
@@ -153,6 +153,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.7.5-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.7.5-2
 - Modernize python shebang replacement
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.7.5-1

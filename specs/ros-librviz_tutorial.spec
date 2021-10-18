@@ -1,6 +1,6 @@
 Name:           ros-librviz_tutorial
 Version:        noetic.0.11.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package librviz_tutorial
 
 License:        BSD
@@ -34,9 +34,9 @@ Requires:       qt5-qtbase-gui
 Requires:       ros-noetic-roscpp
 Requires:       ros-noetic-rviz
 
-Provides:  ros-noetic-librviz_tutorial = 0.11.0-2
-Obsoletes: ros-noetic-librviz_tutorial < 0.11.0-2
-Obsoletes: ros-kinetic-librviz_tutorial < 0.11.0-2
+Provides:  ros-noetic-librviz_tutorial = 0.11.0-3
+Obsoletes: ros-noetic-librviz_tutorial < 0.11.0-3
+Obsoletes: ros-kinetic-librviz_tutorial < 0.11.0-3
 
 
 
@@ -58,9 +58,9 @@ Requires:       urdfdom-devel
 Requires:       ros-noetic-roscpp-devel
 Requires:       ros-noetic-rviz-devel
 
-Provides: ros-noetic-librviz_tutorial-devel = 0.11.0-2
-Obsoletes: ros-noetic-librviz_tutorial-devel < 0.11.0-2
-Obsoletes: ros-kinetic-librviz_tutorial-devel < 0.11.0-2
+Provides: ros-noetic-librviz_tutorial-devel = 0.11.0-3
+Obsoletes: ros-noetic-librviz_tutorial-devel < 0.11.0-3
+Obsoletes: ros-kinetic-librviz_tutorial-devel < 0.11.0-3
 
 
 %description devel
@@ -155,6 +155,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.11.0-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.11.0-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.11.0-1

@@ -1,6 +1,6 @@
 Name:           ros-common_tutorials
 Version:        noetic.0.2.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package common_tutorials
 
 License:        BSD
@@ -26,9 +26,9 @@ Requires:       ros-noetic-nodelet_tutorial_math
 Requires:       ros-noetic-pluginlib_tutorials
 Requires:       ros-noetic-turtle_actionlib
 
-Provides:  ros-noetic-common_tutorials = 0.2.0-2
-Obsoletes: ros-noetic-common_tutorials < 0.2.0-2
-Obsoletes: ros-kinetic-common_tutorials < 0.2.0-2
+Provides:  ros-noetic-common_tutorials = 0.2.0-3
+Obsoletes: ros-noetic-common_tutorials < 0.2.0-3
+Obsoletes: ros-kinetic-common_tutorials < 0.2.0-3
 
 
 
@@ -44,9 +44,9 @@ Requires:       ros-noetic-nodelet_tutorial_math-devel
 Requires:       ros-noetic-pluginlib_tutorials-devel
 Requires:       ros-noetic-turtle_actionlib-devel
 
-Provides: ros-noetic-common_tutorials-devel = 0.2.0-2
-Obsoletes: ros-noetic-common_tutorials-devel < 0.2.0-2
-Obsoletes: ros-kinetic-common_tutorials-devel < 0.2.0-2
+Provides: ros-noetic-common_tutorials-devel = 0.2.0-3
+Obsoletes: ros-noetic-common_tutorials-devel < 0.2.0-3
+Obsoletes: ros-kinetic-common_tutorials-devel < 0.2.0-3
 
 
 %description devel
@@ -141,6 +141,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.2.0-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.2.0-2
 - Modernize python shebang replacement
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.2.0-1

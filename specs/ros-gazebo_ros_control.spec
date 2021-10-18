@@ -1,6 +1,6 @@
 Name:           ros-gazebo_ros_control
 Version:        noetic.2.9.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package gazebo_ros_control
 
 License:        BSD
@@ -51,9 +51,9 @@ Requires:       ros-noetic-std_msgs
 Requires:       ros-noetic-transmission_interface
 Requires:       ros-noetic-urdf
 
-Provides:  ros-noetic-gazebo_ros_control = 2.9.2-1
-Obsoletes: ros-noetic-gazebo_ros_control < 2.9.2-1
-Obsoletes: ros-kinetic-gazebo_ros_control < 2.9.2-1
+Provides:  ros-noetic-gazebo_ros_control = 2.9.2-2
+Obsoletes: ros-noetic-gazebo_ros_control < 2.9.2-2
+Obsoletes: ros-kinetic-gazebo_ros_control < 2.9.2-2
 
 
 
@@ -85,9 +85,9 @@ Requires:       ros-noetic-transmission_interface-devel
 Requires:       ros-noetic-urdf-devel
 Requires:       ros-noetic-gazebo_ros-devel
 
-Provides: ros-noetic-gazebo_ros_control-devel = 2.9.2-1
-Obsoletes: ros-noetic-gazebo_ros_control-devel < 2.9.2-1
-Obsoletes: ros-kinetic-gazebo_ros_control-devel < 2.9.2-1
+Provides: ros-noetic-gazebo_ros_control-devel = 2.9.2-2
+Obsoletes: ros-noetic-gazebo_ros_control-devel < 2.9.2-2
+Obsoletes: ros-kinetic-gazebo_ros_control-devel < 2.9.2-2
 
 
 %description devel
@@ -182,6 +182,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.2.9.2-2
+- Rebuild to pull in updated dependencies
 * Mon May 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.2.9.2-1
 - Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.2.9.1-2

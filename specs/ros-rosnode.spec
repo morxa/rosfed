@@ -1,6 +1,6 @@
 Name:           ros-rosnode
 Version:        noetic.1.15.13
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package rosnode
 
 License:        BSD
@@ -25,9 +25,9 @@ BuildRequires:  ros-noetic-rostest-devel
 Requires:       ros-noetic-rosgraph
 Requires:       ros-noetic-rostopic
 
-Provides:  ros-noetic-rosnode = 1.15.13-1
-Obsoletes: ros-noetic-rosnode < 1.15.13-1
-Obsoletes: ros-kinetic-rosnode < 1.15.13-1
+Provides:  ros-noetic-rosnode = 1.15.13-2
+Obsoletes: ros-noetic-rosnode < 1.15.13-2
+Obsoletes: ros-kinetic-rosnode < 1.15.13-2
 
 
 
@@ -43,9 +43,9 @@ Requires:       ros-noetic-rostest-devel
 Requires:       ros-noetic-rosgraph-devel
 Requires:       ros-noetic-rostopic-devel
 
-Provides: ros-noetic-rosnode-devel = 1.15.13-1
-Obsoletes: ros-noetic-rosnode-devel < 1.15.13-1
-Obsoletes: ros-kinetic-rosnode-devel < 1.15.13-1
+Provides: ros-noetic-rosnode-devel = 1.15.13-2
+Obsoletes: ros-noetic-rosnode-devel < 1.15.13-2
+Obsoletes: ros-kinetic-rosnode-devel < 1.15.13-2
 
 
 %description devel
@@ -140,6 +140,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.13-2
+- Rebuild to pull in updated dependencies
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.13-1
 - Update to latest release
 * Mon May 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.11-1

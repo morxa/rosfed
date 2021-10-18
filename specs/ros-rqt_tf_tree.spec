@@ -1,6 +1,6 @@
 Name:           ros-rqt_tf_tree
 Version:        noetic.0.6.2
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package rqt_tf_tree
 
 License:        BSD
@@ -32,9 +32,9 @@ Requires:       ros-noetic-rqt_gui_py
 Requires:       ros-noetic-tf2_msgs
 Requires:       ros-noetic-tf2_ros
 
-Provides:  ros-noetic-rqt_tf_tree = 0.6.2-2
-Obsoletes: ros-noetic-rqt_tf_tree < 0.6.2-2
-Obsoletes: ros-kinetic-rqt_tf_tree < 0.6.2-2
+Provides:  ros-noetic-rqt_tf_tree = 0.6.2-3
+Obsoletes: ros-noetic-rqt_tf_tree < 0.6.2-3
+Obsoletes: ros-kinetic-rqt_tf_tree < 0.6.2-3
 
 
 
@@ -56,9 +56,9 @@ Requires:       ros-noetic-rqt_gui_py-devel
 Requires:       ros-noetic-tf2_msgs-devel
 Requires:       ros-noetic-tf2_ros-devel
 
-Provides: ros-noetic-rqt_tf_tree-devel = 0.6.2-2
-Obsoletes: ros-noetic-rqt_tf_tree-devel < 0.6.2-2
-Obsoletes: ros-kinetic-rqt_tf_tree-devel < 0.6.2-2
+Provides: ros-noetic-rqt_tf_tree-devel = 0.6.2-3
+Obsoletes: ros-noetic-rqt_tf_tree-devel < 0.6.2-3
+Obsoletes: ros-kinetic-rqt_tf_tree-devel < 0.6.2-3
 
 
 %description devel
@@ -153,6 +153,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.6.2-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.6.2-2
 - Modernize python shebang replacement
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.6.2-1

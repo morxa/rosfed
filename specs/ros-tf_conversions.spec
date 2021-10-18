@@ -1,6 +1,6 @@
 Name:           ros-tf_conversions
 Version:        noetic.1.13.2
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package tf_conversions
 
 License:        BSD
@@ -31,9 +31,9 @@ Requires:       ros-noetic-geometry_msgs
 Requires:       ros-noetic-kdl_conversions
 Requires:       ros-noetic-tf
 
-Provides:  ros-noetic-tf_conversions = 1.13.2-2
-Obsoletes: ros-noetic-tf_conversions < 1.13.2-2
-Obsoletes: ros-kinetic-tf_conversions < 1.13.2-2
+Provides:  ros-noetic-tf_conversions = 1.13.2-3
+Obsoletes: ros-noetic-tf_conversions < 1.13.2-3
+Obsoletes: ros-kinetic-tf_conversions < 1.13.2-3
 
 
 
@@ -57,9 +57,9 @@ Requires:       ros-noetic-geometry_msgs-devel
 Requires:       ros-noetic-kdl_conversions-devel
 Requires:       ros-noetic-tf-devel
 
-Provides: ros-noetic-tf_conversions-devel = 1.13.2-2
-Obsoletes: ros-noetic-tf_conversions-devel < 1.13.2-2
-Obsoletes: ros-kinetic-tf_conversions-devel < 1.13.2-2
+Provides: ros-noetic-tf_conversions-devel = 1.13.2-3
+Obsoletes: ros-noetic-tf_conversions-devel < 1.13.2-3
+Obsoletes: ros-kinetic-tf_conversions-devel < 1.13.2-3
 
 
 %description devel
@@ -154,6 +154,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.2-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.2-2
 - Modernize python shebang replacement
 * Mon Aug 10 2020 Nicolas Limpert <limpert@fh-aachen.de> - noetic.1.13.2-1

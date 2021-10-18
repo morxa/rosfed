@@ -1,6 +1,6 @@
 Name:           ros-rqt_launch
 Version:        noetic.0.4.9
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package rqt_launch
 
 License:        BSD
@@ -30,9 +30,9 @@ Requires:       ros-noetic-rqt_gui
 Requires:       ros-noetic-rqt_gui_py
 Requires:       ros-noetic-rqt_py_common
 
-Provides:  ros-noetic-rqt_launch = 0.4.9-2
-Obsoletes: ros-noetic-rqt_launch < 0.4.9-2
-Obsoletes: ros-kinetic-rqt_launch < 0.4.9-2
+Provides:  ros-noetic-rqt_launch = 0.4.9-3
+Obsoletes: ros-noetic-rqt_launch < 0.4.9-3
+Obsoletes: ros-kinetic-rqt_launch < 0.4.9-3
 
 
 
@@ -52,9 +52,9 @@ Requires:       ros-noetic-rqt_console-devel
 Requires:       ros-noetic-rqt_gui-devel
 Requires:       ros-noetic-rqt_gui_py-devel
 
-Provides: ros-noetic-rqt_launch-devel = 0.4.9-2
-Obsoletes: ros-noetic-rqt_launch-devel < 0.4.9-2
-Obsoletes: ros-kinetic-rqt_launch-devel < 0.4.9-2
+Provides: ros-noetic-rqt_launch-devel = 0.4.9-3
+Obsoletes: ros-noetic-rqt_launch-devel < 0.4.9-3
+Obsoletes: ros-kinetic-rqt_launch-devel < 0.4.9-3
 
 
 %description devel
@@ -149,6 +149,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.9-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.9-2
 - Modernize python shebang replacement
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.9-1

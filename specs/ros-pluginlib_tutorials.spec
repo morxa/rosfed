@@ -1,6 +1,6 @@
 Name:           ros-pluginlib_tutorials
 Version:        noetic.0.2.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package pluginlib_tutorials
 
 License:        BSD
@@ -30,9 +30,9 @@ BuildRequires:  ros-noetic-roscpp-devel
 Requires:       ros-noetic-pluginlib
 Requires:       ros-noetic-roscpp
 
-Provides:  ros-noetic-pluginlib_tutorials = 0.2.0-2
-Obsoletes: ros-noetic-pluginlib_tutorials < 0.2.0-2
-Obsoletes: ros-kinetic-pluginlib_tutorials < 0.2.0-2
+Provides:  ros-noetic-pluginlib_tutorials = 0.2.0-3
+Obsoletes: ros-noetic-pluginlib_tutorials < 0.2.0-3
+Obsoletes: ros-kinetic-pluginlib_tutorials < 0.2.0-3
 
 
 
@@ -51,9 +51,9 @@ Requires:       tinyxml2-devel
 Requires:       ros-noetic-pluginlib-devel
 Requires:       ros-noetic-roscpp-devel
 
-Provides: ros-noetic-pluginlib_tutorials-devel = 0.2.0-2
-Obsoletes: ros-noetic-pluginlib_tutorials-devel < 0.2.0-2
-Obsoletes: ros-kinetic-pluginlib_tutorials-devel < 0.2.0-2
+Provides: ros-noetic-pluginlib_tutorials-devel = 0.2.0-3
+Obsoletes: ros-noetic-pluginlib_tutorials-devel < 0.2.0-3
+Obsoletes: ros-kinetic-pluginlib_tutorials-devel < 0.2.0-3
 
 
 %description devel
@@ -148,6 +148,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.2.0-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.2.0-2
 - Modernize python shebang replacement
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.2.0-1

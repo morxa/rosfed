@@ -1,6 +1,6 @@
 Name:           ros-rosmake
 Version:        noetic.1.15.8
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package rosmake
 
 License:        BSD
@@ -25,9 +25,9 @@ BuildRequires:  ros-noetic-catkin-devel
 Requires:       python3-rospkg
 Requires:       ros-noetic-catkin
 
-Provides:  ros-noetic-rosmake = 1.15.8-1
-Obsoletes: ros-noetic-rosmake < 1.15.8-1
-Obsoletes: ros-kinetic-rosmake < 1.15.8-1
+Provides:  ros-noetic-rosmake = 1.15.8-2
+Obsoletes: ros-noetic-rosmake < 1.15.8-2
+Obsoletes: ros-kinetic-rosmake < 1.15.8-2
 
 
 
@@ -41,9 +41,9 @@ Requires:       %{name} = %{version}-%{release}
 Requires:       python3-setuptools
 Requires:       ros-noetic-catkin-devel
 
-Provides: ros-noetic-rosmake-devel = 1.15.8-1
-Obsoletes: ros-noetic-rosmake-devel < 1.15.8-1
-Obsoletes: ros-kinetic-rosmake-devel < 1.15.8-1
+Provides: ros-noetic-rosmake-devel = 1.15.8-2
+Obsoletes: ros-noetic-rosmake-devel < 1.15.8-2
+Obsoletes: ros-kinetic-rosmake-devel < 1.15.8-2
 
 
 %description devel
@@ -138,6 +138,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.8-2
+- Rebuild to pull in updated dependencies
 * Thu Sep 16 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.8-1
 - Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.7-2

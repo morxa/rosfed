@@ -1,6 +1,6 @@
 Name:           ros-joint_limits_interface
 Version:        noetic.0.19.5
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package joint_limits_interface
 
 License:        BSD
@@ -28,9 +28,9 @@ BuildRequires:  ros-noetic-urdf-devel
 Requires:       ros-noetic-roscpp
 Requires:       ros-noetic-urdf
 
-Provides:  ros-noetic-joint_limits_interface = 0.19.5-1
-Obsoletes: ros-noetic-joint_limits_interface < 0.19.5-1
-Obsoletes: ros-kinetic-joint_limits_interface < 0.19.5-1
+Provides:  ros-noetic-joint_limits_interface = 0.19.5-2
+Obsoletes: ros-noetic-joint_limits_interface < 0.19.5-2
+Obsoletes: ros-kinetic-joint_limits_interface < 0.19.5-2
 
 
 
@@ -46,9 +46,9 @@ Requires:       ros-noetic-roscpp-devel
 Requires:       ros-noetic-rostest-devel
 Requires:       ros-noetic-urdf-devel
 
-Provides: ros-noetic-joint_limits_interface-devel = 0.19.5-1
-Obsoletes: ros-noetic-joint_limits_interface-devel < 0.19.5-1
-Obsoletes: ros-kinetic-joint_limits_interface-devel < 0.19.5-1
+Provides: ros-noetic-joint_limits_interface-devel = 0.19.5-2
+Obsoletes: ros-noetic-joint_limits_interface-devel < 0.19.5-2
+Obsoletes: ros-kinetic-joint_limits_interface-devel < 0.19.5-2
 
 
 %description devel
@@ -143,6 +143,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.19.5-2
+- Rebuild to pull in updated dependencies
 * Sun Jun 27 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.19.5-1
 - Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.19.4-2

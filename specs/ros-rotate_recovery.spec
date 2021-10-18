@@ -1,6 +1,6 @@
 Name:           ros-rotate_recovery
 Version:        noetic.1.17.1
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package rotate_recovery
 
 License:        BSD
@@ -47,9 +47,9 @@ Requires:       ros-noetic-tf2
 Requires:       ros-noetic-tf2_geometry_msgs
 Requires:       ros-noetic-tf2_ros
 
-Provides:  ros-noetic-rotate_recovery = 1.17.1-2
-Obsoletes: ros-noetic-rotate_recovery < 1.17.1-2
-Obsoletes: ros-kinetic-rotate_recovery < 1.17.1-2
+Provides:  ros-noetic-rotate_recovery = 1.17.1-3
+Obsoletes: ros-noetic-rotate_recovery < 1.17.1-3
+Obsoletes: ros-kinetic-rotate_recovery < 1.17.1-3
 
 
 
@@ -81,9 +81,9 @@ Requires:       ros-noetic-tf2-devel
 Requires:       ros-noetic-tf2_geometry_msgs-devel
 Requires:       ros-noetic-tf2_ros-devel
 
-Provides: ros-noetic-rotate_recovery-devel = 1.17.1-2
-Obsoletes: ros-noetic-rotate_recovery-devel < 1.17.1-2
-Obsoletes: ros-kinetic-rotate_recovery-devel < 1.17.1-2
+Provides: ros-noetic-rotate_recovery-devel = 1.17.1-3
+Obsoletes: ros-noetic-rotate_recovery-devel < 1.17.1-3
+Obsoletes: ros-kinetic-rotate_recovery-devel < 1.17.1-3
 
 
 %description devel
@@ -178,6 +178,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.17.1-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.17.1-2
 - Modernize python shebang replacement
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.17.1-1

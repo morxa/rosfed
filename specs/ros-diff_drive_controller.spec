@@ -1,6 +1,6 @@
 Name:           ros-diff_drive_controller
 Version:        noetic.0.19.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package diff_drive_controller
 
 License:        BSD
@@ -48,9 +48,9 @@ Requires:       ros-noetic-realtime_tools
 Requires:       ros-noetic-tf
 Requires:       ros-noetic-urdf
 
-Provides:  ros-noetic-diff_drive_controller = 0.19.0-1
-Obsoletes: ros-noetic-diff_drive_controller < 0.19.0-1
-Obsoletes: ros-kinetic-diff_drive_controller < 0.19.0-1
+Provides:  ros-noetic-diff_drive_controller = 0.19.0-2
+Obsoletes: ros-noetic-diff_drive_controller < 0.19.0-2
+Obsoletes: ros-kinetic-diff_drive_controller < 0.19.0-2
 
 
 
@@ -79,9 +79,9 @@ Requires:       ros-noetic-tf-devel
 Requires:       ros-noetic-urdf-devel
 Requires:       ros-noetic-xacro-devel
 
-Provides: ros-noetic-diff_drive_controller-devel = 0.19.0-1
-Obsoletes: ros-noetic-diff_drive_controller-devel < 0.19.0-1
-Obsoletes: ros-kinetic-diff_drive_controller-devel < 0.19.0-1
+Provides: ros-noetic-diff_drive_controller-devel = 0.19.0-2
+Obsoletes: ros-noetic-diff_drive_controller-devel < 0.19.0-2
+Obsoletes: ros-kinetic-diff_drive_controller-devel < 0.19.0-2
 
 
 %description devel
@@ -176,6 +176,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.19.0-2
+- Rebuild to pull in updated dependencies
 * Sun Jun 27 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.19.0-1
 - Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.18.1-2

@@ -1,6 +1,6 @@
 Name:           ros-image_publisher
 Version:        noetic.1.15.3
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package image_publisher
 
 License:        BSD
@@ -40,9 +40,9 @@ Requires:       ros-noetic-nodelet
 Requires:       ros-noetic-roscpp
 Requires:       ros-noetic-sensor_msgs
 
-Provides:  ros-noetic-image_publisher = 1.15.3-2
-Obsoletes: ros-noetic-image_publisher < 1.15.3-2
-Obsoletes: ros-kinetic-image_publisher < 1.15.3-2
+Provides:  ros-noetic-image_publisher = 1.15.3-3
+Obsoletes: ros-noetic-image_publisher < 1.15.3-3
+Obsoletes: ros-kinetic-image_publisher < 1.15.3-3
 
 
 
@@ -66,9 +66,9 @@ Requires:       ros-noetic-nodelet-devel
 Requires:       ros-noetic-roscpp-devel
 Requires:       ros-noetic-sensor_msgs-devel
 
-Provides: ros-noetic-image_publisher-devel = 1.15.3-2
-Obsoletes: ros-noetic-image_publisher-devel < 1.15.3-2
-Obsoletes: ros-kinetic-image_publisher-devel < 1.15.3-2
+Provides: ros-noetic-image_publisher-devel = 1.15.3-3
+Obsoletes: ros-noetic-image_publisher-devel < 1.15.3-3
+Obsoletes: ros-kinetic-image_publisher-devel < 1.15.3-3
 
 
 %description devel
@@ -163,6 +163,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.3-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.3-2
 - Modernize python shebang replacement
 * Wed Feb 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.3-1

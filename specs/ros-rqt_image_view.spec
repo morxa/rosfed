@@ -1,6 +1,6 @@
 Name:           ros-rqt_image_view
 Version:        noetic.0.4.16
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package rqt_image_view
 
 License:        BSD
@@ -41,9 +41,9 @@ Requires:       ros-noetic-rqt_gui
 Requires:       ros-noetic-rqt_gui_cpp
 Requires:       ros-noetic-sensor_msgs
 
-Provides:  ros-noetic-rqt_image_view = 0.4.16-2
-Obsoletes: ros-noetic-rqt_image_view < 0.4.16-2
-Obsoletes: ros-kinetic-rqt_image_view < 0.4.16-2
+Provides:  ros-noetic-rqt_image_view = 0.4.16-3
+Obsoletes: ros-noetic-rqt_image_view < 0.4.16-3
+Obsoletes: ros-kinetic-rqt_image_view < 0.4.16-3
 
 
 
@@ -70,9 +70,9 @@ Requires:       ros-noetic-rqt_gui-devel
 Requires:       ros-noetic-rqt_gui_cpp-devel
 Requires:       ros-noetic-sensor_msgs-devel
 
-Provides: ros-noetic-rqt_image_view-devel = 0.4.16-2
-Obsoletes: ros-noetic-rqt_image_view-devel < 0.4.16-2
-Obsoletes: ros-kinetic-rqt_image_view-devel < 0.4.16-2
+Provides: ros-noetic-rqt_image_view-devel = 0.4.16-3
+Obsoletes: ros-noetic-rqt_image_view-devel < 0.4.16-3
+Obsoletes: ros-kinetic-rqt_image_view-devel < 0.4.16-3
 
 
 %description devel
@@ -167,6 +167,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.16-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.16-2
 - Modernize python shebang replacement
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.16-1

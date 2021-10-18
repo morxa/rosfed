@@ -1,6 +1,6 @@
 Name:           ros-cv_bridge
 Version:        noetic.1.15.0
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        ROS package cv_bridge
 
 License:        BSD
@@ -34,9 +34,9 @@ BuildRequires:  ros-noetic-sensor_msgs-devel
 Requires:       python3-opencv
 Requires:       ros-noetic-rosconsole
 
-Provides:  ros-noetic-cv_bridge = 1.15.0-4
-Obsoletes: ros-noetic-cv_bridge < 1.15.0-4
-Obsoletes: ros-kinetic-cv_bridge < 1.15.0-4
+Provides:  ros-noetic-cv_bridge = 1.15.0-5
+Obsoletes: ros-noetic-cv_bridge < 1.15.0-5
+Obsoletes: ros-kinetic-cv_bridge < 1.15.0-5
 
 
 
@@ -59,9 +59,9 @@ Requires:       ros-noetic-rosconsole-devel
 Requires:       ros-noetic-roscpp_serialization-devel
 Requires:       ros-noetic-rostest-devel
 
-Provides: ros-noetic-cv_bridge-devel = 1.15.0-4
-Obsoletes: ros-noetic-cv_bridge-devel < 1.15.0-4
-Obsoletes: ros-kinetic-cv_bridge-devel < 1.15.0-4
+Provides: ros-noetic-cv_bridge-devel = 1.15.0-5
+Obsoletes: ros-noetic-cv_bridge-devel < 1.15.0-5
+Obsoletes: ros-kinetic-cv_bridge-devel < 1.15.0-5
 
 
 %description devel
@@ -157,6 +157,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.0-5
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.0-4
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.0-3

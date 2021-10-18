@@ -1,6 +1,6 @@
 Name:           ros-rospack
 Version:        noetic.2.6.2
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package rospack
 
 License:        BSD
@@ -32,9 +32,9 @@ Requires:       python3-catkin_pkg
 Requires:       python3-rosdep
 Requires:       ros-noetic-ros_environment
 
-Provides:  ros-noetic-rospack = 2.6.2-2
-Obsoletes: ros-noetic-rospack < 2.6.2-2
-Obsoletes: ros-kinetic-rospack < 2.6.2-2
+Provides:  ros-noetic-rospack = 2.6.2-3
+Obsoletes: ros-noetic-rospack < 2.6.2-3
+Obsoletes: ros-kinetic-rospack < 2.6.2-3
 
 
 
@@ -54,9 +54,9 @@ Requires:       tinyxml2-devel
 Requires:       ros-noetic-cmake_modules-devel
 Requires:       ros-noetic-ros_environment-devel
 
-Provides: ros-noetic-rospack-devel = 2.6.2-2
-Obsoletes: ros-noetic-rospack-devel < 2.6.2-2
-Obsoletes: ros-kinetic-rospack-devel < 2.6.2-2
+Provides: ros-noetic-rospack-devel = 2.6.2-3
+Obsoletes: ros-noetic-rospack-devel < 2.6.2-3
+Obsoletes: ros-kinetic-rospack-devel < 2.6.2-3
 
 
 %description devel
@@ -151,6 +151,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.2.6.2-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.2.6.2-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.2.6.2-1

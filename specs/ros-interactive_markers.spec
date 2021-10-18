@@ -1,6 +1,6 @@
 Name:           ros-interactive_markers
 Version:        noetic.1.12.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package interactive_markers
 
 License:        BSD
@@ -37,9 +37,9 @@ Requires:       ros-noetic-tf2_geometry_msgs
 Requires:       ros-noetic-tf2_ros
 Requires:       ros-noetic-visualization_msgs
 
-Provides:  ros-noetic-interactive_markers = 1.12.0-2
-Obsoletes: ros-noetic-interactive_markers < 1.12.0-2
-Obsoletes: ros-kinetic-interactive_markers < 1.12.0-2
+Provides:  ros-noetic-interactive_markers = 1.12.0-3
+Obsoletes: ros-noetic-interactive_markers < 1.12.0-3
+Obsoletes: ros-kinetic-interactive_markers < 1.12.0-3
 
 
 
@@ -60,9 +60,9 @@ Requires:       ros-noetic-tf2_geometry_msgs-devel
 Requires:       ros-noetic-tf2_ros-devel
 Requires:       ros-noetic-visualization_msgs-devel
 
-Provides: ros-noetic-interactive_markers-devel = 1.12.0-2
-Obsoletes: ros-noetic-interactive_markers-devel < 1.12.0-2
-Obsoletes: ros-kinetic-interactive_markers-devel < 1.12.0-2
+Provides: ros-noetic-interactive_markers-devel = 1.12.0-3
+Obsoletes: ros-noetic-interactive_markers-devel < 1.12.0-3
+Obsoletes: ros-kinetic-interactive_markers-devel < 1.12.0-3
 
 
 %description devel
@@ -157,6 +157,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.12.0-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.12.0-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.12.0-1

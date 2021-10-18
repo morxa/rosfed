@@ -1,6 +1,6 @@
 Name:           ros-genlisp
 Version:        noetic.0.4.18
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package genlisp
 
 License:        BSD
@@ -25,9 +25,9 @@ BuildRequires:  ros-noetic-genmsg-devel
 
 Requires:       ros-noetic-genmsg
 
-Provides:  ros-noetic-genlisp = 0.4.18-2
-Obsoletes: ros-noetic-genlisp < 0.4.18-2
-Obsoletes: ros-kinetic-genlisp < 0.4.18-2
+Provides:  ros-noetic-genlisp = 0.4.18-3
+Obsoletes: ros-noetic-genlisp < 0.4.18-3
+Obsoletes: ros-kinetic-genlisp < 0.4.18-3
 
 
 
@@ -41,9 +41,9 @@ Requires:       python3-setuptools
 Requires:       ros-noetic-catkin-devel
 Requires:       ros-noetic-genmsg-devel
 
-Provides: ros-noetic-genlisp-devel = 0.4.18-2
-Obsoletes: ros-noetic-genlisp-devel < 0.4.18-2
-Obsoletes: ros-kinetic-genlisp-devel < 0.4.18-2
+Provides: ros-noetic-genlisp-devel = 0.4.18-3
+Obsoletes: ros-noetic-genlisp-devel < 0.4.18-3
+Obsoletes: ros-kinetic-genlisp-devel < 0.4.18-3
 
 
 %description devel
@@ -138,6 +138,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.18-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.18-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.18-1

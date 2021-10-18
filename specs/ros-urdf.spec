@@ -1,6 +1,6 @@
 Name:           ros-urdf
 Version:        noetic.1.13.2
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package urdf
 
 License:        BSD
@@ -35,9 +35,9 @@ Requires:       ros-noetic-pluginlib
 Requires:       ros-noetic-rosconsole_bridge
 Requires:       ros-noetic-roscpp
 
-Provides:  ros-noetic-urdf = 1.13.2-2
-Obsoletes: ros-noetic-urdf < 1.13.2-2
-Obsoletes: ros-kinetic-urdf < 1.13.2-2
+Provides:  ros-noetic-urdf = 1.13.2-3
+Obsoletes: ros-noetic-urdf < 1.13.2-3
+Obsoletes: ros-kinetic-urdf < 1.13.2-3
 
 
 
@@ -63,9 +63,9 @@ Requires:       ros-noetic-roscpp-devel
 Requires:       ros-noetic-rostest-devel
 Requires:       ros-noetic-urdf_parser_plugin-devel
 
-Provides: ros-noetic-urdf-devel = 1.13.2-2
-Obsoletes: ros-noetic-urdf-devel < 1.13.2-2
-Obsoletes: ros-kinetic-urdf-devel < 1.13.2-2
+Provides: ros-noetic-urdf-devel = 1.13.2-3
+Obsoletes: ros-noetic-urdf-devel < 1.13.2-3
+Obsoletes: ros-kinetic-urdf-devel < 1.13.2-3
 
 
 %description devel
@@ -160,6 +160,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.2-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.2-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.2-1

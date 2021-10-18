@@ -1,6 +1,6 @@
 Name:           ros-laser_geometry
 Version:        noetic.1.6.7
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package laser_geometry
 
 License:        BSD
@@ -38,9 +38,9 @@ Requires:       ros-noetic-sensor_msgs
 Requires:       ros-noetic-tf
 Requires:       ros-noetic-tf2
 
-Provides:  ros-noetic-laser_geometry = 1.6.7-2
-Obsoletes: ros-noetic-laser_geometry < 1.6.7-2
-Obsoletes: ros-kinetic-laser_geometry < 1.6.7-2
+Provides:  ros-noetic-laser_geometry = 1.6.7-3
+Obsoletes: ros-noetic-laser_geometry < 1.6.7-3
+Obsoletes: ros-kinetic-laser_geometry < 1.6.7-3
 
 
 
@@ -65,9 +65,9 @@ Requires:       ros-noetic-tf-devel
 Requires:       ros-noetic-tf2-devel
 Requires:       ros-noetic-tf2_geometry_msgs-devel
 
-Provides: ros-noetic-laser_geometry-devel = 1.6.7-2
-Obsoletes: ros-noetic-laser_geometry-devel < 1.6.7-2
-Obsoletes: ros-kinetic-laser_geometry-devel < 1.6.7-2
+Provides: ros-noetic-laser_geometry-devel = 1.6.7-3
+Obsoletes: ros-noetic-laser_geometry-devel < 1.6.7-3
+Obsoletes: ros-kinetic-laser_geometry-devel < 1.6.7-3
 
 
 %description devel
@@ -163,6 +163,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.6.7-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.6.7-2
 - Modernize python shebang replacement
 * Wed Feb 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.6.7-1

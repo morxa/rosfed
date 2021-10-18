@@ -1,6 +1,6 @@
 Name:           ros-teb_local_planner
 Version:        noetic.0.9.1
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package teb_local_planner
 
 License:        BSD
@@ -61,9 +61,9 @@ Requires:       ros-noetic-tf2
 Requires:       ros-noetic-tf2_ros
 Requires:       ros-noetic-visualization_msgs
 
-Provides:  ros-noetic-teb_local_planner = 0.9.1-2
-Obsoletes: ros-noetic-teb_local_planner < 0.9.1-2
-Obsoletes: ros-kinetic-teb_local_planner < 0.9.1-2
+Provides:  ros-noetic-teb_local_planner = 0.9.1-3
+Obsoletes: ros-noetic-teb_local_planner < 0.9.1-3
+Obsoletes: ros-kinetic-teb_local_planner < 0.9.1-3
 
 
 
@@ -101,9 +101,9 @@ Requires:       ros-noetic-tf2_geometry_msgs-devel
 Requires:       ros-noetic-tf2_ros-devel
 Requires:       ros-noetic-visualization_msgs-devel
 
-Provides: ros-noetic-teb_local_planner-devel = 0.9.1-2
-Obsoletes: ros-noetic-teb_local_planner-devel < 0.9.1-2
-Obsoletes: ros-kinetic-teb_local_planner-devel < 0.9.1-2
+Provides: ros-noetic-teb_local_planner-devel = 0.9.1-3
+Obsoletes: ros-noetic-teb_local_planner-devel < 0.9.1-3
+Obsoletes: ros-kinetic-teb_local_planner-devel < 0.9.1-3
 
 
 %description devel
@@ -198,6 +198,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.9.1-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.9.1-2
 - Modernize python shebang replacement
 * Thu Jun 11 2020 Nicolas Limpert - noetic.0.9.1-1

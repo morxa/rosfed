@@ -1,6 +1,6 @@
 Name:           ros-rqt_logger_level
 Version:        noetic.0.4.11
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package rqt_logger_level
 
 License:        BSD
@@ -29,9 +29,9 @@ Requires:       ros-noetic-rosservice
 Requires:       ros-noetic-rqt_gui
 Requires:       ros-noetic-rqt_gui_py
 
-Provides:  ros-noetic-rqt_logger_level = 0.4.11-2
-Obsoletes: ros-noetic-rqt_logger_level < 0.4.11-2
-Obsoletes: ros-kinetic-rqt_logger_level < 0.4.11-2
+Provides:  ros-noetic-rqt_logger_level = 0.4.11-3
+Obsoletes: ros-noetic-rqt_logger_level < 0.4.11-3
+Obsoletes: ros-kinetic-rqt_logger_level < 0.4.11-3
 
 
 
@@ -50,9 +50,9 @@ Requires:       ros-noetic-rosservice-devel
 Requires:       ros-noetic-rqt_gui-devel
 Requires:       ros-noetic-rqt_gui_py-devel
 
-Provides: ros-noetic-rqt_logger_level-devel = 0.4.11-2
-Obsoletes: ros-noetic-rqt_logger_level-devel < 0.4.11-2
-Obsoletes: ros-kinetic-rqt_logger_level-devel < 0.4.11-2
+Provides: ros-noetic-rqt_logger_level-devel = 0.4.11-3
+Obsoletes: ros-noetic-rqt_logger_level-devel < 0.4.11-3
+Obsoletes: ros-kinetic-rqt_logger_level-devel < 0.4.11-3
 
 
 %description devel
@@ -147,6 +147,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.11-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.11-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.11-1

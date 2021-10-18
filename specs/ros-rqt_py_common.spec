@@ -1,6 +1,6 @@
 Name:           ros-rqt_py_common
 Version:        noetic.0.5.2
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package rqt_py_common
 
 License:        BSD
@@ -32,9 +32,9 @@ Requires:       ros-noetic-roslib
 Requires:       ros-noetic-rospy
 Requires:       ros-noetic-rostopic
 
-Provides:  ros-noetic-rqt_py_common = 0.5.2-2
-Obsoletes: ros-noetic-rqt_py_common < 0.5.2-2
-Obsoletes: ros-kinetic-rqt_py_common < 0.5.2-2
+Provides:  ros-noetic-rqt_py_common = 0.5.2-3
+Obsoletes: ros-noetic-rqt_py_common < 0.5.2-3
+Obsoletes: ros-kinetic-rqt_py_common < 0.5.2-3
 
 
 
@@ -62,9 +62,9 @@ Requires:       ros-noetic-roslib-devel
 Requires:       ros-noetic-rospy-devel
 Requires:       ros-noetic-rostopic-devel
 
-Provides: ros-noetic-rqt_py_common-devel = 0.5.2-2
-Obsoletes: ros-noetic-rqt_py_common-devel < 0.5.2-2
-Obsoletes: ros-kinetic-rqt_py_common-devel < 0.5.2-2
+Provides: ros-noetic-rqt_py_common-devel = 0.5.2-3
+Obsoletes: ros-noetic-rqt_py_common-devel < 0.5.2-3
+Obsoletes: ros-kinetic-rqt_py_common-devel < 0.5.2-3
 
 
 %description devel
@@ -159,6 +159,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.2-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.2-2
 - Modernize python shebang replacement
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.2-1

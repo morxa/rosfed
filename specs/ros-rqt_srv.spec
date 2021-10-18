@@ -1,6 +1,6 @@
 Name:           ros-rqt_srv
 Version:        noetic.0.4.9
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package rqt_srv
 
 License:        BSD
@@ -27,9 +27,9 @@ Requires:       ros-noetic-rqt_gui
 Requires:       ros-noetic-rqt_gui_py
 Requires:       ros-noetic-rqt_msg
 
-Provides:  ros-noetic-rqt_srv = 0.4.9-1
-Obsoletes: ros-noetic-rqt_srv < 0.4.9-1
-Obsoletes: ros-kinetic-rqt_srv < 0.4.9-1
+Provides:  ros-noetic-rqt_srv = 0.4.9-2
+Obsoletes: ros-noetic-rqt_srv < 0.4.9-2
+Obsoletes: ros-kinetic-rqt_srv < 0.4.9-2
 
 
 
@@ -49,9 +49,9 @@ Requires:       ros-noetic-rqt_gui-devel
 Requires:       ros-noetic-rqt_gui_py-devel
 Requires:       ros-noetic-rqt_msg-devel
 
-Provides: ros-noetic-rqt_srv-devel = 0.4.9-1
-Obsoletes: ros-noetic-rqt_srv-devel < 0.4.9-1
-Obsoletes: ros-kinetic-rqt_srv-devel < 0.4.9-1
+Provides: ros-noetic-rqt_srv-devel = 0.4.9-2
+Obsoletes: ros-noetic-rqt_srv-devel < 0.4.9-2
+Obsoletes: ros-kinetic-rqt_srv-devel < 0.4.9-2
 
 
 %description devel
@@ -146,6 +146,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.9-2
+- Rebuild to pull in updated dependencies
 * Mon May 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.9-1
 - Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.8-2

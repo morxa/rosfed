@@ -1,6 +1,6 @@
 Name:           ros-mk
 Version:        noetic.1.15.8
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package mk
 
 License:        BSD
@@ -24,9 +24,9 @@ BuildRequires:  ros-noetic-catkin-devel
 Requires:       ros-noetic-rosbuild
 Requires:       ros-noetic-rospack
 
-Provides:  ros-noetic-mk = 1.15.8-1
-Obsoletes: ros-noetic-mk < 1.15.8-1
-Obsoletes: ros-kinetic-mk < 1.15.8-1
+Provides:  ros-noetic-mk = 1.15.8-2
+Obsoletes: ros-noetic-mk < 1.15.8-2
+Obsoletes: ros-kinetic-mk < 1.15.8-2
 
 
 
@@ -44,9 +44,9 @@ Requires:       ros-noetic-catkin-devel
 Requires:       ros-noetic-rosbuild-devel
 Requires:       ros-noetic-rospack-devel
 
-Provides: ros-noetic-mk-devel = 1.15.8-1
-Obsoletes: ros-noetic-mk-devel < 1.15.8-1
-Obsoletes: ros-kinetic-mk-devel < 1.15.8-1
+Provides: ros-noetic-mk-devel = 1.15.8-2
+Obsoletes: ros-noetic-mk-devel < 1.15.8-2
+Obsoletes: ros-kinetic-mk-devel < 1.15.8-2
 
 
 %description devel
@@ -141,6 +141,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.8-2
+- Rebuild to pull in updated dependencies
 * Thu Sep 16 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.8-1
 - Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.7-2

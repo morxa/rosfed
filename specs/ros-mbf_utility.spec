@@ -1,6 +1,6 @@
 Name:           ros-mbf_utility
 Version:        noetic.0.3.4
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package mbf_utility
 
 License:        BSD-3
@@ -33,9 +33,9 @@ Requires:       ros-noetic-tf2
 Requires:       ros-noetic-tf2_geometry_msgs
 Requires:       ros-noetic-tf2_ros
 
-Provides:  ros-noetic-mbf_utility = 0.3.4-2
-Obsoletes: ros-noetic-mbf_utility < 0.3.4-2
-Obsoletes: ros-kinetic-mbf_utility < 0.3.4-2
+Provides:  ros-noetic-mbf_utility = 0.3.4-3
+Obsoletes: ros-noetic-mbf_utility < 0.3.4-3
+Obsoletes: ros-kinetic-mbf_utility < 0.3.4-3
 
 
 
@@ -53,9 +53,9 @@ Requires:       ros-noetic-tf2-devel
 Requires:       ros-noetic-tf2_geometry_msgs-devel
 Requires:       ros-noetic-tf2_ros-devel
 
-Provides: ros-noetic-mbf_utility-devel = 0.3.4-2
-Obsoletes: ros-noetic-mbf_utility-devel < 0.3.4-2
-Obsoletes: ros-kinetic-mbf_utility-devel < 0.3.4-2
+Provides: ros-noetic-mbf_utility-devel = 0.3.4-3
+Obsoletes: ros-noetic-mbf_utility-devel < 0.3.4-3
+Obsoletes: ros-kinetic-mbf_utility-devel < 0.3.4-3
 
 
 %description devel
@@ -150,6 +150,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.3.4-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.3.4-2
 - Modernize python shebang replacement
 * Wed Feb 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.3.4-1

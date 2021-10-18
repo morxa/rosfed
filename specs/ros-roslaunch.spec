@@ -1,6 +1,6 @@
 Name:           ros-roslaunch
 Version:        noetic.1.15.13
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package roslaunch
 
 License:        BSD
@@ -35,9 +35,9 @@ Requires:       ros-noetic-rosout
 Requires:       ros-noetic-rosparam
 Requires:       ros-noetic-rosunit
 
-Provides:  ros-noetic-roslaunch = 1.15.13-1
-Obsoletes: ros-noetic-roslaunch < 1.15.13-1
-Obsoletes: ros-kinetic-roslaunch < 1.15.13-1
+Provides:  ros-noetic-roslaunch = 1.15.13-2
+Obsoletes: ros-noetic-roslaunch < 1.15.13-2
+Obsoletes: ros-kinetic-roslaunch < 1.15.13-2
 
 
 
@@ -57,9 +57,9 @@ Requires:       ros-noetic-rosout-devel
 Requires:       ros-noetic-rosparam-devel
 Requires:       ros-noetic-rosunit-devel
 
-Provides: ros-noetic-roslaunch-devel = 1.15.13-1
-Obsoletes: ros-noetic-roslaunch-devel < 1.15.13-1
-Obsoletes: ros-kinetic-roslaunch-devel < 1.15.13-1
+Provides: ros-noetic-roslaunch-devel = 1.15.13-2
+Obsoletes: ros-noetic-roslaunch-devel < 1.15.13-2
+Obsoletes: ros-kinetic-roslaunch-devel < 1.15.13-2
 
 
 %description devel
@@ -154,6 +154,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.13-2
+- Rebuild to pull in updated dependencies
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.13-1
 - Update to latest release
 * Mon May 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.11-1

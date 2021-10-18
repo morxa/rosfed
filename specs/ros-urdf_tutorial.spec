@@ -1,6 +1,6 @@
 Name:           ros-urdf_tutorial
 Version:        noetic.0.5.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package urdf_tutorial
 
 License:        BSD
@@ -28,9 +28,9 @@ Requires:       ros-noetic-robot_state_publisher
 Requires:       ros-noetic-rviz
 Requires:       ros-noetic-xacro
 
-Provides:  ros-noetic-urdf_tutorial = 0.5.0-2
-Obsoletes: ros-noetic-urdf_tutorial < 0.5.0-2
-Obsoletes: ros-kinetic-urdf_tutorial < 0.5.0-2
+Provides:  ros-noetic-urdf_tutorial = 0.5.0-3
+Obsoletes: ros-noetic-urdf_tutorial < 0.5.0-3
+Obsoletes: ros-kinetic-urdf_tutorial < 0.5.0-3
 
 
 
@@ -48,9 +48,9 @@ Requires:       ros-noetic-robot_state_publisher-devel
 Requires:       ros-noetic-rviz-devel
 Requires:       ros-noetic-xacro-devel
 
-Provides: ros-noetic-urdf_tutorial-devel = 0.5.0-2
-Obsoletes: ros-noetic-urdf_tutorial-devel < 0.5.0-2
-Obsoletes: ros-kinetic-urdf_tutorial-devel < 0.5.0-2
+Provides: ros-noetic-urdf_tutorial-devel = 0.5.0-3
+Obsoletes: ros-noetic-urdf_tutorial-devel < 0.5.0-3
+Obsoletes: ros-kinetic-urdf_tutorial-devel < 0.5.0-3
 
 
 %description devel
@@ -145,6 +145,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.0-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.0-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.0-1

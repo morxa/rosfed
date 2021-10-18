@@ -1,6 +1,6 @@
 Name:           ros-executive_smach
 Version:        noetic.2.5.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package executive_smach
 
 License:        BSD
@@ -25,9 +25,9 @@ Requires:       ros-noetic-smach
 Requires:       ros-noetic-smach_msgs
 Requires:       ros-noetic-smach_ros
 
-Provides:  ros-noetic-executive_smach = 2.5.0-2
-Obsoletes: ros-noetic-executive_smach < 2.5.0-2
-Obsoletes: ros-kinetic-executive_smach < 2.5.0-2
+Provides:  ros-noetic-executive_smach = 2.5.0-3
+Obsoletes: ros-noetic-executive_smach < 2.5.0-3
+Obsoletes: ros-kinetic-executive_smach < 2.5.0-3
 
 
 
@@ -43,9 +43,9 @@ Requires:       ros-noetic-smach-devel
 Requires:       ros-noetic-smach_msgs-devel
 Requires:       ros-noetic-smach_ros-devel
 
-Provides: ros-noetic-executive_smach-devel = 2.5.0-2
-Obsoletes: ros-noetic-executive_smach-devel < 2.5.0-2
-Obsoletes: ros-kinetic-executive_smach-devel < 2.5.0-2
+Provides: ros-noetic-executive_smach-devel = 2.5.0-3
+Obsoletes: ros-noetic-executive_smach-devel < 2.5.0-3
+Obsoletes: ros-kinetic-executive_smach-devel < 2.5.0-3
 
 
 %description devel
@@ -140,6 +140,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.2.5.0-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.2.5.0-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.2.5.0-1

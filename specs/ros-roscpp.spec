@@ -1,6 +1,6 @@
 Name:           ros-roscpp
 Version:        noetic.1.15.13
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package roscpp
 
 License:        BSD
@@ -44,9 +44,9 @@ Requires:       ros-noetic-rostime
 Requires:       ros-noetic-std_msgs
 Requires:       ros-noetic-xmlrpcpp
 
-Provides:  ros-noetic-roscpp = 1.15.13-1
-Obsoletes: ros-noetic-roscpp < 1.15.13-1
-Obsoletes: ros-kinetic-roscpp < 1.15.13-1
+Provides:  ros-noetic-roscpp = 1.15.13-2
+Obsoletes: ros-noetic-roscpp < 1.15.13-2
+Obsoletes: ros-kinetic-roscpp < 1.15.13-2
 
 
 
@@ -73,9 +73,9 @@ Requires:       ros-noetic-std_msgs-devel
 Requires:       ros-noetic-xmlrpcpp-devel
 Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-noetic-roscpp-devel = 1.15.13-1
-Obsoletes: ros-noetic-roscpp-devel < 1.15.13-1
-Obsoletes: ros-kinetic-roscpp-devel < 1.15.13-1
+Provides: ros-noetic-roscpp-devel = 1.15.13-2
+Obsoletes: ros-noetic-roscpp-devel < 1.15.13-2
+Obsoletes: ros-kinetic-roscpp-devel < 1.15.13-2
 
 
 %description devel
@@ -170,6 +170,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.13-2
+- Rebuild to pull in updated dependencies
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.13-1
 - Update to latest release
 * Mon May 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.11-1

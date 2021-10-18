@@ -1,6 +1,6 @@
 Name:           ros-eigen_conversions
 Version:        noetic.1.13.2
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package eigen_conversions
 
 License:        BSD
@@ -32,9 +32,9 @@ Requires:       orocos-kdl
 Requires:       ros-noetic-geometry_msgs
 Requires:       ros-noetic-std_msgs
 
-Provides:  ros-noetic-eigen_conversions = 1.13.2-2
-Obsoletes: ros-noetic-eigen_conversions < 1.13.2-2
-Obsoletes: ros-kinetic-eigen_conversions < 1.13.2-2
+Provides:  ros-noetic-eigen_conversions = 1.13.2-3
+Obsoletes: ros-noetic-eigen_conversions < 1.13.2-3
+Obsoletes: ros-kinetic-eigen_conversions < 1.13.2-3
 
 
 
@@ -55,9 +55,9 @@ Requires:       ros-noetic-geometry_msgs-devel
 Requires:       ros-noetic-roscpp_serialization-devel
 Requires:       ros-noetic-std_msgs-devel
 
-Provides: ros-noetic-eigen_conversions-devel = 1.13.2-2
-Obsoletes: ros-noetic-eigen_conversions-devel < 1.13.2-2
-Obsoletes: ros-kinetic-eigen_conversions-devel < 1.13.2-2
+Provides: ros-noetic-eigen_conversions-devel = 1.13.2-3
+Obsoletes: ros-noetic-eigen_conversions-devel < 1.13.2-3
+Obsoletes: ros-kinetic-eigen_conversions-devel < 1.13.2-3
 
 
 %description devel
@@ -152,6 +152,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.2-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.2-2
 - Modernize python shebang replacement
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.2-1

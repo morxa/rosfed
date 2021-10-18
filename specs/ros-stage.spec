@@ -1,6 +1,6 @@
 Name:           ros-stage
 Version:        noetic.4.3.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package stage
 
 License:        GPL
@@ -30,9 +30,9 @@ BuildRequires:  ros-noetic-catkin-devel
 
 Requires:       ros-noetic-catkin
 
-Provides:  ros-noetic-stage = 4.3.0-2
-Obsoletes: ros-noetic-stage < 4.3.0-2
-Obsoletes: ros-kinetic-stage < 4.3.0-2
+Provides:  ros-noetic-stage = 4.3.0-3
+Obsoletes: ros-noetic-stage < 4.3.0-3
+Obsoletes: ros-kinetic-stage < 4.3.0-3
 
 
 
@@ -52,9 +52,9 @@ Requires:       mesa-libGL-devel mesa-libGLU-devel
 Requires:       player-devel
 Requires:       ros-noetic-catkin-devel
 
-Provides: ros-noetic-stage-devel = 4.3.0-2
-Obsoletes: ros-noetic-stage-devel < 4.3.0-2
-Obsoletes: ros-kinetic-stage-devel < 4.3.0-2
+Provides: ros-noetic-stage-devel = 4.3.0-3
+Obsoletes: ros-noetic-stage-devel < 4.3.0-3
+Obsoletes: ros-kinetic-stage-devel < 4.3.0-3
 
 
 %description devel
@@ -149,6 +149,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.4.3.0-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.4.3.0-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.4.3.0-1

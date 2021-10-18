@@ -1,6 +1,6 @@
 Name:           ros-roslz4
 Version:        noetic.1.15.13
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package roslz4
 
 License:        BSD
@@ -24,9 +24,9 @@ BuildRequires:  ros-noetic-cpp_common-devel
 BuildRequires:  ros-noetic-rosunit-devel
 
 
-Provides:  ros-noetic-roslz4 = 1.15.13-1
-Obsoletes: ros-noetic-roslz4 < 1.15.13-1
-Obsoletes: ros-kinetic-roslz4 < 1.15.13-1
+Provides:  ros-noetic-roslz4 = 1.15.13-2
+Obsoletes: ros-noetic-roslz4 < 1.15.13-2
+Obsoletes: ros-kinetic-roslz4 < 1.15.13-2
 
 
 
@@ -43,9 +43,9 @@ Requires:       lz4-devel
 Requires:       ros-noetic-cpp_common-devel
 Requires:       ros-noetic-rosunit-devel
 
-Provides: ros-noetic-roslz4-devel = 1.15.13-1
-Obsoletes: ros-noetic-roslz4-devel < 1.15.13-1
-Obsoletes: ros-kinetic-roslz4-devel < 1.15.13-1
+Provides: ros-noetic-roslz4-devel = 1.15.13-2
+Obsoletes: ros-noetic-roslz4-devel < 1.15.13-2
+Obsoletes: ros-kinetic-roslz4-devel < 1.15.13-2
 
 
 %description devel
@@ -140,6 +140,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.13-2
+- Rebuild to pull in updated dependencies
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.13-1
 - Update to latest release
 * Mon May 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.11-1

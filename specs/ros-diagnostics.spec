@@ -1,6 +1,6 @@
 Name:           ros-diagnostics
 Version:        noetic.1.10.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package diagnostics
 
 License:        BSD
@@ -27,9 +27,9 @@ Requires:       ros-noetic-diagnostic_common_diagnostics
 Requires:       ros-noetic-diagnostic_updater
 Requires:       ros-noetic-self_test
 
-Provides:  ros-noetic-diagnostics = 1.10.4-1
-Obsoletes: ros-noetic-diagnostics < 1.10.4-1
-Obsoletes: ros-kinetic-diagnostics < 1.10.4-1
+Provides:  ros-noetic-diagnostics = 1.10.4-2
+Obsoletes: ros-noetic-diagnostics < 1.10.4-2
+Obsoletes: ros-kinetic-diagnostics < 1.10.4-2
 
 
 
@@ -46,9 +46,9 @@ Requires:       ros-noetic-diagnostic_common_diagnostics-devel
 Requires:       ros-noetic-diagnostic_updater-devel
 Requires:       ros-noetic-self_test-devel
 
-Provides: ros-noetic-diagnostics-devel = 1.10.4-1
-Obsoletes: ros-noetic-diagnostics-devel < 1.10.4-1
-Obsoletes: ros-kinetic-diagnostics-devel < 1.10.4-1
+Provides: ros-noetic-diagnostics-devel = 1.10.4-2
+Obsoletes: ros-noetic-diagnostics-devel < 1.10.4-2
+Obsoletes: ros-kinetic-diagnostics-devel < 1.10.4-2
 
 
 %description devel
@@ -143,6 +143,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.10.4-2
+- Rebuild to pull in updated dependencies
 * Thu Apr 08 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.10.4-1
 - Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.10.3-2

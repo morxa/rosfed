@@ -1,6 +1,6 @@
 Name:           ros-rviz
 Version:        noetic.1.14.10
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package rviz
 
 License:        BSD
@@ -87,9 +87,9 @@ Requires:       ros-noetic-tf2_ros
 Requires:       ros-noetic-urdf
 Requires:       ros-noetic-visualization_msgs
 
-Provides:  ros-noetic-rviz = 1.14.10-1
-Obsoletes: ros-noetic-rviz < 1.14.10-1
-Obsoletes: ros-kinetic-rviz < 1.14.10-1
+Provides:  ros-noetic-rviz = 1.14.10-2
+Obsoletes: ros-noetic-rviz < 1.14.10-2
+Obsoletes: ros-kinetic-rviz < 1.14.10-2
 
 
 
@@ -143,9 +143,9 @@ Requires:       ros-noetic-visualization_msgs-devel
 Requires:       ros-noetic-media_export-devel
 Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-noetic-rviz-devel = 1.14.10-1
-Obsoletes: ros-noetic-rviz-devel < 1.14.10-1
-Obsoletes: ros-kinetic-rviz-devel < 1.14.10-1
+Provides: ros-noetic-rviz-devel = 1.14.10-2
+Obsoletes: ros-noetic-rviz-devel < 1.14.10-2
+Obsoletes: ros-kinetic-rviz-devel < 1.14.10-2
 
 
 %description devel
@@ -241,6 +241,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.10-2
+- Rebuild to pull in updated dependencies
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.10-1
 - Update to latest release
 * Thu Sep 16 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.9-1

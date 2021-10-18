@@ -1,6 +1,6 @@
 Name:           ros-costmap_converter
 Version:        noetic.0.0.13
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package costmap_converter
 
 License:        BSD
@@ -39,9 +39,9 @@ Requires:       ros-noetic-pluginlib
 Requires:       ros-noetic-roscpp
 Requires:       ros-noetic-std_msgs
 
-Provides:  ros-noetic-costmap_converter = 0.0.13-2
-Obsoletes: ros-noetic-costmap_converter < 0.0.13-2
-Obsoletes: ros-kinetic-costmap_converter < 0.0.13-2
+Provides:  ros-noetic-costmap_converter = 0.0.13-3
+Obsoletes: ros-noetic-costmap_converter < 0.0.13-3
+Obsoletes: ros-kinetic-costmap_converter < 0.0.13-3
 
 
 
@@ -64,9 +64,9 @@ Requires:       ros-noetic-roscpp-devel
 Requires:       ros-noetic-rostest-devel
 Requires:       ros-noetic-std_msgs-devel
 
-Provides: ros-noetic-costmap_converter-devel = 0.0.13-2
-Obsoletes: ros-noetic-costmap_converter-devel < 0.0.13-2
-Obsoletes: ros-kinetic-costmap_converter-devel < 0.0.13-2
+Provides: ros-noetic-costmap_converter-devel = 0.0.13-3
+Obsoletes: ros-noetic-costmap_converter-devel < 0.0.13-3
+Obsoletes: ros-kinetic-costmap_converter-devel < 0.0.13-3
 
 
 %description devel
@@ -161,6 +161,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.0.13-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.0.13-2
 - Modernize python shebang replacement
 * Thu Jun 11 2020 Nicolas Limpert - noetic.0.0.13-1

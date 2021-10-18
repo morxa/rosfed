@@ -1,6 +1,6 @@
 Name:           ros-tf2_msgs
 Version:        noetic.0.7.5
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package tf2_msgs
 
 License:        BSD
@@ -29,9 +29,9 @@ Requires:       ros-noetic-actionlib_msgs
 Requires:       ros-noetic-geometry_msgs
 Requires:       ros-noetic-message_generation
 
-Provides:  ros-noetic-tf2_msgs = 0.7.5-2
-Obsoletes: ros-noetic-tf2_msgs < 0.7.5-2
-Obsoletes: ros-kinetic-tf2_msgs < 0.7.5-2
+Provides:  ros-noetic-tf2_msgs = 0.7.5-3
+Obsoletes: ros-noetic-tf2_msgs < 0.7.5-3
+Obsoletes: ros-kinetic-tf2_msgs < 0.7.5-3
 
 
 
@@ -47,9 +47,9 @@ Requires:       ros-noetic-actionlib_msgs-devel
 Requires:       ros-noetic-geometry_msgs-devel
 Requires:       ros-noetic-message_generation-devel
 
-Provides: ros-noetic-tf2_msgs-devel = 0.7.5-2
-Obsoletes: ros-noetic-tf2_msgs-devel < 0.7.5-2
-Obsoletes: ros-kinetic-tf2_msgs-devel < 0.7.5-2
+Provides: ros-noetic-tf2_msgs-devel = 0.7.5-3
+Obsoletes: ros-noetic-tf2_msgs-devel < 0.7.5-3
+Obsoletes: ros-kinetic-tf2_msgs-devel < 0.7.5-3
 
 
 %description devel
@@ -144,6 +144,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.7.5-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.7.5-2
 - Modernize python shebang replacement
 * Thu Sep 10 2020 Nicolas Limpert <limpert@fh-aachen.de> - noetic.0.7.5-1

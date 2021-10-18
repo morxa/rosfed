@@ -1,6 +1,6 @@
 Name:           ros-ros
 Version:        noetic.1.15.8
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package ros
 
 License:        BSD
@@ -33,9 +33,9 @@ Requires:       ros-noetic-roslib
 Requires:       ros-noetic-rosmake
 Requires:       ros-noetic-rosunit
 
-Provides:  ros-noetic-ros = 1.15.8-1
-Obsoletes: ros-noetic-ros < 1.15.8-1
-Obsoletes: ros-kinetic-ros < 1.15.8-1
+Provides:  ros-noetic-ros = 1.15.8-2
+Obsoletes: ros-noetic-ros < 1.15.8-2
+Obsoletes: ros-kinetic-ros < 1.15.8-2
 
 
 
@@ -57,9 +57,9 @@ Requires:       ros-noetic-roslib-devel
 Requires:       ros-noetic-rosmake-devel
 Requires:       ros-noetic-rosunit-devel
 
-Provides: ros-noetic-ros-devel = 1.15.8-1
-Obsoletes: ros-noetic-ros-devel < 1.15.8-1
-Obsoletes: ros-kinetic-ros-devel < 1.15.8-1
+Provides: ros-noetic-ros-devel = 1.15.8-2
+Obsoletes: ros-noetic-ros-devel < 1.15.8-2
+Obsoletes: ros-kinetic-ros-devel < 1.15.8-2
 
 
 %description devel
@@ -154,6 +154,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.8-2
+- Rebuild to pull in updated dependencies
 * Thu Sep 16 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.8-1
 - Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.7-2

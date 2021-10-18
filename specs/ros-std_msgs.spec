@@ -1,6 +1,6 @@
 Name:           ros-std_msgs
 Version:        noetic.0.5.13
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package std_msgs
 
 License:        BSD
@@ -26,9 +26,9 @@ BuildRequires:  ros-noetic-message_generation-devel
 Requires:       python3-pyyaml
 Requires:       ros-noetic-message_runtime
 
-Provides:  ros-noetic-std_msgs = 0.5.13-2
-Obsoletes: ros-noetic-std_msgs < 0.5.13-2
-Obsoletes: ros-kinetic-std_msgs < 0.5.13-2
+Provides:  ros-noetic-std_msgs = 0.5.13-3
+Obsoletes: ros-noetic-std_msgs < 0.5.13-3
+Obsoletes: ros-kinetic-std_msgs < 0.5.13-3
 
 
 
@@ -46,9 +46,9 @@ Requires:       python3-pyyaml
 Requires:       ros-noetic-message_generation-devel
 Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-noetic-std_msgs-devel = 0.5.13-2
-Obsoletes: ros-noetic-std_msgs-devel < 0.5.13-2
-Obsoletes: ros-kinetic-std_msgs-devel < 0.5.13-2
+Provides: ros-noetic-std_msgs-devel = 0.5.13-3
+Obsoletes: ros-noetic-std_msgs-devel < 0.5.13-3
+Obsoletes: ros-kinetic-std_msgs-devel < 0.5.13-3
 
 
 %description devel
@@ -143,6 +143,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.13-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.13-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.13-1

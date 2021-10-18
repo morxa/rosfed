@@ -1,6 +1,6 @@
 Name:           ros-rviz_python_tutorial
 Version:        noetic.0.11.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package rviz_python_tutorial
 
 License:        BSD
@@ -26,9 +26,9 @@ BuildRequires:  ros-noetic-rviz-devel
 
 Requires:       ros-noetic-rviz
 
-Provides:  ros-noetic-rviz_python_tutorial = 0.11.0-2
-Obsoletes: ros-noetic-rviz_python_tutorial < 0.11.0-2
-Obsoletes: ros-kinetic-rviz_python_tutorial < 0.11.0-2
+Provides:  ros-noetic-rviz_python_tutorial = 0.11.0-3
+Obsoletes: ros-noetic-rviz_python_tutorial < 0.11.0-3
+Obsoletes: ros-kinetic-rviz_python_tutorial < 0.11.0-3
 
 
 
@@ -43,9 +43,9 @@ Requires:       eigen3-devel
 Requires:       ogre-devel
 Requires:       ros-noetic-rviz-devel
 
-Provides: ros-noetic-rviz_python_tutorial-devel = 0.11.0-2
-Obsoletes: ros-noetic-rviz_python_tutorial-devel < 0.11.0-2
-Obsoletes: ros-kinetic-rviz_python_tutorial-devel < 0.11.0-2
+Provides: ros-noetic-rviz_python_tutorial-devel = 0.11.0-3
+Obsoletes: ros-noetic-rviz_python_tutorial-devel < 0.11.0-3
+Obsoletes: ros-kinetic-rviz_python_tutorial-devel < 0.11.0-3
 
 
 %description devel
@@ -140,6 +140,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.11.0-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.11.0-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.11.0-1

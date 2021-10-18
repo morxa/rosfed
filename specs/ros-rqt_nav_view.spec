@@ -1,6 +1,6 @@
 Name:           ros-rqt_nav_view
 Version:        noetic.0.5.7
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package rqt_nav_view
 
 License:        BSD
@@ -31,9 +31,9 @@ Requires:       ros-noetic-rqt_gui_py
 Requires:       ros-noetic-rqt_py_common
 Requires:       ros-noetic-tf
 
-Provides:  ros-noetic-rqt_nav_view = 0.5.7-2
-Obsoletes: ros-noetic-rqt_nav_view < 0.5.7-2
-Obsoletes: ros-kinetic-rqt_nav_view < 0.5.7-2
+Provides:  ros-noetic-rqt_nav_view = 0.5.7-3
+Obsoletes: ros-noetic-rqt_nav_view < 0.5.7-3
+Obsoletes: ros-kinetic-rqt_nav_view < 0.5.7-3
 
 
 
@@ -54,9 +54,9 @@ Requires:       ros-noetic-rqt_gui_py-devel
 Requires:       ros-noetic-rqt_py_common-devel
 Requires:       ros-noetic-tf-devel
 
-Provides: ros-noetic-rqt_nav_view-devel = 0.5.7-2
-Obsoletes: ros-noetic-rqt_nav_view-devel < 0.5.7-2
-Obsoletes: ros-kinetic-rqt_nav_view-devel < 0.5.7-2
+Provides: ros-noetic-rqt_nav_view-devel = 0.5.7-3
+Obsoletes: ros-noetic-rqt_nav_view-devel < 0.5.7-3
+Obsoletes: ros-kinetic-rqt_nav_view-devel < 0.5.7-3
 
 
 %description devel
@@ -151,6 +151,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.7-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.7-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.7-1

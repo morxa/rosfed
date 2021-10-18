@@ -1,6 +1,6 @@
 Name:           ros-webkit_dependency
 Version:        noetic.1.1.2
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package webkit_dependency
 
 License:        BSD
@@ -24,9 +24,9 @@ BuildRequires:  ros-noetic-catkin-devel
 Requires:       python3-qt5
 Requires:       python3-qt5-webkit
 
-Provides:  ros-noetic-webkit_dependency = 1.1.2-2
-Obsoletes: ros-noetic-webkit_dependency < 1.1.2-2
-Obsoletes: ros-kinetic-webkit_dependency < 1.1.2-2
+Provides:  ros-noetic-webkit_dependency = 1.1.2-3
+Obsoletes: ros-noetic-webkit_dependency < 1.1.2-3
+Obsoletes: ros-kinetic-webkit_dependency < 1.1.2-3
 
 
 
@@ -39,9 +39,9 @@ Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-noetic-catkin-devel
 
-Provides: ros-noetic-webkit_dependency-devel = 1.1.2-2
-Obsoletes: ros-noetic-webkit_dependency-devel < 1.1.2-2
-Obsoletes: ros-kinetic-webkit_dependency-devel < 1.1.2-2
+Provides: ros-noetic-webkit_dependency-devel = 1.1.2-3
+Obsoletes: ros-noetic-webkit_dependency-devel < 1.1.2-3
+Obsoletes: ros-kinetic-webkit_dependency-devel < 1.1.2-3
 
 
 %description devel
@@ -136,6 +136,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.1.2-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.1.2-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.1.2-1

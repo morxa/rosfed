@@ -1,6 +1,6 @@
 Name:           ros-image_common
 Version:        noetic.1.12.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package image_common
 
 License:        BSD
@@ -26,9 +26,9 @@ Requires:       ros-noetic-camera_info_manager
 Requires:       ros-noetic-image_transport
 Requires:       ros-noetic-polled_camera
 
-Provides:  ros-noetic-image_common = 1.12.0-2
-Obsoletes: ros-noetic-image_common < 1.12.0-2
-Obsoletes: ros-kinetic-image_common < 1.12.0-2
+Provides:  ros-noetic-image_common = 1.12.0-3
+Obsoletes: ros-noetic-image_common < 1.12.0-3
+Obsoletes: ros-kinetic-image_common < 1.12.0-3
 
 
 
@@ -44,9 +44,9 @@ Requires:       ros-noetic-camera_info_manager-devel
 Requires:       ros-noetic-image_transport-devel
 Requires:       ros-noetic-polled_camera-devel
 
-Provides: ros-noetic-image_common-devel = 1.12.0-2
-Obsoletes: ros-noetic-image_common-devel < 1.12.0-2
-Obsoletes: ros-kinetic-image_common-devel < 1.12.0-2
+Provides: ros-noetic-image_common-devel = 1.12.0-3
+Obsoletes: ros-noetic-image_common-devel < 1.12.0-3
+Obsoletes: ros-kinetic-image_common-devel < 1.12.0-3
 
 
 %description devel
@@ -141,6 +141,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.12.0-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.12.0-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.12.0-1

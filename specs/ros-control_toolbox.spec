@@ -1,6 +1,6 @@
 Name:           ros-control_toolbox
 Version:        noetic.1.18.2
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package control_toolbox
 
 License:        BSD
@@ -36,9 +36,9 @@ Requires:       ros-noetic-realtime_tools
 Requires:       ros-noetic-roscpp
 Requires:       ros-noetic-std_msgs
 
-Provides:  ros-noetic-control_toolbox = 1.18.2-2
-Obsoletes: ros-noetic-control_toolbox < 1.18.2-2
-Obsoletes: ros-kinetic-control_toolbox < 1.18.2-2
+Provides:  ros-noetic-control_toolbox = 1.18.2-3
+Obsoletes: ros-noetic-control_toolbox < 1.18.2-3
+Obsoletes: ros-kinetic-control_toolbox < 1.18.2-3
 
 
 
@@ -61,9 +61,9 @@ Requires:       ros-noetic-rosunit-devel
 Requires:       ros-noetic-std_msgs-devel
 Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-noetic-control_toolbox-devel = 1.18.2-2
-Obsoletes: ros-noetic-control_toolbox-devel < 1.18.2-2
-Obsoletes: ros-kinetic-control_toolbox-devel < 1.18.2-2
+Provides: ros-noetic-control_toolbox-devel = 1.18.2-3
+Obsoletes: ros-noetic-control_toolbox-devel < 1.18.2-3
+Obsoletes: ros-kinetic-control_toolbox-devel < 1.18.2-3
 
 
 %description devel
@@ -158,6 +158,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.18.2-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.18.2-2
 - Modernize python shebang replacement
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.18.2-1

@@ -1,6 +1,6 @@
 Name:           ros-roscpp_core
 Version:        noetic.0.7.2
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package roscpp_core
 
 License:        BSD
@@ -26,9 +26,9 @@ Requires:       ros-noetic-roscpp_serialization
 Requires:       ros-noetic-roscpp_traits
 Requires:       ros-noetic-rostime
 
-Provides:  ros-noetic-roscpp_core = 0.7.2-2
-Obsoletes: ros-noetic-roscpp_core < 0.7.2-2
-Obsoletes: ros-kinetic-roscpp_core < 0.7.2-2
+Provides:  ros-noetic-roscpp_core = 0.7.2-3
+Obsoletes: ros-noetic-roscpp_core < 0.7.2-3
+Obsoletes: ros-kinetic-roscpp_core < 0.7.2-3
 
 
 
@@ -44,9 +44,9 @@ Requires:       ros-noetic-cpp_common-devel
 Requires:       ros-noetic-roscpp_serialization-devel
 Requires:       ros-noetic-roscpp_traits-devel
 
-Provides: ros-noetic-roscpp_core-devel = 0.7.2-2
-Obsoletes: ros-noetic-roscpp_core-devel < 0.7.2-2
-Obsoletes: ros-kinetic-roscpp_core-devel < 0.7.2-2
+Provides: ros-noetic-roscpp_core-devel = 0.7.2-3
+Obsoletes: ros-noetic-roscpp_core-devel < 0.7.2-3
+Obsoletes: ros-kinetic-roscpp_core-devel < 0.7.2-3
 
 
 %description devel
@@ -141,6 +141,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.7.2-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.7.2-2
 - Modernize python shebang replacement
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.7.2-1

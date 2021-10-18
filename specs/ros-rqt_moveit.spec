@@ -1,6 +1,6 @@
 Name:           ros-rqt_moveit
 Version:        noetic.0.5.10
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package rqt_moveit
 
 License:        BSD
@@ -32,9 +32,9 @@ Requires:       ros-noetic-rqt_py_common
 Requires:       ros-noetic-rqt_topic
 Requires:       ros-noetic-sensor_msgs
 
-Provides:  ros-noetic-rqt_moveit = 0.5.10-1
-Obsoletes: ros-noetic-rqt_moveit < 0.5.10-1
-Obsoletes: ros-kinetic-rqt_moveit < 0.5.10-1
+Provides:  ros-noetic-rqt_moveit = 0.5.10-2
+Obsoletes: ros-noetic-rqt_moveit < 0.5.10-2
+Obsoletes: ros-kinetic-rqt_moveit < 0.5.10-2
 
 
 
@@ -56,9 +56,9 @@ Requires:       ros-noetic-rqt_py_common-devel
 Requires:       ros-noetic-rqt_topic-devel
 Requires:       ros-noetic-sensor_msgs-devel
 
-Provides: ros-noetic-rqt_moveit-devel = 0.5.10-1
-Obsoletes: ros-noetic-rqt_moveit-devel < 0.5.10-1
-Obsoletes: ros-kinetic-rqt_moveit-devel < 0.5.10-1
+Provides: ros-noetic-rqt_moveit-devel = 0.5.10-2
+Obsoletes: ros-noetic-rqt_moveit-devel < 0.5.10-2
+Obsoletes: ros-kinetic-rqt_moveit-devel < 0.5.10-2
 
 
 %description devel
@@ -153,6 +153,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.10-2
+- Rebuild to pull in updated dependencies
 * Mon May 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.10-1
 - Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.9-2

@@ -1,6 +1,6 @@
 Name:           ros-gennodejs
 Version:        noetic.2.0.2
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package gennodejs
 
 License:        Apache 2.0
@@ -25,9 +25,9 @@ BuildRequires:  ros-noetic-genmsg-devel
 
 Requires:       ros-noetic-genmsg
 
-Provides:  ros-noetic-gennodejs = 2.0.2-2
-Obsoletes: ros-noetic-gennodejs < 2.0.2-2
-Obsoletes: ros-kinetic-gennodejs < 2.0.2-2
+Provides:  ros-noetic-gennodejs = 2.0.2-3
+Obsoletes: ros-noetic-gennodejs < 2.0.2-3
+Obsoletes: ros-kinetic-gennodejs < 2.0.2-3
 
 
 
@@ -41,9 +41,9 @@ Requires:       python3-setuptools
 Requires:       ros-noetic-catkin-devel
 Requires:       ros-noetic-genmsg-devel
 
-Provides: ros-noetic-gennodejs-devel = 2.0.2-2
-Obsoletes: ros-noetic-gennodejs-devel < 2.0.2-2
-Obsoletes: ros-kinetic-gennodejs-devel < 2.0.2-2
+Provides: ros-noetic-gennodejs-devel = 2.0.2-3
+Obsoletes: ros-noetic-gennodejs-devel < 2.0.2-3
+Obsoletes: ros-kinetic-gennodejs-devel < 2.0.2-3
 
 
 %description devel
@@ -138,6 +138,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.2.0.2-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.2.0.2-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.2.0.2-1

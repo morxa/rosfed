@@ -1,6 +1,6 @@
 Name:           ros-pcl_conversions
 Version:        noetic.1.7.3
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package pcl_conversions
 
 License:        BSD
@@ -28,9 +28,9 @@ BuildRequires:  ros-noetic-sensor_msgs-devel
 BuildRequires:  ros-noetic-std_msgs-devel
 
 
-Provides:  ros-noetic-pcl_conversions = 1.7.3-1
-Obsoletes: ros-noetic-pcl_conversions < 1.7.3-1
-Obsoletes: ros-kinetic-pcl_conversions < 1.7.3-1
+Provides:  ros-noetic-pcl_conversions = 1.7.3-2
+Obsoletes: ros-noetic-pcl_conversions < 1.7.3-2
+Obsoletes: ros-kinetic-pcl_conversions < 1.7.3-2
 
 
 
@@ -48,9 +48,9 @@ Requires:       ros-noetic-roscpp-devel
 Requires:       ros-noetic-sensor_msgs-devel
 Requires:       ros-noetic-std_msgs-devel
 
-Provides: ros-noetic-pcl_conversions-devel = 1.7.3-1
-Obsoletes: ros-noetic-pcl_conversions-devel < 1.7.3-1
-Obsoletes: ros-kinetic-pcl_conversions-devel < 1.7.3-1
+Provides: ros-noetic-pcl_conversions-devel = 1.7.3-2
+Obsoletes: ros-noetic-pcl_conversions-devel < 1.7.3-2
+Obsoletes: ros-kinetic-pcl_conversions-devel < 1.7.3-2
 
 
 %description devel
@@ -145,6 +145,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.3-2
+- Rebuild to pull in updated dependencies
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.3-1
 - Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.2-2

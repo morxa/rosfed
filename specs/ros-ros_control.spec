@@ -1,6 +1,6 @@
 Name:           ros-ros_control
 Version:        noetic.0.19.5
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package ros_control
 
 License:        BSD
@@ -30,9 +30,9 @@ Requires:       ros-noetic-joint_limits_interface
 Requires:       ros-noetic-realtime_tools
 Requires:       ros-noetic-transmission_interface
 
-Provides:  ros-noetic-ros_control = 0.19.5-1
-Obsoletes: ros-noetic-ros_control < 0.19.5-1
-Obsoletes: ros-kinetic-ros_control < 0.19.5-1
+Provides:  ros-noetic-ros_control = 0.19.5-2
+Obsoletes: ros-noetic-ros_control < 0.19.5-2
+Obsoletes: ros-kinetic-ros_control < 0.19.5-2
 
 
 
@@ -53,9 +53,9 @@ Requires:       ros-noetic-joint_limits_interface-devel
 Requires:       ros-noetic-realtime_tools-devel
 Requires:       ros-noetic-transmission_interface-devel
 
-Provides: ros-noetic-ros_control-devel = 0.19.5-1
-Obsoletes: ros-noetic-ros_control-devel < 0.19.5-1
-Obsoletes: ros-kinetic-ros_control-devel < 0.19.5-1
+Provides: ros-noetic-ros_control-devel = 0.19.5-2
+Obsoletes: ros-noetic-ros_control-devel < 0.19.5-2
+Obsoletes: ros-kinetic-ros_control-devel < 0.19.5-2
 
 
 %description devel
@@ -150,6 +150,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.19.5-2
+- Rebuild to pull in updated dependencies
 * Sun Jun 27 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.19.5-1
 - Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.19.4-2

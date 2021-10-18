@@ -1,6 +1,6 @@
 Name:           ros-pluginlib
 Version:        noetic.1.13.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package pluginlib
 
 License:        BSD
@@ -33,9 +33,9 @@ BuildRequires:  ros-noetic-roslib-devel
 BuildRequires:  ros-noetic-rostime-devel
 
 
-Provides:  ros-noetic-pluginlib = 1.13.0-2
-Obsoletes: ros-noetic-pluginlib < 1.13.0-2
-Obsoletes: ros-kinetic-pluginlib < 1.13.0-2
+Provides:  ros-noetic-pluginlib = 1.13.0-3
+Obsoletes: ros-noetic-pluginlib < 1.13.0-3
+Obsoletes: ros-kinetic-pluginlib < 1.13.0-3
 
 
 
@@ -61,9 +61,9 @@ Requires:       tinyxml-devel
 Requires:       ros-noetic-cmake_modules-devel
 Requires:       ros-noetic-rostime-devel
 
-Provides: ros-noetic-pluginlib-devel = 1.13.0-2
-Obsoletes: ros-noetic-pluginlib-devel < 1.13.0-2
-Obsoletes: ros-kinetic-pluginlib-devel < 1.13.0-2
+Provides: ros-noetic-pluginlib-devel = 1.13.0-3
+Obsoletes: ros-noetic-pluginlib-devel < 1.13.0-3
+Obsoletes: ros-kinetic-pluginlib-devel < 1.13.0-3
 
 
 %description devel
@@ -158,6 +158,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.0-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.0-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.0-1

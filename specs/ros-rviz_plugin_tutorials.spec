@@ -1,6 +1,6 @@
 Name:           ros-rviz_plugin_tutorials
 Version:        noetic.0.11.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package rviz_plugin_tutorials
 
 License:        BSD
@@ -32,9 +32,9 @@ Requires:       qt5-qtbase
 Requires:       qt5-qtbase-gui
 Requires:       ros-noetic-rviz
 
-Provides:  ros-noetic-rviz_plugin_tutorials = 0.11.0-2
-Obsoletes: ros-noetic-rviz_plugin_tutorials < 0.11.0-2
-Obsoletes: ros-kinetic-rviz_plugin_tutorials < 0.11.0-2
+Provides:  ros-noetic-rviz_plugin_tutorials = 0.11.0-3
+Obsoletes: ros-noetic-rviz_plugin_tutorials < 0.11.0-3
+Obsoletes: ros-kinetic-rviz_plugin_tutorials < 0.11.0-3
 
 
 
@@ -54,9 +54,9 @@ Requires:       tinyxml2-devel
 Requires:       urdfdom-devel
 Requires:       ros-noetic-rviz-devel
 
-Provides: ros-noetic-rviz_plugin_tutorials-devel = 0.11.0-2
-Obsoletes: ros-noetic-rviz_plugin_tutorials-devel < 0.11.0-2
-Obsoletes: ros-kinetic-rviz_plugin_tutorials-devel < 0.11.0-2
+Provides: ros-noetic-rviz_plugin_tutorials-devel = 0.11.0-3
+Obsoletes: ros-noetic-rviz_plugin_tutorials-devel < 0.11.0-3
+Obsoletes: ros-kinetic-rviz_plugin_tutorials-devel < 0.11.0-3
 
 
 %description devel
@@ -151,6 +151,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.11.0-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.11.0-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.11.0-1

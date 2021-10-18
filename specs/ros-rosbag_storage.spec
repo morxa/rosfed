@@ -1,6 +1,6 @@
 Name:           ros-rosbag_storage
 Version:        noetic.1.15.13
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package rosbag_storage
 
 License:        BSD
@@ -41,9 +41,9 @@ Requires:       ros-noetic-roscpp_traits
 Requires:       ros-noetic-roslz4
 Requires:       ros-noetic-rostime
 
-Provides:  ros-noetic-rosbag_storage = 1.15.13-1
-Obsoletes: ros-noetic-rosbag_storage < 1.15.13-1
-Obsoletes: ros-kinetic-rosbag_storage < 1.15.13-1
+Provides:  ros-noetic-rosbag_storage = 1.15.13-2
+Obsoletes: ros-noetic-rosbag_storage < 1.15.13-2
+Obsoletes: ros-kinetic-rosbag_storage < 1.15.13-2
 
 
 
@@ -70,9 +70,9 @@ Requires:       ros-noetic-rostest-devel
 Requires:       ros-noetic-rostime-devel
 Requires:       ros-noetic-std_msgs-devel
 
-Provides: ros-noetic-rosbag_storage-devel = 1.15.13-1
-Obsoletes: ros-noetic-rosbag_storage-devel < 1.15.13-1
-Obsoletes: ros-kinetic-rosbag_storage-devel < 1.15.13-1
+Provides: ros-noetic-rosbag_storage-devel = 1.15.13-2
+Obsoletes: ros-noetic-rosbag_storage-devel < 1.15.13-2
+Obsoletes: ros-kinetic-rosbag_storage-devel < 1.15.13-2
 
 
 %description devel
@@ -167,6 +167,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.13-2
+- Rebuild to pull in updated dependencies
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.13-1
 - Update to latest release
 * Mon May 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.11-1

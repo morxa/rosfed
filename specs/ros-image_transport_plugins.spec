@@ -1,6 +1,6 @@
 Name:           ros-image_transport_plugins
 Version:        noetic.1.14.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package image_transport_plugins
 
 License:        BSD
@@ -25,9 +25,9 @@ Requires:       ros-noetic-compressed_depth_image_transport
 Requires:       ros-noetic-compressed_image_transport
 Requires:       ros-noetic-theora_image_transport
 
-Provides:  ros-noetic-image_transport_plugins = 1.14.0-2
-Obsoletes: ros-noetic-image_transport_plugins < 1.14.0-2
-Obsoletes: ros-kinetic-image_transport_plugins < 1.14.0-2
+Provides:  ros-noetic-image_transport_plugins = 1.14.0-3
+Obsoletes: ros-noetic-image_transport_plugins < 1.14.0-3
+Obsoletes: ros-kinetic-image_transport_plugins < 1.14.0-3
 
 
 
@@ -47,9 +47,9 @@ Requires:       ros-noetic-compressed_depth_image_transport-devel
 Requires:       ros-noetic-compressed_image_transport-devel
 Requires:       ros-noetic-theora_image_transport-devel
 
-Provides: ros-noetic-image_transport_plugins-devel = 1.14.0-2
-Obsoletes: ros-noetic-image_transport_plugins-devel < 1.14.0-2
-Obsoletes: ros-kinetic-image_transport_plugins-devel < 1.14.0-2
+Provides: ros-noetic-image_transport_plugins-devel = 1.14.0-3
+Obsoletes: ros-noetic-image_transport_plugins-devel < 1.14.0-3
+Obsoletes: ros-kinetic-image_transport_plugins-devel < 1.14.0-3
 
 
 %description devel
@@ -144,6 +144,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.0-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.0-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.0-1

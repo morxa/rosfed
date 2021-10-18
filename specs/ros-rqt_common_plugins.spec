@@ -1,6 +1,6 @@
 Name:           ros-rqt_common_plugins
 Version:        noetic.0.4.9
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package rqt_common_plugins
 
 License:        BSD
@@ -43,9 +43,9 @@ Requires:       ros-noetic-rqt_top
 Requires:       ros-noetic-rqt_topic
 Requires:       ros-noetic-rqt_web
 
-Provides:  ros-noetic-rqt_common_plugins = 0.4.9-2
-Obsoletes: ros-noetic-rqt_common_plugins < 0.4.9-2
-Obsoletes: ros-kinetic-rqt_common_plugins < 0.4.9-2
+Provides:  ros-noetic-rqt_common_plugins = 0.4.9-3
+Obsoletes: ros-noetic-rqt_common_plugins < 0.4.9-3
+Obsoletes: ros-kinetic-rqt_common_plugins < 0.4.9-3
 
 
 
@@ -79,9 +79,9 @@ Requires:       ros-noetic-rqt_top-devel
 Requires:       ros-noetic-rqt_topic-devel
 Requires:       ros-noetic-rqt_web-devel
 
-Provides: ros-noetic-rqt_common_plugins-devel = 0.4.9-2
-Obsoletes: ros-noetic-rqt_common_plugins-devel < 0.4.9-2
-Obsoletes: ros-kinetic-rqt_common_plugins-devel < 0.4.9-2
+Provides: ros-noetic-rqt_common_plugins-devel = 0.4.9-3
+Obsoletes: ros-noetic-rqt_common_plugins-devel < 0.4.9-3
+Obsoletes: ros-kinetic-rqt_common_plugins-devel < 0.4.9-3
 
 
 %description devel
@@ -176,6 +176,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.9-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.9-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.9-1

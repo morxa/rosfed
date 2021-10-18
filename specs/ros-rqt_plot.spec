@@ -1,6 +1,6 @@
 Name:           ros-rqt_plot
 Version:        noetic.0.4.13
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package rqt_plot
 
 License:        BSD
@@ -35,9 +35,9 @@ Requires:       ros-noetic-rqt_gui_py
 Requires:       ros-noetic-rqt_py_common
 Requires:       ros-noetic-std_msgs
 
-Provides:  ros-noetic-rqt_plot = 0.4.13-1
-Obsoletes: ros-noetic-rqt_plot < 0.4.13-1
-Obsoletes: ros-kinetic-rqt_plot < 0.4.13-1
+Provides:  ros-noetic-rqt_plot = 0.4.13-2
+Obsoletes: ros-noetic-rqt_plot < 0.4.13-2
+Obsoletes: ros-kinetic-rqt_plot < 0.4.13-2
 
 
 
@@ -59,9 +59,9 @@ Requires:       ros-noetic-rqt_gui_py-devel
 Requires:       ros-noetic-rqt_py_common-devel
 Requires:       ros-noetic-std_msgs-devel
 
-Provides: ros-noetic-rqt_plot-devel = 0.4.13-1
-Obsoletes: ros-noetic-rqt_plot-devel < 0.4.13-1
-Obsoletes: ros-kinetic-rqt_plot-devel < 0.4.13-1
+Provides: ros-noetic-rqt_plot-devel = 0.4.13-2
+Obsoletes: ros-noetic-rqt_plot-devel < 0.4.13-2
+Obsoletes: ros-kinetic-rqt_plot-devel < 0.4.13-2
 
 
 %description devel
@@ -156,6 +156,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.13-2
+- Rebuild to pull in updated dependencies
 * Thu Apr 08 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.13-1
 - Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.12-2

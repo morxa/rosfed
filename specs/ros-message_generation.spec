@@ -1,6 +1,6 @@
 Name:           ros-message_generation
 Version:        noetic.0.4.1
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package message_generation
 
 License:        BSD
@@ -28,9 +28,9 @@ Requires:       ros-noetic-genmsg
 Requires:       ros-noetic-gennodejs
 Requires:       ros-noetic-genpy
 
-Provides:  ros-noetic-message_generation = 0.4.1-2
-Obsoletes: ros-noetic-message_generation < 0.4.1-2
-Obsoletes: ros-kinetic-message_generation < 0.4.1-2
+Provides:  ros-noetic-message_generation = 0.4.1-3
+Obsoletes: ros-noetic-message_generation < 0.4.1-3
+Obsoletes: ros-kinetic-message_generation < 0.4.1-3
 
 
 
@@ -49,9 +49,9 @@ Requires:       ros-noetic-genmsg-devel
 Requires:       ros-noetic-gennodejs-devel
 Requires:       ros-noetic-genpy-devel
 
-Provides: ros-noetic-message_generation-devel = 0.4.1-2
-Obsoletes: ros-noetic-message_generation-devel < 0.4.1-2
-Obsoletes: ros-kinetic-message_generation-devel < 0.4.1-2
+Provides: ros-noetic-message_generation-devel = 0.4.1-3
+Obsoletes: ros-noetic-message_generation-devel < 0.4.1-3
+Obsoletes: ros-kinetic-message_generation-devel < 0.4.1-3
 
 
 %description devel
@@ -146,6 +146,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.1-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.1-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.1-1

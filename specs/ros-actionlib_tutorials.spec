@@ -1,6 +1,6 @@
 Name:           ros-actionlib_tutorials
 Version:        noetic.0.2.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package actionlib_tutorials
 
 License:        BSD
@@ -29,9 +29,9 @@ Requires:       ros-noetic-actionlib
 Requires:       ros-noetic-message_runtime
 Requires:       ros-noetic-roscpp
 
-Provides:  ros-noetic-actionlib_tutorials = 0.2.0-2
-Obsoletes: ros-noetic-actionlib_tutorials < 0.2.0-2
-Obsoletes: ros-kinetic-actionlib_tutorials < 0.2.0-2
+Provides:  ros-noetic-actionlib_tutorials = 0.2.0-3
+Obsoletes: ros-noetic-actionlib_tutorials < 0.2.0-3
+Obsoletes: ros-kinetic-actionlib_tutorials < 0.2.0-3
 
 
 
@@ -49,9 +49,9 @@ Requires:       ros-noetic-roscpp-devel
 Requires:       ros-noetic-std_msgs-devel
 Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-noetic-actionlib_tutorials-devel = 0.2.0-2
-Obsoletes: ros-noetic-actionlib_tutorials-devel < 0.2.0-2
-Obsoletes: ros-kinetic-actionlib_tutorials-devel < 0.2.0-2
+Provides: ros-noetic-actionlib_tutorials-devel = 0.2.0-3
+Obsoletes: ros-noetic-actionlib_tutorials-devel < 0.2.0-3
+Obsoletes: ros-kinetic-actionlib_tutorials-devel < 0.2.0-3
 
 
 %description devel
@@ -146,6 +146,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.2.0-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.2.0-2
 - Modernize python shebang replacement
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.2.0-1

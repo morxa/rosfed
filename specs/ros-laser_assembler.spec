@@ -1,6 +1,6 @@
 Name:           ros-laser_assembler
 Version:        noetic.1.7.8
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package laser_assembler
 
 License:        BSD
@@ -42,9 +42,9 @@ Requires:       ros-noetic-roscpp
 Requires:       ros-noetic-sensor_msgs
 Requires:       ros-noetic-tf
 
-Provides:  ros-noetic-laser_assembler = 1.7.8-2
-Obsoletes: ros-noetic-laser_assembler < 1.7.8-2
-Obsoletes: ros-kinetic-laser_assembler < 1.7.8-2
+Provides:  ros-noetic-laser_assembler = 1.7.8-3
+Obsoletes: ros-noetic-laser_assembler < 1.7.8-3
+Obsoletes: ros-kinetic-laser_assembler < 1.7.8-3
 
 
 
@@ -71,9 +71,9 @@ Requires:       ros-noetic-sensor_msgs-devel
 Requires:       ros-noetic-tf-devel
 Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-noetic-laser_assembler-devel = 1.7.8-2
-Obsoletes: ros-noetic-laser_assembler-devel < 1.7.8-2
-Obsoletes: ros-kinetic-laser_assembler-devel < 1.7.8-2
+Provides: ros-noetic-laser_assembler-devel = 1.7.8-3
+Obsoletes: ros-noetic-laser_assembler-devel < 1.7.8-3
+Obsoletes: ros-kinetic-laser_assembler-devel < 1.7.8-3
 
 
 %description devel
@@ -168,6 +168,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.8-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.8-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.8-1

@@ -1,6 +1,6 @@
 Name:           ros-position_controllers
 Version:        noetic.0.19.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package position_controllers
 
 License:        BSD
@@ -27,9 +27,9 @@ BuildRequires:  ros-noetic-roscpp-devel
 Requires:       ros-noetic-controller_interface
 Requires:       ros-noetic-roscpp
 
-Provides:  ros-noetic-position_controllers = 0.19.0-1
-Obsoletes: ros-noetic-position_controllers < 0.19.0-1
-Obsoletes: ros-kinetic-position_controllers < 0.19.0-1
+Provides:  ros-noetic-position_controllers = 0.19.0-2
+Obsoletes: ros-noetic-position_controllers < 0.19.0-2
+Obsoletes: ros-kinetic-position_controllers < 0.19.0-2
 
 
 
@@ -46,9 +46,9 @@ Requires:       ros-noetic-pluginlib-devel
 Requires:       ros-noetic-roscpp-devel
 Requires:       ros-noetic-controller_interface-devel
 
-Provides: ros-noetic-position_controllers-devel = 0.19.0-1
-Obsoletes: ros-noetic-position_controllers-devel < 0.19.0-1
-Obsoletes: ros-kinetic-position_controllers-devel < 0.19.0-1
+Provides: ros-noetic-position_controllers-devel = 0.19.0-2
+Obsoletes: ros-noetic-position_controllers-devel < 0.19.0-2
+Obsoletes: ros-kinetic-position_controllers-devel < 0.19.0-2
 
 
 %description devel
@@ -143,6 +143,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.19.0-2
+- Rebuild to pull in updated dependencies
 * Sun Jun 27 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.19.0-1
 - Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.18.1-2

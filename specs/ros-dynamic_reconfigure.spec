@@ -1,6 +1,6 @@
 Name:           ros-dynamic_reconfigure
 Version:        noetic.1.7.1
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        ROS package dynamic_reconfigure
 
 License:        BSD
@@ -34,9 +34,9 @@ Requires:       ros-noetic-rospy
 Requires:       ros-noetic-rosservice
 Requires:       ros-noetic-std_msgs
 
-Provides:  ros-noetic-dynamic_reconfigure = 1.7.1-4
-Obsoletes: ros-noetic-dynamic_reconfigure < 1.7.1-4
-Obsoletes: ros-kinetic-dynamic_reconfigure < 1.7.1-4
+Provides:  ros-noetic-dynamic_reconfigure = 1.7.1-5
+Obsoletes: ros-noetic-dynamic_reconfigure < 1.7.1-5
+Obsoletes: ros-kinetic-dynamic_reconfigure < 1.7.1-5
 
 
 
@@ -60,9 +60,9 @@ Requires:       ros-noetic-roslib-devel
 Requires:       ros-noetic-rospy-devel
 Requires:       ros-noetic-rosservice-devel
 
-Provides: ros-noetic-dynamic_reconfigure-devel = 1.7.1-4
-Obsoletes: ros-noetic-dynamic_reconfigure-devel < 1.7.1-4
-Obsoletes: ros-kinetic-dynamic_reconfigure-devel < 1.7.1-4
+Provides: ros-noetic-dynamic_reconfigure-devel = 1.7.1-5
+Obsoletes: ros-noetic-dynamic_reconfigure-devel < 1.7.1-5
+Obsoletes: ros-kinetic-dynamic_reconfigure-devel < 1.7.1-5
 
 
 %description devel
@@ -157,6 +157,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.1-5
+- Rebuild to pull in updated dependencies
 * Wed Feb 24 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.1-4
 - Also install cmake files
 * Wed Feb 24 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.1-3

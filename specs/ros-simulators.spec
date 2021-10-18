@@ -1,6 +1,6 @@
 Name:           ros-simulators
 Version:        noetic.1.5.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package simulators
 
 License:        BSD
@@ -27,9 +27,9 @@ Requires:       ros-noetic-rqt_common_plugins
 Requires:       ros-noetic-rqt_robot_plugins
 Requires:       ros-noetic-stage_ros
 
-Provides:  ros-noetic-simulators = 1.5.0-2
-Obsoletes: ros-noetic-simulators < 1.5.0-2
-Obsoletes: ros-kinetic-simulators < 1.5.0-2
+Provides:  ros-noetic-simulators = 1.5.0-3
+Obsoletes: ros-noetic-simulators < 1.5.0-3
+Obsoletes: ros-kinetic-simulators < 1.5.0-3
 
 
 
@@ -46,9 +46,9 @@ Requires:       ros-noetic-rqt_common_plugins-devel
 Requires:       ros-noetic-rqt_robot_plugins-devel
 Requires:       ros-noetic-stage_ros-devel
 
-Provides: ros-noetic-simulators-devel = 1.5.0-2
-Obsoletes: ros-noetic-simulators-devel < 1.5.0-2
-Obsoletes: ros-kinetic-simulators-devel < 1.5.0-2
+Provides: ros-noetic-simulators-devel = 1.5.0-3
+Obsoletes: ros-noetic-simulators-devel < 1.5.0-3
+Obsoletes: ros-kinetic-simulators-devel < 1.5.0-3
 
 
 %description devel
@@ -143,6 +143,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.5.0-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.5.0-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.5.0-1

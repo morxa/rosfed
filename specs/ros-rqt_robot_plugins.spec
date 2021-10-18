@@ -1,6 +1,6 @@
 Name:           ros-rqt_robot_plugins
 Version:        noetic.0.5.8
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package rqt_robot_plugins
 
 License:        BSD
@@ -31,9 +31,9 @@ Requires:       ros-noetic-rqt_runtime_monitor
 Requires:       ros-noetic-rqt_rviz
 Requires:       ros-noetic-rqt_tf_tree
 
-Provides:  ros-noetic-rqt_robot_plugins = 0.5.8-2
-Obsoletes: ros-noetic-rqt_robot_plugins < 0.5.8-2
-Obsoletes: ros-kinetic-rqt_robot_plugins < 0.5.8-2
+Provides:  ros-noetic-rqt_robot_plugins = 0.5.8-3
+Obsoletes: ros-noetic-rqt_robot_plugins < 0.5.8-3
+Obsoletes: ros-kinetic-rqt_robot_plugins < 0.5.8-3
 
 
 
@@ -55,9 +55,9 @@ Requires:       ros-noetic-rqt_runtime_monitor-devel
 Requires:       ros-noetic-rqt_rviz-devel
 Requires:       ros-noetic-rqt_tf_tree-devel
 
-Provides: ros-noetic-rqt_robot_plugins-devel = 0.5.8-2
-Obsoletes: ros-noetic-rqt_robot_plugins-devel < 0.5.8-2
-Obsoletes: ros-kinetic-rqt_robot_plugins-devel < 0.5.8-2
+Provides: ros-noetic-rqt_robot_plugins-devel = 0.5.8-3
+Obsoletes: ros-noetic-rqt_robot_plugins-devel < 0.5.8-3
+Obsoletes: ros-kinetic-rqt_robot_plugins-devel < 0.5.8-3
 
 
 %description devel
@@ -152,6 +152,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.8-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.8-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.8-1

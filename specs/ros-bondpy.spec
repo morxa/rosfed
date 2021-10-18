@@ -1,6 +1,6 @@
 Name:           ros-bondpy
 Version:        noetic.1.8.6
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package bondpy
 
 License:        BSD
@@ -28,9 +28,9 @@ BuildRequires:  ros-noetic-smclib-devel
 Requires:       ros-noetic-rospy
 Requires:       ros-noetic-smclib
 
-Provides:  ros-noetic-bondpy = 1.8.6-2
-Obsoletes: ros-noetic-bondpy < 1.8.6-2
-Obsoletes: ros-kinetic-bondpy < 1.8.6-2
+Provides:  ros-noetic-bondpy = 1.8.6-3
+Obsoletes: ros-noetic-bondpy < 1.8.6-3
+Obsoletes: ros-kinetic-bondpy < 1.8.6-3
 
 
 
@@ -47,9 +47,9 @@ Requires:       ros-noetic-bond-devel
 Requires:       ros-noetic-rospy-devel
 Requires:       ros-noetic-smclib-devel
 
-Provides: ros-noetic-bondpy-devel = 1.8.6-2
-Obsoletes: ros-noetic-bondpy-devel < 1.8.6-2
-Obsoletes: ros-kinetic-bondpy-devel < 1.8.6-2
+Provides: ros-noetic-bondpy-devel = 1.8.6-3
+Obsoletes: ros-noetic-bondpy-devel < 1.8.6-3
+Obsoletes: ros-kinetic-bondpy-devel < 1.8.6-3
 
 
 %description devel
@@ -144,6 +144,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.8.6-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.8.6-2
 - Modernize python shebang replacement
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.8.6-1

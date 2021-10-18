@@ -1,6 +1,6 @@
 Name:           ros-gazebo_dev
 Version:        noetic.2.9.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package gazebo_dev
 
 License:        Apache 2.0
@@ -24,9 +24,9 @@ BuildRequires:  ros-noetic-catkin-devel
 
 Requires:       gazebo
 
-Provides:  ros-noetic-gazebo_dev = 2.9.2-1
-Obsoletes: ros-noetic-gazebo_dev < 2.9.2-1
-Obsoletes: ros-kinetic-gazebo_dev < 2.9.2-1
+Provides:  ros-noetic-gazebo_dev = 2.9.2-2
+Obsoletes: ros-noetic-gazebo_dev < 2.9.2-2
+Obsoletes: ros-kinetic-gazebo_dev < 2.9.2-2
 
 
 
@@ -40,9 +40,9 @@ Requires:       %{name} = %{version}-%{release}
 Requires:       gazebo-devel
 Requires:       ros-noetic-catkin-devel
 
-Provides: ros-noetic-gazebo_dev-devel = 2.9.2-1
-Obsoletes: ros-noetic-gazebo_dev-devel < 2.9.2-1
-Obsoletes: ros-kinetic-gazebo_dev-devel < 2.9.2-1
+Provides: ros-noetic-gazebo_dev-devel = 2.9.2-2
+Obsoletes: ros-noetic-gazebo_dev-devel < 2.9.2-2
+Obsoletes: ros-kinetic-gazebo_dev-devel < 2.9.2-2
 
 
 %description devel
@@ -137,6 +137,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.2.9.2-2
+- Rebuild to pull in updated dependencies
 * Mon May 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.2.9.2-1
 - Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.2.9.1-2

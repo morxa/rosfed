@@ -1,6 +1,6 @@
 Name:           ros-smclib
 Version:        noetic.1.8.6
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package smclib
 
 License:        Mozilla Public License Version 1.1
@@ -23,9 +23,9 @@ BuildRequires:  python3-setuptools
 BuildRequires:  ros-noetic-catkin-devel
 
 
-Provides:  ros-noetic-smclib = 1.8.6-2
-Obsoletes: ros-noetic-smclib < 1.8.6-2
-Obsoletes: ros-kinetic-smclib < 1.8.6-2
+Provides:  ros-noetic-smclib = 1.8.6-3
+Obsoletes: ros-noetic-smclib < 1.8.6-3
+Obsoletes: ros-kinetic-smclib < 1.8.6-3
 
 
 
@@ -42,9 +42,9 @@ Requires:       %{name} = %{version}-%{release}
 Requires:       python3-setuptools
 Requires:       ros-noetic-catkin-devel
 
-Provides: ros-noetic-smclib-devel = 1.8.6-2
-Obsoletes: ros-noetic-smclib-devel < 1.8.6-2
-Obsoletes: ros-kinetic-smclib-devel < 1.8.6-2
+Provides: ros-noetic-smclib-devel = 1.8.6-3
+Obsoletes: ros-noetic-smclib-devel < 1.8.6-3
+Obsoletes: ros-kinetic-smclib-devel < 1.8.6-3
 
 
 %description devel
@@ -139,6 +139,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.8.6-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.8.6-2
 - Modernize python shebang replacement
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.8.6-1

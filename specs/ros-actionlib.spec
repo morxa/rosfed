@@ -1,6 +1,6 @@
 Name:           ros-actionlib
 Version:        noetic.1.13.2
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package actionlib
 
 License:        BSD
@@ -36,9 +36,9 @@ Requires:       ros-noetic-rospy
 Requires:       ros-noetic-rostest
 Requires:       ros-noetic-std_msgs
 
-Provides:  ros-noetic-actionlib = 1.13.2-2
-Obsoletes: ros-noetic-actionlib < 1.13.2-2
-Obsoletes: ros-kinetic-actionlib < 1.13.2-2
+Provides:  ros-noetic-actionlib = 1.13.2-3
+Obsoletes: ros-noetic-actionlib < 1.13.2-3
+Obsoletes: ros-kinetic-actionlib < 1.13.2-3
 
 
 
@@ -63,9 +63,9 @@ Requires:       ros-noetic-rosunit-devel
 Requires:       ros-noetic-std_msgs-devel
 Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-noetic-actionlib-devel = 1.13.2-2
-Obsoletes: ros-noetic-actionlib-devel < 1.13.2-2
-Obsoletes: ros-kinetic-actionlib-devel < 1.13.2-2
+Provides: ros-noetic-actionlib-devel = 1.13.2-3
+Obsoletes: ros-noetic-actionlib-devel < 1.13.2-3
+Obsoletes: ros-kinetic-actionlib-devel < 1.13.2-3
 
 
 %description devel
@@ -160,6 +160,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.2-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.2-2
 - Modernize python shebang replacement
 * Thu Sep 10 2020 Nicolas Limpert <limpert@fh-aachen.de> - noetic.1.13.2-1

@@ -1,6 +1,6 @@
 Name:           ros-map_msgs
 Version:        noetic.1.14.1
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package map_msgs
 
 License:        BSD
@@ -30,9 +30,9 @@ Requires:       ros-noetic-nav_msgs
 Requires:       ros-noetic-sensor_msgs
 Requires:       ros-noetic-std_msgs
 
-Provides:  ros-noetic-map_msgs = 1.14.1-2
-Obsoletes: ros-noetic-map_msgs < 1.14.1-2
-Obsoletes: ros-kinetic-map_msgs < 1.14.1-2
+Provides:  ros-noetic-map_msgs = 1.14.1-3
+Obsoletes: ros-noetic-map_msgs < 1.14.1-3
+Obsoletes: ros-kinetic-map_msgs < 1.14.1-3
 
 
 
@@ -49,9 +49,9 @@ Requires:       ros-noetic-sensor_msgs-devel
 Requires:       ros-noetic-std_msgs-devel
 Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-noetic-map_msgs-devel = 1.14.1-2
-Obsoletes: ros-noetic-map_msgs-devel < 1.14.1-2
-Obsoletes: ros-kinetic-map_msgs-devel < 1.14.1-2
+Provides: ros-noetic-map_msgs-devel = 1.14.1-3
+Obsoletes: ros-noetic-map_msgs-devel < 1.14.1-3
+Obsoletes: ros-kinetic-map_msgs-devel < 1.14.1-3
 
 
 %description devel
@@ -146,6 +146,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.1-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.1-2
 - Modernize python shebang replacement
 * Fri Nov 20 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.1-1

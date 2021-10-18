@@ -1,6 +1,6 @@
 Name:           ros-python_qt_binding
 Version:        noetic.0.4.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package python_qt_binding
 
 License:        BSD
@@ -27,9 +27,9 @@ BuildRequires:  ros-noetic-rosbuild-devel
 
 Requires:       python3-pyside2
 
-Provides:  ros-noetic-python_qt_binding = 0.4.4-1
-Obsoletes: ros-noetic-python_qt_binding < 0.4.4-1
-Obsoletes: ros-kinetic-python_qt_binding < 0.4.4-1
+Provides:  ros-noetic-python_qt_binding = 0.4.4-2
+Obsoletes: ros-noetic-python_qt_binding < 0.4.4-2
+Obsoletes: ros-kinetic-python_qt_binding < 0.4.4-2
 
 
 
@@ -52,9 +52,9 @@ Requires:       python3-qt5-devel sip
 Requires:       qt5-qtbase-devel
 Requires:       ros-noetic-rosbuild-devel
 
-Provides: ros-noetic-python_qt_binding-devel = 0.4.4-1
-Obsoletes: ros-noetic-python_qt_binding-devel < 0.4.4-1
-Obsoletes: ros-kinetic-python_qt_binding-devel < 0.4.4-1
+Provides: ros-noetic-python_qt_binding-devel = 0.4.4-2
+Obsoletes: ros-noetic-python_qt_binding-devel < 0.4.4-2
+Obsoletes: ros-kinetic-python_qt_binding-devel < 0.4.4-2
 
 
 %description devel
@@ -149,6 +149,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.4-2
+- Rebuild to pull in updated dependencies
 * Thu Sep 16 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.4-1
 - Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.3-2

@@ -1,6 +1,6 @@
 Name:           ros-rosconsole_bridge
 Version:        noetic.0.5.4
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package rosconsole_bridge
 
 License:        BSD
@@ -28,9 +28,9 @@ BuildRequires:  ros-noetic-rosconsole-devel
 Requires:       ros-noetic-cpp_common
 Requires:       ros-noetic-rosconsole
 
-Provides:  ros-noetic-rosconsole_bridge = 0.5.4-2
-Obsoletes: ros-noetic-rosconsole_bridge < 0.5.4-2
-Obsoletes: ros-kinetic-rosconsole_bridge < 0.5.4-2
+Provides:  ros-noetic-rosconsole_bridge = 0.5.4-3
+Obsoletes: ros-noetic-rosconsole_bridge < 0.5.4-3
+Obsoletes: ros-kinetic-rosconsole_bridge < 0.5.4-3
 
 
 
@@ -49,9 +49,9 @@ Requires:       log4cxx-devel
 Requires:       ros-noetic-cpp_common-devel
 Requires:       ros-noetic-rosconsole-devel
 
-Provides: ros-noetic-rosconsole_bridge-devel = 0.5.4-2
-Obsoletes: ros-noetic-rosconsole_bridge-devel < 0.5.4-2
-Obsoletes: ros-kinetic-rosconsole_bridge-devel < 0.5.4-2
+Provides: ros-noetic-rosconsole_bridge-devel = 0.5.4-3
+Obsoletes: ros-noetic-rosconsole_bridge-devel < 0.5.4-3
+Obsoletes: ros-kinetic-rosconsole_bridge-devel < 0.5.4-3
 
 
 %description devel
@@ -146,6 +146,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.4-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.4-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.4-1

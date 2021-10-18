@@ -1,6 +1,6 @@
 Name:           ros-genmsg
 Version:        noetic.0.5.16
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package genmsg
 
 License:        BSD
@@ -25,9 +25,9 @@ BuildRequires:  ros-noetic-catkin-devel
 Requires:       python3-empy
 Requires:       ros-noetic-catkin
 
-Provides:  ros-noetic-genmsg = 0.5.16-2
-Obsoletes: ros-noetic-genmsg < 0.5.16-2
-Obsoletes: ros-kinetic-genmsg < 0.5.16-2
+Provides:  ros-noetic-genmsg = 0.5.16-3
+Obsoletes: ros-noetic-genmsg < 0.5.16-3
+Obsoletes: ros-kinetic-genmsg < 0.5.16-3
 
 
 
@@ -41,9 +41,9 @@ Requires:       %{name} = %{version}-%{release}
 Requires:       python3-setuptools
 Requires:       ros-noetic-catkin-devel
 
-Provides: ros-noetic-genmsg-devel = 0.5.16-2
-Obsoletes: ros-noetic-genmsg-devel < 0.5.16-2
-Obsoletes: ros-kinetic-genmsg-devel < 0.5.16-2
+Provides: ros-noetic-genmsg-devel = 0.5.16-3
+Obsoletes: ros-noetic-genmsg-devel < 0.5.16-3
+Obsoletes: ros-kinetic-genmsg-devel < 0.5.16-3
 
 
 %description devel
@@ -138,6 +138,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.16-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.16-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.16-1

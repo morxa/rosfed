@@ -1,6 +1,6 @@
 Name:           ros-rqt_topic
 Version:        noetic.0.4.12
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package rqt_topic
 
 License:        BSD
@@ -28,9 +28,9 @@ Requires:       ros-noetic-rqt_gui
 Requires:       ros-noetic-rqt_gui_py
 Requires:       ros-noetic-std_msgs
 
-Provides:  ros-noetic-rqt_topic = 0.4.12-2
-Obsoletes: ros-noetic-rqt_topic < 0.4.12-2
-Obsoletes: ros-kinetic-rqt_topic < 0.4.12-2
+Provides:  ros-noetic-rqt_topic = 0.4.12-3
+Obsoletes: ros-noetic-rqt_topic < 0.4.12-3
+Obsoletes: ros-kinetic-rqt_topic < 0.4.12-3
 
 
 
@@ -49,9 +49,9 @@ Requires:       ros-noetic-rqt_gui-devel
 Requires:       ros-noetic-rqt_gui_py-devel
 Requires:       ros-noetic-std_msgs-devel
 
-Provides: ros-noetic-rqt_topic-devel = 0.4.12-2
-Obsoletes: ros-noetic-rqt_topic-devel < 0.4.12-2
-Obsoletes: ros-kinetic-rqt_topic-devel < 0.4.12-2
+Provides: ros-noetic-rqt_topic-devel = 0.4.12-3
+Obsoletes: ros-noetic-rqt_topic-devel < 0.4.12-3
+Obsoletes: ros-kinetic-rqt_topic-devel < 0.4.12-3
 
 
 %description devel
@@ -146,6 +146,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.12-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.12-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.12-1

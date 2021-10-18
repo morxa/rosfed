@@ -1,6 +1,6 @@
 Name:           ros-geometry
 Version:        noetic.1.13.2
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package geometry
 
 License:        BSD
@@ -27,9 +27,9 @@ Requires:       ros-noetic-kdl_conversions
 Requires:       ros-noetic-tf
 Requires:       ros-noetic-tf_conversions
 
-Provides:  ros-noetic-geometry = 1.13.2-2
-Obsoletes: ros-noetic-geometry < 1.13.2-2
-Obsoletes: ros-kinetic-geometry < 1.13.2-2
+Provides:  ros-noetic-geometry = 1.13.2-3
+Obsoletes: ros-noetic-geometry < 1.13.2-3
+Obsoletes: ros-kinetic-geometry < 1.13.2-3
 
 
 
@@ -46,9 +46,9 @@ Requires:       ros-noetic-kdl_conversions-devel
 Requires:       ros-noetic-tf-devel
 Requires:       ros-noetic-tf_conversions-devel
 
-Provides: ros-noetic-geometry-devel = 1.13.2-2
-Obsoletes: ros-noetic-geometry-devel < 1.13.2-2
-Obsoletes: ros-kinetic-geometry-devel < 1.13.2-2
+Provides: ros-noetic-geometry-devel = 1.13.2-3
+Obsoletes: ros-noetic-geometry-devel < 1.13.2-3
+Obsoletes: ros-kinetic-geometry-devel < 1.13.2-3
 
 
 %description devel
@@ -143,6 +143,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.2-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.2-2
 - Modernize python shebang replacement
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.2-1

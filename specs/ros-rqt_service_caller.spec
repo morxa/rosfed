@@ -1,6 +1,6 @@
 Name:           ros-rqt_service_caller
 Version:        noetic.0.4.10
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package rqt_service_caller
 
 License:        BSD
@@ -27,9 +27,9 @@ Requires:       ros-noetic-rqt_gui
 Requires:       ros-noetic-rqt_gui_py
 Requires:       ros-noetic-rqt_py_common
 
-Provides:  ros-noetic-rqt_service_caller = 0.4.10-1
-Obsoletes: ros-noetic-rqt_service_caller < 0.4.10-1
-Obsoletes: ros-kinetic-rqt_service_caller < 0.4.10-1
+Provides:  ros-noetic-rqt_service_caller = 0.4.10-2
+Obsoletes: ros-noetic-rqt_service_caller < 0.4.10-2
+Obsoletes: ros-kinetic-rqt_service_caller < 0.4.10-2
 
 
 
@@ -46,9 +46,9 @@ Requires:       ros-noetic-rqt_gui-devel
 Requires:       ros-noetic-rqt_gui_py-devel
 Requires:       ros-noetic-rqt_py_common-devel
 
-Provides: ros-noetic-rqt_service_caller-devel = 0.4.10-1
-Obsoletes: ros-noetic-rqt_service_caller-devel < 0.4.10-1
-Obsoletes: ros-kinetic-rqt_service_caller-devel < 0.4.10-1
+Provides: ros-noetic-rqt_service_caller-devel = 0.4.10-2
+Obsoletes: ros-noetic-rqt_service_caller-devel < 0.4.10-2
+Obsoletes: ros-kinetic-rqt_service_caller-devel < 0.4.10-2
 
 
 %description devel
@@ -143,6 +143,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.10-2
+- Rebuild to pull in updated dependencies
 * Mon May 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.10-1
 - Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.9-2

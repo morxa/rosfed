@@ -1,6 +1,6 @@
 Name:           ros-class_loader
 Version:        noetic.0.5.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package class_loader
 
 License:        BSD
@@ -25,9 +25,9 @@ BuildRequires:  ros-noetic-catkin-devel
 BuildRequires:  ros-noetic-cmake_modules-devel
 
 
-Provides:  ros-noetic-class_loader = 0.5.0-2
-Obsoletes: ros-noetic-class_loader < 0.5.0-2
-Obsoletes: ros-kinetic-class_loader < 0.5.0-2
+Provides:  ros-noetic-class_loader = 0.5.0-3
+Obsoletes: ros-noetic-class_loader < 0.5.0-3
+Obsoletes: ros-kinetic-class_loader < 0.5.0-3
 
 
 
@@ -49,9 +49,9 @@ Requires:       console-bridge-devel
 Requires:       poco-devel
 Requires:       ros-noetic-cmake_modules-devel
 
-Provides: ros-noetic-class_loader-devel = 0.5.0-2
-Obsoletes: ros-noetic-class_loader-devel < 0.5.0-2
-Obsoletes: ros-kinetic-class_loader-devel < 0.5.0-2
+Provides: ros-noetic-class_loader-devel = 0.5.0-3
+Obsoletes: ros-noetic-class_loader-devel < 0.5.0-3
+Obsoletes: ros-kinetic-class_loader-devel < 0.5.0-3
 
 
 %description devel
@@ -146,6 +146,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.0-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.0-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.0-1

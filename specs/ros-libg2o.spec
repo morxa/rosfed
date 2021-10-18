@@ -1,6 +1,6 @@
 Name:           ros-libg2o
 Version:        noetic.2020.5.3
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package libg2o
 
 License:        BSD
@@ -29,9 +29,9 @@ BuildRequires:  ros-noetic-catkin-devel
 
 Requires:       ros-noetic-catkin
 
-Provides:  ros-noetic-libg2o = 2020.5.3-2
-Obsoletes: ros-noetic-libg2o < 2020.5.3-2
-Obsoletes: ros-kinetic-libg2o < 2020.5.3-2
+Provides:  ros-noetic-libg2o = 2020.5.3-3
+Obsoletes: ros-noetic-libg2o < 2020.5.3-3
+Obsoletes: ros-kinetic-libg2o < 2020.5.3-3
 
 
 
@@ -50,9 +50,9 @@ Requires:       openblas-devel
 Requires:       suitesparse-devel
 Requires:       ros-noetic-catkin-devel
 
-Provides: ros-noetic-libg2o-devel = 2020.5.3-2
-Obsoletes: ros-noetic-libg2o-devel < 2020.5.3-2
-Obsoletes: ros-kinetic-libg2o-devel < 2020.5.3-2
+Provides: ros-noetic-libg2o-devel = 2020.5.3-3
+Obsoletes: ros-noetic-libg2o-devel < 2020.5.3-3
+Obsoletes: ros-kinetic-libg2o-devel < 2020.5.3-3
 
 
 %description devel
@@ -147,6 +147,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.2020.5.3-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.2020.5.3-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.2020.5.3-1

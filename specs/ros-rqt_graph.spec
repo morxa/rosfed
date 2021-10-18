@@ -1,6 +1,6 @@
 Name:           ros-rqt_graph
 Version:        noetic.0.4.14
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package rqt_graph
 
 License:        BSD
@@ -34,9 +34,9 @@ Requires:       ros-noetic-rostopic
 Requires:       ros-noetic-rqt_gui
 Requires:       ros-noetic-rqt_gui_py
 
-Provides:  ros-noetic-rqt_graph = 0.4.14-2
-Obsoletes: ros-noetic-rqt_graph < 0.4.14-2
-Obsoletes: ros-kinetic-rqt_graph < 0.4.14-2
+Provides:  ros-noetic-rqt_graph = 0.4.14-3
+Obsoletes: ros-noetic-rqt_graph < 0.4.14-3
+Obsoletes: ros-kinetic-rqt_graph < 0.4.14-3
 
 
 
@@ -60,9 +60,9 @@ Requires:       ros-noetic-rostopic-devel
 Requires:       ros-noetic-rqt_gui-devel
 Requires:       ros-noetic-rqt_gui_py-devel
 
-Provides: ros-noetic-rqt_graph-devel = 0.4.14-2
-Obsoletes: ros-noetic-rqt_graph-devel < 0.4.14-2
-Obsoletes: ros-kinetic-rqt_graph-devel < 0.4.14-2
+Provides: ros-noetic-rqt_graph-devel = 0.4.14-3
+Obsoletes: ros-noetic-rqt_graph-devel < 0.4.14-3
+Obsoletes: ros-kinetic-rqt_graph-devel < 0.4.14-3
 
 
 %description devel
@@ -157,6 +157,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.14-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.14-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.14-1

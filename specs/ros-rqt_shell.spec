@@ -1,6 +1,6 @@
 Name:           ros-rqt_shell
 Version:        noetic.0.4.11
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package rqt_shell
 
 License:        BSD
@@ -28,9 +28,9 @@ Requires:       ros-noetic-qt_gui_py_common
 Requires:       ros-noetic-rqt_gui
 Requires:       ros-noetic-rqt_gui_py
 
-Provides:  ros-noetic-rqt_shell = 0.4.11-1
-Obsoletes: ros-noetic-rqt_shell < 0.4.11-1
-Obsoletes: ros-kinetic-rqt_shell < 0.4.11-1
+Provides:  ros-noetic-rqt_shell = 0.4.11-2
+Obsoletes: ros-noetic-rqt_shell < 0.4.11-2
+Obsoletes: ros-kinetic-rqt_shell < 0.4.11-2
 
 
 
@@ -47,9 +47,9 @@ Requires:       ros-noetic-qt_gui_py_common-devel
 Requires:       ros-noetic-rqt_gui-devel
 Requires:       ros-noetic-rqt_gui_py-devel
 
-Provides: ros-noetic-rqt_shell-devel = 0.4.11-1
-Obsoletes: ros-noetic-rqt_shell-devel < 0.4.11-1
-Obsoletes: ros-kinetic-rqt_shell-devel < 0.4.11-1
+Provides: ros-noetic-rqt_shell-devel = 0.4.11-2
+Obsoletes: ros-noetic-rqt_shell-devel < 0.4.11-2
+Obsoletes: ros-kinetic-rqt_shell-devel < 0.4.11-2
 
 
 %description devel
@@ -144,6 +144,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.11-2
+- Rebuild to pull in updated dependencies
 * Mon May 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.11-1
 - Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.10-2

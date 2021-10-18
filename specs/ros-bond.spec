@@ -1,6 +1,6 @@
 Name:           ros-bond
 Version:        noetic.1.8.6
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package bond
 
 License:        BSD
@@ -26,9 +26,9 @@ BuildRequires:  ros-noetic-std_msgs-devel
 Requires:       ros-noetic-message_runtime
 Requires:       ros-noetic-std_msgs
 
-Provides:  ros-noetic-bond = 1.8.6-2
-Obsoletes: ros-noetic-bond < 1.8.6-2
-Obsoletes: ros-kinetic-bond < 1.8.6-2
+Provides:  ros-noetic-bond = 1.8.6-3
+Obsoletes: ros-noetic-bond < 1.8.6-3
+Obsoletes: ros-kinetic-bond < 1.8.6-3
 
 
 
@@ -45,9 +45,9 @@ Requires:       ros-noetic-message_generation-devel
 Requires:       ros-noetic-std_msgs-devel
 Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-noetic-bond-devel = 1.8.6-2
-Obsoletes: ros-noetic-bond-devel < 1.8.6-2
-Obsoletes: ros-kinetic-bond-devel < 1.8.6-2
+Provides: ros-noetic-bond-devel = 1.8.6-3
+Obsoletes: ros-noetic-bond-devel < 1.8.6-3
+Obsoletes: ros-kinetic-bond-devel < 1.8.6-3
 
 
 %description devel
@@ -142,6 +142,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.8.6-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.8.6-2
 - Modernize python shebang replacement
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.8.6-1

@@ -1,6 +1,6 @@
 Name:           ros-rqt_pose_view
 Version:        noetic.0.5.11
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package rqt_pose_view
 
 License:        BSD
@@ -33,9 +33,9 @@ Requires:       ros-noetic-rqt_gui_py
 Requires:       ros-noetic-rqt_py_common
 Requires:       ros-noetic-tf
 
-Provides:  ros-noetic-rqt_pose_view = 0.5.11-1
-Obsoletes: ros-noetic-rqt_pose_view < 0.5.11-1
-Obsoletes: ros-kinetic-rqt_pose_view < 0.5.11-1
+Provides:  ros-noetic-rqt_pose_view = 0.5.11-2
+Obsoletes: ros-noetic-rqt_pose_view < 0.5.11-2
+Obsoletes: ros-kinetic-rqt_pose_view < 0.5.11-2
 
 
 
@@ -56,9 +56,9 @@ Requires:       ros-noetic-rqt_gui_py-devel
 Requires:       ros-noetic-rqt_py_common-devel
 Requires:       ros-noetic-tf-devel
 
-Provides: ros-noetic-rqt_pose_view-devel = 0.5.11-1
-Obsoletes: ros-noetic-rqt_pose_view-devel < 0.5.11-1
-Obsoletes: ros-kinetic-rqt_pose_view-devel < 0.5.11-1
+Provides: ros-noetic-rqt_pose_view-devel = 0.5.11-2
+Obsoletes: ros-noetic-rqt_pose_view-devel < 0.5.11-2
+Obsoletes: ros-kinetic-rqt_pose_view-devel < 0.5.11-2
 
 
 %description devel
@@ -153,6 +153,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.11-2
+- Rebuild to pull in updated dependencies
 * Mon May 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.11-1
 - Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.10-2

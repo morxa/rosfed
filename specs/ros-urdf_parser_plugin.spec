@@ -1,6 +1,6 @@
 Name:           ros-urdf_parser_plugin
 Version:        noetic.1.13.2
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package urdf_parser_plugin
 
 License:        BSD
@@ -23,9 +23,9 @@ BuildRequires:  urdfdom-headers-devel
 BuildRequires:  ros-noetic-catkin-devel
 
 
-Provides:  ros-noetic-urdf_parser_plugin = 1.13.2-2
-Obsoletes: ros-noetic-urdf_parser_plugin < 1.13.2-2
-Obsoletes: ros-kinetic-urdf_parser_plugin < 1.13.2-2
+Provides:  ros-noetic-urdf_parser_plugin = 1.13.2-3
+Obsoletes: ros-noetic-urdf_parser_plugin < 1.13.2-3
+Obsoletes: ros-kinetic-urdf_parser_plugin < 1.13.2-3
 
 
 
@@ -38,9 +38,9 @@ Requires:       %{name} = %{version}-%{release}
 Requires:       ros-noetic-catkin-devel
 Requires:       urdfdom-headers-devel
 
-Provides: ros-noetic-urdf_parser_plugin-devel = 1.13.2-2
-Obsoletes: ros-noetic-urdf_parser_plugin-devel < 1.13.2-2
-Obsoletes: ros-kinetic-urdf_parser_plugin-devel < 1.13.2-2
+Provides: ros-noetic-urdf_parser_plugin-devel = 1.13.2-3
+Obsoletes: ros-noetic-urdf_parser_plugin-devel < 1.13.2-3
+Obsoletes: ros-kinetic-urdf_parser_plugin-devel < 1.13.2-3
 
 
 %description devel
@@ -135,6 +135,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.2-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.2-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.2-1

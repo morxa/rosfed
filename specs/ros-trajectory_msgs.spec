@@ -1,6 +1,6 @@
 Name:           ros-trajectory_msgs
 Version:        noetic.1.13.1
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package trajectory_msgs
 
 License:        BSD
@@ -29,9 +29,9 @@ Requires:       ros-noetic-message_runtime
 Requires:       ros-noetic-rosbag_migration_rule
 Requires:       ros-noetic-std_msgs
 
-Provides:  ros-noetic-trajectory_msgs = 1.13.1-2
-Obsoletes: ros-noetic-trajectory_msgs < 1.13.1-2
-Obsoletes: ros-kinetic-trajectory_msgs < 1.13.1-2
+Provides:  ros-noetic-trajectory_msgs = 1.13.1-3
+Obsoletes: ros-noetic-trajectory_msgs < 1.13.1-3
+Obsoletes: ros-kinetic-trajectory_msgs < 1.13.1-3
 
 
 
@@ -49,9 +49,9 @@ Requires:       ros-noetic-std_msgs-devel
 Requires:       ros-noetic-message_runtime-devel
 Requires:       ros-noetic-rosbag_migration_rule-devel
 
-Provides: ros-noetic-trajectory_msgs-devel = 1.13.1-2
-Obsoletes: ros-noetic-trajectory_msgs-devel < 1.13.1-2
-Obsoletes: ros-kinetic-trajectory_msgs-devel < 1.13.1-2
+Provides: ros-noetic-trajectory_msgs-devel = 1.13.1-3
+Obsoletes: ros-noetic-trajectory_msgs-devel < 1.13.1-3
+Obsoletes: ros-kinetic-trajectory_msgs-devel < 1.13.1-3
 
 
 %description devel
@@ -146,6 +146,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.1-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.1-2
 - Modernize python shebang replacement
 * Wed Feb 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.1-1

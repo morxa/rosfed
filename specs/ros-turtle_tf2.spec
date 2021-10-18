@@ -1,6 +1,6 @@
 Name:           ros-turtle_tf2
 Version:        noetic.0.2.3
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package turtle_tf2
 
 License:        BSD
@@ -37,9 +37,9 @@ Requires:       ros-noetic-tf2_geometry_msgs
 Requires:       ros-noetic-tf2_ros
 Requires:       ros-noetic-turtlesim
 
-Provides:  ros-noetic-turtle_tf2 = 0.2.3-2
-Obsoletes: ros-noetic-turtle_tf2 < 0.2.3-2
-Obsoletes: ros-kinetic-turtle_tf2 < 0.2.3-2
+Provides:  ros-noetic-turtle_tf2 = 0.2.3-3
+Obsoletes: ros-noetic-turtle_tf2 < 0.2.3-3
+Obsoletes: ros-kinetic-turtle_tf2 < 0.2.3-3
 
 
 
@@ -61,9 +61,9 @@ Requires:       ros-noetic-tf2_geometry_msgs-devel
 Requires:       ros-noetic-tf2_ros-devel
 Requires:       ros-noetic-turtlesim-devel
 
-Provides: ros-noetic-turtle_tf2-devel = 0.2.3-2
-Obsoletes: ros-noetic-turtle_tf2-devel < 0.2.3-2
-Obsoletes: ros-kinetic-turtle_tf2-devel < 0.2.3-2
+Provides: ros-noetic-turtle_tf2-devel = 0.2.3-3
+Obsoletes: ros-noetic-turtle_tf2-devel < 0.2.3-3
+Obsoletes: ros-kinetic-turtle_tf2-devel < 0.2.3-3
 
 
 %description devel
@@ -158,6 +158,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.2.3-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.2.3-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.2.3-1

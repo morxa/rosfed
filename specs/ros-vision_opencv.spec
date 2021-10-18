@@ -1,6 +1,6 @@
 Name:           ros-vision_opencv
 Version:        noetic.1.15.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package vision_opencv
 
 License:        BSD
@@ -24,9 +24,9 @@ BuildRequires:  ros-noetic-catkin-devel
 Requires:       ros-noetic-cv_bridge
 Requires:       ros-noetic-image_geometry
 
-Provides:  ros-noetic-vision_opencv = 1.15.0-2
-Obsoletes: ros-noetic-vision_opencv < 1.15.0-2
-Obsoletes: ros-kinetic-vision_opencv < 1.15.0-2
+Provides:  ros-noetic-vision_opencv = 1.15.0-3
+Obsoletes: ros-noetic-vision_opencv < 1.15.0-3
+Obsoletes: ros-kinetic-vision_opencv < 1.15.0-3
 
 
 
@@ -41,9 +41,9 @@ Requires:       ros-noetic-catkin-devel
 Requires:       ros-noetic-cv_bridge-devel
 Requires:       ros-noetic-image_geometry-devel
 
-Provides: ros-noetic-vision_opencv-devel = 1.15.0-2
-Obsoletes: ros-noetic-vision_opencv-devel < 1.15.0-2
-Obsoletes: ros-kinetic-vision_opencv-devel < 1.15.0-2
+Provides: ros-noetic-vision_opencv-devel = 1.15.0-3
+Obsoletes: ros-noetic-vision_opencv-devel < 1.15.0-3
+Obsoletes: ros-kinetic-vision_opencv-devel < 1.15.0-3
 
 
 %description devel
@@ -138,6 +138,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.0-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.0-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.0-1

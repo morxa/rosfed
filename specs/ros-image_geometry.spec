@@ -1,6 +1,6 @@
 Name:           ros-image_geometry
 Version:        noetic.1.15.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package image_geometry
 
 License:        BSD
@@ -27,9 +27,9 @@ BuildRequires:  ros-noetic-cpp_common-devel
 BuildRequires:  ros-noetic-sensor_msgs-devel
 
 
-Provides:  ros-noetic-image_geometry = 1.15.0-2
-Obsoletes: ros-noetic-image_geometry < 1.15.0-2
-Obsoletes: ros-kinetic-image_geometry < 1.15.0-2
+Provides:  ros-noetic-image_geometry = 1.15.0-3
+Obsoletes: ros-noetic-image_geometry < 1.15.0-3
+Obsoletes: ros-kinetic-image_geometry < 1.15.0-3
 
 
 
@@ -50,9 +50,9 @@ Requires:       boost-devel
 Requires:       gtest-devel
 Requires:       ros-noetic-cpp_common-devel
 
-Provides: ros-noetic-image_geometry-devel = 1.15.0-2
-Obsoletes: ros-noetic-image_geometry-devel < 1.15.0-2
-Obsoletes: ros-kinetic-image_geometry-devel < 1.15.0-2
+Provides: ros-noetic-image_geometry-devel = 1.15.0-3
+Obsoletes: ros-noetic-image_geometry-devel < 1.15.0-3
+Obsoletes: ros-kinetic-image_geometry-devel < 1.15.0-3
 
 
 %description devel
@@ -148,6 +148,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.0-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.0-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.0-1

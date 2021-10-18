@@ -1,6 +1,6 @@
 Name:           ros-filters
 Version:        noetic.1.9.1
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package filters
 
 License:        BSD
@@ -34,9 +34,9 @@ Requires:       ros-noetic-rosconsole
 Requires:       ros-noetic-roscpp
 Requires:       ros-noetic-roslib
 
-Provides:  ros-noetic-filters = 1.9.1-2
-Obsoletes: ros-noetic-filters < 1.9.1-2
-Obsoletes: ros-kinetic-filters < 1.9.1-2
+Provides:  ros-noetic-filters = 1.9.1-3
+Obsoletes: ros-noetic-filters < 1.9.1-3
+Obsoletes: ros-kinetic-filters < 1.9.1-3
 
 
 
@@ -60,9 +60,9 @@ Requires:       ros-noetic-roscpp-devel
 Requires:       ros-noetic-roslib-devel
 Requires:       ros-noetic-rostest-devel
 
-Provides: ros-noetic-filters-devel = 1.9.1-2
-Obsoletes: ros-noetic-filters-devel < 1.9.1-2
-Obsoletes: ros-kinetic-filters-devel < 1.9.1-2
+Provides: ros-noetic-filters-devel = 1.9.1-3
+Obsoletes: ros-noetic-filters-devel < 1.9.1-3
+Obsoletes: ros-kinetic-filters-devel < 1.9.1-3
 
 
 %description devel
@@ -157,6 +157,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.9.1-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.9.1-2
 - Modernize python shebang replacement
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.9.1-1

@@ -1,6 +1,6 @@
 Name:           ros-joint_state_publisher_gui
 Version:        noetic.1.15.0
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        ROS package joint_state_publisher_gui
 
 License:        BSD
@@ -25,9 +25,9 @@ Requires:       ros-noetic-joint_state_publisher
 Requires:       ros-noetic-python_qt_binding
 Requires:       ros-noetic-rospy
 
-Provides:  ros-noetic-joint_state_publisher_gui = 1.15.0-3
-Obsoletes: ros-noetic-joint_state_publisher_gui < 1.15.0-3
-Obsoletes: ros-kinetic-joint_state_publisher_gui < 1.15.0-3
+Provides:  ros-noetic-joint_state_publisher_gui = 1.15.0-4
+Obsoletes: ros-noetic-joint_state_publisher_gui < 1.15.0-4
+Obsoletes: ros-kinetic-joint_state_publisher_gui < 1.15.0-4
 
 
 
@@ -43,9 +43,9 @@ Requires:       ros-noetic-joint_state_publisher-devel
 Requires:       ros-noetic-python_qt_binding-devel
 Requires:       ros-noetic-rospy-devel
 
-Provides: ros-noetic-joint_state_publisher_gui-devel = 1.15.0-3
-Obsoletes: ros-noetic-joint_state_publisher_gui-devel < 1.15.0-3
-Obsoletes: ros-kinetic-joint_state_publisher_gui-devel < 1.15.0-3
+Provides: ros-noetic-joint_state_publisher_gui-devel = 1.15.0-4
+Obsoletes: ros-noetic-joint_state_publisher_gui-devel < 1.15.0-4
+Obsoletes: ros-kinetic-joint_state_publisher_gui-devel < 1.15.0-4
 
 
 %description devel
@@ -140,6 +140,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.0-4
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.0-3
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.0-2

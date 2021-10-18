@@ -1,6 +1,6 @@
 Name:           ros-realtime_tools
 Version:        noetic.1.16.1
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package realtime_tools
 
 License:        BSD
@@ -26,9 +26,9 @@ BuildRequires:  ros-noetic-rosunit-devel
 
 Requires:       ros-noetic-roscpp
 
-Provides:  ros-noetic-realtime_tools = 1.16.1-2
-Obsoletes: ros-noetic-realtime_tools < 1.16.1-2
-Obsoletes: ros-kinetic-realtime_tools < 1.16.1-2
+Provides:  ros-noetic-realtime_tools = 1.16.1-3
+Obsoletes: ros-noetic-realtime_tools < 1.16.1-3
+Obsoletes: ros-kinetic-realtime_tools < 1.16.1-3
 
 
 
@@ -45,9 +45,9 @@ Requires:       ros-noetic-roscpp-devel
 Requires:       ros-noetic-rostest-devel
 Requires:       ros-noetic-rosunit-devel
 
-Provides: ros-noetic-realtime_tools-devel = 1.16.1-2
-Obsoletes: ros-noetic-realtime_tools-devel < 1.16.1-2
-Obsoletes: ros-kinetic-realtime_tools-devel < 1.16.1-2
+Provides: ros-noetic-realtime_tools-devel = 1.16.1-3
+Obsoletes: ros-noetic-realtime_tools-devel < 1.16.1-3
+Obsoletes: ros-kinetic-realtime_tools-devel < 1.16.1-3
 
 
 %description devel
@@ -142,6 +142,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.16.1-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.16.1-2
 - Modernize python shebang replacement
 * Wed Feb 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.16.1-1

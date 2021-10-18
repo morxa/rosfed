@@ -1,6 +1,6 @@
 Name:           ros-angles
 Version:        noetic.1.9.13
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package angles
 
 License:        BSD
@@ -23,9 +23,9 @@ BuildRequires:  ros-noetic-catkin-devel
 BuildRequires:  ros-noetic-rosunit-devel
 
 
-Provides:  ros-noetic-angles = 1.9.13-2
-Obsoletes: ros-noetic-angles < 1.9.13-2
-Obsoletes: ros-kinetic-angles < 1.9.13-2
+Provides:  ros-noetic-angles = 1.9.13-3
+Obsoletes: ros-noetic-angles < 1.9.13-3
+Obsoletes: ros-kinetic-angles < 1.9.13-3
 
 
 
@@ -45,9 +45,9 @@ Requires:       %{name} = %{version}-%{release}
 Requires:       ros-noetic-catkin-devel
 Requires:       ros-noetic-rosunit-devel
 
-Provides: ros-noetic-angles-devel = 1.9.13-2
-Obsoletes: ros-noetic-angles-devel < 1.9.13-2
-Obsoletes: ros-kinetic-angles-devel < 1.9.13-2
+Provides: ros-noetic-angles-devel = 1.9.13-3
+Obsoletes: ros-noetic-angles-devel < 1.9.13-3
+Obsoletes: ros-kinetic-angles-devel < 1.9.13-3
 
 
 %description devel
@@ -142,6 +142,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.9.13-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.9.13-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.9.13-1

@@ -1,6 +1,6 @@
 Name:           ros-catkin
 Version:        noetic.0.8.10
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package catkin
 
 License:        BSD
@@ -38,9 +38,9 @@ Requires:       python3-catkin_pkg
 Requires:       python3-empy
 Requires:       python3-pyparsing
 
-Provides:  ros-noetic-catkin = 0.8.10-1
-Obsoletes: ros-noetic-catkin < 0.8.10-1
-Obsoletes: ros-kinetic-catkin < 0.8.10-1
+Provides:  ros-noetic-catkin = 0.8.10-2
+Obsoletes: ros-noetic-catkin < 0.8.10-2
+Obsoletes: ros-kinetic-catkin < 0.8.10-2
 
 
 Obsoletes: ros-kdl_parser_py < melodic.1.13.1-4
@@ -65,9 +65,9 @@ Requires:       python3-empy
 Requires:       python3-mock
 Requires:       python3-pyparsing
 
-Provides: ros-noetic-catkin-devel = 0.8.10-1
-Obsoletes: ros-noetic-catkin-devel < 0.8.10-1
-Obsoletes: ros-kinetic-catkin-devel < 0.8.10-1
+Provides: ros-noetic-catkin-devel = 0.8.10-2
+Obsoletes: ros-noetic-catkin-devel < 0.8.10-2
+Obsoletes: ros-kinetic-catkin-devel < 0.8.10-2
 
 Obsoletes: ros-kdl_parser_py-devel < melodic.1.13.1-4
 Obsoletes: ros-orocos_kdl-devel < melodic.1.4.0-4
@@ -164,6 +164,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.8.10-2
+- Rebuild to pull in updated dependencies
 * Mon May 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.8.10-1
 - Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.8.9-2

@@ -1,6 +1,6 @@
 Name:           ros-visualization_marker_tutorials
 Version:        noetic.0.11.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package visualization_marker_tutorials
 
 License:        BSD
@@ -28,9 +28,9 @@ BuildRequires:  ros-noetic-visualization_msgs-devel
 Requires:       ros-noetic-roscpp
 Requires:       ros-noetic-visualization_msgs
 
-Provides:  ros-noetic-visualization_marker_tutorials = 0.11.0-2
-Obsoletes: ros-noetic-visualization_marker_tutorials < 0.11.0-2
-Obsoletes: ros-kinetic-visualization_marker_tutorials < 0.11.0-2
+Provides:  ros-noetic-visualization_marker_tutorials = 0.11.0-3
+Obsoletes: ros-noetic-visualization_marker_tutorials < 0.11.0-3
+Obsoletes: ros-kinetic-visualization_marker_tutorials < 0.11.0-3
 
 
 
@@ -47,9 +47,9 @@ Requires:       log4cxx-devel
 Requires:       ros-noetic-roscpp-devel
 Requires:       ros-noetic-visualization_msgs-devel
 
-Provides: ros-noetic-visualization_marker_tutorials-devel = 0.11.0-2
-Obsoletes: ros-noetic-visualization_marker_tutorials-devel < 0.11.0-2
-Obsoletes: ros-kinetic-visualization_marker_tutorials-devel < 0.11.0-2
+Provides: ros-noetic-visualization_marker_tutorials-devel = 0.11.0-3
+Obsoletes: ros-noetic-visualization_marker_tutorials-devel < 0.11.0-3
+Obsoletes: ros-kinetic-visualization_marker_tutorials-devel < 0.11.0-3
 
 
 %description devel
@@ -144,6 +144,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.11.0-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.11.0-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.11.0-1

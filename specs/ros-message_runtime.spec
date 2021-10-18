@@ -1,6 +1,6 @@
 Name:           ros-message_runtime
 Version:        noetic.0.4.13
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package message_runtime
 
 License:        BSD
@@ -27,9 +27,9 @@ Requires:       ros-noetic-roscpp_serialization
 Requires:       ros-noetic-roscpp_traits
 Requires:       ros-noetic-rostime
 
-Provides:  ros-noetic-message_runtime = 0.4.13-2
-Obsoletes: ros-noetic-message_runtime < 0.4.13-2
-Obsoletes: ros-kinetic-message_runtime < 0.4.13-2
+Provides:  ros-noetic-message_runtime = 0.4.13-3
+Obsoletes: ros-noetic-message_runtime < 0.4.13-3
+Obsoletes: ros-kinetic-message_runtime < 0.4.13-3
 
 
 
@@ -47,9 +47,9 @@ Requires:       ros-noetic-roscpp_serialization-devel
 Requires:       ros-noetic-roscpp_traits-devel
 Requires:       ros-noetic-rostime-devel
 
-Provides: ros-noetic-message_runtime-devel = 0.4.13-2
-Obsoletes: ros-noetic-message_runtime-devel < 0.4.13-2
-Obsoletes: ros-kinetic-message_runtime-devel < 0.4.13-2
+Provides: ros-noetic-message_runtime-devel = 0.4.13-3
+Obsoletes: ros-noetic-message_runtime-devel < 0.4.13-3
+Obsoletes: ros-kinetic-message_runtime-devel < 0.4.13-3
 
 
 %description devel
@@ -144,6 +144,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.13-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.13-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.13-1

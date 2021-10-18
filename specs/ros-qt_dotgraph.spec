@@ -1,6 +1,6 @@
 Name:           ros-qt_dotgraph
 Version:        noetic.0.4.2
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package qt_dotgraph
 
 License:        BSD
@@ -28,9 +28,9 @@ Requires:       pydot
 Requires:       python3-pydot
 Requires:       ros-noetic-python_qt_binding
 
-Provides:  ros-noetic-qt_dotgraph = 0.4.2-2
-Obsoletes: ros-noetic-qt_dotgraph < 0.4.2-2
-Obsoletes: ros-kinetic-qt_dotgraph < 0.4.2-2
+Provides:  ros-noetic-qt_dotgraph = 0.4.2-3
+Obsoletes: ros-noetic-qt_dotgraph < 0.4.2-3
+Obsoletes: ros-kinetic-qt_dotgraph < 0.4.2-3
 
 
 
@@ -46,9 +46,9 @@ Requires:       graphviz-python3
 Requires:       python3-pygraphviz
 Requires:       ros-noetic-python_qt_binding-devel
 
-Provides: ros-noetic-qt_dotgraph-devel = 0.4.2-2
-Obsoletes: ros-noetic-qt_dotgraph-devel < 0.4.2-2
-Obsoletes: ros-kinetic-qt_dotgraph-devel < 0.4.2-2
+Provides: ros-noetic-qt_dotgraph-devel = 0.4.2-3
+Obsoletes: ros-noetic-qt_dotgraph-devel < 0.4.2-3
+Obsoletes: ros-kinetic-qt_dotgraph-devel < 0.4.2-3
 
 
 %description devel
@@ -143,6 +143,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.2-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.2-2
 - Modernize python shebang replacement
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.2-1

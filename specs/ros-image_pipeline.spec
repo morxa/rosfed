@@ -1,6 +1,6 @@
 Name:           ros-image_pipeline
 Version:        noetic.1.15.3
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package image_pipeline
 
 License:        BSD
@@ -29,9 +29,9 @@ Requires:       ros-noetic-image_rotate
 Requires:       ros-noetic-image_view
 Requires:       ros-noetic-stereo_image_proc
 
-Provides:  ros-noetic-image_pipeline = 1.15.3-2
-Obsoletes: ros-noetic-image_pipeline < 1.15.3-2
-Obsoletes: ros-kinetic-image_pipeline < 1.15.3-2
+Provides:  ros-noetic-image_pipeline = 1.15.3-3
+Obsoletes: ros-noetic-image_pipeline < 1.15.3-3
+Obsoletes: ros-kinetic-image_pipeline < 1.15.3-3
 
 
 
@@ -51,9 +51,9 @@ Requires:       ros-noetic-image_rotate-devel
 Requires:       ros-noetic-image_view-devel
 Requires:       ros-noetic-stereo_image_proc-devel
 
-Provides: ros-noetic-image_pipeline-devel = 1.15.3-2
-Obsoletes: ros-noetic-image_pipeline-devel < 1.15.3-2
-Obsoletes: ros-kinetic-image_pipeline-devel < 1.15.3-2
+Provides: ros-noetic-image_pipeline-devel = 1.15.3-3
+Obsoletes: ros-noetic-image_pipeline-devel < 1.15.3-3
+Obsoletes: ros-kinetic-image_pipeline-devel < 1.15.3-3
 
 
 %description devel
@@ -148,6 +148,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.3-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.3-2
 - Modernize python shebang replacement
 * Wed Feb 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.3-1

@@ -1,6 +1,6 @@
 Name:           ros-self_test
 Version:        noetic.1.10.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package self_test
 
 License:        BSD
@@ -28,9 +28,9 @@ Requires:       ros-noetic-diagnostic_msgs
 Requires:       ros-noetic-diagnostic_updater
 Requires:       ros-noetic-roscpp
 
-Provides:  ros-noetic-self_test = 1.10.4-1
-Obsoletes: ros-noetic-self_test < 1.10.4-1
-Obsoletes: ros-kinetic-self_test < 1.10.4-1
+Provides:  ros-noetic-self_test = 1.10.4-2
+Obsoletes: ros-noetic-self_test < 1.10.4-2
+Obsoletes: ros-kinetic-self_test < 1.10.4-2
 
 
 
@@ -46,9 +46,9 @@ Requires:       ros-noetic-diagnostic_updater-devel
 Requires:       ros-noetic-roscpp-devel
 Requires:       ros-noetic-rostest-devel
 
-Provides: ros-noetic-self_test-devel = 1.10.4-1
-Obsoletes: ros-noetic-self_test-devel < 1.10.4-1
-Obsoletes: ros-kinetic-self_test-devel < 1.10.4-1
+Provides: ros-noetic-self_test-devel = 1.10.4-2
+Obsoletes: ros-noetic-self_test-devel < 1.10.4-2
+Obsoletes: ros-kinetic-self_test-devel < 1.10.4-2
 
 
 %description devel
@@ -143,6 +143,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.10.4-2
+- Rebuild to pull in updated dependencies
 * Thu Apr 08 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.10.4-1
 - Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.10.3-2

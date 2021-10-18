@@ -1,6 +1,6 @@
 Name:           ros-geometry_tutorials
 Version:        noetic.0.2.3
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package geometry_tutorials
 
 License:        BSD
@@ -24,9 +24,9 @@ BuildRequires:  ros-noetic-catkin-devel
 Requires:       ros-noetic-turtle_tf
 Requires:       ros-noetic-turtle_tf2
 
-Provides:  ros-noetic-geometry_tutorials = 0.2.3-2
-Obsoletes: ros-noetic-geometry_tutorials < 0.2.3-2
-Obsoletes: ros-kinetic-geometry_tutorials < 0.2.3-2
+Provides:  ros-noetic-geometry_tutorials = 0.2.3-3
+Obsoletes: ros-noetic-geometry_tutorials < 0.2.3-3
+Obsoletes: ros-kinetic-geometry_tutorials < 0.2.3-3
 
 
 
@@ -40,9 +40,9 @@ Requires:       ros-noetic-catkin-devel
 Requires:       ros-noetic-turtle_tf-devel
 Requires:       ros-noetic-turtle_tf2-devel
 
-Provides: ros-noetic-geometry_tutorials-devel = 0.2.3-2
-Obsoletes: ros-noetic-geometry_tutorials-devel < 0.2.3-2
-Obsoletes: ros-kinetic-geometry_tutorials-devel < 0.2.3-2
+Provides: ros-noetic-geometry_tutorials-devel = 0.2.3-3
+Obsoletes: ros-noetic-geometry_tutorials-devel < 0.2.3-3
+Obsoletes: ros-kinetic-geometry_tutorials-devel < 0.2.3-3
 
 
 %description devel
@@ -137,6 +137,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.2.3-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.2.3-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.2.3-1

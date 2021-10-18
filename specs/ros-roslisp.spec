@@ -1,6 +1,6 @@
 Name:           ros-roslisp
 Version:        noetic.1.9.24
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package roslisp
 
 License:        BSD
@@ -28,9 +28,9 @@ Requires:       ros-noetic-roslang
 Requires:       ros-noetic-rospack
 Requires:       ros-noetic-std_srvs
 
-Provides:  ros-noetic-roslisp = 1.9.24-2
-Obsoletes: ros-noetic-roslisp < 1.9.24-2
-Obsoletes: ros-kinetic-roslisp < 1.9.24-2
+Provides:  ros-noetic-roslisp = 1.9.24-3
+Obsoletes: ros-noetic-roslisp < 1.9.24-3
+Obsoletes: ros-kinetic-roslisp < 1.9.24-3
 
 
 
@@ -47,9 +47,9 @@ Requires:       ros-noetic-roslang-devel
 Requires:       ros-noetic-rospack-devel
 Requires:       ros-noetic-std_srvs-devel
 
-Provides: ros-noetic-roslisp-devel = 1.9.24-2
-Obsoletes: ros-noetic-roslisp-devel < 1.9.24-2
-Obsoletes: ros-kinetic-roslisp-devel < 1.9.24-2
+Provides: ros-noetic-roslisp-devel = 1.9.24-3
+Obsoletes: ros-noetic-roslisp-devel < 1.9.24-3
+Obsoletes: ros-kinetic-roslisp-devel < 1.9.24-3
 
 
 %description devel
@@ -144,6 +144,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.9.24-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.9.24-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.9.24-1

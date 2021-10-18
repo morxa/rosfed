@@ -1,6 +1,6 @@
 Name:           ros-nodelet_core
 Version:        noetic.1.10.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package nodelet_core
 
 License:        BSD
@@ -24,9 +24,9 @@ BuildRequires:  ros-noetic-catkin-devel
 Requires:       ros-noetic-nodelet
 Requires:       ros-noetic-nodelet_topic_tools
 
-Provides:  ros-noetic-nodelet_core = 1.10.2-1
-Obsoletes: ros-noetic-nodelet_core < 1.10.2-1
-Obsoletes: ros-kinetic-nodelet_core < 1.10.2-1
+Provides:  ros-noetic-nodelet_core = 1.10.2-2
+Obsoletes: ros-noetic-nodelet_core < 1.10.2-2
+Obsoletes: ros-kinetic-nodelet_core < 1.10.2-2
 
 
 
@@ -40,9 +40,9 @@ Requires:       ros-noetic-catkin-devel
 Requires:       ros-noetic-nodelet-devel
 Requires:       ros-noetic-nodelet_topic_tools-devel
 
-Provides: ros-noetic-nodelet_core-devel = 1.10.2-1
-Obsoletes: ros-noetic-nodelet_core-devel < 1.10.2-1
-Obsoletes: ros-kinetic-nodelet_core-devel < 1.10.2-1
+Provides: ros-noetic-nodelet_core-devel = 1.10.2-2
+Obsoletes: ros-noetic-nodelet_core-devel < 1.10.2-2
+Obsoletes: ros-kinetic-nodelet_core-devel < 1.10.2-2
 
 
 %description devel
@@ -137,6 +137,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.10.2-2
+- Rebuild to pull in updated dependencies
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.10.2-1
 - Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.10.1-2

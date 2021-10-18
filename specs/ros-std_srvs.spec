@@ -1,6 +1,6 @@
 Name:           ros-std_srvs
 Version:        noetic.1.11.3
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package std_srvs
 
 License:        BSD
@@ -26,9 +26,9 @@ BuildRequires:  ros-noetic-message_generation-devel
 Requires:       python3-pyyaml
 Requires:       ros-noetic-message_runtime
 
-Provides:  ros-noetic-std_srvs = 1.11.3-2
-Obsoletes: ros-noetic-std_srvs < 1.11.3-2
-Obsoletes: ros-kinetic-std_srvs < 1.11.3-2
+Provides:  ros-noetic-std_srvs = 1.11.3-3
+Obsoletes: ros-noetic-std_srvs < 1.11.3-3
+Obsoletes: ros-kinetic-std_srvs < 1.11.3-3
 
 
 
@@ -43,9 +43,9 @@ Requires:       python3-pyyaml
 Requires:       ros-noetic-message_generation-devel
 Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-noetic-std_srvs-devel = 1.11.3-2
-Obsoletes: ros-noetic-std_srvs-devel < 1.11.3-2
-Obsoletes: ros-kinetic-std_srvs-devel < 1.11.3-2
+Provides: ros-noetic-std_srvs-devel = 1.11.3-3
+Obsoletes: ros-noetic-std_srvs-devel < 1.11.3-3
+Obsoletes: ros-kinetic-std_srvs-devel < 1.11.3-3
 
 
 %description devel
@@ -140,6 +140,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.11.3-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.11.3-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.11.3-1

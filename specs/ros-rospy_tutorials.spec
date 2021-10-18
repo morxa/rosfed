@@ -1,6 +1,6 @@
 Name:           ros-rospy_tutorials
 Version:        noetic.0.10.2
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package rospy_tutorials
 
 License:        BSD
@@ -29,9 +29,9 @@ Requires:       ros-noetic-message_runtime
 Requires:       ros-noetic-rospy
 Requires:       ros-noetic-std_msgs
 
-Provides:  ros-noetic-rospy_tutorials = 0.10.2-2
-Obsoletes: ros-noetic-rospy_tutorials < 0.10.2-2
-Obsoletes: ros-kinetic-rospy_tutorials < 0.10.2-2
+Provides:  ros-noetic-rospy_tutorials = 0.10.2-3
+Obsoletes: ros-noetic-rospy_tutorials < 0.10.2-3
+Obsoletes: ros-kinetic-rospy_tutorials < 0.10.2-3
 
 
 
@@ -51,9 +51,9 @@ Requires:       ros-noetic-std_msgs-devel
 Requires:       ros-noetic-message_runtime-devel
 Requires:       ros-noetic-rospy-devel
 
-Provides: ros-noetic-rospy_tutorials-devel = 0.10.2-2
-Obsoletes: ros-noetic-rospy_tutorials-devel < 0.10.2-2
-Obsoletes: ros-kinetic-rospy_tutorials-devel < 0.10.2-2
+Provides: ros-noetic-rospy_tutorials-devel = 0.10.2-3
+Obsoletes: ros-noetic-rospy_tutorials-devel < 0.10.2-3
+Obsoletes: ros-kinetic-rospy_tutorials-devel < 0.10.2-3
 
 
 %description devel
@@ -148,6 +148,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.10.2-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.10.2-2
 - Modernize python shebang replacement
 * Mon Nov 02 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.10.2-1

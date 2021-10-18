@@ -1,6 +1,6 @@
 Name:           ros-resource_retriever
 Version:        noetic.1.12.6
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package resource_retriever
 
 License:        BSD
@@ -32,9 +32,9 @@ Requires:       python3-rospkg
 Requires:       ros-noetic-rosconsole
 Requires:       ros-noetic-roslib
 
-Provides:  ros-noetic-resource_retriever = 1.12.6-2
-Obsoletes: ros-noetic-resource_retriever < 1.12.6-2
-Obsoletes: ros-kinetic-resource_retriever < 1.12.6-2
+Provides:  ros-noetic-resource_retriever = 1.12.6-3
+Obsoletes: ros-noetic-resource_retriever < 1.12.6-3
+Obsoletes: ros-kinetic-resource_retriever < 1.12.6-3
 
 
 
@@ -59,9 +59,9 @@ Requires:       tinyxml-devel
 Requires:       ros-noetic-rosconsole-devel
 Requires:       ros-noetic-roslib-devel
 
-Provides: ros-noetic-resource_retriever-devel = 1.12.6-2
-Obsoletes: ros-noetic-resource_retriever-devel < 1.12.6-2
-Obsoletes: ros-kinetic-resource_retriever-devel < 1.12.6-2
+Provides: ros-noetic-resource_retriever-devel = 1.12.6-3
+Obsoletes: ros-noetic-resource_retriever-devel < 1.12.6-3
+Obsoletes: ros-kinetic-resource_retriever-devel < 1.12.6-3
 
 
 %description devel
@@ -156,6 +156,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.12.6-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.12.6-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.12.6-1

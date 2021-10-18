@@ -1,6 +1,6 @@
 Name:           ros-rqt_bag
 Version:        noetic.0.5.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package rqt_bag
 
 License:        BSD
@@ -31,9 +31,9 @@ Requires:       ros-noetic-rospy
 Requires:       ros-noetic-rqt_gui
 Requires:       ros-noetic-rqt_gui_py
 
-Provides:  ros-noetic-rqt_bag = 0.5.1-1
-Obsoletes: ros-noetic-rqt_bag < 0.5.1-1
-Obsoletes: ros-kinetic-rqt_bag < 0.5.1-1
+Provides:  ros-noetic-rqt_bag = 0.5.1-2
+Obsoletes: ros-noetic-rqt_bag < 0.5.1-2
+Obsoletes: ros-kinetic-rqt_bag < 0.5.1-2
 
 
 
@@ -54,9 +54,9 @@ Requires:       ros-noetic-rospy-devel
 Requires:       ros-noetic-rqt_gui-devel
 Requires:       ros-noetic-rqt_gui_py-devel
 
-Provides: ros-noetic-rqt_bag-devel = 0.5.1-1
-Obsoletes: ros-noetic-rqt_bag-devel < 0.5.1-1
-Obsoletes: ros-kinetic-rqt_bag-devel < 0.5.1-1
+Provides: ros-noetic-rqt_bag-devel = 0.5.1-2
+Obsoletes: ros-noetic-rqt_bag-devel < 0.5.1-2
+Obsoletes: ros-kinetic-rqt_bag-devel < 0.5.1-2
 
 
 %description devel
@@ -151,6 +151,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.1-2
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.1-1
 - Modernize python shebang replacement
 * Fri Nov 20 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.0-1

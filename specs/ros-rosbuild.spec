@@ -1,6 +1,6 @@
 Name:           ros-rosbuild
 Version:        noetic.1.15.8
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package rosbuild
 
 License:        BSD
@@ -26,9 +26,9 @@ Requires:       ros-noetic-catkin
 Requires:       ros-noetic-message_generation
 Requires:       ros-noetic-message_runtime
 
-Provides:  ros-noetic-rosbuild = 1.15.8-1
-Obsoletes: ros-noetic-rosbuild < 1.15.8-1
-Obsoletes: ros-kinetic-rosbuild < 1.15.8-1
+Provides:  ros-noetic-rosbuild = 1.15.8-2
+Obsoletes: ros-noetic-rosbuild < 1.15.8-2
+Obsoletes: ros-kinetic-rosbuild < 1.15.8-2
 
 
 
@@ -44,9 +44,9 @@ Requires:       pkgconfig
 Requires:       ros-noetic-message_generation-devel
 Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-noetic-rosbuild-devel = 1.15.8-1
-Obsoletes: ros-noetic-rosbuild-devel < 1.15.8-1
-Obsoletes: ros-kinetic-rosbuild-devel < 1.15.8-1
+Provides: ros-noetic-rosbuild-devel = 1.15.8-2
+Obsoletes: ros-noetic-rosbuild-devel < 1.15.8-2
+Obsoletes: ros-kinetic-rosbuild-devel < 1.15.8-2
 
 
 %description devel
@@ -141,6 +141,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.8-2
+- Rebuild to pull in updated dependencies
 * Thu Sep 16 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.8-1
 - Update to latest release
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.7-2

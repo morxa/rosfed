@@ -1,6 +1,6 @@
 Name:           ros-stage_ros
 Version:        noetic.1.8.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package stage_ros
 
 License:        BSD
@@ -40,9 +40,9 @@ Requires:       ros-noetic-std_msgs
 Requires:       ros-noetic-std_srvs
 Requires:       ros-noetic-tf
 
-Provides:  ros-noetic-stage_ros = 1.8.0-2
-Obsoletes: ros-noetic-stage_ros < 1.8.0-2
-Obsoletes: ros-kinetic-stage_ros < 1.8.0-2
+Provides:  ros-noetic-stage_ros = 1.8.0-3
+Obsoletes: ros-noetic-stage_ros < 1.8.0-3
+Obsoletes: ros-kinetic-stage_ros < 1.8.0-3
 
 
 
@@ -65,9 +65,9 @@ Requires:       ros-noetic-std_msgs-devel
 Requires:       ros-noetic-std_srvs-devel
 Requires:       ros-noetic-tf-devel
 
-Provides: ros-noetic-stage_ros-devel = 1.8.0-2
-Obsoletes: ros-noetic-stage_ros-devel < 1.8.0-2
-Obsoletes: ros-kinetic-stage_ros-devel < 1.8.0-2
+Provides: ros-noetic-stage_ros-devel = 1.8.0-3
+Obsoletes: ros-noetic-stage_ros-devel < 1.8.0-3
+Obsoletes: ros-kinetic-stage_ros-devel < 1.8.0-3
 
 
 %description devel
@@ -162,6 +162,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.8.0-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.8.0-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.8.0-1

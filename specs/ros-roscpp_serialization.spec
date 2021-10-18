@@ -1,6 +1,6 @@
 Name:           ros-roscpp_serialization
 Version:        noetic.0.7.2
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package roscpp_serialization
 
 License:        BSD
@@ -28,9 +28,9 @@ Requires:       ros-noetic-cpp_common
 Requires:       ros-noetic-roscpp_traits
 Requires:       ros-noetic-rostime
 
-Provides:  ros-noetic-roscpp_serialization = 0.7.2-2
-Obsoletes: ros-noetic-roscpp_serialization < 0.7.2-2
-Obsoletes: ros-kinetic-roscpp_serialization < 0.7.2-2
+Provides:  ros-noetic-roscpp_serialization = 0.7.2-3
+Obsoletes: ros-noetic-roscpp_serialization < 0.7.2-3
+Obsoletes: ros-kinetic-roscpp_serialization < 0.7.2-3
 
 
 
@@ -47,9 +47,9 @@ Requires:       ros-noetic-cpp_common-devel
 Requires:       ros-noetic-roscpp_traits-devel
 Requires:       ros-noetic-rostime-devel
 
-Provides: ros-noetic-roscpp_serialization-devel = 0.7.2-2
-Obsoletes: ros-noetic-roscpp_serialization-devel < 0.7.2-2
-Obsoletes: ros-kinetic-roscpp_serialization-devel < 0.7.2-2
+Provides: ros-noetic-roscpp_serialization-devel = 0.7.2-3
+Obsoletes: ros-noetic-roscpp_serialization-devel < 0.7.2-3
+Obsoletes: ros-kinetic-roscpp_serialization-devel < 0.7.2-3
 
 
 %description devel
@@ -144,6 +144,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.7.2-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.7.2-2
 - Modernize python shebang replacement
 * Thu Jun 11 2020 Nicolas Limpert - noetic.0.7.2-1

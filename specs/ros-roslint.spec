@@ -1,6 +1,6 @@
 Name:           ros-roslint
 Version:        noetic.0.12.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package roslint
 
 License:        BSD
@@ -22,9 +22,9 @@ BuildRequires:  python-unversioned-command
 BuildRequires:  ros-noetic-catkin-devel
 
 
-Provides:  ros-noetic-roslint = 0.12.0-2
-Obsoletes: ros-noetic-roslint < 0.12.0-2
-Obsoletes: ros-kinetic-roslint < 0.12.0-2
+Provides:  ros-noetic-roslint = 0.12.0-3
+Obsoletes: ros-noetic-roslint < 0.12.0-3
+Obsoletes: ros-kinetic-roslint < 0.12.0-3
 
 
 
@@ -38,9 +38,9 @@ Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ros-noetic-catkin-devel
 
-Provides: ros-noetic-roslint-devel = 0.12.0-2
-Obsoletes: ros-noetic-roslint-devel < 0.12.0-2
-Obsoletes: ros-kinetic-roslint-devel < 0.12.0-2
+Provides: ros-noetic-roslint-devel = 0.12.0-3
+Obsoletes: ros-noetic-roslint-devel < 0.12.0-3
+Obsoletes: ros-kinetic-roslint-devel < 0.12.0-3
 
 
 %description devel
@@ -135,6 +135,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.12.0-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.12.0-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.12.0-1

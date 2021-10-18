@@ -1,6 +1,6 @@
 Name:           ros-ros_base
 Version:        noetic.1.5.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package ros_base
 
 License:        BSD
@@ -27,9 +27,9 @@ Requires:       ros-noetic-dynamic_reconfigure
 Requires:       ros-noetic-nodelet_core
 Requires:       ros-noetic-ros_core
 
-Provides:  ros-noetic-ros_base = 1.5.0-2
-Obsoletes: ros-noetic-ros_base < 1.5.0-2
-Obsoletes: ros-kinetic-ros_base < 1.5.0-2
+Provides:  ros-noetic-ros_base = 1.5.0-3
+Obsoletes: ros-noetic-ros_base < 1.5.0-3
+Obsoletes: ros-kinetic-ros_base < 1.5.0-3
 
 
 
@@ -48,9 +48,9 @@ Requires:       ros-noetic-dynamic_reconfigure-devel
 Requires:       ros-noetic-nodelet_core-devel
 Requires:       ros-noetic-ros_core-devel
 
-Provides: ros-noetic-ros_base-devel = 1.5.0-2
-Obsoletes: ros-noetic-ros_base-devel < 1.5.0-2
-Obsoletes: ros-kinetic-ros_base-devel < 1.5.0-2
+Provides: ros-noetic-ros_base-devel = 1.5.0-3
+Obsoletes: ros-noetic-ros_base-devel < 1.5.0-3
+Obsoletes: ros-kinetic-ros_base-devel < 1.5.0-3
 
 
 %description devel
@@ -145,6 +145,8 @@ done
 
 
 %changelog
+* Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.5.0-3
+- Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.5.0-2
 - Modernize python shebang replacement
 * Sun May 24 2020 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.5.0-1
