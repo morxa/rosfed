@@ -1,12 +1,12 @@
 Name:           ros-rviz
-Version:        noetic.1.14.10
-Release:        2%{?dist}
+Version:        noetic.1.14.11
+Release:        1%{?dist}
 Summary:        ROS package rviz
 
 License:        BSD
 URL:            http://wiki.ros.org/rviz
 
-Source0:        https://github.com/ros-gbp/rviz-release/archive/release/noetic/rviz/1.14.10-1.tar.gz#/ros-noetic-rviz-1.14.10-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rviz-release/archive/release/noetic/rviz/1.14.11-1.tar.gz#/ros-noetic-rviz-1.14.11-source0.tar.gz
 
 
 
@@ -18,6 +18,7 @@ BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 BuildRequires:  python-unversioned-command
 
+BuildRequires:  assimp
 BuildRequires:  assimp-devel
 BuildRequires:  eigen3-devel
 BuildRequires:  libXext-devel
@@ -45,7 +46,6 @@ BuildRequires:  ros-noetic-nav_msgs-devel
 BuildRequires:  ros-noetic-pluginlib-devel
 BuildRequires:  ros-noetic-python_qt_binding-devel
 BuildRequires:  ros-noetic-resource_retriever-devel
-BuildRequires:  ros-noetic-rosbag-devel
 BuildRequires:  ros-noetic-rosconsole-devel
 BuildRequires:  ros-noetic-roscpp-devel
 BuildRequires:  ros-noetic-roslib-devel
@@ -74,7 +74,6 @@ Requires:       ros-noetic-nav_msgs
 Requires:       ros-noetic-pluginlib
 Requires:       ros-noetic-python_qt_binding
 Requires:       ros-noetic-resource_retriever
-Requires:       ros-noetic-rosbag
 Requires:       ros-noetic-rosconsole
 Requires:       ros-noetic-roscpp
 Requires:       ros-noetic-roslib
@@ -87,9 +86,9 @@ Requires:       ros-noetic-tf2_ros
 Requires:       ros-noetic-urdf
 Requires:       ros-noetic-visualization_msgs
 
-Provides:  ros-noetic-rviz = 1.14.10-2
-Obsoletes: ros-noetic-rviz < 1.14.10-2
-Obsoletes: ros-kinetic-rviz < 1.14.10-2
+Provides:  ros-noetic-rviz = 1.14.11-1
+Obsoletes: ros-noetic-rviz < 1.14.11-1
+Obsoletes: ros-kinetic-rviz < 1.14.11-1
 
 
 
@@ -101,6 +100,7 @@ Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       ogre-devel
 Requires:       ros-noetic-catkin-devel
+Requires:       assimp
 Requires:       assimp-devel
 Requires:       eigen3-devel
 Requires:       libXext-devel
@@ -126,7 +126,6 @@ Requires:       ros-noetic-nav_msgs-devel
 Requires:       ros-noetic-pluginlib-devel
 Requires:       ros-noetic-python_qt_binding-devel
 Requires:       ros-noetic-resource_retriever-devel
-Requires:       ros-noetic-rosbag-devel
 Requires:       ros-noetic-rosconsole-devel
 Requires:       ros-noetic-roscpp-devel
 Requires:       ros-noetic-roslib-devel
@@ -143,9 +142,9 @@ Requires:       ros-noetic-visualization_msgs-devel
 Requires:       ros-noetic-media_export-devel
 Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-noetic-rviz-devel = 1.14.10-2
-Obsoletes: ros-noetic-rviz-devel < 1.14.10-2
-Obsoletes: ros-kinetic-rviz-devel < 1.14.10-2
+Provides: ros-noetic-rviz-devel = 1.14.11-1
+Obsoletes: ros-noetic-rviz-devel < 1.14.11-1
+Obsoletes: ros-kinetic-rviz-devel < 1.14.11-1
 
 
 %description devel
@@ -241,6 +240,8 @@ done
 
 
 %changelog
+* Wed Nov 24 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.11-1
+- Update to latest release
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.10-2
 - Rebuild to pull in updated dependencies
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.10-1

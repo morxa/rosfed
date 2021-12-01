@@ -1,12 +1,12 @@
 Name:           ros-laser_filters
-Version:        noetic.1.8.11
-Release:        3%{?dist}
+Version:        noetic.1.9.0
+Release:        1%{?dist}
 Summary:        ROS package laser_filters
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/laser_filters-release/archive/release/noetic/laser_filters/1.8.11-1.tar.gz#/ros-noetic-laser_filters-1.8.11-source0.tar.gz
+Source0:        https://github.com/ros-gbp/laser_filters-release/archive/release/noetic/laser_filters/1.9.0-1.tar.gz#/ros-noetic-laser_filters-1.9.0-source0.tar.gz
 
 
 
@@ -28,6 +28,7 @@ BuildRequires:  ros-noetic-dynamic_reconfigure-devel
 BuildRequires:  ros-noetic-filters-devel
 BuildRequires:  ros-noetic-laser_geometry-devel
 BuildRequires:  ros-noetic-message_filters-devel
+BuildRequires:  ros-noetic-nodelet-devel
 BuildRequires:  ros-noetic-pluginlib-devel
 BuildRequires:  ros-noetic-roscpp-devel
 BuildRequires:  ros-noetic-rostest-devel
@@ -39,14 +40,15 @@ Requires:       ros-noetic-dynamic_reconfigure
 Requires:       ros-noetic-filters
 Requires:       ros-noetic-laser_geometry
 Requires:       ros-noetic-message_filters
+Requires:       ros-noetic-nodelet
 Requires:       ros-noetic-pluginlib
 Requires:       ros-noetic-roscpp
 Requires:       ros-noetic-sensor_msgs
 Requires:       ros-noetic-tf
 
-Provides:  ros-noetic-laser_filters = 1.8.11-3
-Obsoletes: ros-noetic-laser_filters < 1.8.11-3
-Obsoletes: ros-kinetic-laser_filters < 1.8.11-3
+Provides:  ros-noetic-laser_filters = 1.9.0-1
+Obsoletes: ros-noetic-laser_filters < 1.9.0-1
+Obsoletes: ros-kinetic-laser_filters < 1.9.0-1
 
 
 
@@ -67,15 +69,16 @@ Requires:       ros-noetic-dynamic_reconfigure-devel
 Requires:       ros-noetic-filters-devel
 Requires:       ros-noetic-laser_geometry-devel
 Requires:       ros-noetic-message_filters-devel
+Requires:       ros-noetic-nodelet-devel
 Requires:       ros-noetic-pluginlib-devel
 Requires:       ros-noetic-roscpp-devel
 Requires:       ros-noetic-rostest-devel
 Requires:       ros-noetic-sensor_msgs-devel
 Requires:       ros-noetic-tf-devel
 
-Provides: ros-noetic-laser_filters-devel = 1.8.11-3
-Obsoletes: ros-noetic-laser_filters-devel < 1.8.11-3
-Obsoletes: ros-kinetic-laser_filters-devel < 1.8.11-3
+Provides: ros-noetic-laser_filters-devel = 1.9.0-1
+Obsoletes: ros-noetic-laser_filters-devel < 1.9.0-1
+Obsoletes: ros-kinetic-laser_filters-devel < 1.9.0-1
 
 
 %description devel
@@ -170,6 +173,8 @@ done
 
 
 %changelog
+* Wed Nov 24 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.9.0-1
+- Update to latest release
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.8.11-3
 - Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.8.11-2

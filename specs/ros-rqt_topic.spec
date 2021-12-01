@@ -1,12 +1,12 @@
 Name:           ros-rqt_topic
-Version:        noetic.0.4.12
-Release:        3%{?dist}
+Version:        noetic.0.4.13
+Release:        1%{?dist}
 Summary:        ROS package rqt_topic
 
 License:        BSD
 URL:            http://wiki.ros.org/rqt_topic
 
-Source0:        https://github.com/ros-gbp/rqt_topic-release/archive/release/noetic/rqt_topic/0.4.12-1.tar.gz#/ros-noetic-rqt_topic-0.4.12-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt_topic-release/archive/release/noetic/rqt_topic/0.4.13-1.tar.gz#/ros-noetic-rqt_topic-0.4.13-source0.tar.gz
 
 
 BuildArch: noarch
@@ -28,9 +28,9 @@ Requires:       ros-noetic-rqt_gui
 Requires:       ros-noetic-rqt_gui_py
 Requires:       ros-noetic-std_msgs
 
-Provides:  ros-noetic-rqt_topic = 0.4.12-3
-Obsoletes: ros-noetic-rqt_topic < 0.4.12-3
-Obsoletes: ros-kinetic-rqt_topic < 0.4.12-3
+Provides:  ros-noetic-rqt_topic = 0.4.13-1
+Obsoletes: ros-noetic-rqt_topic < 0.4.13-1
+Obsoletes: ros-kinetic-rqt_topic < 0.4.13-1
 
 
 
@@ -49,9 +49,9 @@ Requires:       ros-noetic-rqt_gui-devel
 Requires:       ros-noetic-rqt_gui_py-devel
 Requires:       ros-noetic-std_msgs-devel
 
-Provides: ros-noetic-rqt_topic-devel = 0.4.12-3
-Obsoletes: ros-noetic-rqt_topic-devel < 0.4.12-3
-Obsoletes: ros-kinetic-rqt_topic-devel < 0.4.12-3
+Provides: ros-noetic-rqt_topic-devel = 0.4.13-1
+Obsoletes: ros-noetic-rqt_topic-devel < 0.4.13-1
+Obsoletes: ros-kinetic-rqt_topic-devel < 0.4.13-1
 
 
 %description devel
@@ -146,6 +146,8 @@ done
 
 
 %changelog
+* Wed Nov 24 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.13-1
+- Update to latest release
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.12-3
 - Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.12-2
