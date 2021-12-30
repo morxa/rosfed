@@ -132,8 +132,9 @@ class CoprBuilder:
             leaves = tree.get_build_leaves()
             print('Found {} leave node(s)'.format(len(leaves)))
             if not build_ids and not leaves:
-                raise Exception(
-                    'No pending builds and no leave packages, abort.')
+                cprint('No pending builds and no leave packages, abort.',
+                       'red')
+                return False
             for node in leaves:
                 if only_new:
                     pkg_version = None
@@ -178,6 +179,7 @@ class CoprBuilder:
                     '{}/{}/{}: Failed build: {}'.format(
                         build_progress['building'], build_progress['finished'],
                         build_progress['total'], node.name), 'red')
+        return tree.is_built()
 
     @functools.lru_cache(16)
     def get_builds(self):

@@ -447,7 +447,8 @@ def main():
                         action='store_true',
                         default=False,
                         help='Also generate Spec files for dependencies')
-    parser.add_argument('--distro', default='noetic',
+    parser.add_argument('--distro',
+                        default='noetic',
                         help='The ROS distro (default: %(default)s)')
     parser.add_argument('-t',
                         '--template',
@@ -546,9 +547,16 @@ def main():
         assert args.chroot, 'You need to provide a chroot to use for builds.'
         copr_builder = copr_build.CoprBuilder(copr_owner=args.copr_owner,
                                               copr_project=args.copr_project)
+        success = True
         for chroot in args.chroot:
             tree = build_tree.Tree(list(packages.values()))
-            copr_builder.build_tree(chroot, tree, only_new=args.only_new)
+            success &= copr_builder.build_tree(chroot,
+                                               tree,
+                                               only_new=args.only_new)
+    if success:
+        sys.exit(0)
+    else:
+        sys.exit(1)
 
 
 def get_build_order(packages):
