@@ -17,13 +17,14 @@ import jinja2
 import os
 import re
 import spec_utils
+import queue
 import subprocess
 import sys
 import textwrap
+import multiprocessing
 import time
 import yaml
 import threading
-import concurrent.futures
 
 from rosinstall_generator import generator
 from defusedxml import ElementTree
@@ -318,19 +319,22 @@ class SpecFileGenerator:
             lstrip_blocks=True,
         )
         self.print_lock = threading.Lock()
-        self.executor = concurrent.futures.ThreadPoolExecutor(
-            max_workers=os.cpu_count())
-        self.futures = []
         self.packages = []
-        self.packages_lock = threading.RLock()
-        self.finished_condition = threading.Condition(lock=self.packages_lock)
+        self.package_queue = queue.Queue()
         self.generated_packages = {}
+        self.packages_lock = threading.Lock()
 
     def tprint(self, msg):
         """Multi-threaded print. """
         self.print_lock.acquire()
         print(msg)
         self.print_lock.release()
+
+    def worker(self):
+        while True:
+            pkg = self.package_queue.get()
+            self.generate_spec_file(pkg)
+            self.package_queue.task_done()
 
     def generate_spec_file(self, package):
         """ Generate a single spec file for the given package. """
@@ -348,7 +352,9 @@ class SpecFileGenerator:
             # set, because we need to loop over it while we append items.
             self.packages_lock.acquire()
             deps = [dep for dep in ros_deps if not dep in self.packages]
-            self.generate_spec_files(deps)
+            for dep in deps:
+                self.package_queue.put(dep)
+                self.packages.append(dep)
             self.packages_lock.release()
         sources = ros_pkg.get_sources()
         version = ros_pkg.get_version()
@@ -415,26 +421,17 @@ class SpecFileGenerator:
             spec_file.write(spec)
         self.packages_lock.acquire()
         self.generated_packages[ros_pkg.name] = ros_pkg
-        self.finished_condition.notify()
         self.packages_lock.release()
         return ros_pkg
 
-    def generate_spec_files(self, packages):
-        """ Generate Spec files for the given list of packages. """
-        self.packages_lock.acquire()
-        self.packages += packages
-        self.packages_lock.release()
-        for pkg in packages:
-            self.futures.append(
-                self.executor.submit(self.generate_spec_file, pkg))
-
     def generate(self, packages):
-        self.generate_spec_files(packages)
-        self.packages_lock.acquire()
-        if len(self.packages) != len(self.generated_packages):
-            self.finished_condition.wait_for(
-                lambda: len(self.packages) == len(self.generated_packages))
-        self.packages_lock.release()
+        self.packages = packages
+        for i in range(multiprocessing.cpu_count()):
+            threading.Thread(target=self.worker, daemon=True).start()
+        for pkg in packages:
+            self.package_queue.put(pkg)
+        self.package_queue.join()
+        assert len(self.packages) == len(self.generated_packages)
         return self.generated_packages
 
 
