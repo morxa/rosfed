@@ -550,10 +550,11 @@ def main():
             success &= copr_builder.build_tree(chroot,
                                                tree,
                                                only_new=args.only_new)
-    if success:
-        sys.exit(0)
-    else:
-        sys.exit(1)
+        if success:
+            sys.exit(0)
+        else:
+            sys.exit(1)
+    sys.exit(0)
 
 
 def get_build_order(packages):
