@@ -8,3 +8,6 @@ dependencies:
       - lz4-devel
       - urdfdom-devel
       - libXext-devel
+patches:
+  - ros-rviz.no-rpath.patch
+  - ros-rviz.assimp-decompose-quaternion.patch

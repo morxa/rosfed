@@ -1,0 +1,16 @@
+diff --color -ur rviz-release-release-noetic-rviz-1.14.13-1/src/rviz/mesh_loader.cpp rviz/src/rviz/mesh_loader.cpp
+--- rviz-release-release-noetic-rviz-1.14.13-1/src/rviz/mesh_loader.cpp	2021-12-16 14:14:17.000000000 +0100
++++ rviz/src/rviz/mesh_loader.cpp	2022-01-02 09:38:31.249660770 +0100
+@@ -233,9 +233,9 @@
+     // Use root node's transform
+     transform = node->mTransformation;
+     // but don't rotate to y-up orientation, which is *sometimes* done in assimp's root node
+-    aiVector3D scaling, axis, pos;
+-    float angle;
+-    transform.Decompose(scaling, axis, angle, pos);
++    aiVector3D scaling, pos;
++    aiQuaterniont<float> rotation;
++    transform.Decompose(scaling, rotation, pos);
+     // drop rotation, but keep scaling and position
+     transform = aiMatrix4x4(scaling, aiQuaternion(), pos);
+   }

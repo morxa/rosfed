@@ -1,0 +1,13 @@
+diff --color -ur rviz-release-release-noetic-rviz-1.14.13-1/src/python_bindings/sip/CMakeLists.txt rviz-release-release-noetic-rviz-1.14.13-1.no-rpath/src/python_bindings/sip/CMakeLists.txt
+--- rviz-release-release-noetic-rviz-1.14.13-1/src/python_bindings/sip/CMakeLists.txt	2021-12-16 14:14:17.000000000 +0100
++++ rviz-release-release-noetic-rviz-1.14.13-1.no-rpath/src/python_bindings/sip/CMakeLists.txt	2022-01-02 11:09:52.501549882 +0100
+@@ -52,8 +52,6 @@
+ set(rviz_sip_LIBRARY_DIRS ${rviz_LIBRARY_DIRS} ${CATKIN_DEVEL_PREFIX}/${CATKIN_PACKAGE_LIB_DESTINATION})
+ if (MSVC)
+   set(rviz_sip_LDFLAGS_OTHER ${rviz_LDFLAGS_OTHER} /LIBPATH:\"${CATKIN_DEVEL_PREFIX}/${CATKIN_PACKAGE_LIB_DESTINATION}\")
+-else()
+-  set(rviz_sip_LDFLAGS_OTHER ${rviz_LDFLAGS_OTHER} -Wl,-rpath,\\"${CATKIN_DEVEL_PREFIX}/${CATKIN_PACKAGE_LIB_DESTINATION}\\")
+ endif()
+ 
+ if(sip_helper_FOUND)
+Only in rviz-release-release-noetic-rviz-1.14.13-1.no-rpath/src/python_bindings/sip: .CMakeLists.txt.un~
