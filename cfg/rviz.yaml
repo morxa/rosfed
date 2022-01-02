@@ -11,3 +11,4 @@ dependencies:
 patches:
   - ros-rviz.no-rpath.patch
   - ros-rviz.assimp-decompose-quaternion.patch
+  - ros-rviz.ogre-plugin-dir.patch

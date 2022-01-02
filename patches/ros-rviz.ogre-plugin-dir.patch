@@ -1,0 +1,33 @@
+diff --color -ur rviz-release-release-noetic-rviz-1.14.13-1/CMakeLists.txt rviz-release-release-noetic-rviz-1.14.13-1.ogre-plugin-dir/CMakeLists.txt
+--- rviz-release-release-noetic-rviz-1.14.13-1/CMakeLists.txt	2021-12-16 14:14:17.000000000 +0100
++++ rviz-release-release-noetic-rviz-1.14.13-1.ogre-plugin-dir/CMakeLists.txt	2022-01-02 11:02:46.385226694 +0100
+@@ -73,18 +73,18 @@
+     set(OGRE_LIBRARIES ${_OGRE_LIBRARIES} CACHE STRING "Absolute paths to OGRE libs")
+   endif(NOT DEFINED OGRE_LIBRARIES)
+   message(STATUS "OGRE_LIBRARIES=${OGRE_LIBRARIES}")
+-
+-  ## Fetch OGRE_PLUGIN_DIR variable from pkg-config
+-  if(NOT DEFINED OGRE_PLUGIN_DIR)
+-    execute_process(COMMAND
+-      ${PKG_CONFIG_EXECUTABLE} --variable=plugindir OGRE
+-      OUTPUT_VARIABLE OGRE_PLUGIN_DIR
+-      OUTPUT_STRIP_TRAILING_WHITESPACE
+-      )
+-  endif(NOT DEFINED OGRE_PLUGIN_DIR)
+-  message(STATUS "OGRE_PLUGIN_DIR=${OGRE_PLUGIN_DIR}")
+ endif()
+ 
++## Fetch OGRE_PLUGIN_DIR variable from pkg-config
++if(NOT DEFINED OGRE_PLUGIN_DIR)
++  execute_process(COMMAND
++    ${PKG_CONFIG_EXECUTABLE} --variable=plugindir OGRE
++    OUTPUT_VARIABLE OGRE_PLUGIN_DIR
++    OUTPUT_STRIP_TRAILING_WHITESPACE
++    )
++endif(NOT DEFINED OGRE_PLUGIN_DIR)
++message(STATUS "OGRE_PLUGIN_DIR=${OGRE_PLUGIN_DIR}")
++
+ # TODO: adapt version after upgrade to newer OGRE release
+ # Disable deprecation warnings for OGRE >= 1.10
+ if(NOT OGRE_VERSION VERSION_LESS "1.10.0" AND NOT MSVC)
+Only in rviz-release-release-noetic-rviz-1.14.13-1.ogre-plugin-dir: .CMakeLists.txt.un~

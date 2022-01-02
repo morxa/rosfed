@@ -1,6 +1,6 @@
 Name:           ros-rviz
 Version:        noetic.1.14.13
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package rviz
 
 License:        BSD
@@ -10,6 +10,7 @@ Source0:        https://github.com/ros-gbp/rviz-release/archive/release/noetic/r
 
 Patch0: ros-rviz.no-rpath.patch
 Patch1: ros-rviz.assimp-decompose-quaternion.patch
+Patch2: ros-rviz.ogre-plugin-dir.patch
 
 
 # common BRs
@@ -88,9 +89,9 @@ Requires:       ros-noetic-tf2_ros
 Requires:       ros-noetic-urdf
 Requires:       ros-noetic-visualization_msgs
 
-Provides:  ros-noetic-rviz = 1.14.13-1
-Obsoletes: ros-noetic-rviz < 1.14.13-1
-Obsoletes: ros-kinetic-rviz < 1.14.13-1
+Provides:  ros-noetic-rviz = 1.14.13-2
+Obsoletes: ros-noetic-rviz < 1.14.13-2
+Obsoletes: ros-kinetic-rviz < 1.14.13-2
 
 
 
@@ -144,9 +145,9 @@ Requires:       ros-noetic-visualization_msgs-devel
 Requires:       ros-noetic-media_export-devel
 Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-noetic-rviz-devel = 1.14.13-1
-Obsoletes: ros-noetic-rviz-devel < 1.14.13-1
-Obsoletes: ros-kinetic-rviz-devel < 1.14.13-1
+Provides: ros-noetic-rviz-devel = 1.14.13-2
+Obsoletes: ros-noetic-rviz-devel < 1.14.13-2
+Obsoletes: ros-kinetic-rviz-devel < 1.14.13-2
 
 
 %description devel
@@ -161,6 +162,7 @@ applications that use %{name}.
 tar --strip-components=1 -xf %{SOURCE0}
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 # nothing to do here
@@ -244,6 +246,8 @@ done
 
 
 %changelog
+* Sun Jan 02 2022 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.13-2
+- Add patch to properly set OGRE_PLUGIN_DIR
 * Thu Dec 30 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.13-1
 - Update to latest release
 * Wed Nov 24 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.11-1
