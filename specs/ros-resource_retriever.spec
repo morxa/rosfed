@@ -1,12 +1,12 @@
 Name:           ros-resource_retriever
-Version:        noetic.1.12.6
-Release:        3%{?dist}
+Version:        noetic.1.12.7
+Release:        1%{?dist}
 Summary:        ROS package resource_retriever
 
 License:        BSD
 URL:            http://ros.org/wiki/resource_retriever
 
-Source0:        https://github.com/ros-gbp/resource_retriever-release/archive/release/noetic/resource_retriever/1.12.6-1.tar.gz#/ros-noetic-resource_retriever-1.12.6-source0.tar.gz
+Source0:        https://github.com/ros-gbp/resource_retriever-release/archive/release/noetic/resource_retriever/1.12.7-1.tar.gz#/ros-noetic-resource_retriever-1.12.7-source0.tar.gz
 
 
 
@@ -21,20 +21,21 @@ BuildRequires:  python-unversioned-command
 BuildRequires:  boost-devel
 BuildRequires:  console-bridge-devel
 BuildRequires:  gtest-devel
-BuildRequires:  libcurl-devel curl
+BuildRequires:  libcurl-devel
 BuildRequires:  log4cxx-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  ros-noetic-catkin-devel
 BuildRequires:  ros-noetic-rosconsole-devel
 BuildRequires:  ros-noetic-roslib-devel
 
+Requires:       libcurl
 Requires:       python3-rospkg
 Requires:       ros-noetic-rosconsole
 Requires:       ros-noetic-roslib
 
-Provides:  ros-noetic-resource_retriever = 1.12.6-3
-Obsoletes: ros-noetic-resource_retriever < 1.12.6-3
-Obsoletes: ros-kinetic-resource_retriever < 1.12.6-3
+Provides:  ros-noetic-resource_retriever = 1.12.7-1
+Obsoletes: ros-noetic-resource_retriever < 1.12.7-1
+Obsoletes: ros-kinetic-resource_retriever < 1.12.7-1
 
 
 
@@ -53,15 +54,15 @@ Requires:       ros-noetic-catkin-devel
 Requires:       boost-devel
 Requires:       console-bridge-devel
 Requires:       gtest-devel
-Requires:       libcurl-devel curl
+Requires:       libcurl-devel
 Requires:       log4cxx-devel
 Requires:       tinyxml-devel
 Requires:       ros-noetic-rosconsole-devel
 Requires:       ros-noetic-roslib-devel
 
-Provides: ros-noetic-resource_retriever-devel = 1.12.6-3
-Obsoletes: ros-noetic-resource_retriever-devel < 1.12.6-3
-Obsoletes: ros-kinetic-resource_retriever-devel < 1.12.6-3
+Provides: ros-noetic-resource_retriever-devel = 1.12.7-1
+Obsoletes: ros-noetic-resource_retriever-devel < 1.12.7-1
+Obsoletes: ros-kinetic-resource_retriever-devel < 1.12.7-1
 
 
 %description devel
@@ -156,6 +157,8 @@ done
 
 
 %changelog
+* Thu Dec 30 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.12.7-1
+- Update to latest release
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.12.6-3
 - Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.12.6-2

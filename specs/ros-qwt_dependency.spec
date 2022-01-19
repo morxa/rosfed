@@ -6,7 +6,7 @@ Summary:        ROS package qwt_dependency
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/qwt_dependency-release/archive/release/noetic/qwt_dependency/1.1.1-1.tar.gz#/ros-noetic-qwt_dependency-1.1.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/qwt_dependency-release/archive/release/noetic/qwt_dependency/1.1.1-2.tar.gz#/ros-noetic-qwt_dependency-1.1.1-source0.tar.gz
 
 
 BuildArch: noarch

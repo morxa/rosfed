@@ -6,7 +6,7 @@ Summary:        ROS package rqt_plot
 License:        BSD
 URL:            http://wiki.ros.org/rqt_plot
 
-Source0:        https://github.com/ros-gbp/rqt_plot-release/archive/release/noetic/rqt_plot/0.4.13-1.tar.gz#/ros-noetic-rqt_plot-0.4.13-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt_plot-release/archive/release/noetic/rqt_plot/0.4.13-2.tar.gz#/ros-noetic-rqt_plot-0.4.13-source0.tar.gz
 
 
 BuildArch: noarch

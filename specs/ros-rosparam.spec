@@ -1,12 +1,12 @@
 Name:           ros-rosparam
-Version:        noetic.1.15.13
-Release:        2%{?dist}
+Version:        noetic.1.15.14
+Release:        1%{?dist}
 Summary:        ROS package rosparam
 
 License:        BSD
 URL:            http://wiki.ros.org/rosparam
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/rosparam/1.15.13-1.tar.gz#/ros-noetic-rosparam-1.15.13-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/rosparam/1.15.14-1.tar.gz#/ros-noetic-rosparam-1.15.14-source0.tar.gz
 
 
 BuildArch: noarch
@@ -25,9 +25,9 @@ Requires:       python3-pyyaml
 Requires:       python3dist(pyyaml)
 Requires:       ros-noetic-rosgraph
 
-Provides:  ros-noetic-rosparam = 1.15.13-2
-Obsoletes: ros-noetic-rosparam < 1.15.13-2
-Obsoletes: ros-kinetic-rosparam < 1.15.13-2
+Provides:  ros-noetic-rosparam = 1.15.14-1
+Obsoletes: ros-noetic-rosparam < 1.15.14-1
+Obsoletes: ros-kinetic-rosparam < 1.15.14-1
 
 
 
@@ -41,9 +41,9 @@ Requires:       %{name} = %{version}-%{release}
 Requires:       ros-noetic-catkin-devel
 Requires:       ros-noetic-rosgraph-devel
 
-Provides: ros-noetic-rosparam-devel = 1.15.13-2
-Obsoletes: ros-noetic-rosparam-devel < 1.15.13-2
-Obsoletes: ros-kinetic-rosparam-devel < 1.15.13-2
+Provides: ros-noetic-rosparam-devel = 1.15.14-1
+Obsoletes: ros-noetic-rosparam-devel < 1.15.14-1
+Obsoletes: ros-kinetic-rosparam-devel < 1.15.14-1
 
 
 %description devel
@@ -138,6 +138,8 @@ done
 
 
 %changelog
+* Wed Jan 19 2022 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.14-1
+- Update to latest release
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.13-2
 - Rebuild to pull in updated dependencies
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.13-1
