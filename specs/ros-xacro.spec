@@ -1,12 +1,12 @@
 Name:           ros-xacro
-Version:        noetic.1.14.10
-Release:        2%{?dist}
+Version:        noetic.1.14.13
+Release:        1%{?dist}
 Summary:        ROS package xacro
 
 License:        BSD
 URL:            http://ros.org/wiki/xacro
 
-Source0:        https://github.com/ros-gbp/xacro-release/archive/release/noetic/xacro/1.14.10-1.tar.gz#/ros-noetic-xacro-1.14.10-source0.tar.gz
+Source0:        https://github.com/ros-gbp/xacro-release/archive/release/noetic/xacro/1.14.13-1.tar.gz#/ros-noetic-xacro-1.14.13-source0.tar.gz
 
 
 BuildArch: noarch
@@ -25,9 +25,9 @@ BuildRequires:  ros-noetic-rostest-devel
 
 Requires:       ros-noetic-roslaunch
 
-Provides:  ros-noetic-xacro = 1.14.10-2
-Obsoletes: ros-noetic-xacro < 1.14.10-2
-Obsoletes: ros-kinetic-xacro < 1.14.10-2
+Provides:  ros-noetic-xacro = 1.14.13-1
+Obsoletes: ros-noetic-xacro < 1.14.13-1
+Obsoletes: ros-kinetic-xacro < 1.14.13-1
 
 
 
@@ -44,9 +44,9 @@ Requires:       ros-noetic-roslint-devel
 Requires:       ros-noetic-rostest-devel
 Requires:       ros-noetic-roslaunch-devel
 
-Provides: ros-noetic-xacro-devel = 1.14.10-2
-Obsoletes: ros-noetic-xacro-devel < 1.14.10-2
-Obsoletes: ros-kinetic-xacro-devel < 1.14.10-2
+Provides: ros-noetic-xacro-devel = 1.14.13-1
+Obsoletes: ros-noetic-xacro-devel < 1.14.13-1
+Obsoletes: ros-kinetic-xacro-devel < 1.14.13-1
 
 
 %description devel
@@ -141,6 +141,8 @@ done
 
 
 %changelog
+* Mon Feb 14 2022 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.13-1
+- Update to latest release
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.10-2
 - Rebuild to pull in updated dependencies
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.10-1
