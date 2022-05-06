@@ -91,6 +91,7 @@ common:
     distro_names:
       gazebo11: gazebo
       gazebo9: gazebo
+      libcurl: libcurl
       libcurl-dev: libcurl-devel
       libgazebo11-dev: gazebo-devel
       libgazebo11: gazebo-libs
