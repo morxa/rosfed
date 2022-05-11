@@ -1,0 +1,13 @@
+diff --color -ur teb_local_planner-release-release-noetic-teb_local_planner-0.9.1-1/include/teb_local_planner/h_signature.h teb_local_planner-release-release-noetic-teb_local_planner-0.9.1-1.boost-sign-include/include/teb_local_planner/h_signature.h
+--- teb_local_planner-release-release-noetic-teb_local_planner-0.9.1-1/include/teb_local_planner/h_signature.h	2020-05-29 18:12:46.000000000 +0200
++++ teb_local_planner-release-release-noetic-teb_local_planner-0.9.1-1.boost-sign-include/include/teb_local_planner/h_signature.h	2022-05-11 16:12:44.247487787 +0200
+@@ -52,6 +52,8 @@
+ #include <vector>
+ #include <iterator>
+ 
++#include <boost/math/special_functions/sign.hpp>
++
+ 
+ namespace teb_local_planner
+ {
+Only in teb_local_planner-release-release-noetic-teb_local_planner-0.9.1-1.boost-sign-include/include/teb_local_planner: .h_signature.h.un~

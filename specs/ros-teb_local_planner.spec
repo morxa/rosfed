@@ -8,6 +8,7 @@ URL:            http://wiki.ros.org/teb_local_planner
 
 Source0:        https://github.com/rst-tu-dortmund/teb_local_planner-release/archive/release/noetic/teb_local_planner/0.9.1-1.tar.gz#/ros-noetic-teb_local_planner-0.9.1-source0.tar.gz
 
+Patch0: ros-teb_local_planner.boost-includes.patch
 
 
 # common BRs
@@ -116,6 +117,7 @@ applications that use %{name}.
 
 %setup -c -T
 tar --strip-components=1 -xf %{SOURCE0}
+%patch0 -p1
 
 %build
 # nothing to do here

@@ -1,0 +1,2 @@
+patches:
+  - ros-teb_local_planner.boost-includes.patch
