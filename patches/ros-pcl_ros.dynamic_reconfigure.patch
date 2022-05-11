@@ -1,15 +1,10 @@
-diff --color -ur perception_pcl-release-release-noetic-pcl_ros-1.7.2-1/CMakeLists.txt perception_pcl-release-release-noetic-pcl_ros-1.7.2-1.dynamic_reconfigure/CMakeLists.txt
---- perception_pcl-release-release-noetic-pcl_ros-1.7.2-1/CMakeLists.txt	2020-10-14 21:08:05.000000000 +0200
-+++ perception_pcl-release-release-noetic-pcl_ros-1.7.2-1.dynamic_reconfigure/CMakeLists.txt	2021-02-24 18:44:34.591480260 +0100
-@@ -3,40 +3,9 @@
- 
- add_compile_options(-std=c++14)
- 
--## Find system dependencies
--find_package(PCL REQUIRED COMPONENTS core features filters io segmentation surface)
--find_package(cmake_modules REQUIRED)
--find_package(Boost REQUIRED COMPONENTS system filesystem thread)
--find_package(Eigen3 REQUIRED)
+diff --color -ur perception_pcl-release-release-noetic-pcl_ros-1.7.4-1/CMakeLists.txt perception_pcl-release-release-noetic-pcl_ros-1.7.4-1.dynamic_reconfigure/CMakeLists.txt
+--- perception_pcl-release-release-noetic-pcl_ros-1.7.4-1/CMakeLists.txt	2022-02-09 02:01:56.000000000 +0100
++++ perception_pcl-release-release-noetic-pcl_ros-1.7.4-1.dynamic_reconfigure/CMakeLists.txt	2022-05-06 08:36:16.168977462 +0200
+@@ -36,32 +36,7 @@
+ find_package(PCL REQUIRED COMPONENTS common features filters io segmentation surface)
+ find_package(Boost REQUIRED COMPONENTS system filesystem thread)
+ find_package(Eigen3 REQUIRED)
 -
 -if(NOT "${PCL_LIBRARIES}" STREQUAL "")
 -  # For debian: https://github.com/ros-perception/perception_pcl/issues/139
@@ -36,54 +31,11 @@ diff --color -ur perception_pcl-release-release-noetic-pcl_ros-1.7.2-1/CMakeList
 -    endif()
 -  endforeach()
 -endif()
--
- ## Find catkin packages
- find_package(catkin REQUIRED COMPONENTS
-+  cmake_modules
-   dynamic_reconfigure
-   geometry_msgs
-   message_filters
-@@ -57,6 +26,39 @@
-   tf2_ros
- )
- 
-+## Find system dependencies
-+find_package(PCL REQUIRED COMPONENTS core features filters io segmentation surface)
-+find_package(Boost REQUIRED COMPONENTS system filesystem thread)
-+find_package(Eigen3 REQUIRED)
 +find_package(VTK REQUIRED)
-+
-+#if(NOT "${PCL_LIBRARIES}" STREQUAL "")
-+#  # For debian: https://github.com/ros-perception/perception_pcl/issues/139
-+#  list(REMOVE_ITEM PCL_LIBRARIES
-+#    "vtkGUISupportQt"
-+#    "vtkGUISupportQtOpenGL"
-+#    "vtkGUISupportQtSQL"
-+#    "vtkGUISupportQtWebkit"
-+#    "vtkViewsQt"
-+#    "vtkRenderingQt")
-+#endif()
-+
-+# There is a bug in the Ubuntu Artful (17.10) version of the VTK package,
-+# where it includes /usr/include/*-linux-gnu/freetype2 in the include
-+# directories (which doesn't exist).  This filters down to the PCL_INCLUDE_DIRS,
-+# and causes downstream projects trying to use these libraries to fail to
-+# configure properly.  Here we remove those bogus entries so that downstream
-+# consumers of this package succeed.
-+#if(NOT "${PCL_INCLUDE_DIRS}" STREQUAL "")
-+#  foreach(item ${PCL_INCLUDE_DIRS})
-+#    string(REGEX MATCH "/usr/include/.*-linux-gnu/freetype2" item ${item})
-+#    if(item)
-+#      list(REMOVE_ITEM PCL_INCLUDE_DIRS ${item})
-+#    endif()
-+#  endforeach()
-+#endif()
-+
-+
+ 
  ## Add include directories
  include_directories(include)
- 
-@@ -115,7 +117,7 @@
+@@ -121,7 +96,7 @@
  
  ## Declare the pcl_ros_tf library
  add_library(pcl_ros_tf src/transforms.cpp)
@@ -92,7 +44,7 @@ diff --color -ur perception_pcl-release-release-noetic-pcl_ros-1.7.2-1/CMakeList
  add_dependencies(pcl_ros_tf ${catkin_EXPORTED_TARGETS})
  
  ## Nodelets
-@@ -128,7 +130,7 @@
+@@ -134,7 +109,7 @@
    src/pcl_ros/io/io.cpp
    src/pcl_ros/io/pcd_io.cpp
  )
@@ -101,7 +53,7 @@ diff --color -ur perception_pcl-release-release-noetic-pcl_ros-1.7.2-1/CMakeList
  class_loader_hide_library_symbols(pcl_ros_io)
  
  ## Declare the pcl_ros_features library
-@@ -147,7 +149,7 @@
+@@ -153,7 +128,7 @@
    src/pcl_ros/features/principal_curvatures.cpp
    src/pcl_ros/features/vfh.cpp
  )
@@ -110,7 +62,7 @@ diff --color -ur perception_pcl-release-release-noetic-pcl_ros-1.7.2-1/CMakeList
  add_dependencies(pcl_ros_features ${PROJECT_NAME}_gencfg)
  class_loader_hide_library_symbols(pcl_ros_features)
  
-@@ -156,7 +158,7 @@
+@@ -162,7 +137,7 @@
  add_library(pcl_ros_filter
    src/pcl_ros/filters/filter.cpp
  )
@@ -119,7 +71,7 @@ diff --color -ur perception_pcl-release-release-noetic-pcl_ros-1.7.2-1/CMakeList
  add_dependencies(pcl_ros_filter ${PROJECT_NAME}_gencfg)
  
  ## Declare the pcl_ros_filters library
-@@ -169,7 +171,7 @@
+@@ -175,7 +150,7 @@
    src/pcl_ros/filters/voxel_grid.cpp
    src/pcl_ros/filters/crop_box.cpp
  )
@@ -128,7 +80,7 @@ diff --color -ur perception_pcl-release-release-noetic-pcl_ros-1.7.2-1/CMakeList
  add_dependencies(pcl_ros_filters ${PROJECT_NAME}_gencfg)
  class_loader_hide_library_symbols(pcl_ros_filters)
  
-@@ -181,7 +183,7 @@
+@@ -187,7 +162,7 @@
    src/pcl_ros/segmentation/segment_differences.cpp
    src/pcl_ros/segmentation/segmentation.cpp
  )
@@ -137,7 +89,7 @@ diff --color -ur perception_pcl-release-release-noetic-pcl_ros-1.7.2-1/CMakeList
  add_dependencies(pcl_ros_segmentation ${PROJECT_NAME}_gencfg)
  class_loader_hide_library_symbols(pcl_ros_segmentation)
  
-@@ -192,26 +194,26 @@
+@@ -198,26 +173,26 @@
    src/pcl_ros/surface/convex_hull.cpp
    src/pcl_ros/surface/moving_least_squares.cpp
  )
@@ -170,3 +122,5 @@ diff --color -ur perception_pcl-release-release-noetic-pcl_ros-1.7.2-1/CMakeList
  
  ## Downloads
  
+Only in perception_pcl-release-release-noetic-pcl_ros-1.7.4-1.dynamic_reconfigure: CMakeLists.txt.orig
+Only in perception_pcl-release-release-noetic-pcl_ros-1.7.4-1.dynamic_reconfigure: .CMakeLists.txt.un~

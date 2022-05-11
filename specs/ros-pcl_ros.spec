@@ -1,12 +1,12 @@
 Name:           ros-pcl_ros
-Version:        noetic.1.7.3
-Release:        2%{?dist}
+Version:        noetic.1.7.4
+Release:        1%{?dist}
 Summary:        ROS package pcl_ros
 
 License:        BSD
 URL:            http://ros.org/wiki/perception_pcl
 
-Source0:        https://github.com/ros-gbp/perception_pcl-release/archive/release/noetic/pcl_ros/1.7.3-1.tar.gz#/ros-noetic-pcl_ros-1.7.3-source0.tar.gz
+Source0:        https://github.com/ros-gbp/perception_pcl-release/archive/release/noetic/pcl_ros/1.7.4-1.tar.gz#/ros-noetic-pcl_ros-1.7.4-source0.tar.gz
 
 Patch0: ros-pcl_ros.dynamic_reconfigure.patch
 
@@ -28,7 +28,6 @@ BuildRequires:  poco-devel
 BuildRequires:  tinyxml-devel
 BuildRequires:  tinyxml2-devel
 BuildRequires:  ros-noetic-catkin-devel
-BuildRequires:  ros-noetic-cmake_modules-devel
 BuildRequires:  ros-noetic-dynamic_reconfigure-devel
 BuildRequires:  ros-noetic-geometry_msgs-devel
 BuildRequires:  ros-noetic-message_filters-devel
@@ -66,9 +65,9 @@ Requires:       ros-noetic-tf2
 Requires:       ros-noetic-tf2_eigen
 Requires:       ros-noetic-tf2_ros
 
-Provides:  ros-noetic-pcl_ros = 1.7.3-2
-Obsoletes: ros-noetic-pcl_ros < 1.7.3-2
-Obsoletes: ros-kinetic-pcl_ros < 1.7.3-2
+Provides:  ros-noetic-pcl_ros = 1.7.4-1
+Obsoletes: ros-noetic-pcl_ros < 1.7.4-1
+Obsoletes: ros-kinetic-pcl_ros < 1.7.4-1
 
 
 
@@ -90,7 +89,6 @@ Requires:       pcl-devel
 Requires:       poco-devel
 Requires:       tinyxml-devel
 Requires:       tinyxml2-devel
-Requires:       ros-noetic-cmake_modules-devel
 Requires:       ros-noetic-geometry_msgs-devel
 Requires:       ros-noetic-message_filters-devel
 Requires:       ros-noetic-nodelet-devel
@@ -110,9 +108,9 @@ Requires:       ros-noetic-tf2-devel
 Requires:       ros-noetic-tf2_eigen-devel
 Requires:       ros-noetic-tf2_ros-devel
 
-Provides: ros-noetic-pcl_ros-devel = 1.7.3-2
-Obsoletes: ros-noetic-pcl_ros-devel < 1.7.3-2
-Obsoletes: ros-kinetic-pcl_ros-devel < 1.7.3-2
+Provides: ros-noetic-pcl_ros-devel = 1.7.4-1
+Obsoletes: ros-noetic-pcl_ros-devel < 1.7.4-1
+Obsoletes: ros-kinetic-pcl_ros-devel < 1.7.4-1
 
 
 %description devel
@@ -208,6 +206,8 @@ done
 
 
 %changelog
+* Fri May 06 2022 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.4-1
+- Update to latest release
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.3-2
 - Rebuild to pull in updated dependencies
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.3-1
