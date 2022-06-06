@@ -1,12 +1,12 @@
 Name:           ros-rqt_gui
-Version:        noetic.0.5.2
-Release:        3%{?dist}
+Version:        noetic.0.5.3
+Release:        1%{?dist}
 Summary:        ROS package rqt_gui
 
 License:        BSD
 URL:            http://ros.org/wiki/rqt_gui
 
-Source0:        https://github.com/ros-gbp/rqt-release/archive/release/noetic/rqt_gui/0.5.2-1.tar.gz#/ros-noetic-rqt_gui-0.5.2-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt-release/archive/release/noetic/rqt_gui/0.5.3-1.tar.gz#/ros-noetic-rqt_gui-0.5.3-source0.tar.gz
 
 
 BuildArch: noarch
@@ -27,9 +27,9 @@ Requires:       ros-noetic-python_qt_binding
 Requires:       ros-noetic-qt_gui
 Requires:       ros-noetic-rospy
 
-Provides:  ros-noetic-rqt_gui = 0.5.2-3
-Obsoletes: ros-noetic-rqt_gui < 0.5.2-3
-Obsoletes: ros-kinetic-rqt_gui < 0.5.2-3
+Provides:  ros-noetic-rqt_gui = 0.5.3-1
+Obsoletes: ros-noetic-rqt_gui < 0.5.3-1
+Obsoletes: ros-kinetic-rqt_gui < 0.5.3-1
 
 
 
@@ -45,9 +45,9 @@ Requires:       ros-noetic-qt_gui-devel
 Requires:       ros-noetic-python_qt_binding-devel
 Requires:       ros-noetic-rospy-devel
 
-Provides: ros-noetic-rqt_gui-devel = 0.5.2-3
-Obsoletes: ros-noetic-rqt_gui-devel < 0.5.2-3
-Obsoletes: ros-kinetic-rqt_gui-devel < 0.5.2-3
+Provides: ros-noetic-rqt_gui-devel = 0.5.3-1
+Obsoletes: ros-noetic-rqt_gui-devel < 0.5.3-1
+Obsoletes: ros-kinetic-rqt_gui-devel < 0.5.3-1
 
 
 %description devel
@@ -142,6 +142,8 @@ done
 
 
 %changelog
+* Fri May 06 2022 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.3-1
+- Update to latest release
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.2-3
 - Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.2-2

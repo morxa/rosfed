@@ -1,12 +1,12 @@
 Name:           ros-rqt_py_common
-Version:        noetic.0.5.2
-Release:        3%{?dist}
+Version:        noetic.0.5.3
+Release:        1%{?dist}
 Summary:        ROS package rqt_py_common
 
 License:        BSD
 URL:            http://ros.org/wiki/rqt_py_common
 
-Source0:        https://github.com/ros-gbp/rqt-release/archive/release/noetic/rqt_py_common/0.5.2-1.tar.gz#/ros-noetic-rqt_py_common-0.5.2-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt-release/archive/release/noetic/rqt_py_common/0.5.3-1.tar.gz#/ros-noetic-rqt_py_common-0.5.3-source0.tar.gz
 
 
 BuildArch: noarch
@@ -32,9 +32,9 @@ Requires:       ros-noetic-roslib
 Requires:       ros-noetic-rospy
 Requires:       ros-noetic-rostopic
 
-Provides:  ros-noetic-rqt_py_common = 0.5.2-3
-Obsoletes: ros-noetic-rqt_py_common < 0.5.2-3
-Obsoletes: ros-kinetic-rqt_py_common < 0.5.2-3
+Provides:  ros-noetic-rqt_py_common = 0.5.3-1
+Obsoletes: ros-noetic-rqt_py_common < 0.5.3-1
+Obsoletes: ros-kinetic-rqt_py_common < 0.5.3-1
 
 
 
@@ -62,9 +62,9 @@ Requires:       ros-noetic-roslib-devel
 Requires:       ros-noetic-rospy-devel
 Requires:       ros-noetic-rostopic-devel
 
-Provides: ros-noetic-rqt_py_common-devel = 0.5.2-3
-Obsoletes: ros-noetic-rqt_py_common-devel < 0.5.2-3
-Obsoletes: ros-kinetic-rqt_py_common-devel < 0.5.2-3
+Provides: ros-noetic-rqt_py_common-devel = 0.5.3-1
+Obsoletes: ros-noetic-rqt_py_common-devel < 0.5.3-1
+Obsoletes: ros-kinetic-rqt_py_common-devel < 0.5.3-1
 
 
 %description devel
@@ -159,6 +159,8 @@ done
 
 
 %changelog
+* Fri May 06 2022 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.3-1
+- Update to latest release
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.2-3
 - Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.2-2

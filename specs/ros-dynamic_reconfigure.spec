@@ -1,12 +1,12 @@
 Name:           ros-dynamic_reconfigure
-Version:        noetic.1.7.1
-Release:        5%{?dist}
+Version:        noetic.1.7.3
+Release:        1%{?dist}
 Summary:        ROS package dynamic_reconfigure
 
 License:        BSD
 URL:            http://ros.org/wiki/dynamic_reconfigure
 
-Source0:        https://github.com/ros-gbp/dynamic_reconfigure-release/archive/release/noetic/dynamic_reconfigure/1.7.1-1.tar.gz#/ros-noetic-dynamic_reconfigure-1.7.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/dynamic_reconfigure-release/archive/release/noetic/dynamic_reconfigure/1.7.3-1.tar.gz#/ros-noetic-dynamic_reconfigure-1.7.3-source0.tar.gz
 
 
 
@@ -34,9 +34,9 @@ Requires:       ros-noetic-rospy
 Requires:       ros-noetic-rosservice
 Requires:       ros-noetic-std_msgs
 
-Provides:  ros-noetic-dynamic_reconfigure = 1.7.1-5
-Obsoletes: ros-noetic-dynamic_reconfigure < 1.7.1-5
-Obsoletes: ros-kinetic-dynamic_reconfigure < 1.7.1-5
+Provides:  ros-noetic-dynamic_reconfigure = 1.7.3-1
+Obsoletes: ros-noetic-dynamic_reconfigure < 1.7.3-1
+Obsoletes: ros-kinetic-dynamic_reconfigure < 1.7.3-1
 
 
 
@@ -60,9 +60,9 @@ Requires:       ros-noetic-roslib-devel
 Requires:       ros-noetic-rospy-devel
 Requires:       ros-noetic-rosservice-devel
 
-Provides: ros-noetic-dynamic_reconfigure-devel = 1.7.1-5
-Obsoletes: ros-noetic-dynamic_reconfigure-devel < 1.7.1-5
-Obsoletes: ros-kinetic-dynamic_reconfigure-devel < 1.7.1-5
+Provides: ros-noetic-dynamic_reconfigure-devel = 1.7.3-1
+Obsoletes: ros-noetic-dynamic_reconfigure-devel < 1.7.3-1
+Obsoletes: ros-kinetic-dynamic_reconfigure-devel < 1.7.3-1
 
 
 %description devel
@@ -157,6 +157,10 @@ done
 
 
 %changelog
+* Mon Jun 06 2022 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.3-1
+- Update to latest release
+* Fri May 06 2022 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.2-1
+- Update to latest release
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.1-5
 - Rebuild to pull in updated dependencies
 * Wed Feb 24 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.1-4

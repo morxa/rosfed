@@ -1,12 +1,12 @@
 Name:           ros-rqt_robot_monitor
-Version:        noetic.0.5.13
-Release:        3%{?dist}
+Version:        noetic.0.5.14
+Release:        1%{?dist}
 Summary:        ROS package rqt_robot_monitor
 
 License:        BSD
 URL:            http://wiki.ros.org/rqt_robot_monitor
 
-Source0:        https://github.com/ros-gbp/rqt_robot_monitor-release/archive/release/noetic/rqt_robot_monitor/0.5.13-1.tar.gz#/ros-noetic-rqt_robot_monitor-0.5.13-source0.tar.gz
+Source0:        https://github.com/ros-gbp/rqt_robot_monitor-release/archive/release/noetic/rqt_robot_monitor/0.5.14-1.tar.gz#/ros-noetic-rqt_robot_monitor-0.5.14-source0.tar.gz
 
 
 BuildArch: noarch
@@ -33,9 +33,9 @@ Requires:       ros-noetic-rqt_gui
 Requires:       ros-noetic-rqt_gui_py
 Requires:       ros-noetic-rqt_py_common
 
-Provides:  ros-noetic-rqt_robot_monitor = 0.5.13-3
-Obsoletes: ros-noetic-rqt_robot_monitor < 0.5.13-3
-Obsoletes: ros-kinetic-rqt_robot_monitor < 0.5.13-3
+Provides:  ros-noetic-rqt_robot_monitor = 0.5.14-1
+Obsoletes: ros-noetic-rqt_robot_monitor < 0.5.14-1
+Obsoletes: ros-kinetic-rqt_robot_monitor < 0.5.14-1
 
 
 
@@ -58,9 +58,9 @@ Requires:       ros-noetic-rqt_gui-devel
 Requires:       ros-noetic-rqt_gui_py-devel
 Requires:       ros-noetic-rqt_py_common-devel
 
-Provides: ros-noetic-rqt_robot_monitor-devel = 0.5.13-3
-Obsoletes: ros-noetic-rqt_robot_monitor-devel < 0.5.13-3
-Obsoletes: ros-kinetic-rqt_robot_monitor-devel < 0.5.13-3
+Provides: ros-noetic-rqt_robot_monitor-devel = 0.5.14-1
+Obsoletes: ros-noetic-rqt_robot_monitor-devel < 0.5.14-1
+Obsoletes: ros-kinetic-rqt_robot_monitor-devel < 0.5.14-1
 
 
 %description devel
@@ -155,6 +155,8 @@ done
 
 
 %changelog
+* Fri May 06 2022 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.14-1
+- Update to latest release
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.13-3
 - Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.13-2

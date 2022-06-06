@@ -1,12 +1,12 @@
 Name:           ros-kdl_parser
-Version:        noetic.1.14.1
-Release:        3%{?dist}
+Version:        noetic.1.14.2
+Release:        1%{?dist}
 Summary:        ROS package kdl_parser
 
 License:        BSD
 URL:            http://ros.org/wiki/kdl_parser
 
-Source0:        https://github.com/ros-gbp/kdl_parser-release/archive/release/noetic/kdl_parser/1.14.1-1.tar.gz#/ros-noetic-kdl_parser-1.14.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/kdl_parser-release/archive/release/noetic/kdl_parser/1.14.2-1.tar.gz#/ros-noetic-kdl_parser-1.14.2-source0.tar.gz
 
 
 
@@ -34,9 +34,9 @@ BuildRequires:  ros-noetic-urdf-devel
 Requires:       ros-noetic-rosconsole
 Requires:       ros-noetic-urdf
 
-Provides:  ros-noetic-kdl_parser = 1.14.1-3
-Obsoletes: ros-noetic-kdl_parser < 1.14.1-3
-Obsoletes: ros-kinetic-kdl_parser < 1.14.1-3
+Provides:  ros-noetic-kdl_parser = 1.14.2-1
+Obsoletes: ros-noetic-kdl_parser < 1.14.2-1
+Obsoletes: ros-kinetic-kdl_parser < 1.14.2-1
 
 
 
@@ -60,9 +60,9 @@ Requires:       ros-noetic-roscpp-devel
 Requires:       ros-noetic-rostest-devel
 Requires:       ros-noetic-urdf-devel
 
-Provides: ros-noetic-kdl_parser-devel = 1.14.1-3
-Obsoletes: ros-noetic-kdl_parser-devel < 1.14.1-3
-Obsoletes: ros-kinetic-kdl_parser-devel < 1.14.1-3
+Provides: ros-noetic-kdl_parser-devel = 1.14.2-1
+Obsoletes: ros-noetic-kdl_parser-devel < 1.14.2-1
+Obsoletes: ros-kinetic-kdl_parser-devel < 1.14.2-1
 
 
 %description devel
@@ -157,6 +157,8 @@ done
 
 
 %changelog
+* Fri May 06 2022 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.2-1
+- Update to latest release
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.1-3
 - Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.1-2

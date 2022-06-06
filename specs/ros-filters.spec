@@ -1,12 +1,12 @@
 Name:           ros-filters
-Version:        noetic.1.9.1
-Release:        3%{?dist}
+Version:        noetic.1.9.2
+Release:        1%{?dist}
 Summary:        ROS package filters
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/filters-release/archive/release/noetic/filters/1.9.1-1.tar.gz#/ros-noetic-filters-1.9.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/filters-release/archive/release/noetic/filters/1.9.2-1.tar.gz#/ros-noetic-filters-1.9.2-source0.tar.gz
 
 
 
@@ -34,9 +34,9 @@ Requires:       ros-noetic-rosconsole
 Requires:       ros-noetic-roscpp
 Requires:       ros-noetic-roslib
 
-Provides:  ros-noetic-filters = 1.9.1-3
-Obsoletes: ros-noetic-filters < 1.9.1-3
-Obsoletes: ros-kinetic-filters < 1.9.1-3
+Provides:  ros-noetic-filters = 1.9.2-1
+Obsoletes: ros-noetic-filters < 1.9.2-1
+Obsoletes: ros-kinetic-filters < 1.9.2-1
 
 
 
@@ -60,9 +60,9 @@ Requires:       ros-noetic-roscpp-devel
 Requires:       ros-noetic-roslib-devel
 Requires:       ros-noetic-rostest-devel
 
-Provides: ros-noetic-filters-devel = 1.9.1-3
-Obsoletes: ros-noetic-filters-devel < 1.9.1-3
-Obsoletes: ros-kinetic-filters-devel < 1.9.1-3
+Provides: ros-noetic-filters-devel = 1.9.2-1
+Obsoletes: ros-noetic-filters-devel < 1.9.2-1
+Obsoletes: ros-kinetic-filters-devel < 1.9.2-1
 
 
 %description devel
@@ -157,6 +157,8 @@ done
 
 
 %changelog
+* Mon Jun 06 2022 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.9.2-1
+- Update to latest release
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.9.1-3
 - Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.9.1-2

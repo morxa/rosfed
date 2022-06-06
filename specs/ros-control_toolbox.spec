@@ -1,12 +1,12 @@
 Name:           ros-control_toolbox
-Version:        noetic.1.18.2
-Release:        3%{?dist}
+Version:        noetic.1.19.0
+Release:        1%{?dist}
 Summary:        ROS package control_toolbox
 
 License:        BSD
 URL:            http://ros.org/wiki/control_toolbox
 
-Source0:        https://github.com/ros-gbp/control_toolbox-release/archive/release/noetic/control_toolbox/1.18.2-1.tar.gz#/ros-noetic-control_toolbox-1.18.2-source0.tar.gz
+Source0:        https://github.com/ros-gbp/control_toolbox-release/archive/release/noetic/control_toolbox/1.19.0-1.tar.gz#/ros-noetic-control_toolbox-1.19.0-source0.tar.gz
 
 
 
@@ -36,9 +36,9 @@ Requires:       ros-noetic-realtime_tools
 Requires:       ros-noetic-roscpp
 Requires:       ros-noetic-std_msgs
 
-Provides:  ros-noetic-control_toolbox = 1.18.2-3
-Obsoletes: ros-noetic-control_toolbox < 1.18.2-3
-Obsoletes: ros-kinetic-control_toolbox < 1.18.2-3
+Provides:  ros-noetic-control_toolbox = 1.19.0-1
+Obsoletes: ros-noetic-control_toolbox < 1.19.0-1
+Obsoletes: ros-kinetic-control_toolbox < 1.19.0-1
 
 
 
@@ -61,9 +61,9 @@ Requires:       ros-noetic-rosunit-devel
 Requires:       ros-noetic-std_msgs-devel
 Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-noetic-control_toolbox-devel = 1.18.2-3
-Obsoletes: ros-noetic-control_toolbox-devel < 1.18.2-3
-Obsoletes: ros-kinetic-control_toolbox-devel < 1.18.2-3
+Provides: ros-noetic-control_toolbox-devel = 1.19.0-1
+Obsoletes: ros-noetic-control_toolbox-devel < 1.19.0-1
+Obsoletes: ros-kinetic-control_toolbox-devel < 1.19.0-1
 
 
 %description devel
@@ -158,6 +158,8 @@ done
 
 
 %changelog
+* Mon Jun 06 2022 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.19.0-1
+- Update to latest release
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.18.2-3
 - Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.18.2-2

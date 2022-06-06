@@ -1,12 +1,12 @@
 Name:           ros-joint_state_publisher
-Version:        noetic.1.15.0
-Release:        3%{?dist}
+Version:        noetic.1.15.1
+Release:        1%{?dist}
 Summary:        ROS package joint_state_publisher
 
 License:        BSD
 URL:            http://www.ros.org/wiki/joint_state_publisher
 
-Source0:        https://github.com/ros-gbp/joint_state_publisher-release/archive/release/noetic/joint_state_publisher/1.15.0-1.tar.gz#/ros-noetic-joint_state_publisher-1.15.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/joint_state_publisher-release/archive/release/noetic/joint_state_publisher/1.15.1-1.tar.gz#/ros-noetic-joint_state_publisher-1.15.1-source0.tar.gz
 
 
 BuildArch: noarch
@@ -25,9 +25,9 @@ BuildRequires:  ros-noetic-rostest-devel
 Requires:       ros-noetic-rospy
 Requires:       ros-noetic-sensor_msgs
 
-Provides:  ros-noetic-joint_state_publisher = 1.15.0-3
-Obsoletes: ros-noetic-joint_state_publisher < 1.15.0-3
-Obsoletes: ros-kinetic-joint_state_publisher < 1.15.0-3
+Provides:  ros-noetic-joint_state_publisher = 1.15.1-1
+Obsoletes: ros-noetic-joint_state_publisher < 1.15.1-1
+Obsoletes: ros-kinetic-joint_state_publisher < 1.15.1-1
 
 
 
@@ -43,9 +43,9 @@ Requires:       ros-noetic-rostest-devel
 Requires:       ros-noetic-rospy-devel
 Requires:       ros-noetic-sensor_msgs-devel
 
-Provides: ros-noetic-joint_state_publisher-devel = 1.15.0-3
-Obsoletes: ros-noetic-joint_state_publisher-devel < 1.15.0-3
-Obsoletes: ros-kinetic-joint_state_publisher-devel < 1.15.0-3
+Provides: ros-noetic-joint_state_publisher-devel = 1.15.1-1
+Obsoletes: ros-noetic-joint_state_publisher-devel < 1.15.1-1
+Obsoletes: ros-kinetic-joint_state_publisher-devel < 1.15.1-1
 
 
 %description devel
@@ -140,6 +140,8 @@ done
 
 
 %changelog
+* Fri May 06 2022 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.1-1
+- Update to latest release
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.0-3
 - Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.0-2
