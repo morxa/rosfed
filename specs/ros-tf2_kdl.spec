@@ -1,6 +1,6 @@
 Name:           ros-tf2_kdl
 Version:        noetic.0.7.5
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        ROS package tf2_kdl
 
 License:        BSD
@@ -31,9 +31,9 @@ BuildRequires:  ros-noetic-tf2_ros-devel
 Requires:       ros-noetic-tf2
 Requires:       ros-noetic-tf2_ros
 
-Provides:  ros-noetic-tf2_kdl = 0.7.5-3
-Obsoletes: ros-noetic-tf2_kdl < 0.7.5-3
-Obsoletes: ros-kinetic-tf2_kdl < 0.7.5-3
+Provides:  ros-noetic-tf2_kdl = 0.7.5-4
+Obsoletes: ros-noetic-tf2_kdl < 0.7.5-4
+Obsoletes: ros-kinetic-tf2_kdl < 0.7.5-4
 
 
 
@@ -52,9 +52,9 @@ Requires:       ros-noetic-rostest-devel
 Requires:       ros-noetic-tf2-devel
 Requires:       ros-noetic-tf2_ros-devel
 
-Provides: ros-noetic-tf2_kdl-devel = 0.7.5-3
-Obsoletes: ros-noetic-tf2_kdl-devel < 0.7.5-3
-Obsoletes: ros-kinetic-tf2_kdl-devel < 0.7.5-3
+Provides: ros-noetic-tf2_kdl-devel = 0.7.5-4
+Obsoletes: ros-noetic-tf2_kdl-devel < 0.7.5-4
+Obsoletes: ros-kinetic-tf2_kdl-devel < 0.7.5-4
 
 
 %description devel
@@ -149,6 +149,8 @@ done
 
 
 %changelog
+* Tue Jun 07 2022 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.7.5-4
+- Rebuild for orocos-kdl-1.5
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.7.5-3
 - Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.7.5-2

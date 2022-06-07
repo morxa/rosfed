@@ -1,6 +1,6 @@
 Name:           ros-robot_state_publisher
 Version:        noetic.1.15.2
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package robot_state_publisher
 
 License:        BSD
@@ -45,9 +45,9 @@ Requires:       ros-noetic-tf
 Requires:       ros-noetic-tf2_kdl
 Requires:       ros-noetic-tf2_ros
 
-Provides:  ros-noetic-robot_state_publisher = 1.15.2-2
-Obsoletes: ros-noetic-robot_state_publisher < 1.15.2-2
-Obsoletes: ros-kinetic-robot_state_publisher < 1.15.2-2
+Provides:  ros-noetic-robot_state_publisher = 1.15.2-3
+Obsoletes: ros-noetic-robot_state_publisher < 1.15.2-3
+Obsoletes: ros-kinetic-robot_state_publisher < 1.15.2-3
 
 
 
@@ -74,9 +74,9 @@ Requires:       ros-noetic-tf-devel
 Requires:       ros-noetic-tf2_kdl-devel
 Requires:       ros-noetic-tf2_ros-devel
 
-Provides: ros-noetic-robot_state_publisher-devel = 1.15.2-2
-Obsoletes: ros-noetic-robot_state_publisher-devel < 1.15.2-2
-Obsoletes: ros-kinetic-robot_state_publisher-devel < 1.15.2-2
+Provides: ros-noetic-robot_state_publisher-devel = 1.15.2-3
+Obsoletes: ros-noetic-robot_state_publisher-devel < 1.15.2-3
+Obsoletes: ros-kinetic-robot_state_publisher-devel < 1.15.2-3
 
 
 %description devel
@@ -171,6 +171,8 @@ done
 
 
 %changelog
+* Mon Jun 06 2022 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.2-3
+- Rebuild for orocos-kdl-1.5
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.2-2
 - Rebuild to pull in updated dependencies
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.2-1

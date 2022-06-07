@@ -1,6 +1,6 @@
 Name:           ros-kdl_conversions
 Version:        noetic.1.13.2
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        ROS package kdl_conversions
 
 License:        BSD
@@ -29,9 +29,9 @@ BuildRequires:  ros-noetic-roscpp_serialization-devel
 Requires:       orocos-kdl
 Requires:       ros-noetic-geometry_msgs
 
-Provides:  ros-noetic-kdl_conversions = 1.13.2-3
-Obsoletes: ros-noetic-kdl_conversions < 1.13.2-3
-Obsoletes: ros-kinetic-kdl_conversions < 1.13.2-3
+Provides:  ros-noetic-kdl_conversions = 1.13.2-4
+Obsoletes: ros-noetic-kdl_conversions < 1.13.2-4
+Obsoletes: ros-kinetic-kdl_conversions < 1.13.2-4
 
 
 
@@ -49,9 +49,9 @@ Requires:       ros-noetic-cpp_common-devel
 Requires:       ros-noetic-geometry_msgs-devel
 Requires:       ros-noetic-roscpp_serialization-devel
 
-Provides: ros-noetic-kdl_conversions-devel = 1.13.2-3
-Obsoletes: ros-noetic-kdl_conversions-devel < 1.13.2-3
-Obsoletes: ros-kinetic-kdl_conversions-devel < 1.13.2-3
+Provides: ros-noetic-kdl_conversions-devel = 1.13.2-4
+Obsoletes: ros-noetic-kdl_conversions-devel < 1.13.2-4
+Obsoletes: ros-kinetic-kdl_conversions-devel < 1.13.2-4
 
 
 %description devel
@@ -146,6 +146,8 @@ done
 
 
 %changelog
+* Mon Jun 06 2022 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.2-4
+- Rebuild for orocos-kdl-1.5
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.2-3
 - Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.2-2
