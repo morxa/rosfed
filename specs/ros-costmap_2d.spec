@@ -1,12 +1,12 @@
 Name:           ros-costmap_2d
-Version:        noetic.1.17.1
-Release:        3%{?dist}
+Version:        noetic.1.17.2
+Release:        1%{?dist}
 Summary:        ROS package costmap_2d
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/navigation-release/archive/release/noetic/costmap_2d/1.17.1-1.tar.gz#/ros-noetic-costmap_2d-1.17.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/navigation-release/archive/release/noetic/costmap_2d/1.17.2-1.tar.gz#/ros-noetic-costmap_2d-1.17.2-source0.tar.gz
 
 
 
@@ -67,9 +67,9 @@ Requires:       ros-noetic-tf2_ros
 Requires:       ros-noetic-visualization_msgs
 Requires:       ros-noetic-voxel_grid
 
-Provides:  ros-noetic-costmap_2d = 1.17.1-3
-Obsoletes: ros-noetic-costmap_2d < 1.17.1-3
-Obsoletes: ros-kinetic-costmap_2d < 1.17.1-3
+Provides:  ros-noetic-costmap_2d = 1.17.2-1
+Obsoletes: ros-noetic-costmap_2d < 1.17.2-1
+Obsoletes: ros-kinetic-costmap_2d < 1.17.2-1
 
 
 
@@ -119,9 +119,9 @@ Requires:       ros-noetic-voxel_grid-devel
 Requires:       ros-noetic-message_runtime-devel
 Requires:       ros-noetic-rosconsole-devel
 
-Provides: ros-noetic-costmap_2d-devel = 1.17.1-3
-Obsoletes: ros-noetic-costmap_2d-devel < 1.17.1-3
-Obsoletes: ros-kinetic-costmap_2d-devel < 1.17.1-3
+Provides: ros-noetic-costmap_2d-devel = 1.17.2-1
+Obsoletes: ros-noetic-costmap_2d-devel < 1.17.2-1
+Obsoletes: ros-kinetic-costmap_2d-devel < 1.17.2-1
 
 
 %description devel
@@ -216,6 +216,8 @@ done
 
 
 %changelog
+* Tue Jun 28 2022 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.17.2-1
+- Update to latest release
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.17.1-3
 - Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.17.1-2

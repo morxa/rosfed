@@ -1,12 +1,12 @@
 Name:           ros-map_server
-Version:        noetic.1.17.1
-Release:        3%{?dist}
+Version:        noetic.1.17.2
+Release:        1%{?dist}
 Summary:        ROS package map_server
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/navigation-release/archive/release/noetic/map_server/1.17.1-1.tar.gz#/ros-noetic-map_server-1.17.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/navigation-release/archive/release/noetic/map_server/1.17.2-1.tar.gz#/ros-noetic-map_server-1.17.2-source0.tar.gz
 
 
 
@@ -25,6 +25,7 @@ BuildRequires:  yaml-cpp-devel
 BuildRequires:  ros-noetic-catkin-devel
 BuildRequires:  ros-noetic-nav_msgs-devel
 BuildRequires:  ros-noetic-roscpp-devel
+BuildRequires:  ros-noetic-roslib-devel
 BuildRequires:  ros-noetic-rospy-devel
 BuildRequires:  ros-noetic-rostest-devel
 BuildRequires:  ros-noetic-rosunit-devel
@@ -34,9 +35,9 @@ Requires:       ros-noetic-nav_msgs
 Requires:       ros-noetic-roscpp
 Requires:       ros-noetic-tf2
 
-Provides:  ros-noetic-map_server = 1.17.1-3
-Obsoletes: ros-noetic-map_server < 1.17.1-3
-Obsoletes: ros-kinetic-map_server < 1.17.1-3
+Provides:  ros-noetic-map_server = 1.17.2-1
+Obsoletes: ros-noetic-map_server < 1.17.2-1
+Obsoletes: ros-kinetic-map_server < 1.17.2-1
 
 
 
@@ -53,14 +54,15 @@ Requires:       SDL_image-devel
 Requires:       yaml-cpp-devel
 Requires:       ros-noetic-nav_msgs-devel
 Requires:       ros-noetic-roscpp-devel
+Requires:       ros-noetic-roslib-devel
 Requires:       ros-noetic-rospy-devel
 Requires:       ros-noetic-rostest-devel
 Requires:       ros-noetic-rosunit-devel
 Requires:       ros-noetic-tf2-devel
 
-Provides: ros-noetic-map_server-devel = 1.17.1-3
-Obsoletes: ros-noetic-map_server-devel < 1.17.1-3
-Obsoletes: ros-kinetic-map_server-devel < 1.17.1-3
+Provides: ros-noetic-map_server-devel = 1.17.2-1
+Obsoletes: ros-noetic-map_server-devel < 1.17.2-1
+Obsoletes: ros-kinetic-map_server-devel < 1.17.2-1
 
 
 %description devel
@@ -155,6 +157,8 @@ done
 
 
 %changelog
+* Tue Jun 28 2022 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.17.2-1
+- Update to latest release
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.17.1-3
 - Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.17.1-2

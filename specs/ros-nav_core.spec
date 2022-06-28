@@ -1,12 +1,12 @@
 Name:           ros-nav_core
-Version:        noetic.1.17.1
-Release:        3%{?dist}
+Version:        noetic.1.17.2
+Release:        1%{?dist}
 Summary:        ROS package nav_core
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/navigation-release/archive/release/noetic/nav_core/1.17.1-1.tar.gz#/ros-noetic-nav_core-1.17.1-source0.tar.gz
+Source0:        https://github.com/ros-gbp/navigation-release/archive/release/noetic/nav_core/1.17.2-1.tar.gz#/ros-noetic-nav_core-1.17.2-source0.tar.gz
 
 
 BuildArch: noarch
@@ -31,9 +31,9 @@ Requires:       ros-noetic-geometry_msgs
 Requires:       ros-noetic-std_msgs
 Requires:       ros-noetic-tf2_ros
 
-Provides:  ros-noetic-nav_core = 1.17.1-3
-Obsoletes: ros-noetic-nav_core < 1.17.1-3
-Obsoletes: ros-kinetic-nav_core < 1.17.1-3
+Provides:  ros-noetic-nav_core = 1.17.2-1
+Obsoletes: ros-noetic-nav_core < 1.17.2-1
+Obsoletes: ros-kinetic-nav_core < 1.17.2-1
 
 
 
@@ -54,9 +54,9 @@ Requires:       ros-noetic-geometry_msgs-devel
 Requires:       ros-noetic-std_msgs-devel
 Requires:       ros-noetic-tf2_ros-devel
 
-Provides: ros-noetic-nav_core-devel = 1.17.1-3
-Obsoletes: ros-noetic-nav_core-devel < 1.17.1-3
-Obsoletes: ros-kinetic-nav_core-devel < 1.17.1-3
+Provides: ros-noetic-nav_core-devel = 1.17.2-1
+Obsoletes: ros-noetic-nav_core-devel < 1.17.2-1
+Obsoletes: ros-kinetic-nav_core-devel < 1.17.2-1
 
 
 %description devel
@@ -151,6 +151,8 @@ done
 
 
 %changelog
+* Tue Jun 28 2022 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.17.2-1
+- Update to latest release
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.17.1-3
 - Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.17.1-2
