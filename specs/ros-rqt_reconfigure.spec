@@ -25,7 +25,6 @@ BuildRequires:  ros-noetic-roslint-devel
 BuildRequires:  ros-noetic-rostest-devel
 
 Requires:       python3-pyyaml
-Requires:       python3dist(pyyaml)
 Requires:       ros-noetic-dynamic_reconfigure
 Requires:       ros-noetic-python_qt_binding
 Requires:       ros-noetic-rospy

@@ -1,12 +1,12 @@
 Name:           ros-actionlib
-Version:        noetic.1.13.2
-Release:        3%{?dist}
+Version:        noetic.1.14.0
+Release:        1%{?dist}
 Summary:        ROS package actionlib
 
 License:        BSD
 URL:            http://www.ros.org/wiki/actionlib
 
-Source0:        https://github.com/ros-gbp/actionlib-release/archive/release/noetic/actionlib/1.13.2-1.tar.gz#/ros-noetic-actionlib-1.13.2-source0.tar.gz
+Source0:        https://github.com/ros-gbp/actionlib-release/archive/release/noetic/actionlib/1.14.0-1.tar.gz#/ros-noetic-actionlib-1.14.0-source0.tar.gz
 
 
 
@@ -36,9 +36,9 @@ Requires:       ros-noetic-rospy
 Requires:       ros-noetic-rostest
 Requires:       ros-noetic-std_msgs
 
-Provides:  ros-noetic-actionlib = 1.13.2-3
-Obsoletes: ros-noetic-actionlib < 1.13.2-3
-Obsoletes: ros-kinetic-actionlib < 1.13.2-3
+Provides:  ros-noetic-actionlib = 1.14.0-1
+Obsoletes: ros-noetic-actionlib < 1.14.0-1
+Obsoletes: ros-kinetic-actionlib < 1.14.0-1
 
 
 
@@ -63,9 +63,9 @@ Requires:       ros-noetic-rosunit-devel
 Requires:       ros-noetic-std_msgs-devel
 Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-noetic-actionlib-devel = 1.13.2-3
-Obsoletes: ros-noetic-actionlib-devel < 1.13.2-3
-Obsoletes: ros-kinetic-actionlib-devel < 1.13.2-3
+Provides: ros-noetic-actionlib-devel = 1.14.0-1
+Obsoletes: ros-noetic-actionlib-devel < 1.14.0-1
+Obsoletes: ros-kinetic-actionlib-devel < 1.14.0-1
 
 
 %description devel
@@ -160,6 +160,8 @@ done
 
 
 %changelog
+* Mon Dec 26 2022 Tarik Viehmann <viehmann@kbsg.rwth-aachen.de> - noetic.1.14.0-1
+- Update to latest release
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.2-3
 - Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.13.2-2

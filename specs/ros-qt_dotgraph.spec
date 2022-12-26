@@ -19,7 +19,6 @@ BuildRequires:  log4cxx-devel
 BuildRequires:  python3-devel
 BuildRequires:  python-unversioned-command
 
-BuildRequires:  graphviz-python3
 BuildRequires:  python3-pygraphviz
 BuildRequires:  python3-setuptools
 BuildRequires:  ros-noetic-catkin-devel
@@ -42,7 +41,6 @@ Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       python3-setuptools
 Requires:       ros-noetic-catkin-devel
-Requires:       graphviz-python3
 Requires:       python3-pygraphviz
 Requires:       ros-noetic-python_qt_binding-devel
 

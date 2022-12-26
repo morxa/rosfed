@@ -103,6 +103,9 @@ common:
       libgpgme-dev: gpgme-devel
       python-gnupg: python2-gnupg
       python-gnupg: python3-gnupg
+      python-opengl: python3-pyopengl
+      python-pygraphviz: python3-pygraphviz
+      python-yaml: python3-pyyaml
       python-imaging: python-pillow
       python-opencv: python3-opencv
       python-wxtools: python3-wxpython4

@@ -1,12 +1,12 @@
 Name:           ros-tf2_ros
-Version:        noetic.0.7.5
-Release:        3%{?dist}
+Version:        noetic.0.7.6
+Release:        1%{?dist}
 Summary:        ROS package tf2_ros
 
 License:        BSD
 URL:            http://www.ros.org/wiki/tf2_ros
 
-Source0:        https://github.com/ros-gbp/geometry2-release/archive/release/noetic/tf2_ros/0.7.5-1.tar.gz#/ros-noetic-tf2_ros-0.7.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/geometry2-release/archive/release/noetic/tf2_ros/0.7.6-1.tar.gz#/ros-noetic-tf2_ros-0.7.6-source0.tar.gz
 
 
 
@@ -46,9 +46,9 @@ Requires:       ros-noetic-tf2_msgs
 Requires:       ros-noetic-tf2_py
 Requires:       ros-noetic-xmlrpcpp
 
-Provides:  ros-noetic-tf2_ros = 0.7.5-3
-Obsoletes: ros-noetic-tf2_ros < 0.7.5-3
-Obsoletes: ros-kinetic-tf2_ros < 0.7.5-3
+Provides:  ros-noetic-tf2_ros = 0.7.6-1
+Obsoletes: ros-noetic-tf2_ros < 0.7.6-1
+Obsoletes: ros-kinetic-tf2_ros < 0.7.6-1
 
 
 
@@ -74,9 +74,9 @@ Requires:       ros-noetic-tf2_msgs-devel
 Requires:       ros-noetic-tf2_py-devel
 Requires:       ros-noetic-xmlrpcpp-devel
 
-Provides: ros-noetic-tf2_ros-devel = 0.7.5-3
-Obsoletes: ros-noetic-tf2_ros-devel < 0.7.5-3
-Obsoletes: ros-kinetic-tf2_ros-devel < 0.7.5-3
+Provides: ros-noetic-tf2_ros-devel = 0.7.6-1
+Obsoletes: ros-noetic-tf2_ros-devel < 0.7.6-1
+Obsoletes: ros-kinetic-tf2_ros-devel < 0.7.6-1
 
 
 %description devel
@@ -171,6 +171,8 @@ done
 
 
 %changelog
+* Mon Dec 26 2022 Tarik Viehmann <viehmann@kbsg.rwth-aachen.de> - noetic.0.7.6-1
+- Update to latest release
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.7.5-3
 - Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.7.5-2

@@ -1,12 +1,12 @@
 Name:           ros-gencpp
-Version:        noetic.0.6.5
-Release:        3%{?dist}
+Version:        noetic.0.7.0
+Release:        1%{?dist}
 Summary:        ROS package gencpp
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/gencpp-release/archive/release/noetic/gencpp/0.6.5-1.tar.gz#/ros-noetic-gencpp-0.6.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/gencpp-release/archive/release/noetic/gencpp/0.7.0-1.tar.gz#/ros-noetic-gencpp-0.7.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -25,9 +25,9 @@ BuildRequires:  ros-noetic-genmsg-devel
 
 Requires:       ros-noetic-genmsg
 
-Provides:  ros-noetic-gencpp = 0.6.5-3
-Obsoletes: ros-noetic-gencpp < 0.6.5-3
-Obsoletes: ros-kinetic-gencpp < 0.6.5-3
+Provides:  ros-noetic-gencpp = 0.7.0-1
+Obsoletes: ros-noetic-gencpp < 0.7.0-1
+Obsoletes: ros-kinetic-gencpp < 0.7.0-1
 
 
 
@@ -41,9 +41,9 @@ Requires:       python3-setuptools
 Requires:       ros-noetic-catkin-devel
 Requires:       ros-noetic-genmsg-devel
 
-Provides: ros-noetic-gencpp-devel = 0.6.5-3
-Obsoletes: ros-noetic-gencpp-devel < 0.6.5-3
-Obsoletes: ros-kinetic-gencpp-devel < 0.6.5-3
+Provides: ros-noetic-gencpp-devel = 0.7.0-1
+Obsoletes: ros-noetic-gencpp-devel < 0.7.0-1
+Obsoletes: ros-kinetic-gencpp-devel < 0.7.0-1
 
 
 %description devel
@@ -138,6 +138,8 @@ done
 
 
 %changelog
+* Mon Dec 26 2022 Tarik Viehmann <viehmann@kbsg.rwth-aachen.de> - noetic.0.7.0-1
+- Update to latest release
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.6.5-3
 - Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.6.5-2

@@ -1,12 +1,12 @@
 Name:           ros-image_proc
-Version:        noetic.1.16.0
+Version:        noetic.1.17.0
 Release:        1%{?dist}
 Summary:        ROS package image_proc
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/image_pipeline-release/archive/release/noetic/image_proc/1.16.0-1.tar.gz#/ros-noetic-image_proc-1.16.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/image_pipeline-release/archive/release/noetic/image_proc/1.17.0-1.tar.gz#/ros-noetic-image_proc-1.17.0-source0.tar.gz
 
 
 
@@ -45,9 +45,9 @@ Requires:       ros-noetic-nodelet_topic_tools
 Requires:       ros-noetic-roscpp
 Requires:       ros-noetic-sensor_msgs
 
-Provides:  ros-noetic-image_proc = 1.16.0-1
-Obsoletes: ros-noetic-image_proc < 1.16.0-1
-Obsoletes: ros-kinetic-image_proc < 1.16.0-1
+Provides:  ros-noetic-image_proc = 1.17.0-1
+Obsoletes: ros-noetic-image_proc < 1.17.0-1
+Obsoletes: ros-kinetic-image_proc < 1.17.0-1
 
 
 
@@ -75,9 +75,9 @@ Requires:       ros-noetic-roscpp-devel
 Requires:       ros-noetic-rostest-devel
 Requires:       ros-noetic-sensor_msgs-devel
 
-Provides: ros-noetic-image_proc-devel = 1.16.0-1
-Obsoletes: ros-noetic-image_proc-devel < 1.16.0-1
-Obsoletes: ros-kinetic-image_proc-devel < 1.16.0-1
+Provides: ros-noetic-image_proc-devel = 1.17.0-1
+Obsoletes: ros-noetic-image_proc-devel < 1.17.0-1
+Obsoletes: ros-kinetic-image_proc-devel < 1.17.0-1
 
 
 %description devel
@@ -172,6 +172,8 @@ done
 
 
 %changelog
+* Mon Dec 26 2022 Tarik Viehmann <viehmann@kbsg.rwth-aachen.de> - noetic.1.17.0-1
+- Update to latest release
 * Wed Nov 24 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.16.0-1
 - Update to latest release
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.3-3

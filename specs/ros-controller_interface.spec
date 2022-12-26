@@ -1,12 +1,12 @@
 Name:           ros-controller_interface
-Version:        noetic.0.19.5
-Release:        2%{?dist}
+Version:        noetic.0.19.6
+Release:        1%{?dist}
 Summary:        ROS package controller_interface
 
 License:        BSD
 URL:            https://github.com/ros-controls/ros_control/wiki
 
-Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/noetic/controller_interface/0.19.5-1.tar.gz#/ros-noetic-controller_interface-0.19.5-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_control-release/archive/release/noetic/controller_interface/0.19.6-1.tar.gz#/ros-noetic-controller_interface-0.19.6-source0.tar.gz
 
 
 BuildArch: noarch
@@ -25,9 +25,9 @@ BuildRequires:  ros-noetic-roscpp-devel
 
 Requires:       ros-noetic-roscpp
 
-Provides:  ros-noetic-controller_interface = 0.19.5-2
-Obsoletes: ros-noetic-controller_interface < 0.19.5-2
-Obsoletes: ros-kinetic-controller_interface < 0.19.5-2
+Provides:  ros-noetic-controller_interface = 0.19.6-1
+Obsoletes: ros-noetic-controller_interface < 0.19.6-1
+Obsoletes: ros-kinetic-controller_interface < 0.19.6-1
 
 
 
@@ -41,9 +41,9 @@ Requires:       ros-noetic-catkin-devel
 Requires:       ros-noetic-hardware_interface-devel
 Requires:       ros-noetic-roscpp-devel
 
-Provides: ros-noetic-controller_interface-devel = 0.19.5-2
-Obsoletes: ros-noetic-controller_interface-devel < 0.19.5-2
-Obsoletes: ros-kinetic-controller_interface-devel < 0.19.5-2
+Provides: ros-noetic-controller_interface-devel = 0.19.6-1
+Obsoletes: ros-noetic-controller_interface-devel < 0.19.6-1
+Obsoletes: ros-kinetic-controller_interface-devel < 0.19.6-1
 
 
 %description devel
@@ -138,6 +138,8 @@ done
 
 
 %changelog
+* Mon Dec 26 2022 Tarik Viehmann <viehmann@kbsg.rwth-aachen.de> - noetic.0.19.6-1
+- Update to latest release
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.19.5-2
 - Rebuild to pull in updated dependencies
 * Sun Jun 27 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.19.5-1

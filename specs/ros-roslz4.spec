@@ -1,12 +1,12 @@
 Name:           ros-roslz4
-Version:        noetic.1.15.14
+Version:        noetic.1.15.15
 Release:        1%{?dist}
 Summary:        ROS package roslz4
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/roslz4/1.15.14-1.tar.gz#/ros-noetic-roslz4-1.15.14-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/roslz4/1.15.15-1.tar.gz#/ros-noetic-roslz4-1.15.15-source0.tar.gz
 
 
 
@@ -24,9 +24,9 @@ BuildRequires:  ros-noetic-cpp_common-devel
 BuildRequires:  ros-noetic-rosunit-devel
 
 
-Provides:  ros-noetic-roslz4 = 1.15.14-1
-Obsoletes: ros-noetic-roslz4 < 1.15.14-1
-Obsoletes: ros-kinetic-roslz4 < 1.15.14-1
+Provides:  ros-noetic-roslz4 = 1.15.15-1
+Obsoletes: ros-noetic-roslz4 < 1.15.15-1
+Obsoletes: ros-kinetic-roslz4 < 1.15.15-1
 
 
 
@@ -43,9 +43,9 @@ Requires:       lz4-devel
 Requires:       ros-noetic-cpp_common-devel
 Requires:       ros-noetic-rosunit-devel
 
-Provides: ros-noetic-roslz4-devel = 1.15.14-1
-Obsoletes: ros-noetic-roslz4-devel < 1.15.14-1
-Obsoletes: ros-kinetic-roslz4-devel < 1.15.14-1
+Provides: ros-noetic-roslz4-devel = 1.15.15-1
+Obsoletes: ros-noetic-roslz4-devel < 1.15.15-1
+Obsoletes: ros-kinetic-roslz4-devel < 1.15.15-1
 
 
 %description devel
@@ -140,6 +140,8 @@ done
 
 
 %changelog
+* Mon Dec 26 2022 Tarik Viehmann <viehmann@kbsg.rwth-aachen.de> - noetic.1.15.15-1
+- Update to latest release
 * Wed Jan 19 2022 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.14-1
 - Update to latest release
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.13-2

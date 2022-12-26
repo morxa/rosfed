@@ -1,12 +1,12 @@
 Name:           ros-stereo_image_proc
-Version:        noetic.1.16.0
+Version:        noetic.1.17.0
 Release:        1%{?dist}
 Summary:        ROS package stereo_image_proc
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/image_pipeline-release/archive/release/noetic/stereo_image_proc/1.16.0-1.tar.gz#/ros-noetic-stereo_image_proc-1.16.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/image_pipeline-release/archive/release/noetic/stereo_image_proc/1.17.0-1.tar.gz#/ros-noetic-stereo_image_proc-1.17.0-source0.tar.gz
 
 
 
@@ -45,9 +45,9 @@ Requires:       ros-noetic-nodelet
 Requires:       ros-noetic-sensor_msgs
 Requires:       ros-noetic-stereo_msgs
 
-Provides:  ros-noetic-stereo_image_proc = 1.16.0-1
-Obsoletes: ros-noetic-stereo_image_proc < 1.16.0-1
-Obsoletes: ros-kinetic-stereo_image_proc < 1.16.0-1
+Provides:  ros-noetic-stereo_image_proc = 1.17.0-1
+Obsoletes: ros-noetic-stereo_image_proc < 1.17.0-1
+Obsoletes: ros-kinetic-stereo_image_proc < 1.17.0-1
 
 
 
@@ -74,9 +74,9 @@ Requires:       ros-noetic-rostest-devel
 Requires:       ros-noetic-sensor_msgs-devel
 Requires:       ros-noetic-stereo_msgs-devel
 
-Provides: ros-noetic-stereo_image_proc-devel = 1.16.0-1
-Obsoletes: ros-noetic-stereo_image_proc-devel < 1.16.0-1
-Obsoletes: ros-kinetic-stereo_image_proc-devel < 1.16.0-1
+Provides: ros-noetic-stereo_image_proc-devel = 1.17.0-1
+Obsoletes: ros-noetic-stereo_image_proc-devel < 1.17.0-1
+Obsoletes: ros-kinetic-stereo_image_proc-devel < 1.17.0-1
 
 
 %description devel
@@ -171,6 +171,8 @@ done
 
 
 %changelog
+* Mon Dec 26 2022 Tarik Viehmann <viehmann@kbsg.rwth-aachen.de> - noetic.1.17.0-1
+- Update to latest release
 * Wed Nov 24 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.16.0-1
 - Update to latest release
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.3-3

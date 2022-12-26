@@ -8,6 +8,7 @@ URL:            http://www.ros.org/
 
 Source0:        https://github.com/ros-gbp/geometry-release/archive/release/noetic/tf/1.13.2-1.tar.gz#/ros-noetic-tf-1.13.2-source0.tar.gz
 
+Patch0: ros-tf.build-with-cpp17.patch
 
 
 # common BRs
@@ -90,6 +91,7 @@ applications that use %{name}.
 
 %setup -c -T
 tar --strip-components=1 -xf %{SOURCE0}
+%patch0 -p1
 
 %build
 # nothing to do here
