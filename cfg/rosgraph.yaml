@@ -1,1 +1,3 @@
 noarch: true
+patches:
+  - ros-rosgraph.roslogging-loop-fix.patch

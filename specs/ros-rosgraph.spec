@@ -1,6 +1,6 @@
 Name:           ros-rosgraph
 Version:        noetic.1.15.15
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package rosgraph
 
 License:        BSD
@@ -8,6 +8,7 @@ URL:            http://wiki.ros.org/rosgraph
 
 Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/rosgraph/1.15.15-1.tar.gz#/ros-noetic-rosgraph-1.15.15-source0.tar.gz
 
+Patch0: ros-rosgraph.roslogging-loop-fix.patch
 
 BuildArch: noarch
 
@@ -26,9 +27,9 @@ Requires:       python3-netifaces
 Requires:       python3-pyyaml
 Requires:       python3-rospkg
 
-Provides:  ros-noetic-rosgraph = 1.15.15-1
-Obsoletes: ros-noetic-rosgraph < 1.15.15-1
-Obsoletes: ros-kinetic-rosgraph < 1.15.15-1
+Provides:  ros-noetic-rosgraph = 1.15.15-2
+Obsoletes: ros-noetic-rosgraph < 1.15.15-2
+Obsoletes: ros-kinetic-rosgraph < 1.15.15-2
 
 
 
@@ -43,9 +44,9 @@ Requires:       %{name} = %{version}-%{release}
 Requires:       ros-noetic-catkin-devel
 Requires:       python3-mock
 
-Provides: ros-noetic-rosgraph-devel = 1.15.15-1
-Obsoletes: ros-noetic-rosgraph-devel < 1.15.15-1
-Obsoletes: ros-kinetic-rosgraph-devel < 1.15.15-1
+Provides: ros-noetic-rosgraph-devel = 1.15.15-2
+Obsoletes: ros-noetic-rosgraph-devel < 1.15.15-2
+Obsoletes: ros-kinetic-rosgraph-devel < 1.15.15-2
 
 
 %description devel
@@ -58,6 +59,7 @@ applications that use %{name}.
 
 %setup -c -T
 tar --strip-components=1 -xf %{SOURCE0}
+%patch0 -p1
 
 %build
 # nothing to do here
@@ -140,6 +142,8 @@ done
 
 
 %changelog
+* Mon Dec 26 2022 Tarik Viehmann <viehmann@kbsg.rwth-aachen.de> - noetic.1.15.15-2
+- prevent loop in roslogging.py when determining caller
 * Mon Dec 26 2022 Tarik Viehmann <viehmann@kbsg.rwth-aachen.de> - noetic.1.15.15-1
 - Update to latest release
 * Wed Jan 19 2022 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.14-1
