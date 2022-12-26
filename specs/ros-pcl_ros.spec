@@ -1,6 +1,6 @@
 Name:           ros-pcl_ros
 Version:        noetic.1.7.4
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package pcl_ros
 
 License:        BSD
@@ -21,6 +21,7 @@ BuildRequires:  python3-devel
 BuildRequires:  python-unversioned-command
 
 BuildRequires:  eigen3-devel
+BuildRequires:  java-17-openjdk-devel
 BuildRequires:  libuuid-devel
 BuildRequires:  libXext-devel
 BuildRequires:  lz4-devel
@@ -66,9 +67,9 @@ Requires:       ros-noetic-tf2
 Requires:       ros-noetic-tf2_eigen
 Requires:       ros-noetic-tf2_ros
 
-Provides:  ros-noetic-pcl_ros = 1.7.4-2
-Obsoletes: ros-noetic-pcl_ros < 1.7.4-2
-Obsoletes: ros-kinetic-pcl_ros < 1.7.4-2
+Provides:  ros-noetic-pcl_ros = 1.7.4-3
+Obsoletes: ros-noetic-pcl_ros < 1.7.4-3
+Obsoletes: ros-kinetic-pcl_ros < 1.7.4-3
 
 
 
@@ -83,6 +84,7 @@ Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       ros-noetic-catkin-devel
 Requires:       ros-noetic-dynamic_reconfigure-devel
 Requires:       eigen3-devel
+Requires:       java-17-openjdk-devel
 Requires:       libuuid-devel
 Requires:       libXext-devel
 Requires:       lz4-devel
@@ -109,9 +111,9 @@ Requires:       ros-noetic-tf2-devel
 Requires:       ros-noetic-tf2_eigen-devel
 Requires:       ros-noetic-tf2_ros-devel
 
-Provides: ros-noetic-pcl_ros-devel = 1.7.4-2
-Obsoletes: ros-noetic-pcl_ros-devel < 1.7.4-2
-Obsoletes: ros-kinetic-pcl_ros-devel < 1.7.4-2
+Provides: ros-noetic-pcl_ros-devel = 1.7.4-3
+Obsoletes: ros-noetic-pcl_ros-devel < 1.7.4-3
+Obsoletes: ros-kinetic-pcl_ros-devel < 1.7.4-3
 
 
 %description devel
@@ -208,6 +210,8 @@ done
 
 
 %changelog
+* Mon Dec 26 2022 Tarik Viehmann <viehmann@kbsg.rwth-aachen.de> - noetic.1.7.4-3
+- Require openjdk-devel for /usr/jvm/java symlink
 * Mon Dec 26 2022 Tarik Viehmann <viehmann@kbsg.rwth-aachen.de> - noetic.1.7.4-2
 - Build with c++17 for log4cxx 0.13
 * Fri May 06 2022 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.7.4-1
