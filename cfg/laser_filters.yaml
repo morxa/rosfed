@@ -5,3 +5,5 @@ dependencies:
       - poco-devel
       - tinyxml-devel
       - tinyxml2-devel
+patches:
+  - ros-laser_filters.build-with-cpp17.patch

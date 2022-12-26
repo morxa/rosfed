@@ -9,3 +9,5 @@ dependencies:
       - tinyxml2-devel
       - tinyxml-devel
       - poco-devel
+patches:
+  - ros-gazebo_plugins.build-with-cpp17.patch

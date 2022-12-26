@@ -1,6 +1,6 @@
 Name:           ros-rqt_image_view
 Version:        noetic.0.4.16
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        ROS package rqt_image_view
 
 License:        BSD
@@ -8,6 +8,7 @@ URL:            http://wiki.ros.org/rqt_image_view
 
 Source0:        https://github.com/ros-gbp/rqt_image_view-release/archive/release/noetic/rqt_image_view/0.4.16-1.tar.gz#/ros-noetic-rqt_image_view-0.4.16-source0.tar.gz
 
+Patch0: ros-rqt_image_view.build-with-cpp17.patch
 
 
 # common BRs
@@ -41,9 +42,9 @@ Requires:       ros-noetic-rqt_gui
 Requires:       ros-noetic-rqt_gui_cpp
 Requires:       ros-noetic-sensor_msgs
 
-Provides:  ros-noetic-rqt_image_view = 0.4.16-3
-Obsoletes: ros-noetic-rqt_image_view < 0.4.16-3
-Obsoletes: ros-kinetic-rqt_image_view < 0.4.16-3
+Provides:  ros-noetic-rqt_image_view = 0.4.16-4
+Obsoletes: ros-noetic-rqt_image_view < 0.4.16-4
+Obsoletes: ros-kinetic-rqt_image_view < 0.4.16-4
 
 
 
@@ -70,9 +71,9 @@ Requires:       ros-noetic-rqt_gui-devel
 Requires:       ros-noetic-rqt_gui_cpp-devel
 Requires:       ros-noetic-sensor_msgs-devel
 
-Provides: ros-noetic-rqt_image_view-devel = 0.4.16-3
-Obsoletes: ros-noetic-rqt_image_view-devel < 0.4.16-3
-Obsoletes: ros-kinetic-rqt_image_view-devel < 0.4.16-3
+Provides: ros-noetic-rqt_image_view-devel = 0.4.16-4
+Obsoletes: ros-noetic-rqt_image_view-devel < 0.4.16-4
+Obsoletes: ros-kinetic-rqt_image_view-devel < 0.4.16-4
 
 
 %description devel
@@ -85,6 +86,7 @@ applications that use %{name}.
 
 %setup -c -T
 tar --strip-components=1 -xf %{SOURCE0}
+%patch0 -p1
 
 %build
 # nothing to do here
@@ -167,6 +169,8 @@ done
 
 
 %changelog
+* Mon Dec 26 2022 Tarik Viehmann <viehmann@kbsg.rwth-aachen.de> - noetic.0.4.16-4
+- Build with c++17 for log4cxx 0.13
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.16-3
 - Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.4.16-2

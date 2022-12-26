@@ -12,3 +12,4 @@ dependencies:
       - libXext-devel
 patches:
   - ros-pcl_ros.dynamic_reconfigure.patch
+  - ros-pcl_ros.build-with-cpp17.patch

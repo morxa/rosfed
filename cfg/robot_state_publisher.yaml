@@ -3,3 +3,5 @@ dependencies:
     system:
       - tinyxml-devel
       - urdfdom-devel
+patches:
+  - ros-robot_state_publisher.build-with-cpp17.patch

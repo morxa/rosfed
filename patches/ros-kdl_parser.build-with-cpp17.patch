@@ -1,0 +1,12 @@
+diff -ur kdl_parser-release-release-noetic-kdl_parser-1.14.2-1/CMakeLists.txt kdl_parser-release-release-noetic-kdl_parser-1.14.2-1_new/CMakeLists.txt
+--- kdl_parser-release-release-noetic-kdl_parser-1.14.2-1/CMakeLists.txt	2022-04-13 19:15:45.000000000 +0200
++++ kdl_parser-release-release-noetic-kdl_parser-1.14.2-1_new/CMakeLists.txt	2022-12-25 10:30:48.045185907 +0100
+@@ -2,7 +2,7 @@
+ 
+ project(kdl_parser)
+ 
+-set(CMAKE_CXX_STANDARD 14)
++set(CMAKE_CXX_STANDARD 17)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ 
+ find_package(catkin QUIET

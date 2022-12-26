@@ -5,3 +5,5 @@ dependencies:
       - urdfdom-headers-devel
       - urdfdom-devel
       - eigen3-devel
+patches:
+  - ros-kdl_parser.build-with-cpp17.patch

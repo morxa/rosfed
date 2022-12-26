@@ -1,6 +1,6 @@
 Name:           ros-gazebo_plugins
 Version:        noetic.2.9.2
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        ROS package gazebo_plugins
 
 License:        BSD, Apache 2.0
@@ -8,6 +8,7 @@ URL:            http://gazebosim.org/tutorials?cat=connect_ros
 
 Source0:        https://github.com/ros-gbp/gazebo_ros_pkgs-release/archive/release/noetic/gazebo_plugins/2.9.2-1.tar.gz#/ros-noetic-gazebo_plugins-2.9.2-source0.tar.gz
 
+Patch0: ros-gazebo_plugins.build-with-cpp17.patch
 
 
 # common BRs
@@ -82,9 +83,9 @@ Requires:       ros-noetic-trajectory_msgs
 Requires:       ros-noetic-urdf
 Requires:       ros-noetic-visualization_msgs
 
-Provides:  ros-noetic-gazebo_plugins = 2.9.2-3
-Obsoletes: ros-noetic-gazebo_plugins < 2.9.2-3
-Obsoletes: ros-kinetic-gazebo_plugins < 2.9.2-3
+Provides:  ros-noetic-gazebo_plugins = 2.9.2-4
+Obsoletes: ros-noetic-gazebo_plugins < 2.9.2-4
+Obsoletes: ros-kinetic-gazebo_plugins < 2.9.2-4
 
 
 
@@ -133,9 +134,9 @@ Requires:       ros-noetic-urdf-devel
 Requires:       ros-noetic-visualization_msgs-devel
 Requires:       ros-noetic-message_runtime-devel
 
-Provides: ros-noetic-gazebo_plugins-devel = 2.9.2-3
-Obsoletes: ros-noetic-gazebo_plugins-devel < 2.9.2-3
-Obsoletes: ros-kinetic-gazebo_plugins-devel < 2.9.2-3
+Provides: ros-noetic-gazebo_plugins-devel = 2.9.2-4
+Obsoletes: ros-noetic-gazebo_plugins-devel < 2.9.2-4
+Obsoletes: ros-kinetic-gazebo_plugins-devel < 2.9.2-4
 
 
 %description devel
@@ -148,6 +149,7 @@ applications that use %{name}.
 
 %setup -c -T
 tar --strip-components=1 -xf %{SOURCE0}
+%patch0 -p1
 
 %build
 # nothing to do here
@@ -230,6 +232,8 @@ done
 
 
 %changelog
+* Mon Dec 26 2022 Tarik Viehmann <viehmann@kbsg.rwth-aachen.de> - noetic.2.9.2-4
+- Build with c++17 for log4cxx 0.13
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.2.9.2-3
 - Rebuild to pull in updated dependencies
 * Mon May 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.2.9.2-2

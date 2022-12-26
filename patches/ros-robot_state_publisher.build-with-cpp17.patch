@@ -1,0 +1,27 @@
+diff -ur robot_state_publisher-release-release-noetic-robot_state_publisher-1.15.2-1/CMakeLists.txt robot_state_publisher-release-release-noetic-robot_state_publisher-1.15.2-1_new/CMakeLists.txt
+--- robot_state_publisher-release-release-noetic-robot_state_publisher-1.15.2-1/CMakeLists.txt	2021-09-30 20:47:17.000000000 +0200
++++ robot_state_publisher-release-release-noetic-robot_state_publisher-1.15.2-1_new/CMakeLists.txt	2022-12-25 22:00:27.412333750 +0100
+@@ -7,17 +7,17 @@
+   # https://docs.microsoft.com/en-us/cpp/build/reference/std-specify-language-standard-version
+   # MSVC will fail the following check since it does not have the c++11 switch
+   # however, c++11 is always enabled (the newer /std:c++14 is enabled by default)
+-  check_cxx_compiler_flag(/std:c++11 COMPILER_SUPPORTS_CXX11)
+-  if(COMPILER_SUPPORTS_CXX11)
+-    add_compile_options(/std:c++11)
++  check_cxx_compiler_flag(/std:c++17 COMPILER_SUPPORTS_CXX17)
++  if(COMPILER_SUPPORTS_CXX17)
++    add_compile_options(/std:c++17)
+   endif()
+ 
+   # MSVC does not support the Wextra flag
+   add_compile_options(/Wall)
+ else()
+-  check_cxx_compiler_flag(-std=c++11 COMPILER_SUPPORTS_CXX11)
+-  if(COMPILER_SUPPORTS_CXX11)
+-    add_compile_options(-std=c++11)
++  check_cxx_compiler_flag(-std=c++17 COMPILER_SUPPORTS_CXX17)
++  if(COMPILER_SUPPORTS_CXX17)
++    add_compile_options(-std=c++17)
+   endif()
+   add_compile_options(-Wall -Wextra)
+ endif()

@@ -1,2 +1,3 @@
 patches:
   - patches/ros-laser_geometry.add-eigen-export_depend.patch
+  - ros-laser_geometry.build-with-cpp17.patch

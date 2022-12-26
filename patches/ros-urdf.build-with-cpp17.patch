@@ -1,0 +1,12 @@
+diff -ur urdf-release-release-noetic-urdf-1.13.2-1/CMakeLists.txt urdf-release-release-noetic-urdf-1.13.2-1_new/CMakeLists.txt
+--- urdf-release-release-noetic-urdf-1.13.2-1/CMakeLists.txt	2020-03-06 20:06:58.000000000 +0100
++++ urdf-release-release-noetic-urdf-1.13.2-1_new/CMakeLists.txt	2022-12-25 10:03:28.291956138 +0100
+@@ -22,7 +22,7 @@
+ include_directories("${CATKIN_DEVEL_PREFIX}/include")
+ configure_file(urdfdom_compatibility.h.in "${generated_compat_header}" @ONLY)
+ 
+-set(CMAKE_CXX_STANDARD 14)
++set(CMAKE_CXX_STANDARD 17)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ 
+ catkin_package(

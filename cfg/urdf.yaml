@@ -3,3 +3,5 @@ dependencies:
     system:
       - tinyxml2-devel
       - poco-devel
+patches:
+  - ros-urdf.build-with-cpp17.patch

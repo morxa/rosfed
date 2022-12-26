@@ -1,6 +1,6 @@
 Name:           ros-rosconsole
 Version:        noetic.1.14.3
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        ROS package rosconsole
 
 License:        BSD
@@ -8,6 +8,7 @@ URL:            http://www.ros.org/
 
 Source0:        https://github.com/ros-gbp/rosconsole-release/archive/release/noetic/rosconsole/1.14.3-1.tar.gz#/ros-noetic-rosconsole-1.14.3-source0.tar.gz
 
+Patch0: ros-rosconsole.log4cxx-v013.patch
 
 
 # common BRs
@@ -31,9 +32,9 @@ Requires:       ros-noetic-cpp_common
 Requires:       ros-noetic-rosbuild
 Requires:       ros-noetic-rostime
 
-Provides:  ros-noetic-rosconsole = 1.14.3-3
-Obsoletes: ros-noetic-rosconsole < 1.14.3-3
-Obsoletes: ros-kinetic-rosconsole < 1.14.3-3
+Provides:  ros-noetic-rosconsole = 1.14.3-4
+Obsoletes: ros-noetic-rosconsole < 1.14.3-4
+Obsoletes: ros-kinetic-rosconsole < 1.14.3-4
 
 
 
@@ -53,9 +54,9 @@ Requires:       ros-noetic-rostime-devel
 Requires:       ros-noetic-rosunit-devel
 Requires:       ros-noetic-rosbuild-devel
 
-Provides: ros-noetic-rosconsole-devel = 1.14.3-3
-Obsoletes: ros-noetic-rosconsole-devel < 1.14.3-3
-Obsoletes: ros-kinetic-rosconsole-devel < 1.14.3-3
+Provides: ros-noetic-rosconsole-devel = 1.14.3-4
+Obsoletes: ros-noetic-rosconsole-devel < 1.14.3-4
+Obsoletes: ros-kinetic-rosconsole-devel < 1.14.3-4
 
 
 %description devel
@@ -68,6 +69,7 @@ applications that use %{name}.
 
 %setup -c -T
 tar --strip-components=1 -xf %{SOURCE0}
+%patch0 -p1
 
 %build
 # nothing to do here
@@ -150,6 +152,8 @@ done
 
 
 %changelog
+* Mon Dec 26 2022 Tarik Viehmann <viehmann@kbsg.rwth-aachen.de> - noetic.1.14.3-4
+- Update to log4cxx 0.13 API changes
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.3-3
 - Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.14.3-2

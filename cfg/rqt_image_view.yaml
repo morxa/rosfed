@@ -8,3 +8,5 @@ dependencies:
       - libuuid-devel
       - tinyxml-devel
       - tinyxml2-devel
+patches:
+  - ros-rqt_image_view.build-with-cpp17.patch

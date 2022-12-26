@@ -1,6 +1,6 @@
 Name:           ros-laser_filters
 Version:        noetic.1.9.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package laser_filters
 
 License:        BSD
@@ -8,6 +8,7 @@ URL:            http://www.ros.org/
 
 Source0:        https://github.com/ros-gbp/laser_filters-release/archive/release/noetic/laser_filters/1.9.0-1.tar.gz#/ros-noetic-laser_filters-1.9.0-source0.tar.gz
 
+Patch0: ros-laser_filters.build-with-cpp17.patch
 
 
 # common BRs
@@ -46,9 +47,9 @@ Requires:       ros-noetic-roscpp
 Requires:       ros-noetic-sensor_msgs
 Requires:       ros-noetic-tf
 
-Provides:  ros-noetic-laser_filters = 1.9.0-1
-Obsoletes: ros-noetic-laser_filters < 1.9.0-1
-Obsoletes: ros-kinetic-laser_filters < 1.9.0-1
+Provides:  ros-noetic-laser_filters = 1.9.0-2
+Obsoletes: ros-noetic-laser_filters < 1.9.0-2
+Obsoletes: ros-kinetic-laser_filters < 1.9.0-2
 
 
 
@@ -76,9 +77,9 @@ Requires:       ros-noetic-rostest-devel
 Requires:       ros-noetic-sensor_msgs-devel
 Requires:       ros-noetic-tf-devel
 
-Provides: ros-noetic-laser_filters-devel = 1.9.0-1
-Obsoletes: ros-noetic-laser_filters-devel < 1.9.0-1
-Obsoletes: ros-kinetic-laser_filters-devel < 1.9.0-1
+Provides: ros-noetic-laser_filters-devel = 1.9.0-2
+Obsoletes: ros-noetic-laser_filters-devel < 1.9.0-2
+Obsoletes: ros-kinetic-laser_filters-devel < 1.9.0-2
 
 
 %description devel
@@ -91,6 +92,7 @@ applications that use %{name}.
 
 %setup -c -T
 tar --strip-components=1 -xf %{SOURCE0}
+%patch0 -p1
 
 %build
 # nothing to do here
@@ -173,6 +175,8 @@ done
 
 
 %changelog
+* Mon Dec 26 2022 Tarik Viehmann <viehmann@kbsg.rwth-aachen.de> - noetic.1.9.0-2
+- Build with c++17 for log4cxx 0.13
 * Wed Nov 24 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.9.0-1
 - Update to latest release
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.8.11-3

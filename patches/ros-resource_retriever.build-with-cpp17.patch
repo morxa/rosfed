@@ -1,0 +1,12 @@
+diff -ur resource_retriever-release-release-noetic-resource_retriever-1.12.7-1/CMakeLists.txt resource_retriever-release-release-noetic-resource_retriever-1.12.7-1_new/CMakeLists.txt
+--- resource_retriever-release-release-noetic-resource_retriever-1.12.7-1/CMakeLists.txt	2021-12-10 18:35:27.000000000 +0100
++++ resource_retriever-release-release-noetic-resource_retriever-1.12.7-1_new/CMakeLists.txt	2022-12-25 09:15:22.956538699 +0100
+@@ -1,7 +1,7 @@
+ cmake_minimum_required(VERSION 3.0.2)
+ project(resource_retriever)
+ 
+-set_directory_properties(PROPERTIES COMPILE_OPTIONS "-std=c++11")
++set_directory_properties(PROPERTIES COMPILE_OPTIONS "-std=c++17")
+ 
+ find_package(catkin REQUIRED COMPONENTS rosconsole roslib)
+ 

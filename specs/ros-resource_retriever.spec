@@ -1,6 +1,6 @@
 Name:           ros-resource_retriever
 Version:        noetic.1.12.7
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        ROS package resource_retriever
 
 License:        BSD
@@ -8,6 +8,7 @@ URL:            http://ros.org/wiki/resource_retriever
 
 Source0:        https://github.com/ros-gbp/resource_retriever-release/archive/release/noetic/resource_retriever/1.12.7-1.tar.gz#/ros-noetic-resource_retriever-1.12.7-source0.tar.gz
 
+Patch0: ros-resource_retriever.build-with-cpp17.patch
 
 
 # common BRs
@@ -33,9 +34,9 @@ Requires:       python3-rospkg
 Requires:       ros-noetic-rosconsole
 Requires:       ros-noetic-roslib
 
-Provides:  ros-noetic-resource_retriever = 1.12.7-1
-Obsoletes: ros-noetic-resource_retriever < 1.12.7-1
-Obsoletes: ros-kinetic-resource_retriever < 1.12.7-1
+Provides:  ros-noetic-resource_retriever = 1.12.7-2
+Obsoletes: ros-noetic-resource_retriever < 1.12.7-2
+Obsoletes: ros-kinetic-resource_retriever < 1.12.7-2
 
 
 
@@ -60,9 +61,9 @@ Requires:       tinyxml-devel
 Requires:       ros-noetic-rosconsole-devel
 Requires:       ros-noetic-roslib-devel
 
-Provides: ros-noetic-resource_retriever-devel = 1.12.7-1
-Obsoletes: ros-noetic-resource_retriever-devel < 1.12.7-1
-Obsoletes: ros-kinetic-resource_retriever-devel < 1.12.7-1
+Provides: ros-noetic-resource_retriever-devel = 1.12.7-2
+Obsoletes: ros-noetic-resource_retriever-devel < 1.12.7-2
+Obsoletes: ros-kinetic-resource_retriever-devel < 1.12.7-2
 
 
 %description devel
@@ -75,6 +76,7 @@ applications that use %{name}.
 
 %setup -c -T
 tar --strip-components=1 -xf %{SOURCE0}
+%patch0 -p1
 
 %build
 # nothing to do here
@@ -157,6 +159,8 @@ done
 
 
 %changelog
+* Mon Dec 26 2022 Tarik Viehmann <viehmann@kbsg.rwth-aachen.de> - noetic.1.12.7-2
+- Build with c++17 for log4cxx 0.13
 * Thu Dec 30 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.12.7-1
 - Update to latest release
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.12.6-3
