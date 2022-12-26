@@ -1,1 +1,4 @@
 noarch: true
+
+patches:
+  - ros-python_qt_binding.lflags-fix.patch

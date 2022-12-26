@@ -8,6 +8,7 @@ URL:            http://www.ros.org/
 
 Source0:        https://github.com/ros-gbp/python_qt_binding-release/archive/release/noetic/python_qt_binding/0.4.4-1.tar.gz#/ros-noetic-python_qt_binding-0.4.4-source0.tar.gz
 
+Patch0: ros-python_qt_binding.lflags-fix.patch
 
 BuildArch: noarch
 
@@ -67,6 +68,7 @@ applications that use %{name}.
 
 %setup -c -T
 tar --strip-components=1 -xf %{SOURCE0}
+%patch0 -p1
 
 %build
 # nothing to do here
