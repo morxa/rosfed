@@ -1,6 +1,6 @@
 Name:           ros-gazebo_ros_control
 Version:        noetic.2.9.2
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ROS package gazebo_ros_control
 
 License:        BSD
@@ -8,6 +8,7 @@ URL:            http://ros.org/wiki/gazebo_ros_control
 
 Source0:        https://github.com/ros-gbp/gazebo_ros_pkgs-release/archive/release/noetic/gazebo_ros_control/2.9.2-1.tar.gz#/ros-noetic-gazebo_ros_control-2.9.2-source0.tar.gz
 
+Patch0: ros-gazebo_ros_control.build-with-cpp17.patch
 
 
 # common BRs
@@ -51,9 +52,9 @@ Requires:       ros-noetic-std_msgs
 Requires:       ros-noetic-transmission_interface
 Requires:       ros-noetic-urdf
 
-Provides:  ros-noetic-gazebo_ros_control = 2.9.2-2
-Obsoletes: ros-noetic-gazebo_ros_control < 2.9.2-2
-Obsoletes: ros-kinetic-gazebo_ros_control < 2.9.2-2
+Provides:  ros-noetic-gazebo_ros_control = 2.9.2-3
+Obsoletes: ros-noetic-gazebo_ros_control < 2.9.2-3
+Obsoletes: ros-kinetic-gazebo_ros_control < 2.9.2-3
 
 
 
@@ -85,9 +86,9 @@ Requires:       ros-noetic-transmission_interface-devel
 Requires:       ros-noetic-urdf-devel
 Requires:       ros-noetic-gazebo_ros-devel
 
-Provides: ros-noetic-gazebo_ros_control-devel = 2.9.2-2
-Obsoletes: ros-noetic-gazebo_ros_control-devel < 2.9.2-2
-Obsoletes: ros-kinetic-gazebo_ros_control-devel < 2.9.2-2
+Provides: ros-noetic-gazebo_ros_control-devel = 2.9.2-3
+Obsoletes: ros-noetic-gazebo_ros_control-devel < 2.9.2-3
+Obsoletes: ros-kinetic-gazebo_ros_control-devel < 2.9.2-3
 
 
 %description devel
@@ -100,6 +101,7 @@ applications that use %{name}.
 
 %setup -c -T
 tar --strip-components=1 -xf %{SOURCE0}
+%patch0 -p1
 
 %build
 # nothing to do here
@@ -182,6 +184,8 @@ done
 
 
 %changelog
+* Mon Dec 26 2022 Tarik Viehmann <viehmann@kbsg.rwth-aachen.de> - noetic.2.9.2-3
+- Build with c++17 for log4cxx 0.13
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.2.9.2-2
 - Rebuild to pull in updated dependencies
 * Mon May 17 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.2.9.2-1

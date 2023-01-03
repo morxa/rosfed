@@ -1,12 +1,12 @@
 Name:           ros-rosbag_storage
-Version:        noetic.1.15.14
+Version:        noetic.1.15.15
 Release:        1%{?dist}
 Summary:        ROS package rosbag_storage
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/rosbag_storage/1.15.14-1.tar.gz#/ros-noetic-rosbag_storage-1.15.14-source0.tar.gz
+Source0:        https://github.com/ros-gbp/ros_comm-release/archive/release/noetic/rosbag_storage/1.15.15-1.tar.gz#/ros-noetic-rosbag_storage-1.15.15-source0.tar.gz
 
 
 
@@ -41,9 +41,9 @@ Requires:       ros-noetic-roscpp_traits
 Requires:       ros-noetic-roslz4
 Requires:       ros-noetic-rostime
 
-Provides:  ros-noetic-rosbag_storage = 1.15.14-1
-Obsoletes: ros-noetic-rosbag_storage < 1.15.14-1
-Obsoletes: ros-kinetic-rosbag_storage < 1.15.14-1
+Provides:  ros-noetic-rosbag_storage = 1.15.15-1
+Obsoletes: ros-noetic-rosbag_storage < 1.15.15-1
+Obsoletes: ros-kinetic-rosbag_storage < 1.15.15-1
 
 
 
@@ -70,9 +70,9 @@ Requires:       ros-noetic-rostest-devel
 Requires:       ros-noetic-rostime-devel
 Requires:       ros-noetic-std_msgs-devel
 
-Provides: ros-noetic-rosbag_storage-devel = 1.15.14-1
-Obsoletes: ros-noetic-rosbag_storage-devel < 1.15.14-1
-Obsoletes: ros-kinetic-rosbag_storage-devel < 1.15.14-1
+Provides: ros-noetic-rosbag_storage-devel = 1.15.15-1
+Obsoletes: ros-noetic-rosbag_storage-devel < 1.15.15-1
+Obsoletes: ros-kinetic-rosbag_storage-devel < 1.15.15-1
 
 
 %description devel
@@ -167,6 +167,8 @@ done
 
 
 %changelog
+* Mon Dec 26 2022 Tarik Viehmann <viehmann@kbsg.rwth-aachen.de> - noetic.1.15.15-1
+- Update to latest release
 * Wed Jan 19 2022 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.14-1
 - Update to latest release
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.13-2

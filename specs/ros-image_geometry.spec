@@ -1,12 +1,12 @@
 Name:           ros-image_geometry
-Version:        noetic.1.16.0
+Version:        noetic.1.16.2
 Release:        1%{?dist}
 Summary:        ROS package image_geometry
 
 License:        BSD
 URL:            http://www.ros.org/
 
-Source0:        https://github.com/ros-gbp/vision_opencv-release/archive/release/noetic/image_geometry/1.16.0-1.tar.gz#/ros-noetic-image_geometry-1.16.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/vision_opencv-release/archive/release/noetic/image_geometry/1.16.2-1.tar.gz#/ros-noetic-image_geometry-1.16.2-source0.tar.gz
 
 Patch0: ros-kinetic-image_geometry.catkin-fix-order.patch
 
@@ -27,9 +27,9 @@ BuildRequires:  ros-noetic-cpp_common-devel
 BuildRequires:  ros-noetic-sensor_msgs-devel
 
 
-Provides:  ros-noetic-image_geometry = 1.16.0-1
-Obsoletes: ros-noetic-image_geometry < 1.16.0-1
-Obsoletes: ros-kinetic-image_geometry < 1.16.0-1
+Provides:  ros-noetic-image_geometry = 1.16.2-1
+Obsoletes: ros-noetic-image_geometry < 1.16.2-1
+Obsoletes: ros-kinetic-image_geometry < 1.16.2-1
 
 
 
@@ -50,9 +50,9 @@ Requires:       boost-devel
 Requires:       gtest-devel
 Requires:       ros-noetic-cpp_common-devel
 
-Provides: ros-noetic-image_geometry-devel = 1.16.0-1
-Obsoletes: ros-noetic-image_geometry-devel < 1.16.0-1
-Obsoletes: ros-kinetic-image_geometry-devel < 1.16.0-1
+Provides: ros-noetic-image_geometry-devel = 1.16.2-1
+Obsoletes: ros-noetic-image_geometry-devel < 1.16.2-1
+Obsoletes: ros-kinetic-image_geometry-devel < 1.16.2-1
 
 
 %description devel
@@ -148,6 +148,8 @@ done
 
 
 %changelog
+* Mon Dec 26 2022 Tarik Viehmann <viehmann@kbsg.rwth-aachen.de> - noetic.1.16.2-1
+- Update to latest release
 * Wed Nov 24 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.16.0-1
 - Update to latest release
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.0-3

@@ -1,0 +1,12 @@
+diff -ur gazebo_ros_pkgs-release-release-noetic-gazebo_ros-2.9.2-1/CMakeLists.txt gazebo_ros_pkgs-release-release-noetic-gazebo_ros-2.9.2-1_new/CMakeLists.txt
+--- gazebo_ros_pkgs-release-release-noetic-gazebo_ros-2.9.2-1/CMakeLists.txt	2021-04-21 20:20:14.000000000 +0200
++++ gazebo_ros_pkgs-release-release-noetic-gazebo_ros-2.9.2-1_new/CMakeLists.txt	2022-12-25 10:38:14.596806559 +0100
+@@ -1,6 +1,8 @@
+ cmake_minimum_required(VERSION 3.5.1)
+ project(gazebo_ros)
+ 
++add_compile_options(-std=c++17)
++
+ find_package(catkin REQUIRED COMPONENTS
+   gazebo_dev
+   cmake_modules

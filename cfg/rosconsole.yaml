@@ -2,3 +2,5 @@ dependencies:
   build:
     system:
       - console-bridge-devel
+patches:
+  - ros-rosconsole.log4cxx-v013.patch

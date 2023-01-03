@@ -1,12 +1,12 @@
 Name:           ros-cv_bridge
-Version:        noetic.1.16.0
+Version:        noetic.1.16.2
 Release:        1%{?dist}
 Summary:        ROS package cv_bridge
 
 License:        BSD
 URL:            http://www.ros.org/wiki/cv_bridge
 
-Source0:        https://github.com/ros-gbp/vision_opencv-release/archive/release/noetic/cv_bridge/1.16.0-1.tar.gz#/ros-noetic-cv_bridge-1.16.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/vision_opencv-release/archive/release/noetic/cv_bridge/1.16.2-1.tar.gz#/ros-noetic-cv_bridge-1.16.2-source0.tar.gz
 
 Patch0: ros-cv_bridge.boost-python3.patch
 
@@ -34,9 +34,9 @@ BuildRequires:  ros-noetic-sensor_msgs-devel
 Requires:       python3-opencv
 Requires:       ros-noetic-rosconsole
 
-Provides:  ros-noetic-cv_bridge = 1.16.0-1
-Obsoletes: ros-noetic-cv_bridge < 1.16.0-1
-Obsoletes: ros-kinetic-cv_bridge < 1.16.0-1
+Provides:  ros-noetic-cv_bridge = 1.16.2-1
+Obsoletes: ros-noetic-cv_bridge < 1.16.2-1
+Obsoletes: ros-kinetic-cv_bridge < 1.16.2-1
 
 
 
@@ -59,9 +59,9 @@ Requires:       ros-noetic-rosconsole-devel
 Requires:       ros-noetic-roscpp_serialization-devel
 Requires:       ros-noetic-rostest-devel
 
-Provides: ros-noetic-cv_bridge-devel = 1.16.0-1
-Obsoletes: ros-noetic-cv_bridge-devel < 1.16.0-1
-Obsoletes: ros-kinetic-cv_bridge-devel < 1.16.0-1
+Provides: ros-noetic-cv_bridge-devel = 1.16.2-1
+Obsoletes: ros-noetic-cv_bridge-devel < 1.16.2-1
+Obsoletes: ros-kinetic-cv_bridge-devel < 1.16.2-1
 
 
 %description devel
@@ -157,6 +157,8 @@ done
 
 
 %changelog
+* Mon Dec 26 2022 Tarik Viehmann <viehmann@kbsg.rwth-aachen.de> - noetic.1.16.2-1
+- Update to latest release
 * Wed Nov 24 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.16.0-1
 - Update to latest release
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.0-5

@@ -1,0 +1,12 @@
+diff -ur laser_filters-release-release-noetic-laser_filters-1.9.0-1/CMakeLists.txt laser_filters-release-release-noetic-laser_filters-1.9.0-1_new/CMakeLists.txt
+--- laser_filters-release-release-noetic-laser_filters-1.9.0-1/CMakeLists.txt	2021-11-07 01:04:55.000000000 +0100
++++ laser_filters-release-release-noetic-laser_filters-1.9.0-1_new/CMakeLists.txt	2022-12-25 22:02:29.304139095 +0100
+@@ -1,7 +1,7 @@
+ cmake_minimum_required(VERSION 3.0.2)
+ project(laser_filters)
+ 
+-set(CMAKE_CXX_STANDARD 11)
++set(CMAKE_CXX_STANDARD 17)
+ 
+ ##############################################################################
+ # Find dependencies

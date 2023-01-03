@@ -1,0 +1,12 @@
+diff -ur ros_comm-release-release-noetic-rosgraph-1.15.15-1/src/rosgraph/roslogging.py ros_comm-release-release-noetic-rosgraph-1.15.15-1_new/src/rosgraph/roslogging.py
+--- ros_comm-release-release-noetic-rosgraph-1.15.15-1/src/rosgraph/roslogging.py	2022-11-24 02:05:09.000000000 +0100
++++ ros_comm-release-release-noetic-rosgraph-1.15.15-1_new/src/rosgraph/roslogging.py	2022-12-26 11:36:10.942143891 +0100
+@@ -69,6 +69,8 @@
+                 break
+             if f.f_back:
+                 f = f.f_back
++            else:
++                break
+ 
+         # Jump up two more frames, as the logger methods have been double wrapped.
+         if f is not None and f.f_back and f.f_code and f.f_code.co_name == '_base_logger':

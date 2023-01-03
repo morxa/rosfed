@@ -1,12 +1,12 @@
 Name:           ros-vision_opencv
-Version:        noetic.1.16.0
+Version:        noetic.1.16.2
 Release:        1%{?dist}
 Summary:        ROS package vision_opencv
 
 License:        BSD
 URL:            http://www.ros.org/wiki/vision_opencv
 
-Source0:        https://github.com/ros-gbp/vision_opencv-release/archive/release/noetic/vision_opencv/1.16.0-1.tar.gz#/ros-noetic-vision_opencv-1.16.0-source0.tar.gz
+Source0:        https://github.com/ros-gbp/vision_opencv-release/archive/release/noetic/vision_opencv/1.16.2-1.tar.gz#/ros-noetic-vision_opencv-1.16.2-source0.tar.gz
 
 
 BuildArch: noarch
@@ -24,9 +24,9 @@ BuildRequires:  ros-noetic-catkin-devel
 Requires:       ros-noetic-cv_bridge
 Requires:       ros-noetic-image_geometry
 
-Provides:  ros-noetic-vision_opencv = 1.16.0-1
-Obsoletes: ros-noetic-vision_opencv < 1.16.0-1
-Obsoletes: ros-kinetic-vision_opencv < 1.16.0-1
+Provides:  ros-noetic-vision_opencv = 1.16.2-1
+Obsoletes: ros-noetic-vision_opencv < 1.16.2-1
+Obsoletes: ros-kinetic-vision_opencv < 1.16.2-1
 
 
 
@@ -41,9 +41,9 @@ Requires:       ros-noetic-catkin-devel
 Requires:       ros-noetic-cv_bridge-devel
 Requires:       ros-noetic-image_geometry-devel
 
-Provides: ros-noetic-vision_opencv-devel = 1.16.0-1
-Obsoletes: ros-noetic-vision_opencv-devel < 1.16.0-1
-Obsoletes: ros-kinetic-vision_opencv-devel < 1.16.0-1
+Provides: ros-noetic-vision_opencv-devel = 1.16.2-1
+Obsoletes: ros-noetic-vision_opencv-devel < 1.16.2-1
+Obsoletes: ros-kinetic-vision_opencv-devel < 1.16.2-1
 
 
 %description devel
@@ -138,6 +138,8 @@ done
 
 
 %changelog
+* Mon Dec 26 2022 Tarik Viehmann <viehmann@kbsg.rwth-aachen.de> - noetic.1.16.2-1
+- Update to latest release
 * Wed Nov 24 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.16.0-1
 - Update to latest release
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.0-3

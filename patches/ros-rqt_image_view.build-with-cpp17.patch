@@ -1,0 +1,12 @@
+diff -ur rqt_image_view-release-release-noetic-rqt_image_view-0.4.16-1/CMakeLists.txt rqt_image_view-release-release-noetic-rqt_image_view-0.4.16-1_new/CMakeLists.txt
+--- rqt_image_view-release-release-noetic-rqt_image_view-0.4.16-1/CMakeLists.txt	2020-08-08 00:34:35.000000000 +0200
++++ rqt_image_view-release-release-noetic-rqt_image_view-0.4.16-1_new/CMakeLists.txt	2022-12-25 09:49:26.903483172 +0100
+@@ -2,7 +2,7 @@
+ 
+ project(rqt_image_view)
+ 
+-add_compile_options(-std=c++11)
++add_compile_options(-std=c++17)
+ 
+ # Load catkin and all dependencies required for this package
+ find_package(catkin REQUIRED COMPONENTS rqt_gui rqt_gui_cpp image_transport sensor_msgs geometry_msgs cv_bridge)

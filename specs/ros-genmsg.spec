@@ -1,12 +1,12 @@
 Name:           ros-genmsg
-Version:        noetic.0.5.16
-Release:        3%{?dist}
+Version:        noetic.0.6.0
+Release:        1%{?dist}
 Summary:        ROS package genmsg
 
 License:        BSD
 URL:            http://wiki.ros.org/genmsg
 
-Source0:        https://github.com/ros-gbp/genmsg-release/archive/release/noetic/genmsg/0.5.16-1.tar.gz#/ros-noetic-genmsg-0.5.16-source0.tar.gz
+Source0:        https://github.com/ros-gbp/genmsg-release/archive/release/noetic/genmsg/0.6.0-1.tar.gz#/ros-noetic-genmsg-0.6.0-source0.tar.gz
 
 
 BuildArch: noarch
@@ -25,9 +25,9 @@ BuildRequires:  ros-noetic-catkin-devel
 Requires:       python3-empy
 Requires:       ros-noetic-catkin
 
-Provides:  ros-noetic-genmsg = 0.5.16-3
-Obsoletes: ros-noetic-genmsg < 0.5.16-3
-Obsoletes: ros-kinetic-genmsg < 0.5.16-3
+Provides:  ros-noetic-genmsg = 0.6.0-1
+Obsoletes: ros-noetic-genmsg < 0.6.0-1
+Obsoletes: ros-kinetic-genmsg < 0.6.0-1
 
 
 
@@ -41,9 +41,9 @@ Requires:       %{name} = %{version}-%{release}
 Requires:       python3-setuptools
 Requires:       ros-noetic-catkin-devel
 
-Provides: ros-noetic-genmsg-devel = 0.5.16-3
-Obsoletes: ros-noetic-genmsg-devel < 0.5.16-3
-Obsoletes: ros-kinetic-genmsg-devel < 0.5.16-3
+Provides: ros-noetic-genmsg-devel = 0.6.0-1
+Obsoletes: ros-noetic-genmsg-devel < 0.6.0-1
+Obsoletes: ros-kinetic-genmsg-devel < 0.6.0-1
 
 
 %description devel
@@ -138,6 +138,8 @@ done
 
 
 %changelog
+* Mon Dec 26 2022 Tarik Viehmann <viehmann@kbsg.rwth-aachen.de> - noetic.0.6.0-1
+- Update to latest release
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.16-3
 - Rebuild to pull in updated dependencies
 * Tue Feb 23 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.0.5.16-2

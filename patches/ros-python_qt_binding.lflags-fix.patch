@@ -1,0 +1,11 @@
+diff -ur python_qt_binding-release-release-noetic-python_qt_binding-0.4.4-1/cmake/sip_configure.py python_qt_binding-release-release-noetic-python_qt_binding-0.4.4-1_new/cmake/sip_configure.py
+--- python_qt_binding-release-release-noetic-python_qt_binding-0.4.4-1/cmake/sip_configure.py	2022-12-25 08:57:01.908179727 +0100
++++ python_qt_binding-release-release-noetic-python_qt_binding-0.4.4-1_new/cmake/sip_configure.py	2022-12-25 09:03:48.236314668 +0100
+@@ -38,6 +38,7 @@
+                 libqt5_rename = True
+ 
+         sipconfig.Configuration.__init__(self, [pyqtconfig])
++        self._macros['LFLAGS']=re.sub("-Wl,-dT,/builddir\/build/BUILD/sip.*/\.package_note-sip.*.ld", "", self._macros['LFLAGS'])
+ 
+         macros = sipconfig._default_macros.copy()
+         macros['INCDIR_QT'] = qtconfig['QT_INSTALL_HEADERS']

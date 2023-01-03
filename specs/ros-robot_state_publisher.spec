@@ -1,6 +1,6 @@
 Name:           ros-robot_state_publisher
 Version:        noetic.1.15.2
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        ROS package robot_state_publisher
 
 License:        BSD
@@ -8,6 +8,7 @@ URL:            http://www.ros.org/
 
 Source0:        https://github.com/ros-gbp/robot_state_publisher-release/archive/release/noetic/robot_state_publisher/1.15.2-1.tar.gz#/ros-noetic-robot_state_publisher-1.15.2-source0.tar.gz
 
+Patch0: ros-robot_state_publisher.build-with-cpp17.patch
 
 
 # common BRs
@@ -45,9 +46,9 @@ Requires:       ros-noetic-tf
 Requires:       ros-noetic-tf2_kdl
 Requires:       ros-noetic-tf2_ros
 
-Provides:  ros-noetic-robot_state_publisher = 1.15.2-3
-Obsoletes: ros-noetic-robot_state_publisher < 1.15.2-3
-Obsoletes: ros-kinetic-robot_state_publisher < 1.15.2-3
+Provides:  ros-noetic-robot_state_publisher = 1.15.2-4
+Obsoletes: ros-noetic-robot_state_publisher < 1.15.2-4
+Obsoletes: ros-kinetic-robot_state_publisher < 1.15.2-4
 
 
 
@@ -74,9 +75,9 @@ Requires:       ros-noetic-tf-devel
 Requires:       ros-noetic-tf2_kdl-devel
 Requires:       ros-noetic-tf2_ros-devel
 
-Provides: ros-noetic-robot_state_publisher-devel = 1.15.2-3
-Obsoletes: ros-noetic-robot_state_publisher-devel < 1.15.2-3
-Obsoletes: ros-kinetic-robot_state_publisher-devel < 1.15.2-3
+Provides: ros-noetic-robot_state_publisher-devel = 1.15.2-4
+Obsoletes: ros-noetic-robot_state_publisher-devel < 1.15.2-4
+Obsoletes: ros-kinetic-robot_state_publisher-devel < 1.15.2-4
 
 
 %description devel
@@ -89,6 +90,7 @@ applications that use %{name}.
 
 %setup -c -T
 tar --strip-components=1 -xf %{SOURCE0}
+%patch0 -p1
 
 %build
 # nothing to do here
@@ -171,6 +173,8 @@ done
 
 
 %changelog
+* Mon Dec 26 2022 Tarik Viehmann <viehmann@kbsg.rwth-aachen.de> - noetic.1.15.2-4
+- Build with c++17 for log4cxx 0.13
 * Mon Jun 06 2022 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.2-3
 - Rebuild for orocos-kdl-1.5
 * Thu Oct 14 2021 Till Hofmann <thofmann@fedoraproject.org> - noetic.1.15.2-2

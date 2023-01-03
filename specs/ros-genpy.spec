@@ -26,7 +26,6 @@ BuildRequires:  ros-noetic-catkin-devel
 BuildRequires:  ros-noetic-genmsg-devel
 
 Requires:       python3-pyyaml
-Requires:       python3dist(pyyaml)
 Requires:       ros-noetic-genmsg
 
 Provides:  ros-noetic-genpy = 0.6.15-2

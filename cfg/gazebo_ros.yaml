@@ -6,3 +6,5 @@ dependencies:
       - gazebo-devel
       - bullet-devel
       - libuuid-devel
+patches:
+  - ros-gazebo_ros.build-with-cpp17.patch
