@@ -1,3 +1,7 @@
+# DEPRECATION NOTICE
+
+This version of `rosfed` only supports ROS1. There is a [fork that supports ROS2](https://github.com/TarikViehmann/rosfed), but this repository will not be updated. Alternatively, you can use the [official RHEL packages](https://docs.ros.org/en/jazzy/Installation/RHEL-Install-RPMs.html).
+
 # rosfed
 This repository contains scripts and configurations to generate ROS packages
 for Fedora.
